@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int age = 18;
+        double salary = 50000;
+        string name = "Nikita";
+        bool is_true = true;
+
+        Console.WriteLine("Целочисленная переменная: " + age);
+        Console.WriteLine("Вещественная переменная: " + salary);
+        Console.WriteLine("Строковая переменная: " + name);
+        Console.WriteLine("Логическая переменная: " + is_true);
+    }
+}

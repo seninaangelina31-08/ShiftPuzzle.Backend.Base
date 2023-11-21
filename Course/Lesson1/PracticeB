@@ -1,0 +1,23 @@
+using System;
+
+class Program{
+    
+    static void Main()
+    {
+        Console.WriteLine("Напишите первое число:");
+        double num_1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Напишите второе число:");
+        double num_2 = Convert.ToDouble(Console.ReadLine());
+
+        double add = num_1 + num_2;
+        double sub = num_1 - num_2;
+        double mult = num_1 * num_2;
+        double div = num_1 / num_2;
+
+        Console.WriteLine("Сложение: " + add);
+        Console.WriteLine("Вычитание: " + sub);
+        Console.WriteLine("Умножение: " + mult);
+        Console.WriteLine("Деление: " + div);
+    }
+}

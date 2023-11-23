@@ -4,12 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        int counter = 0;
-        while (True)
+        int c = 1;
+        while (c > 0)
         {
-            Console.WriteLine("Enter было нажато " + сounter + " раз");
             string EnterKey = Console.ReadLine();
-            counter = counter + 1;
+            Console.WriteLine("Enter было нажато " + c + " раз");
+            c++;
         }
     }
 }

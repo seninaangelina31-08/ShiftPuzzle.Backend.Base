@@ -3,6 +3,6 @@
 Console.Write("Введите номер телефона: ");
 string number = Console.ReadLine();
 Console.Write("Введите Имя пользователя : ");
-string name = Console.ReadLine();
+string name = Console.ReadLine(); 
 Console.WriteLine("Имя пользователя: " + name );
-Console.WriteLine("Номер пользователя: " + number);
+Console.WriteLine(" Номер пользователя: " + number);

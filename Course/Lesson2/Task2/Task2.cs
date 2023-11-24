@@ -2,4 +2,4 @@
 Console.Write("Введите год рождения: ");
 int age = Convert.ToInt32(Console.ReadLine());
 age = 2023 - age;
-Console.WriteLine("Вам " + age + " лет");
+Console.WriteLine("Вам  " + age + " лет");

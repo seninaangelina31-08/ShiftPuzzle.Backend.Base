@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+Course/Lesson2/Prac4/Program.cs
+Course/Lesson2/Prac4/Prac4.csproj

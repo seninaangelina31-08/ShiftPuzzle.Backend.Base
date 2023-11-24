@@ -3,6 +3,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Console.Write("Введите число: ");
+        int a = Convert.ToInt16(Console.ReadLine());
+        Console.WriteLine($"{a + 5}");
     }
 }

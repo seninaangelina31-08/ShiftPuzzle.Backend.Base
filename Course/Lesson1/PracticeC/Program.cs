@@ -4,8 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        string numberString = "3.14159";
-        float number = float.Parse(numberString);
-        Console.WriteLine(number);
+        string d = "2.1";
+        float ds = 2;
+        float f = float.Parse(d);
+        Console.WriteLine(ds);
+        Console.WriteLine(f);
     }
 }

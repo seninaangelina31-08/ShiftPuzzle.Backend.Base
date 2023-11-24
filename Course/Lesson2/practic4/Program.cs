@@ -1,7 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Enter your text: ");
+int cnt = 0;
+string a;
+        
+    while (true){
+        a = Console.ReadLine();
+        if (a == "") {
+            cnt++;
+        } else {
+            break;
+        }
+    }
+Console.Write(cnt);
 
-
-string s = Console.ReadLine();
-int k = s.Count(x => x == '\n');
-Console.WriteLine(k);

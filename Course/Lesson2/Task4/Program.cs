@@ -3,22 +3,22 @@ class Program
 {
     static void Main(string[] args)
     {
-        int c = 0;
-        string s = "";
+        int enter_counter = 0;
+        string input_string = "";
 
         while (true)
         {   Console.Write("Введите что - то: ");
-            s = Console.ReadLine();
-            if (s == "")
+            input_string = Console.ReadLine();
+            if (input_string == "")
             {
-                c += 1;
+                enter_counter += 1;
             }
             else
             {
                 break;
             }
         }   
-        Console.WriteLine("Вы нажали Enter " + c + " раз!");
+        Console.WriteLine("Вы нажали Enter " + enter_counter + " раз!");
         Console.Write("Поздравляю, это ваш новый рекорд!!!!!");
     }
 }

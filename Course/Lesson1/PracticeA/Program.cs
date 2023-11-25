@@ -1,4 +1,4 @@
-Int a = 5;
+int a = 5;
 float b = 12781.1332;
 strind c = "BACKEND";
 bool d = false;

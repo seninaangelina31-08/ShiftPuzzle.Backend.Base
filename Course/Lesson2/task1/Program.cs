@@ -1,3 +1,5 @@
+﻿namespace task1;
+
 using System;
 
 class Program

@@ -3,6 +3,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        char[] arr = new char[3];
+        char[] arr = {'>', '<', '='};
     }
 }

@@ -18,16 +18,16 @@ class Program
                 string ph_number = Console.ReadLine() ?? "";
                 Console.WriteLine(name + " " + ph_number);
                 people.Add(ph_number, name);
-                
-                Console.WriteLine(people.TryAdd("89601740908", "Юра"));
+                Console.WriteLine(people.TryAdd(ph_number, name)); // Проверка
+                people.Add("89601740908", "Юра");
+                Console.WriteLine(people.TryAdd("89601740908", "Юра")); // Проверка
             }
             else if (a == "=")
             {
-                Console.WriteLine(people);
                 foreach(var person in people)
                 {
                     Console.WriteLine($"{person.Value} : {person.Key:# (###) ###-##-##}");
-                    Console.WriteLine("4");
+                    Console.WriteLine("4"); // вывод для проверки входа в цикл
                 }
                 
             }

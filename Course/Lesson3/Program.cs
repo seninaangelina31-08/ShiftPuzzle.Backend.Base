@@ -1,4 +1,4 @@
-﻿namespace Task4;
+﻿namespace Lesson3;
 
 class Program
 {

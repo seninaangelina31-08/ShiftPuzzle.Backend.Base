@@ -1,9 +1,9 @@
-﻿namespace Task9;
+﻿namespace L3_T1;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        int[] numbers = new int[5];
     }
 }

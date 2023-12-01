@@ -1,0 +1,1 @@
+﻿char[] charArray = {'a', 'b', 'c'};

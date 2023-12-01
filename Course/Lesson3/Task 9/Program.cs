@@ -10,8 +10,7 @@ class Program
     massive[3] = 1
     massive[4] = 1
     massive[5] = 1
-    massive[6] = 1
+    }   
 }
-
 
 

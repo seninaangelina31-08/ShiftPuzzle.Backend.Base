@@ -7,14 +7,14 @@ class Program
     static void Main(string[] args)
     {
         int[] numbers = {1, 2, 3, 4, 5};
-        int[] nums_reverse = new int[5];
+        int[] nums_reverse = new int[numbers.Length];
 
-        for (int i = numbers.Length - 1; i >= 0; i-=1) {
-            nums_reverse.Add(numbers[i]);
+        for (int i = 0; i < numbers.Length; i++) {
+            nums_reverse[i] = numbers[numbers.Length-i-1];
         }
-
+        Console.Write("Перевернутый массив: ");
         foreach (int arr in nums_reverse) {
-            Console.WriteLine(arr);
+            Console.Write($"{arr} ");
         }
 
     }

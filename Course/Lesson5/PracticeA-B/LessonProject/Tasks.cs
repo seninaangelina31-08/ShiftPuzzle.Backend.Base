@@ -124,9 +124,9 @@ namespace LessonProject
             Console.WriteLine("\n\n\nЗадача 4: Выполнить циклическую ротацию массива на K позиций вправо. Вывести исходный и измененный массивы.");
             Console.WriteLine("РЕШЕНИЕ:");
 
-            //решайте задачу здесь
+    //решайте задачу здесь
     int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int K = 3; // количество позиций для сдвига
+    int K = 3;
 
     int[] rotatedArray = new int[array.Length];
 

@@ -9,7 +9,32 @@ namespace LessonProject
             Console.WriteLine("Задача 1: Найти в массиве целых чисел первый подмассив длиной N, сумма элементов которого максимальна. Вывести найденный подмассив.");
             Console.WriteLine("РЕШЕНИЕ:");
 
-            //решайте задачу здесь
+            int n = Convert.ToInt16(Console.ReadLine());
+            int[] array = {123, 123, 412, 124, 124};
+            int total = 0;
+            int totalMax = array.Min();
+            string arrayStr = "{";
+            string arrayStrMax = "";
+
+            for (int i = 0; i <= array.Length - n; i++)
+            {
+                
+                for (int j = i; j <= i + n - 1; j++)
+                {
+                    total += array[j];
+                    arrayStr += $"{array[j]}, ";
+                    
+                }
+                if (total > totalMax)
+                {
+                    totalMax = total;
+                    arrayStrMax = arrayStr;
+                }
+                arrayStr = "{";
+                total = 0;
+
+            }
+            Console.WriteLine(arrayStrMax.Substring(0, arrayStrMax.Length - 2) + "}");
 
             //не выходя за пределы
         }

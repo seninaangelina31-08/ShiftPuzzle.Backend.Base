@@ -132,7 +132,7 @@ namespace LessonProject
             for (int i = 0; i < mass.Length; i++)
             {   
                 if (i + K>= mass.Length){
-                    mass2[(i + N) - mass.Length] = mass[i];
+                    mass2[(i + K) - mass.Length] = mass[i];
                 } 
             else
                 {

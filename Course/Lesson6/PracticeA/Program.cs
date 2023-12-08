@@ -1,23 +1,20 @@
 ﻿// See https://aka.ms/new-console-template for more information
-static int summa(int a, int b)
+
+class Program
+{
+    public static int summa(int a, int b)
 {
     return a+b;
 }
 
 
-
-
-
-void privet(string name)
+    public static void privet(string name)
 {
     Console.WriteLine("Hello, " + name);
 }
 
 
-
-
-
-void max(int a, int b)
+    public static void max(int a, int b)
 {
     if (a > b){
         Console.WriteLine(a);
@@ -28,9 +25,7 @@ void max(int a, int b)
 }
 
 
-
-
-static bool chet(int a)
+    public static bool chet(int a)
 {
     if (a%2==0){
         return true;
@@ -41,16 +36,13 @@ static bool chet(int a)
 }
 
 
-
-
-static double tempF(int tempC)
+    public static double tempF(int tempC)
 {
     return(tempC*33.8);
 }
 
 
-
-static string Reverse(string line )
+    public static string Reverse(string line )
 {
     char[] array = line.ToCharArray();
     Array.Reverse(array);
@@ -58,66 +50,50 @@ static string Reverse(string line )
 }
 
 
-
-
-static void Vhod(string str, char el)
+    public static void Vhod(string str, char el)
 {
-int cnt = 0;
-foreach (char c in str) {
-  if (c == el) {cnt++;}
+        int cnt = 0;
+        foreach (char c in str) {
+        if (c == el) {cnt++;}
 }
 
-Console.WriteLine(cnt);
+        Console.WriteLine(cnt);
 }
 
 
-
-
-
-static int Fact(int a)
+    public static int Fact(int a)
 {
-    int n = 1;
-    int fac = 1;
-    while (n<=a){
-        fac *= n;
-        n++;
+        int n = 1;
+        int fac = 1;
+        while (n<=a){
+            fac *= n;
+            n++;
     }
-    return fac;
+        return fac;
 }
 
 
-
-
-
-
-static void Easy(int a)
+    public static void Easy(int a)
 {
-    string answer = "Это число простое";
+        string answer = "Это число простое";
     
-    for (int n = 1; n<a; n++){
-        if (a%n==0){
-            answer = "Это число не простое";
+        for (int n = 1; n<a; n++){
+            if (a%n==0){
+                answer = "Это число не простое";
         }
     }
 
-    Console.WriteLine(answer);
+        Console.WriteLine(answer);
 }
 
 
-
-
-
-
-static int Random(int a,int b)
+    public static int Random(int a,int b)
 {
     Random rnd = new Random();
     var result = rnd.Next(a, b);
     return result;
 }
 
-
-class Program
-{
     static void Main(string[] args)
     {
         Console.WriteLine(summa(3, 6));
@@ -132,7 +108,7 @@ class Program
 
         Console.WriteLine(Reverse("fghjkl"));
 
-        Vhod("dddddd", 'd')
+        Vhod("dddddd", 'd');
 
         Console.WriteLine(Fact(5));
 

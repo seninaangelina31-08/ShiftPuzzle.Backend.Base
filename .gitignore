@@ -398,3 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 Course/Lesson2/Prac4/Program.cs
 Course/Lesson2/Prac4/Prac4.csproj
+Course/Lesson6/Homework/Homework.csproj
+Course/Lesson6/Homework/Program.cs

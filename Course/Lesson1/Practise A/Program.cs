@@ -19,4 +19,16 @@ Console.WriteLine(half);
 Console.WriteLine(words);
 Console.WriteLine(world);
     }
+string word = "banana";
+char b = 'a';
+int var = 0;
+for (int i = 0; i < word.Length; ++i)
+{
+char c = word[i];
+if (c == b)
+    {
+    var++;
+    }
+}
+
 }

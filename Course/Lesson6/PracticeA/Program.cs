@@ -64,7 +64,7 @@ char a = 'a'
 int var = 0;
 for (int i = 0; i < word.Length; i++)
 char c = word[i]
-if (char == a)
+if (c == a)
 {
     var++
 }

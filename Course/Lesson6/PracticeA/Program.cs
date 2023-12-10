@@ -58,21 +58,34 @@ static string Perevorot(string a)
 }
 
 //Task 7
-static int (string word)
-{
-char a = 'a'
-int var = 0;
-for (int i = 0; i < word.Length; i++)
-char c = word[i]
-if (c == a)
-{
-    var++
-}
-}
-
-
+// static int Simbol(string word)
+// {
+// char a = 'a';
+// int var = 0;
+// for (int i = 0; i < word.Length; i++)
+// {
+// char c = word[i];
+// if (c == a)
+// {
+//     var++;
+// }
+// }
+// return var;
+// }
 
 //Task 8
+static int Factorial(int a)
+{
+    int num = 5;
+    int fac = 1;
+    for (int i = 1; i <= num; ++i)
+    {
+        fac *= i;
+    }
+    return fac;
+}
+
+//Task 9
 static int Easy_num(int n)
 {
     if (n % 2 != 0 )
@@ -83,6 +96,14 @@ static int Easy_num(int n)
     {
         return 0;
     }
+}
+
+//Task 10
+static int Generator(int a, int b)
+{
+    Random run_num = new Random();
+    int number = run_num.Next(a, b);
+    return number;
 }
 
 
@@ -108,25 +129,17 @@ static int Easy_num(int n)
     string rev = Perevorot("pazl");
     Console.WriteLine(rev);
 
-    string word = Simbol("banana");
-    Console.WriteLine(word);
+    // string word = Simbol("banana");
+    // Console.WriteLine(word);
+
+    int fac = Factorial(5);
+    Console.WriteLine(fac);
 
     int esnum = Easy_num(101);
     Console.WriteLine(esnum);
 
+    int random = Generator(1,200);
+    Console.WriteLine("Your IQ is: " + random);
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 }

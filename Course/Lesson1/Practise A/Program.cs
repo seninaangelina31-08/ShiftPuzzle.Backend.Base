@@ -18,7 +18,7 @@ Console.WriteLine(number);
 Console.WriteLine(half);
 Console.WriteLine(words);
 Console.WriteLine(world);
-    }
+    
 string word = "banana";
 char b = 'a';
 int var = 0;
@@ -31,4 +31,5 @@ if (c == b)
     }
 }
 
+    }
 }

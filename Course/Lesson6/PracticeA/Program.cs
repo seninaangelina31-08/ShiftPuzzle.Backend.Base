@@ -30,17 +30,17 @@ static int Max_number(int a, int b)
     
 }
 //Task 4
-static int Num(int a)
+static string Num(int a)
 {
-// string t = "true";
-// string f = "false";
+ string t = "true";
+ string f = "false";
     if ((a % 2) == 1)
     {
-        return 1;
+        return t;
     }
     else
     {
-        return 0;
+        return f;
     }
 }
 //Task 5
@@ -58,20 +58,20 @@ static string Perevorot(string a)
 }
 
 //Task 7
-// static int Simbol(string word)
-// {
-// char a = 'a';
-// int var = 0;
-// for (int i = 0; i < word.Length; i++)
-// {
-// char c = word[i];
-// if (c == a)
-// {
-//     var++;
-// }
-// }
-// return var;
-// }
+static int Simbol(string word)
+{
+char a = 'a';
+int var = 0;
+for (int i = 0; i < word.Length; i++)
+{
+char c = word[i];
+if (c == a)
+{
+    var++;
+}
+}
+return var;
+}
 
 //Task 8
 static int Factorial(int a)
@@ -120,7 +120,7 @@ static int Generator(int a, int b)
     int max_num = Max_number(1,100);
     Console.WriteLine(max_num);
     
-    int num = Num(101);
+    string num = Num(101);
     Console.WriteLine(num);
     
     int conv = Constructor(10);
@@ -129,8 +129,8 @@ static int Generator(int a, int b)
     string rev = Perevorot("pazl");
     Console.WriteLine(rev);
 
-    // string word = Simbol("banana");
-    // Console.WriteLine(word);
+     int word = Simbol("banana");
+     Console.WriteLine(word);
 
     int fac = Factorial(5);
     Console.WriteLine(fac);
@@ -143,3 +143,4 @@ static int Generator(int a, int b)
 
     }
 }
+

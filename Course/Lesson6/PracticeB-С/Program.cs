@@ -1,4 +1,7 @@
-﻿namespace PracticeB_С;
+﻿using System;
+using System.Collections.Generic;
+namespace PracticeB_С;
+
 class Program
 {
 
@@ -29,7 +32,8 @@ class Program
 
     }
 
-    static void Main(string[] args) {
+
+    static void MainB(string[] args) {
         int[] arr = {1, 2, 5, -8, -6, 9, 6, 3, -4, 7};
         arr = Task1(arr);
         for (int i = 1; i < arr.Length; i++) {
@@ -40,3 +44,58 @@ class Program
 
 
 }
+
+
+public class PermutationGenerator
+{
+    public List<List<int>> GeneratePermutations(int[] nums)
+    {
+        List<List<int>> result = new List<List<int>>();
+        List<int> currentPermutation = new List<int>();
+        bool[] used = new bool[nums.Length];
+        
+        Generate(nums, currentPermutation, used, result);
+        
+        return result;
+    }
+
+    private void Generate(int[] nums, List<int> currentPermutation, bool[] used, List<List<int>> result)
+    {
+        if (currentPermutation.Count == nums.Length)
+        {
+            result.Add(new List<int>(currentPermutation));
+            return;
+        }
+        
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (!used[i])
+            {
+                currentPermutation.Add(nums[i]);
+                used[i] = true;
+                
+                Generate(nums, currentPermutation, used, result);
+                
+                currentPermutation.RemoveAt(currentPermutation.Count - 1);
+                used[i] = false;
+            }
+        }
+    }
+}
+
+public class TaskC
+{
+    public static void Main(string[] args)
+    {
+        int[] nums = { 1, 2, 3, 4, 5 };
+        
+        PermutationGenerator permutationGenerator = new PermutationGenerator();
+        List<List<int>> permutations = permutationGenerator.GeneratePermutations(nums);
+        
+        foreach (List<int> permutation in permutations)
+        {
+            Console.WriteLine(string.Join(", ", permutation));
+        }
+    }
+}
+

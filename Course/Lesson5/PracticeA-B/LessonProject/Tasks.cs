@@ -11,12 +11,11 @@ namespace LessonProject
             Console.WriteLine("РЕШЕНИЕ:");
 
             //решайте задачу здесь
-            int[] array = {42, 5, 51, 25, 58, 11, 13, 4, 23, 7, 56};
+            int[] array = {42, 5, 51, 25, 58, 11, 13, 4, 23, 96, 7, 56};
             Console.Write("Введите длину подмассива: ");
             int N = int.Parse(Console.ReadLine()!);
             int[] maxArray = new int[N];
             int maxSum = 0;
-
             Console.WriteLine("Исходный массив: " + "[" + string.Join(", ", array) + "]");
 
             for (int i = 0; i < array.Length - N + 1; i++)

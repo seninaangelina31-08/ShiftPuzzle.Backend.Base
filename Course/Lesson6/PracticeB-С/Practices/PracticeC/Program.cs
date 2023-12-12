@@ -6,4 +6,8 @@ class Program
     {
         Console.WriteLine("Hello, World!");
     }
+    public static int Subs (int[] array_nums){
+        int len = array_nums.Length;
+        
+    }
 }

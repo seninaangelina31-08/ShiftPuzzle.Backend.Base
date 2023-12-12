@@ -3,13 +3,13 @@
     return a + b;
 }
 
+Console.WriteLine(Summa(5, 15));
+
+
 void Greetings(string name)
 {
     Console.WriteLine($"Приветствую тебя {name}");
 }
-
-Greetings("Evelina");
-
 
 
 int MaxNumber(int a, int b)

@@ -4,8 +4,6 @@ class Program
 {
     public static bool FindPath(int[,] maze)
     {
-        int rows = maze.GetLength(0);
-        int columns = maze.GetLength(1);
         return Solve(maze, 0, 0);
     }
     public static bool Solve(int[,] maze, int x, int y)

@@ -2,10 +2,6 @@
 
 class Program
 {
-    public static bool FindPath(int[,] maze)
-    {
-        return Solve(maze, 0, 0);
-    }
     public static bool Solve(int[,] maze, int x, int y)
     {
         if (x < 0 || y < 0 || x >= maze.GetLength(0) || y >= maze.GetLength(1) || maze[x, y] == 0)
@@ -42,7 +38,7 @@ class Program
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         };
         
-        Console.Write(FindPath(maze));
+        Console.Write(Solve(maze, 0, 0));
 
     }
 }

@@ -67,14 +67,14 @@ namespace PracticeA
         // 1. Получение счета
         public BankAccount GetAccount(int accountNumber)
         {
-            return null;
             if (accounts.ContainsKey(accountNumber))
             {
                 return accounts[accountNumber];
             }
+            return null;
         }
 
-        // 2. Отправка денег
+        // 2. Отправка денег - не нашёл ошибок
         public bool Transfer(int fromAccountNumber, int toAccountNumber, double amount)
         {
             var fromAccount = GetAccount(fromAccountNumber);
@@ -90,7 +90,7 @@ namespace PracticeA
             return false;
         }
 
-        // 3. Отмена операции
+        // 3. Отмена операции - не нашёл ошибок
         // Пример простой системы отмены (в реальности это было бы сложнее)
         public bool CancelLastTransaction(int accountNumber)
         {
@@ -117,13 +117,13 @@ namespace PracticeA
         public double CheckBalance(int accountNumber)
         {
             var account = GetAccount(accountNumber);
-            return account.AccountNumber;
+            return account.Balance;
         }
 
         // 5. Выписка по счету
         public void PrintStatement(int accountNumber)
         {
-            var account = GetAccount(9999);
+            var account = GetAccount(accountNumber);
             if (account != null)
             {
                 Console.WriteLine($"Account: {account.Balance}, Balance: {account.AccountHolder}");
@@ -135,19 +135,24 @@ namespace PracticeA
         {
             var account = new BankAccount(nextAccountNumber++, accountHolder);
             accounts.Add(account.AccountNumber, account);
-            return GetAccount(123);
+            return GetAccount(account.AccountNumber);
         }
 
         // 7. Закрытие счета
         public bool CloseAccount(int accountNumber)
         {
-            return accounts.Remove(accountNumber * 2);
+            return accounts.Remove(accountNumber);
         }
 
         // 8. Запрос кредита
         public bool RequestLoan(int accountNumber, double loanAmount)
         {
             // Логика одобрения кредита опишите логику
+            var account = GetAccount(accountNumber);
+            if (account != null && account.Balance > (loanAmount/12))
+            {
+                account.Deposit(loanAmount); // тут ещё должно быть добавление кредита в базу, но такой вроде нет
+            }
             return true;
         }
 
@@ -155,6 +160,10 @@ namespace PracticeA
         public void GetLoan(int accountNumber, double amount)
         {
             var account = GetAccount(accountNumber);
+            if (account != null && account.Withdraw(amount)) // + проверка на ниличие кредита, и на то, что сумма не больше остатка выплаты 
+            {
+                // тут должно быть изменение остатка по кредиту, и при 0 его закрытие
+            }
             // Логика получения по кредиту
              
         }
@@ -165,7 +174,7 @@ namespace PracticeA
             var account = GetAccount(accountNumber);
             if (account != null)
             {
-                account.AccountHolder =  "newName";
+                account.AccountHolder =  newName;
             }
         }
     }

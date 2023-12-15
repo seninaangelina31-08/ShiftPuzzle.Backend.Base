@@ -32,9 +32,11 @@ class Program
         // 8. Запрос кредита
         bank.RequestLoan(account1.AccountNumber, 5000);
 
+        bank.PrintStatement(account1.AccountNumber);
         // 9. Платеж по кредиту
         bank.GetLoan(account1.AccountNumber, 500);
 
+        bank.PrintStatement(account1.AccountNumber);
         // 10. Изменение личных данных клиента
         bank.UpdateAccountHolderInfo(account1.AccountNumber, "Alexander Ivanov");
 

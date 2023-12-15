@@ -11,57 +11,116 @@ class Program
     // public static int Task1(int a, int b){
     //     return (a + b);
     // }
+        public static int Task1(int a, int b)
+    {
+        return (a+b);
+    }
+
 
     // //2
-    // static Task2()
-    // {
-
-    // }
+    public static bool Task2(int x)
+    {
+        if (x%2 == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     // //3
-    // static Task3()
-    // {
+    public static string Task3(string s)
+    {
+    char[] charArray = s.ToCharArray();
+    Array.Reverse(charArray);
 
-    // }
+    return new string(charArray);
+    }
 
     // //4
-    // static Task4()
-    // {
-
-    // }
+      public static int Task4(int[] arr)
+      {
+        int max_num = arr.Max();
+        return max_num;
+    }
 
     // // 5
-    // static Task5()
-    // {
-
-    // }
-
+    public static int Task5(int sallary)
+    {
+        return sallary*12;
+    }
     // // 6
-    // static Task6()
-    // {
+     public static double Task6(int celsius)
+     {
+        return ((celsius * 9/5) + 32);
 
-    // }
+    }
 
     // //7
-    // static Task7()
-    // {
-
-    // }
+    public int Task7(string s)
+{
+    string vowels = "аиоуеэАИОУЕЭ";
+    int count = 0;
+    foreach (char c in s)
+    {
+        if (vowels.Contains(c))
+        {
+            count++;
+        }
+    }
+    return count;
+}
 
     // //8
-    // static Task8()
-    // {
-
-    // }
+  public int Task8(string passtohack)
+{
+    int count = 0;
+    for (int x = 0; x < 10; x++)
+    {
+        for (int y = 0; y < 10; y++)
+        {
+            for (int z = 0; z < 10; z++)
+            {
+                for (int h = 0; h < 10; h++)
+                {
+                    count++;
+                    string generatedpass = "{x}{y}{z}{h}";
+                    if (generatedpass == passtohack)
+                    {
+                        Console.WriteLine("Ура! Вы взломали пароль, теперь вы хакер");
+                        return count;
+                    }
+                }
+            }
+        }
+    }
+    return count;
+}
 
     static void Main(string[] args)
     {
         // это функция мейн которая вызывает все отсальные функции для практики А и Б
         //вызов первой функци.... и т.п.
-        Console.WriteLine(Task1(1, 2));
+        
+
+        Console.WriteLine(Task1(2, 3));
+
+        Console.WriteLine(Task2(3));
+
+        Console.WriteLine(Task3("Слово"));
+
+        Console.WriteLine(Task4(1, 3, -5, 2, 3));
+
+        Console.WriteLine(Task5(20000));
+
+        Console.WriteLine(Task6(30));
+
+        Console.WriteLine(Task7("Есть хочу"));
+
+        Console.WriteLine(Task8("1234"));
 
     }
-    public static int Task1(int a, int b){
-        return (a + b);
-    }
+   
 }

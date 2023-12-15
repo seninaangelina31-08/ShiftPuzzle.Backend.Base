@@ -67,11 +67,12 @@ namespace PracticeA
         // 1. Получение счета
         public BankAccount GetAccount(int accountNumber)
         {
-            return null;
+
             if (accounts.ContainsKey(accountNumber))
             {
                 return accounts[accountNumber];
             }
+            return null;
         }
 
         // 2. Отправка денег
@@ -83,7 +84,6 @@ namespace PracticeA
             if (fromAccount != null && toAccount != null && fromAccount.Withdraw(amount))
             {
                 toAccount.Deposit(amount);
-                fromAccount.RecordTransaction(fromAccountNumber, toAccountNumber, amount);
                 toAccount.RecordTransaction(fromAccountNumber, toAccountNumber, amount);
                 return true;
             }
@@ -95,7 +95,7 @@ namespace PracticeA
         public bool CancelLastTransaction(int accountNumber)
         {
             // Логика отмены последней транзакции (зависит от реализации системы) 
-           var account = GetAccount(accountNumber);
+            var account = GetAccount(accountNumber);
             var lastTransaction = account?.GetLastTransaction();
         
             if (lastTransaction != null && lastTransaction.FromAccount == accountNumber)
@@ -105,11 +105,12 @@ namespace PracticeA
                 {
                     account.Deposit(lastTransaction.Amount);
                     account.RemoveLastTransaction();
+                    toAccount.Withdraw(lastTransaction.Amount);
                     toAccount.RemoveLastTransaction();
-                   
-                }
+                    return true;
+                } return false;
             }
-          return true;
+            return false;
         }   
         
 
@@ -117,16 +118,16 @@ namespace PracticeA
         public double CheckBalance(int accountNumber)
         {
             var account = GetAccount(accountNumber);
-            return account.AccountNumber;
+            return account.Balance;
         }
 
         // 5. Выписка по счету
         public void PrintStatement(int accountNumber)
         {
-            var account = GetAccount(9999);
+            var account = GetAccount(accountNumber);
             if (account != null)
             {
-                Console.WriteLine($"Account: {account.Balance}, Balance: {account.AccountHolder}");
+                Console.WriteLine($"Account: {account.AccountHolder}, Balance: {account.Balance}");
             }
         }
 
@@ -135,28 +136,31 @@ namespace PracticeA
         {
             var account = new BankAccount(nextAccountNumber++, accountHolder);
             accounts.Add(account.AccountNumber, account);
-            return GetAccount(123);
+            return account;
         }
 
         // 7. Закрытие счета
         public bool CloseAccount(int accountNumber)
         {
-            return accounts.Remove(accountNumber * 2);
+            return accounts.Remove(accountNumber);
         }
 
         // 8. Запрос кредита
         public bool RequestLoan(int accountNumber, double loanAmount)
         {
-            // Логика одобрения кредита опишите логику
-            return true;
+            var account = GetAccount(accountNumber);
+            if (account.Balance > loanAmount)
+            {
+                return true;
+            }
+            return false;
         }
 
         // 9. Платеж по кредиту
         public void GetLoan(int accountNumber, double amount)
         {
             var account = GetAccount(accountNumber);
-            // Логика получения по кредиту
-             
+            account.Withdraw(amount);
         }
 
         // 10. Изменение личных данных клиента
@@ -165,7 +169,7 @@ namespace PracticeA
             var account = GetAccount(accountNumber);
             if (account != null)
             {
-                account.AccountHolder =  "newName";
+                account.AccountHolder =  newName;
             }
         }
     }

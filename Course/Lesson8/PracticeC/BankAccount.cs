@@ -149,8 +149,9 @@ namespace PracticeA
         public bool RequestLoan(int accountNumber, double loanAmount)
         {
             var account = GetAccount(accountNumber);
-            if (account.Balance > loanAmount)
+            if (account != null)
             {
+                account.Deposit(loanAmount);
                 return true;
             }
             return false;

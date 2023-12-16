@@ -88,33 +88,28 @@ namespace LessonProject
 
             //решайте задачу здесь
             
-        int[] numbers = { 1, 2, 3, 3, 3, 4, 5, 5, 5, 6 }; // пример массива
+            int[] numbers = { 4, 5, 2, 7, 8, 5, 2, 5, 4, 8, 6, 5, 4, 9, 5 }; // Пример массива
+            int maxCount = 0;
+            int popularNumber = 0;
 
-        int[] frequency = new int[numbers.Length]; // Создаем массив для подсчета частоты для чисел от 0 до 9
-
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            int num = numbers[i];
-            frequency[num]++;
-        }
-
-        int max_frequency = 0;
-        for (int i = 0; i < frequency.Length; i++)
-        {
-            if (frequency[i] > max_frequency)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                max_frequency = frequency[i];
+                int count = 0;
+                for (int j = 0; j < numbers.Length; j++)
+                {
+                    if (numbers[i] == numbers[j])
+                    {
+                        count++;
+                    }
+                }
+                if (count > maxCount)
+                {
+                    maxCount = count;
+                    popularNumber = numbers[i];
+                }
             }
-        }
 
-        Console.WriteLine("Число(а), которое встречается чаще всего:");
-        for (int i = 0; i < frequency.Length; i++)
-        {
-            if (frequency[i] == max_frequency)
-            {
-                Console.WriteLine(i + " (появляется " + max_frequency + " раза)");
-            }
-        }
+            Console.WriteLine("Число, которое встречается чаще всего: " + popularNumber + " (встречается " + maxCount + " раз(а))");    
 
             //не выходя за пределы
         }
@@ -169,46 +164,64 @@ namespace LessonProject
 
             //решайте задачу здесь
 
-        int[] array1 = {1, 2, 3, 4, 5, 129312, -129312, 2139};
-        int[] array2 = {3, 4, 5, 6, 7, 13201239, 32111};
-
-        int[] merged_array = new int[array1.Length + array2.Length];
+        int[] array1 = {1, 2, 3, 4, 5};
+        int[] array2 = {3, 4, 5, 6, 7};
+        
+        int maxLength = array1.Length + array2.Length;
+        int[] resultArray = new int[maxLength];
+        
+        int index = 0;
         for (int i = 0; i < array1.Length; i++)
         {
-            merged_array[i] = array1[i];
+            bool flag = true;
+            for (int j = 0; j < resultArray.Length; j++)
+            {
+                if (resultArray[j] == array1[i])
+                {
+                    flag = false;
+                }
+            }
+            if (flag)
+            {
+                resultArray[index] = array1[i];
+                index++;
+            }
         }
+    
         for (int i = 0; i < array2.Length; i++)
         {
-            merged_array[array1.Length + i] = array2[i];
+            bool flag = true;
+            for (int j = 0; j < resultArray.Length; j++)
+            {
+                if (resultArray[j] == array2[i])
+                {
+                    flag = false;
+                }
+            }
+            if (flag)
+            {
+                resultArray[index] = array1[i];
+                index++;
+            }
         }
 
-        int[] unique_numbers = new int[merged_array.Length];
-        int unique_count = 0;
-        
-        for (int i = 0; i < merged_array.Length; i++)
+        foreach (int num1 in array1)
         {
-            bool isUnique = true;
-            for (int j = 0; j < unique_count; j++)
+            bool found = false;
+            foreach (int num2 in array2)
             {
-                if (merged_array[i] == unique_numbers[j])
+                if (num1 == num2)
                 {
-                    isUnique = false;
+                    found = true;
                     break;
                 }
             }
-            if (isUnique)
+            if (found)
             {
-                unique_numbers[unique_count] = merged_array[i];
-                unique_count++;
+                Console.Write(num1 + " ");
             }
         }
-
-        Console.WriteLine("Числа, встречающиеся в обоих массивах:");
-        for (int i = 0; i < unique_count; i++)
-        {
-            Console.Write(unique_numbers[i] + " ");
-        }
+        }    
             //не выходя за пределы
-        }
-    }
+    }   
 }

@@ -67,11 +67,11 @@ namespace PracticeA
         // 1. Получение счета
         public BankAccount GetAccount(int accountNumber)
         {
-            return null;
             if (accounts.ContainsKey(accountNumber))
             {
                 return accounts[accountNumber];
             }
+            return null;
         }
 
         // 2. Отправка денег
@@ -117,13 +117,13 @@ namespace PracticeA
         public double CheckBalance(int accountNumber)
         {
             var account = GetAccount(accountNumber);
-            return account.AccountNumber;
+            return account.Balance;
         }
 
         // 5. Выписка по счету
         public void PrintStatement(int accountNumber)
         {
-            var account = GetAccount(9999);
+            var account = GetAccount(accountNumber);
             if (account != null)
             {
                 Console.WriteLine($"Account: {account.Balance}, Balance: {account.AccountHolder}");
@@ -135,7 +135,7 @@ namespace PracticeA
         {
             var account = new BankAccount(nextAccountNumber++, accountHolder);
             accounts.Add(account.AccountNumber, account);
-            return GetAccount(123);
+            return account;
         }
 
         // 7. Закрытие счета
@@ -165,7 +165,7 @@ namespace PracticeA
             var account = GetAccount(accountNumber);
             if (account != null)
             {
-                account.AccountHolder =  "newName";
+                account.AccountHolder =  newName;
             }
         }
     }

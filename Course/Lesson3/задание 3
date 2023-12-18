@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Исходный массив
+        int[] arr = { 1, 2, 3, 4, 5 };
+
+        // Переворачиваем массив
+        ReverseArray(arr);
+
+        // Выводим результат
+        Console.WriteLine("Перевернутый массив:");
+        foreach (int num in arr)
+        {
+            Console.Write(num + " ");
+        }
+    }
+
+    static void ReverseArray(int[] arr)
+    {
+        int length = arr.Length;
+        for (int i = 0; i < length / 2; i++)
+        {
+            int temp = arr[i];
+            arr[i] = arr[length - i - 1];
+            arr[length - i - 1] = temp;
+        }
+    }
+}

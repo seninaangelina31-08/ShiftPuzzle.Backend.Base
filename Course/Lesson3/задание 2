@@ -1,0 +1,19 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Инициализация массива из трех строк
+        string[] myArray = new string[3] { "Привет", "Здравствуйте", "Добрый день" };
+
+        // Вывод элементов массива на консоль
+        foreach (string element in myArray)
+        {
+            Console.WriteLine(element);
+        }
+
+        // Ожидание пользовательского ввода перед закрытием программы
+        Console.ReadLine();
+    }
+}

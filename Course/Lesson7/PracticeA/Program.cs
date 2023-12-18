@@ -1,4 +1,4 @@
-﻿int Factorial(int n)
+int Factorial(int n)
 {
     if (n <= 1)
     {

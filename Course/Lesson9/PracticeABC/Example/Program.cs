@@ -29,9 +29,9 @@ public class Animal
     // конструктор класса
     public Animal(string color, float size, string food)
     {
-        Color = color;
-        Size = size;
-        Food = food;
+        this.Color = color;
+        this.Size = size;
+        this.Food = food;
     }
 
     // метод для издавания звуков, общий для всех животных

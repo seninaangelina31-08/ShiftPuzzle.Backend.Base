@@ -1,0 +1,1458 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine(```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine($"Сумма: {сумма}");
+        Console.WriteLine($"Разность: {разность}");
+        Console.WriteLine($"Произведение: {произведение}");
+        Console.WriteLine($"Частное: {частное}");
+    }
+}
+```quot;Сумма: {сумма}");
+        Console.WriteLine(```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine($"Сумма: {сумма}");
+        Console.WriteLine($"Разность: {разность}");
+        Console.WriteLine($"Произведение: {произведение}");
+        Console.WriteLine($"Частное: {частное}");
+    }
+}
+```quot;Разность: {разность}");
+        Console.WriteLine(```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine($"Сумма: {сумма}");
+        Console.WriteLine($"Разность: {разность}");
+        Console.WriteLine($"Произведение: {произведение}");
+        Console.WriteLine($"Частное: {частное}");
+    }
+}
+```quot;Произведение: {произведение}");
+        Console.WriteLine(```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введите первое число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Введите второе число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double сумма = number1 + number2;
+        double разность = number1 - number2;
+        double произведение = number1 * number2;
+        double частное = number1 / number2;
+
+        Console.WriteLine($"Сумма: {сумма}");
+        Console.WriteLine($"Разность: {разность}");
+        Console.WriteLine($"Произведение: {произведение}");
+        Console.WriteLine($"Частное: {частное}");
+    }
+}
+```quot;Частное: {частное}");
+    }
+}

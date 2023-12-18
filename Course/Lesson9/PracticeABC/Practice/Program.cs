@@ -1,21 +1,32 @@
 ﻿namespace Practice
 {
-    class Person
+class Person
+{
+    public string name;
+    private int age;
+
+    public Person(string name, int age)
     {
-        public string name;
-        public int age;
+        this.name = name;
+        this.Age = age;
+    }
 
-        public Person(string name, int age)
+    public int Age
+    {
+        get { return age; }
+        set
         {
-            this.name = name;
-            this.age = age;
+            if (value < 0)
+                throw new Exception($"{name} такой возраст и ты сидишь дома.");
+            else
+                age = value;
         }
+    }
 
-        public void Introduce()
-        {
-            Console.WriteLine($"Привет, мое имя {name}");
-            Console.WriteLine($"Мне {age} лет");
-        }
+    public void Introduce()
+    {
+        Console.WriteLine($"Привет, мое имя {name}");
+        Console.WriteLine($"Мне {Age} лет");
     }
 
     class Program
@@ -26,13 +37,14 @@
             {
                 new Person("Андрей", 20),
                 new Person("Акшин", 23),
-                new Person("Миша", 55)
+                new Person("Миша", -10)
             };
 
             foreach (var person in people)
             {
                 person.Introduce();
             }
-        }
+      }
     }
+  }
 }

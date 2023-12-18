@@ -24,6 +24,7 @@ class Program
         // 5
         people[0].Age_cheak(17);
         people[1].Age_cheak(-16);
+        Employee Nik = new Employee("Nikita", "Arkhangels");
         
     }
 }
@@ -50,4 +51,9 @@ public class Person
             Console.WriteLine("Значение не может быть отрицательным!");
         }
     }
+}
+
+public class Employee : Person
+{
+    public Employee(string name, string position) : base(name) {}
 }

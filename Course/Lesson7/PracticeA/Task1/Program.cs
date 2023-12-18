@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+<<<<<<< HEAD
     Console.WriteLine("Введите число для вычисления факториала:");
     int a = Convert.ToInt32(Console.ReadLine());
 
@@ -19,3 +20,8 @@ class Program
         return n * Factorial(n - 1);
     }
 }
+=======
+        Console.WriteLine("Hello, World!");
+    }
+}
+>>>>>>> main

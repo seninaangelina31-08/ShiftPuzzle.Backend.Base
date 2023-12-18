@@ -35,9 +35,20 @@ namespace Tasks
             Console.WriteLine(NOD(20, 15));
 
             Console.WriteLine("--- 6-я задача ---");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine(Palindrome("12321"));
+            Console.WriteLine(Palindrome("1234"));
+            Console.WriteLine(Palindrome("exe"));
+
+            Console.WriteLine("--- 7-я задача ---");
+            HanoiTowers(5, 'A', 'B', 'C');
+
+            Console.WriteLine("--- 8-я задача ---");
+            int[] set = {1, 2, 3, 4, 5};
+            IterateSubsets(set);
+
+            Console.WriteLine("--- 10-я задача ---");
+            int[] collection = {1, 2, 3};
+            GetPermutations(collection);
         }
 
         // 1-я задача
@@ -72,8 +83,7 @@ namespace Tasks
         // 4-я задача
         static double Sum(double[] array) {
             // Делаем пока длина массива не станет равняться 0
-            if (array.Length == 0)
-            {
+            if (array.Length == 0) {
                 return 0;
             }
             
@@ -98,6 +108,71 @@ namespace Tasks
                 return NOD(a - b, b);
             }
             return NOD(a, b - a);
+        }
+
+        // 6-я задача
+        public static bool Palindrome(string str) {
+            if (str.Length == 1) {
+                return true;
+            }
+
+            if (str[0] == str[str.Length - 1]) {
+                return Palindrome(str.Substring(1, str.Length - 2));
+            }
+            return false;
+        }
+
+        // 7-я задача
+        public static void HanoiTowers(int x, char a, char b, char c) {
+            // x - количество колец; a, b, c - башни
+            if (x == 1) {
+                Console.WriteLine($"Переместить кольцо 1 с {a} на {b}");
+                return;
+            }
+            HanoiTowers(x - 1, a, c, b);
+            Console.WriteLine($"Переместить кольцо {x} с {a} на {b}");
+            HanoiTowers(x - 1, c, b, a);
+        }
+
+        // 8-я задача
+        public static void IterateSubsets(int[] set, int idx = 0, string subset = "") {
+            int x = set.Length;
+
+            if (idx == x) {
+                Console.WriteLine("{" + subset.TrimEnd(',') + "}");
+                return;
+            }
+
+            IterateSubsets(set, idx + 1, subset);
+            IterateSubsets(set, idx + 1, subset + set[idx] + ",");
+        }
+
+        // 10-я задача
+        public static void GetPermutations(int[] collection, int[] permutation = null, bool[] used = null, int depth = 0) {
+            if (permutation == null) {
+                permutation = new int[collection.Length];
+            }
+            if (used == null) {
+                used = new bool[collection.Length];
+            }
+
+            if (depth == collection.Length) {
+                foreach (int elem in permutation) {
+                    Console.Write(elem + " ");
+                }
+                Console.WriteLine();
+                return;
+            }
+
+            for (int i = 0; i < collection.Length; ++i) {
+                if (used[i] == false) {
+                    permutation[depth] = collection[i];
+
+                    used[i] = true;
+                    GetPermutations(collection, permutation, used, depth + 1);
+                    used[i] = false;
+                }
+            }
         }
     }
 }

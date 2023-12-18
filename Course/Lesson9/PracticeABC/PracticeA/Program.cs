@@ -13,6 +13,9 @@ class Program
         {
             item.Introduce();
         }
+
+        people1.AgeAgain(10);
+        Console.WriteLine(people1.Age);
     }
 }
 
@@ -32,5 +35,16 @@ public class Person
         Console.WriteLine($"Привет! Моё имя {this.Name}");
     }
 
+    public virtual void AgeAgain(int age)
+    {
+        if (age >= 0)
+        {
+            this.Age = age;
+        }
+        else
+        {
+            this.Age = - age;
+        }
+    }
 
 }

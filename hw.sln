@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course", "Course", "{669EDA90-8041-486B-BD61-54320E8F2558}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson8", "Lesson8", "{97C8A9AD-D4F1-4511-90EC-A0D4106CA116}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework", "Homework", "{5A9480E5-6C10-4CCE-AE47-3B9DE6001126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw", "Course\Lesson8\Homework\hw\hw.csproj", "{FBB150B1-EC62-4595-9A2D-9C02DF11AF3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBB150B1-EC62-4595-9A2D-9C02DF11AF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB150B1-EC62-4595-9A2D-9C02DF11AF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB150B1-EC62-4595-9A2D-9C02DF11AF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB150B1-EC62-4595-9A2D-9C02DF11AF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{97C8A9AD-D4F1-4511-90EC-A0D4106CA116} = {669EDA90-8041-486B-BD61-54320E8F2558}
+		{5A9480E5-6C10-4CCE-AE47-3B9DE6001126} = {97C8A9AD-D4F1-4511-90EC-A0D4106CA116}
+		{FBB150B1-EC62-4595-9A2D-9C02DF11AF3F} = {5A9480E5-6C10-4CCE-AE47-3B9DE6001126}
+	EndGlobalSection
+EndGlobal

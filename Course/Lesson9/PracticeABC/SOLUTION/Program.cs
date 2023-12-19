@@ -45,3 +45,13 @@ public class Person
         }
     }
 }
+
+class Employee : Person
+{
+    public string Position;
+
+    public Employee(string name, int age, string position) : base(name, age)
+    {
+        this.Position = position;
+    }
+}

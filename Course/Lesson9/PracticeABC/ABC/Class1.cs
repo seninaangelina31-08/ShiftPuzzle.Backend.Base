@@ -14,6 +14,8 @@ class Class1
         {
             p.Introduce();
         }
+        
+        p1.SetAge(-10);
     }
 }
 public class Person
@@ -30,5 +32,17 @@ public class Person
     public void Introduce()
     {
         Console.WriteLine("Привет, моё имя " + name);
+    }
+
+    public void SetAge(int age)
+    {
+        if (age >= 0)
+        {
+            this.age = age;
+        }
+        else
+        {
+            Console.WriteLine("Возраст не может быть отрицательным.");
+        }
     }
 }

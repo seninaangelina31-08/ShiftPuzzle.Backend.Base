@@ -32,4 +32,16 @@ public class Person
     {
         Console.WriteLine($"Hi! My name is {Name}");
     }
+
+    public void SetAge(int new_age)
+    {
+        if (new_age >= 0)
+        {
+            this.Age = new_age;
+        }
+        else
+        {
+            Console.WriteLine("Возраст не может быть отрицательным!");
+        }
+    }
 }

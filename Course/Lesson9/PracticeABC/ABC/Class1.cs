@@ -14,7 +14,7 @@ class Class1
         {
             p.Introduce();
         }
-        
+
         p1.SetAge(-10);
     }
 }
@@ -44,5 +44,15 @@ public class Person
         {
             Console.WriteLine("Возраст не может быть отрицательным.");
         }
+    }
+}
+
+public class Employee : Person
+{
+    public string position;
+    
+    public Employee(string name, int age, string position) : base(name, age)
+    {
+        this.position = position;
     }
 }

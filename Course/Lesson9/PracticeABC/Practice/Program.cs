@@ -17,6 +17,13 @@ class Person
     {
         Console.WriteLine("Привет, мое имя {0}", name);
     }
+
+    static public void AgeLie(int age){
+        if (age < 0){
+            System.Console.WriteLine("Возраст не может быть отрицательным");
+        }
+    }
+   
 }
 
 class Program
@@ -24,6 +31,7 @@ class Program
     static void Main(string[] args)
     {
         Person[] people = new Person[3];
+        Person person1 = new Person("Витя", -1);
 
         people[0] = new Person("Гриша", 10);
         people[1] = new Person("Петя", 20);
@@ -33,7 +41,7 @@ class Program
         {
             person.Introduce();
         }
+        Person.AgeLie(person1.age);
 
-        Console.ReadKey();
     }
 }

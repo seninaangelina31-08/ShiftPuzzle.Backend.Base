@@ -14,6 +14,11 @@ class Program
         for (int i = 0; i < array_persons.Length; i++){
             array_persons[i].Introduce();
         }
+
+        Console.WriteLine("Employees");
+        Employee employee = new Employee("Branislav", 43);
+        employee.set_position("clerk");
+        Console.WriteLine(employee.Position);
     }
 }
 
@@ -37,5 +42,15 @@ public class Person{
     }
     public void Introduce(){
         Console.WriteLine($"Hello, my name is {Name}");
+    }
+}
+
+public class Employee : Person{
+
+    public Employee(string Name, int Age) : base(Name, Age) {}
+    public string Position;
+
+    public void set_position(string position){
+        this.Position = position;
     }
 }

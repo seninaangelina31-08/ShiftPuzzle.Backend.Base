@@ -11,6 +11,22 @@ class Person
         this.Age = age;
     }
 
+
+    class Employee : Person
+{
+    public string Position { get; set; }
+
+    public Employee(string name, int age, string position) : base(name, age)
+    {
+        this.Position = position;
+    }
+
+    public void Work()
+    {
+        Console.WriteLine($"{name} работает на позиции {Position}");
+    }
+}
+
     public int Age
     {
         get { return age; }
@@ -37,7 +53,7 @@ class Person
             {
                 new Person("Андрей", 20),
                 new Person("Акшин", 23),
-                new Person("Миша", -10)
+                new Person("Миша", 10)
             };
 
             foreach (var person in people)

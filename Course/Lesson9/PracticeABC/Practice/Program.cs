@@ -2,7 +2,7 @@
 
 using System;
 
-class Person
+public class Person
 {
     public string name;
     public int age;
@@ -24,6 +24,11 @@ class Person
         }
     }
    
+}
+public class Employee : Person{
+    public string position;
+
+    public Employee(string name, int age, string position) : base(name, age){}
 }
 
 class Program

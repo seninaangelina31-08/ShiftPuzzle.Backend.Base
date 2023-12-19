@@ -23,6 +23,9 @@ namespace Tasks
             // B1
             // Вылетит ошибка
             // Person not_yet_born_person = new Person("NoName", -666);
+            // C1
+            Employee employee = new Employee("Трудяжка", 25, "Босс");
+            employee.Introduce();
         }
     }
 }
@@ -53,5 +56,16 @@ public class Person
             throw new ArgumentException("Возраст должен быть положительным!!!");
         }
         return age;
+    }
+}
+
+// №C1
+public class Employee : Person
+{
+    public string position;
+    // переопределение конструктора
+    public Employee(string name, int age, string position) : base(name, age)
+    {
+        this.position = position;
     }
 }

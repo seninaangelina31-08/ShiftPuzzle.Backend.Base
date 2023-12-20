@@ -1,4 +1,4 @@
-﻿// Пратика B
+// Пратика B
 static void Task1(int [] mass, int N){
     var maxIndex = 0;
     var max = 0;

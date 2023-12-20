@@ -13,6 +13,7 @@ class Program
         return a + b;
     }
 
+    
 
     //2
     public static bool is_even(int number)
@@ -20,6 +21,7 @@ class Program
         return number % 2 == 0;
     }
 
+   
 
     //3
     public static string reverse_string( string s )
@@ -29,6 +31,7 @@ class Program
         return new string(charArray);
     }
 
+ 
 
     //4
     public static int find_max( int[] mass )
@@ -36,9 +39,10 @@ class Program
         return mass.Max();
     }
 
+ 
 
     // 5
-    public static int factorial( int sallary )
+    public static public static int factorial( int sallary )
     {
         return sallary * 12;
     }
@@ -48,6 +52,10 @@ class Program
     {
         return celsius * 9/5 + 32;
     }
+=======
+    // }
+
+  
 
 
     //7
@@ -67,7 +75,11 @@ class Program
         }
         return sum;
     }
+    // }
 
+    // //8
+    // static Task8()
+    // {
 
     //8
     public static void generate_password(string passtohack)

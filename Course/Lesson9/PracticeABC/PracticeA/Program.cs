@@ -16,6 +16,9 @@ class Program
 
         people1.AgeAgain(10);
         Console.WriteLine(people1.Age);
+
+        Employee person2 = new Employee("Sasha", 25, "Director");
+        Console.WriteLine(person2.Position);
     }
 }
 
@@ -45,6 +48,14 @@ public class Person
         {
             this.Age = - age;
         }
+    }
+}
+
+public class Employee: Person
+{
+    public string Position;
+    public Employee (string name, int age, string position) : base(name, age) {
+        this.Position = position;
     }
 
 }

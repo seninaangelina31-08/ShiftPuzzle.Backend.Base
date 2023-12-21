@@ -51,7 +51,7 @@ public class Employee : Person
 public class PersonFileService
 {
     static string from_file = "People.txt";
-    static string to_file = "Text.txt";
+    static string to_file = "Text.md";
 
     public static void WritePeopleToFile(List<Person> people)
     {

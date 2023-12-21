@@ -17,7 +17,18 @@ public class Person
     {
          Console.WriteLine($"Привет, мое имя {this.Name}");
     }
+    
 }
+
+public class Employee : Person
+{
+    
+    public string Position;
+    public Employee(string name, int age, string position) : base(name, age){
+        this.Position = position;
+    }
+}
+    
 
 
 class Program
@@ -44,5 +55,8 @@ class Program
         {
             el.Introduce();
         }
+        
+        Employee Vasya = new Employee("Vasya", 25, "Manager");
+        Console.WriteLine(Vasya.Position);
     }
 }

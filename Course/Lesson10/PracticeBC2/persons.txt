@@ -1,0 +1,4 @@
+Ura: 16
+Nikita: 8
+Gleb: 0
+Dasha: 43

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
 
 
 public class Person
@@ -51,8 +50,31 @@ public class Employee : Person
 
 public class PersonFileService
 {
-    
+    public static void WritePeopleToFile(List<Person> people)
+    {
+        List<Person> p = people;
+        string[] lines = new string[p.Count];
+        for (int i = 0; i < lines.Length; i++)
+        {
+            lines[i] = $"{p[i].Name}, {p[i].Age}";
+        }
+        File.WriteAllLines("People.md", lines);
+    }
+
+    public static List<Person> ReadPeopleFromFile()
+    {
+        string[] lines = File.ReadAllLines("people.txt");
+        List<Person> people = new List<Person>();
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split(',');
+            Person copy = new Person(parts[0], Int32.Parse(parts[1]));
+            people.Add(copy);
+        }
+        return people;
+    }
 }
+
 
 
 public class Program
@@ -69,11 +91,11 @@ public class Program
 
 
         // Writing people to the file
-        //PersonFileService.WritePeopleToFile(people);
+        PersonFileService.WritePeopleToFile(people);
 
 
         // Reading people from the file
-        //var peopleFromFile = PersonFileService.ReadPeopleFromFile();
+        var peopleFromFile = PersonFileService.ReadPeopleFromFile();
         
         
         foreach (var person in peopleFromFile)

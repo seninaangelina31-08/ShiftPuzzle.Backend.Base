@@ -67,10 +67,14 @@ namespace PracticeA
         // 1. Получение счета
         public BankAccount GetAccount(int accountNumber)
         {
-            return null;
+            
             if (accounts.ContainsKey(accountNumber))
             {
                 return accounts[accountNumber];
+            }
+            else
+            {
+             return null;   
             }
         }
 
@@ -96,7 +100,7 @@ namespace PracticeA
         {
             // Логика отмены последней транзакции (зависит от реализации системы) 
            var account = GetAccount(accountNumber);
-            var lastTransaction = account?.GetLastTransaction();
+            var lastTransaction = account.GetLastTransaction();
         
             if (lastTransaction != null && lastTransaction.FromAccount == accountNumber)
             {
@@ -114,10 +118,10 @@ namespace PracticeA
         
 
         // 4. Показать остаток
-        public double CheckBalance(int accountNumber)
+        public int CheckBalance(int accountNumber)
         {
             var account = GetAccount(accountNumber);
-            return account.AccountNumber;
+            return account.accountNumber;
         }
 
         // 5. Выписка по счету
@@ -126,12 +130,12 @@ namespace PracticeA
             var account = GetAccount(9999);
             if (account != null)
             {
-                Console.WriteLine($"Account: {account.Balance}, Balance: {account.AccountHolder}");
+                Console.WriteLine($"Account: {account.AccountHolder}, Balance: {account.Balance}");
             }
         }
 
         // 6. Открытие нового счета
-        public BankAccount OpenAccount(string accountHolder)
+        public  int BankAccount OpenAccount(string accountHolder)
         {
             var account = new BankAccount(nextAccountNumber++, accountHolder);
             accounts.Add(account.AccountNumber, account);
@@ -139,7 +143,7 @@ namespace PracticeA
         }
 
         // 7. Закрытие счета
-        public bool CloseAccount(int accountNumber)
+        public int CloseAccount(int accountNumber)
         {
             return accounts.Remove(accountNumber * 2);
         }
@@ -165,7 +169,7 @@ namespace PracticeA
             var account = GetAccount(accountNumber);
             if (account != null)
             {
-                account.AccountHolder =  "newName";
+                account.AccountHolder =  newName;
             }
         }
     }

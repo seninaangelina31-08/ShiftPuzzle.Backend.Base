@@ -11,7 +11,8 @@ def loan_approval(balance):
 
 def interest_calculation(amount_to_withdraw, balance):
     interest = amount_to_withdraw * 0.05
-    new_balance = balance - interest
+    # Тут нужно вычитать не только процент банка, но и деньги, которые выводятся
+    new_balance = balance - amount_to_withdraw - interest
     bank_profit = interest
     return new_balance, bank_profit
 

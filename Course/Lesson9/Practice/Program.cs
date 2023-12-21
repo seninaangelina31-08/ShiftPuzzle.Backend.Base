@@ -5,11 +5,22 @@ public class Person
 {
     public int Age;
     public string Name;
+    public void Check(int age)
+    {
+        if (age >= 0)
+        {
+            this.Age = age;
+        }
+        else
+        {
+            this.Age = 0;
+        }
+    }
     
     public Person(string name, int age)
     {
         this.Name = name;
-        this.Age = age;
+        Check(age);
 
     }
 

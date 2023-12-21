@@ -4,16 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(sumarray(5));
+     int[] arr = [2, 3, 1];
+        Console.WriteLine(Maxelement(arr, (uint)arr.Length));
+        Console.ReadKey(true);
     }
-    public static int sumarray(int a){
-
-        int index = 1;
-        if (a <= index){
-            return 1;
-        }
-        else{
-            return a + sumarray(a-1);
-        }
+    static int Maxelement(int[] arr, uint size)
+    {
+        if (size > 1u)
+            return Math.Max(arr[size - 1], Maxelement(arr, size - 1));
+        return arr[0];
     }
 }

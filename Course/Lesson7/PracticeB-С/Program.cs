@@ -106,62 +106,77 @@ int Min_derevo(string[][] derevo, int level = 0, int min = 0)
 string[][] derevo = [["53"], ["23", "68"], ["20", "26", "N", "74"], ["N", "N", "22", "N", "N", "91"]];
 // Console.WriteLine(Min_derevo(derevo));
 
-// int Bin_search(int[] array, int target, int[] index)
-// {
-//     if (index.Length == 0) {
-//         Array.Resize(ref index, array.Length);
-//         for (int i = 0; i < array.Length; i++) {
-//             index[i] = i + 1;
-//         }
-//     }
-//     if (array.Length > 1) {
-//         if (array.Length % 2 == 0) {
-//             if (array[array.Length / 2 - 1] >= target) {
-//                 return Bin_search(array[0..(array.Length / 2 - 1)], target, index[0..(array.Length / 2 - 1)]);
-//             }
-//             else {
-//                 return Bin_search(array[(array.Length / 2)..(array.Length - 1)], target, index[(array.Length / 2)..(array.Length - 1)]);
-//             }
-//         }
-//         else {
-//             if (array[array.Length / 2] >= target) {
-//                 return Bin_search(array[0..(array.Length / 2)], target, index[0..(array.Length / 2)]);
-//             }
-//             else {
-//                 return Bin_search(array[(array.Length / 2 + 1)..(array.Length - 1)], target, index[(array.Length / 2 + 1)..(array.Length - 1)]);
-//             }
-//         }
+int Bin_search(int[] array, int target, int[] index)
+{
+    if (index.Length == 0) {
+        Array.Resize(ref index, array.Length);
+        for (int i = 0; i < array.Length; i++) {
+            index[i] = i + 1;
+        }
+    }
+    if (array.Length > 2) {
+        foreach (int arr in array)
+            {
+                Console.Write(arr + " ");
+            }
+        Console.WriteLine();
+        foreach (int arr in index)
+            {
+                Console.Write(arr + " ");
+            }
+        Console.WriteLine();
+        if (array.Length % 2 != 0) {
+            if (array[array.Length / 2 - 1] >= target) {
+                Console.WriteLine(1);
+                return Bin_search(array[0..(array.Length / 2)], target, index[0..(array.Length / 2)]);
+            }
+            else {
+                Console.WriteLine(2);
+                return Bin_search(array[(array.Length / 2)..(array.Length)], target, index[(array.Length / 2)..(array.Length)]);
+            }
+        }
+        else {
+            if (array[array.Length / 2 - 1] >= target) {
+                Console.WriteLine(3);
+                return Bin_search(array[0..(array.Length / 2)], target, index[0..(array.Length / 2)]);
+            }
+            else {
+                Console.WriteLine(4);
+                return Bin_search(array[(array.Length / 2 + 1)..(array.Length)], target, index[(array.Length / 2 + 1)..(array.Length)]);
+            }
+        }
     
-//     }
-//     else {
-//         return index[0];
-//     }
-// }
-// int[] array = {1, 3, 2, 6, 4, 5, 9, 7, 8};
-// int[] index = {};
-// array = QuickSort(array);
+    }
+    else {
+        if (array[1] > array[0]) return index[1];
+        else return index[0];
+    }
+}
+int[] array = {1, 3, 2, 6, 4, 4, 5, 9, 7, 8, 8, 5};
+int[] index = {};
+array = QuickSort(array);
 // foreach (int arr in array)
 // {
 //     Console.WriteLine(arr);
 // }
-// Console.WriteLine(Bin_search(array, 5, index));
+Console.WriteLine(Bin_search(array, 5, index));
 
-// string Obhod(string[][] derevo, int level = 0, int i = 0)
-// {
-//     if (level >= derevo.GetLength(0)) {
-//         return "";
-//     }
-//     if (i == 0){
-//         Console.Write($"Узлы {level} уровня : {derevo[level][i]} ");
-//         return Obhod(derevo, level, i++);
-//     }
-//     else if (i < derevo[level].Length){
-//         Console.Write($"{derevo[level][i]} ");
-//         return Obhod(derevo, level, i++);
-//     }
-//     else{
-//         Console.WriteLine(".");
-//         return Obhod(derevo, level++, 0);
-//     }
-// }
+void Obhod(string[][] derevo, int level = 0, int i = 0)
+{
+    if (level >= derevo.GetLength(0)){}
+    else{
+        if (i == 0){
+            Console.Write($"Узлы {level} уровня : {derevo[level][i]} ");
+            Obhod(derevo, level, i + 1);
+        }
+        else if (i < derevo[level].Length){
+            Console.Write($"{derevo[level][i]} ");
+            Obhod(derevo, level, i + 1);
+        }
+        else{
+            Console.WriteLine();
+            Obhod(derevo, level + 1, 0);
+        }
+    }
+}
 // Obhod(derevo);

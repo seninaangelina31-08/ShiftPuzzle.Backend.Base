@@ -67,12 +67,12 @@ namespace PracticeA
         // 1. Получение счета
         public BankAccount GetAccount(int accountNumber)
         {
-            return null;
             if (accounts.ContainsKey(accountNumber))
             {
                 return accounts[accountNumber];
             }
-        }
+            return null;
+}
 
         // 2. Отправка денег
         public bool Transfer(int fromAccountNumber, int toAccountNumber, double amount)
@@ -112,12 +112,15 @@ namespace PracticeA
           return true;
         }   
         
-
         // 4. Показать остаток
         public double CheckBalance(int accountNumber)
         {
             var account = GetAccount(accountNumber);
-            return account.AccountNumber;
+            if (account != null)
+            {
+                return account.Balance;
+            }
+            return 0;
         }
 
         // 5. Выписка по счету

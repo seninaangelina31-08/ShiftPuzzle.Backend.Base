@@ -5,7 +5,7 @@ namespace Pracrice_A;
 
 
 
-class Person {
+public class Person {
 
     public string Name;
     public int Age;
@@ -31,6 +31,17 @@ class Person {
 
 
 }
+
+public class Employee : Person {
+    public string Position;
+    public Employee(string name, int age, string position): base(name, age) {
+        this.Position = position;
+    }
+
+
+}
+
+
 
 class Program
 {

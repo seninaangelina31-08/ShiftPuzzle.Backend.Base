@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 
 
 public class Person
@@ -76,9 +76,9 @@ public class Program
         //var peopleFromFile = PersonFileService.ReadPeopleFromFile();
         
         
-        foreach (var person in peopleFromFile)
-        {
-            person.Introduce();
-        }
+        //foreach (var person in peopleFromFile)
+        //{
+        //    person.Introduce();
+        //}
     }
 }

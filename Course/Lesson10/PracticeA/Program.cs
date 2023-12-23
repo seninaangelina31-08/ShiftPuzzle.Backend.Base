@@ -1,9 +1,18 @@
-﻿namespace PracticeA;
-class FileOperations
-{
-    static void Main(string[] args)
-    { 
+﻿using System;
+using System.IO;
 
-        // чтение запись в файл test.txt
+namespace PracticeA
+{
+    class FileOperations
+    {
+        static void Main(string[] args)
+        { 
+            string path = "test.txt";
+
+            File.WriteAllText(path, "test");
+
+            string content = File.ReadAllText(path);
+            Console.WriteLine(content);
+        }
     }
 }

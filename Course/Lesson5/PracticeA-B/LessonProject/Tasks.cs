@@ -10,7 +10,34 @@ namespace LessonProject
             Console.WriteLine("РЕШЕНИЕ:");
 
             //решайте задачу здесь
+            int[] arr = { 4, -3, 5, -2, -1, 2, 6, -2, 100 };
+            int n = 2;
 
+            int maksimum = int.MinValue;
+            int startIndex = -1;
+
+            for (int i = 0; i <= arr.Length - n; i++)
+            {
+                int currentSum = 0;
+                for (int j = i; j < i + n; j++)
+                {
+                    currentSum += arr[j];
+                }
+
+                if (currentSum > maksimum)
+                {
+                    maksimum = currentSum;
+                    startIndex = i;
+                }
+            }
+
+            Console.Write("Maksimalnia summa {0}: [", n);
+            for (int i = startIndex; i < startIndex + n; i++)
+            {
+                Console.Write(arr[i] + " ,");
+            
+            }
+            Console.Write("0]");
             //не выходя за пределы
         }
     }
@@ -23,7 +50,7 @@ namespace LessonProject
             Console.WriteLine("РЕШЕНИЕ:");
 
             //решайте задачу здесь
-
+            // -
             //не выходя за пределы
         }
     }
@@ -49,7 +76,16 @@ namespace LessonProject
             Console.WriteLine("РЕШЕНИЕ:");
 
             //решайте задачу здесь
+            int[] arr = { 1, 2, 3, 4, 5 };
+            int k = 2;
 
+            int n = arr.Length;
+
+            
+            Array.Reverse(arr, 0, n);
+            Array.Reverse(arr, 0, k);
+            Array.Reverse(arr, k, n - k);
+            Console.WriteLine(string.Join(", ", arr));
             //не выходя за пределы
         
         }

@@ -3,7 +3,8 @@ class FileOperations
 {
     static void Main(string[] args)
     { 
-
-        // чтение запись в файл test.txt
+        string[] lines = new string[]{"WOW", "FONDERFUL"}
+        File.WriteAllLines("test.txt", lines);
+        string[] linesOut = File.ReadAllLines("test.txt");
     }
 }

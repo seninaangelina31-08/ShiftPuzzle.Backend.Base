@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using System.Text.Json;
 
 
 public class Person
@@ -49,9 +50,24 @@ public class Employee : Person
 }
 
 
-public class PersonFileService
+public static class PersonFileService
 {
-    
+    static void writePersonToFile(string fileName, Person person)
+    {
+        string jsonString = JsonSerializer.Serialize(person);
+        File.WriteAllText(fileName, jsonString);
+    }
+    static Person readPersonToFile(string fileName)
+    {
+        string jsonString = File.ReadAllText(filepath);
+        return JsonConvert.DeserializeObject<Person>(jsonString);
+    }
+
+    static void writePersonToMDFile(string fileName, Person person)
+    {
+        File.WriteLines(fileName, "Name: " + person.Name);
+        File.WriteLines(fileName, "Age: " + person.Age);
+    }
 }
 
 
@@ -74,8 +90,8 @@ public class Program
 
         // Reading people from the file
         //var peopleFromFile = PersonFileService.ReadPeopleFromFile();
-        
-        
+
+
         foreach (var person in peopleFromFile)
         {
             person.Introduce();

@@ -95,8 +95,14 @@ public class PersonFileService
 }
 
 
+
 public class Program
 {
+
+    public static void Markdown(string[] array)
+    {
+        File.WriteAllLines("Markdown.md", array);
+    }
     public static void Main()
     {
         // List of people to write to and read from the file
@@ -118,5 +124,17 @@ public class Program
         {
             person.Introduce();
         }
+
+        string[] md_array = {
+            "# Абоба",
+            "## Абоба_Two",
+            "### Абоба_Three",
+            "* Список1",
+            "* Список2",
+            "    + Список_level2_1",
+            "    + Список_level2_2"
+            
+            };
+        Markdown(md_array);
     }
 }

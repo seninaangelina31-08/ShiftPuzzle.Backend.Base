@@ -2,7 +2,7 @@
 class FileOperations
 {
 
-    public static void Write()
+    public static void Writes()
     {
         string[] strs = new string[10];
         for (int i = 0; i < strs.Length; i++)
@@ -18,8 +18,10 @@ class FileOperations
         return File.ReadAllLines("Test.txt");
     }
     static void Main(string[] args)
-    { 
-        Write();
+    {   
+        File.OpenWrite("Test.txt");
+        File.Write("Test.txt", "asdasd");
+        Writes();
         string[] file = Read();
         
         foreach (string el in file)

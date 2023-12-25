@@ -60,11 +60,11 @@ public class PersonFileService
         {
             people_string[i] = people[i].Return_element();
         }
-        File.WriteAllLines("Person.txt", people_string);
+        File.WriteAllLines("Person.md", people_string);
     }
     public static Person[] ReadPeopleFromFile()
     {
-        string[] lines = File.ReadAllLines("Person.txt");
+        string[] lines = File.ReadAllLines("Person.md");
         Person[] people_read = new Person[lines.Length];
         for (int i = 0; i < lines.Length; i++)
         {

@@ -51,7 +51,16 @@ public class Employee : Person
 
 public class PersonFileService
 {
-    
+public  static void WritePeopleToFile(List<Person> people)
+    {
+    List<Person> p = people;
+    string[] lines = new string[p.Count];
+    for (int i = 0; i < lines.Length; i++)
+    {
+         lines[i] = $"{p[i].Name}, {p[i].Age}";
+    }
+    File.WriteAllLines("People.md", lines);
+   }
 }
 
 
@@ -69,16 +78,16 @@ public class Program
 
 
         // Writing people to the file
-        //PersonFileService.WritePeopleToFile(people);
+        PersonFileService.WritePeopleToFile(people);
 
 
         // Reading people from the file
         //var peopleFromFile = PersonFileService.ReadPeopleFromFile();
         
         
-        foreach (var person in peopleFromFile)
-        {
-            person.Introduce();
-        }
+        // foreach (var person in peopleFromFile)
+        // {
+        //     person.Introduce();
+        // }
     }
 }

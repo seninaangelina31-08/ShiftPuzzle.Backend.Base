@@ -1,9 +1,24 @@
 ﻿namespace Homework;
 
-class Program
+class LoanApproval
 {
-    static void Main(string[] args)
+    public static string CheckLoanApproval(double balance)
     {
-        Console.WriteLine("Hello, World!");
+        if (balance <= 0)
+        {
+            return "Кредит одобрен!";
+        }
+        else
+        {
+            return "У вас достаточно средств, кредит не нужен.";
+        }
+    }
+}
+
+class DepositWithdrawal
+{
+    public static double ModifyBalance(double deposit, double balance)
+    {
+        return balance - deposit;
     }
 }

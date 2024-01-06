@@ -1,4 +1,5 @@
 using System;
+namespace task 2;
 
 class Program
 {
@@ -6,7 +7,7 @@ class Program
     {
         Console.WriteLine("Введите год вашего рождения:");
         int yearOfBirth = Convert.ToInt32(Console.ReadLine());
-        int age = DateTime.Now.Year - yearOfBirth;
+        int age = 2023 - yearOfBirth;
         Console.WriteLine("Вам " + age + " лет.");
     }
 }

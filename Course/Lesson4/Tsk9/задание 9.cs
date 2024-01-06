@@ -4,20 +4,20 @@ class Program
 {
     static void Main()
     {
-        // Исходный массив
+        
         int[] arr = { 5, 2, 8, 1, 3 };
 
-        // Вывод неотсортированного массива
+        
         Console.WriteLine("Неотсортированный массив:");
         foreach (int num in arr)
         {
             Console.Write(num + " ");
         }
 
-        // Сортировка массива
+        
         BubbleSort(arr);
 
-        // Вывод отсортированного массива
+        
         Console.WriteLine("\nОтсортированный массив:");
         foreach (int num in arr)
         {
@@ -27,7 +27,7 @@ class Program
         Console.ReadLine();
     }
 
-    // Метод сортировки пузырьком
+    
     static void BubbleSort(int[] array)
     {
         int n = array.Length;

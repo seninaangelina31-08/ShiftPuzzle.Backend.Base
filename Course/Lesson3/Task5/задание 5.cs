@@ -4,10 +4,10 @@ class Program
 {
     static void Main()
     {
-        // Исходный массив
+        
         int[] arr = { 1, 2, 3, 4, 5 };
 
-        // Выводим длину массива
+        
         Console.WriteLine("Длина массива: " + arr.Length);
     }
 }

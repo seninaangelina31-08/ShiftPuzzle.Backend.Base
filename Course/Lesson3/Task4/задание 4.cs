@@ -4,13 +4,13 @@ class Program
 {
     static void Main()
     {
-        // Исходный массив
+        
         int[] arr = { 1, 2, 3, 4, 5 };
 
-        // Изменяем третий элемент на 100
+       
         arr[2] = 100;
 
-        // Выводим результат
+        
         Console.WriteLine("Массив после изменения:");
         foreach (int num in arr)
         {

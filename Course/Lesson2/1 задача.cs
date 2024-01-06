@@ -1,4 +1,5 @@
 using System;
+namespace task 1;
 
 class Program
 {

@@ -1,4 +1,4 @@
-using System;
+dotnet runusing System;
 
 class Program
 {

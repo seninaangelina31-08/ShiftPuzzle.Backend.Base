@@ -145,8 +145,11 @@ class SimpleDB
 
     public void RemoveStudent(string name)
     {
-        students.Remove(name);
-        Console.WriteLine("Student killed");
+        if (students.Remove(name) == true) {
+            Console.WriteLine("Student killed");
+        } else {
+            Console.WriteLine("Enemy wasn't spotted");
+        }
     }
 
     public void ShowStudentInfo(string name)

@@ -58,11 +58,11 @@ public class PersonFileService
             lines[i+1] = "Age: " + person.Age;
             i += 2;
         }
-        File.WriteAllLines("person.txt", lines);
+        File.WriteAllLines("person.md", lines);
     }
 
     public static Person[] ReadPeopleFromFile() {
-        string[] lines = File.ReadAllLines("person.txt");
+        string[] lines = File.ReadAllLines("person.md");
         Person[] people = new Person[lines.Length];
         for (int i = 0; i < lines.Length/2; i+=2) {
             string name = lines[i].Substring(6);

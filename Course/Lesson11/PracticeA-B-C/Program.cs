@@ -60,7 +60,7 @@ public class StudetnFileService
         students = data;
     }
 
-    public  void SaveToFile(string filePath=FilePath)
+    public void SaveToFile(string filePath=FilePath)
     {
         using (var writer = new StreamWriter(filePath))
         {
@@ -128,31 +128,52 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        Console.WriteLine("Database successfully saved");
+        fileService.SaveToFile("students.txt");
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        Console.WriteLine("Database loaded successfully");
+        fileService.LoadFromFile("students.txt");
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        var student = new Student(name);
+        students.Add(name, student);
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        foreach (var studentt in students)
+        {
+            if (studentt.Key == name)
+            {
+                students.Remove(name);
+            } else
+            {
+                Console.WriteLine("There is no such student");
+            }
+        }
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        foreach (var studentt in students)
+        {
+            if (studentt.Key == name)
+            {
+                foreach (var student in students.Values)
+                {
+                    if (student.Name == name)
+                    {
+                        string grades = string.Join(";", student.Grades.Select(g => $"{g.Key}:{g.Value}"));
+                        string attendance = string.Join(";", student.Attendance.Select(a => $"{a.Key}:{a.Value}"));
+                        Console.WriteLine($"{student.Name},{grades},{attendance}");
+                    }
+                }
+            }
+        }
     }
 
     public Student GetStudent(string name)
@@ -192,6 +213,7 @@ class Program
                     Console.Write("Vvedite imia studenta: ");
                     string name = Console.ReadLine();
                     db.AddStudent(name);
+                    Console.Write("Student added successfully");
                     break;
                 case 2:
                     Console.Write("Vvedite imia studenta (info): ");

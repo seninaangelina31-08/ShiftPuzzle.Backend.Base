@@ -60,7 +60,7 @@ public class StudetnFileService
         students = data;
     }
 
-    public  void SaveToFile(string filePath=FilePath)
+    public void SaveToFile(string filePath = FilePath)
     {
         using (var writer = new StreamWriter(filePath))
         {
@@ -72,48 +72,48 @@ public class StudetnFileService
             }
         }
     }
- public void LoadFromFile(string filePath = FilePath)
-{
-    if (!File.Exists(filePath))
+    public void LoadFromFile(string filePath = FilePath)
     {
-        Console.WriteLine("���� �� ������.");
-        return;
-    }
-
-    using (var reader = new StreamReader(filePath))
-    {
-        string line;
-        while ((line = reader.ReadLine()) != null)
+        if (!File.Exists(filePath))
         {
-            var parts = line.Split(',');
-            if (parts.Length < 3)
+            Console.WriteLine("���� �� ������.");
+            return;
+        }
+
+        using (var reader = new StreamReader(filePath))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
             {
-                continue; // ������� � ��������� ������, ���� ������ �������
+                var parts = line.Split(',');
+                if (parts.Length < 3)
+                {
+                    continue; // ������� � ��������� ������, ���� ������ �������
+                }
+
+                var studentName = parts[0];
+                var student = new Student(studentName);
+
+                // ������ ������
+                var gradesPart = parts[1].Split(':');
+                if (gradesPart.Length == 2 && int.TryParse(gradesPart[1], out int grade))
+                {
+                    student.Grades.Add(gradesPart[0], grade);
+                }
+
+                // ������ ������ � ������������
+                var attendancePart = parts[2].Split(':');
+                if (attendancePart.Length == 2 && DateTime.TryParse(attendancePart[0], out DateTime date) && bool.TryParse(attendancePart[1], out bool wasPresent))
+                {
+                    student.Attendance.Add(date.ToLongDateString(), wasPresent);
+                }
+
+                students.Add(student.Name, student);
             }
-
-            var studentName = parts[0];
-            var student = new Student(studentName);
-
-            // ������ ������
-            var gradesPart = parts[1].Split(':');
-            if (gradesPart.Length == 2 && int.TryParse(gradesPart[1], out int grade))
-            {
-                student.Grades.Add(gradesPart[0], grade);
-            }
-
-            // ������ ������ � ������������
-            var attendancePart = parts[2].Split(':');
-            if (attendancePart.Length == 2 && DateTime.TryParse(attendancePart[0], out DateTime date) && bool.TryParse(attendancePart[1], out bool wasPresent))
-            {
-                student.Attendance.Add(date.ToLongDateString(), wasPresent);
-            }
-
-            students.Add(student.Name, student);
         }
     }
-}
 
-     
+
 }
 
 class SimpleDB
@@ -124,35 +124,57 @@ class SimpleDB
         fileService = new StudetnFileService(students);
         LoadDB();
     }
-    public  Dictionary<string, Student> students = new Dictionary<string, Student>();
+    public Dictionary<string, Student> students = new Dictionary<string, Student>();
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        fileService.SaveToFile(students);
+        Console.WriteLine("Baza dannix sohranjena v fail.");
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        students = fileService.LoadFromFile();
+        Console.WriteLine("Baza dannix zagruzhena iz faila.");
     }
+
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (!students.ContainsKey(name))
+        {
+            students.Add(name, new Student(name));
+            Console.WriteLine($"Student {name} dobavlen.");
+        }
+        else
+        {
+            Console.WriteLine($"Student {name} uzhe sushchestvuet.");
+        }
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name))
+        {
+            students.Remove(name);
+            Console.WriteLine($"Student {name} udalen.");
+        }
+        else
+        {
+            Console.WriteLine($"Student {name} ne naiden.");
+        }
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name))
+        {
+            Student student = students[name];
+            Console.WriteLine($"Informaciia o studente {name}: {student}");
+        }
+        else
+        {
+            Console.WriteLine($"Student {name} ne naiden.");
+        }
     }
 
     public Student GetStudent(string name)
@@ -174,7 +196,7 @@ class Program
     static void Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        var db = new SimpleDB(); 
+        var db = new SimpleDB();
         while (true)
         {
             Console.WriteLine("\n1. Dobavit' srudenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");

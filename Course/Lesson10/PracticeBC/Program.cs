@@ -51,12 +51,14 @@ public class Employee : Person
 public class PersonFileService
 {
     public static void WritePeopleToFile(Person[] people) {
+        int i = 0;
+        string[] lines = new string[people.Length*2];
         foreach (Person person in people) {
-            string[] lines = new string[2];
-            lines[0] = "Name: " + person.Name;
-            lines[1] = "Age: " + person.Age;
-            File.WriteAllLines("person.txt", lines);
+            lines[i] = "Name: " + person.Name;
+            lines[i+1] = "Age: " + person.Age;
+            i += 2;
         }
+        File.WriteAllLines("person.txt", lines);
     }
 
     public static Person[] ReadPeopleFromFile() {

@@ -139,20 +139,23 @@ class SimpleDB
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        students.Add(name, new Student(name));
+        Console.WriteLine("Student added");
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        students.Remove(name);
+        Console.WriteLine("Student killed");
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        Student man = students[name];
+        Console.WriteLine("Меня зовут"+name);
+        foreach (var grade in man.Grades) {
+            Console.WriteLine($"Оценка {grade.Value} по предмету '{grade.Key}'");
+        }
     }
 
     public Student GetStudent(string name)

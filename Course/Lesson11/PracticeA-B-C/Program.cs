@@ -128,31 +128,63 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        //Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
+        fileService.SaveToFile(students);
+        Console.WriteLine("Data base was save in file (вставьте название вашего файла) .");
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        //Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
+        students = fileService.LoadFromFile();
+        Console.WriteLine("Data base was load from file (вставьте название вашего файла).");
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        //Console.WriteLine("Funcional ne realizovan...");
+        //  practice A;
+        if (students.ContainsKey(name))
+        {
+            students.Add(name, new Student(name));
+            Console.WriteLine($"Student {name} was added.");
+        }
+        else
+        {
+            Console.WriteLine($"Student {name} has already been added to the database.");
+        }
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        //Console.WriteLine("Funcional ne realizovan...");
+        //  practice A;
+        if (students.ContainsKey(name))
+        {
+            students.Remove(name);
+            Console.WriteLine($"Student {name} deleted.");
+        }
+        else
+        {
+            Console.WriteLine($"Student {name} not found.");
+        }
+    
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        //Console.WriteLine("Funcional ne realizovan...");
+        //  practice A;
+        if (students.ContainsKey(name))
+        {
+            Student student = students[name];
+            Console.WriteLine($"Information about student {name}: {student}");
+        }
+        else
+        {
+            Console.WriteLine($"Student {name} not found.");
+        }
     }
 
     public Student GetStudent(string name)

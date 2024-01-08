@@ -34,7 +34,7 @@ public class Person
         }
     }
 
-    public virtual string Info()
+    public string Info()
     {
         return $"{this.Name},{this.Age}";
     }

@@ -139,20 +139,40 @@ class SimpleDB
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        Student StudentToAdd = new Student(name);
+        students.Add(name, StudentToAdd);
+        Console.WriteLine("Студент успешно добавлен в базу данных.");
+
          //  practice A;
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        if (students.Remove(name))
+        {
+            Console.WriteLine("Студент успешно отчислен и удален из базы данных.");
+        }
+        else
+        {
+            Console.WriteLine("Студент не найден в базе данных.");
+        }
          //  practice A;
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        Student StudentToShow = students[name];
+        Console.WriteLine($"Студент: {StudentToShow.Name}");
+        Console.WriteLine("Оценки: ");
+        foreach (var grade in StudentToShow.Grades)
+        {
+            Console.WriteLine($"{grade.Key}: {grade.Value}");
+        }
+        Console.WriteLine("Посещаемость: ");
+        foreach (var attendance in StudentToShow.Attendance)
+        {
+            Console.WriteLine($"{attendance.Key}: {attendance.Value}");
+        }
     }
 
     public Student GetStudent(string name)
@@ -177,7 +197,7 @@ class Program
         var db = new SimpleDB(); 
         while (true)
         {
-            Console.WriteLine("\n1. Dobavit' srudenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");
+            Console.WriteLine("\n1. Dobavit' studenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");
             Console.Write("Vibor: ");
 
             if (!int.TryParse(Console.ReadLine(), out int choice))

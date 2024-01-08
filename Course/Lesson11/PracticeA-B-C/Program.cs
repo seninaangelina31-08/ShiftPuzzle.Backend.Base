@@ -128,14 +128,14 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        fileService.SaveToFile("students.txt");
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        fileService.LoadFromFile("students.txt");
+        students = fileService.students;
+        
     }
     public void AddStudent(string name)
     {

@@ -76,7 +76,7 @@ public class StudetnFileService
 {
     if (!File.Exists(filePath))
     {
-        Console.WriteLine("���� �� ������.");
+        Console.WriteLine("???? ?? ??????.");
         return;
     }
 
@@ -88,20 +88,20 @@ public class StudetnFileService
             var parts = line.Split(',');
             if (parts.Length < 3)
             {
-                continue; // ������� � ��������� ������, ���� ������ �������
+                continue; // ??????? ? ????????? ??????, ???? ?????? ???????
             }
 
             var studentName = parts[0];
             var student = new Student(studentName);
 
-            // ������ ������
+            // ?????? ??????
             var gradesPart = parts[1].Split(':');
             if (gradesPart.Length == 2 && int.TryParse(gradesPart[1], out int grade))
             {
                 student.Grades.Add(gradesPart[0], grade);
             }
 
-            // ������ ������ � ������������
+            // ?????? ?????? ? ????????????
             var attendancePart = parts[2].Split(':');
             if (attendancePart.Length == 2 && DateTime.TryParse(attendancePart[0], out DateTime date) && bool.TryParse(attendancePart[1], out bool wasPresent))
             {
@@ -128,14 +128,17 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        StudetnFileService MyService = new StudetnFileService(students);
+        MyService.SaveToFile();
+        Console.WriteLine("All Saved");
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        StudetnFileService MyService = new StudetnFileService(students);
+        MyService.LoadFromFile();
+        students = MyService.students;
+        Console.WriteLine("All loaded");
     }
     public void AddStudent(string name)
     {
@@ -155,10 +158,14 @@ class SimpleDB
     public void ShowStudentInfo(string name)
     {
         Student man = students[name];
-        Console.WriteLine("Меня зовут"+name);
+        Console.WriteLine("???? ?????"+name);
         foreach (var grade in man.Grades) {
-            Console.WriteLine($"Оценка {grade.Value} по предмету '{grade.Key}'");
+            Console.WriteLine($"?????? {grade.Value} ?? ???????? '{grade.Key}'");
         }
+        foreach (var att in man.Attendance) {
+            Console.WriteLine($"{att.Key} ????? {att.Value}");
+        }
+
     }
 
     public Student GetStudent(string name)

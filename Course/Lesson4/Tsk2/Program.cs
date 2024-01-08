@@ -1,8 +1,8 @@
-using System;
+﻿namespace Tsk2;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
         int[] numbers = new int[] { 10, 20, 30, 40, 50 };
         int max = numbers[0];

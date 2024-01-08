@@ -127,32 +127,61 @@ class SimpleDB
     public  Dictionary<string, Student> students = new Dictionary<string, Student>();
 
     public void SaveDB()
-    {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
-    }
+  {
+   fileService.SaveToFile();
+  }
 
     public void LoadDB()
-    {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
-    }
+  {
+   fileService.LoadFromFile();
+  }
+
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+    if (!students.ContainsKey(name))
+   {
+       students.Add(name, new Student(name));
+       Console.WriteLine($"Student {name} added.");
+   }
+    else
+   {
+       Console.WriteLine($"Student {name} already exists.");
+   }
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+   if (students.ContainsKey(name))
+   {
+       students.Remove(name);
+       Console.WriteLine($"Student {name} deleted.");
+   }
+   else
+   {
+       Console.WriteLine($"The student {name} not found.");
+   }
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+   if (students.TryGetValue(name, out var student))
+   {
+       Console.WriteLine($"Student's name: {student.Name}");
+       Console.WriteLine("Evaluations:");
+       foreach (var grade in student.Grades)
+       {
+           Console.WriteLine($"{grade.Key}: {grade.Value}");
+       }
+       Console.WriteLine("Attendance:");
+       foreach (var attendance in student.Attendance)
+       {
+           Console.WriteLine($"{attendance.Key}: {attendance.Value}");
+       }
+   }
+   else
+   {
+       Console.WriteLine($"The student {name} not found.");
+   }
     }
 
     public Student GetStudent(string name)

@@ -60,7 +60,7 @@ public class StudetnFileService
         students = data;
     }
 
-    public  void SaveToFile(string filePath=FilePath)
+    public void SaveToFile(string filePath=FilePath)
     {
         using (var writer = new StreamWriter(filePath))
         {
@@ -139,20 +139,69 @@ class SimpleDB
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (!students.ContainsKey(name))
+        {
+            Student student = new Student(name);
+            students.Add(name, student);
+            Console.WriteLine($"Student '{name}' dobavlen v bazhu dannyx");
+        }
+        else
+        {
+            Console.WriteLine($"Student s imenem '{name}' uzhe sushchestvuet v bazhe dannyx");
+        }
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name))
+        {
+            students.Remove(name);
+            Console.WriteLine($"Student '{name}' udalen iz bazhy dannyx");
+        }
+        else
+        {
+            Console.WriteLine($"Student s imenem '{name}' ne nayden v bazhe dannyx");
+        }
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name))
+        {
+            Student student = students[name];
+            Console.WriteLine($"Informaciya o studente '{name}':");
+            Console.WriteLine($"Imya: {student.Name}");
+
+            Console.WriteLine("Ocenki:");
+            if (student.Grades.Count > 0)
+            {
+                foreach (var grade in student.Grades)
+                {
+                    Console.WriteLine($"Predmet: {grade.Key}, Ocenka: {grade.Value}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ocenki ne ukazany.");
+            }
+
+            Console.WriteLine("Posechaemost:");
+            if (student.Attendance.Count > 0)
+            {
+                foreach (var attendance in student.Attendance)
+                {
+                    Console.WriteLine($"Data: {attendance.Key}, Prisutstvie: {attendance.Value}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Dannye o posechaemosti ne ukazany.");
+            }
+        }
+        else
+        {
+            Console.WriteLine($"Student s imenem '{name}' ne nayden v bazhe dannyx.");
+        }
     }
 
     public Student GetStudent(string name)

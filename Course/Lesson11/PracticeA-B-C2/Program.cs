@@ -1,3 +1,5 @@
+﻿namespace PracticeA_B_C2;
+
 using System;
 using System.Collections.Generic;
 
@@ -128,14 +130,10 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
     }
     public void AddStudent(string name)
     {
@@ -150,10 +148,17 @@ class SimpleDB
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine(students);
-        foreach (var grade in student.Grades)
+        Console.WriteLine("Imua:");
+        Console.WriteLine(students[name].Name);
+        Console.WriteLine("Ocenki:");
+        foreach (var grade in students[name].Grades)
         {
             Console.WriteLine($"{grade.Key}: {grade.Value}");
+        }
+        Console.WriteLine("Poseshaemost:");
+        foreach (var attendanse in students[name].Attendance)
+        {
+            Console.WriteLine($"{attendanse.Key}: {attendanse.Value}");
         }
     }
 

@@ -3,66 +3,63 @@ using System.Collections.Generic;
 
 namespace SimpleBD
 {     
-    class Student
+
+        class Program
+{
+    static void Main()
     {
-        public string Name { get; set; }
-        public Dictionary<string, int> Grades { get; set; }
-        public List<string> Attendance { get; set; }
+        Person[] people = new Person[4];
 
-        public Student(string name)
-        {
-            Name = name;
-            Grades = new Dictionary<string, int>();
-            Attendance = new List<string>();
-        }
+        people[0] = new Person("Настя", 17);
+        people[1] = new Person("Паша", 12);
+        people[2] = new Person("Саша", 13);
+        people[2] = new Person("Ашкин", 100);
 
-        public void AddGrade(string subject, int grade)
+        foreach (Person person in people)
         {
-            Grades[subject] = grade;
-        }
-
-        public void AddAttendance(string date)
-        {
-            Attendance.Add(date);
+            person.Introduce();
         }
     }
+}
 
-    class SimpleDB
+public class Person
+{
+    public string Name;
+    public int Age;
+
+    public Person(string name, int age)
     {
-        private Dictionary<string, Student> students = new Dictionary<string, Student>();
+        this.Name = name;
+        this.Age = age;
+    }
 
-        public void AddStudent(Student student)
-        {
-            students[student.Name] = student;
-        }
+    public virtual void Introduce()
+    {
+        Console.WriteLine($"Привет, мое имя {Name}");
+    }
 
-        public void RemoveStudent(string name)
+    public void SetAge(int new_age)
+    {
+        if (new_age >= 0)
         {
-            students.Remove(name);
+            this.Age = new_age;
         }
+        else
+        {
+            Console.WriteLine("Возраст не бывает отрицательный");
+        }
+    }
+}
 
-        public void ShowStudentInfo(string name)
-        {
-            if (students.ContainsKey(name))
-            {
-                var student = students[name];
-                Console.WriteLine($"Name: {student.Name}");
-                Console.WriteLine("Grades:");
-                foreach (var grade in student.Grades)
-                {
-                    Console.WriteLine($"{grade.Key}: {grade.Value}");
-                }
-                Console.WriteLine("Attendance:");
-                foreach (var date in student.Attendance)
-                {
-                    Console.WriteLine(date);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Student not found.");
-            }
-        }
+    class Employee : Person
+{
+    public string Position;
+
+    public Employee(string name, int age, string position) : base(name, age)
+    {
+        this.Position = position;
+    }
+}
     }
 
     class Program

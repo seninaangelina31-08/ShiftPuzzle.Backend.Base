@@ -130,14 +130,13 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        fileService = new StudetnFileService(students);
+        fileService.SaveToFile();
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        fileService.LoadFromFile();
     }
     public void AddStudent(string name)
     {
@@ -175,10 +174,12 @@ class SimpleDB
             return;
         }
         Console.WriteLine(students[name].Name);
+        Console.WriteLine("poseshaemost'");
         foreach (var el in students[name].Attendance)
         {
             Console.WriteLine(el);
         }
+        Console.WriteLine("ocenki");
         foreach (var el in students[name].Grades)
         {
             Console.WriteLine(el);

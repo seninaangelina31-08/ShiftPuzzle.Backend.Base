@@ -14,13 +14,7 @@ public class Student
     {
         Name = name;
         Grades = new Dictionary<string, int>();
-        // Для проверки того, что выводятся оценки
-        // Grades.Add("matan", 2);
-        // Grades.Add("himiya", 5);
         Attendance = new Dictionary<string, bool>();
-        // Для проверки того, что выводятся оценки
-        // Attendance.Add("friday 13.06.2666", false);
-        // Attendance.Add("monday 07.07.2777", true);
     }
 
     public void AddGrade()
@@ -137,14 +131,14 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        Console.WriteLine("Baza dannih bila uspeshno sohranena :)");
+        fileService.SaveToFile();
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        Console.WriteLine("Baza dannih bila uspeshno zagrugena :)");
+        fileService.LoadFromFile();
     }
     public void AddStudent(string name)
     {

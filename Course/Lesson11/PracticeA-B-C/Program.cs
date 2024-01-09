@@ -128,31 +128,63 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        // Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
+        fileService.SaveToFile();
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        // Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
+        fileService.LoadFromFile();
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        // Console.WriteLine("Funcional ne realizovan...");
+        // practice A;
+        Student student =  new Student(name);
+        students[name] = student;
+        Console.WriteLine($"Student {name} dobavlen.");
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        // Console.WriteLine("Funcional ne realizovan...");
+        //  practice A;
+        
+        if (students.TryGetValue(name, out var student))
+        {
+            students.Remove(name);
+            Console.WriteLine($"Student {name} ydalen.");
+        }
+        else
+        {
+            Console.WriteLine("Student ne najden.");
+        }
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        // Console.WriteLine("Funcional ne realizovan...");
+        //  practice A;
+        if (students.TryGetValue(name, out var student))
+        {
+            Console.WriteLine($"Student {name}: ");
+            foreach(var v in student.Grades)
+            {
+                Console.WriteLine(v);
+            }
+            foreach(var v in student.Attendance)
+            {
+                Console.WriteLine(v);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Student ne najden.");
+        }
+       
     }
 
     public Student GetStudent(string name)

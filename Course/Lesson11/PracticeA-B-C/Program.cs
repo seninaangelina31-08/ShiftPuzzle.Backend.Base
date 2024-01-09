@@ -1,5 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+{
+    
+}
 
 public class Student
 {
@@ -17,18 +22,31 @@ public class Student
     public void AddGrade()
     {
         Console.Write("Vvedite predmet: ");
-        string subject = Console.ReadLine() ?? "";
+    string subject = Console.ReadLine() ?? "";
 
+    int grade;
+    bool isValidGrade = false;
+    while (!isValidGrade)
+    {
         Console.Write("Vvedite ocenku: ");
-        if (int.TryParse(Console.ReadLine(), out int grade))
+        if (int.TryParse(Console.ReadLine(), out grade))
         {
-            Grades[subject] = grade;
-            Console.WriteLine($"Ocenka {grade} po predmetu '{subject}' dobavlena.");
+            if (grade >= 0 && grade <= 10)
+            {
+                Grades[subject] = grade;
+                Console.WriteLine($"Ocenka {grade} po predmetu '{subject}' dobavlena.");
+                isValidGrade = true;
+            }
+            else
+            {
+                Console.WriteLine("Nekorrektnyj vvod. ocenca doljna byt ot 0 do 10.");
+            }
         }
         else
         {
-            Console.WriteLine("Nekorrektnyj vvod. Ocenka ne dobavlena.");
+            Console.WriteLine("Nekorrektnyj vvod. Ocenka ne dobavlena");
         }
+    }
     }
 
     public void AddAttendance()
@@ -129,13 +147,14 @@ class SimpleDB
     public void SaveDB()
     {
         Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        var fileService = new StudetnFileService(students);
+        fileService.SaveToFile();
     }
-
     public void LoadDB()
     {
         Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        var fileService = new StudetnFileService(students);
+        fileService.LoadFromFile();
     }
     public void AddStudent(string name)
     {

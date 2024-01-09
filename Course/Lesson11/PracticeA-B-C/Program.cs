@@ -17,7 +17,7 @@ public class Student
     public void AddGrade()
     {
         Console.Write("Vvedite predmet: ");
-        string subject = Console.ReadLine();
+        string subject = Console.ReadLine() ?? "";
 
         Console.Write("Vvedite ocenku: ");
         if (int.TryParse(Console.ReadLine(), out int grade))
@@ -140,19 +140,48 @@ class SimpleDB
     public void AddStudent(string name)
     {
         Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+         if (students.ContainsKey(name))
+        {
+            Console.WriteLine("Студент с таким именем уже существует.");
+        }else{
+        Student student = new Student(name);
+        students.Add(name, student);
+        Console.WriteLine($"Студент {name} успешно добавлен.");
+        }
     }
 
     public void RemoveStudent(string name)
     {
         Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name))
+        {
+            students.Remove(name);
+            Console.WriteLine($"Студент {name} успешно удален.");
+        }else{
+        Console.WriteLine("Студент с таким именем не существует.");
+        }
     }
 
     public void ShowStudentInfo(string name)
     {
         Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+         if (students.ContainsKey(name))
+        {
+            Student student = students[name];
+            Console.WriteLine($"Имя студента: {student.Name}");
+            Console.WriteLine("Оценки:");
+            foreach (var grade in student.Grades)
+            {
+                Console.WriteLine($"{grade.Key}: {grade.Value}");
+            }
+            Console.WriteLine("Посещаемость:");
+            foreach (var attendance in student.Attendance)
+            {
+                Console.WriteLine($"{attendance.Key}: {attendance.Value}");
+            }
+        }else{
+        Console.WriteLine("Студент с таким именем не существует.");
+        }
     }
 
     public Student GetStudent(string name)

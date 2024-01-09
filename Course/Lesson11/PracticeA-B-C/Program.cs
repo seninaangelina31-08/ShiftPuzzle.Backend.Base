@@ -1,5 +1,8 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
+using System.Threading;
+using System.Linq;
 
 public class Student
 {
@@ -11,7 +14,13 @@ public class Student
     {
         Name = name;
         Grades = new Dictionary<string, int>();
+        // Для проверки того, что выводятся оценки
+        // Grades.Add("matan", 2);
+        // Grades.Add("himiya", 5);
         Attendance = new Dictionary<string, bool>();
+        // Для проверки того, что выводятся оценки
+        // Attendance.Add("friday 13.06.2666", false);
+        // Attendance.Add("monday 07.07.2777", true);
     }
 
     public void AddGrade()
@@ -139,20 +148,36 @@ class SimpleDB
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        Console.WriteLine($"Student s imenem {name} bil uspeshno dobavlen :)");
+        students[name] = new Student(name);
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name)) {
+            Console.WriteLine($"Student s imenem {name} bil uspeshno udalen :)");
+            students.Remove(name);
+        } else {
+            Console.WriteLine($"Studenta s imenem {name} net s spiske :(");
+        }
+        
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name)) {
+            Console.WriteLine($"* Im'a studenta: {students[name].Name}");
+            Console.WriteLine("* Ocenki studenta: ");
+            foreach (KeyValuePair<string, int> grade in students[name].Grades) {
+                Console.WriteLine($"    - {grade.Key}: {grade.Value}");
+            }
+            Console.WriteLine("* Poseshaemost' studenta: ");
+            foreach (KeyValuePair<string, bool> cur_attendance in students[name].Attendance) {
+                Console.WriteLine($"    - {cur_attendance.Key}: {cur_attendance.Value}");
+            }
+        } else {
+            Console.WriteLine($"Studenta s imenem {name} net s spiske :(");
+        }
     }
 
     public Student GetStudent(string name)

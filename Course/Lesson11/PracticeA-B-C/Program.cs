@@ -128,14 +128,19 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        StudetnFileService DB = new StudetnFileService(students);
+        DB.SaveToFile();
+        Console.WriteLine("База данных сохранена.");
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        fileService.LoadFromFile();
+        foreach (var data in fileService.students)
+        {
+            students[data.Key] = data.Value;
+        }
+        Console.WriteLine("Данные загружены.");
     }
     public void AddStudent(string name)
     {

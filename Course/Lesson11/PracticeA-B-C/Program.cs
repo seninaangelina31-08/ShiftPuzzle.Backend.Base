@@ -139,20 +139,51 @@ class SimpleDB
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        students[name] = new Student(name);
+        Console.WriteLine("Ученик добавлен.");
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name))
+        {
+            students.Remove(name);
+            Console.WriteLine("Ученик удалён.");
+        }
+        else Console.WriteLine("Ученика не существует.");
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        if (students.ContainsKey(name))
+        {
+            Console.WriteLine("Имя ученика: " + name);
+            Console.WriteLine("Успеваемость.");
+            foreach (var grade in students)
+            {
+                if (grade.Key == name)
+                {
+                    var value = grade.Value;
+                    foreach (var Key_value in value.Grades)
+                    {
+                        Console.WriteLine(Key_value.Key + ": " + Key_value.Value);
+                    }
+                }
+            }
+            Console.WriteLine("Посещаемость.");
+            foreach (var attendance in students)
+            {
+                if (attendance.Key == name)
+                {
+                    var value = attendance.Value;
+                    foreach (var Key_value in value.Attendance)
+                    {
+                        Console.WriteLine(Key_value.Key + ": " + Key_value.Value);
+                    }
+                }
+            }
+        }
+        else Console.WriteLine("Ученика не существует.");
     }
 
     public Student GetStudent(string name)

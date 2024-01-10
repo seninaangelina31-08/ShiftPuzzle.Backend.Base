@@ -6,6 +6,8 @@ class Program
     {
         // создание объекта тигра
         Tiger tiger = new Tiger("black-orange", 3.5f);
+        Animal lion = new("BLACK", 150.4f, "MEAT");
+        lion.MakeSound();
 
         // вызов метода издавания звука
         tiger.MakeSound();

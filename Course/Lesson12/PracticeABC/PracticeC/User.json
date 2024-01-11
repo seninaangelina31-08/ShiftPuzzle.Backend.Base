@@ -1,0 +1,20 @@
+{
+    "User":{
+        "name":"Steven King",
+        "user_id":32541344,
+        "email":"stking@example.com",
+        "balance":123,
+        "cart":[
+            {
+                "name":"Iphone14mini",
+                "price":799,
+                "id":25432
+            },
+            {
+                "name":"GoPro",
+                "price":2199,
+                "id":323454
+            }
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "cart":{
+        "user_id":342132,
+        "products":[
+            {
+                "name":"Sofa",
+                "price":259,
+                "id":54326354
+            },
+            {
+                "name":"Piano",
+                "price":2999,
+                "id":65432324
+            },
+            {
+                "name":"GeForseRTX4080",
+                "price":3299,
+                "id":5425342
+            }
+        ]
+    }
+}

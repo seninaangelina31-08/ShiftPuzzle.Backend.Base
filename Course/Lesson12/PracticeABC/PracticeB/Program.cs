@@ -11,52 +11,72 @@ class Program
 // 1
 class Product
 {
-    string name;
-    int price;
-    string description;
+    public Product(string name, int price, string description){
+        Name = name;
+        Price = price;
+        Description = description;
+    }
 }
 
 // 2
 class Category
 {
+    public Category(string category, List<string> products){
+        Category_name = category;
+        Products = products;
+    }
     string category;
     List<string> products;
 }
 
 // 3
 class Order{
-    int id;
-    List<string> items;
-    int total;
+    public Order(int id, List<string> items, int total){
+        Id = id;
+        Items = items;
+        Total = total;
+    }
 }
 
 // 4
 class User
 {
-    string name;
-    string email;
-    int purchases;
+    public User(string name, string email, int purchases)
+    {
+        Name = name;
+        Email = email;
+        Purchases = purchases;
+    }
 }
 
 // 5
 class Cart
 {
-    List<string> cart;
+    public Cart(List<string> cart)
+    {
+        Cart = cart;
+    }
 }
 
 // 6
 class Shipping
 {
-    string method;
-    int price;
-    int estimalted_days;
+    public Shipping(string method, int price, int estimalted_days)
+    {
+        Method = method;
+        Price = price;
+        Estimalted_days = estimalted_days;
+    }
 }
 
 // 7
 class Payment
 {
-    string methos;
-    string status;
+    public Payment(string methos, string status)
+    {
+        Method = method;
+        Status = status;
+    }
 }
 
 // 8
@@ -68,7 +88,10 @@ class Product8
 }
 class Reviews
 {
-    List<Product8> reviews;
+    public Reviews(List<Product8> reviews)
+    {
+        Reviews = reviews;
+    }
 }
 
 // 9
@@ -79,7 +102,10 @@ class Product9
 }
 class Discounts
 {
-    List<Product9> discounts;
+    public Student(List<Product9> discounts)
+    {
+        Discounts = discounts;
+    }
 }
 
 // 10
@@ -90,5 +116,8 @@ class Address10
 }
 class Addresses
 {
-    List<Address10> addresses;
+    public Addresses(List<Address10> addresses)
+    {
+        Addresses = addresses;
+    }
 }

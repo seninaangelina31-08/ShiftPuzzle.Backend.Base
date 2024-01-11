@@ -157,14 +157,14 @@ class SimpleDB
         Console.WriteLine("Imua:");
         Console.WriteLine(students[name].Name);
         Console.WriteLine("Ocenki:");
-        foreach (var gr in students[name].Grades)
+        foreach (var grade in students[name].Grades)
         {
-            Console.WriteLine($"{gr.Key}: {gr.Value}");
+            Console.WriteLine($"{grade.Key}: {grade.Value}");
         }
         Console.WriteLine("Poseshaemost:");
-        foreach (var att in students[name].Attendance)
+        foreach (var attendanse in students[name].Attendance)
         {
-            Console.WriteLine($"{att.Key}: {att.Value}");
+            Console.WriteLine($"{attendanse.Key}: {attendanse.Value}");
         }
     }
 

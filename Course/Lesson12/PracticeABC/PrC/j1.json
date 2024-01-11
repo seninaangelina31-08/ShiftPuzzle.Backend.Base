@@ -1,0 +1,10 @@
+{
+    "user": {
+        "name": "Alex Wo",
+        "products": [
+            "milk",
+            "coffe",
+            "tea"
+        ]
+    }
+}

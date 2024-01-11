@@ -1,0 +1,14 @@
+{
+    "order":{
+        "product": {
+            "name": "Domik v derevne",
+            "category":"Milk",
+            "price": 12,
+            "quantity": 1
+        },
+        "user": {
+            "name": "Alex Wo",
+            "Payment":"cash"
+        }
+    }
+}

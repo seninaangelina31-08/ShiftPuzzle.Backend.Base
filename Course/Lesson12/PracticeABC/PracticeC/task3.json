@@ -1,0 +1,9 @@
+{
+    "customer": {
+      "name": "John Doe"
+    },
+    "product": {
+      "name": "Milk"
+    },
+    "quantity": 2
+}

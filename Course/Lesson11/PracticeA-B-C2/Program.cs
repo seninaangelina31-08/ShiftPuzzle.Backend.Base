@@ -130,10 +130,16 @@ class SimpleDB
 
     public void SaveDB()
     {
+        StudetnFileService fileService = new StudetnFileService(students);
+        fileService.SaveToFile("students.txt");
+        Console.WriteLine("Fail byl sohranen");
     }
 
     public void LoadDB()
     {
+        StudetnFileService fileService = new StudetnFileService(students);
+        fileService.LoadFromFile("students.txt");
+        Console.WriteLine("Fail byl zagryjen");
     }
     public void AddStudent(string name)
     {
@@ -151,14 +157,14 @@ class SimpleDB
         Console.WriteLine("Imua:");
         Console.WriteLine(students[name].Name);
         Console.WriteLine("Ocenki:");
-        foreach (var grade in students[name].Grades)
+        foreach (var gr in students[name].Grades)
         {
-            Console.WriteLine($"{grade.Key}: {grade.Value}");
+            Console.WriteLine($"{gr.Key}: {gr.Value}");
         }
         Console.WriteLine("Poseshaemost:");
-        foreach (var attendanse in students[name].Attendance)
+        foreach (var att in students[name].Attendance)
         {
-            Console.WriteLine($"{attendanse.Key}: {attendanse.Value}");
+            Console.WriteLine($"{att.Key}: {att.Value}");
         }
     }
 

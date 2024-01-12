@@ -1,0 +1,16 @@
+{
+    "customers": [
+        {
+            "id": 1,
+            "name": "Ageeva Ilmira",
+            "age": "16",
+            "city": "Vologda"
+        },
+        {
+            "id": 2,
+            "name": "Krukov Nikita",
+            "age": "16",
+            "city": "Vologda"
+        }
+    ]
+}

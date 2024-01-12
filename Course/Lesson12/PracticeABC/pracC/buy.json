@@ -1,0 +1,14 @@
+{
+    "orders": [
+        {
+            "number": 1,
+            "cus_id": 1,
+            "good": "Chocolate"
+        },
+        {
+            "number": 2,
+            "cus_id": 2,
+            "good": "Potato"
+        }
+    ]
+}

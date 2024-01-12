@@ -1,0 +1,14 @@
+{
+    "goods": [
+        {
+            "name": "Chocolate",
+            "weight": 1000,
+            "pay": 120000
+        },
+        {
+            "name": "Potato",
+            "weight": 12000,
+            "pay": 129948294
+        }
+    ]
+}

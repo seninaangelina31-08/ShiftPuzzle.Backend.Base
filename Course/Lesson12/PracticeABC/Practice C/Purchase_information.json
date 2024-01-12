@@ -1,0 +1,15 @@
+{
+  "purchaseId": "987654",
+  "customer": {
+    "id": "0000001",
+    "name": "Иван Иванов"
+  },
+  "product": {
+    "id": "789",
+    "name": "Футболка",
+    "price": 1000
+  },
+  "quantity": 2,
+  "totalPrice": 1998,
+  "timestamp": "2024-01-10T10:30:00Z"
+}

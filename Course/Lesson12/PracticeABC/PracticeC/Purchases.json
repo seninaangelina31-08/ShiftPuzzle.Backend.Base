@@ -7,6 +7,8 @@
             "quantity": 1
         }
 
-    ]
+    ],
+    "payment_status": "Payed",
+    "payment_method": "Credit card"
     }
 }

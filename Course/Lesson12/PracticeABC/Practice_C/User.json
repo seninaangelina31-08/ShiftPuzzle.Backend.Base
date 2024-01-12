@@ -1,0 +1,7 @@
+{
+    "user":{
+        "name": "andrew",
+        "amount_of_money": 10000,
+        "purchases": 8
+    }
+}

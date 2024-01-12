@@ -9,6 +9,7 @@
 
     ],
     "payment_status": "Payed",
-    "payment_method": "Credit card"
+    "payment_method": "Credit card",
+    "delivery_method": "Courier delivery"
     }
 }

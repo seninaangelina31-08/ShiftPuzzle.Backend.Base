@@ -6,6 +6,9 @@
         "last_name": "Ne Skazu",
         "address": "666 The Best Top Street, Magadan",
         "phone": "+7(666)-123-45-67",
-        "email": "sprosi_u_pochtaliona@gmail.com"
+        "email": "sprosi_u_pochtaliona@gmail.com",
+        "purchases": [
+            "Purchase_AX018A"
+        ]
     }
 }

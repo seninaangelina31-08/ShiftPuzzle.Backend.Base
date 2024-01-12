@@ -1,0 +1,8 @@
+{
+    "purchase": {
+        "buyer": "Ilya",
+        "product": "Kinder",
+        "amount": 100,
+        "store_id": 151
+    }
+}

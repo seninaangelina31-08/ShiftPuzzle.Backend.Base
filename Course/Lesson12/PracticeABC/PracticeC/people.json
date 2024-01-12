@@ -1,0 +1,10 @@
+{
+    "people": {
+        "name": "Ilya",
+        "age": 17,
+        "country": "Russia",
+        "city": "Belgorod",
+        "discount": "10%",
+        "favourite_products": ["Kinder", "Choco-Pie"]
+    }
+}

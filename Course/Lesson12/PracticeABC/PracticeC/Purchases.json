@@ -1,0 +1,12 @@
+{
+    "Purchase_AX018A": {
+    "customer": "000001",
+    "products": [
+        {
+            "product_id": "A001",
+            "quantity": 1
+        }
+
+    ]
+    }
+}

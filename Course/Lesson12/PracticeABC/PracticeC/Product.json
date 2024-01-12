@@ -1,0 +1,9 @@
+{
+    "product": {
+        "id": "1",
+        "name": "Bulba",
+        "description": "Vkusna!",
+        "address": "Matigorskaia Imperia",
+        "Expiration date": "Besconechnost"
+    }
+}

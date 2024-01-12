@@ -2,11 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-<<<<<<< HEAD
-    <TargetFramework>net7.0</TargetFramework>
-=======
     <TargetFramework>net6.0</TargetFramework>
->>>>>>> main
     <RootNamespace>PracticeB_С</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>

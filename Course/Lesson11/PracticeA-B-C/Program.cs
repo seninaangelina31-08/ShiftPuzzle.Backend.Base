@@ -14,6 +14,7 @@ public class Student
         Attendance = new Dictionary<string, bool>();
     }
 
+
     public void AddGrade()
     {
         Console.Write("Vvedite predmet: ");
@@ -76,7 +77,7 @@ public class StudetnFileService
 {
     if (!File.Exists(filePath))
     {
-        Console.WriteLine("���� �� ������.");
+        Console.WriteLine("The file is not available.");
         return;
     }
 
@@ -128,30 +129,63 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        file= new StudetnFileService(students);
+        file.SaveToFile();
         //  practice B;
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        file.LoadFromFile();
         //  practice B;
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        Console.WriteLine();
+        if (students.ContainsKey(name))
+        {
+            Console.WriteLine("Студент уже существует в системе");
+        }
+        
+        Student c = new Student(name);
+        students[name] = c;
+        Console.WriteLine("Студент добавлен");
          //  practice A;
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        Console.WriteLine();
+        if (!students.ContainsKey(name))
+        {
+            Console.WriteLine("Такой студент не существует в системе");
+        }
+
+        students.Remove(name)
+        Console.WriteLine("Студент удален");
+
+        //  practice A;
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        Console.WriteLine();
+        if (!students.ContainsKey(name))
+        {
+            Console.WriteLine("Такой студент не существует в системе");
+        }
+
+        Console.WriteLine(students[name].Name);
+        Console.WriteLine("attendance: ");
+        foreach (var el in students[name].Attendance)
+        {
+            Console.WriteLine(el);
+        }
+        Console.WriteLine("marks: ");
+        foreach (var el in students[name].Grades)
+        {
+            Console.WriteLine(el);
+        }
          //  practice A;
     }
 

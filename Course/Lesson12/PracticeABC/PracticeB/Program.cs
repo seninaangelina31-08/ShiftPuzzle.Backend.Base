@@ -32,8 +32,6 @@ class Category
         Category_name = category;
         Products = products;
     }
-    string category;
-    List<string> products;
 }
 
 // 3
@@ -56,6 +54,7 @@ class User
     string Name;
     string Email;
     int Purchases;
+    
     public User(string name, string email, int purchases)
     {
         Name = name;

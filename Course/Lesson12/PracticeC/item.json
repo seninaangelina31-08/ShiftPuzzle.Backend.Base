@@ -1,0 +1,13 @@
+{
+    "item": {
+        "id": 777,
+        "title": "zapretniy_tovar",
+        "item_description": "informaciya scryta :(",
+        "amount": 1,
+        "available_stores": [
+            "luchshiy magazin",
+            "hudshiy magazin"
+        ],
+        "discount": 0.5
+    }
+}

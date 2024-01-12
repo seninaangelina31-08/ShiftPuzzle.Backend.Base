@@ -1,0 +1,16 @@
+{
+    "products":{
+        "name": "Шоколад Pepe",
+        "description": "Самый нежный молочный шоколад!",
+        "price": 166,
+        "net_weight": 100,
+        "composition": [
+            "cocoa beans",
+            "sugar",
+            "milk powder",
+            "cocoa butter",
+            "lecithin",
+            "vanilla"
+        ]
+    }
+}

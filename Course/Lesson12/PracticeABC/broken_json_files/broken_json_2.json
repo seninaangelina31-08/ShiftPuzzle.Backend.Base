@@ -1,8 +1,4 @@
-
+{
     "category": "Electronics",
-    "products": [
-        "TV",
-        "Radio",
-        "Camera"
-    ]
+    "products": ["TV", "Radio", "Camera"]
 }

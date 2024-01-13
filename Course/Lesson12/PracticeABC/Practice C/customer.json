@@ -1,0 +1,13 @@
+{
+    "customer_id": 1234,
+    "name": "Андрей Андреев",
+    "email": "noname@example.com",
+    "password": "*******",
+    "card": "2341 2351 9234 0238",
+    "cvc": "576",
+    "address": {
+        "street": "ул. Примерная, д. 123",
+        "city": "Примерград",
+        "nomer_dom": "12"
+    }
+}

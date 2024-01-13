@@ -1,7 +1,8 @@
 {
-    "cart": [
-        "Product1",
-        "Product2",
-        "Product3",
-        "Product4"
-    ]
+    "cart": {
+        "Product1": null,
+        "Product2": null,
+        "Product3": null,
+        "Product4": null
+    }
+}

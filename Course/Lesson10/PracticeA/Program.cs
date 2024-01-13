@@ -1,9 +1,22 @@
 ﻿namespace PracticeA;
-class FileOperations
+
+class Program
 {
     static void Main(string[] args)
-    { 
+    {
+        Console.WriteLine("Hello, World!");
+    }
 
-        // чтение запись в файл test.txt
+    public class FileIO
+    {
+        public static void WriteToFile(string[] lines, string name)
+        {
+            File.WriteAllLines(name, lines);
+        }
+
+        public static string[] ReadFromFile(string name)
+        {
+            return File.ReadAllLines(name);
+        }
     }
 }

@@ -1,5 +1,6 @@
 {
-    "discounts": [
+    "discounts": 
+    [
         {
             "product": "TV",
             "discount": "15%"
@@ -9,3 +10,4 @@
             "discount": "10%"
         }
     ]
+}

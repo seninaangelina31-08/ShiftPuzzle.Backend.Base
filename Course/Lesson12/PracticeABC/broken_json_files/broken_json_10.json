@@ -1,5 +1,6 @@
-
-    "addresses": [
+{
+    "addresses": 
+    [
         {
             "type": "Billing",
             "address": "123 Main St"

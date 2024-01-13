@@ -1,9 +1,12 @@
 {
-    "order": {
-        "id": 12345,
-        "items": [
-            "Laptop",
-            "Camera"
-        ],
-        "total": 1700
-    }
+    "order":
+    {
+    "id": 12345,
+    "items": 
+    [
+        "Laptop",
+        "Camera"
+    ],
+    "total": 1700
+    } 
+}

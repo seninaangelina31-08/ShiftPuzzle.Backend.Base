@@ -28,9 +28,9 @@ return number % 2 == 0;
     // {
 string ReverseString(string s)
 {
-char[] charArray = s.ToCharArray();
-Array.Reverse(charArray);
-return new string(charArray);
+    char[] charArray = s.ToCharArray();
+    Array.Reverse(charArray);
+    return new string(charArray);
 }
     // }
 

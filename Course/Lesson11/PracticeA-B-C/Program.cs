@@ -128,22 +128,38 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+         //  practice B;
+        StudetnFileService based = new StudetnFileService(students);
+        based.SaveToFile();
+        Console.WriteLine("Uspeshno sohraneno!");
+       
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
+        fileService.LoadFromFile();
+        foreach (var data in fileService.students)
+        {
+            students[data.Key] = data.Value;
+        }
+        Console.WriteLine("Zagruska zavershena!");
     }
     public void AddStudent(string name)
     {
         //  practice A;
         Student student_name = new Student(name);
+        if (!students.ContainsKey(name))
+        {
         students.Add("name_of_student", student_name);
         Console.WriteLine($"Student {name} uspeshno dobavlen!");
+        }
+        else
+        {
+            Console.WriteLine("Etot student uze zdes est");
+        }
     }
+        
 
     public void RemoveStudent(string name)
     {

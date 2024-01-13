@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "name" : "Alex",
+            "id" : 1342,
+            "product": "Car"
+        },
+        {
+            "name" : "Simon",
+            "id" : 49942,
+            "product": "Lamb"
+        },
+        {
+            "name" : "Itan",
+            "id" : 49915,
+            "product": "Scooter"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "purchase_id": "PUR001",
+    "customer_id": 12345,
+    "products": [
+        {
+            "product_id": "P001",
+            "quantity": 3
+        },
+        {
+            "product_id": "P002",
+            "quantity": 5
+        }
+    ],
+    "total_amount": 1249.97,
+    "purchase_date": "2024-01-13 16:57:31"
+}

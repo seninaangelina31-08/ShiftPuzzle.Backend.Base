@@ -1,0 +1,13 @@
+{
+    "customer_id": 1,
+    "name": "Иванов Иван Иванович",
+    "email": "noname@mail.com",
+    "password": "qwerty123",
+    "card": "1234 5678 9009 5215",
+    "cvc": "228",
+    "address": {
+        "street": "ул. Пущкина, д. Колотушкина",
+        "city": "Санкт-Петербург",
+        "nomer_dom": "69"
+    }
+}

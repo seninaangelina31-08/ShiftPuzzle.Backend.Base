@@ -76,7 +76,7 @@ public class StudetnFileService
 {
     if (!File.Exists(filePath))
     {
-        Console.WriteLine("???? ?? ??????.");
+        Console.WriteLine("���� �� ������.");
         return;
     }
 
@@ -88,20 +88,20 @@ public class StudetnFileService
             var parts = line.Split(',');
             if (parts.Length < 3)
             {
-                continue; // ??????? ? ????????? ??????, ???? ?????? ???????
+                continue; // ������� � ��������� ������, ���� ������ �������
             }
 
             var studentName = parts[0];
             var student = new Student(studentName);
 
-            // ?????? ??????
+            // ������ ������
             var gradesPart = parts[1].Split(':');
             if (gradesPart.Length == 2 && int.TryParse(gradesPart[1], out int grade))
             {
                 student.Grades.Add(gradesPart[0], grade);
             }
 
-            // ?????? ?????? ? ????????????
+            // ������ ������ � ������������
             var attendancePart = parts[2].Split(':');
             if (attendancePart.Length == 2 && DateTime.TryParse(attendancePart[0], out DateTime date) && bool.TryParse(attendancePart[1], out bool wasPresent))
             {
@@ -130,7 +130,7 @@ class SimpleDB
     {
         StudetnFileService MyService = new StudetnFileService(students);
         MyService.SaveToFile();
-        Console.WriteLine("All Saved");
+        Console.WriteLine(" функция SaveToFile");
     }
 
     public void LoadDB()
@@ -138,34 +138,34 @@ class SimpleDB
         StudetnFileService MyService = new StudetnFileService(students);
         MyService.LoadFromFile();
         students = MyService.students;
-        Console.WriteLine("All loaded");
+        Console.WriteLine("функция LoadFromFile");
     }
     public void AddStudent(string name)
     {
-        students.Add(name, new Student(name));
-        Console.WriteLine("Student added");
+        Student student = new Student(name);
+        students.Add(student);
+        Console.WriteLine("добавление студента ");
+         
     }
 
-    public void RemoveStudent(string name)
+ public void RemoveStudent(string name)
     {
-        if (students.Remove(name) == true) {
-            Console.WriteLine("Student killed");
-        } else {
-            Console.WriteLine("Enemy wasn't spotted");
+        Student studentToRemove = students.Find(student => student.Name == name);
+        if (studentToRemove != null)
+        {
+            students.Remove(studentToRemove);
+            Console.WriteLine("Студент " + name + " успешно удален.");
+        }
+        else
+        {
+            Console.WriteLine("Студент " + name + " не найден.");
         }
     }
+
 
     public void ShowStudentInfo(string name)
     {
-        Student man = students[name];
-        Console.WriteLine("???? ?????"+name);
-        foreach (var grade in man.Grades) {
-            Console.WriteLine($"?????? {grade.Value} ?? ???????? '{grade.Key}'");
-        }
-        foreach (var att in man.Attendance) {
-            Console.WriteLine($"{att.Key} ????? {att.Value}");
-        }
-
+        Console.WriteLine("Студент: " + name);
     }
 
     public Student GetStudent(string name)

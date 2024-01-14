@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+namespace L11_PracticeABC;
+
 public class Student
 {
     public string Name { get; set; }
@@ -19,7 +21,7 @@ public class Student
         Console.Write("Vvedite predmet: ");
         string subject = Console.ReadLine();
 
-        Console.Write("Vvedite ocenku: ");
+        Console.Write(" Vvedite ocenku: ");
         if (int.TryParse(Console.ReadLine(), out int grade))
         {
             Grades[subject] = grade;
@@ -60,7 +62,7 @@ public class StudetnFileService
         students = data;
     }
 
-    public  void SaveToFile(string filePath=FilePath)
+    public void SaveToFile(string filePath = FilePath)
     {
         using (var writer = new StreamWriter(filePath))
         {
@@ -72,48 +74,48 @@ public class StudetnFileService
             }
         }
     }
- public void LoadFromFile(string filePath = FilePath)
-{
-    if (!File.Exists(filePath))
+    public void LoadFromFile(string filePath = FilePath)
     {
-        Console.WriteLine("���� �� ������.");
-        return;
-    }
-
-    using (var reader = new StreamReader(filePath))
-    {
-        string line;
-        while ((line = reader.ReadLine()) != null)
+        if (!File.Exists(filePath))
         {
-            var parts = line.Split(',');
-            if (parts.Length < 3)
+            Console.WriteLine("���� �� ������.");
+            return;
+        }
+
+        using (var reader = new StreamReader(filePath))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
             {
-                continue; // ������� � ��������� ������, ���� ������ �������
+                var parts = line.Split(',');
+                if (parts.Length < 3)
+                {
+                    continue; // ������� � ��������� ������, ���� ������ �������
+                }
+
+                var studentName = parts[0];
+                var student = new Student(studentName);
+
+                // ������ ������
+                var gradesPart = parts[1].Split(':');
+                if (gradesPart.Length == 2 && int.TryParse(gradesPart[1], out int grade))
+                {
+                    student.Grades.Add(gradesPart[0], grade);
+                }
+
+                // ������ ������ � ������������
+                var attendancePart = parts[2].Split(':');
+                if (attendancePart.Length == 2 && DateTime.TryParse(attendancePart[0], out DateTime date) && bool.TryParse(attendancePart[1], out bool wasPresent))
+                {
+                    student.Attendance.Add(date.ToLongDateString(), wasPresent);
+                }
+
+                students.Add(student.Name, student);
             }
-
-            var studentName = parts[0];
-            var student = new Student(studentName);
-
-            // ������ ������
-            var gradesPart = parts[1].Split(':');
-            if (gradesPart.Length == 2 && int.TryParse(gradesPart[1], out int grade))
-            {
-                student.Grades.Add(gradesPart[0], grade);
-            }
-
-            // ������ ������ � ������������
-            var attendancePart = parts[2].Split(':');
-            if (attendancePart.Length == 2 && DateTime.TryParse(attendancePart[0], out DateTime date) && bool.TryParse(attendancePart[1], out bool wasPresent))
-            {
-                student.Attendance.Add(date.ToLongDateString(), wasPresent);
-            }
-
-            students.Add(student.Name, student);
         }
     }
-}
 
-     
+
 }
 
 class SimpleDB
@@ -124,35 +126,42 @@ class SimpleDB
         fileService = new StudetnFileService(students);
         LoadDB();
     }
-    public  Dictionary<string, Student> students = new Dictionary<string, Student>();
+    public Dictionary<string, Student> students = new Dictionary<string, Student>();
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        fileService.SaveToFile();
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        fileService.LoadFromFile();
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        students[name] = new Student(name);
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        students.Remove(name);
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        Console.WriteLine($"Посещаемость {name}: ");
+        foreach (var date in students[name].Attendance.Keys)
+        {
+            Console.WriteLine($"{date}: {students[name].Attendance[date]}");
+        }
+
+        Console.WriteLine();
+
+        Console.WriteLine($"Оценки {name}: ");
+        foreach (var subject in students[name].Grades.Keys)
+        {
+            Console.WriteLine($"{subject}: {students[name].Grades[subject]}");
+        }
     }
 
     public Student GetStudent(string name)
@@ -174,10 +183,10 @@ class Program
     static void Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        var db = new SimpleDB(); 
+        var db = new SimpleDB();
         while (true)
         {
-            Console.WriteLine("\n1. Dobavit' srudenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");
+            Console.WriteLine("\n1. Dobavit' studenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");
             Console.Write("Vibor: ");
 
             if (!int.TryParse(Console.ReadLine(), out int choice))

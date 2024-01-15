@@ -1,0 +1,8 @@
+{
+  "purchase": {
+    "name": "Evelina",
+    "product": "IPhone",
+    "Price": 10000,
+    "discount": "40%"
+  }
+}

@@ -1,6 +1,10 @@
 {
-    "orderId": "ORD10245",
-    "customerName": "Анна Петрова",
-    "totalPrice": 5600,
-    "items": ["Ноутбук", "Мышь"]
+  "orderId": "ORD10245",
+  "customerName": "Анна Петрова",
+  "totalPrice": 7007,
+  "items": [
+    "Ноутбук",
+    "Мышь",
+    "Салфетки для монитора"
+  ]
 }

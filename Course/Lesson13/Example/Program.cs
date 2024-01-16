@@ -29,8 +29,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        
+        List<string> appleLinks = new List<string>{"link1", "link2"}; // лист со ссылками
+        Product apple = new Product("Granny Smith", "Green Apples. Tasty", 300, appleLinks); // создание объекта продукта (яблоки)
+
+        // Сериализация в JSON
+        string json = JsonSerializer.Serialize(apple);
+        Console.WriteLine(json); // вывод сериализованного объекта в консоль
+
         const string path = "apple.json";
+        File.WriteAllText(path, json); // запись объекта в JSON файл
 
         // Десериализация из JSON
         string jsonFromFile = File.ReadAllText(path);

@@ -39,6 +39,19 @@ using System.Text.Json; // библиотека для работы с JSON
         this.items=d;
     }
 }
+[System.Serializable] public class Lib
+{
+    // поля класса
+    public string libraryName { get; set; }
+    public List<string[]> books { get; set; }
+
+    public Lib() { } // Пустой конструктор для десериализации
+    public Lib(string a, List<string[]> d)
+    {
+        this.libraryName=a;
+        this.books=d;
+    }
+}
 class Program
 {
     static void Main(string[] args)
@@ -90,5 +103,26 @@ class Program
             }
         }
         Console.WriteLine("\n-----------------");
+        const string path5 = "5.json";
+        string[] ab=new string[]{"Война и мир","Лев Толстой", "1869"};
+        string[] ac= new string[]{"Мастер и Маргарита", "Михаил Булгаков", "1967"};
+        string[] aa= new string[]{"У лукоморья", "Александр Пушкин", "1800~"};
+        List<string[]> bo2 = new List<string[]>{ab, ac, aa};
+        Lib lib2 = new Lib("Городская библиотека", bo2); // создание объекта
+        // Сериализация в JSON
+        string json6 = JsonSerializer.Serialize(lib2);
+        File.WriteAllText(path5, json6); // запись объекта в JSON файл
+        // Десериализация из JSON
+        string jsonFromFile6 = File.ReadAllText(path5);
+        Lib read_lib2 = JsonSerializer.Deserialize<Lib>(jsonFromFile6);
+
+        if (read_lib2 != null)
+        {
+            Console.WriteLine($"Name: {read_lib2.libraryName}");
+            foreach (var el in read_lib2.books)
+            {
+                Console.Write(el[0]+", ");
+            }
+        }
     }
 }

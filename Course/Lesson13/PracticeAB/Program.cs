@@ -80,7 +80,7 @@ class Program
         Check read_Check4 = JsonSerializer.Deserialize<Check>(jsonFromFile4);
         if (read_Check4 != null)
         {
-            Console.WriteLine($"Скидка: {read_Check4.totalPrice/10*9}");
+            Console.WriteLine($"Скидка: {(read_Check4.totalPrice/10*9)*98/100}");
 
             // вывод содержимого списка ссылок
             Console.WriteLine("Список покупок:");

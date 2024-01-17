@@ -1,23 +1,5 @@
-{
-    "title": "Назад в будущее",
-    "year": 1985,
-    "director": {
-        "name": "Роберт Земекис",
-        "born": "1952-05-14"
-    },
-    "cast": [
-        {
-            "name": "Майкл Дж. Фокс",
-            "role": "Марти МакФлай"
-        },
-        {
-            "name": "Кристофер Ллойд",
-            "role": "Доктор Эмметт Браун"
-        }
-    ],
-    "genres": ["Приключения", "Комедия", "Научная фантастика"],
-    "ratings": {
-        "IMDb": 8.5,
-        "Rotten Tomatoes": "96%"
-    }
-}
+[
+{"title":"Harry Potter and Philosophy stone","year":2001,"director":[{"name":"Cris Colambus","born":"1958-09-10"}],"cast":[{"name":"Daniel Radcliffe","role":"Harry Potter"},{"name":"Rupert Grint","role":"Ron"},{"name":"Emma Watson","role":"Germiona"}],"genres":["fantasi","advanture","family"],"rating":{"imdb":8.3,"rotten":"94%"}},
+{"title":"Alyosha Popovich and Zmiy","year":2004,"director":[{"name":"Konstantin Bronzit","born":"1965-04-12"}],"cast":[{"name":"Oleg Kulikovich","role":"Alyosha"},{"name":"Dmitry Vysocky","role":"Ilya"}],"genres":["mult","fantasi","family"],"rating":{"imdb":7.8,"rotten":"94%"}},
+{"title":"Hotel Eleon","year":2017,"director":[{"name":"Anton Fedotov","born":"1963-05-12"},{"name":"Anton Maslov","born":"1978-04-22"},{"name":"Ekaterina Zabulonskaya","born":"1992-10-02"}],"cast":[{"name":"Milosh Bikovich","role":"Pasha"},{"name":"Diana Pozharskaya","role":"Dasha"}],"genres":["comedy"],"rating":{"imdb":7.4,"rotten":"84%"}}
+]

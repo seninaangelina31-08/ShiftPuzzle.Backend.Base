@@ -1,6 +1,1 @@
-{
-    "orderId": "ORD10245",
-    "customerName": "Анна Петрова",
-    "totalPrice": 5600,
-    "items": ["Ноутбук", "Мышь"]
-}
+{"orderId":"ORD10245","customerName":"Anna Petrova","totalPrice":6272,"items":["Laptop","Mouse","Napkins for monitor"]}

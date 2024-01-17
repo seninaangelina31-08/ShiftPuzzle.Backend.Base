@@ -1,15 +1,1 @@
-{
-    "libraryName": "Городская библиотека",
-    "books": [
-        {
-            "title": "Война и мир",
-            "author": "Лев Толстой",
-            "year": 1869
-        },
-        {
-            "title": "Мастер и Маргарита",
-            "author": "Михаил Булгаков",
-            "year": 1967
-        }
-    ]
-}
+{"libraryName":"Sity\u0027s library","books":[{"title":"War and Peace","author":"Lev Tolstoi","year":1869},{"title":"Master and Margarita","author":"Michael Bulgakov","year":1967},{"title":"Eugene Onegin","author":"Alexander Pushkin","year":1833}]}

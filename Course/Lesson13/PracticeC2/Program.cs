@@ -81,13 +81,13 @@ class Program
         
         File.WriteAllText(path, json); // запись объекта в JSON файл
 
-         // Создаем новый JSON для хранения количества работников по каждой специальности
+        // Создаем новый JSON
         var empl = c.employees.GroupBy(e => e.position).ToDictionary(g => g.Key, g => g.Count());
         var emplJSON = JsonSerializer.Serialize(empl, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText("empl.json", emplJSON);
-        // Анализ по ЗП в компании - выводим среднюю ЗП
-        var averageSalary = c.employees.Average(e => e.salary);
-        Console.WriteLine($"Средняя ЗП в компании: {averageSalary}");
+
+        var avarage = c.employees.Average(e => e.salary);
+        Console.WriteLine($"Средняя ЗП: {avarage}");
 
     }
 }

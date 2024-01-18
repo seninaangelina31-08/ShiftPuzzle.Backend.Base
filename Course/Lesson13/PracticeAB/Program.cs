@@ -1,6 +1,8 @@
-﻿namespace PracticeAB;
-using System.Collections.Generic; // библиотека для работы с List и Dictionary
-using System.Text.Json; // библиотека для работы с JSON
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text.Json;
 
 // объявление сериализуемого класса People
 [System.Serializable] public class People
@@ -82,6 +84,8 @@ class Program
                 Console.Write(el+", ");
             }
         }
+        Console.WriteLine("\n-----------------");
+
         Console.WriteLine("\n-----------------");
         List<string> it4 = new List<string>{"Ноутбук", "Мышь", "салфетки для мониторв"};
         Check n4 = new Check("ORD10245", "Анна Петрова", 5600+1550, it4); // создание объекта

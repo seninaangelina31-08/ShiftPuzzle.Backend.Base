@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿namespace Example;
+=======
+﻿namespace Example{
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
 
 class Program
 {
@@ -58,4 +62,8 @@ public class Tiger : Animal
     {
         Console.WriteLine("R-r-r-r-r-r!");
     }
+<<<<<<< HEAD
+=======
+}
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
 }

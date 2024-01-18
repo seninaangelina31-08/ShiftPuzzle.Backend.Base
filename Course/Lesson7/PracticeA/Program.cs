@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace PracticeA;
 =======
 ﻿namespace PracticeA;
@@ -431,3 +432,6 @@ class BinaryTree
 }
 
 >>>>>>> 2a6ab33e (feat: added answer to task 7)
+=======
+﻿
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)

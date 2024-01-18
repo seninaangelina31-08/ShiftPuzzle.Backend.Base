@@ -1,15 +1,22 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿namespace Practic;
 using System;
+=======
+﻿using System;
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 
+<<<<<<< HEAD
 =======
 using System;
 using System.Collections.Generic;
 >>>>>>> main
 
+=======
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
 public class Student
 {
     public string Name { get; set; }
@@ -30,10 +37,14 @@ public class Student
 
         Console.Write("Vvedite ocenku: ");
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (int.TryParse(Console.ReadLine(), out var grade))
 =======
         if (int.TryParse(Console.ReadLine(), out int grade))
 >>>>>>> main
+=======
+        if (int.TryParse(Console.ReadLine(), out int grade))
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
         {
             Grades[subject] = grade;
             Console.WriteLine($"Ocenka {grade} po predmetu '{subject}' dobavlena.");
@@ -66,9 +77,12 @@ public class Student
 public class StudetnFileService
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> main
+=======
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
     public const string FilePath = "students.txt";
     public Dictionary<string, Student> students = new Dictionary<string, Student>();
 
@@ -94,10 +108,14 @@ public class StudetnFileService
     if (!File.Exists(filePath))
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         Console.WriteLine(".");
 =======
         Console.WriteLine("���� �� ������.");
 >>>>>>> main
+=======
+        Console.WriteLine("���� �� ������.");
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
         return;
     }
 
@@ -110,20 +128,28 @@ public class StudetnFileService
             if (parts.Length < 3)
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 continue; 
 =======
                 continue; // ������� � ��������� ������, ���� ������ �������
 >>>>>>> main
+=======
+                continue; 
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
             }
 
             var studentName = parts[0];
             var student = new Student(studentName);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
          
 =======
             // ������ ������
 >>>>>>> main
+=======
+         
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
             var gradesPart = parts[1].Split(':');
             if (gradesPart.Length == 2 && int.TryParse(gradesPart[1], out int grade))
             {
@@ -131,9 +157,12 @@ public class StudetnFileService
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             // ������ ������ � ������������
 >>>>>>> main
+=======
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
             var attendancePart = parts[2].Split(':');
             if (attendancePart.Length == 2 && DateTime.TryParse(attendancePart[0], out DateTime date) && bool.TryParse(attendancePart[1], out bool wasPresent))
             {
@@ -154,6 +183,7 @@ class SimpleDB
     public SimpleDB()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         //сохраняем файл
         fileService = new StudetnFileService(students);
         
@@ -161,15 +191,24 @@ class SimpleDB
         fileService = new StudetnFileService(students);
         LoadDB();
 >>>>>>> main
+=======
+        //сохраняем файл
+        fileService = new StudetnFileService(students);
+        fileService.LoadDB();
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
     }
     public  Dictionary<string, Student> students = new Dictionary<string, Student>();
 
     public void SaveDB()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         fileService.SaveToFile();
 =======
 >>>>>>> main
+=======
+        fileService.SaveToFile();
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
         Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
     }
@@ -177,20 +216,30 @@ class SimpleDB
     public void LoadDB()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         //загрузка файла
         //просто вызвать методы
         fileService.LoadFromFile();
 =======
 >>>>>>> main
+=======
+        //загрузка файла
+        //просто вызвать методы
+        FilePath.LoadFromFile();
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
         Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
     }
     public void AddStudent(string name)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         students.Add(name, new Student(name));
 =======
 >>>>>>> main
+=======
+        students.Add(name, new Student(name));
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
         Console.WriteLine("Funcional ne realizovan...");
          //  practice A;
     }
@@ -198,14 +247,19 @@ class SimpleDB
     public void RemoveStudent(string name)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         students.Remove(name); 
 =======
 >>>>>>> main
+=======
+        students.Remove(name); 
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
         Console.WriteLine("Funcional ne realizovan...");
          //  practice A;
     }
 
     public void ShowStudentInfo(string name)
+<<<<<<< HEAD
 <<<<<<< HEAD
 {
     foreach (var student in students)
@@ -233,11 +287,43 @@ class SimpleDB
 }
 =======
     {
+=======
+    {
+        
+        foreach (var student in students)
+        {
+            if (student.Name == name)
+            {
+                Console.WriteLine("Имя: " + student.Name);
+
+                // Разделить строку с пунктами на отдельные значения
+                string[] items = student.Items.Split(',');
+
+                // Получить значения пунктов
+                string subject = items[0];
+                int value = int.Parse(items[1]);
+                DateTime date = DateTime.ParseExact(items[2], "dd MMMM yyyy", CultureInfo.InvariantCulture);
+                bool flag = bool.Parse(items[3]);
+
+                Console.WriteLine("Предмет: " + subject);
+                Console.WriteLine("Значение: " + value);
+                Console.WriteLine("Дата: " + date.ToShortDateString());
+                Console.WriteLine("Флаг: " + flag);
+
+                Console.WriteLine("Информация успешно показана.");
+                return;
+            }
+        }
+
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
         Console.WriteLine("Funcional ne realizovan...");
          //  practice A;
     }
 
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
     public Student GetStudent(string name)
     {
         if (students.TryGetValue(name, out var student))
@@ -313,6 +399,9 @@ class Program
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> main
+=======
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)

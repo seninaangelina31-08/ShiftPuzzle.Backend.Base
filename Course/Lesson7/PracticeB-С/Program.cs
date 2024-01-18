@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿namespace PracticeB_С;
 class Program
 {
@@ -7,6 +8,8 @@ class Program
         Console.WriteLine("Hello, World!");
     }
 =======
+=======
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
 ﻿using System;
 
 class Program
@@ -73,5 +76,17 @@ class Program
             {
                 return QuickSort(numbers, 0, numbers.Length - 1);
             }
+<<<<<<< HEAD
 >>>>>>> 2a6ab33e (feat: added answer to task 7)
+=======
+=======
+﻿namespace PracticeB_С;
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+    }
+>>>>>>> main
+>>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
 }

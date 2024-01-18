@@ -1,1 +1,30 @@
-{"name":"City library","books":[["War and Peace","Leo Tolstoy","1869"],["Master and Margarate","Mickel Bulgakov","1967"],["Gold Chicken","Alexander Pushkin","1834"]]}
+{
+  "name": "City library",
+  "books": [
+    [
+      "War and Peace",
+      "Leo Tolstoy",
+      "1869"
+    ],
+    [
+      "Master and Margarate",
+      "Mickel Bulgakov",
+      "1967"
+    ],
+    [
+      "Gold Chicken",
+      "Alexander Pushkin",
+      "1834"
+    ],
+    [
+      "War and Peace",
+      "Leo Tolstoy",
+      "1869"
+    ],
+    [
+      "Gold Chicken",
+      "Alexander Pushkin",
+      "1834"
+    ]
+  ]
+}

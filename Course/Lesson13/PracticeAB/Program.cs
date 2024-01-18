@@ -107,18 +107,24 @@ namespace PracticeAB
             File.WriteAllText(path4, json4);
 
             //5//
-            const string path5 = "5.json";
+            string fifth = File.ReadAllText("5.json");
+            Fifth book = JsonSerializer.Deserialize<Fifth>(fifth);
+
             string[] a = new string[] {"War and Peace","Leo Tolstoy", "1869"};
             string[] b = new string[] {"Master and Margarate", "Mickel Bulgakov", "1967"};
             string[] c = new string[] {"Gold Chicken", "Alexander Pushkin", "1834"};
-
             List<string[]> book2 = new List<string[]>{a, b, c};
+            book.books.Add(c);
 
-            Fifth lib = new Fifth("City library", book2);
+            string jsonString = JsonSerializer.Serialize(book, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText("5.json", jsonString);
 
-            string json5 = JsonSerializer.Serialize(lib);
 
-            File.WriteAllText(path5, json5);
+            //Fifth lib = new Fifth("City library", book2);
+
+            //string json5 = JsonSerializer.Serialize(lib);
+
+            //File.WriteAllText(path5, json5);
         }
     }
 }

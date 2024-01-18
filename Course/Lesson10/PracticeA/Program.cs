@@ -19,8 +19,6 @@ class FileOperations
     }
     static void Main(string[] args)
     {   
-        File.OpenWrite("Test.txt");
-        File.Write("Test.txt", "asdasd");
         Writes();
         string[] file = Read();
         

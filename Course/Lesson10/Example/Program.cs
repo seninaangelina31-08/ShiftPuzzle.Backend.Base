@@ -1,109 +1,85 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
+
+namespace Example;
 
 public class Person
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
+    // поля класса
+    public string name;
+    public int age;
 
+    // Конструктор класса Person для инициализации имени и возраста. Вызывается при создании объекта
     public Person(string name, int age)
     {
-        Name = name;
-        SetAge(age);
-    }
-
-    public void Introduce()
-    {
-        Console.WriteLine("Hello, my name is " + Name);
+        this.name = name;
+        SetAge(age); // функция для проверки возраста
     }
 
     public void SetAge(int newAge)
     {
-        if (newAge >= 0)
+        if(newAge >= 0)
         {
-            Age = newAge;
+            this.age = newAge;
         }
         else
         {
-            Console.WriteLine("Age cannot be negative.");
+            Console.WriteLine("Возраст не может быть отрицательным");
         }
     }
-}
 
-public class PersonFileService
-{
-    public static void WritePeopleToFile(List<Person> people, string filePath)
+    public void Introduce()
     {
-        List<string> lines = new List<string>
-        {
-            "# People"
-        };
-
-        foreach (var person in people)
-        {
-            lines.Add($"- Name: {person.Name}");
-            lines.Add($"  Age: {person.Age}");
-
-            if (person is Employee employee)
-            {
-                lines.Add($"  Position: {employee.Position}");
-            }
-
-            lines.Add("");
-        }
-
-        File.WriteAllLines(filePath, lines);
-    }
-
-    public static List<Person> ReadPeopleFromFile(string filePath)
-    {
-        List<Person> people = new List<Person>();
-
-        // Implement the code to read data from Markdown file using StreamReader
-
-        return people;
+        Console.WriteLine($"Привет! Меня зовут {this.name}");
     }
 }
 
 public class Employee : Person
 {
-    public string Position { get; set; }
+    public string position;
 
     public Employee(string name, int age, string position) : base(name, age)
     {
-        Position = position;
+        this.position = position;
     }
 }
 
-public class Program
+class Program
 {
-    public static void Main()
+    static void Main(string[] args)
     {
-        var people = new List<Person>
-        {
-            new Person("Alice", 28),
-            new Person("Bob", 35),
-            new Employee("Charlie", 42, "Manager")
-        };
+        // Создание массива из объектов Person
+        Person[] people = new Person[3];
+        people[0] = new Person("Alice", 28);
+        people[1] = new Person("Bob", 35);
+        people[2] = new Employee("Charlie", 42, "Product Manager");
 
-        string filePath = "yamd.md";
-
-        PersonFileService.WritePeopleToFile(people, filePath);
-
-        // Чтение людей из файла
-        var peopleFromFile = PersonFileService.ReadPeopleFromFile(filePath);
-
-        foreach (var person in peopleFromFile)
+        foreach(Person person in people)
         {
             person.Introduce();
+        }
 
-            if (person is Employee employee)
-            {
-                employee.Work();
-            }
+        // Работа с файлами
+        WriteToFile();
+        ReadFromFileAndPrint();
+    }
 
-            Console.WriteLine();
+    public static void WriteToFile()
+    {
+        string[] lines = new string[5];
+        for (int i = 0; i < lines.Length; i++)
+        {
+            lines[i] = "test";
+        }
+        File.WriteAllLines("test.txt", lines);
+    }
+
+    public static void ReadFromFileAndPrint()
+    {
+        string[] lines = File.ReadAllLines("test.txt");
+        foreach(string line in lines)
+        {
+            Console.WriteLine(line);
         }
     }
 }

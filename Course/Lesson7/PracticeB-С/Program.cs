@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 
 class Program
@@ -64,4 +65,13 @@ class Program
             {
                 return QuickSort(numbers, 0, numbers.Length - 1);
             }
+=======
+﻿namespace PracticeB_С;
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+    }
+>>>>>>> main
 }

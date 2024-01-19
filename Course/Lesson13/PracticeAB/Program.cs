@@ -1,99 +1,85 @@
-﻿// Практика А,Б
+﻿using System;
+using System.Collections.Generic; 
+using System.Text.Json;
+namespace PracticeAB;
 
-// Задание 1
-string json = @"{
-    'id': 12345,
-    'name': 'Иван Иванов',
-    'email': 'ivanov@example.com',
-    'isVerified': true
-}";
+[System.Serializable] public class Person_1 {
 
-User user = JsonConvert.DeserializeObject<User>(json);
+    public int id {get; set;}
+    public string name {get; set;}
+    public string email {get; set;}
+    public bool isVerified {get; set;}
 
-if (user.Name == "Иван Иванов")
-{
-    Console.WriteLine($"Email: {user.Email}");
-    Console.WriteLine($"ID: {user.Id}");
-}
+    public Person_1(){}
 
-// Задание 2
-string json = @"{
-    'orderId': 'ORD10245',
-    'customerName': 'Анна Петрова',
-    'totalPrice': 5600,
-    'items': ['Ноутбук', 'Мышь']
-}";
-
-Order order = JsonConvert.DeserializeObject<Order>(json);
-
-if (order.CustomerName == "Анна Петрова")
-{
-    Console.WriteLine($"Список товаров, которые купила Анна Петрова:");
-    foreach (var item in order.Items)
-    {
-        Console.WriteLine(item);
+    public Person_1(int id, string name, string email, bool isVerified) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.isVerified = isVerified;
     }
-
-    double discount = order.TotalPrice * 0.10;
-    double priceAfterDiscount = order.TotalPrice - discount;
-
-    Console.WriteLine($"Общая стоимость заказа со скидкой 10%: {priceAfterDiscount}");
 }
 
+public class Person_2 {
+    public string orderId {get; set;}
+    public string customerName {get; set;}
+    public double totalPrice {get; set;}
+    public string[] items {get; set;}
 
-// Задание 4
-string json = @"{
-    'orderId': 'ORD10245',
-    'customerName': 'Анна Петрова',
-    'totalPrice': 5600,
-    'items': ['Ноутбук', 'Мышь']
-}";
+    public Person_2() {}
 
-Order order = JsonConvert.DeserializeObject<Order>(json);
-
-if (order.CustomerName == "Анна Петрова")
-{
-    // Добавляем салфетки для мониторов в список покупок
-    order.Items.Add("Салфетки для мониторов");
-    order.TotalPrice += 1550;
-
-    Console.WriteLine($"Список товаров, которые купила Анна Петрова:");
-    foreach (var item in order.Items)
-    {
-        Console.WriteLine(item);
+    public Person_2(string orderId, string customerName, double totalPrice, string[] items) {
+        this.orderId = orderId;
+        this.customerName = customerName;
+        this.totalPrice = totalPrice;
+        this.items = items;
     }
-
-    // Применяем скидку 2%
-    double discount = order.TotalPrice * 0.02;
-    double priceAfterDiscount = order.TotalPrice - discount;
-
-    Console.WriteLine($"Общая стоимость заказа со скидкой 2%: {priceAfterDiscount}");
 }
-// Задание 5
-string json = @"{
-    'libraryName': 'Городская библиотека',
-    'books': [
-        {
-            'title': 'Война и мир',
-            'author': 'Лев Толстой',
-            'year': 1869
-        },
-        {
-            'title': 'Мастер и Маргарита',
-            'author': 'Михаил Булгаков',
-            'year': 1967
-        }
-    ]
-}";
 
-Library library = JsonConvert.DeserializeObject<Library>(json);
 
-// Добавляем книгу Пушкина в список книг
-Book pushkinBook = new Book { Title = "Евгений Онегин", Author = "Александр Пушкин", Year = 1833 };
-library.Books.Add(pushkinBook);
+public class Book {
+    public string title {get; set;}
+    public string author {get; set;}
+    public int year {get; set;}
+    public Book() {}
 
-Console.WriteLine($"Список книг в библиотеке '{library.LibraryName}':");
-foreach (var book in library.Books)
+    public Book(string title, string author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+}
+
+
+class Program
 {
-    Console.WriteLine($"Название: {book.Title}, Автор: {book.Author}, Год: {book.Year}");
+    static void Main(string[] args)
+    {
+
+        const string path = "1.json";
+
+        string jsonFromFile = File.ReadAllText(path);
+        Person_1 Ivan = JsonSerializer.Deserialize<Person_1>(jsonFromFile);
+        Console.WriteLine(Ivan.email);
+        const string path2 = "2.json";
+
+        jsonFromFile = File.ReadAllText(path2);
+        Person_2 Anna = JsonSerializer.Deserialize<Person_2>(jsonFromFile);
+        Console.WriteLine(Anna.totalPrice*0.9);
+        string[] c = Anna.items;
+        Anna.items = new string[3];
+        Anna.items[0] = c[0];
+        Anna.items[1] = c[1];
+        Anna.items[2] = "Салфетки";
+        Anna.totalPrice += 1550;
+        Anna.totalPrice*=0.98;
+        Console.WriteLine(Anna.totalPrice);
+
+        Book book = new Book("Евгений Онегин", "Александр Пушкин", 1831);
+        string json = JsonSerializer.Serialize(book);
+        Console.WriteLine(json); 
+
+        const string path3 = "5.json";
+        File.WriteAllText(path3, json);
+    }
 }

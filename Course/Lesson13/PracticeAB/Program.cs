@@ -50,13 +50,18 @@ public class Book {
         this.author = author;
         this.year = year;
     }
-
-
-
-
-
 }
 
+
+public class Lib {
+    public List<Book> books {get; set;}
+
+    public Lib() {}
+
+    public Lib(List<Book> books) {
+        this.books = books;
+    }
+}
 
 
 
@@ -92,10 +97,14 @@ class Program
         Console.WriteLine(Anna.totalPrice);
 
         Book book = new Book("Евгений Онегин", "Александр Пушкин", 1831);
-        string json = JsonSerializer.Serialize(book);
-        Console.WriteLine(json); 
+        
 
         const string path3 = "5.json";
+        jsonFromFile = File.ReadAllText(path3);
+        Lib l = JsonSerializer.Deserialize<Lib>(jsonFromFile);
+        l.books.Add(book);
+        string json = JsonSerializer.Serialize(l);
+        Console.WriteLine(json); 
         File.WriteAllText(path3, json);
     }
 }

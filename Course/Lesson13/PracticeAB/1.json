@@ -1,6 +1,6 @@
 {
     "id": 12345,
-    "name": "Иван Иванов",
+    "name": "Ivan Ivanov",
     "email": "ivanov@example.com",
     "isVerified": true
 }

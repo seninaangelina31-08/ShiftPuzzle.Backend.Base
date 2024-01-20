@@ -1,6 +1,6 @@
 {
     "orderId": "ORD10245",
-    "customerName": "Анна Петрова",
+    "customerName": "Anna Petrova",
     "totalPrice": 5600,
-    "items": ["Ноутбук", "Мышь"]
+    "items": ["Alaptop", "Mouse"]
 }

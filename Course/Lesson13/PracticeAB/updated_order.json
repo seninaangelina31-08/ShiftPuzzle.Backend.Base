@@ -1,0 +1,10 @@
+{
+  "orderId": "ORD10245",
+  "customerName": "Anna Petrova",
+  "totalPrice": 7150,
+  "items": [
+    "Alaptop",
+    "Mouse",
+    "Wipes for monitors"
+  ]
+}

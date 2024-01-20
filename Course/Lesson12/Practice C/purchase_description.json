@@ -1,0 +1,15 @@
+{
+    "purchases":
+    [
+        {
+        "name":"Sania",
+        "basket":[
+            "Monitor", "Invidia RTX580Ti"]
+            
+        },
+        {
+            "name": "Oleg",
+            "basket":["Dakimakura"]
+        }
+    ]
+}   

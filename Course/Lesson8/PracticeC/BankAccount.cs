@@ -148,7 +148,12 @@ namespace PracticeA
         public bool RequestLoan(int accountNumber, double loanAmount)
         {
             // Логика одобрения кредита опишите логику
+            if (GetAccount(AccountNumber) != null)
+        {
+            GetAccount(accountNumber).Deposit(loanAmount);
             return true;
+        }
+        return false;
         }
 
         // 9. Платеж по кредиту
@@ -156,6 +161,9 @@ namespace PracticeA
         {
             var account = GetAccount(accountNumber);
             // Логика получения по кредиту
+            if (account != null) account.Withdraw(amount);
+             
+        }
              
         }
 
@@ -169,4 +177,3 @@ namespace PracticeA
             }
         }
     }
-}

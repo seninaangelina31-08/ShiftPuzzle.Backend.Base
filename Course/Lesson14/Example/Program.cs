@@ -27,8 +27,12 @@ class Program
         
         CoindeskResponse response = JsonSerializer.Deserialize<CoindeskResponse>(jsonFromCoindesk); // десериализация
         
+        double bitcoinPrice = response.bpi.USD.rate_float;
+
+        double usdToRubRate = 88.59;
         
-        double bitcoinPrice = response.bpi.USD.rate_float; // получение нужной инфы
-        Console.Write("Bitcoin price : " +  bitcoinPrice); // вывод
+        double bitcoinPriceRUB = bitcoinPrice * usdToRubRate;
+
+        Console.Write("Bitcoin price in rubles : " +  bitcoinPriceRUB);
     }
 }

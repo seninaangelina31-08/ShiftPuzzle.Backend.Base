@@ -33,31 +33,27 @@ class Program
         string jsonFromFile_4 = File.ReadAllText(path_4);
         Chek person_edit = JsonSerializer.Deserialize<Chek>(jsonFromFile_4);
 
-        if (person_edit != null)
-        {
-            Console.WriteLine("#4");
-            const string new_item = "Салфетки для монитора";
-            person_edit.items.Add(new_item);
-            person_edit.totalPrice += 1550;
-            person_edit.totalPrice -= person_edit.totalPrice * 1000 / 100 * 2 / 1000;
-            string json_4 = JsonSerializer.Serialize(person_edit);
-            File.WriteAllText(path_4, json_4);
-            Console.WriteLine("Товар добавлен.\n");
-        }
+        Console.WriteLine("#4");
+        const string new_item = "Салфетки для монитора";
+        person_edit.items.Add(new_item);
+        person_edit.totalPrice += 1550;
+        person_edit.totalPrice -= person_edit.totalPrice * 1000 / 100 * 2 / 1000;
+        string json_4 = JsonSerializer.Serialize(person_edit);
+        File.WriteAllText(path_4, json_4);
+        Console.WriteLine("Товар добавлен.\n");
 
         const string path_5 = @"C:\Work\Lesson\ShiftPuzzle.Backend.Base\Course\Lesson13\PracticeAB\5.json";
         string jsonFromFile_5 = File.ReadAllText(path_5);
         Library library_5 = JsonSerializer.Deserialize<Library>(jsonFromFile_5);
 
-        if (library_5 != null)
-        {
-            Console.WriteLine("#5");
-            Book Pushkin = new Book("Евгений Онегин", "Александр Пушкин", 1833);
-            library_5.books.Add(Pushkin);
-            string json_5 = JsonSerializer.Serialize(library_5);
-            File.WriteAllText(path_5, json_5);
-            Console.WriteLine("Книга добавлена.\n");
-        }
+
+        Console.WriteLine("#5");
+        Book Pushkin = new Book("Евгений Онегин", "Александр Пушкин", 1833);
+        library_5.books.Add(Pushkin);
+        string json_5 = JsonSerializer.Serialize(library_5);
+        File.WriteAllText(path_5, json_5);
+        Console.WriteLine("Книга добавлена.\n");
+
     }
 }
 

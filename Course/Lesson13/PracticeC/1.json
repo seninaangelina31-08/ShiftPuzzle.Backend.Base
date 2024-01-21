@@ -18,6 +18,6 @@
     "genres": ["Приключения", "Комедия", "Научная фантастика"],
     "ratings": {
         "IMDb": 8.5,
-        "Rotten Tomatoes": "96%"
+        "RottenTomatoes": "96%"
     }
 }

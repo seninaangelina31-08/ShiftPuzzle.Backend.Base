@@ -16,12 +16,12 @@ namespace Example;
     public Product() { } // Пустой конструктор для десериализации
 
     // конструктор класса
-    public Product(string name, string description, int price, List<string> links)
+    public Product(string name, string description, int price, List<string> fsdfsdf)
     {
         this.Name = name;
         this.Description = description;
         this.Price = price;
-        this.Links = links;
+        this.Links = fsdfsdf;
     }
 }
 

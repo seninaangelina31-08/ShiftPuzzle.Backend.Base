@@ -5,7 +5,6 @@ using System;
 using System.Text.Json;
 
 
-
 class Program
 {  
     public static string GetRequest(string url) // функция принимает адерс api

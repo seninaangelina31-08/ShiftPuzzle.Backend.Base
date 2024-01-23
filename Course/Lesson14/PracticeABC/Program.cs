@@ -379,6 +379,54 @@ public class RandomFact
     }
 }
 
+[System.Serializable] public class IP
+{
+    public string ip { get; set; }
+
+    public IP(){}
+    public IP(string ip)
+    {
+        this.ip = ip;
+    }
+}
+
+[System.Serializable] public class IP_info_url
+{
+    public string ip { get; set; }
+    public string hostname { get; set; }
+    public string city { get; set; }
+    public string region { get; set; }
+    public string country { get; set; }
+    public string loc { get; set; }
+    public string org { get; set; }
+    public string postal { get; set; }
+    public string timezone { get; set; }
+    public string readme { get; set; }
+
+    public IP_info_url(){}
+    public IP_info_url(string ip, string hostname, string city, string region, string country,
+     string loc, string org, string postal, string timezone, string readme)
+     {
+        this.ip = ip;
+        this.hostname = hostname;
+        this.city = city;
+        this.region = region;
+        this.country = country;
+        this.loc = loc;
+        this.org = org;
+        this.postal = postal;
+        this.timezone = timezone;
+        this.readme = readme;
+            
+
+     }
+}
+
+[System.Serializable] public class Zippo
+{
+    [JsonProperty("post code")]
+    public string postcode { get; set; }
+}
 class Program
 {
     public static string Request(string url)
@@ -452,6 +500,13 @@ class Program
         {
             Console.WriteLine("Нет");
         }
+
+        string ip_url = "https://api.ipify.org/?format=json";
+        string ip_json = Request(ip_url);
+        IP ip = JsonSerializer.Deserialize<IP>(ip_json);
+        string ip_info_url = $"https://ipinfo.io/{ip.ip}/geo";
+        string info_json = Request(ip_info_url);
+        IP_info_url info = JsonSerializer.Deserialize<IP_info_url>(info_json);
 
 
 

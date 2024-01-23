@@ -5,18 +5,16 @@ using System;
 using System.Text.Json;
 class Program
 {
-    class Genderize
+    class Univers
     {
-        public string gender {get; set;}
+        public string alpha_two_code {get; set;}
+        public List<string> domains {get; set;}
+        public string country {get; set;}
+        public string name {get; set;}
+        public string state_province {get; set;}
+        public List<string> web_pages {get; set;}
     }
-    class Result
-    {
-        public string gender {get; set;}
-    }
-    class Random_user
-    {
-        public List<Result> results {get; set;}
-    }
+
     public static string GetRequest(string url) // функция принимает адерс api
     {
         WebRequest request = WebRequest.Create(url); // создаем запрос
@@ -31,14 +29,14 @@ class Program
     }
     static void Main(string[] args)
     {
-        string json = GetRequest("https://randomuser.me/api/"); 
-        string json2 = GetRequest("https://api.genderize.io/?name=vadim");
+        string URL = "http://universities.hipolabs.com/search?country=Kazakhstan"; 
+        string json = GetRequest(URL); 
+        Univers response = JsonSerializer.Deserialize<Univers>(json);
         
-        Random_user user = JsonSerializer.Deserialize<Random_user>(json);
-        Genderize g = JsonSerializer.Deserialize<Genderize>(json2);
-        
-        string rez = user.results[0].gender;
-        if (rez == g.gender) Console.WriteLine("Да");
-        else Console.WriteLine("Нет");
+        string joke = response.name;
+        string jsonS = JsonSerializer.Serialize(joke);
+        Console.WriteLine(jsonS);
+
+        //Невозможно получить запрос из-за state-province
     }
 }

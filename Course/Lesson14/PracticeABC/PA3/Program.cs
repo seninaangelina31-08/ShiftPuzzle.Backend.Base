@@ -24,12 +24,11 @@ class Program
     }
     static void Main(string[] args)
     {
-        while(Console.ReadLine()!="r"){
-            Console.Write("");
-        }
-        string URL = "https://catfact.ninja/fact";                  //url
+        while(Console.Readline()!='r'){
+            string URL = "https://catfact.ninja/fact";            //url
             string json = GetRequest(URL);                        //запрос
             cat response = JsonSerializer.Deserialize<cat>(json); // десериализация 
-            Console.WriteLine(response.fact);
+            Console.Write(response.fact);
+        }
     }
 }

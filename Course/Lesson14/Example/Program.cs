@@ -4,8 +4,6 @@ using System.IO;
 using System;
 using System.Text.Json;
 
-
-
 class Program
 {  
     public static string GetRequest(string url) // функция принимает адерс api
@@ -29,6 +27,9 @@ class Program
         
         
         double bitcoinPrice = response.bpi.USD.rate_float; // получение нужной инфы
-        Console.Write("Bitcoin price : " +  bitcoinPrice); // вывод
+        Console.Write("Цена биткойна : " +  bitcoinPrice*73.2+" в рублях"); // вывод
+        //как подрубить здесь курс доллара к рублю, или выводить цену в рублях???
     }
 }
+
+

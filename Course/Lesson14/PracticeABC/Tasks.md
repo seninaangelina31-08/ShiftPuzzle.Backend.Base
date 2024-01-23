@@ -4,7 +4,7 @@
 
 1. Выведи в консоль стоимость биткоина в рублях по фиксированому курсу (api: https://api.coindesk.com/v1/bpi/currentprice.json)
 2. Cоздай программу которая по нажатию на клавишу "R" выводит рандоиный факт о кошке ( api: https://catfact.ninja/fact)
-3. Напиши прогрумму которая будте добавлятьв  файл рандомные шутки (api: https://official-joke-api.appspot.com/random_joke)
+3. Напиши прогрумму которая будте добавлять в файл рандомные шутки (api: https://official-joke-api.appspot.com/random_joke)
 4. Напиши программу которая получит ТОП3 универститетов каждой страны  (api: http://universities.hipolabs.com/search?country=Kazakhstan)
 
 *ПратикаБ*: 

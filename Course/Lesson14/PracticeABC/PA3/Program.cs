@@ -5,11 +5,14 @@ using System;
 using System.Text.Json;
 class Program
 {
-    class cat
+    class jokes
     {
-        public string fact {get; set;}
-        public int length {get; set;}
+        public string type {get; set;}
+        public string setup {get; set;}
+        public string punchline {get; set;}
+        public int id {get; set;}
     }
+
     public static string GetRequest(string url) // функция принимает адерс api
     {
         WebRequest request = WebRequest.Create(url); // создаем запрос
@@ -24,11 +27,14 @@ class Program
     }
     static void Main(string[] args)
     {
-        while(Console.Readline()!='r'){
-            string URL = "https://catfact.ninja/fact";            //url
-            string json = GetRequest(URL);                        //запрос
-            cat response = JsonSerializer.Deserialize<cat>(json); // десериализация 
-            Console.Write(response.fact);
-        }
+        string URL = "https://official-joke-api.appspot.com/random_joke"; 
+        string json = GetRequest(URL); 
+        jokes response = JsonSerializer.Deserialize<jokes>(json);
+        
+        string joke = response.setup + "\n" + response.punchline;
+        string jsonS = JsonSerializer.Serialize(joke);
+
+        const string path = "joke.json";
+        File.WriteAllText(path, jsonS); // запись объекта в JSON файл
     }
 }

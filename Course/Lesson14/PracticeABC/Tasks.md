@@ -19,3 +19,4 @@
 1. *https://api.ipify.org/?format=json      получаем =>  {"ip":"109.93.165.66"}*
 2. *https://ipinfo.io/109.93.165.66/geo     получаем =>  ...."postal": "11000", "country": "RS"....*
 3. *https://api.zippopotam.us/rs/11000      получаем => ....[{"place name": "Beograd", "longitude": "20.4622222", "state": "", "state abbreviation": "", "latitude": "44.8205556"}]...*
+dotnet new console --framework net6.0 --use-program-main

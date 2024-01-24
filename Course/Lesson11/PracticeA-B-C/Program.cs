@@ -129,31 +129,45 @@ class SimpleDB
     public void SaveDB()
     {
         Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        StudetnFileService MyService = new StudetnFileService(students);
+        MyService.SaveToFile();
+        Console.WriteLine("All Saved");
     }
 
     public void LoadDB()
     {
         Console.WriteLine("Funcional ne realizovan...");
-        //  practice B;
+        StudetnFileService MyService = new StudetnFileService(students);
+        MyService.LoadFromFile();
+        students = MyService.students;
+        Console.WriteLine("All loaded");
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
+        students.Add(name, new Student(name));
+        Console.WriteLine("Student dobavlen.")
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
-    }
+        if (students.Remove(name) == true)
+        {
+            Console.WriteLine("Student udalen.")
+        }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
-    }
+        Student man = students[name];
+        Console.WriteLine("???? ?????"+name);
+        foreach (var grade in man.Grades)
+        {
+            Console.WriteLine($"?????? {grade.Value} ?? ???????? '{grade.Key}' ");
+        }
+        foreach (var att in man.Attendance)
+        {
+            Console.Write.Line($"{att.Key} ????? {att.Value}");
+        }
+}
 
     public Student GetStudent(string name)
     {
@@ -167,7 +181,7 @@ class SimpleDB
             return null;
         }
     }
-}
+    }
 
 class Program
 {

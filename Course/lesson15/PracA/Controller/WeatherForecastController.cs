@@ -29,6 +29,49 @@ public class StoreController : ControllerBase
     {
         return shop_list;
     }
+
+
+    [HttpGet("change_cost")]
+    public string change_cost(string name, string new_cost)
+    {
+        foreach (Prod product in shop_list)
+        {
+            if (product.name == name)
+            {
+                product.price = new_cost;
+                return "OK"
+            }
+        }
+        return "NotFound"
+    }
+
+    [HttpGet("change_name")]
+    public string change_name(string name, string new_name)
+    {
+        foreach (Prod product in shop_list)
+        {
+            if (product.name == name)
+            {
+                product.name = new_name;
+                return "OK"
+            }
+        }
+        return "NotFound"
+    }
+
+    [HttpGet("isNotIn")]
+    public string isNotIn()
+    {
+        public List<Prod> No = new List<Prod>{}
+        foreach (Prod product in shop_list)
+        {
+            if (product.in == False)
+            {
+                No.Add(product);
+            }
+        }
+        return No
+    }
 }
 
 [System.Serializable] public class Prod

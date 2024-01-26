@@ -1,0 +1,352 @@
+ССЫЛКА: https://github.com/wh-iterabb-it/meowfacts
+ОПИСАНИЕ: Get random cat facts
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/movebank/movebank-api-doc
+ОПИСАНИЕ: Movement and Migration data of animals
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/RocktimSaikia/anime-chan
+ОПИСАНИЕ: Anime quotes (over 10k+)
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/cheatsnake/emojihub
+ОПИСАНИЕ: Get emojis by categories and groups
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/CrossRef/rest-api-doc
+ОПИСАНИЕ: Books & Articles Metadata
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/GurbaniNow/api
+ОПИСАНИЕ: Fast and Accurate Gurbani RESTful API
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/thundercomb/poetrydb#readme
+ОПИСАНИЕ: Enables you to get instant data from our vast poetry collection
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/fawazahmed0/quran-api#readme
+ОПИСАНИЕ: Free Quran API Service with 90+ different languages and 400+ translations
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/gadael/icsdb
+ОПИСАНИЕ: Database of ICS files for non working days
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/egno/work-calendar
+ОПИСАНИЕ: Check if a date is a Russian holiday or not
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/fawazahmed0/currency-api#readme
+ОПИСАНИЕ: Free Currency Exchange Rates API with 150+ Currencies & No Rate Limits
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/polarspetroll/ciprand
+ОПИСАНИЕ: Secure random string generator
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/fawazahmed0/cloudflare-trace-api
+ОПИСАНИЕ: Get IP Address, Timestamp, User Agent, Country Code, IATA, HTTP Version, TLS/SSL Version & More
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/Jaagrav/CodeX
+ОПИСАНИЕ: Online Compiler for Various Languages
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/burhanuday/cors-proxy
+ОПИСАНИЕ: Get around the dreaded CORS error by using this proxy as a middle man
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/jsdelivr/data.jsdelivr.com
+ОПИСАНИЕ: Package info and download stats on jsDelivr CDN
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/cmccandless/license-api/blob/master/README.md
+ОПИСАНИЕ: Unofficial REST API for choosealicense.com
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md
+ОПИСАНИЕ: Query information about your favorite Node.js libraries programatically
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/Cgboal/SonarSearch
+ОПИСАНИЕ: Project Sonar DNS Enumeration API
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/melpon/wandbox/blob/master/kennel2/API.rst
+ОПИСАНИЕ: Code compiler supporting 35+ languages mentioned at wandbox.org
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/sameerkumar18/corporate-bs-generator-api
+ОПИСАНИЕ: REST API for Corporate Buzz Words
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/theIYD/NaMoMemes
+ОПИСАНИЕ: Memes on Narendra Modi
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/beanboi7/yomomma-apiv2
+ОПИСАНИЕ: REST API for Yo Momma Jokes
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/surhud004/Foodish#readme
+ОПИСАНИЕ: Random pictures of food dishes
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/evz/tacofancy-api
+ОПИСАНИЕ: Community-driven taco database
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/andyklimczak/TheReportOfTheWeek-API
+ОПИСАНИЕ: Food & Drink Reviews
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/didadadida93/autochess-vng-api
+ОПИСАНИЕ: Rest Api for Autochess VNG
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/bartervg/barter.vg/wiki
+ОПИСАНИЕ: Provides information about Game, DLC, Bundles, Giveaways, Trading
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/sameerkumar18/geek-joke-api
+ОПИСАНИЕ: Fetch a random geeky/programming related joke for use in all sorts of applications
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/favware/graphql-pokemon
+ОПИСАНИЕ: GraphQL powered Pokemon API. Supports generations 1 through 8
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/rubensayshi/gw2spidy/wiki
+ОПИСАНИЕ: GW2Spidy API, Items data on the Guild Wars 2 Trade Market
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/gadhagod/Hyrule-Compendium-API
+ОПИСАНИЕ: Data on all interactive items from The Legend of Zelda: BOTW
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/mazipan/graphql-pokeapi
+ОПИСАНИЕ: The Unofficial GraphQL for PokeAPI
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/deltadex7/puyodb-api-deno
+ОПИСАНИЕ: Puyo Puyo information from Puyo Nexus Wiki
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/JessVel/sakura-card-captor-api
+ОПИСАНИЕ: Sakura CardCaptor Cards Information
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/Revadike/InternalSteamWebAPI/wiki
+ОПИСАНИЕ: Internal Steam Web API documentation
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/DiljotSG/MCU-Countdown/blob/develop/docs/API.md
+ОПИСАНИЕ: Upcoming MCU film information
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/kamikazechaser/administrative-divisions-db
+ОПИСАНИЕ: Get all administrative divisions of a country
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/M-Media-Group/Cartes.io/wiki/API
+ОПИСАНИЕ: Create maps and markers for anything
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/lennertVanSever/graphcountries
+ОПИСАНИЕ: Country-related data like currencies, languages, flags, regions+subregions and bordering countries
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/IcaliaLabs/sepomex
+ОПИСАНИЕ: Mexico RESTful zip codes API
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/slftool/slftool.github.io/blob/master/API.md
+ОПИСАНИЕ: German city, country, river, database
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/M-Media-Group/Covid-19-API
+ОПИСАНИЕ: Covid 19 cases, deaths and recovery per country
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/mathdroid/covid-19-api
+ОПИСАНИЕ: Global and countrywise data of Covid 19 daily Summary, confirmed cases, recovered and deaths
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/Simperfy/Covid-19-API-Philippines-DOH
+ОПИСАНИЕ: Unofficial Covid-19 Web API for Philippines from data collected by DOH
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview
+ОПИСАНИЕ: Job titles, skills and related jobs data
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/cyberboysumanjay/GaanaAPI
+ОПИСАНИЕ: API to retrieve song information from Gaana
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/cyberboysumanjay/JioSaavnAPI
+ОПИСАНИЕ: API to retrieve song information, album meta data and many more from JioSaavn
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/cyberboysumanjay/Inshorts-News-API
+ОПИСАНИЕ: Provides news from inshorts
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/0x0is1/lowy-index-api-docs
+ОПИСАНИЕ: Get measure resources and influence to rank the relative power of states in Asia
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/Hipo/university-domains-list
+ОПИСАНИЕ: University names, countries and domains
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/anuraghazra/github-readme-stats
+ОПИСАНИЕ: Add dynamically generated statistics to your GitHub profile ReadMe
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/fisenkodv/dictum
+ОПИСАНИЕ: API to get access to the collection of the most inspiring expressions of mankind
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/skolakoda/programming-quotes-api
+ОПИСАНИЕ: Programming Quotes API for open source projects
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/lukePeavey/quotable
+ОПИСАНИЕ: Quotable is a free, open source quotations API
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/tlcheah2/stoic-quote-lambda-public-api
+ОПИСАНИЕ: Quotes about Stoicism
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/azharimm/phone-specs-api
+ОПИСАНИЕ: Rest Api for Phone specifications
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/DenverCoder1/readme-typing-svg
+ОПИСАНИЕ: Customizable typing and deleting text SVG
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/idigbio/idigbio-search-api/wiki
+ОПИСАНИЕ: Access millions of museum specimens from organizations around the world
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/inspirehep/rest-api-doc
+ОПИСАНИЕ: High Energy Physics info. system
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/elizabethadegbaju/remotecalc
+ОПИСАНИЕ: Decodes base64 encoding and parses it to return a solution to the calculation in JSON
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/r-spacex/SpaceX-API
+ОПИСАНИЕ: Company, vehicle, launchpad and launch data
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/FranP-code/API-Times-Adder
+ОПИСАНИЕ: With this API you can add each of the times introduced in the array sended
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/Dehash-lt/api
+ОПИСАНИЕ: Hash decryption MD5, SHA1, SHA3, SHA256, SHA384, SHA512
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/polarspetroll/EscapeAPI
+ОПИСАНИЕ: An API for escaping different kind of queries
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/mozilla/http-observatory/blob/master/httpobs/docs/api.md
+ОПИСАНИЕ: Mozilla observatory http scanner
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/mozilla/tls-observatory#api-endpoints
+ОПИСАНИЕ: Mozilla observatory tls scanner
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/fawazsullia/password-generator/
+ОПИСАНИЕ: Generate random passwords of varying complexities
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/4chan/4chan-API
+ОПИСАНИЕ: Simple image-based bulletin board dedicated to a variety of topics
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/HackerNews/API
+ОПИСАНИЕ: Social news for CS and entrepreneurship
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/Phineas/lanyard
+ОПИСАНИЕ: Retrieve your presence on Discord through an HTTP REST API or WebSocket
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/azharimm/football-standings-api
+ОПИСАНИЕ: Display football standings e.g epl, la liga, serie a etc. The data is based on espn site
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/transitland/transitland-datastore/blob/master/README.md#api-endpoints
+ОПИСАНИЕ: Transitland API
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/derhuerst/vbb-rest/blob/3/docs/index.md
+ОПИСАНИЕ: Third-party VBB API
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/skywave/KV78Turbo-OVAPI/wiki
+ОПИСАНИЕ: OVAPI, country-wide public transport
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/1pt-co/api/blob/main/README.md
+ОПИСАНИЕ: A simple URL shortener
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/robvanbakel/gotiny-api
+ОПИСАНИЕ: A lightweight URL shortener, focused on ease-of-use for the developer and end-user
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/FayasNoushad/Short-Link-API
+ОПИСАНИЕ: Short URLs support so many domains
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/shevabam/breaking-bad-quotes
+ОПИСАНИЕ: Some Breaking Bad quotes
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/ywalia01/dune-api
+ОПИСАНИЕ: A simple API which provides you with book, character, movie and quotes JSON data
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/SpEcHiDe/IMDbOT
+ОПИСАНИЕ: Unofficial IMDb Movie / Series Information
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/shadowoff09/lucifer-quotes
+ОПИСАНИЕ: Returns Lucifer quotes
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/DiljotSG/MCU-Countdown
+ОПИСАНИЕ: A Countdown to the next MCU Film
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/F4R4N/movie-quote/
+ОПИСАНИЕ: Random Movie and Series Quotes
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api
+ОПИСАНИЕ: Television
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/shadowoff09/strangerthings-quotes
+ОПИСАНИЕ: Returns Stranger Things quotes
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/yogeshwaran01/web-series-quotes
+ОПИСАНИЕ: API generates various Web Series Quote Images
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+
+ССЫЛКА: https://github.com/robertoduessmann/weather-api
+ОПИСАНИЕ: A RESTful free API to check the weather
+АВТОРИЗАЦИЯ: не нужна (т.к. некоторые сервисы могут требовать авторизацию)
+

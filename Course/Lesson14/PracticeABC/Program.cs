@@ -20,6 +20,7 @@ class Program
     }
     static void Main(string[] args)
     {
+        // Practice A
         // #1
         string coindeskURL = "https://api.coindesk.com/v1/bpi/currentprice.json"; // наша ссылка для  битка
         string jsonFromCoindesk = GetRequest(coindeskURL);  // поулчение ответа в виде json файла
@@ -71,9 +72,26 @@ class Program
         {
             Console.WriteLine("Данной страны либо не существует, либо нет в базе данных.");
         }
+
+        // Practice B
+        // #1
+        string randomuserURL = "https://randomuser.me/api/";
+        string jsonFromRandomuser = GetRequest(randomuserURL);
+
+        RandomuserAPI response_randomuser = JsonSerializer.Deserialize<RandomuserAPI>(jsonFromRandomuser);
+
+        string genderizeURL = "https://api.genderize.io/?name=" + response_randomuser.results[0].name.first;
+        string jsonFromGenderize = GetRequest(genderizeURL);
+
+        GenderizeAPI response_genderize = JsonSerializer.Deserialize<GenderizeAPI>(jsonFromGenderize);
+
+        if (response_randomuser.results[0].gender == response_genderize.gender) Console.WriteLine("ДА");
+        else Console.WriteLine("НЕТ");
+        
     }
 }
 
+// Practice A
 [System.Serializable] public class Currency
 {
     public string code { get; set; }
@@ -192,5 +210,232 @@ class Program
         this.nastate_provinceme = nastate_provinceme_copy;
         this.domains = domains_copy;
         this.web_pages = web_pages_copy;
+    }
+}
+
+// Practice B
+
+// RandomuserAPI
+[System.Serializable] public class Name
+{
+    public string title { get; set; }
+    public string first { get; set; }
+    public string last { get; set; }
+    public Name() {}
+    public Name(string title_copy, string first_copy, string last_copy)
+    {
+        this.title = title_copy;
+        this.first = first_copy;
+        this.last = last_copy;
+    }
+}
+
+[System.Serializable] public class Street
+{
+    public int number { get; set; }
+    public string name { get; set; }
+    public Street() {}
+    public Street(int number_copy, string name_copy)
+    {
+        this.number = number_copy;
+        this.name = name_copy;
+    }
+}
+
+[System.Serializable] public class Coordinates
+{
+    public string latitude { get; set; }
+    public string longitude { get; set; }
+    public Coordinates() {}
+    public Coordinates(string latitude_copy, string longitude_copy)
+    {
+        this.latitude = latitude_copy;
+        this.longitude = longitude_copy;
+    }
+}
+
+[System.Serializable] public class Timezone
+{
+    public string offset { get; set; }
+    public string description { get; set; }
+    public Timezone() {}
+    public Timezone(string offset_copy, string description_copy)
+    {
+        this.offset = offset_copy;
+        this.description = description_copy;
+    }
+}
+
+[System.Serializable] public class Login
+{
+    public string uuid { get; set; }
+    public string username { get; set; }
+    public string password { get; set; }
+    public string salt { get; set; }
+    public string md5 { get; set; }
+    public string sha1 { get; set; }
+    public string sha256 { get; set; }
+    public Login() {}
+    public Login(string uuid_copy, string username_copy, string password_copy, string salt_copy, string md5_copy, string sha1_copy, string sha256_copy)
+    {
+        this.uuid = uuid_copy;
+        this.username = username_copy;
+        this.password = password_copy;
+        this.salt = salt_copy;
+        this.md5 = md5_copy;
+        this.sha1 = sha1_copy;
+        this.sha256 = sha256_copy;
+    }
+}
+
+[System.Serializable] public class Dob
+{
+    public string date { get; set; }
+    public int age { get; set; }
+    public Dob() {}
+    public Dob(string date_copy, int age_copy)
+    {
+        this.date = date_copy;
+        this.age = age_copy;
+    }
+}
+
+[System.Serializable] public class Registered
+{
+    public string date { get; set; }
+    public int age { get; set; }
+    public Registered() {}
+    public Registered(string date_copy, int age_copy)
+    {
+        this.date = date_copy;
+        this.age = age_copy;
+    }
+}
+
+[System.Serializable] public class Id
+{
+    public string name { get; set; }
+    public string value { get; set; }
+    public Id() {}
+    public Id(string name_copy, string value_copy)
+    {
+        this.name = name_copy;
+        this.value = value_copy;
+    }
+}
+
+[System.Serializable] public class Picture
+{
+    public string large { get; set; }
+    public string medium { get; set; }
+    public string thumbnail { get; set; }
+    public Picture() {}
+    public Picture(string large_copy, string medium_copy, string thumbnail)
+    {
+        this.large = large_copy;
+        this.medium = medium_copy;
+        this.thumbnail = thumbnail;
+    }
+}
+
+[System.Serializable] public class Location
+{
+    public Street street { get; set; }
+    public string city { get; set; }
+    public string state { get; set; }
+    public string country { get; set; }
+    public int postcode { get; set; }
+    public Coordinates coordinates { get; set; }
+    public Timezone timezone { get; set; }
+
+    public Location() {}
+    public Location(Street street_copy, string city_copy, string state_copy, string country_copy, int postcode_copy, Coordinates coordinates_copy, Timezone timezone_copy)
+    {
+        this.street = street_copy;
+        this.city = city_copy;
+        this.state = state_copy;
+        this.country = country_copy;
+        this.postcode = postcode_copy;
+        this.coordinates = coordinates_copy;
+        this.timezone = timezone_copy;
+    }
+}
+
+[System.Serializable] public class Results
+{
+    public string gender { get; set; }
+    public Name name { get; set; }
+    public Location location { get; set; }
+    public string email { get; set; }
+    public Login login { get; set; }
+    public Dob dob { get; set; }
+    public Registered registered { get; set; }
+    public string phone { get; set; }
+    public string cell { get; set; }
+    public Id id { get; set; }
+    public Picture picture { get; set; }
+    public string nat { get; set; }
+
+    public Results() {}
+    public Results(string gender_copy, Name name_copy, Location location_copy, string email_copy, Login login_copy, Dob dob_copy, Registered registered_copy, string phone_copy, string cell_copy, Id id_copy, Picture picture_copy, string nat_copy)
+    {
+        this.gender = gender_copy;
+        this.name = name_copy;
+        this.location = location_copy;
+        this.email = email_copy;
+        this.login = login_copy;
+        this.dob = dob_copy;
+        this.registered = registered_copy;
+        this.phone = phone_copy;
+        this.cell = cell_copy;
+        this.id = id_copy;
+        this.picture = picture_copy;
+        this.nat = nat_copy;
+    }
+}
+
+[System.Serializable] public class Info
+{
+    public string seed { get; set; }
+    public int results { get; set; }
+    public int page { get; set; }
+    public string version { get; set; }
+
+    public Info() {}
+    public Info(string seed_copy, int results_copy, int page_copy, string version_copy)
+    {
+        this.seed = seed_copy;
+        this.results = results_copy;
+        this.page = page_copy;
+        this.version = version_copy;
+    }
+}
+
+[System.Serializable] public class RandomuserAPI
+{
+    public List<Results> results { get; set; }
+    public Info info { get; set; }
+    public RandomuserAPI() {}
+    public RandomuserAPI(List<Results> results_copy, Info info_copy)
+    {
+        this.results = results_copy;
+        this.info = info_copy;
+    }
+}
+
+// Genderize
+[System.Serializable] public class GenderizeAPI
+{
+    public int count { get; set; }
+    public string name { get; set; }
+    public string gender { get; set; }
+    public double probability { get; set; }
+    public GenderizeAPI() {}
+    public GenderizeAPI(int count_copy, string name_copy, string gender_copy, double probability_copy)
+    {
+        this.count = count_copy;
+        this.name = name_copy;
+        this.gender = gender_copy;
+        this.probability = probability_copy;
     }
 }

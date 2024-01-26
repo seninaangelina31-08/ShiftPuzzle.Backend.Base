@@ -19,6 +19,7 @@ public class StoreController : ControllerBase
         }
     }
 
+    private static readonly List<User> Users = new List<User>();
     private static readonly List<Product> Items = new List<Product>();
 
     [HttpGet]
@@ -106,4 +107,38 @@ public class StoreController : ControllerBase
     }
 
 
+    [HttpPost]
+    [Route("/store/add_user")]
+    public IActionResult AddUser([FromBody] User user)
+    {
+        Users.Add(user);
+        return Ok($"User {user.Login} added.");
+
+    }
+
+    [HttpPost]
+    [Route("store/logining_user")]
+    public IActionResult LoginingUser([FromBody] User user)
+    {
+        foreach (var el in Users)
+        {
+            if (el.Login == user.Login)
+            {
+                if (el.Password == user.Password)
+                {   
+                    el.IsAuthorized = true;
+                    return Ok("Successfully logged in.");
+                }
+            }
+        }
+        return NotFound("Wrong login or password.");
+    }
+
+
+    [HttpGet]
+    [Route("/store/user_info")]
+    public IActionResult UserInfo()
+    {
+        return Ok(Users);
+    }
 }

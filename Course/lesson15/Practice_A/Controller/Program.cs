@@ -53,4 +53,46 @@ public class StoreController : ControllerBase
     {
         return Ok(productList);
     }
+
+        [HttpPost]
+    [Route("store/update/price")]
+    public IActionResult UpdateProductPrice([FromBody] Product updatedProduct)
+    {
+        Product productToUpdate = productList.Find(p => p.Name == updatedProduct.Name);
+
+        if (productToUpdate != null)
+        {
+            productToUpdate.Price = updatedProduct.Price;
+            return Ok(productToUpdate);
+        }
+        else
+        {
+            return NotFound($"Product '{updatedProduct.Name}' not found.");
+        }
+    }
+
+    [HttpPost]
+    [Route("store/update/name")]
+    public IActionResult UpdateProductName([FromBody] Product updatedProduct)
+    {
+        Product productToUpdate = productList.Find(p => p.Name == updatedProduct.Name);
+
+        if (productToUpdate != null)
+        {
+            productToUpdate.Name = updatedProduct.Name;
+            return Ok(productToUpdate);
+        }
+        else
+        {
+            return NotFound($"Product '{updatedProduct.Name}' not found.");
+        }
+    }
+
+    [HttpGet]
+    [Route("store/out-of-stock")]
+    public IActionResult GetOutOfStockProducts()
+    {
+        var outOfStockProducts = productList.Where(p => p.StockQuantity == 0).ToList();
+        return Ok(outOfStockProducts);
+    }
 }

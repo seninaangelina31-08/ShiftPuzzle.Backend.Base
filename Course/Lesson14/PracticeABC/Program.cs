@@ -138,17 +138,17 @@ public class RandomFact
 [System.Serializable] public class University
 {
     public string name { get; set; }
-    public string alpha_code_two { get; set; }
+    public string alpha_two_code { get; set; }
     public List<string> domains { get; set; }
     public string country { get; set; }
     public string state_province { get; set; }
     public List<string> web_pages { get; set; }
 
     public University(){}
-    public University(string name, string alpha_code_two, string country, string state_province, List<string> domains, List<string> web_pages)
+    public University(string name, string alpha_two_code, string country, string state_province, List<string> domains, List<string> web_pages)
     {
         this.name = name;
-        this.alpha_code_two = alpha_code_two;
+        this.alpha_two_code = alpha_two_code;
         this.domains = domains;
         this.country = country;
         this.state_province = state_province;
@@ -429,8 +429,39 @@ public class RandomFact
 
 [System.Serializable] public class Zippo
 {
- //   [JsonProperty("post code")]
-    public string postcode { get; set; }
+    public string post_code { get; set; }
+    public string country { get; set; }
+    public string country_abbreviation { get; set; }
+    public List<Loc> places { get; set;}
+
+    public Zippo(){}
+    public Zippo(string post_code, string country, string country_abbreviation, List<Loc> places)
+    {
+        this.post_code = post_code;
+        this.country = country;
+        this.country_abbreviation = country_abbreviation;
+        this.places = places;
+    }
+}
+
+[System.Serializable] public class Loc
+{
+    public string place_name { get; set; }
+    public string longitude { get; set; }
+    public string state { get; set; }
+    public string state_abbreviation { get; set; }
+    public string latitude { get; set; }
+
+    public Loc(){}
+    public Loc(string place_name, string longitude, string state, string state_abbreviation,
+     string latitude)
+     {
+        this.place_name = place_name;
+        this.longitude = longitude;
+        this.state = state;
+        this.state_abbreviation = state_abbreviation;
+        this.latitude = latitude;
+     }
 }
 class Program
 {
@@ -484,11 +515,28 @@ class Program
         Joke joke = JsonSerializer.Deserialize<Joke>(json_from_request);
         File.WriteAllText("joke.json", JsonSerializer.Serialize(joke));
 
-         url = "http://universities.hipolabs.com/search";
-         json_from_request = Request(url);
-         List<University> ulist = JsonSerializer.Deserialize<List<University>>(json_from_request);
-         Console.WriteLine(ulist[0].name + ", " + ulist[1].name + ", " + ulist[2].name);
-        
+        url = "http://universities.hipolabs.com/search";
+        json_from_request = Request(url);
+        List<University> ulist = JsonSerializer.Deserialize<List<University>>(json_from_request);
+        Console.WriteLine(ulist[1].alpha_two_code);
+        Dictionary<string, int> u_count= new Dictionary<string, int>(); 
+        foreach (var el in ulist)
+        {
+            u_count[el.alpha_two_code] = 0;
+        }
+        foreach (var el in u_count)
+        {
+            Console.WriteLine(el.Key + " " + el.Value);
+        }
+        foreach (var el in ulist)
+        {
+            if (u_count[el.alpha_two_code] < 3)
+            {
+                u_count[el.alpha_two_code]++;
+                Console.WriteLine(el.alpha_two_code + " " + el.name);
+            }
+        }
+
         string url_random = "https://randomuser.me/api/";
         string json_from_request_random = Request(url_random);
         RandomUserandInfo RUaI = JsonSerializer.Deserialize<RandomUserandInfo>(json_from_request_random);
@@ -511,6 +559,9 @@ class Program
         string ip_info_url = $"https://ipinfo.io/{ip.ip}/geo";
         string info_json = Request(ip_info_url);
         IP_info_url info = JsonSerializer.Deserialize<IP_info_url>(info_json);
+        string zippo_url = $"https://api.zippopotam.us/{info.country}/{info.postal}";
+        Zippo zippo_res = JsonSerializer.Deserialize<Zippo>(Request(zippo_url));
+        Console.WriteLine($"latitude: {zippo_res.places[0].latitude}, longitude: {zippo_res.places[0].longitude}");
 
 
 

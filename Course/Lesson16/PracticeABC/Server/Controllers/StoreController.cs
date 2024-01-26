@@ -37,20 +37,19 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
-        if (product != null)
+        foreach (var el in Items)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            if (el.Name == currentName)
+            {
+                el.Name = newName;
+                return Ok(Items);
+            }
         }
-        else
-        {
-            return NotFound($"Продукт {currentName} не найден");
-        }
+        return NotFound("Продукт не найден в базе.");
     }
 
 
@@ -83,20 +82,19 @@ public class StoreController : ControllerBase
     }
 
 
-    [HttpGet]
+    [HttpDelete]
     [Route("/store/delete")]
     public IActionResult Delete(string name)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
-        if (product != null)
+        foreach (var el in Items)
         {
-            Items.Remove(product);
-            return Ok($"{name} удален");
+            if (el.Name == name)
+            {
+                Items.Remove(el);
+                return Ok(Items);
+            }
         }
-        else
-        {
-            return NotFound($"{name} не найден");
-        }
+        return NotFound("Продукт не найден в базе");
     }
 
 

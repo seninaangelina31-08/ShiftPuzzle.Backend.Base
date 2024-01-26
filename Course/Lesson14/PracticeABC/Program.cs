@@ -135,31 +135,23 @@ public class RandomFact
     }
 }
 
-[System.Serializable] public class UList
-{
-    public List<University> lst { get; set; }
-    
-    public UList(){}
-    public UList(List<University> lst)
-    {
-        this.lst = lst;
-    }
-}
 [System.Serializable] public class University
 {
     public string name { get; set; }
     public string alpha_code_two { get; set; }
     public List<string> domains { get; set; }
     public string country { get; set; }
+    public string state_province { get; set; }
     public List<string> web_pages { get; set; }
 
     public University(){}
-    public University(string name, string alpha_code_two, List<string> domains, string country, List<string> web_pages)
+    public University(string name, string alpha_code_two, string country, string state_province, List<string> domains, List<string> web_pages)
     {
         this.name = name;
         this.alpha_code_two = alpha_code_two;
         this.domains = domains;
         this.country = country;
+        this.state_province = state_province;
         this.web_pages = web_pages;
     }
 
@@ -228,6 +220,19 @@ public class RandomFact
     public int postcode { get; set; }
     public Coordinates coordinates { get; set; }
     public Timezone timezone { get; set; }
+
+    public Location(){}
+    public Location(Street street, string city, string state, string country, int postcode, 
+     Coordinates coordinates, Timezone timezone)
+     {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.postcode = postcode;
+        this.coordinates = coordinates;
+        this.timezone = timezone;
+     }
 
 
 }
@@ -424,7 +429,7 @@ public class RandomFact
 
 [System.Serializable] public class Zippo
 {
-    [JsonProperty("post code")]
+ //   [JsonProperty("post code")]
     public string postcode { get; set; }
 }
 class Program
@@ -473,17 +478,16 @@ class Program
         while (key.Key == ConsoleKey.R);
 
         
-        // КРИВОЕ АПИ
-        // url = "https://official-joke-api.appspot.com/random_joke";
-        // json_from_request = Request(url);
-        // Joke joke = JsonSerializer.Deserialize<Joke>(json_from_request);
-        // File.WriteAllText("joke.json", JsonSerializer.Serialize(joke));
+       
+        url = "https://official-joke-api.appspot.com/random_joke";
+        json_from_request = Request(url);
+        Joke joke = JsonSerializer.Deserialize<Joke>(json_from_request);
+        File.WriteAllText("joke.json", JsonSerializer.Serialize(joke));
 
-        // url = "http://universities.hipolabs.com/search";
-        // json_from_request = Request(url);
-        // Console.Write(json_from_request);
-        // UList ulist = JsonSerializer.Deserialize<UList>(json_from_request);
-        // Console.Write(ulist.lst[0].name);
+         url = "http://universities.hipolabs.com/search";
+         json_from_request = Request(url);
+         List<University> ulist = JsonSerializer.Deserialize<List<University>>(json_from_request);
+         Console.WriteLine(ulist[0].name + ", " + ulist[1].name + ", " + ulist[2].name);
         
         string url_random = "https://randomuser.me/api/";
         string json_from_request_random = Request(url_random);

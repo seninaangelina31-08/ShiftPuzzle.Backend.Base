@@ -2,41 +2,48 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 
+public class Product
+{
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+    public int StockQuantity { get; set; }
+}
+
+
+
+
 [ApiController]
 public class StoreController : ControllerBase
 {
-    private List<string> productList = new List<string>();
+    private List<Product> productList = new List<Product>();
 
     [HttpPost]
     [Route("store/add")]
-    public IActionResult AddProduct([FromBody] string product)
+    public IActionResult AddProduct([FromBody] Product product)
     {
-        if (string.IsNullOrWhiteSpace(product))
+        if (product == null || string.IsNullOrWhiteSpace(product.Name) || product.Price <= 0 || product.StockQuantity < 0)
         {
-            return BadRequest("Product cannot be empty.");
+            return BadRequest("Invalid product data.");
         }
 
         productList.Add(product);
-        return Ok($"Product '{product}' added successfully.");
+        return Ok(product);
     }
 
     [HttpPost]
     [Route("store/remove")]
-    public IActionResult RemoveProduct([FromBody] string product)
+    public IActionResult RemoveProduct([FromBody] string productName)
     {
-        if (string.IsNullOrWhiteSpace(product))
-        {
-            return BadRequest("Product cannot be empty.");
-        }
+        Product productToRemove = productList.Find(p => p.Name == productName);
 
-        if (productList.Contains(product))
+        if (productToRemove != null)
         {
-            productList.Remove(product);
-            return Ok($"Product '{product}' removed successfully.");
+            productList.Remove(productToRemove);
+            return Ok(productToRemove);
         }
         else
         {
-            return NotFound($"Product '{product}' not found.");
+            return NotFound($"Product '{productName}' not found.");
         }
     }
 

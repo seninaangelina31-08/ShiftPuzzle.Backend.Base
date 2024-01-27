@@ -1,46 +1,50 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Example.Controllers;
-
-
-[ApiController] 
-public class WeatherForecastController : ControllerBase
+namespace PracticeA
 {
-    private static readonly string[] Summaries = new[]
+    public class Product
     {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-    private readonly ILogger<WeatherForecastController> _logger;
-
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
-    {
-        _logger = logger;
+        public string Gamepad { get; set; }
+        public decimal Price { get; set; }
+        public bool IsAvailable { get; set; }
     }
 
-    [HttpGet]
-    [Route("WeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    public class StoreController : ControllerBase
     {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        private List<Product> _products = new List<Product>();
+
+        [HttpPost("store/add")]
+        [Produces("application/json")]
+        
+        public IActionResult AddProduct([FromBody] Product product)
         {
-            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        })
-        .ToArray();
+            _products.Add(product);
+            return Ok();
+        }
+        
+        [HttpDelete("store/delete/{GamepadName}")]
+        [Produces("application/json")]
+        public IActionResult DeleteProduct(string mouseName)
+        {
+            var product = _products.FirstOrDefault(p => p.Gamepad == GamepadName);
+            if (product != null)
+            {
+                _products.Remove(product);
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpGet("store/products")]
+        [Produces("application/json")]
+        public ActionResult<List<Product>> GetProducts()
+        {
+            return _products;
+        }
     }
-}
-
-
- 
-public class WeatherForecast
-{
-    public DateOnly Date { get; set; }
-
-    public int TemperatureC { get; set; }
-
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-
-    public string? Summary { get; set; }
 }

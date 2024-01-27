@@ -19,7 +19,26 @@ public class StoreController : ControllerBase
         }
     }
 
+    public class User
+    {
+        public string name { get; set; }
+        public double password { get; set; }
+        public bool isAuthorized { get; set; }
+
+        public User(){}
+        public User(string name, double password, bool isAuthorized)
+        {
+            this.name = name;
+            this.password = password;
+            this.isAuthorized = false;
+        }
+    }
+
+    //Product newProduct = new Product("Cookies", 145, 23);
+
+
     private static readonly List<Product> Items = new List<Product>();
+    private static readonly List<User> Users = new List<User>();
 
     [HttpGet]
     [Route("/store/updateprice")]
@@ -37,20 +56,21 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+
+//PracticeC
+    [HttpPost]
     [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
-        if (product != null)
+        foreach (var prod in Items)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            if (prod.Name == currentName)
+            {
+                prod.Name = newName;
+                return Ok(Items);
+            }
         }
-        else
-        {
-            return NotFound($"Продукт {currentName} не найден");
-        }
+        return NotFound("Prod is not in the Items");
     }
 
 
@@ -69,35 +89,29 @@ public class StoreController : ControllerBase
         }
     }
 
-
-
-
-
-
-    [HttpGet]
+// PracticeA
+    [HttpPost]
     [Route("/store/add")]
-    public IActionResult Add(string name, double price, int stock)
+    public IActionResult Add([FromBody] Product newProduct)
     {
-        var product = new Product(name, price, stock);
-        Items.Add(product);
+        Items.Add(newProduct);
         return Ok(Items);
     }
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/delete")]
     public IActionResult Delete(string name)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
-        if (product != null)
+        foreach (var prod in Items)
         {
-            Items.Remove(product);
-            return Ok($"{name} удален");
+            if (prod.Name == name)
+            {
+                Items.Remove(prod);
+                return Ok(Items);
+            }
         }
-        else
-        {
-            return NotFound($"{name} не найден");
-        }
+        return NotFound("Prod is not in the Items");
     }
 
 
@@ -108,5 +122,34 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+
+// PracticeB
+    [HttpPost]
+    [Route("/store/add_user")]
+    public IActionResult AddUser([FromBody] User user)
+    {
+        Users.Add(user);
+        return Ok($"{user.name} was added");
+
+    }
+
+
+    [HttpPost]
+    [Route("/store/login")]
+    public IActionResult Login([FromBody] User user)
+    {
+        foreach (var us in Users)
+        {
+            if (us.name == user.name)
+            {
+                if (us.password == user.password)
+                {
+                    user.isAuthorized = true;
+                    return Ok("Successfully!!!");
+                }
+            }
+        }
+        return NotFound("Something is wrong");
+    }
 
 }

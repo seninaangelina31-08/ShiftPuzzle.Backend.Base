@@ -37,7 +37,7 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpDelete]
     [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {
@@ -69,12 +69,7 @@ public class StoreController : ControllerBase
         }
     }
 
-
-
-
-
-
-    [HttpGet]
+    [HttpPost]
     [Route("/store/add")]
     public IActionResult Add(string name, double price, int stock)
     {

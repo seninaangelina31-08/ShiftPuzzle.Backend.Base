@@ -74,13 +74,12 @@ public class StoreController : ControllerBase
 
 
 
-    [HttpGet]
-    [Route("/store/add")]
-    public IActionResult Add(string name, double price, int stock)
+    [HttpPost]
+    [Route("store/add")]
+    public IActionResult AddProduct([FromBody] Product product)
     {
-        var product = new Product(name, price, stock);
         Items.Add(product);
-        return Ok(Items);
+        return Ok(product);
     }
 
 

@@ -1,14 +1,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿namespace Practic;
 using System;
 =======
 ﻿using System;
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+﻿namespace Practic;
+using System;
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 using System;
@@ -17,6 +23,9 @@ using System.Collections.Generic;
 
 =======
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
 public class Student
 {
     public string Name { get; set; }
@@ -38,6 +47,7 @@ public class Student
         Console.Write("Vvedite ocenku: ");
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (int.TryParse(Console.ReadLine(), out var grade))
 =======
         if (int.TryParse(Console.ReadLine(), out int grade))
@@ -45,6 +55,9 @@ public class Student
 =======
         if (int.TryParse(Console.ReadLine(), out int grade))
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+        if (int.TryParse(Console.ReadLine(), out var grade))
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
         {
             Grades[subject] = grade;
             Console.WriteLine($"Ocenka {grade} po predmetu '{subject}' dobavlena.");
@@ -78,11 +91,15 @@ public class StudetnFileService
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> main
 =======
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+    
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
     public const string FilePath = "students.txt";
     public Dictionary<string, Student> students = new Dictionary<string, Student>();
 
@@ -109,6 +126,7 @@ public class StudetnFileService
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Console.WriteLine(".");
 =======
         Console.WriteLine("���� �� ������.");
@@ -116,6 +134,9 @@ public class StudetnFileService
 =======
         Console.WriteLine("���� �� ������.");
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+        Console.WriteLine(".");
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
         return;
     }
 
@@ -194,8 +215,12 @@ class SimpleDB
 =======
         //сохраняем файл
         fileService = new StudetnFileService(students);
+<<<<<<< HEAD
         fileService.LoadDB();
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+        
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
     }
     public  Dictionary<string, Student> students = new Dictionary<string, Student>();
 
@@ -225,8 +250,12 @@ class SimpleDB
 =======
         //загрузка файла
         //просто вызвать методы
+<<<<<<< HEAD
         FilePath.LoadFromFile();
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+        fileService.LoadFromFile();
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
         Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
     }
@@ -261,6 +290,7 @@ class SimpleDB
     public void ShowStudentInfo(string name)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     foreach (var student in students)
     {
@@ -288,32 +318,31 @@ class SimpleDB
 =======
     {
 =======
+=======
+{
+    foreach (var student in students)
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
     {
-        
-        foreach (var student in students)
+        if (student.Name == name)
         {
-            if (student.Name == name)
-            {
-                Console.WriteLine("Имя: " + student.Name);
+            Console.WriteLine("Имя: " + student.Value.Name);
 
-                // Разделить строку с пунктами на отдельные значения
-                string[] items = student.Items.Split(',');
+            string[] items = student.Grades.Split(',');
 
-                // Получить значения пунктов
-                string subject = items[0];
-                int value = int.Parse(items[1]);
-                DateTime date = DateTime.ParseExact(items[2], "dd MMMM yyyy", CultureInfo.InvariantCulture);
-                bool flag = bool.Parse(items[3]);
+            string subject = items[0];
+            int value = int.Parse(items[1]);
+            DateTime date = DateTime.ParseExact(items[2], "dd MMMM yyyy", CultureInfo.InvariantCulture);
+            bool flag = bool.Parse(items[3]);
 
-                Console.WriteLine("Предмет: " + subject);
-                Console.WriteLine("Значение: " + value);
-                Console.WriteLine("Дата: " + date.ToShortDateString());
-                Console.WriteLine("Флаг: " + flag);
+            Console.WriteLine("Предмет: " + subject);
+            Console.WriteLine("Значение: " + value);
+            Console.WriteLine("Дата: " + date.ToShortDateString());
+            Console.WriteLine("Флаг: " + flag);
 
-                Console.WriteLine("Информация успешно показана.");
-                return;
-            }
+            Console.WriteLine("Информация успешно показана.");
+            return;
         }
+<<<<<<< HEAD
 
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
         Console.WriteLine("Funcional ne realizovan...");
@@ -324,6 +353,10 @@ class SimpleDB
 >>>>>>> main
 =======
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+    }
+}
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
     public Student GetStudent(string name)
     {
         if (students.TryGetValue(name, out var student))
@@ -400,8 +433,12 @@ class Program
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> main
 =======
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)

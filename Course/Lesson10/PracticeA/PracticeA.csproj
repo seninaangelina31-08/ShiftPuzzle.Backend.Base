@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
@@ -16,3 +17,5 @@
   </PropertyGroup>
 
 </Project>
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)

@@ -1,10 +1,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
+<<<<<<< HEAD
 =======
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
@@ -12,10 +16,15 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
 >>>>>>> 2a6ab33e (feat: added answer to task 7)
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
 </Project>
+<<<<<<< HEAD
 =======
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)

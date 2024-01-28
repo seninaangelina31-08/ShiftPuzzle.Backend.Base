@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 namespace PracticeA;
 =======
 ﻿namespace PracticeA;
@@ -9,16 +10,23 @@ namespace PracticeA;
 ﻿namespace PracticeA;
 
 >>>>>>> 2a6ab33e (feat: added answer to task 7)
+=======
+namespace PracticeA;
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
 class Program
 {
     static void Main(string[] args)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
     }
     //task1
     static int Factorial(int a)
     {
         if (a <= 1)
+<<<<<<< HEAD
 =======
         string t1 = rev("mmeow");
     
@@ -30,12 +38,17 @@ class Program
     {
         if (c<=1)
 >>>>>>> 2a6ab33e (feat: added answer to task 7)
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
         {
             return 1;
         }
         else
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)
             return a * Factorial(a - 1);
         }
     }
@@ -258,6 +271,7 @@ class BinaryTree
             TraverseInOrder(root.Right);
         }
     }
+<<<<<<< HEAD
 }
 =======
             return c*recurs(c-1);
@@ -435,3 +449,6 @@ class BinaryTree
 =======
 ﻿
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+}
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)

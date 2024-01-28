@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿namespace PracticeA;
 =======
 ﻿using System;
@@ -26,3 +27,5 @@ class FileOperations
         // чтение запись в файл test.txt
     }
 }
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)

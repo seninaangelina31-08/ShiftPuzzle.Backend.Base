@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿namespace PracticeB_С;
 class Program
 {
@@ -90,3 +91,5 @@ class Program
 >>>>>>> main
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
 }
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)

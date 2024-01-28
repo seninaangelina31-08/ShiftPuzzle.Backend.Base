@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "payment": {
         "method": "Credit Card",
@@ -7,3 +8,5 @@
 =======
 }
 >>>>>>> f39acff5 (feat: added answer to task 12)
+=======
+>>>>>>> c67de646 (I cant commit individually, when I update the branch Ill figure it out)

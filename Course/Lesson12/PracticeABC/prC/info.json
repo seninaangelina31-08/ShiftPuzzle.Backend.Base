@@ -1,0 +1,17 @@
+{
+    "order":{
+        "product": {
+            "name": "cho-to",
+            "category":"kakazto",
+            "price": 500,
+            "quantity": 1
+        },
+        "user": {
+            "name": "Lesya",
+            "surname": "Nikulina",
+            "email": "lalala@gmail.com",
+            "address": "kakoito",
+            "phone": "+7(xxx)-xxx-xx-xx"
+        }
+    }
+}

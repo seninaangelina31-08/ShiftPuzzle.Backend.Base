@@ -25,6 +25,16 @@ public class StoreController : ControllerBase
         }
     }
 
+    public class UpdateNameRequest
+    {
+        public string CurrentName { get; set; }
+        public string NewName { get; set; }
+    }
+    public class DeleteRequest
+    {
+        public string Name { get; set; }
+    }
+
     public class Useer {
         public string login {get; set;}
         public string password {get; set;}
@@ -72,19 +82,20 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public IActionResult UpdateName([FromBody] UpdateNameRequest request)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = Items.FirstOrDefault(p => p.Name == request.CurrentName);
+
         if (product != null)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            product.Name = request.NewName;
+            return Ok($"Имя продукта изменено с {request.CurrentName} на {request.NewName}");
         }
         else
         {
-            return NotFound($"Продукт {currentName} не найден");
+            return NotFound($"Продукт {request.CurrentName} не найден");
         }
     }
 
@@ -113,24 +124,30 @@ public class StoreController : ControllerBase
     [Route("store/add")]
     public IActionResult AddProduct([FromBody] Product product)
     {
-        Items.Add(product);
-        return Ok(product);
+        if (product != null) {
+            Items.Add(product);
+            return Ok(product);
+        } else {
+            return NotFound("Не найден");
+        }
+
     }
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    public IActionResult Delete([FromBody] DeleteRequest request)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = Items.FirstOrDefault(p => p.Name == request.Name);
+
         if (product != null)
         {
             Items.Remove(product);
-            return Ok($"{name} удален");
+            return Ok($"{request.Name} удален");
         }
         else
         {
-            return NotFound($"{name} не найден");
+            return NotFound($"{request.Name} не найден");
         }
     }
 

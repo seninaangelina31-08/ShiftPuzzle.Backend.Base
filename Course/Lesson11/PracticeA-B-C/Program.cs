@@ -1,7 +1,9 @@
-﻿using System;
+﻿namespace Practic;
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
+
 
 public class Student
 {
@@ -22,7 +24,7 @@ public class Student
         string subject = Console.ReadLine();
 
         Console.Write("Vvedite ocenku: ");
-        if (int.TryParse(Console.ReadLine(), out int grade))
+        if (int.TryParse(Console.ReadLine(), out var grade))
         {
             Grades[subject] = grade;
             Console.WriteLine($"Ocenka {grade} po predmetu '{subject}' dobavlena.");
@@ -54,6 +56,7 @@ public class Student
 
 public class StudetnFileService
 {
+    
     public const string FilePath = "students.txt";
     public Dictionary<string, Student> students = new Dictionary<string, Student>();
 
@@ -78,7 +81,7 @@ public class StudetnFileService
 {
     if (!File.Exists(filePath))
     {
-        Console.WriteLine("���� �� ������.");
+        Console.WriteLine(".");
         return;
     }
 
@@ -124,7 +127,7 @@ class SimpleDB
     {
         //сохраняем файл
         fileService = new StudetnFileService(students);
-        fileService.LoadDB();
+        
     }
     public  Dictionary<string, Student> students = new Dictionary<string, Student>();
 
@@ -139,7 +142,7 @@ class SimpleDB
     {
         //загрузка файла
         //просто вызвать методы
-        FilePath.LoadFromFile();
+        fileService.LoadFromFile();
         Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
     }
@@ -158,37 +161,30 @@ class SimpleDB
     }
 
     public void ShowStudentInfo(string name)
+{
+    foreach (var student in students)
     {
-        
-        foreach (var student in students)
+        if (student.Name == name)
         {
-            if (student.Name == name)
-            {
-                Console.WriteLine("Имя: " + student.Name);
+            Console.WriteLine("Имя: " + student.Value.Name);
 
-                // Разделить строку с пунктами на отдельные значения
-                string[] items = student.Items.Split(',');
+            string[] items = student.Grades.Split(',');
 
-                // Получить значения пунктов
-                string subject = items[0];
-                int value = int.Parse(items[1]);
-                DateTime date = DateTime.ParseExact(items[2], "dd MMMM yyyy", CultureInfo.InvariantCulture);
-                bool flag = bool.Parse(items[3]);
+            string subject = items[0];
+            int value = int.Parse(items[1]);
+            DateTime date = DateTime.ParseExact(items[2], "dd MMMM yyyy", CultureInfo.InvariantCulture);
+            bool flag = bool.Parse(items[3]);
 
-                Console.WriteLine("Предмет: " + subject);
-                Console.WriteLine("Значение: " + value);
-                Console.WriteLine("Дата: " + date.ToShortDateString());
-                Console.WriteLine("Флаг: " + flag);
+            Console.WriteLine("Предмет: " + subject);
+            Console.WriteLine("Значение: " + value);
+            Console.WriteLine("Дата: " + date.ToShortDateString());
+            Console.WriteLine("Флаг: " + flag);
 
-                Console.WriteLine("Информация успешно показана.");
-                return;
-            }
+            Console.WriteLine("Информация успешно показана.");
+            return;
         }
-
-        Console.WriteLine("Funcional ne realizovan...");
-         //  practice A;
     }
-
+}
     public Student GetStudent(string name)
     {
         if (students.TryGetValue(name, out var student))
@@ -263,3 +259,4 @@ class Program
         }
     }
 }
+

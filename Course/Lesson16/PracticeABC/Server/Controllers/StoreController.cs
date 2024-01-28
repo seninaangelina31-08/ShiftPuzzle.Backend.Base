@@ -1,6 +1,12 @@
 namespace PracticeA;
 
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
+
+
+
+
+
 
 [ApiController]
 public class StoreController : ControllerBase
@@ -19,7 +25,36 @@ public class StoreController : ControllerBase
         }
     }
 
+    public class Useer {
+        public string login {get; set;}
+        public string password {get; set;}
+
+
+        public Useer() {}
+
+
+        public Useer (string login, string password) {
+            this.login = login;
+            this.password = password;
+        }
+
+
+    }
+    private static readonly List<Useer> users = new List<Useer>();
     private static readonly List<Product> Items = new List<Product>();
+
+    [HttpPost]
+    [Route("/store/login")]
+    public IActionResult Login(string login, string password) {
+        if (login != null && password != null) {
+            users.Add(new Useer(login, password));
+            return Ok("Added a user");
+        } else {
+            return NotFound("Didn't find a user");
+        }
+
+    }
+
 
     [HttpGet]
     [Route("/store/updateprice")]

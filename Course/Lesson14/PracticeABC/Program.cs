@@ -88,6 +88,26 @@ class Program
         if (response_randomuser.results[0].gender == response_genderize.gender) Console.WriteLine("ДА");
         else Console.WriteLine("НЕТ");
         
+        // Practice C
+        // #1
+        string ipifyURL = "https://api.ipify.org?format=json";
+        string jsonFromIPify = GetRequest(ipifyURL);
+
+        IPifyAPI response_ipify = JsonSerializer.Deserialize<IPifyAPI>(jsonFromIPify);
+
+        string ipinfoURL = "https://ipinfo.io/" + response_ipify.ip + "/geo";
+        string jsonFromIPinfo = GetRequest(ipinfoURL);
+
+        IPinfoAPI response_ipinfo = JsonSerializer.Deserialize<IPinfoAPI>(jsonFromIPinfo);
+
+        string ZipURL = "https://api.zippopotam.us/rs/" + response_ipinfo.postal;
+        string ZipURL_01 = "";
+        for (int i = 0; i < ZipURL.Length-1; i++) ZipURL_01 += ZipURL[i];
+        string jsonFromZippopotam = GetRequest(ZipURL_01);
+        Console.WriteLine(response_ipinfo.postal);
+        ZippopotamAPI response_zippopotam = JsonSerializer.Deserialize<ZippopotamAPI>(jsonFromZippopotam);
+
+        Console.WriteLine("longitude: " + response_zippopotam.places[0].longitude + "\nlatitude: " + response_zippopotam.places[0].latitude);
     }
 }
 
@@ -437,5 +457,82 @@ class Program
         this.name = name_copy;
         this.gender = gender_copy;
         this.probability = probability_copy;
+    }
+}
+
+// Practice C
+
+// IPify
+[System.Serializable] public class IPifyAPI
+{
+    public string ip { get; set; }
+    public IPifyAPI() {}
+    public IPifyAPI(string ip_copy)
+    {
+        this.ip = ip_copy;
+    }
+}
+
+// IPinfo
+[System.Serializable] public class IPinfoAPI
+{
+    public string ip { get; set; }
+    public string hostname { get; set; }
+    public string city { get; set; }
+    public string region { get; set; }
+    public string country { get; set; }
+    public string loc { get; set; }
+    public string org { get; set; }
+    public string postal { get; set; }
+    public string timezone { get; set; }
+    public string readme { get; set; }
+    public IPinfoAPI() {}
+    public IPinfoAPI(string ip_copy, string hostname_copy, string city_copy, string region_copy, string country_copy, string loc_copy, string org_copy, string postal_copy, string timezone_copy, string readme_copy)
+    {
+        this.ip = ip_copy;
+        this.hostname = hostname_copy;
+        this.city = city_copy;
+        this.region = region_copy;
+        this.country = country_copy;
+        this.loc = loc_copy;
+        this.org = org_copy;
+        this.postal = postal_copy;
+        this.timezone = timezone_copy;
+        this.readme = readme_copy;
+    }
+}
+
+// Zippopotam
+[System.Serializable] public class ZippopotamAPI
+{
+    public string postcode { get; set; }
+    public string country { get; set; }
+    public string country_abbreviation { get; set; }
+    public List<Places> places { get; set; }
+    public ZippopotamAPI() {}
+    public ZippopotamAPI(string postcode_copy, string country_copy, string country_abbreviation_copy, List<Places> places_copy)
+    {
+        this.postcode = postcode_copy;
+        this.country = country_copy;
+        this.country_abbreviation = country_abbreviation_copy;
+        this.places = places_copy;
+    }
+}
+
+[System.Serializable] public class Places
+{
+    public string place_name { get; set; }
+    public string longitude { get; set; }
+    public string state { get; set; }
+    public string state_abbreviation { get; set; }
+    public string latitude { get; set; }
+    public Places() {}
+    public Places(string place_name_copy, string longitude_copy, string state_copy, string state_abbreviation_copy, string latitude_copy)
+    {
+        this.place_name = place_name_copy;
+        this.longitude = longitude_copy;
+        this.state = state_copy;
+        this.state_abbreviation = state_abbreviation_copy;
+        this.latitude = latitude_copy;
     }
 }

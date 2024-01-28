@@ -60,7 +60,7 @@ public class StudetnFileService
         students = data;
     }
 
-    public  void SaveToFile(string filePath=FilePath)
+    public void SaveToFile(string filePath=FilePath)
     {
         using (var writer = new StreamWriter(filePath))
         {
@@ -128,30 +128,50 @@ class SimpleDB
 
     public void SaveDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        fileService.SaveToFile("students.txt");
         //  practice B;
     }
 
     public void LoadDB()
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        fileService.LoadFromFile("students.txt");
         //  practice B;
     }
     public void AddStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        var st = new Student(name);
+        students.Add(name, st);
+        Console.WriteLine("Студент добавлен в базу данных.");
          //  practice A;
     }
 
     public void RemoveStudent(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        if (students.Remove(name))
+        {
+            Console.WriteLine("Студент удален из базы данных.");
+        }
+        else
+        {
+            Console.WriteLine("Студент не найден в базе данных.");
+        }
          //  practice A;
     }
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Funcional ne realizovan...");
+        var st = students[name];
+        Console.WriteLine($"Студент: {st.Name}");
+        Console.WriteLine("Оценки: ");
+        foreach (var grade in st.Grades)
+        {
+            Console.WriteLine($"{grade.Key}: {grade.Value}");
+        }
+        Console.WriteLine("Посещаемость: ");
+        foreach (var attendance in st.Attendance)
+        {
+            Console.WriteLine($"{attendance.Key}: {attendance.Value}");
+        }
          //  practice A;
     }
 
@@ -177,7 +197,7 @@ class Program
         var db = new SimpleDB(); 
         while (true)
         {
-            Console.WriteLine("\n1. Dobavit' srudenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");
+            Console.WriteLine("\n1. Dobavit' studenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");
             Console.Write("Vibor: ");
 
             if (!int.TryParse(Console.ReadLine(), out int choice))

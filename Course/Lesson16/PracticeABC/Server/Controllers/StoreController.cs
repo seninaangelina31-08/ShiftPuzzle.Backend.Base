@@ -18,8 +18,22 @@ public class StoreController : ControllerBase
             Stock = stock;
         }
     }
+    public class User
+    {
+        public string login { get; set; }
+        public string password { get; set; }
+        public double IsAuthorized { get; set; }
+
+        public Product(string login, string password, bool IsAuthorized)
+        {
+            this.login = login;
+            this.password = password;
+            this.IsAuthorized = false;
+        }
+    }
 
     private static readonly List<Product> Items = new List<Product>();
+    private static readonly List<User> Users = new List<User>();
 
     [HttpGet]
     [Route("/store/updateprice")]
@@ -105,6 +119,29 @@ public class StoreController : ControllerBase
     public IActionResult Show()
     {
         return Ok(Items);
+    }
+
+    [HttpPost]
+    [Route("/store/add_user")]
+    public IActionResult AddUser([FromBody] User user)
+    {
+        Users.Add(user);
+        return Ok($"{user.name} was added");
+    }
+
+    [HttpPost]
+    [Route("/store/login")]
+    public IActionResult Login([FromBody] User user)
+    {
+        foreach (var us in Users)
+        {
+            if (us.name == user.name && us.password == user.password)
+            {
+                user.isAuthorized = true;
+                return Ok("Successfully!!!");
+            }
+        }
+        return NotFound("Something is wrong");
     }
 
 

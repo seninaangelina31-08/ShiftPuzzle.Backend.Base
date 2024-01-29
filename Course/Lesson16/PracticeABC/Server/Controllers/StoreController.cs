@@ -19,7 +19,37 @@ public class StoreController : ControllerBase
         }
     }
 
+
+    public class User
+    {
+        public string userName;
+        public string password;
+
+        public User(string userName, string password)
+        {
+            this.userName = userName;
+            this.password = password;
+        }
+    }
+
     private static readonly List<Product> Items = new List<Product>();
+    private static readonly List<User> Users = new List<User>() 
+    { new User("bezlikiy", "123") };
+
+    [HttpGet]
+    [Route("/user/auth")]
+    public User UserAuth(string userName, string password)
+    {
+        User user = Users.FirstOrDefault(p => p.userName == userName);
+        if (user != null)
+        {
+            if(user.password == password)
+            {
+                return user;
+            }
+        }
+        return user;
+    }
 
     [HttpGet]
     [Route("/store/updateprice")]
@@ -69,11 +99,6 @@ public class StoreController : ControllerBase
         }
     }
 
-
-
-
-
-
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
@@ -106,6 +131,4 @@ public class StoreController : ControllerBase
     {
         return Ok(Items);
     }
-
-
 }

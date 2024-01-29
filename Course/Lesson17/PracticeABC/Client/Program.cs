@@ -18,27 +18,38 @@ class Program
 
     [Range(0, 10000)]
     public int stock { get; set; }
-
-        
     }
     
     static bool IsAuthorized = false;
 
-    static void DisplayProducts()
+
+    static async Task DisplayProducts()
+{
+    var url = "http://localhost:5087/store/show";
+
+    var client = new HttpClient();
+    var response = await client.GetAsync(url);
+
+    if (response.IsSuccessStatusCode)
+    {
+        var json = await response.Content.ReadAsStringAsync();
+        var products = JsonSerializer.Deserialize<List<Product>>(json);
+
+        Console.WriteLine("-----------------------------------------------------------------");
+        Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
+
+        foreach (var product in products)
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
-            
-            // реализуй логику
-
-
-            Console.WriteLine("-----------------------------------------------------------------");
-            Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
-
-
-
-            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine($"| {product.name} | {product.price} | {product.stock} |");
         }
 
+        Console.WriteLine("-----------------------------------------------------------------");
+    }
+    else
+    {
+        Console.WriteLine($"Error: {response.StatusCode}");
+    }
+}
 
     public static void SendProduct()
     {        
@@ -84,7 +95,7 @@ class Program
     {       
         
         
-            var url = "http://localhost:5087/store/????"; // Замените на порт вашего сервера, также замените символы на правильный апи
+            var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера, также замените символы на правильный апи
             var userData = new
             {
                 User = "admin",
@@ -111,21 +122,35 @@ class Program
 
 
     static void Main(string[] args)
-    { 
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-        while (true)
-                {
-                    Console.WriteLine("Выберите опцию:");
-                     
+    {
+    Console.OutputEncoding = System.Text.Encoding.UTF8;
+    while (true)
+    {
+        Console.WriteLine("Выберите опцию:");
+        Console.WriteLine("1. Авторизация");
+        Console.WriteLine("2. Добавление продукта");
+        Console.WriteLine("3. Вывод списка продуктов");
+        Console.WriteLine("4. Выход");
 
-                    var choice = Console.ReadLine();
+        var choice = Console.ReadLine();
 
-                    switch (choice)
-                    { 
-                        default:
-                            Console.WriteLine("Неверный выбор. Попробуйте снова.");
-                            break;
-                    }
-                }
-    }
+        switch (choice)
+            {
+            case "1":
+                Auth();
+                break;
+            case "2":
+                SendProduct();
+                break;
+            case "3":
+                DisplayProducts();
+                break;
+            case "4":
+                return;
+            default:
+                Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                break;
+            }
+        }
+}
 }

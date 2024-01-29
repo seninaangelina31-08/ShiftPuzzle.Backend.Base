@@ -37,19 +37,19 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpPut]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public IActionResult UpdateName(int id, string newName)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = Items.ElementAt(id);
         if (product != null)
         {
             product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            return Ok($"Имя продукта изменено с {product.Name} на {newName}");
         }
         else
         {
-            return NotFound($"Продукт {currentName} не найден");
+            return NotFound($"Продукт с id {id} не найден");
         }
     }
 
@@ -74,29 +74,28 @@ public class StoreController : ControllerBase
 
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/add")]
-    public IActionResult Add(string name, double price, int stock)
+    public IActionResult Add([FromBody] Product newProduct)
     {
-        var product = new Product(name, price, stock);
-        Items.Add(product);
+        Items.Add(newProduct);
         return Ok(Items);
     }
 
 
-    [HttpGet]
+    [HttpDelete]
     [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    public IActionResult Delete(int id)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = Items.ElementAt(id);
         if (product != null)
         {
             Items.Remove(product);
-            return Ok($"{name} удален");
+            return Ok($"{product.Name} удален");
         }
         else
         {
-            return NotFound($"{name} не найден");
+            return NotFound($"id {id} не найден");
         }
     }
 

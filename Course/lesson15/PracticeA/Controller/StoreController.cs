@@ -3,18 +3,16 @@ using Microsoft.AspNetCore.Mvc;
 namespace PracticeA.Controller;
 
 [ApiController]
-[Route("api/")]
 public class StoreController : ControllerBase
 {
     public static readonly List<string> products = new List<string>();
 
-    public static bool ShowProductList(List<string> List)
+    public static void ShowProductList(List<string> List)
     {
         foreach (var prod in List)
         {
             Console.WriteLine(prod);
         }
-        return true;
     }
 
 
@@ -24,37 +22,34 @@ public class StoreController : ControllerBase
     public string Add(string product)
     {
         products.Add(product);
-        Console.WriteLine(ShowProductList(products));
-        return $"{product} не добавлен";
+        ShowProductList(products);
+        return $"{product} добавлен";
     }
 
-    [HttpDelete]
+    [HttpGet]
     [Route("/store/delete")]
 
-    public IActionResult Delete(string prodct)
+    public IActionResult Delete(string name)
     {
-        products.Remove(prodct);
         foreach (string item in products)
         {
-            if (item == prodct)
+            if (item == name)
             {
-                products.Remove(item);
-                return Ok($"{item} удален");
+                products.Remove(name);
+                ShowProductList(products);
+                return Ok($"{name} удален");
             }
         }
-        return NotFound($"{prodct} не найден");
+        return NotFound($"{name} не найден");
     }
-    // public IActionResult Delete(string name)
-    // {
-        
-    //     if (prodct != null)
-    //     {
-    //         Items.Remove(prodct);
-    //         return Ok($"{name} удален");
-    //     }
-    //     else
-    //     {
-    //         return NotFound($"{name} не найден");
-    //     }
-    // }
+
+    [HttpGet]
+    [Route("/store/showproducts")]
+
+    public string ShowList()
+    {
+        string list = string.Join(", ", products);
+        Console.WriteLine(list);
+        return list;
+    }
 }

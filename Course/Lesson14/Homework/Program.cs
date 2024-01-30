@@ -28,7 +28,7 @@ class Program
         
         foreach (Entry entry in publicapisResponse.entries)
         {
-            File.AppendAllText("FREE_API", $"ССЫЛКА: {entry.Link}\nОПИСАНИЕ: {entry.Description}\nАВТОРИЗАЦИЯ: {entry.Auth}");
+            File.AppendAllText("FREE_API", $"ССЫЛКА: {entry.Link}\nОПИСАНИЕ: {entry.Description}\nАВТОРИЗАЦИЯ: {entry.Auth}\n");
         }
     }
 }

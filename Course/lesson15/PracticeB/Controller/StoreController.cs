@@ -22,9 +22,9 @@ public class StoreController : ControllerBase
     [HttpGet ("store/add")]
     public string add(string name, int price, string description, int count)
     {
-        Store store_list = RWF.ReadJson(path);
+        List<Product> store_list = RWF.ReadJson(path);
         Product new_product = new Product(name, price, description, count);
-        store_list.product.Add(new_product);
+        store_list.Add(new_product);
         RWF.WriteJSON(store_list, path);
         return name + " add.";
     }
@@ -32,12 +32,12 @@ public class StoreController : ControllerBase
     [HttpGet ("store/delete")]
     public string delete(string element)
     {
-        Store store_list = RWF.ReadJson(path);
-        for (int i = 0; i < store_list.product.Count; i++)
+        List<Product> store_list = RWF.ReadJson(path);
+        for (int i = 0; i < store_list.Count; i++)
         {
-            if (store_list.product[i].name == element)
+            if (store_list[i].name == element)
             {
-            store_list.product.RemoveAt(i);
+            store_list.RemoveAt(i);
             RWF.WriteJSON(store_list, path);
             return element + " delete.";
             }
@@ -47,9 +47,9 @@ public class StoreController : ControllerBase
     }
 
     [HttpGet ("store/view")]
-    public Store view()
+    public List<Product> view()
     {
-        Store store_list = RWF.ReadJson(path);
+        List<Product> store_list = RWF.ReadJson(path);
         return store_list;
     }
 }
@@ -70,27 +70,17 @@ public class StoreController : ControllerBase
     }
 }
 
-[System.Serializable] public class Store
-{
-    public List<Product> product { get; set; }
-    public Store() {}
-    public Store(List<Product> product_copy)
-    {
-        this.product = product_copy;
-    }
-}
-
 public class RWFile
 {
     
-    public Store ReadJson(string path)
+    public List<Product> ReadJson(string path)
     {
         string jsonFromFile = File.ReadAllText(path);
-        Store store_list = JsonSerializer.Deserialize<Store>(jsonFromFile);
+        List<Product> store_list = JsonSerializer.Deserialize<List<Product>>(jsonFromFile);
         return store_list;
     }
 
-    public void WriteJSON(Store store, string path)
+    public void WriteJSON(List<Product> store, string path)
     {
         string json = JsonSerializer.Serialize(store);
         File.WriteAllText(path, json);

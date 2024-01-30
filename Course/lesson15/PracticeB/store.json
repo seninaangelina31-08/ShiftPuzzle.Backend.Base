@@ -1,3 +1,8 @@
-{
-    "store": []
-}
+[
+    {
+        "name": "Bread",
+        "price": 36,
+        "description": "black",
+        "count": 72
+    }
+]

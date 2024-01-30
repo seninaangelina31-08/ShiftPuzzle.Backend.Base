@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.Json;
+using System.Collections.Generic; // библиотека для работы с List и Dictionary
+using System.Text.Json; // библиотека для работы с JSON
 
 namespace Example;
 

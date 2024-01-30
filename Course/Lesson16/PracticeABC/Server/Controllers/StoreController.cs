@@ -19,6 +19,7 @@ public class StoreController : ControllerBase
         }
     }
 
+
     public class User
     {
         public string name { get; set; }
@@ -130,7 +131,6 @@ public class StoreController : ControllerBase
     {
         Users.Add(user);
         return Ok($"{user.name} was added");
-
     }
 
 

@@ -1,131 +1,169 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 
-namespace Client;
-
-class Program
-{ 
-    [System.Serializable]
-    public class Product
+namespace Client
+{
+    class Program
     {
-    [Required]
-    [StringLength(100, MinimumLength = 3)]
-    public string name { get; set; }
-
-    [Range(0.01, 10000)]
-    public double price { get; set; }
-
-    [Range(0, 10000)]
-    public int stock { get; set; }
-
-        
-    }
-    
-    static bool IsAuthorized = false;
-
-    static void DisplayProducts()
+        public class Product
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
-            
-            // реализуй логику
+            [Required]
+            [StringLength(100, MinimumLength = 3)]
+            public string name { get; set; }
 
+            [Range(0.01, 10000)]
+            public double price { get; set; }
 
-            Console.WriteLine("-----------------------------------------------------------------");
-            Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
-
-
-
-            Console.WriteLine("-----------------------------------------------------------------");
+            [Range(0, 10000)]
+            public int stock { get; set; }
         }
 
+        static bool IsAuthorized = false;
 
-    public static void SendProduct()
-    {        
-            if(!IsAuthorized)
+        static void Main(string[] args)
+        {
+            while (true)
             {
-                Console.WriteLine("Вы не авторизованы");
-                return;        
-            }
-        
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
-            Console.WriteLine("Введите название продукта:");
-            var name = Console.ReadLine();
-            Console.WriteLine("Введите цену продукта:");
-            var price = double.Parse(Console.ReadLine());
-            Console.WriteLine("Введите количество на складе:");
-            var stock = int.Parse(Console.ReadLine());
+                Console.WriteLine("Выберите действие:");
+                Console.WriteLine("1. Авторизация");
+                Console.WriteLine("2. Добавление продукта");
+                Console.WriteLine("3. Вывод списка");
+                Console.WriteLine("4. Выход");
+                Console.Write("Введите номер действия: ");
 
-            var product = new
-            {
-                Name = name,
-                Price = price,
-                Stock = stock
-            };
-
-            var client = new HttpClient(); 
-            var json = JsonSerializer.Serialize(product);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = client.PostAsync(url, content).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var responseContent = response.Content.ReadAsStringAsync().Result;
-                Console.WriteLine(responseContent);
-            }
-            else
-            {
-                Console.WriteLine($"Error: {response.StatusCode}");
-            }
-    }
-
-
-    public static void Auth()
-    {       
-        
-        
-            var url = "http://localhost:5087/store/????"; // Замените на порт вашего сервера, также замените символы на правильный апи
-            var userData = new
-            {
-                User = "admin",
-                Pass = "123"
-            };
-
-            var client = new HttpClient(); 
-            var json = JsonSerializer.Serialize(userData);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = client.PostAsync(url, content).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var responseContent = response.Content.ReadAsStringAsync().Result;
-                Console.WriteLine(responseContent);
-                IsAuthorized = true;
-            }
-            else
-            {
-                Console.WriteLine($"Error: {response.StatusCode}");
-                IsAuthorized = false;
-            }
-    }
-
-
-    static void Main(string[] args)
-    { 
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-        while (true)
+                int option;
+                if (int.TryParse(Console.ReadLine(), out option))
                 {
-                    Console.WriteLine("Выберите опцию:");
-                     
-
-                    var choice = Console.ReadLine();
-
-                    switch (choice)
-                    { 
+                    switch (option)
+                    {
+                        case 1:
+                            Auth();
+                            break;
+                        case 2:
+                            if (IsAuthorized)
+                                SendProduct();
+                            else
+                                Console.WriteLine("Сначала выполните авторизацию.");
+                            break;
+                        case 3:
+                            if (IsAuthorized)
+                                DisplayProducts();
+                            else
+                                Console.WriteLine("Сначала выполните авторизацию.");
+                            break;
+                        case 4:
+                            return;
                         default:
-                            Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                            Console.WriteLine("Неправильный номер действия.");
                             break;
                     }
                 }
+                else
+                {
+                    Console.WriteLine("Неправильный формат числа.");
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        static void Auth()
+        {
+            Console.Write("Введите логин: ");
+            string login = Console.ReadLine();
+
+            Console.Write("Введите пароль: ");
+            string password = Console.ReadLine();
+
+            // Отправка запроса на сервер для аутентификации
+            var url = "http://localhost:5087/auth"; // Замените на адрес вашего сервера для аутентификации
+            var body = JsonSerializer.Serialize(new { login, password });
+            var content = new StringContent(body, Encoding.UTF8, "application/json");
+
+            using (var client = new HttpClient())
+            {
+                var response = client.PostAsync(url, content).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    IsAuthorized = true;
+                    Console.WriteLine("Авторизация успешна!");
+                }
+                else
+                {
+                    Console.WriteLine("Неверный логин или пароль.");
+                }
+            }
+        }
+
+        static void SendProduct()
+        {
+            Console.Write("Введите имя продукта: ");
+            string name = Console.ReadLine();
+
+            double price;
+            Console.Write("Введите цену продукта: ");
+            if (!double.TryParse(Console.ReadLine(), out price))
+            {
+                Console.WriteLine("Неправильный формат числа.");
+                return;
+            }
+
+            int stock;
+            Console.Write("Введите количество на складе: ");
+            if (!int.TryParse(Console.ReadLine(), out stock))
+            {
+                Console.WriteLine("Неправильный формат числа.");
+                return;
+            }
+
+            var product = new Product { name = name, price = price, stock = stock };
+            var url = "http://localhost:5087/products/add"; // Замените на адрес вашего сервера для добавления продукта
+            var body = JsonSerializer.Serialize(product);
+            var content = new StringContent(body, Encoding.UTF8, "application/json");
+
+            using (var client = new HttpClient())
+            {
+                var response = client.PostAsync(url, content).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Продукт успешно добавлен!");
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка при добавлении продукта.");
+                }
+            }
+        }
+
+        static void DisplayProducts()
+        {
+            var url = "http://localhost:5087/products"; // Замените на адрес вашего сервера для получения списка продуктов
+
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync(url).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var productsJson = response.Content.ReadAsStringAsync().Result;
+                    var products = JsonSerializer.Deserialize<Product[]>(productsJson);
+
+                    Console.WriteLine("Список продуктов:");
+                    foreach (var product in products)
+                    {
+                        Console.WriteLine($"Имя: {product.name}");
+                        Console.WriteLine($"Цена: {product.price}");
+                        Console.WriteLine($"Количество на складе: {product.stock}");
+                        Console.WriteLine();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка при получении списка продуктов.");
+                }
+            }
+        }
     }
 }

@@ -22,8 +22,8 @@ public class StoreController : ControllerBase
 
     public class User
     {
-        public string userName;
-        public string password;
+        public string userName { get; set; }
+        public string password { get; set; }
 
         public User(string userName, string password)
         {
@@ -38,17 +38,17 @@ public class StoreController : ControllerBase
 
     [HttpGet]
     [Route("/user/auth")]
-    public User UserAuth(string userName, string password)
+    public IActionResult UserAuth(string userName, string password)
     {
         User user = Users.FirstOrDefault(p => p.userName == userName);
         if (user != null)
         {
             if(user.password == password)
             {
-                return user;
+                return Ok("Ok");
             }
         }
-        return user;
+        return Ok("Not Found");
     }
 
     [HttpGet]

@@ -37,20 +37,11 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
-    [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    [HttpPost("update/{id}")]
+    public IActionResult UpdateName(int id, [FromBody] string newName)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
-        if (product != null)
-        {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
-        }
-        else
-        {
-            return NotFound($"Продукт {currentName} не найден");
-        }
+        // Логика обновления имени продукта
+        return Ok(); // или возврат обновлённого объекта, если требуется
     }
 
 
@@ -84,20 +75,11 @@ public class StoreController : ControllerBase
     }
 
 
-    [HttpGet]
-    [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    [HttpPost("delete/{id}")]
+    public IActionResult Delete(int id)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
-        if (product != null)
-        {
-            Items.Remove(product);
-            return Ok($"{name} удален");
-        }
-        else
-        {
-            return NotFound($"{name} не найден");
-        }
+        // Логика удаления продукта
+        return Ok(); // или возврат подтверждения удаления
     }
 
 
@@ -109,4 +91,19 @@ public class StoreController : ControllerBase
     }
 
 
+}
+
+[ApiController]
+[Route("[controller]")]
+public class AuthController : ControllerBase
+{
+    private bool IsAuthorized = false;
+
+    [HttpPost]
+    public IActionResult Authorize()
+    {
+        // Логика авторизации
+        IsAuthorized = true;
+        return Ok();
+    }
 }

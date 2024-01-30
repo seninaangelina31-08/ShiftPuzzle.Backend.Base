@@ -22,9 +22,9 @@ public class StoreController : ControllerBase
     {
         public string login { get; set; }
         public string password { get; set; }
-        public double IsAuthorized { get; set; }
+        public bool IsAuthorized { get; set; }
 
-        public Product(string login, string password, bool IsAuthorized)
+        public User(string login, string password, bool IsAuthorized)
         {
             this.login = login;
             this.password = password;
@@ -126,7 +126,7 @@ public class StoreController : ControllerBase
     public IActionResult AddUser([FromBody] User user)
     {
         Users.Add(user);
-        return Ok($"{user.name} was added");
+        return Ok($"{user.login} was added");
     }
 
     [HttpPost]
@@ -135,9 +135,9 @@ public class StoreController : ControllerBase
     {
         foreach (var us in Users)
         {
-            if (us.name == user.name && us.password == user.password)
+            if (us.login == user.login && us.password == user.password)
             {
-                user.isAuthorized = true;
+                user.IsAuthorized = true;
                 return Ok("Successfully!!!");
             }
         }

@@ -9,6 +9,8 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 [ApiController]
 public class StoreController : ControllerBase
 {
@@ -46,11 +48,13 @@ public class StoreController : ControllerBase
 
     private List<Product> Items = new List<Product>();
 
+    private readonly string _path = "DataBase.json";
+
     // поле с путем до базы данных 
 
     public StoreController()
     {
-       // чтение
+       ReadDataFromFile();
     }
 
 
@@ -157,15 +161,25 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+
     private void ReadDataFromFile()
     {
-        // опишу логику
+        if (System.IO.File.Exists(_path))
+        {
+            string JsonFromFile = System.IO.File.ReadAllText(_path);
+            Items = JsonSerializer.Deserialize<List<Product>>(JsonFromFile);
+        }
     }
 
     private void WriteDataToFile()
     {
-        // опишу логику
+        var options1 = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.Create(UnicodeRanges.BasicLatin, UnicodeRanges.Cyrillic),
+            WriteIndented = true
+        };
+
+        string json = JsonSerializer.Serialize(Items, options1);
+        System.IO.File.WriteAllText(_path, json);
     }
-
-
 }

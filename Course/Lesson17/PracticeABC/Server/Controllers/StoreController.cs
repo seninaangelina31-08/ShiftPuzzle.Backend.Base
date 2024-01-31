@@ -4,11 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
-using System.IO; 
-using System.Net.Http;
 using System.Text; 
-using System.Threading.Tasks;
-using System.Collections.Generic;
+using System.Net.Http;
+
+using System.IO; 
 [ApiController]
 public class StoreController : ControllerBase
 {
@@ -43,10 +42,9 @@ public class StoreController : ControllerBase
 
     }
 
-
     private List<Product> Items = new List<Product>();
 
-    private readonly string filePath = "DataBase.json"; // Путь
+    private readonly string filePath = "data.json"; // Путь к файлу данных
 
     public StoreController()
     {
@@ -67,7 +65,7 @@ public class StoreController : ControllerBase
         var product = Items.FirstOrDefault(p => p.Name == name);
         if (product != null)
         {
-            WriteToFile(); // запись данных в файл после изменений
+            WriteDataToFile(); // запись данных в файл после изменений
             product.Price = newPrice;
             return Ok($"{name} обновлен с новой ценой: {newPrice}");
         }
@@ -84,7 +82,7 @@ public class StoreController : ControllerBase
         var product = Items.FirstOrDefault(p => p.Name == currentName);
         if (product != null)
         {
-            WriteToFile();
+            WriteDataToFile(); // запись данных в файл после изменений
             product.Name = newName;
             return Ok($"Имя продукта изменено с {currentName} на {newName}");
         }
@@ -129,14 +127,16 @@ public class StoreController : ControllerBase
     }
 
 
+
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        WriteToFile();
+        WriteDataToFile(); // запись данных в файл после добавления продукта
         return Ok(Items);
     }
+
 
     [HttpPost]
     [Route("/store/delete")]
@@ -153,6 +153,7 @@ public class StoreController : ControllerBase
             return NotFound($"{name} не найден");
         }
     }
+
 
     [HttpGet]
     [Route("/store/show")]
@@ -178,4 +179,6 @@ public class StoreController : ControllerBase
         });
         File.WriteAllText(filePath, json);
     }
+
+
 }

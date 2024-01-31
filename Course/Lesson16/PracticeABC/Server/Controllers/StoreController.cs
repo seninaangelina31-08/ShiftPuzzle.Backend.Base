@@ -100,7 +100,7 @@ namespace L16
                     if (us.password == user.password)
                     {
                         user.isAuthorized = true;
-                        return Ok("Всё кус!!!");
+                        return Ok($"{user.name} вошел в аккаунт");
                     }
                 }
             }

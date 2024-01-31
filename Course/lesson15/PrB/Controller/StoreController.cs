@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 
+namespace PrB.Controllers
 public class Product
 {
     public string _name { get; set; }
@@ -14,8 +15,6 @@ public class Product
     public Product(){}
     public Product(string a,int b, int c ){this._name=a; this._price=b;this._isAvalible=c;}
 }
-
-namespace PrB.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

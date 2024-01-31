@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace PrA.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
+    [ApiController]//
+    [Route("api/[controller]")]//что это?
     public class StoreController : ControllerBase
     {
         private static List<string> productsList = new List<string>();
 
-        [HttpPost("add")]
+        [HttpPost("add")]//как оформлять запросы в поисковой строке?
         public IActionResult AddProduct(string productName)
         {
             productsList.Add(productName);

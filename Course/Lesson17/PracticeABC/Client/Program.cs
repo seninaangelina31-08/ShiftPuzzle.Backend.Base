@@ -21,14 +21,21 @@ class Program
 
         
     }
+
     
     static bool IsAuthorized = false;
 
+
+    static void AddProduct()
+    {
+        var url = "http://localhost:5087/store/add";
+
+        
+    }
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            var url = "http://localhost:5087/store/display"; // Замените на порт вашего сервера
             
-            // реализуй логику
 
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -48,7 +55,7 @@ class Program
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+            var url = "http://localhost:5087/store/send"; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -84,7 +91,7 @@ class Program
     {       
         
         
-            var url = "http://localhost:5087/store/????"; // Замените на порт вашего сервера, также замените символы на правильный апи
+            var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера, также замените символы на правильный апи
             var userData = new
             {
                 User = "admin",
@@ -116,15 +123,38 @@ class Program
         while (true)
                 {
                     Console.WriteLine("Выберите опцию:");
-                     
+                    if (IsAuthorized)
+                    {
+                        Console.WriteLine("1: авторизация\n2: Добавление продукта\n3: Вывод списка\n4: Выход");
+                        switch (choice)
+                        { 
+                            case 1:
+                                Auth();
+                            case 2:
+                                
+                            case 3:
+                                SendProduct();
+                            case 4:
+                                Console.WriteLine("Спасибо за то, что используете наше приложение")
+                                break;
+                            default:
+                                Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Для авторизации нажмите 1");
+                        var choice = Console.ReadLine();
 
-                    var choice = Console.ReadLine();
-
-                    switch (choice)
-                    { 
-                        default:
-                            Console.WriteLine("Неверный выбор. Попробуйте снова.");
-                            break;
+                        if (choice == 1)
+                        {
+                            Auth();
+                        }
+                        else
+                        {
+                                Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                        }
                     }
                 }
     }

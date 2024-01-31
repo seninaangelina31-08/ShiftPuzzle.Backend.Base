@@ -37,9 +37,9 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public IActionResult UpdateName([FromBody] string currentName, string newName)
     {
         var product = Items.FirstOrDefault(p => p.Name == currentName);
         if (product != null)
@@ -74,19 +74,18 @@ public class StoreController : ControllerBase
 
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/add")]
-    public IActionResult Add(string name, double price, int stock)
+    public IActionResult Add([FromBody] Product newProduct)
     {
-        var product = new Product(name, price, stock);
-        Items.Add(product);
+        Items.Add(newProduct);
         return Ok(Items);
     }
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    public IActionResult Delete([FromBody] string name)
     {
         var product = Items.FirstOrDefault(p => p.Name == name);
         if (product != null)
@@ -107,6 +106,4 @@ public class StoreController : ControllerBase
     {
         return Ok(Items);
     }
-
-
 }

@@ -46,11 +46,16 @@ public class StoreController : ControllerBase
 
     private List<Product> Items = new List<Product>();
 
-    // поле с путем до базы данных 
+    private readonly string filePath = "DataBase.json"; // Путь
 
     public StoreController()
     {
-       // чтение
+        // чтение данных из файла при создании экземпляра контроллера
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            Items = JsonSerializer.Deserialize<List<Product>>(json);
+        }
     }
 
 
@@ -62,6 +67,7 @@ public class StoreController : ControllerBase
         var product = Items.FirstOrDefault(p => p.Name == name);
         if (product != null)
         {
+            WriteToFile(); // запись данных в файл после изменений
             product.Price = newPrice;
             return Ok($"{name} обновлен с новой ценой: {newPrice}");
         }
@@ -78,6 +84,7 @@ public class StoreController : ControllerBase
         var product = Items.FirstOrDefault(p => p.Name == currentName);
         if (product != null)
         {
+            WriteToFile();
             product.Name = newName;
             return Ok($"Имя продукта изменено с {currentName} на {newName}");
         }
@@ -122,16 +129,14 @@ public class StoreController : ControllerBase
     }
 
 
-
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        // запись
+        WriteToFile();
         return Ok(Items);
     }
-
 
     [HttpPost]
     [Route("/store/delete")]
@@ -149,7 +154,6 @@ public class StoreController : ControllerBase
         }
     }
 
-
     [HttpGet]
     [Route("/store/show")]
     public IActionResult Show()
@@ -159,13 +163,19 @@ public class StoreController : ControllerBase
 
     private void ReadDataFromFile()
     {
-        // опишу логику
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            Items = JsonSerializer.Deserialize<List<Product>>(json);
+        }
     }
 
     private void WriteDataToFile()
     {
-        // опишу логику
+        string json = JsonSerializer.Serialize(Items, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
+        File.WriteAllText(filePath, json);
     }
-
-
 }

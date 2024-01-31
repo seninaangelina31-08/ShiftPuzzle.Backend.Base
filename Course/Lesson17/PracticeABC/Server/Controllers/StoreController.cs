@@ -43,14 +43,17 @@ public class StoreController : ControllerBase
 
     }
 
-
     private List<Product> Items = new List<Product>();
 
-    // поле с путем до базы данных 
+    private readonly string filePath = "data.json";
 
     public StoreController()
     {
-       // чтение
+       if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            Items = JsonSerializer.Deserialize<List<Product>>(json);
+        }
     }
 
 
@@ -79,6 +82,7 @@ public class StoreController : ControllerBase
         if (product != null)
         {
             product.Name = newName;
+            WriteToFile();
             return Ok($"Имя продукта изменено с {currentName} на {newName}");
         }
         else
@@ -128,7 +132,7 @@ public class StoreController : ControllerBase
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        // запись
+        WriteToFile();
         return Ok(Items);
     }
 
@@ -159,12 +163,20 @@ public class StoreController : ControllerBase
 
     private void ReadDataFromFile()
     {
-        // опишу логику
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            Items = JsonSerializer.Deserialize<List<Product>>(json);
+        }
     }
 
     private void WriteDataToFile()
     {
-        // опишу логику
+        string json = JsonSerializer.Serialize(Items, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
+        File.WriteAllText(filePath, json);
     }
 
 

@@ -121,7 +121,18 @@ class Program
                     var choice = Console.ReadLine();
 
                     switch (choice)
-                    { 
+                    {
+                        case 1:
+                            Console.WriteLine("Число равно 1");
+                            break;
+                        case 2:
+                            Console.WriteLine("Число равно 1");
+                            break;
+                        case 3:
+                            Console.WriteLine("Число равно 1");
+                            break;
+                        case 4:
+                            break;
                         default:
                             Console.WriteLine("Неверный выбор. Попробуйте снова.");
                             break;

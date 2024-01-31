@@ -13,10 +13,13 @@
     "Name": "apple",
     "Price": 123,
     "Stock": 2
+<<<<<<< HEAD
   },
   {
     "Name": "Bubblecup",
     "Price": 234,
     "Stock": 23
+=======
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
   }
 ]

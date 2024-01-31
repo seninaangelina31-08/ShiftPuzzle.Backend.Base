@@ -12,7 +12,10 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
     public class Product
     {
     [Required]
@@ -31,12 +34,17 @@ public class StoreController : ControllerBase
             Price = price;
             Stock = stock;
         }
+<<<<<<< HEAD
         
     }
     public class BackupDB
         {
             public List<Product> Products { get; set; }
         }
+=======
+    }
+
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
     public class UserCredentials
     {
         [Required]
@@ -52,7 +60,10 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
+<<<<<<< HEAD
     private readonly string _backupJsonFilePath = "BackupDB.json";
+=======
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
 
     public StoreController()
     {
@@ -134,8 +145,14 @@ public class StoreController : ControllerBase
     public IActionResult Add([FromBody] Product newProduct)
     { 
 <<<<<<< HEAD
+<<<<<<< HEAD
         ReadDataFromFile();
         Items.Add(newProduct);
+=======
+        Items.Add(newProduct);
+        WriteDataToFile();
+        return Ok(Items);
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
     }
 
 
@@ -162,12 +179,21 @@ public class StoreController : ControllerBase
     {
         return Ok(Items);
     }
+<<<<<<< HEAD
  
 
     private List<Product> ConvertTextDBToList(string json)
     {
 <<<<<<< HEAD
         return JsonSerializer.Deserialize<List<Product>>(json);
+=======
+
+    #region PRACTICE_B
+
+    private List<Product> ConvertTextDBToList(string json)
+    {
+        return JsonSerializer.Deserialize<List<Product>>(json)
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
     }
 
     private string ReadDB()
@@ -188,6 +214,7 @@ public class StoreController : ControllerBase
         }
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
    
 
@@ -226,12 +253,21 @@ public class StoreController : ControllerBase
         return System.IO.File.Exists(_backupJsonFilePath);
     }
 
+=======
+    #endregion
+
+    #region PRACTICE_A
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
 
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
 <<<<<<< HEAD
+<<<<<<< HEAD
         return JsonSerializer.Serialize(Items, options);
+=======
+        retunr JsonSerializer.Serialize(Items, options);
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
     }
 
     private void WriteTiDB(string json)
@@ -242,7 +278,15 @@ public class StoreController : ControllerBase
     private void WriteDataToFile()
     { 
         WriteTiDB(ConvertDBtoJson());
+<<<<<<< HEAD
 
     }
  
+=======
+    }
+
+    #endregion PRACTICE_A
+
+
+>>>>>>> 2f0ac98b (Материалы 19-го урока)
 }

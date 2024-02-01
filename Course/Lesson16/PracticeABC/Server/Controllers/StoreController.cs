@@ -135,7 +135,6 @@ public class StoreController : ControllerBase
     {
         if ((user.Username == "Зубенко Михаил") && (user.Password == "Меьйсчафачейэбцдучзеиечбвчучфехурб"))
         {
-            // user.IsAuthorized = true;
             return Ok("Вы авторизованы");
         }
         else
@@ -148,6 +147,7 @@ public class StoreController : ControllerBase
     [Route("/store/send")]
     public IActionResult Send([FromBody] Product product)
     {
+        Items.Add(product);
         return Ok($"Продукт отправлен на сервер");
     }
 

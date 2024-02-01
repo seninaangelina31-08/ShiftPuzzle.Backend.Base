@@ -26,13 +26,11 @@ class Program
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        public int Id { get; set; }
 
-        public User(string username, string password, int id)
+        public User(string username, string password)
         {
             this.Username = username;
             this.Password = password;
-            this.Id = id;
         }
     }
 
@@ -42,12 +40,12 @@ class Program
         Send();
     }
 
-    public bool IsAuthorized = false;
+    static bool IsAuthorized = false;
 
     public static void Auth()
     {
 
-        User user = new User("Зубенко Михаил", "Меьйсчафачейэбцдучзеиечбвчучфехурб", 1);
+        User user = new User("Зубенко Михаил", "Меьйсчафачейэбцдучзеиечбвчучфехурб");
 
         string url = "http://localhost:5087/store/auth";
 
@@ -60,16 +58,23 @@ class Program
         {
             var responseContent = response.Content.ReadAsStringAsync().Result;
             Console.WriteLine(responseContent); 
+            IsAuthorized = true;
         }
         else
         {
             Console.WriteLine($"Error: {response.StatusCode}");
+            IsAuthorized = false;
         }
     
     }
 
     public static void Send()
     {
+        if(!IsAuthorized)
+        {
+            Console.WriteLine("Вы не авторизованы");
+            return;        
+        }
 
         string name = Console.ReadLine();
 

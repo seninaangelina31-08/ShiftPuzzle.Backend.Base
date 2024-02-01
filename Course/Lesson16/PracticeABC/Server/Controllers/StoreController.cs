@@ -1,6 +1,16 @@
 namespace PracticeA;
 
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using System.IO; 
+using System.Net.Http;
+using System.Text; 
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 [ApiController]
 public class StoreController : ControllerBase
@@ -19,6 +29,20 @@ public class StoreController : ControllerBase
         }
     }
 
+    public class User
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public int Id { get; set; }
+
+        public User(string username, string password, int id)
+        {
+            Username = username;
+            Password = password;
+            Id = id;
+        }
+    }
+    
     private static readonly List<Product> Items = new List<Product>();
 
     [HttpGet]
@@ -71,9 +95,6 @@ public class StoreController : ControllerBase
 
 
 
-
-
-
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
@@ -106,4 +127,29 @@ public class StoreController : ControllerBase
     {
         return Ok(Items);
     }
+
+
+    [HttpPost]
+    [Route("/store/auth")]
+    public IActionResult Auth([FromBody] User user)
+    {
+        if ((user.Username == "Зубенко Михаил") && (user.Password == "Меьйсчафачейэбцдучзеиечбвчучфехурб"))
+        {
+            // user.IsAuthorized = true;
+            return Ok("Вы авторизованы");
+        }
+        else
+        {
+            return NotFound("Неверно введены данные");
+        }
+    }
+
+    [HttpPost]
+    [Route("/store/send")]
+    public IActionResult Send([FromBody] Product product)
+    {
+        return Ok($"Продукт отправлен на сервер");
+    }
+
+
 }

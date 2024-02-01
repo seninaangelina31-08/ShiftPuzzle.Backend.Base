@@ -126,16 +126,20 @@ class Program
                     if (IsAuthorized)
                     {
                         Console.WriteLine("1: авторизация\n2: Добавление продукта\n3: Вывод списка\n4: Выход");
+                        int choice = int.Parse(Console.ReadLine());
                         switch (choice)
                         { 
                             case 1:
                                 Auth();
+                                break;
                             case 2:
-                                
+                                Console.WriteLine("Спасибо за то, что используете наше приложение");
+                                break;
                             case 3:
                                 SendProduct();
+                                break;
                             case 4:
-                                Console.WriteLine("Спасибо за то, что используете наше приложение")
+                                Console.WriteLine("Спасибо за то, что используете наше приложение");
                                 break;
                             default:
                                 Console.WriteLine("Неверный выбор. Попробуйте снова.");
@@ -145,7 +149,7 @@ class Program
                     else
                     {
                         Console.WriteLine("Для авторизации нажмите 1");
-                        var choice = Console.ReadLine();
+                        int choice = int.Parse(Console.ReadLine());
 
                         if (choice == 1)
                         {
@@ -153,7 +157,7 @@ class Program
                         }
                         else
                         {
-                                Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                            Console.WriteLine("Неверный выбор. Попробуйте снова.");
                         }
                     }
                 }

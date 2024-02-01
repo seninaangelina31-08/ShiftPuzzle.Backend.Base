@@ -46,10 +46,8 @@ public class StoreController : ControllerBase
     [HttpGet]
     [Route("/store/showproducts")]
 
-    public string ShowList()
+    public List<string> ShowList()
     {
-        string list = string.Join(", ", products);
-        Console.WriteLine(list);
-        return list;
+        return products;
     }
 }

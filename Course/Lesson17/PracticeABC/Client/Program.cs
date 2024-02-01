@@ -1,23 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Json;
+using System.Collections.Generic;
 
 namespace Client;
 
 class Program
 { 
+
     [System.Serializable]
     public class Product
     {
     [Required]
     [StringLength(100, MinimumLength = 3)]
-    public string name { get; set; }
+    public string Name { get; set; }
 
     [Range(0.01, 10000)]
-    public double price { get; set; }
+    public double Price { get; set; }
 
     [Range(0, 10000)]
-    public int stock { get; set; }
+    public int Stock { get; set; }
 
         
     }
@@ -25,21 +27,22 @@ class Program
     
     static bool IsAuthorized = false;
 
-
-    static void AddProduct()
-    {
-        var url = "http://localhost:5087/store/add";
-
-        
-    }
     static void DisplayProducts()
         {
             var url = "http://localhost:5087/store/display"; // Замените на порт вашего сервера
             
 
-
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
+
+            const string path = @"..\Server\DataBase.json";
+            string JsonFromFile = File.ReadAllText(path);
+
+            List<Product> assortment = JsonSerializer.Deserialize<List<Product>>(JsonFromFile);
+            foreach (Product product in assortment)
+            {
+                Console.WriteLine($"| {product.Name, -17} | {product.Price, -5} | {product.Stock, -19} |");
+            }
 
 
 
@@ -55,7 +58,7 @@ class Program
                 return;        
             }
         
-            var url = "http://localhost:5087/store/send"; // Замените на порт вашего сервера
+            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -121,45 +124,45 @@ class Program
     { 
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         while (true)
-                {
-                    Console.WriteLine("Выберите опцию:");
-                    if (IsAuthorized)
-                    {
-                        Console.WriteLine("1: авторизация\n2: Добавление продукта\n3: Вывод списка\n4: Выход");
-                        int choice = int.Parse(Console.ReadLine());
-                        switch (choice)
-                        { 
-                            case 1:
-                                Auth();
-                                break;
-                            case 2:
-                                Console.WriteLine("Спасибо за то, что используете наше приложение");
-                                break;
-                            case 3:
-                                SendProduct();
-                                break;
-                            case 4:
-                                Console.WriteLine("Спасибо за то, что используете наше приложение");
-                                break;
-                            default:
-                                Console.WriteLine("Неверный выбор. Попробуйте снова.");
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Для авторизации нажмите 1");
-                        int choice = int.Parse(Console.ReadLine());
-
-                        if (choice == 1)
-                        {
-                            Auth();
-                        }
-                        else
-                        {
-                            Console.WriteLine("Неверный выбор. Попробуйте снова.");
-                        }
-                    }
+        {
+            Console.WriteLine("Выберите опцию:");
+            if (IsAuthorized)
+            {
+                Console.WriteLine("1: авторизация\n2: Добавление продукта\n3: Вывод списка\n4: Выход");
+                int choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                { 
+                    case 1:
+                        Auth();
+                        break;
+                    case 2:
+                        SendProduct();
+                        break;
+                    case 3:
+                        DisplayProducts();
+                        break;
+                    case 4:
+                        Console.WriteLine("Спасибо за то, что используете наше приложение");
+                        break;
+                    default:
+                        Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                        break;
                 }
+            }
+            else
+            {
+                Console.WriteLine("Для авторизации нажмите 1");
+                int choice = int.Parse(Console.ReadLine());
+
+                if (choice == 1)
+                {
+                    Auth();
+                }
+                else
+                {
+                    Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                }
+            }
+        }
     }
 }

@@ -41,6 +41,18 @@ public class StoreController : ControllerBase
         }
     }
 
+    public class User
+    {
+        public string Login { get; set; }
+        public string Password { get; set; }
+
+        public User(string login, string password)
+        {
+            this.Login = login;
+            this.Password = password;
+        }
+    }
+
     private static readonly List<Product> Items = new List<Product>();
 
     [HttpGet]
@@ -91,10 +103,12 @@ public class StoreController : ControllerBase
         }
     }
 
-
-
-
-
+    [HttpPost]
+    [Route("/store/authorization")]
+    public IActionResult Authorization([FromBody] User user)
+    {
+        return Ok(user);
+    }
 
     [HttpPost]
     [Route("/store/add")]

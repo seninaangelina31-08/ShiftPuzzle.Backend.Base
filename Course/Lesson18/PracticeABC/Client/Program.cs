@@ -23,10 +23,14 @@ class Program
     }
     
     static bool IsAuthorized = false;
+    const int port = 5087;
+    const string url = "http://localhost";
 
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            const string ShowProduct = "/store/show";
+            var urll = $"{url}:{port}{ShowProduct}"; // Замените на порт вашего сервера
+            
             var client = new HttpClient();   
             var response = client.GetAsync(url).Result;  
             string responseContent = response.Content.ReadAsStringAsync().Result; 
@@ -46,16 +50,15 @@ class Program
 
     public static void SendProduct()
     {       
-
-
-
             if(!IsAuthorized)
             {
                 Console.WriteLine("Вы не авторизованы");
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+            const string sendProd = "/store/add";
+            var urll = $"{url}:{port}{sendProd}";
+
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -88,7 +91,10 @@ class Program
 
 
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
+    {       
+        const string authen = "/store/auth";
+        var urll = $"{url}:{port}{authen}";
+
             var userData = new
             {
                 User = "admin",

@@ -13,5 +13,10 @@
     "Name": "apple",
     "Price": 123,
     "Stock": 2
+  },
+  {
+    "Name": "apple",
+    "Price": 4354,
+    "Stock": 543
   }
 ]

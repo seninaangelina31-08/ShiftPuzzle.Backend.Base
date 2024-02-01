@@ -26,17 +26,27 @@ class Program
 
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            var url = "http://localhost:5087/store/show";
             
-            // реализуй логику
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync(url).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var productsJson = response.Content.ReadAsStringAsync().Result;
+                    var products = JsonSerializer.Deserialize<Product[]>(productsJson);
 
+                    Console.WriteLine("-----------------------------------------------------------------");
+                    Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
 
-            Console.WriteLine("-----------------------------------------------------------------");
-            Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
+                    foreach (var product in products)
+                    {
+                        Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |");
 
-
-
-            Console.WriteLine("-----------------------------------------------------------------");
+                    }
+                    Console.WriteLine("-----------------------------------------------------------------");
+                }
+            }
         }
 
 
@@ -48,7 +58,7 @@ class Program
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+            var url = "http://localhost:5087/store/add";
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -79,12 +89,54 @@ class Program
             }
     }
 
+    public static void UpdateName()
+    {
+        if(!IsAuthorized)
+        {
+            Console.WriteLine("Вы не авторизованы");
+            return;        
+        }
+
+        Console.WriteLine("Введите название продукта:");
+        var name = Console.ReadLine();
+        Console.WriteLine("Введите новое название продукта:");
+        var newname = Console.ReadLine();
+        
+        var url = "http://localhost:5087/store/updatename";
+        using (HttpClient client = new HttpClient())
+        {
+        
+            var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("currentName", name),
+                    new KeyValuePair<string, string>("newName", newname)
+                }
+            );
+
+
+            // var client = new HttpClient(); 
+            // var json = JsonSerializer.Serialize(product);
+            // var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = client.PostAsync(url, content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine(responseContent);
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+        }
+    }
+
 
     public static void Auth()
     {       
         
         
-            var url = "http://localhost:5087/store/????"; // Замените на порт вашего сервера, также замените символы на правильный апи
+            var url = "http://localhost:5087/store/auth";
             var userData = new
             {
                 User = "admin",
@@ -115,27 +167,38 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         while (true)
                 {
-                    Console.WriteLine("Выберите опцию:");
-                     
+                    Console.WriteLine("\nВыберите опцию:");
+                    bool flag = false; 
 
                     var choice = Console.ReadLine();
 
                     switch (choice)
                     {
-                        case 1:
-                            Console.WriteLine("Число равно 1");
+                        case "1":
+                            Auth();
                             break;
-                        case 2:
-                            Console.WriteLine("Число равно 1");
+                        case "2":
+                            SendProduct();
                             break;
-                        case 3:
-                            Console.WriteLine("Число равно 1");
+                        case "3":
+                            DisplayProducts();
                             break;
-                        case 4:
+                        case "4":
+                            UpdateName();
+                            break;
+                        case "5":
+                            DisplayProducts();
+                            break;
+                        case "6":
+                            flag = true;
                             break;
                         default:
                             Console.WriteLine("Неверный выбор. Попробуйте снова.");
                             break;
+                    }
+                    if (flag)
+                    {
+                        break;
                     }
                 }
     }

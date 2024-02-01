@@ -45,15 +45,11 @@ public class StoreController : ControllerBase
 
     private List<Product> Items = new List<Product>();
 
-    private readonly string filePath = "data.json";
+    private readonly string _jsonFilePath = "DataBase.json";
 
     public StoreController()
     {
-       if (File.Exists(filePath))
-        {
-            string json = File.ReadAllText(filePath);
-            Items = JsonSerializer.Deserialize<List<Product>>(json);
-        }
+       ReadDataFromFile();
     }
 
 
@@ -82,7 +78,7 @@ public class StoreController : ControllerBase
         if (product != null)
         {
             product.Name = newName;
-            WriteToFile();
+            WriteDataToFile();
             return Ok($"Имя продукта изменено с {currentName} на {newName}");
         }
         else
@@ -132,7 +128,7 @@ public class StoreController : ControllerBase
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        WriteToFile();
+        WriteDataToFile();
         return Ok(Items);
     }
 
@@ -163,20 +159,18 @@ public class StoreController : ControllerBase
 
     private void ReadDataFromFile()
     {
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(_jsonFilePath))
         {
-            string json = File.ReadAllText(filePath);
+            string json = System.IO.File.ReadAllText(_jsonFilePath);
             Items = JsonSerializer.Deserialize<List<Product>>(json);
         }
     }
 
     private void WriteDataToFile()
     {
-        string json = JsonSerializer.Serialize(Items, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        });
-        File.WriteAllText(filePath, json);
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string json = JsonSerializer.Serialize(Items, options);
+        System.IO.File.WriteAllText(_jsonFilePath, json);
     }
 
 

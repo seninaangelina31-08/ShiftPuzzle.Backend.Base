@@ -37,7 +37,7 @@ public Order(string customerName, int totalPrice, List<string> items)
     } 
 }
 
-public class Book
+[System.Serializable]public class Book
 {
     public string title { get; set; } 
     public string author { get; set; }
@@ -54,7 +54,7 @@ public Book( string title, string author, int year)
 
 }
 
-public class Library
+[System.Serializable]public class Library
 {
     public string libraryName { get; set; }
     public List<Book> books { get; set; }

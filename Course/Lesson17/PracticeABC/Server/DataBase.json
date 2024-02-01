@@ -11,7 +11,17 @@
   },
   {
     "Name": "apple",
-    "Price": 123,
+    "Price": 111,
     "Stock": 2
+  },
+  {
+    "Name": "string",
+    "Price": 10000,
+    "Stock": 10000
+  },
+  {
+    "Name": "string",
+    "Price": 10000,
+    "Stock": 10000
   }
 ]

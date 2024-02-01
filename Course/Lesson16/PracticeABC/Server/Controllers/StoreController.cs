@@ -19,6 +19,28 @@ public class StoreController : ControllerBase
         }
     }
 
+    public class UpdateNameBody
+    {
+        public string CurrentName { get; set; }
+        public string NewName { get; set; }
+
+        public UpdateNameBody(string currentName, string newName)
+        {
+            this.CurrentName = currentName;
+            this.NewName = newName;
+        }
+    }
+
+    public class DeleteProduct
+    {
+        public string Name { get; set; }
+
+        public DeleteProduct(string name)
+        {
+            this.Name = name;
+        }
+    }
+
     private static readonly List<Product> Items = new List<Product>();
 
     [HttpGet]
@@ -37,19 +59,19 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public IActionResult UpdateName([FromBody] UpdateNameBody newName)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = Items.FirstOrDefault(p => p.Name == newName.CurrentName);
         if (product != null)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            product.Name = newName.NewName;
+            return Ok($"Имя продукта изменено с {newName.CurrentName} на {newName.NewName}");
         }
         else
         {
-            return NotFound($"Продукт {currentName} не найден");
+            return NotFound($"Продукт {newName.CurrentName} не найден");
         }
     }
 
@@ -83,19 +105,19 @@ public class StoreController : ControllerBase
     }
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    public IActionResult Delete([FromBody] DeleteProduct newProduct)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = Items.FirstOrDefault(p => p.Name == newProduct.Name);
         if (product != null)
         {
             Items.Remove(product);
-            return Ok($"{name} удален");
+            return Ok($"{newProduct.Name} удален");
         }
         else
         {
-            return NotFound($"{name} не найден");
+            return NotFound($"{newProduct.Name} не найден");
         }
     }
 

@@ -26,9 +26,15 @@ class Program
         string jsonFromPublicapis = GetRequest(publicapisURL);  // поулчение ответа в виде json файла
         PublicapisResponce publicapisResponse = JsonSerializer.Deserialize<PublicapisResponce>(jsonFromPublicapis); // десериализация
         
+        File.WriteAllText("FREE_API", "");
+        File.WriteAllText("FREE_API_GITHUB", "");
         foreach (Entry entry in publicapisResponse.entries)
         {
-            File.AppendAllText("FREE_API", $"ССЫЛКА: {entry.Link}\nОПИСАНИЕ: {entry.Description}\nАВТОРИЗАЦИЯ: {entry.Auth}\n");
+            File.AppendAllText("FREE_API", $"ССЫЛКА: {entry.Link}\nОПИСАНИЕ: {entry.Description}\nАВТОРИЗАЦИЯ: {entry.Auth}\n\n");
+            if (entry.Link.Contains("github"))
+            {
+                File.AppendAllText("FREE_API_GITHUB", $"ССЫЛКА: {entry.Link}\nОПИСАНИЕ: {entry.Description}\nАВТОРИЗАЦИЯ: {entry.Auth}\n\n");
+            }
         }
     }
 }

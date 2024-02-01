@@ -15,13 +15,13 @@
     "Stock": 2
   },
   {
-    "Name": "top",
+    "Name": "pot",
     "Price": 120,
     "Stock": 3
   },
   {
-    "Name": "tom",
-    "Price": 32,
+    "Name": "mot",
+    "Price": 100,
     "Stock": 1
   }
 ]

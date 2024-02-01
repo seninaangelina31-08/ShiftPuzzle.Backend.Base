@@ -62,6 +62,7 @@ public class StoreController : ControllerBase
         if (product != null)
         {
             product.Price = newPrice;
+            WriteDataToFile();
             return Ok($"{name} обновлен с новой ценой: {newPrice}");
         }
         else

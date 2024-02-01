@@ -102,22 +102,49 @@ class Program
         Console.WriteLine("Введите новое название продукта:");
         var newname = Console.ReadLine();
         
-        var url = "http://localhost:5087/store/updatename";
+        var url = $"http://localhost:5087/store/updatename?currentName={name}&newName={newname}";
         using (HttpClient client = new HttpClient())
         {
         
             var content = new FormUrlEncodedContent(new[]
                 {
-                    new KeyValuePair<string, string>("currentName", name),
-                    new KeyValuePair<string, string>("newName", newname)
+                    new KeyValuePair<string, string>("curRRntName", name)
                 }
             );
+            var response = client.PostAsync(url, content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine(responseContent);
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+        }
+    }
+    public static void UpdatePrice()
+    {
+        if(!IsAuthorized)
+        {
+            Console.WriteLine("Вы не авторизованы");
+            return;        
+        }
 
-
-            // var client = new HttpClient(); 
-            // var json = JsonSerializer.Serialize(product);
-            // var content = new StringContent(json, Encoding.UTF8, "application/json");
-
+        Console.WriteLine("Введите название продукта:");
+        var name = Console.ReadLine();
+        Console.WriteLine("Введите новую цену продукта:");
+        var newname = Console.ReadLine();
+        
+        var url = $"http://localhost:5087/store/updateprice?name={name}&newPrice={newname}";
+        using (HttpClient client = new HttpClient())
+        {
+        
+            var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("curRRntName", name)
+                }
+            );
             var response = client.PostAsync(url, content).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -187,7 +214,7 @@ class Program
                             UpdateName();
                             break;
                         case "5":
-                            DisplayProducts();
+                            UpdatePrice();
                             break;
                         case "6":
                             flag = true;

@@ -13,10 +13,18 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ProductRepository>(provider =>
 {
     // Use the constructor with the appropriate parameters, e.g., the JSON file path
+<<<<<<< HEAD
     return new ProductRepository("Data Source=DataBase.db");
 });
 
 
+=======
+    return new   ProductRepository("DataBase.json");
+});
+
+
+
+>>>>>>> ec9a1010 (Материалы 20-го урока)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

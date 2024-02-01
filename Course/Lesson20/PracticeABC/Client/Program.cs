@@ -40,7 +40,11 @@ namespace Client
             var responseContent = response.Content.ReadAsStringAsync().Result;
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
+<<<<<<< HEAD
             products = products.OrderBy(p => p.Stock).ToList();
+=======
+
+>>>>>>> ec9a1010 (Материалы 20-го урока)
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");

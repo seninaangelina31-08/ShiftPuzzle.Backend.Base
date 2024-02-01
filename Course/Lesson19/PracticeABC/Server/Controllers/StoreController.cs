@@ -180,6 +180,7 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 
     private List<Product> ConvertTextDBToList(string json)
@@ -189,6 +190,9 @@ public class StoreController : ControllerBase
 =======
 
     #region PRACTICE_B
+=======
+ 
+>>>>>>> ec9a1010 (Материалы 20-го урока)
 
     private List<Product> ConvertTextDBToList(string json)
     {
@@ -255,9 +259,13 @@ public class StoreController : ControllerBase
 
 =======
     #endregion
+<<<<<<< HEAD
 
     #region PRACTICE_A
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
+=======
+ 
+>>>>>>> ec9a1010 (Материалы 20-го урока)
 
     private string  ConvertDBtoJson()
     {
@@ -284,8 +292,7 @@ public class StoreController : ControllerBase
  
 =======
     }
-
-    #endregion PRACTICE_A
+ 
 
 
 >>>>>>> 2f0ac98b (Материалы 19-го урока)

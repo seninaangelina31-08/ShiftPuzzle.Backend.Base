@@ -20,6 +20,9 @@ public class Product
         Price = price;
         Stock = stock;
     }
+<<<<<<< HEAD
 
     public Product() {}
+=======
+>>>>>>> ec9a1010 (Материалы 20-го урока)
 }

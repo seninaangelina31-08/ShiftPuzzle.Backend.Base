@@ -1,7 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
+<<<<<<< HEAD
     <TargetFramework>net8.0</TargetFramework>
+=======
+    <TargetFramework>net7.0</TargetFramework>
+>>>>>>> ec9a1010 (Материалы 20-го урока)
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -9,8 +13,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+<<<<<<< HEAD
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.11" />
+=======
+>>>>>>> ec9a1010 (Материалы 20-го урока)
   </ItemGroup>
 
 </Project>

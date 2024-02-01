@@ -27,13 +27,14 @@ class Program
     static void DisplayProducts()
         {
             var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
-            
+            private List<Product> products = new List<Product>();
             // реализуй логику
-
+            string json = 
+            products = JsonSerializer.Deserialize<List<Product>>(json);
 
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
-
+            console
 
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -84,7 +85,7 @@ class Program
     {       
         
         
-            var url = "http://localhost:5087/store/????"; // Замените на порт вашего сервера, также замените символы на правильный апи
+            var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера, также замените символы на правильный апи
             var userData = new
             {
                 User = "admin",
@@ -115,7 +116,7 @@ class Program
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         while (true)
                 {
-                    Console.WriteLine("Выберите опцию:");
+                    Console.WriteLine("Выберите опцию: (1. авторизация 2. Добавление продукта 3. Вывод спика 4. Выход)");
                      
 
                     var choice = Console.ReadLine();
@@ -124,6 +125,17 @@ class Program
                     { 
                         default:
                             Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                            break;
+                        case "1":
+                            Auth();
+                            break;
+                        case "2":
+                            SendProduct();
+                            break;
+                        case "3":
+                            DisplayProducts();
+                            break;
+                        case "4":
                             break;
                     }
                 }

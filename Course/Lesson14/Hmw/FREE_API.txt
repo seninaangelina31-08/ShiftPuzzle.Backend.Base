@@ -1,0 +1,5626 @@
+Ссылка: https://www.adoptapet.com/public/apis/pet_list.html 
+Описание: Resource to help get pets adopted 
+Авторизация: apiKey
+
+Ссылка: https://theaxolotlapi.netlify.app/ 
+Описание: Collection of axolotl pictures and facts 
+Авторизация: не нужна
+
+Ссылка: https://alexwohlbruck.github.io/cat-facts/ 
+Описание: Daily cat facts 
+Авторизация: не нужна
+
+Ссылка: https://cataas.com/ 
+Описание: Cat as a service (cats pictures and gifs) 
+Авторизация: не нужна
+
+Ссылка: https://docs.thecatapi.com/ 
+Описание: Pictures of cats from Tumblr 
+Авторизация: apiKey
+
+Ссылка: https://dukengn.github.io/Dog-facts-API/ 
+Описание: Random dog facts 
+Авторизация: не нужна
+
+Ссылка: https://kinduff.github.io/dog-api/ 
+Описание: Random facts of Dogs 
+Авторизация: не нужна
+
+Ссылка: https://dog.ceo/dog-api/ 
+Описание: Based on the Stanford Dogs Dataset 
+Авторизация: не нужна
+
+Ссылка: https://documenter.getpostman.com/view/664302/S1ENwy59 
+Описание: Retrieve recent or notable birding observations within a region 
+Авторизация: apiKey
+
+Ссылка: https://www.fishwatch.gov/developers 
+Описание: Information and pictures about individual fish species 
+Авторизация: не нужна
+
+Ссылка: https://http.cat/ 
+Описание: Cat for every HTTP Status 
+Авторизация: не нужна
+
+Ссылка: https://http.dog/ 
+Описание: Dogs for every HTTP response status code 
+Авторизация: не нужна
+
+Ссылка: http://apiv3.iucnredlist.org/api/v3/docs 
+Описание: IUCN Red List of Threatened Species 
+Авторизация: apiKey
+
+Ссылка: https://github.com/wh-iterabb-it/meowfacts 
+Описание: Get random cat facts 
+Авторизация: не нужна
+
+Ссылка: https://github.com/movebank/movebank-api-doc 
+Описание: Movement and Migration data of animals 
+Авторизация: не нужна
+
+Ссылка: https://www.petfinder.com/developers/ 
+Описание: Petfinder is dedicated to helping pets find homes, another resource to get pets adopted 
+Авторизация: apiKey
+
+Ссылка: https://placebear.com/ 
+Описание: Placeholder bear pictures 
+Авторизация: не нужна
+
+Ссылка: https://place.dog 
+Описание: Placeholder Dog pictures 
+Авторизация: не нужна
+
+Ссылка: https://placekitten.com/ 
+Описание: Placeholder Kitten pictures 
+Авторизация: не нужна
+
+Ссылка: https://random.dog/woof.json 
+Описание: Random pictures of dogs 
+Авторизация: не нужна
+
+Ссылка: https://random-d.uk/api 
+Описание: Random pictures of ducks 
+Авторизация: не нужна
+
+Ссылка: https://randomfox.ca/floof/ 
+Описание: Random pictures of foxes 
+Авторизация: не нужна
+
+Ссылка: https://userguide.rescuegroups.org/display/APIDG/API+Developers+Guide+Home 
+Описание: Adoption 
+Авторизация: не нужна
+
+Ссылка: http://shibe.online/ 
+Описание: Random pictures of Shiba Inu, cats or birds 
+Авторизация: не нужна
+
+Ссылка: https://thedogapi.com/ 
+Описание: A public service all about Dogs, free to use when making your fancy new App, Website or Service 
+Авторизация: apiKey
+
+Ссылка: https://xeno-canto.org/explore/api 
+Описание: Bird recordings 
+Авторизация: не нужна
+
+Ссылка: https://zoo-animal-api.herokuapp.com/ 
+Описание: Facts and pictures of zoo animals 
+Авторизация: не нужна
+
+Ссылка: https://aniapi.com/docs/ 
+Описание: Anime discovery, streaming & syncing with trackers 
+Авторизация: OAuth
+
+Ссылка: https://wiki.anidb.net/HTTP_API_Definition 
+Описание: Anime Database 
+Авторизация: apiKey
+
+Ссылка: https://github.com/AniList/ApiV2-GraphQL-Docs 
+Описание: Anime discovery & tracking 
+Авторизация: OAuth
+
+Ссылка: https://github.com/RocktimSaikia/anime-chan 
+Описание: Anime quotes (over 10k+) 
+Авторизация: не нужна
+
+Ссылка: https://chandan-02.github.io/anime-facts-rest-api/ 
+Описание: Anime Facts (over 100+) 
+Авторизация: не нужна
+
+Ссылка: https://www.animenewsnetwork.com/encyclopedia/api.php 
+Описание: Anime industry news 
+Авторизация: не нужна
+
+Ссылка: https://catboys.com/api 
+Описание: Neko images, funny GIFs & more 
+Авторизация: не нужна
+
+Ссылка: https://danbooru.donmai.us/wiki_pages/help:api 
+Описание: Thousands of anime artist database to find good anime art 
+Авторизация: apiKey
+
+Ссылка: https://jikan.moe 
+Описание: Unofficial MyAnimeList API 
+Авторизация: не нужна
+
+Ссылка: https://kitsu.docs.apiary.io/ 
+Описание: Anime discovery platform 
+Авторизация: OAuth
+
+Ссылка: https://api.mangadex.org/docs.html 
+Описание: Manga Database and Community 
+Авторизация: apiKey
+
+Ссылка: https://rapidapi.com/pierre.carcellermeunier/api/mangapi3/ 
+Описание: Translate manga pages from one language to another 
+Авторизация: apiKey
+
+Ссылка: https://myanimelist.net/clubs.php?cid=13727 
+Описание: Anime and Manga Database and Community 
+Авторизация: OAuth
+
+Ссылка: https://docs.nekos.best 
+Описание: Neko Images & Anime roleplaying GIFs 
+Авторизация: не нужна
+
+Ссылка: https://shikimori.one/api/doc 
+Описание: Anime discovery, tracking, forum, rates 
+Авторизация: OAuth
+
+Ссылка: https://ghibliapi.herokuapp.com 
+Описание: Resources from Studio Ghibli films 
+Авторизация: не нужна
+
+Ссылка: https://soruly.github.io/trace.moe-api/#/ 
+Описание: A useful tool to get the exact scene of an anime from a screenshot 
+Авторизация: не нужна
+
+Ссылка: https://waifu.im/docs 
+Описание: Get waifu pictures from an archive of over 4000 images and multiple tags 
+Авторизация: не нужна
+
+Ссылка: https://waifu.pics/docs 
+Описание: Image sharing platform for anime images 
+Авторизация: не нужна
+
+Ссылка: https://docs.abuseipdb.com/ 
+Описание: IP/domain/URL reputation 
+Авторизация: apiKey
+
+Ссылка: https://otx.alienvault.com/api 
+Описание: IP/domain/URL reputation 
+Авторизация: apiKey
+
+Ссылка: https://capev2.readthedocs.io/en/latest/usage/api.html 
+Описание: Malware execution and analysis 
+Авторизация: apiKey
+
+Ссылка: https://developers.google.com/safe-browsing/ 
+Описание: Google Link/Domain Flagging 
+Авторизация: apiKey
+
+Ссылка: https://maldatabase.com/api-doc.html 
+Описание: Provide malware datasets and threat intelligence feeds 
+Авторизация: apiKey
+
+Ссылка: https://malshare.com/doc.php 
+Описание: Malware Archive / file sourcing 
+Авторизация: apiKey
+
+Ссылка: https://bazaar.abuse.ch/api/ 
+Описание: Collect and share malware samples 
+Авторизация: apiKey
+
+Ссылка: https://metacert.com/ 
+Описание: Metacert Link Flagging 
+Авторизация: apiKey
+
+Ссылка: https://rapidapi.com/Amiichu/api/exerra-phishing-check/ 
+Описание: Check links to see if they're known phishing attempts 
+Авторизация: apiKey
+
+Ссылка: https://phisherman.gg/ 
+Описание: IP/domain/URL reputation 
+Авторизация: apiKey
+
+Ссылка: https://docs.scanii.com/ 
+Описание: Simple REST API that can scan submitted documents/files for the presence of threats 
+Авторизация: apiKey
+
+Ссылка: https://urlhaus-api.abuse.ch/ 
+Описание: Bulk queries and Download Malware Samples 
+Авторизация: не нужна
+
+Ссылка: https://urlscan.io/about-api/ 
+Описание: Scan and Analyse URLs 
+Авторизация: apiKey
+
+Ссылка: https://www.virustotal.com/en/documentation/public-api/ 
+Описание: VirusTotal File/URL Analysis 
+Авторизация: apiKey
+
+Ссылка: https://support.mywot.com/hc/en-us/sections/360004477734-API- 
+Описание: IP/domain/URL reputation 
+Авторизация: apiKey
+
+Ссылка: https://api.amethyste.moe/ 
+Описание: Generate images for Discord users 
+Авторизация: apiKey
+
+Ссылка: https://api.artic.edu/docs/ 
+Описание: Art 
+Авторизация: не нужна
+
+Ссылка: http://colormind.io/api-access/ 
+Описание: Color scheme generator 
+Авторизация: не нужна
+
+Ссылка: http://www.colourlovers.com/api 
+Описание: Get various patterns, palettes and images 
+Авторизация: не нужна
+
+Ссылка: https://collection.cooperhewitt.org/api 
+Описание: Smithsonian Design Museum 
+Авторизация: apiKey
+
+Ссылка: https://developer.dribbble.com 
+Описание: Discover the world’s top designers & creatives 
+Авторизация: OAuth
+
+Ссылка: https://github.com/cheatsnake/emojihub 
+Описание: Get emojis by categories and groups 
+Авторизация: не нужна
+
+Ссылка: https://pro.europeana.eu/resources/apis/search 
+Описание: European Museum and Galleries content 
+Авторизация: apiKey
+
+Ссылка: https://github.com/harvardartmuseums/api-docs 
+Описание: Art 
+Авторизация: apiKey
+
+Ссылка: https://icon.horse 
+Описание: Favicons for any website, with fallbacks 
+Авторизация: не нужна
+
+Ссылка: https://developer.iconfinder.com 
+Описание: Icons 
+Авторизация: apiKey
+
+Ссылка: https://img.icons8.com/ 
+Описание: Icons (find "search icon" hyperlink in page) 
+Авторизация: не нужна
+
+Ссылка: https://lordicon.com/ 
+Описание: Icons with predone Animations 
+Авторизация: не нужна
+
+Ссылка: https://metmuseum.github.io/ 
+Описание: Met Museum of Art 
+Авторизация: не нужна
+
+Ссылка: http://api.thenounproject.com/index.html 
+Описание: Icons 
+Авторизация: OAuth
+
+Ссылка: https://php-noise.com/ 
+Описание: Noise Background Image Generator 
+Авторизация: не нужна
+
+Ссылка: https://pixelencounter.com/api 
+Описание: SVG Icon Generator 
+Авторизация: не нужна
+
+Ссылка: https://data.rijksmuseum.nl/object-metadata/api/ 
+Описание: RijksMuseum Data 
+Авторизация: apiKey
+
+Ссылка: https://wordcloudapi.com/ 
+Описание: Easily create word clouds 
+Авторизация: apiKey
+
+Ссылка: https://x-colors.herokuapp.com/ 
+Описание: Generate & convert colors 
+Авторизация: не нужна
+
+Ссылка: https://auth0.com 
+Описание: Easy to implement, adaptable authentication and authorization platform 
+Авторизация: apiKey
+
+Ссылка: https://otp.dev/en/docs/ 
+Описание: Implement OTP flow quickly 
+Авторизация: apiKey
+
+Ссылка: https://m3o.com/user 
+Описание: User management and authentication 
+Авторизация: apiKey
+
+Ссылка: https://mojoauth.com 
+Описание: Secure and modern passwordless authentication platform 
+Авторизация: apiKey
+
+Ссылка: https://sawolabs.com 
+Описание: Simplify login and improve user experience by integrating passwordless authentication in your app 
+Авторизация: apiKey
+
+Ссылка: https://stytch.com/ 
+Описание: User infrastructure for modern applications 
+Авторизация: apiKey
+
+Ссылка: https://warrant.dev/ 
+Описание: APIs for authorization and access control 
+Авторизация: apiKey
+
+Ссылка: https://graphql.bitquery.io/ide 
+Описание: Onchain GraphQL APIs & DEX APIs 
+Авторизация: apiKey
+
+Ссылка: https://chain.link/developer-resources 
+Описание: Build hybrid smart contracts with Chainlink 
+Авторизация: не нужна
+
+Ссылка: https://tierion.com/chainpoint/ 
+Описание: Chainpoint is a global network for anchoring data to the Bitcoin blockchain 
+Авторизация: не нужна
+
+Ссылка: https://www.covalenthq.com/docs/api/ 
+Описание: Multi-blockchain data aggregator platform 
+Авторизация: apiKey
+
+Ссылка: https://etherscan.io/apis 
+Описание: Ethereum explorer API 
+Авторизация: apiKey
+
+Ссылка: https://docs.helium.com/api/blockchain/introduction/ 
+Описание: Helium is a global, distributed network of Hotspots that create public, long-range wireless coverage 
+Авторизация: не нужна
+
+Ссылка: https://nownodes.io/ 
+Описание: Blockchain-as-a-service solution that provides high-quality connection via API 
+Авторизация: apiKey
+
+Ссылка: https://developers.steem.io/ 
+Описание: Blockchain-based blogging and social media website 
+Авторизация: не нужна
+
+Ссылка: https://thegraph.com 
+Описание: Indexing protocol for querying networks like Ethereum with GraphQL 
+Авторизация: apiKey
+
+Ссылка: https://walltime.info/api.html 
+Описание: To retrieve Walltime's market info 
+Авторизация: не нужна
+
+Ссылка: https://docs.watchdata.io 
+Описание: Provide simple and reliable API access to Ethereum blockchain 
+Авторизация: apiKey
+
+Ссылка: https://www.abibliadigital.com.br/en 
+Описание: Do not worry about managing the multiple versions of the Bible 
+Авторизация: apiKey
+
+Ссылка: https://docs.bhagavadgitaapi.in 
+Описание: Open Source Shrimad Bhagavad Gita API including 21+ authors translation in Sanskrit/English/Hindi 
+Авторизация: apiKey
+
+Ссылка: https://bhagavadgita.io/api 
+Описание: Bhagavad Gita text 
+Авторизация: OAuth
+
+Ссылка: https://gita-api.vercel.app 
+Описание: Bhagavad Gita API in telugu and odia languages 
+Авторизация: не нужна
+
+Ссылка: https://bible-api.com/ 
+Описание: Free Bible API with multiple languages 
+Авторизация: не нужна
+
+Ссылка: http://bnb.data.bl.uk/ 
+Описание: Books 
+Авторизация: не нужна
+
+Ссылка: https://github.com/CrossRef/rest-api-doc 
+Описание: Books & Articles Metadata 
+Авторизация: не нужна
+
+Ссылка: https://api.ganjoor.net 
+Описание: Classic Persian poetry works including access to related manuscripts, recitations and music tracks 
+Авторизация: OAuth
+
+Ссылка: https://developers.google.com/books/ 
+Описание: Books 
+Авторизация: OAuth
+
+Ссылка: https://github.com/GurbaniNow/api 
+Описание: Fast and Accurate Gurbani RESTful API 
+Авторизация: не нужна
+
+Ссылка: https://gutendex.com/ 
+Описание: Web-API for fetching data from Project Gutenberg Books Library 
+Авторизация: не нужна
+
+Ссылка: https://openlibrary.org/developers/api 
+Описание: Books, book covers and related data 
+Авторизация: не нужна
+
+Ссылка: http://www.penguinrandomhouse.biz/webservices/rest/ 
+Описание: Books, book covers and related data 
+Авторизация: не нужна
+
+Ссылка: https://github.com/thundercomb/poetrydb#readme 
+Описание: Enables you to get instant data from our vast poetry collection 
+Авторизация: не нужна
+
+Ссылка: https://quran.api-docs.io/ 
+Описание: RESTful Quran API with multiple languages 
+Авторизация: не нужна
+
+Ссылка: https://alquran.cloud/api 
+Описание: A RESTful Quran API to retrieve an Ayah, Surah, Juz or the entire Holy Quran 
+Авторизация: не нужна
+
+Ссылка: https://github.com/fawazahmed0/quran-api#readme 
+Описание: Free Quran API Service with 90+ different languages and 400+ translations 
+Авторизация: не нужна
+
+Ссылка: https://aninditabasu.github.io/indica/html/rv.html 
+Описание: Gods and poets, their categories, and the verse meters, with the mandal and sukta number 
+Авторизация: не нужна
+
+Ссылка: https://docs.api.bible 
+Описание: Everything you need from the Bible in one discoverable place 
+Авторизация: apiKey
+
+Ссылка: https://api-thirukkural.web.app/ 
+Описание: 1330 Thirukkural poems and explanation in Tamil and English 
+Авторизация: не нужна
+
+Ссылка: https://aninditabasu.github.io/indica/html/vs.html 
+Описание: Descriptions of all nouns (names, places, animals, things) from vedic literature 
+Авторизация: не нужна
+
+Ссылка: https://wizard-world-api.herokuapp.com/swagger/index.html 
+Описание: Get information from the Harry Potter universe 
+Авторизация: не нужна
+
+Ссылка: https://wolnelektury.pl/api/ 
+Описание: API for obtaining information about e-books available on the WolneLektury.pl website 
+Авторизация: не нужна
+
+Ссылка: https://superset.apache.org/docs/api 
+Описание: API to manage your BI dashboards and data sources on Superset 
+Авторизация: apiKey
+
+Ссылка: http://charityapi.orghunter.com/ 
+Описание: Non-profit charity data 
+Авторизация: apiKey
+
+Ссылка: https://clearbit.com/docs#logo-api 
+Описание: Search for company logos and embed them in your projects 
+Авторизация: apiKey
+
+Ссылка: https://domainsdb.info/ 
+Описание: Registered Domain Names Search 
+Авторизация: не нужна
+
+Ссылка: https://developers.freelancer.com 
+Описание: Hire freelancers to get work done 
+Авторизация: OAuth
+
+Ссылка: https://developers.google.com/gmail/api/ 
+Описание: Flexible, RESTful access to the user's inbox 
+Авторизация: OAuth
+
+Ссылка: https://developers.google.com/analytics/ 
+Описание: Collect, configure and analyze your data to reach the right audience 
+Авторизация: OAuth
+
+Ссылка: https://instatus.com/help/api 
+Описание: Post to and update maintenance and incidents on your status page through an HTTP REST API 
+Авторизация: apiKey
+
+Ссылка: https://mailchimp.com/developer/ 
+Описание: Send marketing campaigns and transactional mails 
+Авторизация: apiKey
+
+Ссылка: https://www.mailjet.com/ 
+Описание: Marketing email can be sent and mail templates made in MJML or HTML can be sent using API 
+Авторизация: apiKey
+
+Ссылка: https://markerapi.com 
+Описание: Trademark Search 
+Авторизация: не нужна
+
+Ссылка: https://api.orb-intelligence.com/docs/ 
+Описание: Company lookup 
+Авторизация: apiKey
+
+Ссылка: https://redash.io/help/user-guide/integrations-and-api/api 
+Описание: Access your queries and dashboards on Redash 
+Авторизация: apiKey
+
+Ссылка: https://smartsheet.redoc.ly/ 
+Описание: Allows you to programmatically access and Smartsheet data and account information 
+Авторизация: OAuth
+
+Ссылка: https://developer.squareup.com/reference/square 
+Описание: Easy way to take payments, manage refunds, and help customers checkout online 
+Авторизация: OAuth
+
+Ссылка: https://www.digite.com/knowledge-base/swiftkanban/article/api-for-swift-kanban-web-services/#restapi 
+Описание: Kanban software, Visualize Work, Increase Organizations Lead Time, Throughput & Productivity 
+Авторизация: apiKey
+
+Ссылка: https://tenders.guru/hu/api 
+Описание: Get data for procurements in Hungary in JSON format 
+Авторизация: не нужна
+
+Ссылка: https://tenders.guru/pl/api 
+Описание: Get data for procurements in Poland in JSON format 
+Авторизация: не нужна
+
+Ссылка: https://tenders.guru/ro/api 
+Описание: Get data for procurements in Romania in JSON format 
+Авторизация: не нужна
+
+Ссылка: https://tenders.guru/es/api 
+Описание: Get data for procurements in Spain in JSON format 
+Авторизация: не нужна
+
+Ссылка: https://tenders.guru/ua/api 
+Описание: Get data for procurements in Ukraine in JSON format 
+Авторизация: не нужна
+
+Ссылка: https://tomba.io/api 
+Описание: Email Finder for B2B sales and email marketing and email verifier 
+Авторизация: apiKey
+
+Ссылка: https://developers.trello.com/ 
+Описание: Boards, lists and cards to help you organize and prioritize your projects 
+Авторизация: OAuth
+
+Ссылка: https://www.abstractapi.com/holidays-api 
+Описание: Data on national, regional, and religious holidays via API 
+Авторизация: apiKey
+
+Ссылка: https://calendarific.com/ 
+Описание: Worldwide Holidays 
+Авторизация: apiKey
+
+Ссылка: https://apilayer.com/marketplace/checkiday-api 
+Описание: Industry-leading Holiday API. Over 5,000 holidays and thousands of descriptions. Trusted by the World’s leading companies 
+Авторизация: apiKey
+
+Ссылка: http://calapi.inadiutorium.cz/ 
+Описание: Catholic liturgical calendar 
+Авторизация: не нужна
+
+Ссылка: https://svatky.adresa.info 
+Описание: Lookup for a name and returns nameday date 
+Авторизация: не нужна
+
+Ссылка: https://docs.getfestivo.com/docs/products/public-holidays-api/intro 
+Описание: Fastest and most advanced public holiday and observance service on the market 
+Авторизация: apiKey
+
+Ссылка: https://developers.google.com/google-apps/calendar/ 
+Описание: Display, create and modify Google calendar events 
+Авторизация: OAuth
+
+Ссылка: https://www.hebcal.com/home/developer-apis 
+Описание: Convert between Gregorian and Hebrew, fetch Shabbat and Holiday times, etc 
+Авторизация: не нужна
+
+Ссылка: https://holidayapi.com/ 
+Описание: Historical data regarding holidays 
+Авторизация: apiKey
+
+Ссылка: http://www.lectserve.com 
+Описание: Protestant liturgical calendar 
+Авторизация: не нужна
+
+Ссылка: https://date.nager.at 
+Описание: Public holidays for more than 90 countries 
+Авторизация: не нужна
+
+Ссылка: https://nameday.abalin.net 
+Описание: Provides namedays for multiple countries 
+Авторизация: не нужна
+
+Ссылка: https://github.com/gadael/icsdb 
+Описание: Database of ICS files for non working days 
+Авторизация: не нужна
+
+Ссылка: https://isdayoff.ru 
+Описание: Simple REST API for checking working, non-working or short days for Russia, CIS, USA and other 
+Авторизация: не нужна
+
+Ссылка: https://github.com/egno/work-calendar 
+Описание: Check if a date is a Russian holiday or not 
+Авторизация: не нужна
+
+Ссылка: https://www.gov.uk/bank-holidays.json 
+Описание: Bank holidays in England and Wales, Scotland and Northern Ireland 
+Авторизация: не нужна
+
+Ссылка: https://anonfiles.com/docs/api 
+Описание: Upload and share your files anonymously 
+Авторизация: не нужна
+
+Ссылка: https://bayfiles.com/docs/api 
+Описание: Upload and share your files 
+Авторизация: не нужна
+
+Ссылка: https://developer.box.com/ 
+Описание: File Sharing and Storage 
+Авторизация: OAuth
+
+Ссылка: https://ddownload.com/api 
+Описание: File Sharing and Storage 
+Авторизация: apiKey
+
+Ссылка: https://www.dropbox.com/developers 
+Описание: File Sharing and Storage 
+Авторизация: OAuth
+
+Ссылка: https://www.file.io 
+Описание: Super simple file sharing, convenient, anonymous and secure 
+Авторизация: не нужна
+
+Ссылка: https://www.filestack.com 
+Описание: Filestack File Uploader & File Upload API 
+Авторизация: apiKey
+
+Ссылка: https://gofile.io/api 
+Описание: Unlimited size file uploads for free 
+Авторизация: apiKey
+
+Ссылка: https://developers.google.com/drive/ 
+Описание: File Sharing and Storage 
+Авторизация: OAuth
+
+Ссылка: https://gyazo.com/api/docs 
+Описание: Save & Share screen captures instantly 
+Авторизация: apiKey
+
+Ссылка: https://api.imgbb.com/ 
+Описание: Simple and quick private image sharing 
+Авторизация: apiKey
+
+Ссылка: https://developer.microsoft.com/onedrive 
+Описание: File Sharing and Storage 
+Авторизация: OAuth
+
+Ссылка: https://getpantry.cloud/ 
+Описание: Free JSON storage for small projects 
+Авторизация: не нужна
+
+Ссылка: https://pastebin.com/doc_api 
+Описание: Plain Text Storage 
+Авторизация: apiKey
+
+Ссылка: https://docs.pinata.cloud/ 
+Описание: IPFS Pinning Services API 
+Авторизация: apiKey
+
+Ссылка: https://quip.com/dev/automation/documentation 
+Описание: File Sharing and Storage for groups 
+Авторизация: apiKey
+
+Ссылка: https://docs.storj.io/dcs/ 
+Описание: Decentralized Open-Source Cloud Storage 
+Авторизация: apiKey
+
+Ссылка: https://0x0.st 
+Описание: No-bullshit file hosting and URL shortening service 
+Авторизация: не нужна
+
+Ссылка: https://web3.storage/ 
+Описание: File Sharing and Storage for Free with 1TB Space 
+Авторизация: apiKey
+
+Ссылка: https://docs.microsoft.com/en-us/rest/api/resourcehealth 
+Описание: Resource health helps you diagnose and get support when an Azure issue impacts your resources 
+Авторизация: apiKey
+
+Ссылка: https://api-docs.bitrise.io/ 
+Описание: Build tool and processes integrations to create efficient development pipelines 
+Авторизация: apiKey
+
+Ссылка: https://buddy.works/docs/api/getting-started/overview 
+Описание: The fastest continuous integration and continuous delivery platform 
+Авторизация: OAuth
+
+Ссылка: https://circleci.com/docs/api/v1-reference/ 
+Описание: Automate the software development process using continuous integration and continuous delivery 
+Авторизация: apiKey
+
+Ссылка: https://docs.cloudbees.com/docs/cloudbees-codeship/latest/api-overview/ 
+Описание: Codeship is a Continuous Integration Platform in the cloud 
+Авторизация: apiKey
+
+Ссылка: https://docs.travis-ci.com/api/ 
+Описание: Sync your GitHub projects with Travis CI to test your code in minutes 
+Авторизация: apiKey
+
+Ссылка: https://0x.org/api 
+Описание: API for querying token and pool stats across various liquidity pools 
+Авторизация: не нужна
+
+Ссылка: https://1inch.io/api/ 
+Описание: API for querying decentralize exchange 
+Авторизация: не нужна
+
+Ссылка: https://docs.alchemy.com/alchemy/ 
+Описание: Ethereum Node-as-a-Service Provider 
+Авторизация: apiKey
+
+Ссылка: https://coinlayer.com 
+Описание: Real-time Crypto Currency Exchange Rates 
+Авторизация: apiKey
+
+Ссылка: https://github.com/binance/binance-spot-api-docs 
+Описание: Exchange for Trading Cryptocurrencies based in China 
+Авторизация: apiKey
+
+Ссылка: https://nova.bitcambio.com.br/api/v3/docs#a-public 
+Описание: Get the list of all traded assets in the exchange 
+Авторизация: не нужна
+
+Ссылка: https://apiv2.bitcoinaverage.com/ 
+Описание: Digital Asset Price Data for the blockchain industry 
+Авторизация: apiKey
+
+Ссылка: https://bitcoincharts.com/about/exchanges/ 
+Описание: Financial and Technical Data related to the Bitcoin Network 
+Авторизация: не нужна
+
+Ссылка: https://docs.bitfinex.com/docs 
+Описание: Cryptocurrency Trading Platform 
+Авторизация: apiKey
+
+Ссылка: https://www.bitmex.com/app/apiOverview 
+Описание: Real-Time Cryptocurrency derivatives trading platform based in Hong Kong 
+Авторизация: apiKey
+
+Ссылка: https://bittrex.github.io/api/v3 
+Описание: Next Generation Crypto Trading Platform 
+Авторизация: apiKey
+
+Ссылка: https://block.io/docs/basic 
+Описание: Bitcoin Payment, Wallet & Transaction Data 
+Авторизация: apiKey
+
+Ссылка: https://www.blockchain.com/api 
+Описание: Bitcoin Payment, Wallet & Transaction Data 
+Авторизация: apiKey
+
+Ссылка: https://blockfrost.io/ 
+Описание: Interaction with the Cardano mainnet and several testnets 
+Авторизация: apiKey
+
+Ссылка: https://bravenewcoin.com/developers 
+Описание: Real-time and historic crypto data from more than 200+ exchanges 
+Авторизация: apiKey
+
+Ссылка: https://docs.btcturk.com/ 
+Описание: Real-time cryptocurrency data, graphs and API that allows buy&sell 
+Авторизация: apiKey
+
+Ссылка: https://bybit-exchange.github.io/docs/linear/#t-introduction 
+Описание: Cryptocurrency data feed and algorithmic trading 
+Авторизация: apiKey
+
+Ссылка: https://docs.coinapi.io/ 
+Описание: All Currency Exchanges integrate under a single api 
+Авторизация: apiKey
+
+Ссылка: https://developers.coinbase.com 
+Описание: Bitcoin, Bitcoin Cash, Litecoin and Ethereum Prices 
+Авторизация: apiKey
+
+Ссылка: https://docs.pro.coinbase.com/#api 
+Описание: Cryptocurrency Trading Platform 
+Авторизация: apiKey
+
+Ссылка: https://docs.coincap.io/ 
+Описание: Real time Cryptocurrency prices through a RESTful API 
+Авторизация: не нужна
+
+Ссылка: https://docs.coindcx.com/ 
+Описание: Cryptocurrency Trading Platform 
+Авторизация: apiKey
+
+Ссылка: https://old.coindesk.com/coindesk-api/ 
+Описание: CoinDesk's Bitcoin Price Index (BPI) in multiple currencies 
+Авторизация: не нужна
+
+Ссылка: http://www.coingecko.com/api 
+Описание: Cryptocurrency Price, Market, and Developer/Social Data 
+Авторизация: не нужна
+
+Ссылка: https://coinigy.docs.apiary.io 
+Описание: Interacting with Coinigy Accounts and Exchange Directly 
+Авторизация: apiKey
+
+Ссылка: https://coinlib.io/apidocs 
+Описание: Crypto Currency Prices 
+Авторизация: apiKey
+
+Ссылка: https://www.coinlore.com/cryptocurrency-data-api 
+Описание: Cryptocurrencies prices, volume and more 
+Авторизация: не нужна
+
+Ссылка: https://coinmarketcap.com/api/ 
+Описание: Cryptocurrencies Prices 
+Авторизация: apiKey
+
+Ссылка: https://api.coinpaprika.com 
+Описание: Cryptocurrencies prices, volume and more 
+Авторизация: не нужна
+
+Ссылка: https://developers.coinranking.com/api/documentation 
+Описание: Live Cryptocurrency data 
+Авторизация: apiKey
+
+Ссылка: https://coinremitter.com/docs 
+Описание: Cryptocurrencies Payment & Prices 
+Авторизация: apiKey
+
+Ссылка: https://documenter.getpostman.com/view/5734027/RzZ6Hzr3?version=latest 
+Описание: Crypto Tracker 
+Авторизация: не нужна
+
+Ссылка: https://docs.cryptapi.io/ 
+Описание: Cryptocurrency Payment Processor 
+Авторизация: не нужна
+
+Ссылка: https://www.cryptingup.com/apidoc/#introduction 
+Описание: Cryptocurrency data 
+Авторизация: не нужна
+
+Ссылка: https://www.cryptocompare.com/api# 
+Описание: Cryptocurrencies Comparison 
+Авторизация: не нужна
+
+Ссылка: https://api.exchange.cryptomkt.com/ 
+Описание: Cryptocurrencies Trading platform 
+Авторизация: apiKey
+
+Ссылка: https://www.cryptonator.com/api/ 
+Описание: Cryptocurrencies Exchange Rates 
+Авторизация: не нужна
+
+Ссылка: https://docs.dydx.exchange/ 
+Описание: Decentralized cryptocurrency exchange 
+Авторизация: apiKey
+
+Ссылка: https://github.com/EverexIO/Ethplorer/wiki/Ethplorer-API 
+Описание: Ethereum tokens, balances, addresses, history of transactions, contracts, and custom structures 
+Авторизация: apiKey
+
+Ссылка: https://documenter.getpostman.com/view/10287440/SzYXWKPi 
+Описание: Cryptocurrencies exchange based in UK 
+Авторизация: apiKey
+
+Ссылка: https://docs.ftx.com/ 
+Описание: Complete REST, websocket, and FTX APIs to suit your algorithmic trading needs 
+Авторизация: apiKey
+
+Ссылка: https://www.gate.io/api2 
+Описание: API provides spot, margin and futures trading operations 
+Авторизация: apiKey
+
+Ссылка: https://docs.gemini.com/rest-api/ 
+Описание: Cryptocurrencies Exchange 
+Авторизация: не нужна
+
+Ссылка: https://rates.hirak.site/ 
+Описание: Exchange rates between 162 currency & 300 crypto currency update each 5 min, accurate, no limits 
+Авторизация: apiKey
+
+Ссылка: https://huobiapi.github.io/docs/spot/v1/en/ 
+Описание: Seychelles based cryptocurrency exchange 
+Авторизация: apiKey
+
+Ссылка: https://developers.icy.tools/ 
+Описание: GraphQL based NFT API 
+Авторизация: apiKey
+
+Ссылка: https://github.com/btcid/indodax-official-api-docs 
+Описание: Trade your Bitcoin and other assets with rupiah 
+Авторизация: apiKey
+
+Ссылка: https://infura.io/product/ethereum 
+Описание: Interaction with the Ethereum mainnet and several testnets 
+Авторизация: apiKey
+
+Ссылка: https://docs.kraken.com/rest/ 
+Описание: Cryptocurrencies Exchange 
+Авторизация: apiKey
+
+Ссылка: https://docs.kucoin.com/ 
+Описание: Cryptocurrency Trading Platform 
+Авторизация: apiKey
+
+Ссылка: https://localbitcoins.com/api-docs/ 
+Описание: P2P platform to buy and sell Bitcoins 
+Авторизация: не нужна
+
+Ссылка: https://mempool.space/api 
+Описание: Bitcoin API Service focusing on the transaction fee 
+Авторизация: не нужна
+
+Ссылка: https://www.mercadobitcoin.com.br/api-doc/ 
+Описание: Brazilian Cryptocurrency Information 
+Авторизация: не нужна
+
+Ссылка: https://messari.io/api 
+Описание: Provides API endpoints for thousands of crypto assets 
+Авторизация: не нужна
+
+Ссылка: https://nexchange2.docs.apiary.io/ 
+Описание: Automated cryptocurrency exchange service 
+Авторизация: не нужна
+
+Ссылка: https://nomics.com/docs/ 
+Описание: Historical and realtime cryptocurrency prices and market data 
+Авторизация: apiKey
+
+Ссылка: https://doc.novadax.com/en-US/#introduction 
+Описание: NovaDAX API to access all market data, trading management endpoints 
+Авторизация: apiKey
+
+Ссылка: https://www.okex.com/docs/ 
+Описание: Cryptocurrency exchange based in Seychelles 
+Авторизация: apiKey
+
+Ссылка: https://docs.poloniex.com 
+Описание: US based digital asset exchange 
+Авторизация: apiKey
+
+Ссылка: https://docs.solana.com/developing/clients/jsonrpc-api 
+Описание: Provides various endpoints to interact with the Solana Blockchain 
+Авторизация: не нужна
+
+Ссылка: https://technical-analysis-api.com 
+Описание: Cryptocurrency prices and technical analysis 
+Авторизация: apiKey
+
+Ссылка: https://docs.valr.com/ 
+Описание: Cryptocurrency Exchange based in South Africa 
+Авторизация: apiKey
+
+Ссылка: https://www.worldcoinindex.com/apiservice 
+Описание: Cryptocurrencies Prices 
+Авторизация: apiKey
+
+Ссылка: https://zmok.io 
+Описание: Ethereum JSON RPC API and Web3 provider 
+Авторизация: не нужна
+
+Ссылка: https://1forge.com/forex-data-api/api-documentation 
+Описание: Forex currency market data 
+Авторизация: apiKey
+
+Ссылка: https://www.amdoren.com/currency-api/ 
+Описание: Free currency API with over 150 currencies 
+Авторизация: apiKey
+
+Ссылка: https://fixer.io 
+Описание: Exchange rates and currency conversion 
+Авторизация: apiKey
+
+Ссылка: https://www.cbr.ru/development/SXML/ 
+Описание: Exchange rates and currency conversion 
+Авторизация: не нужна
+
+Ссылка: https://github.com/fawazahmed0/currency-api#readme 
+Описание: Free Currency Exchange Rates API with 150+ Currencies & No Rate Limits 
+Авторизация: не нужна
+
+Ссылка: https://currencyfreaks.com/ 
+Описание: Provides current and historical currency exchange rates with free plan 1K requests/month 
+Авторизация: apiKey
+
+Ссылка: https://currencylayer.com/documentation 
+Описание: Exchange rates and currency conversion 
+Авторизация: apiKey
+
+Ссылка: https://currencyscoop.com/api-documentation 
+Описание: Real-time and historical currency rates JSON API 
+Авторизация: apiKey
+
+Ссылка: https://www.cnb.cz/cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.xml 
+Описание: A collection of exchange rates 
+Авторизация: не нужна
+
+Ссылка: https://docs.awesomeapi.com.br/api-de-moedas 
+Описание: Portuguese free currency prices and conversion with no rate limits 
+Авторизация: не нужна
+
+Ссылка: https://www.exchangerate-api.com 
+Описание: Free currency conversion 
+Авторизация: apiKey
+
+Ссылка: https://exchangerate.host 
+Описание: Free foreign exchange & crypto rates API 
+Авторизация: не нужна
+
+Ссылка: https://exchangeratesapi.io 
+Описание: Exchange rates with currency conversion 
+Авторизация: apiKey
+
+Ссылка: https://www.frankfurter.app/docs 
+Описание: Exchange rates, currency conversion and time series 
+Авторизация: не нужна
+
+Ссылка: https://freeforexapi.com/Home/Api 
+Описание: Real-time foreign exchange rates for major currency pairs 
+Авторизация: не нужна
+
+Ссылка: http://api.nbp.pl/en.html 
+Описание: A collection of currency exchange rates (data in XML and JSON) 
+Авторизация: не нужна
+
+Ссылка: https://www.vatcomply.com/documentation 
+Описание: Exchange rates, geolocation and VAT number validation 
+Авторизация: не нужна
+
+Ссылка: https://lob.com/ 
+Описание: US Address Verification 
+Авторизация: apiKey
+
+Ссылка: https://www.postman-echo.com 
+Описание: Test api server to receive and return value from HTTP method 
+Авторизация: не нужна
+
+Ссылка: http://www.purgomalum.com 
+Описание: Content validator against profanity & obscenity 
+Авторизация: не нужна
+
+Ссылка: https://www.smarty.com/docs/cloud/us-autocomplete-pro-api 
+Описание: Enter address data quickly with real-time address suggestions 
+Авторизация: apiKey
+
+Ссылка: https://www.smarty.com/products/apis/us-extract-api 
+Описание: Extract postal addresses from any text including emails 
+Авторизация: apiKey
+
+Ссылка: https://www.smarty.com/docs/cloud/us-street-api 
+Описание: Validate and append data for any US postal address 
+Авторизация: apiKey
+
+Ссылка: https://vatlayer.com/documentation 
+Описание: VAT number validation 
+Авторизация: apiKey
+
+Ссылка: https://24pullrequests.com/api 
+Описание: Project to promote open source collaboration during December 
+Авторизация: не нужна
+
+Ссылка: https://www.abstractapi.com/website-screenshot-api 
+Описание: Take programmatic screenshots of web pages from any website 
+Авторизация: apiKey
+
+Ссылка: https://agify.io 
+Описание: Estimates the age from a first name 
+Авторизация: не нужна
+
+Ссылка: https://apigratis.com.br/ 
+Описание: Multiples services and public APIs 
+Авторизация: не нужна
+
+Ссылка: https://www.apicagent.com 
+Описание: Extract device details from user-agent string 
+Авторизация: не нужна
+
+Ссылка: https://apiflash.com/ 
+Описание: Chrome based screenshot API for developers 
+Авторизация: apiKey
+
+Ссылка: https://userstack.com/ 
+Описание: Secure User-Agent String Lookup JSON API 
+Авторизация: OAuth
+
+Ссылка: https://apis.guru/api-doc/ 
+Описание: Wikipedia for Web APIs, OpenAPI/Swagger specs for public APIs 
+Авторизация: не нужна
+
+Ссылка: https://docs.microsoft.com/en-us/rest/api/azure/devops 
+Описание: The Azure DevOps basic components of a REST API request/response pair 
+Авторизация: apiKey
+
+Ссылка: https://www.base-api.io/ 
+Описание: Building quick backends 
+Авторизация: apiKey
+
+Ссылка: https://beeceptor.com/ 
+Описание: Build a mock Rest API endpoint in seconds 
+Авторизация: не нужна
+
+Ссылка: https://developer.atlassian.com/bitbucket/api/2/reference/ 
+Описание: Bitbucket API 
+Авторизация: OAuth
+
+Ссылка: https://blague.xyz/ 
+Описание: La plus grande API de Blagues FR/The biggest FR jokes API 
+Авторизация: apiKey
+
+Ссылка: https://blitapp.com/api/ 
+Описание: Schedule screenshots of web pages and sync them to your cloud 
+Авторизация: apiKey
+
+Ссылка: https://blynkapi.docs.apiary.io/# 
+Описание: Control IoT Devices from Blynk IoT Cloud 
+Авторизация: apiKey
+
+Ссылка: https://www.boredapi.com/ 
+Описание: Find random activities to fight boredom 
+Авторизация: не нужна
+
+Ссылка: https://brainshop.ai/ 
+Описание: Make A Free A.I Brain 
+Авторизация: apiKey
+
+Ссылка: https://browshot.com/api/documentation 
+Описание: Easily make screenshots of web pages in any screen size, as any device 
+Авторизация: apiKey
+
+Ссылка: https://api.cdnjs.com/libraries/jquery 
+Описание: Library info on CDNJS 
+Авторизация: не нужна
+
+Ссылка: https://changelogs.md 
+Описание: Structured changelog metadata from open source projects 
+Авторизация: не нужна
+
+Ссылка: https://github.com/polarspetroll/ciprand 
+Описание: Secure random string generator 
+Авторизация: не нужна
+
+Ссылка: https://github.com/fawazahmed0/cloudflare-trace-api 
+Описание: Get IP Address, Timestamp, User Agent, Country Code, IATA, HTTP Version, TLS/SSL Version & More 
+Авторизация: не нужна
+
+Ссылка: https://github.com/Jaagrav/CodeX 
+Описание: Online Compiler for Various Languages 
+Авторизация: не нужна
+
+Ссылка: https://www.contentful.com/developers/docs/references/images-api/ 
+Описание: Used to retrieve and apply transformations to images 
+Авторизация: apiKey
+
+Ссылка: https://github.com/burhanuday/cors-proxy 
+Описание: Get around the dreaded CORS error by using this proxy as a middle man 
+Авторизация: не нужна
+
+Ссылка: https://countapi.xyz 
+Описание: Free and simple counting service. You can use it to track page hits and specific events 
+Авторизация: не нужна
+
+Ссылка: https://docs.databricks.com/dev-tools/api/latest/index.html 
+Описание: Service to manage your databricks account,clusters, notebooks, jobs and workspaces 
+Авторизация: apiKey
+
+Ссылка: https://status.digitalocean.com/api 
+Описание: Status of all DigitalOcean services 
+Авторизация: не нужна
+
+Ссылка: https://docs.docker.com/docker-hub/api/latest/ 
+Описание: Interact with Docker Hub 
+Авторизация: apiKey
+
+Ссылка: https://api.domainsdb.info/ 
+Описание: Domain name search to find all domains containing particular words/phrases/etc 
+Авторизация: не нужна
+
+Ссылка: https://extendsclass.com/json-storage.html 
+Описание: A simple JSON store API 
+Авторизация: не нужна
+
+Ссылка: https://apidocs.geekflare.com/docs/geekflare-api 
+Описание: Provide numerous capabilities for important testing and monitoring methods for websites 
+Авторизация: apiKey
+
+Ссылка: https://genderize.io 
+Описание: Estimates a gender from a first name 
+Авторизация: не нужна
+
+Ссылка: https://www.getping.info 
+Описание: Trigger an email notification with a simple GET request 
+Авторизация: apiKey
+
+Ссылка: https://ghost.org/ 
+Описание: Get Published content into your Website, App or other embedded media 
+Авторизация: apiKey
+
+Ссылка: https://docs.github.com/en/free-pro-team@latest/rest 
+Описание: Make use of GitHub repositories, code and user info programmatically 
+Авторизация: OAuth
+
+Ссылка: https://docs.gitlab.com/ee/api/ 
+Описание: Automate GitLab interaction programmatically 
+Авторизация: OAuth
+
+Ссылка: https://developer.gitter.im/docs/welcome 
+Описание: Chat for Developers 
+Авторизация: OAuth
+
+Ссылка: https://developers.glitterly.app 
+Описание: Image generation API 
+Авторизация: apiKey
+
+Ссылка: https://developers.google.com/docs/api/reference/rest 
+Описание: API to read, write, and format Google Docs documents 
+Авторизация: OAuth
+
+Ссылка: https://firebase.google.com/docs 
+Описание: Google's mobile application development platform that helps build, improve, and grow app 
+Авторизация: apiKey
+
+Ссылка: https://developers.google.com/fonts/docs/developer_api 
+Описание: Metadata for all families served by Google Fonts 
+Авторизация: apiKey
+
+Ссылка: https://developers.google.com/keep/api/reference/rest 
+Описание: API to read, write, and format Google Keep notes 
+Авторизация: OAuth
+
+Ссылка: https://developers.google.com/sheets/api/reference/rest 
+Описание: API to read, write, and format Google Sheets data 
+Авторизация: OAuth
+
+Ссылка: https://developers.google.com/slides/api/reference/rest 
+Описание: API to read, write, and format Google Slides presentations 
+Авторизация: OAuth
+
+Ссылка: https://gorest.co.in/ 
+Описание: Online REST API for Testing and Prototyping 
+Авторизация: OAuth
+
+Ссылка: https://hasura.io/opensource/ 
+Описание: GraphQL and REST API Engine with built in Authorization 
+Авторизация: apiKey
+
+Ссылка: https://devcenter.heroku.com/articles/platform-api-reference/ 
+Описание: REST API to programmatically create apps, provision add-ons and perform other task on Heroku 
+Авторизация: OAuth
+
+Ссылка: https://host-t.com 
+Описание: Basic DNS query via HTTP GET request 
+Авторизация: не нужна
+
+Ссылка: https://host.io 
+Описание: Domains Data API for Developers 
+Авторизация: apiKey
+
+Ссылка: https://http2.pro/doc/api 
+Описание: Test endpoints for client and server HTTP/2 protocol support 
+Авторизация: не нужна
+
+Ссылка: https://httpbin.org/ 
+Описание: A Simple HTTP Request & Response Service 
+Авторизация: не нужна
+
+Ссылка: https://cloudflare-quic.com/b/ 
+Описание: A Simple HTTP Request & Response Service with HTTP/3 Support by Cloudflare 
+Авторизация: не нужна
+
+Ссылка: https://hunter.io/api 
+Описание: API for domain search, professional email finder, author finder and email verifier 
+Авторизация: apiKey
+
+Ссылка: https://cloud.ibm.com/docs/text-to-speech/getting-started.html 
+Описание: Convert text to speech 
+Авторизация: apiKey
+
+Ссылка: https://icanhazepoch.com 
+Описание: Get Epoch time 
+Авторизация: не нужна
+
+Ссылка: https://major.io/icanhazip-com-faq/ 
+Описание: IP Address API 
+Авторизация: не нужна
+
+Ссылка: https://platform.ifttt.com/docs/connect_api 
+Описание: IFTTT Connect API 
+Авторизация: не нужна
+
+Ссылка: https://documentation.image-charts.com/ 
+Описание: Generate charts, QR codes and graph images 
+Авторизация: не нужна
+
+Ссылка: http://api.docs.import.io/ 
+Описание: Retrieve structured data from a website or RSS feed 
+Авторизация: apiKey
+
+Ссылка: https://ip-fast.com/docs/ 
+Описание: IP address, country and city 
+Авторизация: не нужна
+
+Ссылка: https://www.ip2whois.com/ 
+Описание: WHOIS domain name lookup 
+Авторизация: apiKey
+
+Ссылка: https://ipfind.io 
+Описание: Geographic location of an IP address or any domain name along with some other useful information 
+Авторизация: apiKey
+
+Ссылка: https://www.ipify.org/ 
+Описание: A simple IP Address API 
+Авторизация: не нужна
+
+Ссылка: https://ipinfo.io/developers 
+Описание: Another simple IP Address API 
+Авторизация: не нужна
+
+Ссылка: https://github.com/jsdelivr/data.jsdelivr.com 
+Описание: Package info and download stats on jsDelivr CDN 
+Авторизация: не нужна
+
+Ссылка: https://json2jsonp.com/ 
+Описание: Convert JSON to JSONP (on-the-fly) for easy cross-domain data requests using client-side JavaScript 
+Авторизация: не нужна
+
+Ссылка: https://jsonbin.io 
+Описание: Free JSON storage service. Ideal for small scale Web apps, Websites and Mobile apps 
+Авторизация: apiKey
+
+Ссылка: https://kroki.io 
+Описание: Creates diagrams from textual descriptions 
+Авторизация: не нужна
+
+Ссылка: https://github.com/cmccandless/license-api/blob/master/README.md 
+Описание: Unofficial REST API for choosealicense.com 
+Авторизация: не нужна
+
+Ссылка: https://logs.to/ 
+Описание: Generate logs 
+Авторизация: apiKey
+
+Ссылка: https://lua-decompiler.ferib.dev/ 
+Описание: Online Lua 5.1 Decompiler 
+Авторизация: не нужна
+
+Ссылка: https://macaddress.io/api 
+Описание: Retrieve vendor details and other information regarding a given MAC address or an OUI 
+Авторизация: apiKey
+
+Ссылка: https://m3o.com/db 
+Описание: Simple database service 
+Авторизация: apiKey
+
+Ссылка: https://microenv.com/ 
+Описание: Fake Rest API for developers 
+Авторизация: не нужна
+
+Ссылка: https://designer.mocky.io/ 
+Описание: Mock user defined test JSON for REST API endpoints 
+Авторизация: не нужна
+
+Ссылка: https://www.myip.com/api-docs/ 
+Описание: Get IP address information 
+Авторизация: не нужна
+
+Ссылка: https://nationalize.io 
+Описание: Estimate the nationality of a first name 
+Авторизация: не нужна
+
+Ссылка: https://docs.netlify.com/api/get-started/ 
+Описание: Netlify is a hosting service for the programmable web 
+Авторизация: OAuth
+
+Ссылка: https://networkcalc.com/api/docs 
+Описание: Network calculators, including subnets, DNS, binary, and security tools 
+Авторизация: не нужна
+
+Ссылка: https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md 
+Описание: Query information about your favorite Node.js libraries programatically 
+Авторизация: не нужна
+
+Ссылка: https://documentation.onesignal.com/docs/onesignal-api 
+Описание: Self-serve customer engagement solution for Push Notifications, Email, SMS & In-App 
+Авторизация: apiKey
+
+Ссылка: https://www.domcop.com/openpagerank/ 
+Описание: API for calculating and comparing metrics of different websites using Page Rank algorithm 
+Авторизация: apiKey
+
+Ссылка: https://hub.openapihub.com/ 
+Описание: The All-in-one API Platform 
+Авторизация: X-Mashape-Key
+
+Ссылка: https://opengraphr.com/docs/1.0/overview 
+Описание: Really simple API to retrieve Open Graph data from an URL 
+Авторизация: apiKey
+
+Ссылка: https://oyyi.xyz/docs/1.0 
+Описание: API for Fake Data, image/video conversion, optimization, pdf optimization and thumbnail generation 
+Авторизация: не нужна
+
+Ссылка: https://pagecdn.com/docs/public-api 
+Описание: Public API for javascript, css and font libraries on PageCDN 
+Авторизация: apiKey
+
+Ссылка: https://www.postman.com/postman/workspace/postman-public-workspace/documentation/12959542-c8142d51-e97c-46b6-bd77-52bb66712c9a 
+Описание: Tool for testing APIs 
+Авторизация: apiKey
+
+Ссылка: https://proxycrawl.com 
+Описание: Scraping and crawling anticaptcha service 
+Авторизация: apiKey
+
+Ссылка: https://proxykingdom.com 
+Описание: Rotating Proxy API that produces a working proxy on every request 
+Авторизация: apiKey
+
+Ссылка: https://pusher.com/beams 
+Описание: Push notifications for Android & iOS 
+Авторизация: apiKey
+
+Ссылка: https://www.qrtag.net/api/ 
+Описание: Create an easy to read QR code and URL shortener 
+Авторизация: не нужна
+
+Ссылка: http://goqr.me/api/ 
+Описание: Generate and decode / read QR code graphics 
+Авторизация: не нужна
+
+Ссылка: https://www.qrcode-monkey.com/qr-code-api-with-logo/ 
+Описание: Integrate custom and unique looking QR codes into your system or workflow 
+Авторизация: не нужна
+
+Ссылка: https://quickchart.io/ 
+Описание: Generate chart and graph images 
+Авторизация: не нужна
+
+Ссылка: https://api-docs.pgamerx.com/ 
+Описание: Can be used to get AI Response, jokes, memes, and much more at lightning-fast speed 
+Авторизация: apiKey
+
+Ссылка: https://rejax.io/ 
+Описание: Reverse AJAX service to notify clients 
+Авторизация: apiKey
+
+Ссылка: https://reqres.in/  
+Описание: A hosted REST-API ready to respond to your AJAX requests 
+Авторизация: не нужна
+
+Ссылка: https://rss-to-json-serverless-api.vercel.app 
+Описание: Returns RSS feed in JSON format using feed URL 
+Авторизация: не нужна
+
+Ссылка: https://www.savepage.io 
+Описание: A free, RESTful API used to screenshot any desktop, or mobile website 
+Авторизация: apiKey
+
+Ссылка: https://scrapeninja.net 
+Описание: Scraping API with Chrome fingerprint and residential proxies 
+Авторизация: apiKey
+
+Ссылка: https://www.scraperapi.com 
+Описание: Easily build scalable web scrapers 
+Авторизация: apiKey
+
+Ссылка: https://scraperbox.com/ 
+Описание: Undetectable web scraping API 
+Авторизация: apiKey
+
+Ссылка: https://scrapestack.com/ 
+Описание: Real-time, Scalable Proxy & Web Scraping REST API 
+Авторизация: apiKey
+
+Ссылка: https://scrapingant.com 
+Описание: Headless Chrome scraping with a simple API 
+Авторизация: apiKey
+
+Ссылка: https://www.scrapingdog.com/ 
+Описание: Proxy API for Web scraping 
+Авторизация: apiKey
+
+Ссылка: https://screenshotapi.net/ 
+Описание: Create pixel-perfect website screenshots 
+Авторизация: apiKey
+
+Ссылка: https://color.serialif.com/ 
+Описание: Color conversion, complementary, grayscale and contrasted text 
+Авторизация: не нужна
+
+Ссылка: https://serpstack.com/ 
+Описание: Real-Time & Accurate Google Search Results API 
+Авторизация: apiKey
+
+Ссылка: https://sheetsu.com/ 
+Описание: Easy google sheets integration 
+Авторизация: apiKey
+
+Ссылка: http://shoutcloud.io/ 
+Описание: ALL-CAPS AS A SERVICE 
+Авторизация: не нужна
+
+Ссылка: https://github.com/Cgboal/SonarSearch 
+Описание: Project Sonar DNS Enumeration API 
+Авторизация: не нужна
+
+Ссылка: https://sonarcloud.io/web_api 
+Описание: SonarQube REST APIs to detect bugs, code smells & security vulnerabilities 
+Авторизация: OAuth
+
+Ссылка: https://api.stackexchange.com/ 
+Описание: Q&A forum for developers 
+Авторизация: OAuth
+
+Ссылка: https://statically.io/ 
+Описание: A free CDN for developers 
+Авторизация: не нужна
+
+Ссылка: https://developers.supportivekoala.com/ 
+Описание: Autogenerate images with template 
+Авторизация: apiKey
+
+Ссылка: https://tyk.io/open-source/ 
+Описание: Api and service management platform 
+Авторизация: apiKey
+
+Ссылка: https://github.com/melpon/wandbox/blob/master/kennel2/API.rst 
+Описание: Code compiler supporting 35+ languages mentioned at wandbox.org 
+Авторизация: не нужна
+
+Ссылка: https://webscraping.ai/ 
+Описание: Web Scraping API with built-in proxies and JS rendering 
+Авторизация: apiKey
+
+Ссылка: https://www.zenrows.com/ 
+Описание: Web Scraping API that bypasses anti-bot solutions while offering JS rendering, and rotating proxies 
+Авторизация: apiKey
+
+Ссылка: http://ccdb.hemiola.com/ 
+Описание: Chinese character definitions and pronunciations 
+Авторизация: не нужна
+
+Ссылка: https://ctext.org/tools/api 
+Описание: Online open-access digital library for pre-modern Chinese texts 
+Авторизация: не нужна
+
+Ссылка: https://api.collinsdictionary.com/api/v1/documentation/html/ 
+Описание: Bilingual Dictionary and Thesaurus Data 
+Авторизация: apiKey
+
+Ссылка: https://dictionaryapi.dev/ 
+Описание: Definitions, phonetics, pronounciations, parts of speech, examples, synonyms 
+Авторизация: не нужна
+
+Ссылка: https://new-kbbi-api.herokuapp.com/ 
+Описание: Indonesia dictionary many words 
+Авторизация: не нужна
+
+Ссылка: https://www.linguarobot.io 
+Описание: Word definitions, pronunciations, synonyms, antonyms and others 
+Авторизация: apiKey
+
+Ссылка: https://dictionaryapi.com/ 
+Описание: Dictionary and Thesaurus Data 
+Авторизация: apiKey
+
+Ссылка: https://owlbot.info/ 
+Описание: Definitions with example sentence and photo if available 
+Авторизация: apiKey
+
+Ссылка: https://developer.oxforddictionaries.com/ 
+Описание: Dictionary Data 
+Авторизация: apiKey
+
+Ссылка: https://www.synonyms.com/synonyms_api.php 
+Описание: Synonyms, thesaurus and antonyms information for any given word 
+Авторизация: apiKey
+
+Ссылка: https://en.wiktionary.org/w/api.php 
+Описание: Collaborative dictionary data 
+Авторизация: не нужна
+
+Ссылка: https://developer.wordnik.com 
+Описание: Dictionary Data 
+Авторизация: apiKey
+
+Ссылка: https://www.wordsapi.com/docs/ 
+Описание: Definitions and synonyms for more than 150,000 words 
+Авторизация: apiKey
+
+Ссылка: https://airtable.com/api 
+Описание: Integrate with Airtable 
+Авторизация: apiKey
+
+Ссылка: https://www.api2convert.com/ 
+Описание: Online File Conversion API 
+Авторизация: apiKey
+
+Ссылка: https://pdflayer.com 
+Описание: HTML/URL to PDF 
+Авторизация: apiKey
+
+Ссылка: https://developers.asana.com/docs 
+Описание: Programmatic access to all data in your asana system 
+Авторизация: apiKey
+
+Ссылка: https://clickup.com/api 
+Описание: ClickUp is a robust, cloud-based project management tool for boosting productivity 
+Авторизация: OAuth
+
+Ссылка: https://clockify.me/developers-api  
+Описание: Clockify's REST-based API can be used to push/pull data to/from it & integrate it with other systems 
+Авторизация: apiKey
+
+Ссылка: https://cloudconvert.com/api/v2 
+Описание: Online file converter for audio, video, document, ebook, archive, image, spreadsheet, presentation 
+Авторизация: apiKey
+
+Ссылка: https://cloudmersive.com/convert-api 
+Описание: HTML/URL to PDF/PNG, Office documents to PDF, image conversion 
+Авторизация: apiKey
+
+Ссылка: https://codestats.net/api-docs 
+Описание: Automatic time tracking for programmers 
+Авторизация: apiKey
+
+Ссылка: https://craftmypdf.com 
+Описание: Generate PDF documents from templates with a drop-and-drop editor and a simple API 
+Авторизация: apiKey
+
+Ссылка: https://docs.flowdash.com/docs/api-introduction 
+Описание: Automate business workflows 
+Авторизация: apiKey
+
+Ссылка: https://html2pdf.app/ 
+Описание: HTML/URL to PDF 
+Авторизация: apiKey
+
+Ссылка: https://developer.ilovepdf.com/ 
+Описание: Convert, merge, split, extract text and add page numbers for PDFs. Free for 250 documents/month 
+Авторизация: apiKey
+
+Ссылка: https://developer.atlassian.com/server/jira/platform/rest-apis/ 
+Описание: JIRA is a proprietary issue tracking product that allows bug tracking and agile project management 
+Авторизация: OAuth
+
+Ссылка: https://api.mattermost.com/ 
+Описание: An open source platform for developer collaboration 
+Авторизация: OAuth
+
+Ссылка: https://mercury.postlight.com/web-parser/ 
+Описание: Web parser 
+Авторизация: apiKey
+
+Ссылка: https://api.developer.monday.com/docs 
+Описание: Programmatically access and update data inside a monday.com account 
+Авторизация: apiKey
+
+Ссылка: https://developers.notion.com/docs/getting-started 
+Описание: Integrate with Notion 
+Авторизация: OAuth
+
+Ссылка: https://developers.pandadoc.com 
+Описание: DocGen and eSignatures API 
+Авторизация: apiKey
+
+Ссылка: https://getpocket.com/developer/ 
+Описание: Bookmarking service 
+Авторизация: OAuth
+
+Ссылка: https://developers.podio.com 
+Описание: File sharing and productivity 
+Авторизация: OAuth
+
+Ссылка: https://prexview.com 
+Описание: Data from XML or JSON to PDF, HTML or Image 
+Авторизация: apiKey
+
+Ссылка: https://restpack.io/ 
+Описание: Provides screenshot, HTML to PDF and content extraction APIs 
+Авторизация: apiKey
+
+Ссылка: https://developer.todoist.com 
+Описание: Todo Lists 
+Авторизация: OAuth
+
+Ссылка: https://apilayer.com/marketplace/image_enhancement-api 
+Описание: Performs image upscaling by adding detail to images through multiple super-resolution algorithms 
+Авторизация: apiKey
+
+Ссылка: https://vector.express 
+Описание: Free vector file converting API 
+Авторизация: не нужна
+
+Ссылка: https://wakatime.com/developers 
+Описание: Automated time tracking leaderboards for programmers 
+Авторизация: не нужна
+
+Ссылка: https://zube.io/docs/api 
+Описание: Full stack project management 
+Авторизация: OAuth
+
+Ссылка: https://www.abstractapi.com/email-verification-validation-api 
+Описание: Validate email addresses for deliverability and spam 
+Авторизация: apiKey
+
+Ссылка: https://mailboxlayer.com 
+Описание: Email address validation 
+Авторизация: apiKey
+
+Ссылка: https://cloudmersive.com/validate-api 
+Описание: Validate email addresses, phone numbers, VAT numbers and domain names 
+Авторизация: apiKey
+
+Ссылка: https://www.disify.com/ 
+Описание: Validate and detect disposable and temporary email addresses 
+Авторизация: не нужна
+
+Ссылка: https://dropmail.me/api/#live-demo 
+Описание: GraphQL API for creating and managing ephemeral e-mail inboxes 
+Авторизация: не нужна
+
+Ссылка: https://eva.pingutil.com/ 
+Описание: Validate email addresses 
+Авторизация: не нужна
+
+Ссылка: https://www.guerrillamail.com/GuerrillaMailAPI.html 
+Описание: Disposable temporary Email addresses 
+Авторизация: не нужна
+
+Ссылка: https://improvmx.com/api 
+Описание: API for free email forwarding service 
+Авторизация: apiKey
+
+Ссылка: https://open.kickbox.com/ 
+Описание: Email verification API 
+Авторизация: не нужна
+
+Ссылка: https://docs.mail.gw 
+Описание: 10 Minute Mail 
+Авторизация: не нужна
+
+Ссылка: https://docs.mail.tm 
+Описание: Temporary Email Service 
+Авторизация: не нужна
+
+Ссылка: https://www.mailboxvalidator.com/api-email-free 
+Описание: Validate email address to improve deliverability 
+Авторизация: apiKey
+
+Ссылка: https://www.mailcheck.ai/#documentation 
+Описание: Prevent users to sign up with temporary email addresses 
+Авторизация: не нужна
+
+Ссылка: https://mailtrap.docs.apiary.io/# 
+Описание: A service for the safe testing of emails sent from the development and staging environments 
+Авторизация: apiKey
+
+Ссылка: https://docs.sendgrid.com/api-reference/ 
+Описание: A cloud-based SMTP provider that allows you to send emails without having to maintain email servers 
+Авторизация: apiKey
+
+Ссылка: https://developers.sendinblue.com/docs 
+Описание: A service that provides solutions relating to marketing and/or transactional email and/or SMS 
+Авторизация: apiKey
+
+Ссылка: https://verifier.meetchopra.com/docs#/ 
+Описание: Verifies that a given email is real 
+Авторизация: apiKey
+
+Ссылка: https://api.chucknorris.io 
+Описание: JSON API for hand curated Chuck Norris jokes 
+Авторизация: не нужна
+
+Ссылка: https://github.com/sameerkumar18/corporate-bs-generator-api 
+Описание: REST API for Corporate Buzz Words 
+Авторизация: не нужна
+
+Ссылка: https://excuser.herokuapp.com/ 
+Описание: Get random excuses for various situations 
+Авторизация: не нужна
+
+Ссылка: https://api.aakhilv.me 
+Описание: A simple HTTPS api that can randomly select and return a fact from the FFA database 
+Авторизация: не нужна
+
+Ссылка: https://imgflip.com/api 
+Описание: Gets an array of popular memes 
+Авторизация: не нужна
+
+Ссылка: https://mememaker.github.io/API/ 
+Описание: REST API for create your own meme 
+Авторизация: не нужна
+
+Ссылка: https://github.com/theIYD/NaMoMemes 
+Описание: Memes on Narendra Modi 
+Авторизация: не нужна
+
+Ссылка: https://uselessfacts.jsph.pl/ 
+Описание: Get useless, but true facts 
+Авторизация: не нужна
+
+Ссылка: https://techy-api.vercel.app/ 
+Описание: JSON and Plaintext API for tech-savvy sounding phrases 
+Авторизация: не нужна
+
+Ссылка: https://github.com/beanboi7/yomomma-apiv2 
+Описание: REST API for Yo Momma Jokes 
+Авторизация: не нужна
+
+Ссылка: https://docs.breezometer.com/api-documentation/pollen-api/v2/ 
+Описание: Daily Forecast pollen conditions data for a specific location 
+Авторизация: apiKey
+
+Ссылка: https://docs.carboninterface.com/ 
+Описание: API to calculate carbon (C02) emissions estimates for common C02 emitting activities 
+Авторизация: apiKey
+
+Ссылка: https://docs.climatiq.io 
+Описание: Calculate the environmental footprint created by a broad range of emission-generating activities 
+Авторизация: apiKey
+
+Ссылка: https://www.cloverly.com/carbon-offset-documentation 
+Описание: API calculates the impact of common carbon-intensive activities in real time 
+Авторизация: apiKey
+
+Ссылка: https://co2offset.io/api.html 
+Описание: API calculates and validates the carbon footprint 
+Авторизация: не нужна
+
+Ссылка: https://www.energidataservice.dk/ 
+Описание: Open energy data from Energinet to society 
+Авторизация: не нужна
+
+Ссылка: https://gruenstromindex.de/ 
+Описание: Green Power Index for Germany (Grünstromindex/GSI) 
+Авторизация: не нужна
+
+Ссылка: https://www.iqair.com/air-pollution-data-api 
+Описание: Air quality and weather data 
+Авторизация: apiKey
+
+Ссылка: https://api-docs.luchtmeetnet.nl/ 
+Описание: Predicted and actual air quality components for The Netherlands (RIVM) 
+Авторизация: не нужна
+
+Ссылка: https://data.nationalgrideso.com/ 
+Описание: Open data from Great Britain’s Electricity System Operator 
+Авторизация: не нужна
+
+Ссылка: https://docs.openaq.org/ 
+Описание: Open air quality data 
+Авторизация: apiKey
+
+Ссылка: https://pm25.lass-net.org/#apis 
+Описание: Open low-cost PM2.5 sensor data 
+Авторизация: не нужна
+
+Ссылка: http://www.pm25.in/api_doc 
+Описание: Air quality of China 
+Авторизация: apiKey
+
+Ссылка: https://developer.nrel.gov/docs/solar/pvwatts/v6/ 
+Описание: Energy production photovoltaic (PV) energy systems 
+Авторизация: apiKey
+
+Ссылка: https://srpenergy-api-client-python.readthedocs.io/en/latest/api.html 
+Описание: Hourly usage energy report for Srp customers 
+Авторизация: apiKey
+
+Ссылка: https://carbon-intensity.github.io/api-definitions/#carbon-intensity-api-v1-0-0 
+Описание: The Official Carbon Intensity API for Great Britain developed by National Grid 
+Авторизация: не нужна
+
+Ссылка: https://api.websitecarbon.com/ 
+Описание: API to estimate the carbon footprint of loading web pages 
+Авторизация: не нужна
+
+Ссылка: https://www.eventbrite.com/platform/api/ 
+Описание: Find events 
+Авторизация: OAuth
+
+Ссылка: https://platform.seatgeek.com/ 
+Описание: Search events, venues and performers 
+Авторизация: apiKey
+
+Ссылка: http://developer.ticketmaster.com/products-and-docs/apis/getting-started/ 
+Описание: Search events, attractions, or venues 
+Авторизация: apiKey
+
+Ссылка: https://www.abstractapi.com/vat-validation-rates-api 
+Описание: Validate VAT numbers and calculate VAT rates 
+Авторизация: apiKey
+
+Ссылка: https://aletheiaapi.com/ 
+Описание: Insider trading data, earnings call analysis, financial statements, and more 
+Авторизация: apiKey
+
+Ссылка: https://alpaca.markets/docs/api-documentation/api-v2/market-data/alpaca-data-api-v2/ 
+Описание: Realtime and historical market data on all US equities and ETFs 
+Авторизация: apiKey
+
+Ссылка: https://www.alphavantage.co/ 
+Описание: Realtime and historical stock data 
+Авторизация: apiKey
+
+Ссылка: https://marketstack.com/ 
+Описание: Real-Time, Intraday & Historical Market Data API 
+Авторизация: apiKey
+
+Ссылка: https://developers.bb.com.br/home 
+Описание: All Banco do Brasil financial transaction APIs 
+Авторизация: OAuth
+
+Ссылка: https://apilayer.com/marketplace/bank_data-api 
+Описание: Instant IBAN and SWIFT number validation across the globe 
+Авторизация: apiKey
+
+Ссылка: https://www.billplz.com/api 
+Описание: Payment platform 
+Авторизация: apiKey
+
+Ссылка: https://binlist.net/ 
+Описание: Public access to a database of IIN/BIN information 
+Авторизация: не нужна
+
+Ссылка: https://boleto.cloud/ 
+Описание: A api to generate boletos in Brazil 
+Авторизация: apiKey
+
+Ссылка: https://sandbox.developerhub.citi.com/api-catalog-list 
+Описание: All Citigroup account and statement data APIs 
+Авторизация: apiKey
+
+Ссылка: https://www.econdb.com/api/ 
+Описание: Global macroeconomic data 
+Авторизация: не нужна
+
+Ссылка: https://fiscaldata.treasury.gov/api-documentation/ 
+Описание: U.S. Department of the Treasury Data 
+Авторизация: не нужна
+
+Ссылка: https://finage.co.uk 
+Описание: Finage is a stock, currency, cryptocurrency, indices, and ETFs real-time & historical data provider 
+Авторизация: apiKey
+
+Ссылка: https://site.financialmodelingprep.com/developer/docs 
+Описание: Realtime and historical stock data 
+Авторизация: apiKey
+
+Ссылка: https://finnhub.io/docs/api 
+Описание: Real-Time RESTful APIs and Websocket for Stocks, Currencies, and Crypto 
+Авторизация: apiKey
+
+Ссылка: https://fred.stlouisfed.org/docs/api/fred/ 
+Описание: Economic data from the Federal Reserve Bank of St. Louis 
+Авторизация: apiKey
+
+Ссылка: https://frontaccounting.com/fawiki/index.php?n=Devel.SimpleAPIModule 
+Описание: Front accounting is multilingual and multicurrency software for small businesses 
+Авторизация: OAuth
+
+Ссылка: https://hotstoks.com?utm_source=public-apis 
+Описание: Stock market data powered by SQL 
+Авторизация: apiKey
+
+Ссылка: https://iexcloud.io/docs/api/ 
+Описание: Realtime & Historical Stock and Market Data 
+Авторизация: apiKey
+
+Ссылка: https://labs.ig.com/gettingstarted 
+Описание: Spreadbetting and CFD Market Data 
+Авторизация: apiKey
+
+Ссылка: https://www.mfapi.in/ 
+Описание: Get complete history of India Mutual Funds Data 
+Авторизация: не нужна
+
+Ссылка: https://intrinio.com/ 
+Описание: A wide selection of financial data feeds 
+Авторизация: apiKey
+
+Ссылка: https://docs.klarna.com/klarna-payments/api/payments-api/ 
+Описание: Klarna payment and shopping service 
+Авторизация: apiKey
+
+Ссылка: https://www.mercadopago.com.br/developers/es/reference 
+Описание: Mercado Pago API reference - all the information you need to develop your integrations 
+Авторизация: apiKey
+
+Ссылка: https://mono.co/ 
+Описание: Connect with users’ bank accounts and access transaction data in Africa 
+Авторизация: apiKey
+
+Ссылка: https://docs.moov.io/api/ 
+Описание: The Moov API makes it simple for platforms to send, receive, and store money 
+Авторизация: apiKey
+
+Ссылка: https://nordigen.com/en/account_information_documenation/integration/quickstart_guide/ 
+Описание: Connect to bank accounts using official bank APIs and get raw transaction data 
+Авторизация: apiKey
+
+Ссылка: https://www.openfigi.com/api 
+Описание: Equity, index, futures, options symbology from Bloomberg LP 
+Авторизация: apiKey
+
+Ссылка: https://plaid.com/ 
+Описание: Connect with user's bank accounts and access transaction data 
+Авторизация: apiKey
+
+Ссылка: https://polygon.io/ 
+Описание: Historical stock market data 
+Авторизация: apiKey
+
+Ссылка: https://portfoliooptimizer.io/ 
+Описание: Portfolio analysis and optimization 
+Авторизация: не нужна
+
+Ссылка: https://razorpay.com/docs/ 
+Описание: Indian Financial Systems Code (Bank Branch Codes) 
+Авторизация: не нужна
+
+Ссылка: https://github.com/Real-time-finance/finance-websocket-API/ 
+Описание: Websocket API to access realtime stock data 
+Авторизация: apiKey
+
+Ссылка: https://www.sec.gov/edgar/sec-api-documentation 
+Описание: API to access annual reports of public US companies 
+Авторизация: не нужна
+
+Ссылка: https://smartapi.angelbroking.com/ 
+Описание: Gain access to set of <SmartAPI> and create end-to-end broking services 
+Авторизация: apiKey
+
+Ссылка: https://www.StockData.org 
+Описание: Real-Time, Intraday & Historical Market Data, News and Sentiment API 
+Авторизация: apiKey
+
+Ссылка: https://www.Styvio.com 
+Описание: Realtime and historical stock data and current stock sentiment 
+Авторизация: apiKey
+
+Ссылка: https://apilayer.com/marketplace/tax_data-api 
+Описание: Instant VAT number and tax validation across the globe 
+Авторизация: apiKey
+
+Ссылка: https://developer.tradier.com 
+Описание: US equity/option market data (delayed, intraday, historical) 
+Авторизация: OAuth
+
+Ссылка: https://twelvedata.com/ 
+Описание: Stock market data (real-time & historical) 
+Авторизация: apiKey
+
+Ссылка: https://dashboard.nbshare.io/apps/reddit/api/ 
+Описание: WallstreetBets Stock Comments Sentiment Analysis 
+Авторизация: не нужна
+
+Ссылка: https://www.yahoofinanceapi.com/ 
+Описание: Real time low latency Yahoo Finance API for stock market, crypto currencies, and currency exchange 
+Авторизация: apiKey
+
+Ссылка: https://api.youneedabudget.com/ 
+Описание: Budgeting & Planning 
+Авторизация: OAuth
+
+Ссылка: https://www.zoho.com/books/api/v3/ 
+Описание: Online accounting software, built for your business 
+Авторизация: OAuth
+
+Ссылка: https://baconmockup.com/ 
+Описание: Resizable bacon placeholder images 
+Авторизация: не нужна
+
+Ссылка: https://chompthis.com/api/ 
+Описание: Data about various grocery products and foods 
+Авторизация: apiKey
+
+Ссылка: https://coffee.alexflipnote.dev/ 
+Описание: Random pictures of coffee 
+Авторизация: не нужна
+
+Ссылка: https://developer.edamam.com/edamam-docs-nutrition-api 
+Описание: Nutrition Analysis 
+Авторизация: apiKey
+
+Ссылка: https://developer.edamam.com/edamam-docs-recipe-api 
+Описание: Recipe Search 
+Авторизация: apiKey
+
+Ссылка: https://github.com/surhud004/Foodish#readme 
+Описание: Random pictures of food dishes 
+Авторизация: не нужна
+
+Ссылка: https://www.fruityvice.com 
+Описание: Data about all kinds of fruit 
+Авторизация: не нужна
+
+Ссылка: https://developer.kroger.com/reference 
+Описание: Supermarket Data 
+Авторизация: apiKey
+
+Ссылка: https://lcboapi.com/ 
+Описание: Alcohol 
+Авторизация: apiKey
+
+Ссылка: https://www.openbrewerydb.org 
+Описание: Breweries, Cideries and Craft Beer Bottle Shops 
+Авторизация: не нужна
+
+Ссылка: https://world.openfoodfacts.org/data 
+Описание: Food Products Database 
+Авторизация: не нужна
+
+Ссылка: https://punkapi.com/ 
+Описание: Brewdog Beer Recipes 
+Авторизация: не нужна
+
+Ссылка: https://rustybeer.herokuapp.com/ 
+Описание: Beer brewing tools 
+Авторизация: не нужна
+
+Ссылка: https://spoonacular.com/food-api 
+Описание: Recipes, Food Products, and Meal Planning 
+Авторизация: apiKey
+
+Ссылка: https://api-portal.systembolaget.se 
+Описание: Govornment owned liqour store in Sweden 
+Авторизация: apiKey
+
+Ссылка: https://github.com/evz/tacofancy-api 
+Описание: Community-driven taco database 
+Авторизация: не нужна
+
+Ссылка: https://rapidapi.com/apidojo/api/tasty/ 
+Описание: API to query data about recipe, plan, ingredients 
+Авторизация: apiKey
+
+Ссылка: https://github.com/andyklimczak/TheReportOfTheWeek-API 
+Описание: Food & Drink Reviews 
+Авторизация: не нужна
+
+Ссылка: https://www.thecocktaildb.com/api.php 
+Описание: Cocktail Recipes 
+Авторизация: apiKey
+
+Ссылка: https://www.themealdb.com/api.php 
+Описание: Meal Recipes 
+Авторизация: apiKey
+
+Ссылка: https://untappd.com/api/docs 
+Описание: Social beer sharing 
+Авторизация: OAuth
+
+Ссылка: http://nypl.github.io/menus-api/ 
+Описание: NYPL human-transcribed historical menu collection 
+Авторизация: apiKey
+
+Ссылка: https://whiskyhunter.net/api/ 
+Описание: Past online whisky auctions statistical data 
+Авторизация: не нужна
+
+Ссылка: https://zestfuldata.com/ 
+Описание: Parse recipe ingredients 
+Авторизация: apiKey
+
+Ссылка: https://age-of-empires-2-api.herokuapp.com 
+Описание: Get information about Age of Empires II resources 
+Авторизация: не нужна
+
+Ссылка: https://amiiboapi.com/ 
+Описание: Nintendo Amiibo Information 
+Авторизация: не нужна
+
+Ссылка: http://acnhapi.com/ 
+Описание: API for critters, fossils, art, music, furniture and villagers 
+Авторизация: не нужна
+
+Ссылка: https://github.com/didadadida93/autochess-vng-api 
+Описание: Rest Api for Autochess VNG 
+Авторизация: не нужна
+
+Ссылка: https://github.com/bartervg/barter.vg/wiki 
+Описание: Provides information about Game, DLC, Bundles, Giveaways, Trading 
+Авторизация: не нужна
+
+Ссылка: https://develop.battle.net/documentation/guides/getting-started 
+Описание: Diablo III, Hearthstone, StarCraft II and World of Warcraft game data APIs 
+Авторизация: OAuth
+
+Ссылка: https://boardgamegeek.com/wiki/page/BGG_XML_API2 
+Описание: Board games, RPG and videogames 
+Авторизация: не нужна
+
+Ссылка: https://developer.brawlstars.com 
+Описание: Brawl Stars Game Information 
+Авторизация: apiKey
+
+Ссылка: https://www.bugsnaxapi.com/ 
+Описание: Get information about Bugsnax 
+Авторизация: не нужна
+
+Ссылка: https://www.cheapshark.com/api 
+Описание: Steam/PC Game Prices and Deals 
+Авторизация: не нужна
+
+Ссылка: https://www.chess.com/news/view/published-data-api 
+Описание: Chess.com read-only REST API 
+Авторизация: не нужна
+
+Ссылка: http://www.icndb.com/api/ 
+Описание: Jokes 
+Авторизация: не нужна
+
+Ссылка: https://developer.clashofclans.com 
+Описание: Clash of Clans Game Information 
+Авторизация: apiKey
+
+Ссылка: https://developer.clashroyale.com 
+Описание: Clash Royale Game Information 
+Авторизация: apiKey
+
+Ссылка: https://comicvine.gamespot.com/api/documentation 
+Описание: Comics 
+Авторизация: не нужна
+
+Ссылка: https://crafatar.com 
+Описание: API for Minecraft skins and faces 
+Авторизация: не нужна
+
+Ссылка: https://crossuniverse.psychpsyo.com/apiDocs.html 
+Описание: Cross Universe Card Data 
+Авторизация: не нужна
+
+Ссылка: http://deckofcardsapi.com/ 
+Описание: Deck of Cards 
+Авторизация: не нужна
+
+Ссылка: https://bungie-net.github.io/multi/index.html 
+Описание: Bungie Platform API 
+Авторизация: apiKey
+
+Ссылка: https://digimon-api.vercel.app/ 
+Описание: Provides information about digimon creatures 
+Авторизация: не нужна
+
+Ссылка: https://documenter.getpostman.com/view/14059948/TzecB4fH 
+Описание: Search for Digimon cards in digimoncard.io 
+Авторизация: не нужна
+
+Ссылка: https://disneyapi.dev 
+Описание: Information of Disney characters 
+Авторизация: не нужна
+
+Ссылка: https://docs.opendota.com/ 
+Описание: Provides information about Player stats , Match stats, Rankings for Dota 2 
+Авторизация: apiKey
+
+Ссылка: https://www.dnd5eapi.co/docs/ 
+Описание: Reference for 5th edition spells, classes, monsters, and more 
+Авторизация: не нужна
+
+Ссылка: https://open5e.com/ 
+Описание: Includes all monsters and spells from the SRD (System Reference Document) as well as a search API 
+Авторизация: не нужна
+
+Ссылка: https://esi.evetech.net/ui 
+Описание: Third-Party Developer Documentation 
+Авторизация: OAuth
+
+Ссылка: https://ffxivcollect.com/ 
+Описание: Final Fantasy XIV data on collectables 
+Авторизация: не нужна
+
+Ссылка: https://www.easports.com/fifa/ultimate-team/api/fut/item 
+Описание: FIFA Ultimate Team items API 
+Авторизация: не нужна
+
+Ссылка: https://xivapi.com/ 
+Описание: Final Fantasy XIV Game data API 
+Авторизация: не нужна
+
+Ссылка: https://fortnitetracker.com/site-api 
+Описание: Fortnite Stats 
+Авторизация: apiKey
+
+Ссылка: https://docs.forza-api.tk 
+Описание: Show random image of car from Forza 
+Авторизация: не нужна
+
+Ссылка: https://www.freetogame.com/api-doc 
+Описание: Free-To-Play Games Database 
+Авторизация: не нужна
+
+Ссылка: https://asli-fun-fact-api.herokuapp.com/ 
+Описание: Random Fun Facts 
+Авторизация: не нужна
+
+Ссылка: https://api.funtranslations.com/ 
+Описание: Translate Text into funny languages 
+Авторизация: не нужна
+
+Ссылка: https://www.gamerpower.com/api-read 
+Описание: Game Giveaways Tracker 
+Авторизация: не нужна
+
+Ссылка: https://gdbrowser.com/api 
+Описание: Easy way to use the Geometry Dash Servers 
+Авторизация: не нужна
+
+Ссылка: https://github.com/sameerkumar18/geek-joke-api 
+Описание: Fetch a random geeky/programming related joke for use in all sorts of applications 
+Авторизация: не нужна
+
+Ссылка: https://genshin.dev 
+Описание: Genshin Impact game data 
+Авторизация: не нужна
+
+Ссылка: https://www.giantbomb.com/api/documentation 
+Описание: Video Games 
+Авторизация: apiKey
+
+Ссылка: https://github.com/favware/graphql-pokemon 
+Описание: GraphQL powered Pokemon API. Supports generations 1 through 8 
+Авторизация: не нужна
+
+Ссылка: https://wiki.guildwars2.com/wiki/API:Main 
+Описание: Guild Wars 2 Game Information 
+Авторизация: apiKey
+
+Ссылка: https://github.com/rubensayshi/gw2spidy/wiki 
+Описание: GW2Spidy API, Items data on the Guild Wars 2 Trade Market 
+Авторизация: не нужна
+
+Ссылка: https://developer.haloapi.com/ 
+Описание: Halo 5 and Halo Wars 2 Information 
+Авторизация: apiKey
+
+Ссылка: http://hearthstoneapi.com/ 
+Описание: Hearthstone Cards Information 
+Авторизация: X-Mashape-Key
+
+Ссылка: https://rapidapi.com/Ziggoto/api/humble-bundle 
+Описание: Humble Bundle's current bundles 
+Авторизация: apiKey
+
+Ссылка: https://humorapi.com 
+Описание: Humor, Jokes, and Memes 
+Авторизация: apiKey
+
+Ссылка: https://api.hypixel.net/ 
+Описание: Hypixel player stats 
+Авторизация: apiKey
+
+Ссылка: https://github.com/gadhagod/Hyrule-Compendium-API 
+Описание: Data on all interactive items from The Legend of Zelda: BOTW 
+Авторизация: не нужна
+
+Ссылка: https://hytale-api.com/ 
+Описание: Hytale blog posts and jobs 
+Авторизация: не нужна
+
+Ссылка: https://api-docs.igdb.com 
+Описание: Video Game Database 
+Авторизация: apiKey
+
+Ссылка: https://sv443.net/jokeapi/v2/ 
+Описание: Programming, Miscellaneous and Dark Jokes 
+Авторизация: не нужна
+
+Ссылка: https://jokes.one/api/joke/ 
+Описание: Joke of the day and large category of jokes accessible via REST API 
+Авторизация: apiKey
+
+Ссылка: http://jservice.io 
+Описание: Jeopardy Question Database 
+Авторизация: не нужна
+
+Ссылка: https://lichess.org/api 
+Описание: Access to all data of users, games, puzzles and etc on Lichess 
+Авторизация: OAuth
+
+Ссылка: http://magicthegathering.io/ 
+Описание: Magic The Gathering Game Information 
+Авторизация: не нужна
+
+Ссылка: https://mario-kart-tour-api.herokuapp.com/ 
+Описание: API for Drivers, Karts, Gliders and Courses 
+Авторизация: OAuth
+
+Ссылка: https://developer.marvel.com 
+Описание: Marvel Comics 
+Авторизация: apiKey
+
+Ссылка: https://api.mcsrvstat.us 
+Описание: API to get Information about a Minecraft Server 
+Авторизация: не нужна
+
+Ссылка: https://www.mmobomb.com/api 
+Описание: MMO Games Database, News and Giveaways 
+Авторизация: не нужна
+
+Ссылка: https://docs.mod.io 
+Описание: Cross Platform Mod API 
+Авторизация: apiKey
+
+Ссылка: https://wiki.vg/Mojang_API 
+Описание: Mojang / Minecraft API 
+Авторизация: apiKey
+
+Ссылка: https://docs.mhw-db.com/ 
+Описание: Monster Hunter World data 
+Авторизация: не нужна
+
+Ссылка: https://opentdb.com/api_config.php 
+Описание: Trivia Questions 
+Авторизация: не нужна
+
+Ссылка: https://developers.pandascore.co/ 
+Описание: E-sports games and results 
+Авторизация: apiKey
+
+Ссылка: https://www.pathofexile.com/developer/docs 
+Описание: Path of Exile Game Information 
+Авторизация: OAuth
+
+Ссылка: https://playerdb.co/ 
+Описание: Query Minecraft, Steam and XBox Accounts 
+Авторизация: не нужна
+
+Ссылка: https://pokeapi.co 
+Описание: Pokémon Information 
+Авторизация: не нужна
+
+Ссылка: https://github.com/mazipan/graphql-pokeapi 
+Описание: The Unofficial GraphQL for PokeAPI 
+Авторизация: не нужна
+
+Ссылка: https://pokemontcg.io 
+Описание: Pokémon TCG Information 
+Авторизация: не нужна
+
+Ссылка: https://psychonauts-api.netlify.app/ 
+Описание: Psychonauts World Characters Information and PSI Powers 
+Авторизация: не нужна
+
+Ссылка: https://developer.pubg.com/ 
+Описание: Access in-game PUBG data 
+Авторизация: apiKey
+
+Ссылка: https://github.com/deltadex7/puyodb-api-deno 
+Описание: Puyo Puyo information from Puyo Nexus Wiki 
+Авторизация: не нужна
+
+Ссылка: https://quizapi.io/ 
+Описание: Access to various kind of quiz questions 
+Авторизация: apiKey
+
+Ссылка: https://raider.io/api 
+Описание: Provides detailed character and guild rankings for Raiding and Mythic+ content in World of Warcraft 
+Авторизация: не нужна
+
+Ссылка: https://rawg.io/apidocs 
+Описание: 500,000+ games for 50 platforms including mobiles 
+Авторизация: apiKey
+
+Ссылка: https://rickandmortyapi.com 
+Описание: All the Rick and Morty information, including images 
+Авторизация: не нужна
+
+Ссылка: https://developer.riotgames.com/ 
+Описание: League of Legends Game Information 
+Авторизация: apiKey
+
+Ссылка: https://rps101.pythonanywhere.com/api 
+Описание: Rock, Paper, Scissors with 101 objects 
+Авторизация: не нужна
+
+Ссылка: https://runescape.wiki/w/Application_programming_interface 
+Описание: RuneScape and OSRS RPGs information 
+Авторизация: не нужна
+
+Ссылка: https://github.com/JessVel/sakura-card-captor-api 
+Описание: Sakura CardCaptor Cards Information 
+Авторизация: не нужна
+
+Ссылка: https://scryfall.com/docs/api 
+Описание: Magic: The Gathering database 
+Авторизация: не нужна
+
+Ссылка: https://spacetraders.io?rel=pub-apis 
+Описание: A playable inter-galactic space trading MMOAPI 
+Авторизация: OAuth
+
+Ссылка: https://steamapi.xpaw.me/ 
+Описание: Steam Web API documentation 
+Авторизация: apiKey
+
+Ссылка: https://github.com/Revadike/InternalSteamWebAPI/wiki 
+Описание: Internal Steam Web API documentation 
+Авторизация: не нужна
+
+Ссылка: https://superheroapi.com 
+Описание: All SuperHeroes and Villains data from all universes under a single API 
+Авторизация: apiKey
+
+Ссылка: https://www.tcgdex.net/docs 
+Описание: Multi languages Pokémon TCG Information 
+Авторизация: не нужна
+
+Ссылка: https://docs.tebex.io/plugin/ 
+Описание: Tebex API for information about game purchases 
+Авторизация: X-Mashape-Key
+
+Ссылка: https://tetr.io/about/api/ 
+Описание: TETR.IO Tetra Channel API 
+Авторизация: не нужна
+
+Ссылка: https://www.tronalddump.io/ 
+Описание: The dumbest things Donald Trump has ever said 
+Авторизация: не нужна
+
+Ссылка: https://universalis.app/docs/index.html 
+Описание: Final Fantasy XIV market board data 
+Авторизация: не нужна
+
+Ссылка: https://valorant-api.com 
+Описание: An extensive API containing data of most Valorant in-game items, assets and more 
+Авторизация: не нужна
+
+Ссылка: https://api.wfstats.cf 
+Описание: Official API proxy with better data structure and more features 
+Авторизация: не нужна
+
+Ссылка: https://developers.wargaming.net/ 
+Описание: Wargaming.net info and stats 
+Авторизация: apiKey
+
+Ссылка: https://github.com/DiljotSG/MCU-Countdown/blob/develop/docs/API.md 
+Описание: Upcoming MCU film information 
+Авторизация: не нужна
+
+Ссылка: https://xkcd.com/json.html 
+Описание: Retrieve xkcd comics as JSON 
+Авторизация: не нужна
+
+Ссылка: https://db.ygoprodeck.com/api-guide/ 
+Описание: Yu-Gi-Oh! TCG Information 
+Авторизация: не нужна
+
+Ссылка: https://www.abstractapi.com/ip-geolocation-api 
+Описание: Geolocate website visitors from their IPs 
+Авторизация: apiKey
+
+Ссылка: https://actinia.mundialis.de/api_docs/ 
+Описание: Actinia is an open source REST API for geographical data that uses GRASS GIS 
+Авторизация: apiKey
+
+Ссылка: https://github.com/kamikazechaser/administrative-divisions-db 
+Описание: Get all administrative divisions of a country 
+Авторизация: не нужна
+
+Ссылка: https://adresse.data.gouv.fr 
+Описание: Address database of France, geocoding and reverse 
+Авторизация: не нужна
+
+Ссылка: https://sys.airtel.lv/ip2country/1.1.1.1/?full=true 
+Описание: IP Geolocation API. Collecting data from multiple sources 
+Авторизация: не нужна
+
+Ссылка: https://apiip.net/ 
+Описание: Get location information by IP address 
+Авторизация: apiKey
+
+Ссылка: https://ipstack.com/ 
+Описание: Locate and identify website visitors by IP address 
+Авторизация: apiKey
+
+Ссылка: http://battuta.medunes.net 
+Описание: A (country/region/city) in-cascade location API 
+Авторизация: apiKey
+
+Ссылка: https://www.bigdatacloud.com/ip-geolocation-apis 
+Описание: Provides fast and accurate IP geolocation APIs along with security checks and confidence area 
+Авторизация: apiKey
+
+Ссылка: https://www.microsoft.com/maps/ 
+Описание: Create/customize digital maps based on Bing Maps data 
+Авторизация: apiKey
+
+Ссылка: https://www.getthedata.com/bng2latlong 
+Описание: Convert British OSGB36 easting and northing (British National Grid) to WGS84 latitude and longitude 
+Авторизация: не нужна
+
+Ссылка: https://github.com/M-Media-Group/Cartes.io/wiki/API 
+Описание: Create maps and markers for anything 
+Авторизация: не нужна
+
+Ссылка: http://cep.la/ 
+Описание: Brazil RESTful API to find information about streets, zip codes, neighborhoods, cities and states 
+Авторизация: не нужна
+
+Ссылка: http://www.citysdk.eu/citysdk-toolkit/ 
+Описание: Open APIs for select European cities 
+Авторизация: не нужна
+
+Ссылка: http://country.is/ 
+Описание: Get your visitor's country from their IP 
+Авторизация: не нужна
+
+Ссылка: https://countrystatecity.in/ 
+Описание: World countries, states, regions, provinces, cities & towns in JSON, SQL, XML, YAML, & CSV format 
+Авторизация: apiKey
+
+Ссылка: https://gis.ducks.org/datasets/du-university-chapters/api 
+Описание: API explorer that gives a query URL with a JSON response of locations and cities 
+Авторизация: не нужна
+
+Ссылка: https://freegeoip.app/ 
+Описание: Free geo ip information, no registration required. 15k/hour rate limit 
+Авторизация: не нужна
+
+Ссылка: https://api.gouv.fr/api/geoapi.html 
+Описание: French geographical data 
+Авторизация: не нужна
+
+Ссылка: https://www.geoapify.com/api/geocoding-api/ 
+Описание: Forward and reverse geocoding, address autocomplete 
+Авторизация: apiKey
+
+Ссылка: https://www.geocod.io/ 
+Описание: Address geocoding / reverse geocoding in bulk 
+Авторизация: apiKey
+
+Ссылка: https://geocode.xyz/api 
+Описание: Provides worldwide forward/reverse geocoding, batch geocoding and geoparsing 
+Авторизация: не нужна
+
+Ссылка: https://geocodify.com/ 
+Описание: Worldwide geocoding, geoparsing and autocomplete for addresses 
+Авторизация: apiKey
+
+Ссылка: https://geodata.gov.gr/en/ 
+Описание: Open geospatial data and API service for Greece 
+Авторизация: не нужна
+
+Ссылка: https://www.geodatasource.com/web-service 
+Описание: Geocoding of city name by using latitude and longitude coordinates 
+Авторизация: apiKey
+
+Ссылка: http://geodb-cities-api.wirefreethought.com/ 
+Описание: Get global city, region, and country data 
+Авторизация: apiKey
+
+Ссылка: https://geographql.netlify.app 
+Описание: A Country, State, and City GraphQL API 
+Авторизация: не нужна
+
+Ссылка: https://www.geojs.io/ 
+Описание: IP geolocation with ChatOps integration 
+Авторизация: не нужна
+
+Ссылка: https://geokeo.com 
+Описание: Geokeo geocoding service- with 2500 free api requests daily 
+Авторизация: не нужна
+
+Ссылка: http://www.geonames.org/export/web-services.html 
+Описание: Place names and other geographical data 
+Авторизация: не нужна
+
+Ссылка: https://www.geoplugin.com 
+Описание: IP geolocation and currency conversion 
+Авторизация: не нужна
+
+Ссылка: https://developers.google.com/earth-engine/ 
+Описание: A cloud-based platform for planetary-scale environmental data analysis 
+Авторизация: apiKey
+
+Ссылка: https://developers.google.com/maps/ 
+Описание: Create/customize digital maps based on Google Maps data 
+Авторизация: apiKey
+
+Ссылка: https://github.com/lennertVanSever/graphcountries 
+Описание: Country-related data like currencies, languages, flags, regions+subregions and bordering countries 
+Авторизация: не нужна
+
+Ссылка: https://fourtonfish.com/project/hellosalut-api/ 
+Описание: Get hello translation following user language 
+Авторизация: не нужна
+
+Ссылка: https://developer.here.com 
+Описание: Create/customize digital maps based on HERE Maps data 
+Авторизация: apiKey
+
+Ссылка: https://iplocation.hirak.site/ 
+Описание: Ip to location with country code, currency code & currency name, fast response, unlimited requests 
+Авторизация: apiKey
+
+Ссылка: https://geodata.gov.hk/gs/ 
+Описание: API for accessing geo-data of Hong Kong 
+Авторизация: не нужна
+
+Ссылка: https://servicodados.ibge.gov.br/api/docs/ 
+Описание: Aggregate services of IBGE (Brazilian Institute of Geography and Statistics) 
+Авторизация: не нужна
+
+Ссылка: https://ip2country.info 
+Описание: Map an IP to a country 
+Авторизация: не нужна
+
+Ссылка: https://ipinfo.io/ 
+Описание: Find geolocation with ip address 
+Авторизация: не нужна
+
+Ссылка: https://www.ipvigilante.com/ 
+Описание: Free IP Geolocation API 
+Авторизация: не нужна
+
+Ссылка: https://ip-api.com/docs 
+Описание: Find location with IP address or domain 
+Авторизация: не нужна
+
+Ссылка: https://www.ip2location.com/web-service/ip2location 
+Описание: IP geolocation web service to get more than 55 parameters 
+Авторизация: apiKey
+
+Ссылка: https://www.ip2location.com/web-service/ip2proxy 
+Описание: Detect proxy and VPN using IP address 
+Авторизация: apiKey
+
+Ссылка: https://ipapi.co/api/#introduction 
+Описание: Find IP address location information 
+Авторизация: не нужна
+
+Ссылка: https://ipapi.com/ 
+Описание: Real-time Geolocation & Reverse IP Lookup REST API 
+Авторизация: apiKey
+
+Ссылка: https://api.techniknews.net/ipgeo/ 
+Описание: Unlimited free IP Address API with useful information 
+Авторизация: не нужна
+
+Ссылка: https://ipgeolocation.io/ 
+Описание: IP Geolocation AP with free plan 30k requests per month 
+Авторизация: apiKey
+
+Ссылка: https://www.ipinfodb.com/api 
+Описание: Free Geolocation tools and APIs for country, region, city and time zone lookup by IP address 
+Авторизация: apiKey
+
+Ссылка: https://ipstack.com/ 
+Описание: Locate and identify website visitors by IP address 
+Авторизация: apiKey
+
+Ссылка: https://apis.map.kakao.com 
+Описание: Kakao Maps provide multiple APIs for Korean maps 
+Авторизация: apiKey
+
+Ссылка: https://tools.keycdn.com/geo 
+Описание: Get the IP geolocation data through the simple REST API. All the responses are JSON encoded 
+Авторизация: apiKey
+
+Ссылка: https://locationiq.org/docs/ 
+Описание: Provides forward/reverse geocoding and batch geocoding 
+Авторизация: apiKey
+
+Ссылка: https://map.longdo.com/docs/ 
+Описание: Interactive map with detailed places and information portal in Thailand 
+Авторизация: apiKey
+
+Ссылка: https://docs.mapbox.com/ 
+Описание: Create/customize beautiful digital maps 
+Авторизация: apiKey
+
+Ссылка: https://developer.mapquest.com/ 
+Описание: To access tools and resources to map the world 
+Авторизация: apiKey
+
+Ссылка: https://github.com/IcaliaLabs/sepomex 
+Описание: Mexico RESTful zip codes API 
+Авторизация: не нужна
+
+Ссылка: https://nominatim.org/release-docs/latest/api/Overview/ 
+Описание: Provides worldwide forward / reverse geocoding 
+Авторизация: не нужна
+
+Ссылка: https://www.onemap.gov.sg/docs/ 
+Описание: Singapore Land Authority REST API services for Singapore addresses 
+Авторизация: apiKey
+
+Ссылка: https://onwater.io/ 
+Описание: Determine if a lat/lon is on water or land 
+Авторизация: не нужна
+
+Ссылка: https://www.opentopodata.org 
+Описание: Elevation and ocean depth for a latitude and longitude 
+Авторизация: не нужна
+
+Ссылка: https://opencagedata.com 
+Описание: Forward and reverse geocoding using open data 
+Авторизация: apiKey
+
+Ссылка: https://openrouteservice.org/ 
+Описание: Directions, POIs, isochrones, geocoding (+reverse), elevation, and more 
+Авторизация: apiKey
+
+Ссылка: http://wiki.openstreetmap.org/wiki/API 
+Описание: Navigation, geolocation and geographical data 
+Авторизация: OAuth
+
+Ссылка: https://pinballmap.com/api/v1/docs 
+Описание: A crowdsourced map of public pinball machines 
+Авторизация: не нужна
+
+Ссылка: https://positionstack.com/ 
+Описание: Forward & Reverse Batch Geocoding REST API 
+Авторизация: apiKey
+
+Ссылка: https://postali.app/api 
+Описание: Mexico Zip Codes API 
+Авторизация: не нужна
+
+Ссылка: http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=domeinnaam.nl&type=json 
+Описание: Provide geolocation data based on postcode for Dutch addresses 
+Авторизация: не нужна
+
+Ссылка: https://postcodes.io 
+Описание: Postcode lookup & Geolocation for the UK 
+Авторизация: не нужна
+
+Ссылка: https://queimadas.dgi.inpe.br/queimadas/dados-abertos/ 
+Описание: Access to heat focus data (probable wildfire) 
+Авторизация: не нужна
+
+Ссылка: https://restcountries.com 
+Описание: Get information about countries via a RESTful API 
+Авторизация: не нужна
+
+Ссылка: https://www.roadgoat.com/business/cities-api 
+Описание: Cities content & photos API 
+Авторизация: apiKey
+
+Ссылка: https://rapidapi.com/victorkarangwa4/api/rwanda 
+Описание: Rwanda Provences, Districts, Cities, Capital City, Sector, cells, villages and streets 
+Авторизация: не нужна
+
+Ссылка: https://github.com/slftool/slftool.github.io/blob/master/API.md 
+Описание: German city, country, river, database 
+Авторизация: не нужна
+
+Ссылка: https://spotsense.io/ 
+Описание: Add location based interactions to your mobile app 
+Авторизация: apiKey
+
+Ссылка: https://rapidapi.com/fcambus/api/telize/ 
+Описание: Telize offers location information from any IP address 
+Авторизация: apiKey
+
+Ссылка: https://developer.tomtom.com/ 
+Описание: Maps, Directions, Places and Traffic APIs 
+Авторизация: apiKey
+
+Ссылка: https://uebermaps.com/api/v2 
+Описание: Discover and share maps with friends 
+Авторизация: apiKey
+
+Ссылка: https://www.smarty.com/docs/cloud/us-zipcode-api 
+Описание: Validate and append data for any US ZipCode 
+Авторизация: apiKey
+
+Ссылка: https://api.mapserv.utah.gov 
+Описание: Utah Web API for geocoding Utah addresses 
+Авторизация: apiKey
+
+Ссылка: https://viacep.com.br 
+Описание: Brazil RESTful zip codes API 
+Авторизация: не нужна
+
+Ссылка: https://what3words.com 
+Описание: Three words as rememberable and unique coordinates worldwide 
+Авторизация: apiKey
+
+Ссылка: https://yandex.com/dev/maps/geocoder 
+Описание: Use geocoding to get an object's coordinates from its address 
+Авторизация: apiKey
+
+Ссылка: https://www.zipcodeapi.com 
+Описание: US zip code distance, radius and location API 
+Авторизация: apiKey
+
+Ссылка: http://www.zippopotam.us 
+Описание: Get information about place such as country, city, state, etc 
+Авторизация: не нужна
+
+Ссылка: https://ziptasticapi.com/ 
+Описание: Get the country, state, and city of any US zip-code 
+Авторизация: не нужна
+
+Ссылка: https://apikijangportal.bnm.gov.my/ 
+Описание: Malaysia Central Bank Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.bclaws.gov.bc.ca/civix/template/complete/api/index.html 
+Описание: Access to the laws of British Columbia 
+Авторизация: не нужна
+
+Ссылка: https://brasilapi.com.br/ 
+Описание: Community driven API for Brazil Public Data 
+Авторизация: не нужна
+
+Ссылка: https://dadosabertos.bcb.gov.br/ 
+Описание: Brazil Central Bank Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.receitaws.com.br/ 
+Описание: Consult companies by CNPJ for Brazilian companies 
+Авторизация: не нужна
+
+Ссылка: https://dadosabertos.camara.leg.br/swagger/api.html 
+Описание: Provides legislative information in Apis XML and JSON, as well as files in various formats 
+Авторизация: не нужна
+
+Ссылка: https://www.census.gov/data/developers/data-sets.html 
+Описание: The US Census Bureau provides various APIs and data sets on demographics and businesses 
+Авторизация: не нужна
+
+Ссылка: https://daten.berlin.de/ 
+Описание: Berlin(DE) City Open Data 
+Авторизация: не нужна
+
+Ссылка: https://ckan.multimediagdansk.pl/en 
+Описание: Gdańsk (PL) City Open Data 
+Авторизация: не нужна
+
+Ссылка: http://otwartedane.gdynia.pl/en/api_doc.html 
+Описание: Gdynia (PL) City Open Data 
+Авторизация: не нужна
+
+Ссылка: https://hri.fi/en_gb/ 
+Описание: Helsinki(FI) City Open Data 
+Авторизация: не нужна
+
+Ссылка: https://opendata.city-adm.lviv.ua/ 
+Описание: Lviv(UA) City Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.nantesmetropole.fr/pages/home/ 
+Описание: Nantes(FR) City Open Data 
+Авторизация: apiKey
+
+Ссылка: https://opendata.cityofnewyork.us/ 
+Описание: New York (US) City Open Data 
+Авторизация: не нужна
+
+Ссылка: http://opendata.praha.eu/en 
+Описание: Prague(CZ) City Open Data 
+Авторизация: не нужна
+
+Ссылка: https://open.toronto.ca/ 
+Описание: Toronto (CA) City Open Data 
+Авторизация: не нужна
+
+Ссылка: https://code.gov 
+Описание: The primary platform for Open Source and code sharing for the U.S. Federal Government 
+Авторизация: apiKey
+
+Ссылка: https://data.colorado.gov/ 
+Описание: Colorado State Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://datausa.io/about/api/ 
+Описание: US Public Data 
+Авторизация: не нужна
+
+Ссылка: https://api.data.gov/ 
+Описание: US Government Data 
+Авторизация: apiKey
+
+Ссылка: https://explore.data.parliament.uk/?learnmore=Members 
+Описание: Contains live datasets including information about petitions, bills, MP votes, attendance and more 
+Авторизация: не нужна
+
+Ссылка: https://dip.bundestag.de/documents/informationsblatt_zur_dip_api_v01.pdf 
+Описание: This API provides read access to DIP entities (e.g. activities, persons, printed material) 
+Авторизация: apiKey
+
+Ссылка: http://opendata.dc.gov/pages/using-apis 
+Описание: Contains D.C. government public datasets, including crime, GIS, financial data, and so on 
+Авторизация: не нужна
+
+Ссылка: https://www.epa.gov/developers/data-data-products#apis 
+Описание: Web services and data sets from the US Environmental Protection Agency 
+Авторизация: не нужна
+
+Ссылка: https://www.fbi.gov/wanted/api 
+Описание: Access information on the FBI Wanted program 
+Авторизация: не нужна
+
+Ссылка: https://api.open.fec.gov/developers/ 
+Описание: Information on campaign donations in federal elections 
+Авторизация: apiKey
+
+Ссылка: https://www.federalregister.gov/reader-aids/developer-resources/rest-api 
+Описание: The Daily Journal of the United States Government 
+Авторизация: не нужна
+
+Ссылка: http://ratings.food.gov.uk/open-data/en-GB 
+Описание: UK food hygiene rating data API 
+Авторизация: не нужна
+
+Ссылка: https://www.thegazette.co.uk/data 
+Описание: UK official public record API 
+Авторизация: OAuth
+
+Ссылка: https://www.gunpolicy.org/api 
+Описание: International firearm injury prevention and policy 
+Авторизация: apiKey
+
+Ссылка: http://iinei.inei.gob.pe/microdatos/ 
+Описание: Peruvian Statistical Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://interpol.api.bund.dev/ 
+Описание: Access and search Interpol Red Notices 
+Авторизация: не нужна
+
+Ссылка: https://data.ibb.gov.tr 
+Описание: Data sets from the İstanbul Metropolitan Municipality (İBB) 
+Авторизация: не нужна
+
+Ссылка: https://www.nps.gov/subjects/developer/ 
+Описание: Data from the US National Park Service 
+Авторизация: apiKey
+
+Ссылка: https://www.data.act.gov.au/ 
+Описание: Australian Capital Territory Open Data 
+Авторизация: не нужна
+
+Ссылка: https://datos.gob.ar/ 
+Описание: Argentina Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.data.gov.au/ 
+Описание: Australian Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.data.gv.at/ 
+Описание: Austria Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.gov.be/ 
+Описание: Belgium Government Open Data 
+Авторизация: не нужна
+
+Ссылка: http://open.canada.ca/en 
+Описание: Canadian Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.dane.gov.co/ 
+Описание: Colombia Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.gov.cy/?language=en 
+Описание: Cyprus Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.gov.cz/english/ 
+Описание: Czech Republic Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.opendata.dk/ 
+Описание: Denmark Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://avaandmed.eesti.ee/instructions/opendata-dataset-api 
+Описание: Estonia Government Open Data 
+Авторизация: apiKey
+
+Ссылка: https://www.avoindata.fi/en 
+Описание: Finland Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.data.gouv.fr/ 
+Описание: French Government Open Data 
+Авторизация: apiKey
+
+Ссылка: https://www.govdata.de/daten/-/details/govdata-metadatenkatalog 
+Описание: Germany Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.gov.gr/ 
+Описание: Greece Government Open Data 
+Авторизация: OAuth
+
+Ссылка: https://data.gov.in/ 
+Описание: Indian Government Open Data 
+Авторизация: apiKey
+
+Ссылка: https://data.gov.ie/pages/developers 
+Описание: Ireland Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.dati.gov.it/ 
+Описание: Italy Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.data.go.kr/ 
+Описание: Korea Government Open Data 
+Авторизация: apiKey
+
+Ссылка: https://data.gov.lt/public/api/1 
+Описание: Lithuania Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.public.lu 
+Описание: Luxembourgish Government Open Data 
+Авторизация: apiKey
+
+Ссылка: https://www.inegi.org.mx/datos/ 
+Описание: Mexican Statistical Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://datos.gob.mx/ 
+Описание: Mexico Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.overheid.nl/en/ondersteuning/data-publiceren/api 
+Описание: Netherlands Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://api.nsw.gov.au/ 
+Описание: New South Wales Government Open Data 
+Авторизация: apiKey
+
+Ссылка: https://www.data.govt.nz/ 
+Описание: New Zealand Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.norge.no/dataservices 
+Описание: Norwegian Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.datosabiertos.gob.pe/ 
+Описание: Peru Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://dane.gov.pl/en 
+Описание: Poland Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://dados.gov.pt/en/docapi/ 
+Описание: Portugal Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.data.qld.gov.au/ 
+Описание: Queensland Government Open Data 
+Авторизация: не нужна
+
+Ссылка: http://data.gov.ro/ 
+Описание: Romania Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.gov.sa 
+Описание: Saudi Arabia Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.gov.sg/developer 
+Описание: Singapore Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.gov.sk/en/ 
+Описание: Slovakia Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://podatki.gov.si/ 
+Описание: Slovenia Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.sa.gov.au/ 
+Описание: South Australian Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://datos.gob.es/en 
+Описание: Spain Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.dataportal.se/en/dataservice/91_29789/api-for-the-statistical-database 
+Описание: Sweden Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://handbook.opendata.swiss/de/content/nutzen/api-nutzen.html 
+Описание: Switzerland Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.gov.tw/ 
+Описание: Taiwan Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.go.th/ 
+Описание: Thailand Government Open Data 
+Авторизация: apiKey
+
+Ссылка: https://data.gov.uk/ 
+Описание: UK Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.data.gov/ 
+Описание: United States Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://www.data.vic.gov.au/ 
+Описание: Victoria State Government Open Data 
+Авторизация: не нужна
+
+Ссылка: https://data.wa.gov.au/ 
+Описание: West Australia Open Data 
+Авторизация: не нужна
+
+Ссылка: https://api.whenisthenextboardexam.com/docs/ 
+Описание: Unofficial Philippine Professional Regulation Commission's examination schedule 
+Авторизация: не нужна
+
+Ссылка: https://represent.opennorth.ca/ 
+Описание: Find Canadian Government Representatives 
+Авторизация: не нужна
+
+Ссылка: https://developer.company-information.service.gov.uk/ 
+Описание: UK Companies House Data from the UK government 
+Авторизация: OAuth
+
+Ссылка: https://uselection.togatech.org/api/ 
+Описание: Basic candidate data and live electoral vote counts for top two parties in US presidential election 
+Авторизация: не нужна
+
+Ссылка: https://www.usa.gov/developer 
+Описание: Authoritative information on U.S. programs, events, services and more 
+Авторизация: apiKey
+
+Ссылка: https://api.usaspending.gov/ 
+Описание: US federal spending data 
+Авторизация: не нужна
+
+Ссылка: https://data.cms.gov/provider-data/ 
+Описание: Access to the data from the CMS - medicare.gov 
+Авторизация: apiKey
+
+Ссылка: https://pipedream.com/@pravin/http-api-for-latest-wuhan-coronavirus-data-2019-ncov-p_G6CLVM/readme 
+Описание: HTTP API for Latest Covid-19 Data 
+Авторизация: не нужна
+
+Ссылка: https://coronavirus.data.gov.uk/details/developers-guide 
+Описание: UK Government coronavirus data, including deaths and cases by region 
+Авторизация: не нужна
+
+Ссылка: https://covidtracking.com/data/api/version-2 
+Описание: Covid-19  data for the US 
+Авторизация: не нужна
+
+Ссылка: https://covid19api.com/ 
+Описание: Covid 19 spread, infection and recovery 
+Авторизация: не нужна
+
+Ссылка: https://github.com/M-Media-Group/Covid-19-API 
+Описание: Covid 19 cases, deaths and recovery per country 
+Авторизация: не нужна
+
+Ссылка: https://npgeo-corona-npgeo-de.hub.arcgis.com 
+Описание: Maps, datasets, applications and more in the context of COVID-19 
+Авторизация: не нужна
+
+Ссылка: https://covidtracker.bsg.ox.ac.uk 
+Описание: Government measures tracker to fight against the Covid-19 pandemic 
+Авторизация: не нужна
+
+Ссылка: https://data.covid19india.org/ 
+Описание: Covid 19 statistics state and district wise about cases, vaccinations, recovery within India 
+Авторизация: не нужна
+
+Ссылка: https://nuttaphat.com/covid19-api/ 
+Описание: Open-source API for exploring Covid19 cases based on JHU CSSE 
+Авторизация: не нужна
+
+Ссылка: https://github.com/mathdroid/covid-19-api 
+Описание: Global and countrywise data of Covid 19 daily Summary, confirmed cases, recovered and deaths 
+Авторизация: не нужна
+
+Ссылка: https://github.com/Simperfy/Covid-19-API-Philippines-DOH 
+Описание: Unofficial Covid-19 Web API for Philippines from data collected by DOH 
+Авторизация: не нужна
+
+Ссылка: https://api.covid19tracker.ca/docs/1.0/overview 
+Описание: Details on Covid-19 cases across Canada 
+Авторизация: не нужна
+
+Ссылка: https://www.hpb.health.gov.lk/en/api-documentation 
+Описание: Provides situation of the COVID-19 patients reported in Sri Lanka 
+Авторизация: не нужна
+
+Ссылка: https://data.covid19.go.id/public/api/prov.json 
+Описание: Indonesian government Covid data per province 
+Авторизация: не нужна
+
+Ссылка: https://covid-19.dataflowkit.com 
+Описание: COVID-19 live statistics into sites per hour 
+Авторизация: не нужна
+
+Ссылка: https://fdc.nal.usda.gov/ 
+Описание: National Nutrient Database for Standard Reference 
+Авторизация: apiKey
+
+Ссылка: https://www.healthcare.gov/developers/ 
+Описание: Educational content about the US Health Insurance Marketplace 
+Авторизация: не нужна
+
+Ссылка: https://data.humdata.org/ 
+Описание: Humanitarian Data Exchange (HDX) is open platform for sharing data across crises and organisations 
+Авторизация: не нужна
+
+Ссылка: https://developer.infermedica.com/docs/ 
+Описание: NLP based symptom checker and patient triage API for health diagnosis from text 
+Авторизация: apiKey
+
+Ссылка: https://cov-spectrum.ethz.ch/public 
+Описание: SARS-CoV-2 genomic sequences from public sources 
+Авторизация: не нужна
+
+Ссылка: https://docs.lexigram.io/ 
+Описание: NLP that extracts mentions of clinical concepts from text, gives access to clinical ontology 
+Авторизация: apiKey
+
+Ссылка: http://makeup-api.herokuapp.com/ 
+Описание: Makeup Information 
+Авторизация: не нужна
+
+Ссылка: https://documenter.getpostman.com/view/16605343/Tzm8GG7u 
+Описание: Vaccination data for Malaysia 
+Авторизация: не нужна
+
+Ссылка: https://npiregistry.cms.hhs.gov/registry/help-api 
+Описание: National Plan & Provider Enumeration System, info on healthcare providers registered in US 
+Авторизация: не нужна
+
+Ссылка: https://developer.nutritionix.com/ 
+Описание: Worlds largest verified nutrition database 
+Авторизация: apiKey
+
+Ссылка: https://www.opendata.nhs.scot 
+Описание: Medical reference data and statistics by Public Health Scotland 
+Авторизация: не нужна
+
+Ссылка: https://disease.sh/ 
+Описание: API for Current cases and more stuff about COVID-19 and Influenza 
+Авторизация: не нужна
+
+Ссылка: https://open.fda.gov 
+Описание: Public FDA data about drugs, devices and foods 
+Авторизация: apiKey
+
+Ссылка: https://developer.orionhealth.io/ 
+Описание: Medical platform which allows the development of applications for different healthcare scenarios 
+Авторизация: OAuth
+
+Ссылка: https://quarantine.country/coronavirus/api/ 
+Описание: Coronavirus API with free COVID-19 live updates 
+Авторизация: не нужна
+
+Ссылка: https://developer.adzuna.com/overview 
+Описание: Job board aggregator 
+Авторизация: apiKey
+
+Ссылка: https://documenter.getpostman.com/view/18545278/UVJbJdKh 
+Описание: API for Job board aggregator in Europe / Remote 
+Авторизация: не нужна
+
+Ссылка: https://jobsuche.api.bund.dev/ 
+Описание: API for the "Arbeitsamt", which is a german Job board aggregator 
+Авторизация: OAuth
+
+Ссылка: https://www.careerjet.com/partners/api/ 
+Описание: Job search engine 
+Авторизация: apiKey
+
+Ссылка: https://devitjobs.uk/job_feed.xml 
+Описание: Jobs with GraphQL 
+Авторизация: не нужна
+
+Ссылка: https://findwork.dev/developers/ 
+Описание: Job board 
+Авторизация: apiKey
+
+Ссылка: https://graphql.jobs/docs/api/ 
+Описание: Jobs with GraphQL 
+Авторизация: не нужна
+
+Ссылка: http://api.jobs2careers.com/api/spec.pdf 
+Описание: Job aggregator 
+Авторизация: apiKey
+
+Ссылка: https://jooble.org/api/about 
+Описание: Job search engine 
+Авторизация: apiKey
+
+Ссылка: http://www.juju.com/publisher/spec/ 
+Описание: Job search engine 
+Авторизация: apiKey
+
+Ссылка: https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview 
+Описание: Job titles, skills and related jobs data 
+Авторизация: не нужна
+
+Ссылка: https://www.reed.co.uk/developers 
+Описание: Job board aggregator 
+Авторизация: apiKey
+
+Ссылка: https://www.themuse.com/developers/api/v2 
+Описание: Job board and company profiles 
+Авторизация: apiKey
+
+Ссылка: https://developers.upwork.com/ 
+Описание: Freelance job board and management system 
+Авторизация: OAuth
+
+Ссылка: https://developer.usajobs.gov/ 
+Описание: US government job board 
+Авторизация: apiKey
+
+Ссылка: https://www.whatjobs.com/affiliates 
+Описание: Job search engine 
+Авторизация: apiKey
+
+Ссылка: https://www.ziprecruiter.com/publishers 
+Описание: Job search app and website 
+Авторизация: apiKey
+
+Ссылка: https://aiforthai.in.th/index.php 
+Описание: Free Various Thai AI API 
+Авторизация: apiKey
+
+Ссылка: https://docs.clarifai.com/api-guide/api-overview 
+Описание: Computer Vision 
+Авторизация: OAuth
+
+Ссылка: https://www.cloudmersive.com/image-recognition-and-processing-api 
+Описание: Image captioning, face recognition, NSFW classification 
+Авторизация: apiKey
+
+Ссылка: https://www.deepcode.ai 
+Описание: AI for code review 
+Авторизация: не нужна
+
+Ссылка: https://cloud.google.com/dialogflow/docs/ 
+Описание: Natural Language Processing 
+Авторизация: apiKey
+
+Ссылка: http://uttesh.com/exude-api/ 
+Описание: Used for the primary ways for filtering the stopping, stemming words from the text data 
+Авторизация: не нужна
+
+Ссылка: https://faceapi.hirak.site/ 
+Описание: Face detection, face recognition with age estimation/gender estimation, accurate, no quota limits 
+Авторизация: apiKey
+
+Ссылка: https://imagga.com/ 
+Описание: Image Recognition Solutions like Tagging, Visual Search, NSFW moderation 
+Авторизация: apiKey
+
+Ссылка: https://rapidapi.com/user/inferdo 
+Описание: Computer Vision services like Facial detection, Image labeling, NSFW classification 
+Авторизация: apiKey
+
+Ссылка: https://docs.identity.ps/docs 
+Описание: Face and License Plate Anonymization 
+Авторизация: apiKey
+
+Ссылка: https://irisnet.de/api/ 
+Описание: Realtime content moderation API that blocks or blurs unwanted images in real-time 
+Авторизация: apiKey
+
+Ссылка: https://keen.io/ 
+Описание: Data Analytics 
+Авторизация: apiKey
+
+Ссылка: https://www.machinetutors.com/portfolio/MT_api.html 
+Описание: AI Solutions: Video/Image Classification & Tagging, NSFW, Icon/Image/Audio Search, NLP 
+Авторизация: apiKey
+
+Ссылка: https://messengerx.rtfd.io 
+Описание: A FREE API for developers to build and monetize personalized ML based chat apps 
+Авторизация: apiKey
+
+Ссылка: https://nlpcloud.io 
+Описание: NLP API using spaCy and transformers for NER, sentiments, classification, summarization, and more 
+Авторизация: apiKey
+
+Ссылка: https://openvisionapi.com 
+Описание: Open source computer vision API based on open source models 
+Авторизация: не нужна
+
+Ссылка: https://perspectiveapi.com 
+Описание: NLP API to return probability that if text is toxic, obscene, insulting or threatening 
+Авторизация: apiKey
+
+Ссылка: https://universe.roboflow.com 
+Описание: Pre-trained computer vision models 
+Авторизация: apiKey
+
+Ссылка: https://skybiometry.com/documentation/ 
+Описание: Face Detection, Face Recognition and Face Grouping 
+Авторизация: apiKey
+
+Ссылка: https://timedoor.io 
+Описание: A time series analysis API 
+Авторизация: apiKey
+
+Ссылка: https://unplu.gg/test_api.html 
+Описание: Forecasting API for timeseries data 
+Авторизация: apiKey
+
+Ссылка: https://products.wolframalpha.com/api/ 
+Описание: Provides specific answers to questions using data and algorithms 
+Авторизация: apiKey
+
+Ссылка: https://docs.7digital.com/reference 
+Описание: Api of Music store 7digital 
+Авторизация: OAuth
+
+Ссылка: https://aimastering.com/api_docs/ 
+Описание: Automated Music Mastering 
+Авторизация: apiKey
+
+Ссылка: https://www.audiomack.com/data-api/docs 
+Описание: Api of the streaming music hub Audiomack 
+Авторизация: OAuth
+
+Ссылка: https://bandcamp.com/developer 
+Описание: API of Music store Bandcamp 
+Авторизация: OAuth
+
+Ссылка: https://app.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0 
+Описание: Music Events 
+Авторизация: не нужна
+
+Ссылка: https://developers.deezer.com/api 
+Описание: Music 
+Авторизация: OAuth
+
+Ссылка: https://www.discogs.com/developers/ 
+Описание: Music 
+Авторизация: OAuth
+
+Ссылка: https://freesound.org/docs/api/ 
+Описание: Music Samples 
+Авторизация: apiKey
+
+Ссылка: https://github.com/cyberboysumanjay/GaanaAPI 
+Описание: API to retrieve song information from Gaana 
+Авторизация: не нужна
+
+Ссылка: https://docs.genius.com/ 
+Описание: Crowdsourced lyrics and music knowledge 
+Авторизация: OAuth
+
+Ссылка: https://binaryjazz.us/genrenator-api/ 
+Описание: Music genre generator 
+Авторизация: не нужна
+
+Ссылка: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/ 
+Описание: Software products 
+Авторизация: не нужна
+
+Ссылка: https://developer.jamendo.com/v3.0/docs 
+Описание: Music 
+Авторизация: OAuth
+
+Ссылка: https://github.com/cyberboysumanjay/JioSaavnAPI 
+Описание: API to retrieve song information, album meta data and many more from JioSaavn 
+Авторизация: не нужна
+
+Ссылка: https://developer.kkbox.com 
+Описание: Get music libraries, playlists, charts, and perform out of KKBOX's platform 
+Авторизация: OAuth
+
+Ссылка: https://docs.ksoft.si/api/lyrics-api 
+Описание: API to get lyrics for songs 
+Авторизация: apiKey
+
+Ссылка: https://www.last.fm/api 
+Описание: Music 
+Авторизация: apiKey
+
+Ссылка: https://lyricsovh.docs.apiary.io 
+Описание: Simple API to retrieve the lyrics of a song 
+Авторизация: не нужна
+
+Ссылка: https://www.mixcloud.com/developers/ 
+Описание: Music 
+Авторизация: OAuth
+
+Ссылка: https://musicbrainz.org/doc/Development/XML_Web_Service/Version_2 
+Описание: Music 
+Авторизация: не нужна
+
+Ссылка: https://developer.musixmatch.com/ 
+Описание: Music 
+Авторизация: apiKey
+
+Ссылка: https://developer.napster.com/api/v2.2 
+Описание: Music 
+Авторизация: apiKey
+
+Ссылка: https://openwhyd.github.io/openwhyd/API 
+Описание: Download curated playlists of streaming tracks (YouTube, SoundCloud, etc...) 
+Авторизация: не нужна
+
+Ссылка: https://phish.in/api-docs 
+Описание: A web-based archive of legal live audio recordings of the improvisational rock band Phish 
+Авторизация: apiKey
+
+Ссылка: https://api.radio-browser.info/ 
+Описание: List of internet radio stations 
+Авторизация: не нужна
+
+Ссылка: https://www.songkick.com/developer/ 
+Описание: Music Events 
+Авторизация: apiKey
+
+Ссылка: https://www.notion.so/API-d0ebe08a5e304a55928405eb682f6741 
+Описание: Get all the services on which a song is available 
+Авторизация: apiKey
+
+Ссылка: https://www.songsterr.com/a/wa/api/ 
+Описание: Provides guitar, bass and drums tabs and chords 
+Авторизация: не нужна
+
+Ссылка: https://developers.soundcloud.com/docs/api/guide 
+Описание: With SoundCloud API you can build applications that will give more power to control your content 
+Авторизация: OAuth
+
+Ссылка: https://beta.developer.spotify.com/documentation/web-api/ 
+Описание: View Spotify music catalog, manage users' libraries, get recommendations and more 
+Авторизация: OAuth
+
+Ссылка: https://tastedive.com/read/api 
+Описание: Similar artist API (also works for movies and TV shows) 
+Авторизация: apiKey
+
+Ссылка: https://www.theaudiodb.com/api_guide.php 
+Описание: Music 
+Авторизация: apiKey
+
+Ссылка: https://api.vagalume.com.br/docs/ 
+Описание: Crowdsourced lyrics and music knowledge 
+Авторизация: apiKey
+
+Ссылка: https://mediastack.com/ 
+Описание: Free, Simple REST API for Live News & Blog Articles 
+Авторизация: apiKey
+
+Ссылка: https://developer.ap.org/ 
+Описание: Search for news and metadata from Associated Press 
+Авторизация: apiKey
+
+Ссылка: http://chroniclingamerica.loc.gov/about/api/ 
+Описание: Provides access to millions of pages of historic US newspapers from the Library of Congress 
+Авторизация: не нужна
+
+Ссылка: https://currentsapi.services/ 
+Описание: Latest news published in various news sources, blogs and forums 
+Авторизация: apiKey
+
+Ссылка: https://github.com/feedbin/feedbin-api 
+Описание: RSS reader 
+Авторизация: OAuth
+
+Ссылка: https://gnews.io/ 
+Описание: Search for news from various sources 
+Авторизация: apiKey
+
+Ссылка: https://corona.dnsforfamily.com/api.txt 
+Описание: Each Country separately and Worldwide Graphs for Coronavirus. Daily updates 
+Авторизация: не нужна
+
+Ссылка: https://github.com/cyberboysumanjay/Inshorts-News-API 
+Описание: Provides news from inshorts 
+Авторизация: не нужна
+
+Ссылка: https://www.marketaux.com/ 
+Описание: Live stock market news with tagged tickers + sentiment and stats JSON API 
+Авторизация: apiKey
+
+Ссылка: https://developer.nytimes.com/ 
+Описание: The New York Times Developer Network 
+Авторизация: apiKey
+
+Ссылка: https://newsapi.org/ 
+Описание: Headlines currently published on a range of news sources and blogs 
+Авторизация: apiKey
+
+Ссылка: https://newsdata.io/docs 
+Описание: News data API for live-breaking news and headlines from reputed  news sources 
+Авторизация: apiKey
+
+Ссылка: https://rapidapi.com/machaao-inc-machaao-inc-default/api/newsx/ 
+Описание: Get or Search Latest Breaking News with ML Powered Summaries 🤖 
+Авторизация: apiKey
+
+Ссылка: http://dev.npr.org/api/ 
+Описание: Personalized news listening experience from NPR 
+Авторизация: OAuth
+
+Ссылка: https://spaceflightnewsapi.net 
+Описание: Spaceflight related news 🚀 
+Авторизация: не нужна
+
+Ссылка: http://open-platform.theguardian.com/ 
+Описание: Access all the content the Guardian creates, categorised by tags and section 
+Авторизация: apiKey
+
+Ссылка: https://github.com/theoldreader/api 
+Описание: RSS reader 
+Авторизация: apiKey
+
+Ссылка: https://www.thenewsapi.com/ 
+Описание: Aggregated headlines, top story and live news JSON API 
+Авторизация: apiKey
+
+Ссылка: https://trove.nla.gov.au/about/create-something/using-api 
+Описание: Search through the National Library of Australia collection of 1000s of digitised newspapers 
+Авторизация: apiKey
+
+Ссылка: http://18f.github.io/API-All-the-X/ 
+Описание: Unofficial US Federal Government API Development 
+Авторизация: не нужна
+
+Ссылка: https://www.apisetu.gov.in/ 
+Описание: An Indian Government platform that provides a lot of APIS for KYC, business, education & employment 
+Авторизация: не нужна
+
+Ссылка: https://archive.readme.io/docs 
+Описание: The Internet Archive 
+Авторизация: не нужна
+
+Ссылка: https://www.blackhistoryapi.io/docs 
+Описание: Contribute or search one of the largest black history fact databases on the web 
+Авторизация: apiKey
+
+Ссылка: https://botsarchive.com/docs.html 
+Описание: JSON formatted details about Telegram Bots available in database 
+Авторизация: не нужна
+
+Ссылка: https://callook.info 
+Описание: United States ham radio callsigns 
+Авторизация: не нужна
+
+Ссылка: https://carto.com/ 
+Описание: Location Information Prediction 
+Авторизация: apiKey
+
+Ссылка: https://collegescorecard.ed.gov/data/ 
+Описание: Data on higher education institutions in the United States 
+Авторизация: не нужна
+
+Ссылка: https://developers.enigma.com/docs 
+Описание: Broadest collection of public data 
+Авторизация: apiKey
+
+Ссылка: https://geo.api.gouv.fr/adresse 
+Описание: Address search via the French Government 
+Авторизация: не нужна
+
+Ссылка: https://www.destatis.de/EN/Service/OpenData/api-webservice.html 
+Описание: Federal Statistical Office Germany 
+Авторизация: OAuth
+
+Ссылка: https://api.joshuaproject.net/ 
+Описание: People groups of the world with the fewest followers of Christ 
+Авторизация: apiKey
+
+Ссылка: https://www.kaggle.com/docs/api 
+Описание: Create and interact with Datasets, Notebooks, and connect with Kaggle 
+Авторизация: apiKey
+
+Ссылка: https://www.linkpreview.net 
+Описание: Get JSON formatted summary with title, description and preview image for any requested URL 
+Авторизация: apiKey
+
+Ссылка: https://github.com/0x0is1/lowy-index-api-docs 
+Описание: Get measure resources and influence to rank the relative power of states in Asia 
+Авторизация: не нужна
+
+Ссылка: https://microlink.io 
+Описание: Extract structured data from any website 
+Авторизация: не нужна
+
+Ссылка: https://docs.data.nasdaq.com/ 
+Описание: Stock market data 
+Авторизация: apiKey
+
+Ссылка: https://www.nobelprize.org/about/developer-zone-2/ 
+Описание: Open data about nobel prizes and events 
+Авторизация: не нужна
+
+Ссылка: https://opendata.minneapolismn.gov/ 
+Описание: Spatial (GIS) and non-spatial city data for Minneapolis 
+Авторизация: не нужна
+
+Ссылка: https://africaopendata.org/ 
+Описание: Large datasets repository of African open data 
+Авторизация: не нужна
+
+Ссылка: http://api.opencorporates.com/documentation/API-Reference 
+Описание: Data on corporate entities and directors in many countries 
+Авторизация: apiKey
+
+Ссылка: https://www.opensanctions.org/docs/api/ 
+Описание: Data on international sanctions, crime and politically exposed persons 
+Авторизация: не нужна
+
+Ссылка: https://rapidapi.com/peakmetrics-peakmetrics-default/api/peakmetrics-news 
+Описание: News articles and public datasets 
+Авторизация: apiKey
+
+Ссылка: https://ridb.recreation.gov/ 
+Описание: Recreational areas, federal lands, historic sites, museums, and other attractions/resources(US) 
+Авторизация: apiKey
+
+Ссылка: http://www.scoop.it/dev 
+Описание: Content Curation Service 
+Авторизация: apiKey
+
+Ссылка: https://dev.socrata.com/ 
+Описание: Access to Open Data from Governments, Non-profits and NGOs around the world 
+Авторизация: OAuth
+
+Ссылка: https://developers.teleport.org/ 
+Описание: Quality of Life Data 
+Авторизация: не нужна
+
+Ссылка: https://opendata.umea.se/api/ 
+Описание: Open data of the city Umeå in northen Sweden 
+Авторизация: не нужна
+
+Ссылка: https://github.com/Hipo/university-domains-list 
+Описание: University names, countries and domains 
+Авторизация: не нужна
+
+Ссылка: https://data.uio.no/ 
+Описание: Courses, lecture videos, detailed information for courses etc. for the University of Oslo (Norway) 
+Авторизация: не нужна
+
+Ссылка: https://upcdatabase.org/api 
+Описание: More than 1.5 million barcode numbers from all around the world 
+Авторизация: apiKey
+
+Ссылка: https://urbanobservatory.ac.uk 
+Описание: The largest set of publicly available real time urban data in the UK 
+Авторизация: не нужна
+
+Ссылка: https://www.wikidata.org/w/api.php?action=help 
+Описание: Collaboratively edited knowledge base operated by the Wikimedia Foundation 
+Авторизация: OAuth
+
+Ссылка: https://www.mediawiki.org/wiki/API:Main_page 
+Описание: Mediawiki Encyclopedia 
+Авторизация: не нужна
+
+Ссылка: https://www.yelp.com/developers/documentation/v3 
+Описание: Find Local Business 
+Авторизация: OAuth
+
+Ссылка: https://api.count.ly/reference 
+Описание: Countly web analytics 
+Авторизация: не нужна
+
+Ссылка: https://api.creativecommons.engineering/ 
+Описание: Search among openly licensed and public domain works 
+Авторизация: OAuth
+
+Ссылка: https://www.datamuse.com/api/ 
+Описание: Word-finding query engine 
+Авторизация: не нужна
+
+Ссылка: https://www.drupal.org/drupalorg/docs/api 
+Описание: Drupal.org 
+Авторизация: не нужна
+
+Ссылка: https://evilinsult.com/api 
+Описание: Evil Insults 
+Авторизация: не нужна
+
+Ссылка: https://github-contributions.vercel.app 
+Описание: Create an image of your GitHub contributions 
+Авторизация: не нужна
+
+Ссылка: https://github.com/anuraghazra/github-readme-stats 
+Описание: Add dynamically generated statistics to your GitHub profile ReadMe 
+Авторизация: не нужна
+
+Ссылка: https://www.metabase.com/ 
+Описание: An open source Business Intelligence server to share data and analytics inside your company 
+Авторизация: не нужна
+
+Ссылка: https://shields.io/ 
+Описание: Concise, consistent, and legible badges in SVG and raster format 
+Авторизация: не нужна
+
+Ссылка: https://developers.epo.org/ 
+Описание: European patent search system api 
+Авторизация: OAuth
+
+Ссылка: https://patentsview.org/apis/purpose 
+Описание: API is intended to explore and visualize trends/patterns across the US innovation landscape 
+Авторизация: не нужна
+
+Ссылка: https://tiponet.tipo.gov.tw/Gazette/OpenData/OD/OD05.aspx?QryDS=API00 
+Описание: Taiwan patent search system api 
+Авторизация: apiKey
+
+Ссылка: https://www.uspto.gov/learning-and-resources/open-data-and-mobility 
+Описание: USA patent api services 
+Авторизация: не нужна
+
+Ссылка: http://api.adviceslip.com/ 
+Описание: Generate random advice slips 
+Авторизация: не нужна
+
+Ссылка: https://biriyani.anoram.com/ 
+Описание: Biriyani images placeholder 
+Авторизация: не нужна
+
+Ссылка: https://developers.forem.com/api 
+Описание: Access Forem articles, users and other resources via API 
+Авторизация: apiKey
+
+Ссылка: https://github.com/fisenkodv/dictum 
+Описание: API to get access to the collection of the most inspiring expressions of mankind 
+Авторизация: не нужна
+
+Ссылка: https://favqs.com/api 
+Описание: FavQs allows you to collect, discover and share your favorite quotes 
+Авторизация: apiKey
+
+Ссылка: http://www.foaas.com/ 
+Описание: Fuck Off As A Service 
+Авторизация: не нужна
+
+Ссылка: http://forismatic.com/en/api/ 
+Описание: Inspirational Quotes 
+Авторизация: не нужна
+
+Ссылка: https://icanhazdadjoke.com/api 
+Описание: The largest selection of dad jokes on the internet 
+Авторизация: не нужна
+
+Ссылка: https://inspiration.goprogram.ai/docs/ 
+Описание: Motivational and Inspirational quotes 
+Авторизация: не нужна
+
+Ссылка: https://kanye.rest 
+Описание: REST API for random Kanye West quotes 
+Авторизация: не нужна
+
+Ссылка: https://kimiquotes.herokuapp.com/doc 
+Описание: Team radio and interview quotes by Finnish F1 legend Kimi Räikkönen 
+Авторизация: не нужна
+
+Ссылка: https://github.com/Medium/medium-api-docs 
+Описание: Community of readers and writers offering unique perspectives on ideas 
+Авторизация: OAuth
+
+Ссылка: https://github.com/skolakoda/programming-quotes-api 
+Описание: Programming Quotes API for open source projects 
+Авторизация: не нужна
+
+Ссылка: https://github.com/lukePeavey/quotable 
+Описание: Quotable is a free, open source quotations API 
+Авторизация: не нужна
+
+Ссылка: https://pprathameshmore.github.io/QuoteGarden/ 
+Описание: REST API for more than 5000 famous quotes 
+Авторизация: не нужна
+
+Ссылка: https://quoteclear.web.app/ 
+Описание: Ever-growing list of James Clear quotes from the 3-2-1 Newsletter 
+Авторизация: не нужна
+
+Ссылка: https://quotesondesign.com/api/ 
+Описание: Inspirational Quotes 
+Авторизация: не нужна
+
+Ссылка: https://github.com/tlcheah2/stoic-quote-lambda-public-api 
+Описание: Quotes about Stoicism 
+Авторизация: не нужна
+
+Ссылка: https://theysaidso.com/api/ 
+Описание: Quotes Trusted by many fortune brands around the world 
+Авторизация: не нужна
+
+Ссылка: https://app.traitify.com/developer 
+Описание: Assess, collect and analyze Personality 
+Авторизация: не нужна
+
+Ссылка: https://www.udemy.com/developers/instructor/ 
+Описание: API for instructors on Udemy 
+Авторизация: apiKey
+
+Ссылка: https://vadivelu.anoram.com/ 
+Описание: On demand HTTP Codes with images 
+Авторизация: не нужна
+
+Ссылка: https://zenquotes.io/ 
+Описание: Large collection of Zen quotes for inspiration 
+Авторизация: не нужна
+
+Ссылка: https://www.abstractapi.com/phone-validation-api 
+Описание: Validate phone numbers globally 
+Авторизация: apiKey
+
+Ссылка: https://numverify.com 
+Описание: Phone number validation 
+Авторизация: apiKey
+
+Ссылка: https://cloudmersive.com/phone-number-validation-API 
+Описание: Validate international phone numbers 
+Авторизация: apiKey
+
+Ссылка: https://github.com/azharimm/phone-specs-api 
+Описание: Rest Api for Phone specifications 
+Авторизация: не нужна
+
+Ссылка: https://veriphone.io 
+Описание: Phone number validation & carrier lookup 
+Авторизация: apiKey
+
+Ссылка: https://screenshotlayer.com 
+Описание: URL 2 Image 
+Авторизация: не нужна
+
+Ссылка: https://apitemplate.io 
+Описание: Dynamically generate images and PDFs from templates with a simple API 
+Авторизация: apiKey
+
+Ссылка: https://docs.bruzu.com 
+Описание: Image generation with query string 
+Авторизация: apiKey
+
+Ссылка: https://cheetaho.com/docs/getting-started/ 
+Описание: Photo optimization and resize 
+Авторизация: apiKey
+
+Ссылка: https://dagpi.xyz 
+Описание: Image manipulation and processing 
+Авторизация: apiKey
+
+Ссылка: https://duply.co/docs#getting-started-api 
+Описание: Generate, Edit, Scale and Manage Images and Videos Smarter & Faster 
+Авторизация: apiKey
+
+Ссылка: https://dynapictures.com/docs/ 
+Описание: Generate Hundreds of Personalized Images in Minutes 
+Авторизация: apiKey
+
+Ссылка: https://www.flickr.com/services/api/ 
+Описание: Flickr Services 
+Авторизация: OAuth
+
+Ссылка: http://developers.gettyimages.com/en/ 
+Описание: Build applications using the world's most powerful imagery 
+Авторизация: OAuth
+
+Ссылка: https://developers.gfycat.com/api/ 
+Описание: Jiffier GIFs 
+Авторизация: OAuth
+
+Ссылка: https://developers.giphy.com/docs/ 
+Описание: Get all your gifs 
+Авторизация: apiKey
+
+Ссылка: https://developers.google.com/photos 
+Описание: Integrate Google Photos with your apps or devices 
+Авторизация: OAuth
+
+Ссылка: https://apilayer.com/marketplace/image_upload-api 
+Описание: Image Optimization 
+Авторизация: apiKey
+
+Ссылка: https://apidocs.imgur.com/ 
+Описание: Images 
+Авторизация: OAuth
+
+Ссылка: https://imsea.herokuapp.com/ 
+Описание: Free image search 
+Авторизация: не нужна
+
+Ссылка: https://picsum.photos/ 
+Описание: Images from Unsplash 
+Авторизация: не нужна
+
+Ссылка: https://objectcut.com/ 
+Описание: Image Background removal 
+Авторизация: apiKey
+
+Ссылка: https://www.pexels.com/api/ 
+Описание: Free Stock Photos and Videos 
+Авторизация: apiKey
+
+Ссылка: https://www.photoroom.com/api/ 
+Описание: Remove background from images 
+Авторизация: apiKey
+
+Ссылка: https://pixabay.com/sk/service/about/api/ 
+Описание: Photography 
+Авторизация: apiKey
+
+Ссылка: https://placekeanu.com/ 
+Описание: Resizable Keanu Reeves placeholder images with grayscale and young Keanu options 
+Авторизация: не нужна
+
+Ссылка: https://github.com/DenverCoder1/readme-typing-svg 
+Описание: Customizable typing and deleting text SVG 
+Авторизация: не нужна
+
+Ссылка: https://www.remove.bg/api 
+Описание: Image Background removal 
+Авторизация: apiKey
+
+Ссылка: https://resmush.it/api 
+Описание: Photo optimization 
+Авторизация: не нужна
+
+Ссылка: https://api-reference.shutterstock.com/ 
+Описание: Stock Photos and Videos 
+Авторизация: OAuth
+
+Ссылка: https://apidocs.sirv.com/ 
+Описание: Image management solutions like optimization, manipulation, hosting 
+Авторизация: apiKey
+
+Ссылка: https://unsplash.com/developers 
+Описание: Photography 
+Авторизация: OAuth
+
+Ссылка: https://wallhaven.cc/help/api 
+Описание: Wallpapers 
+Авторизация: apiKey
+
+Ссылка: https://www.damsuccess.com/hc/en-us/articles/202134055-REST-API 
+Описание: Images 
+Авторизация: OAuth
+
+Ссылка: https://codeforces.com/apiHelp 
+Описание: Get access to Codeforces data 
+Авторизация: apiKey
+
+Ссылка: https://www.hackerearth.com/docs/wiki/developers/v4/ 
+Описание: For compiling and running code in several languages 
+Авторизация: apiKey
+
+Ссылка: https://ce.judge0.com/ 
+Описание: Online code execution system 
+Авторизация: apiKey
+
+Ссылка: https://kontests.net/api 
+Описание: For upcoming and ongoing competitive coding contests 
+Авторизация: не нужна
+
+Ссылка: https://docs.mintlify.com 
+Описание: For programmatically generating documentation for code 
+Авторизация: apiKey
+
+Ссылка: https://api.arcsecond.io/ 
+Описание: Multiple astronomy data sources 
+Авторизация: не нужна
+
+Ссылка: https://arxiv.org/help/api/user-manual 
+Описание: Curated research-sharing platform: physics, mathematics, quantitative finance, and economics 
+Авторизация: не нужна
+
+Ссылка: https://core.ac.uk/services#api 
+Описание: Access the world's Open Access research papers 
+Авторизация: apiKey
+
+Ссылка: https://www.gbif.org/developer/summary 
+Описание: Global Biodiversity Information Facility 
+Авторизация: не нужна
+
+Ссылка: https://github.com/idigbio/idigbio-search-api/wiki 
+Описание: Access millions of museum specimens from organizations around the world 
+Авторизация: не нужна
+
+Ссылка: https://github.com/inspirehep/rest-api-doc 
+Описание: High Energy Physics info. system 
+Авторизация: не нужна
+
+Ссылка: https://isevenapi.xyz/ 
+Описание: Check if a number is even 
+Авторизация: не нужна
+
+Ссылка: https://isro.vercel.app 
+Описание: ISRO Space Crafts Information 
+Авторизация: не нужна
+
+Ссылка: https://www.itis.gov/ws_description.html 
+Описание: Integrated Taxonomic Information System 
+Авторизация: не нужна
+
+Ссылка: https://thespacedevs.com/llapi 
+Описание: Spaceflight launches and events database 
+Авторизация: не нужна
+
+Ссылка: https://mpds.io 
+Описание: Curated experimental data for materials science 
+Авторизация: apiKey
+
+Ссылка: http://www.asterank.com/mpc 
+Описание: Asterank.com Information 
+Авторизация: не нужна
+
+Ссылка: https://api.nasa.gov 
+Описание: NASA data, including imagery 
+Авторизация: не нужна
+
+Ссылка: https://ui.adsabs.harvard.edu/help/api/api-docs.html 
+Описание: NASA Astrophysics Data System 
+Авторизация: OAuth
+
+Ссылка: https://newton.vercel.app 
+Описание: Symbolic and Arithmetic Math Calculator 
+Авторизация: не нужна
+
+Ссылка: https://api.noctuasky.com/api/v1/swaggerdoc/ 
+Описание: REST API used to access NoctuaSky features 
+Авторизация: не нужна
+
+Ссылка: https://math.tools/api/numbers/ 
+Описание: Number of the day, random number, number facts and anything else you want to do with numbers 
+Авторизация: apiKey
+
+Ссылка: http://numbersapi.com 
+Описание: Facts about numbers 
+Авторизация: не нужна
+
+Ссылка: https://oceanfacts.herokuapp.com/ 
+Описание: Facts pertaining to the physical science of Oceanography 
+Авторизация: не нужна
+
+Ссылка: http://open-notify.org/Open-Notify-API/ 
+Описание: ISS astronauts, current location, etc 
+Авторизация: не нужна
+
+Ссылка: https://developer.osf.io 
+Описание: Repository and archive for study designs, research materials, data, manuscripts, etc 
+Авторизация: не нужна
+
+Ссылка: https://www2.purpleair.com/ 
+Описание: Real Time Air Quality Monitoring 
+Авторизация: не нужна
+
+Ссылка: https://github.com/elizabethadegbaju/remotecalc 
+Описание: Decodes base64 encoding and parses it to return a solution to the calculation in JSON 
+Авторизация: не нужна
+
+Ссылка: https://share.osf.io/api/v2/ 
+Описание: A free, open, dataset about research and scholarly activities 
+Авторизация: не нужна
+
+Ссылка: https://github.com/r-spacex/SpaceX-API 
+Описание: Company, vehicle, launchpad and launch data 
+Авторизация: не нужна
+
+Ссылка: https://api.spacex.land/graphql/ 
+Описание: GraphQL, Company, Ships, launchpad and launch data 
+Авторизация: не нужна
+
+Ссылка: https://sunrise-sunset.org/api 
+Описание: Sunset and sunrise times for a given latitude and longitude 
+Авторизация: не нужна
+
+Ссылка: https://github.com/FranP-code/API-Times-Adder 
+Описание: With this API you can add each of the times introduced in the array sended 
+Авторизация: не нужна
+
+Ссылка: https://tle.ivanstanojevic.me/#/docs 
+Описание: Satellite information 
+Авторизация: не нужна
+
+Ссылка: https://earthquake.usgs.gov/fdsnws/event/1/ 
+Описание: Earthquakes data real-time 
+Авторизация: не нужна
+
+Ссылка: https://waterservices.usgs.gov/ 
+Описание: Water quality and level info for rivers and lakes 
+Авторизация: не нужна
+
+Ссылка: https://datahelpdesk.worldbank.org/knowledgebase/topics/125589 
+Описание: World Data 
+Авторизация: не нужна
+
+Ссылка: https://x-math.herokuapp.com/ 
+Описание: Random mathematical expressions 
+Авторизация: не нужна
+
+Ссылка: https://github.com/fingerprintjs/aev 
+Описание: Android library and API to verify the safety of user devices, detect rooted devices and other risks 
+Авторизация: apiKey
+
+Ссылка: https://docs.binaryedge.io/api-v2.html 
+Описание: Provide access to BinaryEdge 40fy scanning platform 
+Авторизация: apiKey
+
+Ссылка: https://bitwarden.com/help/api/ 
+Описание: Best open-source password manager 
+Авторизация: OAuth
+
+Ссылка: https://github.com/fingerprintjs/botd 
+Описание: Botd is a browser library for JavaScript bot detection 
+Авторизация: apiKey
+
+Ссылка: https://docs.bugcrowd.com/api/getting-started/ 
+Описание: Bugcrowd API for interacting and tracking the reported issues programmatically 
+Авторизация: apiKey
+
+Ссылка: https://search.censys.io/api 
+Описание: Search engine for Internet connected host and devices 
+Авторизация: apiKey
+
+Ссылка: https://classify-web.herokuapp.com/#/api 
+Описание: Encrypting & decrypting text messages 
+Авторизация: не нужна
+
+Ссылка: https://completecriminalchecks.com/Developers 
+Описание: Provides data of offenders from all U.S. States and Pureto Rico 
+Авторизация: apiKey
+
+Ссылка: https://crxcavator.io/apidocs 
+Описание: Chrome extension risk scoring 
+Авторизация: apiKey
+
+Ссылка: https://github.com/Dehash-lt/api 
+Описание: Hash decryption MD5, SHA1, SHA3, SHA256, SHA384, SHA512 
+Авторизация: не нужна
+
+Ссылка: https://docs.emailrep.io/ 
+Описание: Email address threat and risk prediction 
+Авторизация: не нужна
+
+Ссылка: https://github.com/polarspetroll/EscapeAPI 
+Описание: An API for escaping different kind of queries 
+Авторизация: не нужна
+
+Ссылка: https://filterlists.com 
+Описание: Lists of filters for adblockers and firewalls 
+Авторизация: не нужна
+
+Ссылка: https://dev.fingerprintjs.com/docs 
+Описание: Fraud detection API offering highly accurate browser fingerprinting 
+Авторизация: apiKey
+
+Ссылка: https://www.fraudlabspro.com/developer/api/screen-order 
+Описание: Screen order information using AI to detect frauds 
+Авторизация: apiKey
+
+Ссылка: https://api-docs.fullhunt.io/#introduction 
+Описание: Searchable attack surface database of the entire internet 
+Авторизация: apiKey
+
+Ссылка: https://api.gitguardian.com/doc 
+Описание: Scan files for secrets (API Keys, database credentials) 
+Авторизация: apiKey
+
+Ссылка: https://docs.greynoise.io/reference/get_v3-community-ip 
+Описание: Query IPs in the GreyNoise dataset and retrieve a subset of the full IP context data 
+Авторизация: apiKey
+
+Ссылка: https://api.hackerone.com/ 
+Описание: The industry’s first hacker API that helps increase productivity towards creative bug bounty hunting 
+Авторизация: apiKey
+
+Ссылка: https://hashable.space/pages/api/ 
+Описание: A REST API to access high level cryptographic functions and methods 
+Авторизация: не нужна
+
+Ссылка: https://haveibeenpwned.com/API/v3 
+Описание: Passwords which have previously been exposed in data breaches 
+Авторизация: apiKey
+
+Ссылка: https://github.com/IntelligenceX/SDK/blob/master/Intelligence%20X%20API.pdf 
+Описание: Perform OSINT via Intelligence X 
+Авторизация: apiKey
+
+Ссылка: https://www.loginradius.com/docs/ 
+Описание: Managed User Authentication Service 
+Авторизация: apiKey
+
+Ссылка: https://msrc.microsoft.com/report/developer 
+Описание: Programmatic interfaces to engage with the Microsoft Security Response Center (MSRC) 
+Авторизация: не нужна
+
+Ссылка: https://github.com/mozilla/http-observatory/blob/master/httpobs/docs/api.md 
+Описание: Mozilla observatory http scanner 
+Авторизация: не нужна
+
+Ссылка: https://github.com/mozilla/tls-observatory#api-endpoints 
+Описание: Mozilla observatory tls scanner 
+Авторизация: не нужна
+
+Ссылка: https://nvd.nist.gov/vuln/Data-Feeds/JSON-feed-changelog 
+Описание: U.S. National Vulnerability Database 
+Авторизация: не нужна
+
+Ссылка: https://github.com/fawazsullia/password-generator/ 
+Описание: Generate random passwords of varying complexities 
+Авторизация: не нужна
+
+Ссылка: https://phishstats.info/ 
+Описание: Phishing database 
+Авторизация: не нужна
+
+Ссылка: https://privacy.com/developer/docs 
+Описание: Generate merchant-specific and one-time use credit card numbers that link back to your bank 
+Авторизация: apiKey
+
+Ссылка: https://pulsedive.com/api/ 
+Описание: Scan, search and collect threat intelligence data in real-time 
+Авторизация: apiKey
+
+Ссылка: https://securitytrails.com/corp/apidocs 
+Описание: Domain and IP related information such as current and historical WHOIS and DNS records 
+Авторизация: apiKey
+
+Ссылка: https://developer.shodan.io/ 
+Описание: Search engine for Internet connected devices 
+Авторизация: apiKey
+
+Ссылка: https://spyse-dev.readme.io/reference/quick-start 
+Описание: Access data on all Internet assets and build powerful attack surface management applications 
+Авторизация: apiKey
+
+Ссылка: https://threatjammer.com/docs/index 
+Описание: Risk scoring service from curated threat intelligence data 
+Авторизация: apiKey
+
+Ссылка: https://data.police.uk/docs/ 
+Описание: UK Police data 
+Авторизация: не нужна
+
+Ссылка: https://api.virushee.com/ 
+Описание: Virushee file/data scanning 
+Авторизация: не нужна
+
+Ссылка: https://vuldb.com/?doc.api 
+Описание: VulDB API allows to initiate queries for one or more items along with transactional bots 
+Авторизация: apiKey
+
+Ссылка: https://bestbuyapis.github.io/api-documentation/#overview 
+Описание: Products, Buying Options, Categories, Recommendations, Stores and Commerce 
+Авторизация: apiKey
+
+Ссылка: https://www.digikey.com/en/resources/api-solutions 
+Описание: Retrieve price and inventory of electronic components as well as place orders 
+Авторизация: OAuth
+
+Ссылка: https://dummyproducts-api.herokuapp.com/ 
+Описание: An api to fetch dummy e-commerce products JSON data with placeholder images 
+Авторизация: apiKey
+
+Ссылка: https://developer.ebay.com/ 
+Описание: Sell and Buy on eBay 
+Авторизация: OAuth
+
+Ссылка: https://www.etsy.com/developers/documentation/getting_started/api_basics 
+Описание: Manage shop and interact with listings 
+Авторизация: OAuth
+
+Ссылка: https://seller.flipkart.com/api-docs/FMSAPI.html 
+Описание: Product listing management, Order Fulfilment in the Flipkart Marketplace 
+Авторизация: OAuth
+
+Ссылка: https://open.lazada.com/doc/doc.htm 
+Описание: Retrieve product ratings and seller performance metrics 
+Авторизация: apiKey
+
+Ссылка: https://developers.mercadolibre.cl/es_ar/api-docs-es 
+Описание: Manage sales, ads, products, services and Shops 
+Авторизация: apiKey
+
+Ссылка: https://octopart.com/api/v4/reference 
+Описание: Electronic part data for manufacturing, design, and sourcing 
+Авторизация: apiKey
+
+Ссылка: https://developer.olx.pl/api/doc#section/ 
+Описание: Integrate with local sites by posting, managing adverts and communicating with OLX users 
+Авторизация: apiKey
+
+Ссылка: https://dev-portal.rappi.com/ 
+Описание: Manage orders from Rappi's app 
+Авторизация: OAuth
+
+Ссылка: https://open.shopee.com/documents?version=1 
+Описание: Shopee's official API for integration of various services from Shopee 
+Авторизация: apiKey
+
+Ссылка: https://developer.tokopedia.com/openapi/guide/#/ 
+Описание: Tokopedia's Official API for integration of various services from Tokopedia 
+Авторизация: OAuth
+
+Ссылка: https://woocommerce.github.io/woocommerce-rest-api-docs/ 
+Описание: WooCommerce REST APIS to create, read, update, and delete data on wordpress website in JSON format 
+Авторизация: apiKey
+
+Ссылка: https://github.com/4chan/4chan-API 
+Описание: Simple image-based bulletin board dedicated to a variety of topics 
+Авторизация: не нужна
+
+Ссылка: https://www.ayrshare.com 
+Описание: Social media APIs to post, get analytics, and manage multiple users social media accounts 
+Авторизация: apiKey
+
+Ссылка: https://aztro.sameerkumar.website/ 
+Описание: Daily horoscope info for yesterday, today, and tomorrow 
+Авторизация: не нужна
+
+Ссылка: https://developers.google.com/blogger/ 
+Описание: The Blogger APIs allows client applications to view and update Blogger content 
+Авторизация: OAuth
+
+Ссылка: https://developer.ciscospark.com 
+Описание: Team Collaboration Software 
+Авторизация: OAuth
+
+Ссылка: https://discord.riverside.rocks/docs/index.php 
+Описание: Database of malicious Discord accounts 
+Авторизация: apiKey
+
+Ссылка: https://discord.com/developers/docs/intro 
+Описание: Make bots for Discord, integrate Discord onto an external platform 
+Авторизация: OAuth
+
+Ссылка: https://disqus.com/api/docs/auth/ 
+Описание: Communicate with Disqus data 
+Авторизация: OAuth
+
+Ссылка: https://api.doge-meme.lol/docs 
+Описание: Top meme posts from r/dogecoin which include 'Meme' flair 
+Авторизация: не нужна
+
+Ссылка: https://developers.facebook.com/ 
+Описание: Facebook Login, Share on FB, Social Plugins, Analytics and more 
+Авторизация: OAuth
+
+Ссылка: https://developer.foursquare.com/ 
+Описание: Interact with Foursquare users and places (geolocation-based checkins, photos, tips, events, etc) 
+Авторизация: OAuth
+
+Ссылка: https://www.foaas.com 
+Описание: Asks someone to fuck off 
+Авторизация: не нужна
+
+Ссылка: https://docs.fullcontact.com/ 
+Описание: Get Social Media profiles and contact Information 
+Авторизация: OAuth
+
+Ссылка: https://github.com/HackerNews/API 
+Описание: Social news for CS and entrepreneurship 
+Авторизация: не нужна
+
+Ссылка: https://hashnode.com 
+Описание: A blogging platform built for developers 
+Авторизация: не нужна
+
+Ссылка: https://www.instagram.com/developer/ 
+Описание: Instagram Login, Share on Instagram, Social Plugins and more 
+Авторизация: OAuth
+
+Ссылка: https://developers.kakao.com/ 
+Описание: Kakao Login, Share on KakaoTalk, Social Plugins and more 
+Авторизация: OAuth
+
+Ссылка: https://github.com/Phineas/lanyard 
+Описание: Retrieve your presence on Discord through an HTTP REST API or WebSocket 
+Авторизация: не нужна
+
+Ссылка: https://developers.line.biz/ 
+Описание: Line Login, Share on Line, Social Plugins and more 
+Авторизация: OAuth
+
+Ссылка: https://docs.microsoft.com/en-us/linkedin/?context=linkedin/context 
+Описание: The foundation of all digital integrations with LinkedIn 
+Авторизация: OAuth
+
+Ссылка: https://www.meetup.com/api/guide 
+Описание: Data about Meetups from Meetup.com 
+Авторизация: apiKey
+
+Ссылка: https://docs.microsoft.com/en-us/graph/api/overview 
+Описание: Access the data and intelligence in Microsoft 365, Windows 10, and Enterprise Mobility 
+Авторизация: OAuth
+
+Ссылка: https://developers.naver.com/main/ 
+Описание: NAVER Login, Share on NAVER, Social Plugins and more 
+Авторизация: OAuth
+
+Ссылка: https://docs.opencollective.com/help/developers/api 
+Описание: Get Open Collective data 
+Авторизация: не нужна
+
+Ссылка: https://developers.pinterest.com/ 
+Описание: The world's catalog of ideas 
+Авторизация: OAuth
+
+Ссылка: https://api.producthunt.com/v2/docs 
+Описание: The best new products in tech 
+Авторизация: OAuth
+
+Ссылка: https://www.reddit.com/dev/api 
+Описание: Homepage of the internet 
+Авторизация: OAuth
+
+Ссылка: https://developers.revolt.chat/api/ 
+Описание: Revolt open source Discord alternative 
+Авторизация: apiKey
+
+Ссылка: https://www.saidit.net/dev/api 
+Описание: Open Source Reddit Clone 
+Авторизация: OAuth
+
+Ссылка: https://api.slack.com/ 
+Описание: Team Instant Messaging 
+Авторизация: OAuth
+
+Ссылка: https://dev.tamtam.chat/ 
+Описание: Bot API to interact with TamTam 
+Авторизация: apiKey
+
+Ссылка: https://core.telegram.org/bots/api 
+Описание: Simplified HTTP version of the MTProto API for bots 
+Авторизация: apiKey
+
+Ссылка: https://core.telegram.org/api#getting-started 
+Описание: Read and write Telegram data 
+Авторизация: OAuth
+
+Ссылка: https://telegra.ph/api 
+Описание: Create attractive blogs easily, to share 
+Авторизация: apiKey
+
+Ссылка: https://developers.tiktok.com/doc/login-kit-web 
+Описание: Fetches user info and user's video posts on TikTok platform 
+Авторизация: OAuth
+
+Ссылка: https://trashnothing.com/developer 
+Описание: A freecycling community with thousands of free items posted every day 
+Авторизация: OAuth
+
+Ссылка: https://www.tumblr.com/docs/en/api/v2 
+Описание: Read and write Tumblr Data 
+Авторизация: OAuth
+
+Ссылка: https://dev.twitch.tv/docs 
+Описание: Game Streaming API 
+Авторизация: OAuth
+
+Ссылка: https://developer.twitter.com/en/docs 
+Описание: Read and write Twitter data 
+Авторизация: OAuth
+
+Ссылка: https://vk.com/dev/sites 
+Описание: Read and write vk data 
+Авторизация: OAuth
+
+Ссылка: https://www.api-football.com/documentation-v3 
+Описание: Get information about Football Leagues & Cups 
+Авторизация: apiKey
+
+Ссылка: https://apimedic.com/ 
+Описание: ApiMedic offers a medical symptom checker API primarily for patients 
+Авторизация: apiKey
+
+Ссылка: https://www.balldontlie.io 
+Описание: Balldontlie provides access to stats data from the NBA 
+Авторизация: не нужна
+
+Ссылка: http://api.cfl.ca/ 
+Описание: Official JSON API providing real-time league, team and player statistics about the CFL 
+Авторизация: apiKey
+
+Ссылка: https://api.citybik.es/v2/ 
+Описание: City Bikes around the world 
+Авторизация: не нужна
+
+Ссылка: https://www.cloudbet.com/api/ 
+Описание: Official Cloudbet API provides real-time sports odds and betting API to place bets programmatically 
+Авторизация: apiKey
+
+Ссылка: https://collegefootballdata.com 
+Описание: Unofficial detailed American college football statistics, records, and results API 
+Авторизация: apiKey
+
+Ссылка: http://ergast.com/mrd/ 
+Описание: F1 data from the beginning of the world championships in 1950 
+Авторизация: не нужна
+
+Ссылка: https://dev.fitbit.com/ 
+Описание: Fitbit Information 
+Авторизация: OAuth
+
+Ссылка: https://rapidapi.com/GiulianoCrescimbeni/api/football98/ 
+Описание: A simple Open Source Football API to get squads’ stats, best scorers and more 
+Авторизация: X-Mashape-Key
+
+Ссылка: https://www.scorebat.com/video-api/ 
+Описание: Embed codes for goals and highlights from Premier League, Bundesliga, Serie A and many more 
+Авторизация: не нужна
+
+Ссылка: https://github.com/azharimm/football-standings-api 
+Описание: Display football standings e.g epl, la liga, serie a etc. The data is based on espn site 
+Авторизация: не нужна
+
+Ссылка: https://www.football-data.org 
+Описание: Football data with matches info, players, teams, and competitions 
+Авторизация: X-Mashape-Key
+
+Ссылка: https://developer.jcdecaux.com/ 
+Описание: JCDecaux's self-service bicycles 
+Авторизация: apiKey
+
+Ссылка: https://appac.github.io/mlb-data-api-docs/ 
+Описание: Current and historical MLB statistics 
+Авторизация: не нужна
+
+Ссылка: https://rapidapi.com/api-sports/api/api-nba/ 
+Описание: All NBA Stats DATA, Games, Livescore, Standings, Statistics 
+Авторизация: apiKey
+
+Ссылка: https://any-api.com/nba_com/nba_com/docs/API_Description 
+Описание: Current and historical NBA Statistics 
+Авторизация: не нужна
+
+Ссылка: https://gitlab.com/dword4/nhlapi 
+Описание: NHL historical data and statistics 
+Авторизация: не нужна
+
+Ссылка: https://data.oddsmagnet.com 
+Описание: Odds history from multiple UK bookmakers 
+Авторизация: не нужна
+
+Ссылка: https://www.openligadb.de 
+Описание: Crowd sourced sports league results 
+Авторизация: не нужна
+
+Ссылка: https://rapidapi.com/heisenbug/api/premier-league-live-scores/ 
+Описание: All Current Premier League Standings and Statistics 
+Авторизация: apiKey
+
+Ссылка: https://sportdataapi.com 
+Описание: Get sports data from all over the world 
+Авторизация: apiKey
+
+Ссылка: https://developers.decathlon.com/products/sports 
+Описание: List of and resources related to sports 
+Авторизация: не нужна
+
+Ссылка: https://developers.decathlon.com/products/sport-places 
+Описание: Crowd-source sports places around the world 
+Авторизация: не нужна
+
+Ссылка: https://developers.decathlon.com/products/sport-vision 
+Описание: Identify sport, brands and gear in an image. Also does image sports captioning 
+Авторизация: apiKey
+
+Ссылка: https://docs.sportmonks.com/cricket/ 
+Описание: Live cricket score, player statistics and fantasy API 
+Авторизация: apiKey
+
+Ссылка: https://docs.sportmonks.com/football/ 
+Описание: Football score/schedule, news api, tv channels, stats, history, display standing e.g. epl, la liga 
+Авторизация: apiKey
+
+Ссылка: https://api.squiggle.com.au 
+Описание: Fixtures, results and predictions for Australian Football League matches 
+Авторизация: не нужна
+
+Ссылка: https://strava.github.io/api/ 
+Описание: Connect with athletes, activities and more 
+Авторизация: OAuth
+
+Ссылка: https://suredbits.com/api/ 
+Описание: Query sports data, including teams, players, games, scores and statistics 
+Авторизация: не нужна
+
+Ссылка: https://www.thesportsdb.com/api.php 
+Описание: Crowd-Sourced Sports Data and Artwork 
+Авторизация: apiKey
+
+Ссылка: https://www.tredict.com/blog/oauth_docs/ 
+Описание: Get and set activities, health data and more 
+Авторизация: OAuth
+
+Ссылка: https://wger.de/en/software/api 
+Описание: Workout manager data as exercises, muscles or equipment 
+Авторизация: apiKey
+
+Ссылка: https://baconipsum.com/json-api/ 
+Описание: A Meatier Lorem Ipsum Generator 
+Авторизация: не нужна
+
+Ссылка: https://avatars.dicebear.com/ 
+Описание: Generate random pixel-art avatars 
+Авторизация: не нужна
+
+Ссылка: https://random-words-api.vercel.app/word 
+Описание: Generate English Random Words with Pronunciation 
+Авторизация: не нужна
+
+Ссылка: https://fakejson.com 
+Описание: Service to generate test and fake data 
+Авторизация: apiKey
+
+Ссылка: https://fakerapi.it/en 
+Описание: APIs collection to get fake data 
+Авторизация: не нужна
+
+Ссылка: https://fakestoreapi.com/ 
+Описание: Fake store rest API for your e-commerce or shopping website prototype 
+Авторизация: не нужна
+
+Ссылка: https://api.generadordni.es 
+Описание: Data generator API. Profiles, vehicles, banks and cards, etc 
+Авторизация: apiKey
+
+Ссылка: https://itsthisforthat.com/api.php 
+Описание: Generate Random startup ideas 
+Авторизация: не нужна
+
+Ссылка: http://jsonplaceholder.typicode.com/ 
+Описание: Fake data for testing and prototyping 
+Авторизация: не нужна
+
+Ссылка: http://loripsum.net/ 
+Описание: The "lorem ipsum" generator that doesn't suck 
+Авторизация: не нужна
+
+Ссылка: https://mailsac.com/docs/api 
+Описание: Disposable Email 
+Авторизация: apiKey
+
+Ссылка: http://metaphorpsum.com/ 
+Описание: Generate demo paragraphs giving number of words and sentences 
+Авторизация: не нужна
+
+Ссылка: https://www.mockaroo.com/docs 
+Описание: Generate fake data to JSON, CSV, TXT, SQL and XML 
+Авторизация: apiKey
+
+Ссылка: https://quickmocker.com 
+Описание: API mocking tool to generate contextual, fake or random data 
+Авторизация: не нужна
+
+Ссылка: https://random-data-api.com 
+Описание: Random data generator 
+Авторизация: не нужна
+
+Ссылка: https://randommer.io/randommer-api 
+Описание: Random data generator 
+Авторизация: apiKey
+
+Ссылка: https://randomuser.me 
+Описание: Generates and list user data 
+Авторизация: не нужна
+
+Ссылка: https://robohash.org/ 
+Описание: Generate random robot/alien avatars 
+Авторизация: не нужна
+
+Ссылка: https://random-names-api.herokuapp.com/public 
+Описание: Generate spanish names (with gender) randomly 
+Авторизация: не нужна
+
+Ссылка: https://palabras-aleatorias-public-api.herokuapp.com 
+Описание: Generate spanish words randomly 
+Авторизация: не нужна
+
+Ссылка: https://thispersondoesnotexist.com 
+Описание: Generates real-life faces of people who do not exist 
+Авторизация: не нужна
+
+Ссылка: https://testimonialapi.toolcarton.com/ 
+Описание: Generate random testimonial data 
+Авторизация: не нужна
+
+Ссылка: https://www.uuidtools.com/docs 
+Описание: Generate UUIDs 
+Авторизация: не нужна
+
+Ссылка: http://whatthecommit.com/index.txt 
+Описание: Random commit message generator 
+Авторизация: не нужна
+
+Ссылка: https://yesno.wtf/api 
+Описание: Generate yes or no randomly 
+Авторизация: не нужна
+
+Ссылка: https://codedetectionapi.runtime.dev 
+Описание: Detect, label, format and enrich the code in your app or in your data pipeline 
+Авторизация: OAuth
+
+Ссылка: https://languagelayer.com/ 
+Описание: Language Detection JSON API supporting 173 languages 
+Авторизация: OAuth
+
+Ссылка: https://docs.aylien.com/textapi/#getting-started 
+Описание: A collection of information retrieval and natural language APIs 
+Авторизация: apiKey
+
+Ссылка: https://www.cloudmersive.com/nlp-api 
+Описание: Natural language processing and text analysis 
+Авторизация: apiKey
+
+Ссылка: https://detectlanguage.com/ 
+Описание: Detects text language 
+Авторизация: apiKey
+
+Ссылка: https://nlp.insightera.co.th/docs/v1.0 
+Описание: Natural Language Processing Tools for Thai Language 
+Авторизация: apiKey
+
+Ссылка: https://cloud.google.com/natural-language/docs/ 
+Описание: Natural language understanding technology, including sentiment, entity and syntax analysis 
+Авторизация: apiKey
+
+Ссылка: https://ocr.hirak.site/ 
+Описание: Image to text -text recognition- from image more than 100 language, accurate, unlimited requests 
+Авторизация: apiKey
+
+Ссылка: https://translate.hirak.site/ 
+Описание: Translate between 21 of most used languages, accurate, unlimited requests 
+Авторизация: apiKey
+
+Ссылка: https://rapidapi.com/lecto-lecto-default/api/lecto-translation/ 
+Описание: Translation API with free tier and reasonable prices 
+Авторизация: apiKey
+
+Ссылка: https://libretranslate.com/docs 
+Описание: Translation tool with 17 available languages 
+Авторизация: не нужна
+
+Ссылка: https://semantria.readme.io/docs 
+Описание: Text Analytics with sentiment analysis, categorization & named entity extraction 
+Авторизация: OAuth
+
+Ссылка: https://www.meaningcloud.com/developer/sentiment-analysis 
+Описание: Multilingual sentiment analysis of texts from different sources 
+Авторизация: apiKey
+
+Ссылка: https://tisane.ai/ 
+Описание: Text Analytics with focus on detection of abusive content and law enforcement applications 
+Авторизация: OAuth
+
+Ссылка: https://cloud.ibm.com/apidocs/natural-language-understanding/natural-language-understanding 
+Описание: Natural language processing for advanced text analysis 
+Авторизация: OAuth
+
+Ссылка: https://developers.aftership.com/reference/quick-start 
+Описание: API to update, manage and track shipment efficiently 
+Авторизация: apiKey
+
+Ссылка: https://cws.correios.com.br/ajuda 
+Описание: Integration to provide information and prepare shipments using Correio's services 
+Авторизация: apiKey
+
+Ссылка: https://pixe.la 
+Описание: API for recording and tracking habits or effort, routines 
+Авторизация: X-Mashape-Key
+
+Ссылка: http://www.postalpincode.in/Api-Details 
+Описание: API for getting Pincode details in India 
+Авторизация: не нужна
+
+Ссылка: http://postmon.com.br 
+Описание: An API to query Brazilian ZIP codes and orders easily, quickly and free 
+Авторизация: не нужна
+
+Ссылка: https://developer.postnord.com/api 
+Описание: Provides information about parcels in transport for Sweden and Denmark 
+Авторизация: apiKey
+
+Ссылка: https://www.ups.com/upsdeveloperkit 
+Описание: Shipment and Address information 
+Авторизация: apiKey
+
+Ссылка: https://docs.wecantrack.com 
+Описание: Automatically place subids in affiliate links to attribute affiliate conversions to click data 
+Авторизация: apiKey
+
+Ссылка: https://developer.whatpulse.org/#web-api 
+Описание: Small application that measures your keyboard/mouse usage 
+Авторизация: не нужна
+
+Ссылка: https://www.adsbexchange.com/data/ 
+Описание: Access real-time and historical data of any and all airborne aircraft 
+Авторизация: не нужна
+
+Ссылка: https://airport-web.appspot.com/api/docs/ 
+Описание: Get name and website-URL for airports by ICAO code 
+Авторизация: не нужна
+
+Ссылка: http://www.aishub.net/api 
+Описание: Real-time data of any marine and inland vessel equipped with AIS tracking system 
+Авторизация: apiKey
+
+Ссылка: https://developers.amadeus.com/self-service 
+Описание: Travel Search - Limited usage 
+Авторизация: OAuth
+
+Ссылка: https://aviationstack.com/ 
+Описание: Real-time Flight Status & Global Aviation Data API 
+Авторизация: OAuth
+
+Ссылка: https://docs.aviationapi.com 
+Описание: FAA Aeronautical Charts and Publications, Airport Information, and Airport Weather 
+Авторизация: не нужна
+
+Ссылка: https://www.az511.com/developers/doc 
+Описание: Access traffic data from the ADOT API 
+Авторизация: apiKey
+
+Ссылка: http://api.bart.gov 
+Описание: Stations and predicted arrivals for BART 
+Авторизация: apiKey
+
+Ссылка: https://www.bcferriesapi.ca 
+Описание: Sailing times and capacities for BC Ferries 
+Авторизация: не нужна
+
+Ссылка: https://docs.bic-boxtech.org/ 
+Описание: Container technical detail for the global container fleet 
+Авторизация: OAuth
+
+Ссылка: https://dev.blablacar.com 
+Описание: Search car sharing trips 
+Авторизация: apiKey
+
+Ссылка: https://www.mbta.com/developers/v3-api 
+Описание: Stations and predicted arrivals for MBTA 
+Авторизация: apiKey
+
+Ссылка: https://github.com/transitland/transitland-datastore/blob/master/README.md#api-endpoints 
+Описание: Transitland API 
+Авторизация: не нужна
+
+Ссылка: https://rapidapi.com/obryan-software-obryan-software-default/api/compare-flight-prices/ 
+Описание: API for comparing flight prices across platforms 
+Авторизация: apiKey
+
+Ссылка: https://api.cts-strasbourg.eu/ 
+Описание: CTS Realtime API 
+Авторизация: apiKey
+
+Ссылка: https://developer.grab.com/docs/ 
+Описание: Track deliveries, ride fares, payments and loyalty points 
+Авторизация: OAuth
+
+Ссылка: https://docs.graphhopper.com/ 
+Описание: A-to-B routing with turn-by-turn instructions 
+Авторизация: apiKey
+
+Ссылка: http://docs.apis.is/ 
+Описание: Open APIs that deliver services in or regarding Iceland 
+Авторизация: не нужна
+
+Ссылка: https://docs.impala.travel/docs/booking-api/ 
+Описание: Hotel content, rates and room bookings 
+Авторизация: apiKey
+
+Ссылка: http://api-docs.izi.travel/ 
+Описание: Audio guide for travellers 
+Авторизация: apiKey
+
+Ссылка: https://datamall.lta.gov.sg/content/dam/datamall/datasets/LTA_DataMall_API_User_Guide.pdf 
+Описание: Singapore transport information 
+Авторизация: apiKey
+
+Ссылка: http://app.metrolisboa.pt/status/getLinhas.php 
+Описание: Delays in subway lines 
+Авторизация: не нужна
+
+Ссылка: https://doc.navitia.io/ 
+Описание: The open API for building cool stuff with transport data 
+Авторизация: apiKey
+
+Ссылка: https://openchargemap.org/site/develop/api 
+Описание: Global public registry of electric vehicle charging locations 
+Авторизация: apiKey
+
+Ссылка: https://opensky-network.org/apidoc/index.html 
+Описание: Free real-time ADS-B aviation data 
+Авторизация: не нужна
+
+Ссылка: https://www.digital.sncf.com/startup/api 
+Описание: SNCF public API 
+Авторизация: apiKey
+
+Ссылка: https://www.refugerestrooms.org/api/docs/#!/restrooms 
+Описание: Provides safe restroom access for transgender, intersex and gender nonconforming individuals 
+Авторизация: не нужна
+
+Ссылка: https://developer.sabre.com/guides/travel-agency/quickstart/getting-started-in-travel 
+Описание: Travel Search - Limited usage 
+Авторизация: apiKey
+
+Ссылка: https://developer.schiphol.nl/ 
+Описание: Schiphol 
+Авторизация: apiKey
+
+Ссылка: https://creativecommons.tankerkoenig.de/swagger/ 
+Описание: German realtime gas/diesel prices 
+Авторизация: apiKey
+
+Ссылка: https://www.transit.land/documentation/datastore/api-endpoints.html 
+Описание: Transit Aggregation 
+Авторизация: не нужна
+
+Ссылка: http://www.itsmarta.com/app-developer-resources.aspx 
+Описание: Marta 
+Авторизация: не нужна
+
+Ссылка: https://dev-portal.at.govt.nz/ 
+Описание: Auckland Transport 
+Авторизация: не нужна
+
+Ссылка: https://docs.irail.be/ 
+Описание: The iRail API is a third-party API for Belgian public transport by train 
+Авторизация: не нужна
+
+Ссылка: https://github.com/derhuerst/vbb-rest/blob/3/docs/index.md 
+Описание: Third-party VBB API 
+Авторизация: не нужна
+
+Ссылка: https://opendata.bordeaux-metropole.fr/explore/ 
+Описание: Bordeaux Métropole public transport and more (France) 
+Авторизация: apiKey
+
+Ссылка: https://bkkfutar.docs.apiary.io 
+Описание: Budapest public transport API 
+Авторизация: не нужна
+
+Ссылка: http://www.transitchicago.com/developers/ 
+Описание: Chicago Transit Authority (CTA) 
+Авторизация: apiKey
+
+Ссылка: https://www.chaps.cz/eng/products/idos-internet 
+Описание: Czech transport API 
+Авторизация: не нужна
+
+Ссылка: http://www.rtd-denver.com/gtfs-developer-guide.shtml 
+Описание: RTD 
+Авторизация: не нужна
+
+Ссылка: https://digitransit.fi/en/developers/  
+Описание: Finnish transport API 
+Авторизация: не нужна
+
+Ссылка: http://data.deutschebahn.com/dataset/api-fahrplan 
+Описание: Deutsche Bahn (DB) API 
+Авторизация: apiKey
+
+Ссылка: https://www.mobilites-m.fr/pages/opendata/OpenDataApi.html 
+Описание: Grenoble public transport 
+Авторизация: не нужна
+
+Ссылка: https://opendata.rmv.de/site/start.html 
+Описание: RMV API (Public Transport in Hessen) 
+Авторизация: не нужна
+
+Ссылка: http://hea.thebus.org/api_info.asp 
+Описание: Honolulu Transportation Information 
+Авторизация: apiKey
+
+Ссылка: https://emel.city-platform.com/opendata/ 
+Описание: Data about buses routes, parking and traffic 
+Авторизация: apiKey
+
+Ссылка: https://api.tfl.gov.uk 
+Описание: TfL API 
+Авторизация: apiKey
+
+Ссылка: https://developer.metro.net/api/ 
+Описание: Data about positions of Metro vehicles in real time and travel their routes 
+Авторизация: не нужна
+
+Ссылка: https://developer.tfgm.com/ 
+Описание: TfGM transport network data 
+Авторизация: apiKey
+
+Ссылка: https://developer.entur.org/ 
+Описание: Transport APIs and dataset for Norway 
+Авторизация: не нужна
+
+Ссылка: https://www.octranspo.com/en/plan-your-trip/travel-tools/developers 
+Описание: OC Transpo API 
+Авторизация: apiKey
+
+Ссылка: http://data.ratp.fr/api/v1/console/datasets/1.0/search/ 
+Описание: RATP Open Data API 
+Авторизация: не нужна
+
+Ссылка: http://www3.septa.org/hackathon/ 
+Описание: SEPTA APIs 
+Авторизация: не нужна
+
+Ссылка: http://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/documentacao-api/ 
+Описание: SPTrans 
+Авторизация: OAuth
+
+Ссылка: https://data.renfe.com/api/1/util/snippet/api_info.html?resource_id=a2368cff-1562-4dde-8466-9635ea3a572a 
+Описание: Public trains of Spain 
+Авторизация: не нужна
+
+Ссылка: https://www.trafiklab.se/api 
+Описание: Public Transport consumer 
+Авторизация: OAuth
+
+Ссылка: https://opentransportdata.swiss/en/ 
+Описание: Official Swiss Public Transport Open Data 
+Авторизация: apiKey
+
+Ссылка: https://transport.opendata.ch/ 
+Описание: Swiss public transport API 
+Авторизация: не нужна
+
+Ссылка: http://www.ns.nl/reisinformatie/ns-api 
+Описание: NS, only trains 
+Авторизация: apiKey
+
+Ссылка: https://github.com/skywave/KV78Turbo-OVAPI/wiki 
+Описание: OVAPI, country-wide public transport 
+Авторизация: не нужна
+
+Ссылка: https://myttc.ca/developers 
+Описание: TTC 
+Авторизация: не нужна
+
+Ссылка: https://developer.transportapi.com 
+Описание: Transport API and dataset for UK 
+Авторизация: apiKey
+
+Ссылка: https://retro.umoiq.com/xmlFeedDocs/NextBusXMLFeed.pdf 
+Описание: NextBus API 
+Авторизация: не нужна
+
+Ссылка: https://developer.translink.ca/ 
+Описание: TransLink 
+Авторизация: OAuth
+
+Ссылка: https://developer.wmata.com/ 
+Описание: Washington Metro transport API 
+Авторизация: OAuth
+
+Ссылка: https://transport.rest 
+Описание: Community maintained, developer-friendly public transport API 
+Авторизация: не нужна
+
+Ссылка: https://developer-tripadvisor.com/home/ 
+Описание: Rating content for a hotel, restaurant, attraction or destination 
+Авторизация: apiKey
+
+Ссылка: https://developer.uber.com/products 
+Описание: Uber ride requests and price estimation 
+Авторизация: OAuth
+
+Ссылка: https://www.velib-metropole.fr/donnees-open-data-gbfs-du-service-velib-metropole 
+Описание: Velib Open Data API 
+Авторизация: не нужна
+
+Ссылка: https://github.com/1pt-co/api/blob/main/README.md 
+Описание: A simple URL shortener 
+Авторизация: не нужна
+
+Ссылка: http://dev.bitly.com/get_started.html 
+Описание: URL shortener and link management 
+Авторизация: OAuth
+
+Ссылка: https://cleanuri.com/docs 
+Описание: URL shortener service 
+Авторизация: не нужна
+
+Ссылка: https://support.clickmeter.com/hc/en-us/categories/201474986 
+Описание: Monitor, compare and optimize your marketing links 
+Авторизация: apiKey
+
+Ссылка: https://cli.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config 
+Описание: URL shortener service 
+Авторизация: apiKey
+
+Ссылка: https://cutt.ly/api-documentation/cuttly-links-api 
+Описание: URL shortener service 
+Авторизация: apiKey
+
+Ссылка: https://wiki.drivet.xyz/en/url-shortener/add-links 
+Описание: Shorten a long URL easily and fast 
+Авторизация: не нужна
+
+Ссылка: https://ulvis.net/developer.html 
+Описание: Free URL Shortener offers a powerful API to interact with other sites 
+Авторизация: не нужна
+
+Ссылка: https://github.blog/2011-11-10-git-io-github-url-shortener/ 
+Описание: Git.io URL shortener 
+Авторизация: не нужна
+
+Ссылка: https://github.com/robvanbakel/gotiny-api 
+Описание: A lightweight URL shortener, focused on ease-of-use for the developer and end-user 
+Авторизация: не нужна
+
+Ссылка: https://docs.kutt.it/ 
+Описание: Free Modern URL Shortener 
+Авторизация: apiKey
+
+Ссылка: http://mgnet.me/api.html 
+Описание: Torrent URL shorten API 
+Авторизация: не нужна
+
+Ссылка: https://owo.vc/api 
+Описание: A simple link obfuscator/shortener 
+Авторизация: не нужна
+
+Ссылка: https://developers.rebrandly.com/v1/docs 
+Описание: Custom URL shortener for sharing branded links 
+Авторизация: apiKey
+
+Ссылка: https://github.com/FayasNoushad/Short-Link-API 
+Описание: Short URLs support so many domains 
+Авторизация: не нужна
+
+Ссылка: https://shrtco.de/docs 
+Описание: URl Shortener with multiple Domains 
+Авторизация: не нужна
+
+Ссылка: https://shrtlnk.dev/developer 
+Описание: Simple and efficient short link creation 
+Авторизация: apiKey
+
+Ссылка: https://tinyurl.com/app/dev 
+Описание: Shorten long URLs 
+Авторизация: apiKey
+
+Ссылка: https://urlbae.com/developers 
+Описание: Simple and efficient short link creation 
+Авторизация: apiKey
+
+Ссылка: https://deividfortuna.github.io/fipe/ 
+Описание: Vehicles information from Fundação Instituto de Pesquisas Econômicas - Fipe 
+Авторизация: не нужна
+
+Ссылка: https://helipaddy.com/api/ 
+Описание: Helicopter and passenger drone landing site directory, Helipaddy data and much more 
+Авторизация: apiKey
+
+Ссылка: http://developer.kbb.com/#!/data/1-Default 
+Описание: Vehicle info, pricing, configuration, plus much more 
+Авторизация: apiKey
+
+Ссылка: https://developer.mercedes-benz.com/apis 
+Описание: Telematics data, remotely access vehicle functions, car configurator, locate service dealers 
+Авторизация: apiKey
+
+Ссылка: https://vpic.nhtsa.dot.gov/api/ 
+Описание: NHTSA Product Information Catalog and Vehicle Listing 
+Авторизация: не нужна
+
+Ссылка: https://smartcar.com/docs/ 
+Описание: Lock and unlock vehicles and get data like odometer reading and location. Works on most new cars 
+Авторизация: OAuth
+
+Ссылка: https://anapioficeandfire.com/ 
+Описание: Game Of Thrones API 
+Авторизация: не нужна
+
+Ссылка: https://bobs-burgers-api-ui.herokuapp.com 
+Описание: Bob's Burgers API 
+Авторизация: не нужна
+
+Ссылка: https://breakingbadapi.com/documentation 
+Описание: Breaking Bad API 
+Авторизация: не нужна
+
+Ссылка: https://github.com/shevabam/breaking-bad-quotes 
+Описание: Some Breaking Bad quotes 
+Авторизация: не нужна
+
+Ссылка: https://api.catalogopolis.xyz/docs/ 
+Описание: Doctor Who API 
+Авторизация: не нужна
+
+Ссылка: https://catchtheshow.herokuapp.com/api/documentation 
+Описание: REST API for next-episode.net 
+Авторизация: не нужна
+
+Ссылка: http://www.ceskatelevize.cz/xml/tv-program/ 
+Описание: TV programme of Czech TV 
+Авторизация: не нужна
+
+Ссылка: https://developer.dailymotion.com/ 
+Описание: Dailymotion Developer API 
+Авторизация: OAuth
+
+Ссылка: https://github.com/ywalia01/dune-api 
+Описание: A simple API which provides you with book, character, movie and quotes JSON data 
+Авторизация: не нужна
+
+Ссылка: https://finalspaceapi.com/docs/ 
+Описание: Final Space API 
+Авторизация: не нужна
+
+Ссылка: https://gameofthronesquotes.xyz/ 
+Описание: Some Game of Thrones quotes 
+Авторизация: не нужна
+
+Ссылка: https://hp-api.herokuapp.com/ 
+Описание: Harry Potter Characters Data with with imagery 
+Авторизация: не нужна
+
+Ссылка: https://imdb-api.com/ 
+Описание: API for receiving movie, serial and cast information 
+Авторизация: apiKey
+
+Ссылка: https://github.com/SpEcHiDe/IMDbOT 
+Описание: Unofficial IMDb Movie / Series Information 
+Авторизация: не нужна
+
+Ссылка: https://json2video.com 
+Описание: Create and edit videos programmatically: watermarks,resizing,slideshows,voice-over,text animations 
+Авторизация: apiKey
+
+Ссылка: https://github.com/shadowoff09/lucifer-quotes 
+Описание: Returns Lucifer quotes 
+Авторизация: не нужна
+
+Ссылка: https://github.com/DiljotSG/MCU-Countdown 
+Описание: A Countdown to the next MCU Film 
+Авторизация: не нужна
+
+Ссылка: https://nodejs-quoteapp.herokuapp.com/ 
+Описание: Random Motivational Quotes 
+Авторизация: не нужна
+
+Ссылка: https://github.com/F4R4N/movie-quote/ 
+Описание: Random Movie and Series Quotes 
+Авторизация: не нужна
+
+Ссылка: http://www.omdbapi.com/ 
+Описание: Movie information 
+Авторизация: apiKey
+
+Ссылка: https://owen-wilson-wow-api.herokuapp.com 
+Описание: API for actor Owen Wilson's "wow" exclamations in movies 
+Авторизация: не нужна
+
+Ссылка: https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api 
+Описание: Television 
+Авторизация: не нужна
+
+Ссылка: https://simkl.docs.apiary.io 
+Описание: Movie, TV and Anime data 
+Авторизация: apiKey
+
+Ссылка: http://stapi.co 
+Описание: Information on all things Star Trek 
+Авторизация: не нужна
+
+Ссылка: https://github.com/shadowoff09/strangerthings-quotes 
+Описание: Returns Stranger Things quotes 
+Авторизация: не нужна
+
+Ссылка: https://api.stream.cz/graphiql 
+Описание: Czech internet television, films, series and online videos for free 
+Авторизация: не нужна
+
+Ссылка: https://www.stromberg-api.de/ 
+Описание: Returns Stromberg quotes and more 
+Авторизация: не нужна
+
+Ссылка: https://swapi.dev/ 
+Описание: All the Star Wars data you've ever wanted 
+Авторизация: не нужна
+
+Ссылка: https://www.swapi.tech 
+Описание: All things Star Wars 
+Авторизация: не нужна
+
+Ссылка: https://graphql.org/swapi-graphql 
+Описание: Star Wars GraphQL API 
+Авторизация: не нужна
+
+Ссылка: https://the-one-api.dev/ 
+Описание: The Lord of the Rings API 
+Авторизация: apiKey
+
+Ссылка: https://vampire-diaries-api.netlify.app/ 
+Описание: TV Show Data 
+Авторизация: apiKey
+
+Ссылка: https://thronesapi.com/ 
+Описание: Game Of Thrones Characters Data with imagery 
+Авторизация: не нужна
+
+Ссылка: https://www.themoviedb.org/documentation/api 
+Описание: Community-based movie data 
+Авторизация: apiKey
+
+Ссылка: https://www.traileraddict.com/trailerapi 
+Описание: Easily embed trailers from TrailerAddict 
+Авторизация: apiKey
+
+Ссылка: https://trakt.docs.apiary.io/ 
+Описание: Movie and TV Data 
+Авторизация: apiKey
+
+Ссылка: https://thetvdb.com/api-information 
+Описание: Television data 
+Авторизация: apiKey
+
+Ссылка: http://www.tvmaze.com/api 
+Описание: TV Show Data 
+Авторизация: не нужна
+
+Ссылка: https://rapidapi.com/unogs/api/unogsng 
+Описание: Unofficial Netflix Online Global Search, Search all netflix regions in one place 
+Авторизация: apiKey
+
+Ссылка: https://developer.vimeo.com/ 
+Описание: Vimeo Developer API 
+Авторизация: OAuth
+
+Ссылка: https://api.watchmode.com/ 
+Описание: API for finding out the streaming availability of movies & shows 
+Авторизация: apiKey
+
+Ссылка: https://github.com/yogeshwaran01/web-series-quotes 
+Описание: API generates various Web Series Quote Images 
+Авторизация: не нужна
+
+Ссылка: https://developers.google.com/youtube/ 
+Описание: Add YouTube functionality to your sites and apps 
+Авторизация: OAuth
+
+Ссылка: http://www.7timer.info/doc.php?lang=en 
+Описание: Weather, especially for Astroweather 
+Авторизация: не нужна
+
+Ссылка: https://developer.accuweather.com/apis 
+Описание: Weather and forecast data 
+Авторизация: apiKey
+
+Ссылка: https://opendata.aemet.es/centrodedescargas/inicio 
+Описание: Weather and forecast data from Spain 
+Авторизация: apiKey
+
+Ссылка: https://weatherstack.com/ 
+Описание: Real-Time & Historical World Weather Data API 
+Авторизация: apiKey
+
+Ссылка: https://www.apixu.com/doc/request.aspx 
+Описание: Weather 
+Авторизация: apiKey
+
+Ссылка: https://aqicn.org/api/ 
+Описание: Air Quality Index Data for over 1000 cities 
+Авторизация: apiKey
+
+Ссылка: https://www.aviationweather.gov/dataserver 
+Описание: NOAA aviation weather forecasts and observations 
+Авторизация: не нужна
+
+Ссылка: https://open.caiyunapp.com/ColorfulClouds_Weather_API 
+Описание: Weather 
+Авторизация: apiKey
+
+Ссылка: https://opendata.euskadi.eus/api-euskalmet/-/api-de-euskalmet/ 
+Описание: Meteorological data of the Basque Country 
+Авторизация: apiKey
+
+Ссылка: https://developer.foreca.com 
+Описание: Weather 
+Авторизация: OAuth
+
+Ссылка: https://hgbrasil.com/status/weather 
+Описание: Provides weather forecast data for ci

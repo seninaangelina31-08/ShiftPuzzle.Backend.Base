@@ -95,28 +95,96 @@ namespace Client;
 
         public static void Auth()
         {       
-            Console.Write("Введите логин: ");
-            string login = Console.ReadLine();
+            //Console.Write("Введите логин: ");
+            //string login = Console.ReadLine();
 
-            Console.Write("Введите пароль: ");
-            string password = Console.ReadLine();
+            //Console.Write("Введите пароль: ");
+            //string password = Console.ReadLine();
 
-            var url = "http://localhost:5087/auth"; // Замените на адрес вашего сервера для аутентификации
-            var body = JsonSerializer.Serialize(new { login, password });
-            var content = new StringContent(body, Encoding.UTF8, "application/json");
+            var userData = new
+            {
+                User = "admin",
+                Pass = "123"
+            };
+
+            var url = "http://localhost:5087/store/auth"; // Замените на адрес вашего сервера для аутентификации
+            var client = new HttpClient(); 
+            var json = JsonSerializer.Serialize(userData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                
+            var response = client.PostAsync(url, content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine("Cool!!!!");
+                IsAuthorized = true;
+            }
+            else
+            {
+                Console.WriteLine("Error");
+                IsAuthorized = false;
+            }
+        }
+
+        public static void UpName()
+        {       
+
+            Console.Write("Enter current name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter new name: ");
+            string newname = Console.ReadLine();
+
+            var url = $"http://localhost:5087/store/updatename?currentName={name}&newName={newname}"; // Замените на адрес вашего сервера для аутентификации
 
             using (var client = new HttpClient())
             { 
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("curRRntName", name)
+                });
+                
                 var response = client.PostAsync(url, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine("Cool!!!!");
-                    IsAuthorized = true;
+                    var responseContent = response.Content.ReadAsStringAsync().Result;
+                    Console.WriteLine(responseContent);
                 }
                 else
                 {
-                    Console.WriteLine("Error");
+                    Console.WriteLine($"Error: {response.StatusCode}");
                 }
+            }
+        }
+
+        public static void UpPrice()
+        {       
+
+            Console.Write("Enter name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter new price: ");
+            string newprice = Console.ReadLine();
+
+            var url = $"http://localhost:5087/store/updateprice?name={name}&newPrice={newprice}"; // Замените на адрес вашего сервера для аутентификации
+
+            using (var client = new HttpClient())
+            { 
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("curRRntName", name)
+                });
+                
+                var response = client.PostAsync(url, content).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseContent = response.Content.ReadAsStringAsync().Result;
+                        Console.WriteLine(responseContent);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error: {response.StatusCode}");
+                    }
             }
         }
 
@@ -148,6 +216,14 @@ namespace Client;
                         break;
                             
                     case 4:
+                        break;
+
+                    case 5:
+                        UpPrice();
+                        break;
+
+                    case 6:
+                        UpName();
                         break;
 
                     default:

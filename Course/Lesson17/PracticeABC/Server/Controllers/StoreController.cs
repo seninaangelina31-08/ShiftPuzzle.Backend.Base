@@ -63,6 +63,7 @@ public class StoreController : ControllerBase
         if (product != null)
         {
             product.Price = newPrice;
+            WriteDataToFile();
             return Ok($"{name} обновлен с новой ценой: {newPrice}");
         }
         else
@@ -79,6 +80,7 @@ public class StoreController : ControllerBase
         if (product != null)
         {
             product.Name = newName;
+            WriteDataToFile();
             return Ok($"Имя продукта изменено с {currentName} на {newName}");
         }
         else

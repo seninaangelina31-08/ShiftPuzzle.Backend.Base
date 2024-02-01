@@ -23,31 +23,31 @@ public class Product
         private static List<Product> productList = new List<Product>();
 
         [HttpPost("add")]
-        public IActionResult AddProduct(Product product)
+        public Product AddProduct(Product product)
         {
             productList.Add(product);
-            return Ok();
+            return product;
         }
 
         [HttpPost("delete")]
-        public IActionResult DeleteProduct(string productName)
+        public Product DeleteProduct(string productName)
         {
             var product = productList.FirstOrDefault(p => p._name == productName);
             if (product != null)
             {
                 productList.Remove(product);
-                return Ok();
+                return product;
             }
             else
             {
-                return NotFound();
+                return null;
             }
         }
 
         [HttpGet("list")]
-        public IActionResult GetProductList()
+        public List<Product> GetProductList()
         {
-            return Ok(productList);
+            return productList;
         }
     }
 }

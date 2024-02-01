@@ -23,10 +23,12 @@ class Program
     }
     
     static bool IsAuthorized = false;
+    const int port = 5087;
 
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            const string ShowProductMethod = "/store/show";
+            const string url = $"http://localhost:{port}{ShowProductMethod}"; // Замените на порт вашего сервера
             var client = new HttpClient();   
             var response = client.GetAsync(url).Result;  
             string responseContent = response.Content.ReadAsStringAsync().Result; 
@@ -54,8 +56,9 @@ class Program
                 Console.WriteLine("Вы не авторизованы");
                 return;        
             }
-        
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+
+            const string AddProductMethod = "/store/add";
+            const string url = $"http://localhost:{port}{AddProductMethod}"; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -88,29 +91,31 @@ class Program
 
 
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
-            var userData = new
-            {
-                User = "admin",
-                Pass = "123"
-            };
+    {   
+        const string AuthProductMethod = "/store/auth"; // Замените на порт вашего сервера
+        const string url = $"http://localhost:{port}{AuthProductMethod}"; // Замените на порт вашего сервера
+        var userData = new
+        {
+            User = "admin",
+            Pass = "123"
+        };
 
-            var client = new HttpClient(); 
-            var json = JsonSerializer.Serialize(userData);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var client = new HttpClient(); 
+        var json = JsonSerializer.Serialize(userData);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = client.PostAsync(url, content).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var responseContent = response.Content.ReadAsStringAsync().Result;
-                Console.WriteLine(responseContent);
-                IsAuthorized = true;
-            }
-            else
-            {
-                Console.WriteLine($"Error: {response.StatusCode}");
-                IsAuthorized = false;
-            }
+        var response = client.PostAsync(url, content).Result;
+        if (response.IsSuccessStatusCode)
+        {
+            var responseContent = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine(responseContent);
+            IsAuthorized = true;
+        }
+        else
+        {
+            Console.WriteLine($"Error: {response.StatusCode}");
+            IsAuthorized = false;
+        }
     }
 
 

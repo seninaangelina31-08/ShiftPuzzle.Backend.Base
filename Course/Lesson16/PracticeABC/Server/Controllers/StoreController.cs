@@ -37,7 +37,7 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {
@@ -69,11 +69,6 @@ public class StoreController : ControllerBase
         }
     }
 
-
-
-
-
-
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
@@ -83,19 +78,19 @@ public class StoreController : ControllerBase
     }
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    public IActionResult Delete([FromBody] Product delProd)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = Items.FirstOrDefault(p => p.Name == delProd.Name);
         if (product != null)
         {
             Items.Remove(product);
-            return Ok($"{name} удален");
+            return Ok($"{delProd.Name} удален");
         }
         else
         {
-            return NotFound($"{name} не найден");
+            return NotFound($"{delProd.Name} не найден");
         }
     }
 

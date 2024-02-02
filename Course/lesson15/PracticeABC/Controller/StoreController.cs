@@ -12,19 +12,21 @@ namespace PracticeABC.Controller;
 [Route("api/")]
 public class StoreController : ControllerBase
 {
-    public List<string> goods = new();
+    public List<Good> goods = new();
 
     [HttpGet("store/Add")]
-    public IActionResult Add(string good)
+    public IActionResult Add(string name, float price)
     {
-        goods.Add(good);
-        return Ok(new {status = $"{good} добавлен в базу данных успешно!"});
+        goods.Add(new Good(name, price));
+        return Ok(new {status = $"{name} добавлен в базу данных успешно!"});
     }
 
     [HttpGet("store/Delete")]
-    public IActionResult Delete(string good)
+    public IActionResult Delete(string name)
     {
-        if (goods.Contains(good))
+        var good = goods.FirstOrDefault(p => p.Name == name);
+        
+        if (good is not null)
         {
             goods.Remove(good);
             return Ok(new {status = $"{good} успешно удалён из базы данных!"});
@@ -37,8 +39,45 @@ public class StoreController : ControllerBase
     {
         if (goods.Count > 0)
         {
-            return Ok(new {goods = $"Список товаров: \n{string.Join(", ", goods)}"});
+            return Ok(new {goods = $"Список товаров: \n{string.Join(", ", goods.Select(x => x.Name).ToArray())}"});
         }
         return NotFound(new {status = "Список товаров пуст ! :( :( :("});
+    }
+
+
+    [HttpGet("store/ChangePrice")]
+    public IActionResult ChangePrice(int newPrice, string name)
+    {
+        var good = goods.FirstOrDefault(p => p.Name == name);
+        if (good is not null)
+        {
+            goods.Remove(good);
+            return Ok(new {status = $"Цена {name} успешно изменена"});
+        }
+        return NotFound(new {status = "Товара нет в базе данных"});
+    }
+
+    [HttpGet("store/ChangeName")]
+    public IActionResult ChangeName(string newName, string oldName)
+    {
+        var good = goods.FirstOrDefault(p => p.Name == oldName);
+        if (good is not null)
+        {
+            goods.Remove(good);
+            return Ok(new {status = $"Название {oldName} успешно изменено на {newName}"});
+        }
+        return NotFound(new {status = "Товара нет в базе данных"});
+    }
+
+    [HttpGet("store/ShowNotAvailableGoods")]
+    public IActionResult ShowNotAvailableGoods()
+    {
+        if (goods.Count != 0)
+        {
+
+            var notAvailable = goods.Where(p => p.IsAvailable = true);
+            return Ok(new {status = $"В наличии нет: {string.Join("\n", notAvailable.Select(x => x.Name).ToArray())}"});
+        }
+        return NotFound(new {status = "Все товары в наличии"});
     }
 }

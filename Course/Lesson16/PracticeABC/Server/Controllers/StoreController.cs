@@ -1,8 +1,9 @@
-namespace PracticeA;
+namespace Server;
 
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
+[Route("/store")]
 public class StoreController : ControllerBase
 {
     public class Product
@@ -13,16 +14,40 @@ public class StoreController : ControllerBase
 
         public Product(string name, double price, int stock)
         {
-            Name = name;
-            Price = price;
-            Stock = stock;
+            this.Name = name;
+            this.Price = price;
+            this.Stock = stock;
+        }
+
+        public void ChangeName(string newName)
+        {
+            this.Name = newName;
+        }
+    }
+
+    public class StoreUser
+    {
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public bool IsAuthorized { get; set; }
+
+        public StoreUser(string login, string password, bool isAuthorized = false)
+        {
+            this.Login = login;
+            this.Password = password;
+            this.IsAuthorized = isAuthorized;
+        }
+        public void Authorize()
+        {
+            this.IsAuthorized = true;
         }
     }
 
     private static readonly List<Product> Items = new List<Product>();
+    private static readonly List<StoreUser> StoreUsers = new();
 
     [HttpGet]
-    [Route("/store/updateprice")]
+    [Route("updateprice")]
     public IActionResult UpdatePrice(string name, double newPrice)
     {
         var product = Items.FirstOrDefault(p => p.Name == name);
@@ -37,25 +62,25 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
-    [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    [HttpPost]
+    [Route("updatename")]
+    public IActionResult UpdateName([FromBody] Product productOldName, string newName)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = Items.FirstOrDefault(p => p.Name == productOldName.Name);
         if (product != null)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            product.ChangeName(newName);
+            return Ok($"Имя продукта изменено с {productOldName.Name} на {newName}");
         }
         else
         {
-            return NotFound($"Продукт {currentName} не найден");
+            return NotFound($"Продукт {productOldName.Name} не найден");
         }
     }
 
 
     [HttpGet]
-    [Route("/store/outofstock")]
+    [Route("outofstock")]
     public IActionResult OutOfStock()
     {
         var outOfStockItems = Items.Where(p => p.Stock == 0).ToList();
@@ -73,36 +98,56 @@ public class StoreController : ControllerBase
 
 
 
-
-    [HttpGet]
-    [Route("/store/add")]
-    public IActionResult Add(string name, double price, int stock)
+    [HttpPost]
+    [Route("add")]
+    public IActionResult Add([FromBody] Product newProduct)
     {
-        var product = new Product(name, price, stock);
-        Items.Add(product);
+        Items.Add(newProduct);
         return Ok(Items);
     }
 
 
-    [HttpGet]
-    [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    [HttpPost]
+    [Route("CreateNewUser")]
+    public IActionResult CreateNewUser([FromBody] StoreUser storeUser)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        StoreUsers.Add(storeUser);
+        return Ok(new {status = "Пользователь успешно создан"});
+    }
+
+
+    [HttpPost]
+    [Route("Auth")]
+    public IActionResult Auth ([FromBody] StoreUser storeUser)
+    {
+        if (storeUser.Login == "Akshin" && storeUser.Password == "MLtheBest")
+        {
+            storeUser.Authorize();
+            return Ok(new {status = "Вы успешно зашли в систему!!!"});
+        }
+        return NotFound(new {status = "Неверный логин или пароль..."});
+    }
+
+
+    [HttpPost]
+    [Route("delete")]
+    public IActionResult Delete([FromBody] Product productToDelete)
+    {
+        var product = Items.FirstOrDefault(p => p.Name == productToDelete.Name);
         if (product != null)
         {
             Items.Remove(product);
-            return Ok($"{name} удален");
+            return Ok($"{productToDelete.Name} удален");
         }
         else
         {
-            return NotFound($"{name} не найден");
+            return NotFound($"{productToDelete.Name} не найден");
         }
     }
 
 
     [HttpGet]
-    [Route("/store/show")]
+    [Route("show")]
     public IActionResult Show()
     {
         return Ok(Items);

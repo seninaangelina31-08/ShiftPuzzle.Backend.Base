@@ -43,6 +43,22 @@ public class StoreController : ControllerBase
 
     }
 
+    public class NewPrice
+    {
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string Name { get; set; }
+        [Range(0.01, 10000)]
+        public double Price { get; set; }
+    }
+    public class New_Name
+    {
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string Name { get; set; }
+        [StringLength(100, MinimumLength = 3)]
+        public string NewName { get; set; }
+    }
 
     private List<Product> Items = new List<Product>();
 
@@ -57,33 +73,35 @@ public class StoreController : ControllerBase
 
     [HttpPost]
     [Route("/store/updateprice")]
-    public IActionResult UpdatePrice(string name, double newPrice)
+    public IActionResult UpdatePrice([FromBody] NewPrice newPrice)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = Items.FirstOrDefault(p => p.Name == newPrice.Name);
         if (product != null)
         {
-            product.Price = newPrice;
-            return Ok($"{name} обновлен с новой ценой: {newPrice}");
+            product.Price = newPrice.Price;
+            WriteDataToFile();
+            return Ok($"{newPrice.Name} обновлен с новой ценой: {newPrice.Price}");
         }
         else
         {
-            return NotFound($"Продукт {name} не найден");
+            return NotFound($"Продукт {newPrice.Name} не найден");
         }
     }
 
     [HttpPost]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public IActionResult UpdateName([FromBody] New_Name new_Name)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = Items.FirstOrDefault(p => p.Name == new_Name.Name);
         if (product != null)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            product.Name = new_Name.NewName;
+            WriteDataToFile();
+            return Ok($"Имя продукта изменено с {new_Name.Name} на {new_Name.NewName}");
         }
         else
         {
-            return NotFound($"Продукт {currentName} не найден");
+            return NotFound($"Продукт {new_Name.Name} не найден");
         }
     }
 
@@ -128,7 +146,7 @@ public class StoreController : ControllerBase
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        // запись
+        WriteDataToFile();
         return Ok(Items);
     }
 

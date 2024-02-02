@@ -10,8 +10,13 @@
     "Stock": 12
   },
   {
-    "Name": "apple",
-    "Price": 123,
+    "Name": "lemon",
+    "Price": 100,
     "Stock": 2
+  },
+  {
+    "Name": "tomato",
+    "Price": 250,
+    "Stock": 100
   }
 ]

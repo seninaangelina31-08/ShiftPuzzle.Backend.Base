@@ -128,7 +128,7 @@ class Program
         Console.WriteLine("Введите название продукта:");
         var name = Console.ReadLine();
         Console.WriteLine("Введите новую цену продукта:");
-        var newPrice = Console.ReadLine();
+        var newPrice = Console.ReadLine());
         url += $"?currentName={name}&{newPrice}";
         string Request = GetRequest(url);
         Console.WriteLine(Request);
@@ -163,19 +163,19 @@ class Program
             }
     }
 
-    public List<Product> ReadFile(string path)
-    {
-        string jsonFromFile = File.ReadAllText(path);
-        List<Product> products = JsonSerializer.Deserialize<List<Product>>(jsonFromFile);
-        return products;
-    }
+    // public List<Product> ReadFile(string path)
+    // {
+    //     string jsonFromFile = File.ReadAllText(path);
+    //     List<Product> products = JsonSerializer.Deserialize<List<Product>>(jsonFromFile);
+    //     return products;
+    // }
 
-    public void WiteToFile(List<Product> products, string path)
-    {
-        string json = JsonSerializer.Serialize(products);
-        File.WriteAllText(path, json);
-        return;
-    }
+    // public void WiteToFile(List<Product> products, string path)
+    // {
+    //     string json = JsonSerializer.Serialize(products);
+    //     File.WriteAllText(path, json);
+    //     return;
+    // }
 
     static void Main(string[] args)
     { 

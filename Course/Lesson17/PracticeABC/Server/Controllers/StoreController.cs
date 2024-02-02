@@ -157,14 +157,18 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
-    private void ReadDataFromFile()
+    private List<Product> ReadDataFromFile(string path)
     {
-        // опишу логику
+        string jsonFromFile = File.ReadAllText(path);
+        List<Product> products = JsonSerializer.Deserialize<List<Product>>(jsonFromFile);
+        return products;
     }
 
-    private void WriteDataToFile()
+    private void WriteDataToFile(List<Product> products, string path)
     {
-        // опишу логику
+        string json = JsonSerializer.Serialize(products);
+        File.WriteAllText(path, json);
+        return;
     }
 
 

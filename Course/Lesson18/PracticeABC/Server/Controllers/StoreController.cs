@@ -1,5 +1,4 @@
 namespace PracticeA;
-
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -9,20 +8,21 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
+
 [ApiController]
 public class StoreController : ControllerBase
 {
     public class Product
     {
-    [Required]
-    [StringLength(100, MinimumLength = 3)]
-    public string Name { get; set; }
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string Name { get; set; }
 
-    [Range(0.01, 10000)]
-    public double Price { get; set; }
+        [Range(0.01, 10000)]
+        public double Price { get; set; }
 
-    [Range(0, 10000)]
-    public int Stock { get; set; }
+        [Range(0, 10000)]
+        public int Stock { get; set; }
 
         public Product(string name, double price, int stock)
         {
@@ -37,12 +37,11 @@ public class StoreController : ControllerBase
         [Required]
         [StringLength(100, MinimumLength = 3)]
         public string User { get; set; }
+        
         [Required]
         [StringLength(100, MinimumLength = 3)]
         public string Pass { get; set; }
-
     }
-
 
     private List<Product> Items = new List<Product>();
 
@@ -52,8 +51,6 @@ public class StoreController : ControllerBase
     {
         ReadDataFromFile();
     }
-
-
 
     [HttpPost]
     [Route("/store/updateprice")]
@@ -79,7 +76,7 @@ public class StoreController : ControllerBase
         if (product != null)
         {
             product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            return Ok($"Название продукта обновлено с {currentName} на {newName}");
         }
         else
         {
@@ -87,91 +84,55 @@ public class StoreController : ControllerBase
         }
     }
 
-
-    [HttpGet]
-    [Route("/store/outofstock")]
-    public IActionResult OutOfStock()
+    [HttpPost]
+    [Route("/store/addproduct")]
+    public IActionResult AddProduct([FromBody] Product product)
     {
-        var outOfStockItems = Items.Where(p => p.Stock == 0).ToList();
-        if (outOfStockItems.Any())
+        if (ModelState.IsValid)
         {
-            return Ok(outOfStockItems);
+            Items.Add(product);
+            WriteDataToFile();
+            return Ok("Продукт добавлен");
         }
         else
         {
-            return Ok("Все продукты в наличии");
+            return BadRequest("Неверные данные продукта");
         }
     }
 
-
-
-    [HttpPost]
-    [Route("/store/auth")]
-    public IActionResult Auth([FromBody] UserCredentials user)
-    { 
-        if((user.User == "admin") && (user.Pass == "123"))
-        {
-            
-            return Ok($"{user.User} авторизован");
-        }
-        else
-        {
-            return NotFound($"{user.User} не найден");
-        }
-
-    }
-
-
-
-    [HttpPost]
-    [Route("/store/add")]
-    public IActionResult Add([FromBody] Product newProduct)
-    { 
-        Items.Add(newProduct);
-        WriteDataToFile();
-        return Ok(Items);
-    }
-
-
-    [HttpPost]
-    [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    private string ConvertDBtoJson()
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
-        if (product != null)
+        var options = new JsonSerializerOptions
         {
-            Items.Remove(product);
-            return Ok($"{name} удален");
-        }
-        else
-        {
-            return NotFound($"{name} не найден");
-        }
+            WriteIndented = true
+        };
+        var json = JsonSerializer.Serialize(Items, options);
+        return json;
     }
 
-
-    [HttpGet]
-    [Route("/store/show")]
-    public IActionResult Show()
+    private void WriteToDB(string json)
     {
-        return Ok(Items);
-    }
-
-    private void ReadDataFromFile()
-    {
-        if (System.IO.File.Exists(_jsonFilePath))
+        using (var writer = new StreamWriter(_jsonFilePath))
         {
-            string json = System.IO.File.ReadAllText(_jsonFilePath);
-            Items = JsonSerializer.Deserialize<List<Product>>(json);
+            writer.Write(json);
         }
     }
 
     private void WriteDataToFile()
     {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        string json = JsonSerializer.Serialize(Items, options);
-        System.IO.File.WriteAllText(_jsonFilePath, json);
+        var json = ConvertDBtoJson();
+        WriteToDB(json);
     }
 
-
+    private void ReadDataFromFile()
+    {
+        if (File.Exists(_jsonFilePath))
+        {
+            using (var reader = new StreamReader(_jsonFilePath))
+            {
+                var json = reader.ReadToEnd();
+                Items = JsonSerializer.Deserialize<List<Product>>(json);
+            }
+        }
+    }
 }

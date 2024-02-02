@@ -6,6 +6,13 @@ namespace Client;
 
 class Program
 { 
+
+    private const string url = "http://localhost";
+    private const string port = "5087";
+    private const string AddProductMethod = "/store/add";
+    private const string DisplayProductsMethod = "/store/show";
+    private const string AuthMethod = "/store/auth";
+
     [System.Serializable]
     public class Product
     {
@@ -26,9 +33,9 @@ class Program
 
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            var api_url = $"{url}:{port}{DisplayProductsMethod}"; // Замените на порт вашего сервера
             var client = new HttpClient();   
-            var response = client.GetAsync(url).Result;  
+            var response = client.GetAsync(api_url).Result;  
             string responseContent = response.Content.ReadAsStringAsync().Result; 
             List<Product> products = JsonSerializer.Deserialize<List<Product>>(responseContent); 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -55,7 +62,7 @@ class Program
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+            var api_url = $"{url}:{port}{AddProductMethod}"; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -74,7 +81,7 @@ class Program
             var json = JsonSerializer.Serialize(product);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = client.PostAsync(url, content).Result;
+            var response = client.PostAsync(api_url, content).Result;
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = response.Content.ReadAsStringAsync().Result;
@@ -88,7 +95,7 @@ class Program
 
 
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
+    {       var api_url = $"{url}:{port}{AuthMethod}"; // Замените на порт вашего сервера
             var userData = new
             {
                 User = "admin",
@@ -99,7 +106,7 @@ class Program
             var json = JsonSerializer.Serialize(userData);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = client.PostAsync(url, content).Result;
+            var response = client.PostAsync(api_url, content).Result;
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = response.Content.ReadAsStringAsync().Result;
@@ -122,7 +129,7 @@ class Program
                     Console.WriteLine("Выберите опцию:");
                     Console.WriteLine("1. Авторизация");
                     Console.WriteLine("2. Отправить продукт");
-                    Console.WriteLine("3. Вывести списко");
+                    Console.WriteLine("3. Вывести список");
                     Console.WriteLine("4. Выйти");
                     Console.Write("Введите ваш выбор: ");
 

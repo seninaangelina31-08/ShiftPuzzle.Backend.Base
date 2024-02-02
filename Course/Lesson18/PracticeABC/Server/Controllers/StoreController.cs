@@ -1,4 +1,4 @@
-namespace PracticeA;
+namespace PracticeABC;
 
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -168,10 +168,19 @@ public class StoreController : ControllerBase
 
     private void WriteDataToFile()
     {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        string json = JsonSerializer.Serialize(Items, options);
-        System.IO.File.WriteAllText(_jsonFilePath, json);
+        WriteToDB(ConvertDBtoJson());
     }
 
+    private string ConvertDBtoJson()
+    {
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string json = JsonSerializer.Serialize(Items, options);
+        return json;
+    }
+    
+    private void WriteToDB(string json)
+    {
+        System.IO.File.WriteAllText(_jsonFilePath, json);
+    }
 
 }

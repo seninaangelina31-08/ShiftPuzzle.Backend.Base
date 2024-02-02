@@ -71,7 +71,7 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpPost]
+    [HttpGet]
     [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {

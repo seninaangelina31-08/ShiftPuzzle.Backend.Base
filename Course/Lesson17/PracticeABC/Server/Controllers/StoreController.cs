@@ -1,4 +1,4 @@
-namespace PracticeA;
+namespace PracticeABC;
 
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,6 +12,7 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
+    public readonly string path = "DataBase.json";
     public class Product
     {
     [Required]
@@ -50,40 +51,42 @@ public class StoreController : ControllerBase
 
     public StoreController()
     {
-       // чтение
+       ReadDataFromFile();
     }
 
 
 
-    [HttpPost]
+    [HttpGet]
     [Route("/store/updateprice")]
-    public IActionResult UpdatePrice(string name, double newPrice)
+    public string UpdatePrice(string name, double newPrice)
     {
         var product = Items.FirstOrDefault(p => p.Name == name);
         if (product != null)
         {
             product.Price = newPrice;
-            return Ok($"{name} обновлен с новой ценой: {newPrice}");
+            WriteDataToFile();
+            return $"{name} обновлен с новой ценой: {newPrice}";
         }
         else
         {
-            return NotFound($"Продукт {name} не найден");
+            return $"Продукт {name} не найден";
         }
     }
 
     [HttpGet]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public string UpdateName(string currentName, string newName)
     {
         var product = Items.FirstOrDefault(p => p.Name == currentName);
         if (product != null)
         {
             product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            WriteDataToFile();
+            return $"Имя продукта изменено с {currentName} на {newName}";
         }
         else
         {
-            return NotFound($"Продукт {currentName} не найден");
+            return $"Продукт {currentName} не найден";
         }
     }
 
@@ -128,7 +131,7 @@ public class StoreController : ControllerBase
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        // запись
+        WriteDataToFile();
         return Ok(Items);
     }
 
@@ -141,6 +144,7 @@ public class StoreController : ControllerBase
         if (product != null)
         {
             Items.Remove(product);
+            WriteDataToFile();
             return Ok($"{name} удален");
         }
         else
@@ -157,17 +161,16 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
-    private List<Product> ReadDataFromFile(string path)
+    private void ReadDataFromFile()
     {
-        string jsonFromFile = File.ReadAllText(path);
-        List<Product> products = JsonSerializer.Deserialize<List<Product>>(jsonFromFile);
-        return products;
+        string jsonFromFile = System.IO.File.ReadAllText(path);
+        Items = JsonSerializer.Deserialize<List<Product>>(jsonFromFile);
     }
 
-    private void WriteDataToFile(List<Product> products, string path)
+    private void WriteDataToFile()
     {
-        string json = JsonSerializer.Serialize(products);
-        File.WriteAllText(path, json);
+        string json = JsonSerializer.Serialize(Items);
+        System.IO.File.WriteAllText(path, json);
         return;
     }
 

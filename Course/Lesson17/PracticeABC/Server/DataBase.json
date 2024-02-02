@@ -1,17 +1,1 @@
-[
-  {
-    "Name": "ExampleProduct123",
-    "Price": 100.5,
-    "Stock": 20
-  },
-  {
-    "Name": "Carrot",
-    "Price": 125,
-    "Stock": 12
-  },
-  {
-    "Name": "apple",
-    "Price": 123,
-    "Stock": 2
-  }
-]
+[{"Name":"ExampleProduct123","Price":100.5,"Stock":20},{"Name":"Carrot","Price":125,"Stock":12},{"Name":"bitcoin","Price":100,"Stock":2},{"Name":"string","Price":10000,"Stock":10000}]

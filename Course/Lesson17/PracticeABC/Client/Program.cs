@@ -84,7 +84,7 @@ class Program
     {       
         
         
-            var url = "http://localhost:5087/store/????"; // Замените на порт вашего сервера, также замените символы на правильный апи
+            var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера, также замените символы на правильный апи
             var userData = new
             {
                 User = "admin",
@@ -109,23 +109,50 @@ class Program
             }
     }
 
+    public List<Product> ReadFile(string path)
+    {
+        string jsonFromFile = File.ReadAllText(path);
+        List<Product> products = JsonSerializer.Deserialize<List<Product>>(jsonFromFile);
+        return products;
+    }
+
+    public void WiteToFile(List<Product> products, string path)
+    {
+        string json = JsonSerializer.Serialize(products);
+        File.WriteAllText(path, json);
+        return;
+    }
 
     static void Main(string[] args)
     { 
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         while (true)
                 {
-                    Console.WriteLine("Выберите опцию:");
+                    Console.WriteLine("-----------------------------------------------------------------");
+                    Console.WriteLine("Выберите опцию:\n1. Авторизация\n2. Добавление продукта\n3. Вывод списка\n4. Выход");
                      
 
                     var choice = Console.ReadLine();
 
                     switch (choice)
                     { 
+                        case "1":
+                            Auth();
+                            break;
+                        case "2":
+                            SendProduct();
+                            break;
+                        case "3":
+                            DisplayProducts();
+                            break;
+                        case "4":
+                            Console.WriteLine("-----------------------------------------------------------------");
+                            return;
                         default:
                             Console.WriteLine("Неверный выбор. Попробуйте снова.");
                             break;
                     }
+                    Console.WriteLine("-----------------------------------------------------------------");
                 }
     }
 }

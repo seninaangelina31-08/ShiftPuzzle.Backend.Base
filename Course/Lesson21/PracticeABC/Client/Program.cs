@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿﻿using System;
+=======
+﻿using System;
+>>>>>>> 78543e51 (матераилы 21-го урока)
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -7,6 +11,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Client
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -48,15 +53,24 @@ namespace Client
     {
         private const string BaseUrl = "http://localhost";
         private const string Port = "5258";
+=======
+    public class Program
+    {
+        private const string BaseUrl = "http://localhost";
+        private const string Port = "5087";
+>>>>>>> 78543e51 (матераилы 21-го урока)
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 78543e51 (матераилы 21-го урока)
         [Serializable]
         public class Product
         {
@@ -70,11 +84,14 @@ namespace Client
             [Range(0, 10000)]
             public int Stock { get; set; }
         }
+<<<<<<< HEAD
 =======
         
 
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+=======
+>>>>>>> 78543e51 (матераилы 21-го урока)
 
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
@@ -85,6 +102,7 @@ namespace Client
 
             var response = Client.GetAsync(url).Result;
 <<<<<<< HEAD
+<<<<<<< HEAD
             var responseContent = response.Content.ReadAsStringAsync().Result; 
             Console.WriteLine(responseContent);
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
@@ -92,10 +110,13 @@ namespace Client
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 78543e51 (матераилы 21-го урока)
             var responseContent = response.Content.ReadAsStringAsync().Result;
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
 
+<<<<<<< HEAD
 =======
             var responseContent = response.Content.ReadAsStringAsync().Result; 
             Console.WriteLine(responseContent);
@@ -104,12 +125,15 @@ namespace Client
 
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+=======
+>>>>>>> 78543e51 (матераилы 21-го урока)
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");
 
             foreach (var product in products)
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
 =======
@@ -119,6 +143,9 @@ namespace Client
                 Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+=======
+                Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
+>>>>>>> 78543e51 (матераилы 21-го урока)
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -144,19 +171,25 @@ namespace Client
             var stock = int.Parse(Console.ReadLine());
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             var product = new Product(name,price,stock); 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 78543e51 (матераилы 21-го урока)
             var product = new Product
             {
                 Name = name,
                 Price = price,
                 Stock = stock
             };
+<<<<<<< HEAD
 =======
             var product = new Product(name,price,stock); 
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+=======
+>>>>>>> 78543e51 (матераилы 21-го урока)
 
             var json = JsonSerializer.Serialize(product);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -249,4 +282,8 @@ namespace Client
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 78543e51 (матераилы 21-го урока)

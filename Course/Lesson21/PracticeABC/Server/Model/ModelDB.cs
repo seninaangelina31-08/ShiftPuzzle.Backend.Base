@@ -3,6 +3,7 @@ namespace PracticeABC;
 using System.Data.SQLite; 
 using System.Collections.Generic; 
 
+<<<<<<< HEAD
 public class SqlLiteProductRepository : IProductRepository
 {
     private readonly string _connectionString;
@@ -15,6 +16,14 @@ public class SqlLiteProductRepository : IProductRepository
             Stock INTEGER NOT NULL
         )";
     public SqlLiteProductRepository(string connectionString)
+=======
+public class ProductRepository
+{
+    private readonly string _connectionString;
+    private const string CreateTableQuery = "CREATE TABLE IF NOT EXISTS Products (Name TEXT PRIMARY KEY, Price REAL, Stock INTEGER)";
+
+    public ProductRepository(string connectionString)
+>>>>>>> 78543e51 (матераилы 21-го урока)
     {
         _connectionString = connectionString;
         InitializeDatabase();
@@ -28,6 +37,7 @@ public class SqlLiteProductRepository : IProductRepository
 
     private void InitializeDatabase()
     {
+<<<<<<< HEAD
         SQLiteConnection connection = new SQLiteConnection(_connectionString); 
         Console.WriteLine("База данных :  " + _connectionString + " создана");
         connection.Open();
@@ -35,6 +45,16 @@ public class SqlLiteProductRepository : IProductRepository
         command.ExecuteNonQuery();
              
         
+=======
+        using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+        {
+            connection.Open();
+            using (SQLiteCommand command = new SQLiteCommand(CreateTableQuery, connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
+>>>>>>> 78543e51 (матераилы 21-го урока)
     }
 
     public List<Product> GetAllProducts()
@@ -50,7 +70,16 @@ public class SqlLiteProductRepository : IProductRepository
                 {
                     while (reader.Read())
                     {
+<<<<<<< HEAD
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
+=======
+                        Product product = new Product
+                        {
+                            Name = reader["Name"].ToString(),
+                            Price = Convert.ToDouble(reader["Price"]),
+                            Stock = Convert.ToInt32(reader["Stock"])
+                        };
+>>>>>>> 78543e51 (матераилы 21-го урока)
                         products.Add(product);
                     }
                 }
@@ -58,6 +87,12 @@ public class SqlLiteProductRepository : IProductRepository
         }
         return products;
     }
+<<<<<<< HEAD
+=======
+
+    public Product GetProductByName(string name)
+    {
+>>>>>>> 78543e51 (матераилы 21-го урока)
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
@@ -69,12 +104,25 @@ public class SqlLiteProductRepository : IProductRepository
                 {
                     if (reader.Read())
                     {
+<<<<<<< HEAD
 
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
                         return  product;
                     }
                 }
             
+=======
+                        return new Product
+                        {
+                            Name = reader["Name"].ToString(),
+                            Price = Convert.ToDouble(reader["Price"]),
+                            Stock = Convert.ToInt32(reader["Stock"])
+                        };
+                    }
+                    return null;
+                }
+            }
+>>>>>>> 78543e51 (матераилы 21-го урока)
         }
     }
 
@@ -123,4 +171,9 @@ public class SqlLiteProductRepository : IProductRepository
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 78543e51 (матераилы 21-го урока)

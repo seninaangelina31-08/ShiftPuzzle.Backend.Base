@@ -15,12 +15,21 @@ using System.Collections.Generic;
 public class StoreController : ControllerBase
 {
     
+<<<<<<< HEAD
     private readonly IProductRepository _productRepository;
 
     public StoreController(IProductRepository productRepository)
     {
         _productRepository = productRepository;
     }
+=======
+    private readonly ProductRepository _productRepository;
+
+        public StoreController(ProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+>>>>>>> 78543e51 (матераилы 21-го урока)
 
         [HttpPost]
         [Route("/store/updateprice")]
@@ -88,7 +97,11 @@ public class StoreController : ControllerBase
         [HttpPost]
         [Route("/store/add")]
         public IActionResult Add([FromBody] Product newProduct)
+<<<<<<< HEAD
         { 
+=======
+        {
+>>>>>>> 78543e51 (матераилы 21-го урока)
             _productRepository.AddProduct(newProduct);
             return Ok(_productRepository.GetAllProducts());
         }

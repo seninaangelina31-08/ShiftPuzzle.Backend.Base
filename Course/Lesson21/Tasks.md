@@ -4,6 +4,7 @@
 # Практика А:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 1. Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs] 
@@ -30,12 +31,16 @@ public class SQLLiteProductRepository : IProductRepository
 =======
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+=======
+1. Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs] 
+>>>>>>> 78543e51 (матераилы 21-го урока)
 
 
 ---
 # Практика В: 
 
 1. Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs] 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     - Изменить код и указать вместо явной реализации *SQLLiteProductRepository* интерфейс *IProductRepository*
@@ -45,10 +50,13 @@ public class SQLLiteProductRepository : IProductRepository
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 78543e51 (матераилы 21-го урока)
 ---
 # Практика C:
 
 1.   Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs]
+<<<<<<< HEAD
  
 =======
     - Изменить код и указать вместо явной реализации *SQLLiteProductRepository* интерфейс *IProductRepository*
@@ -82,3 +90,6 @@ Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDou
 =======
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+=======
+ 
+>>>>>>> 78543e51 (матераилы 21-го урока)

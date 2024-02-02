@@ -157,12 +157,29 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+    
+    private string ConvertTextDBToList()
+    {
+        return System.IO.File.ReadAllText(_jsonFilePath);
+    }
+
+    private List<Product> ReadDB()
+    {
+        string json = ConvertTextDBToList();
+        Items = JsonSerializer.Deserialize<List<Product>>(json);
+        return Items;
+    }
+
+    private bool DBExist()
+    {
+        return System.IO.File.Exists(_jsonFilePath);
+    }
+
     private void ReadDataFromFile()
     {
-        if (System.IO.File.Exists(_jsonFilePath))
+        if (DBExist())
         {
-            string json = System.IO.File.ReadAllText(_jsonFilePath);
-            Items = JsonSerializer.Deserialize<List<Product>>(json);
+            ReadDB();
         }
     }
 

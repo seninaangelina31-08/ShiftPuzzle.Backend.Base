@@ -1,6 +1,14 @@
 namespace PracticeA;
 
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
+using System.IO; 
+using System.Net.Http;
+using System.Text; 
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 [ApiController]
 public class StoreController : ControllerBase
@@ -17,6 +25,16 @@ public class StoreController : ControllerBase
             Price = price;
             Stock = stock;
         }
+    }
+public class UserCredentials
+    {
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string User { get; set; }
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string Pass { get; set; }
+
     }
 
     private static readonly List<Product> Items = new List<Product>();
@@ -37,7 +55,7 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {
@@ -74,17 +92,16 @@ public class StoreController : ControllerBase
 
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/add")]
-    public IActionResult Add(string name, double price, int stock)
+    public IActionResult Add([FromBody] Product newProduct)
     {
-        var product = new Product(name, price, stock);
-        Items.Add(product);
+        Items.Add(newProduct);
         return Ok(Items);
     }
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/delete")]
     public IActionResult Delete(string name)
     {
@@ -108,5 +125,19 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+    [HttpPost]
+    [Route("/store/auth")]
+    public IActionResult Auth([FromBody] UserCredentials user)
+    { 
+        if((user.User == "admin") && (user.Pass == "123"))
+        {
+            
+            return Ok($"{user.User} авторизован");
+        }
+        else
+        {
+            return NotFound($"{user.User} не найден");
+        }
 
+    }
 }

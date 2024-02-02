@@ -9,6 +9,8 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+
 [ApiController]
 public class StoreController : ControllerBase
 {
@@ -47,6 +49,7 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     // поле с путем до базы данных 
+    string path = "C:\\Ilya\\C# projects\\ShiftPuzzle.Backend.Base\\Course\\Lesson17\\PracticeABC\\Server\\DataBase.json";
 
     public StoreController()
     {
@@ -157,9 +160,10 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
-    private void ReadDataFromFile()
+    private void ReadDataFromFile(string path)
     {
-        // опишу логику
+        
+
     }
 
     private void WriteDataToFile()

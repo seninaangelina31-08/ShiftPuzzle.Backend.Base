@@ -23,12 +23,15 @@ class Program
     }
     
     static bool IsAuthorized = false;
+    const string url = "http://localhost";
+    const int port = "5087";
 
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            const string ShowProductMethod = '/store/show';
+            var url_show = $"{url}:{port}{ShowProductMethod}"; // Замените на порт вашего сервера
             var client = new HttpClient();   
-            var response = client.GetAsync(url).Result;  
+            var response = client.GetAsync(url_show).Result;  
             string responseContent = response.Content.ReadAsStringAsync().Result; 
             List<Product> products = JsonSerializer.Deserialize<List<Product>>(responseContent); 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -55,7 +58,8 @@ class Program
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+            const string sendProd = "/store/add";
+            var url_send = $"{url}:{port}{sendProd}";
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -74,7 +78,7 @@ class Program
             var json = JsonSerializer.Serialize(product);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = client.PostAsync(url, content).Result;
+            var response = client.PostAsync(url_send, content).Result;
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = response.Content.ReadAsStringAsync().Result;
@@ -88,7 +92,8 @@ class Program
 
 
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
+    {       const string authen = "/store/auth";
+            var url_auth = $"{url}:{port}{authen}";
             var userData = new
             {
                 User = "admin",
@@ -99,7 +104,7 @@ class Program
             var json = JsonSerializer.Serialize(userData);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = client.PostAsync(url, content).Result;
+            var response = client.PostAsync(url_auth, content).Result;
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = response.Content.ReadAsStringAsync().Result;

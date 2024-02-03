@@ -13,5 +13,10 @@
     "Name": "apple",
     "Price": 123,
     "Stock": 2
+  },
+  {
+    "Name": "\u0411\u0430\u043D\u0430\u043D",
+    "Price": 400,
+    "Stock": 100
   }
 ]

@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Json;
+using System.Net;
+using System.IO;
+using System;
 
 namespace Client;
 
@@ -24,18 +27,39 @@ class Program
     
     static bool IsAuthorized = false;
 
+    public static string GetRequest(string url) // функция принимает адерс api
+    {
+        WebRequest request = WebRequest.Create(url); // создаем запрос
+        WebResponse response = request.GetResponse(); // отправляем команду на получение ответа
+        Stream dataStream = response.GetResponseStream(); // открываем поток для чтения (это как File.Readline только для сети)
+        StreamReader streamReader = new StreamReader(dataStream); // Открываем чтение потока
+        string jsonResponse = streamReader.ReadToEnd(); // получаем текст
+
+        streamReader.Close();   // закрываем за собой чтение потока
+        response.Close();  
+        return jsonResponse;  // возвращаем ответ
+    }
+
     static void DisplayProducts()
         {
+            if(!IsAuthorized)
+            {
+                Console.WriteLine("Вы не авторизованы");
+                return;        
+            }
+
             var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
             
             // реализуй логику
-
+            string jsonitems = GetRequest(url);
+            List<Product> items = JsonSerializer.Deserialize<List<Product>>(jsonitems);
 
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
-
-
-
+            foreach (var item in items)
+            {
+                Console.WriteLine($"| {item.name} | {item.price} | {item.stock} |");
+            }
             Console.WriteLine("-----------------------------------------------------------------");
         }
 
@@ -84,7 +108,7 @@ class Program
     {       
         
         
-            var url = "http://localhost:5087/store/????"; // Замените на порт вашего сервера, также замените символы на правильный апи
+            var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера, также замените символы на правильный апи
             var userData = new
             {
                 User = "admin",
@@ -113,19 +137,33 @@ class Program
     static void Main(string[] args)
     { 
         Console.OutputEncoding = System.Text.Encoding.UTF8;
-        while (true)
-                {
-                    Console.WriteLine("Выберите опцию:");
+        bool isRun = true;
+        while (isRun)
+        {
+            Console.WriteLine("Выберите опцию:");
                      
 
-                    var choice = Console.ReadLine();
+            var choice = Console.ReadLine();
 
-                    switch (choice)
-                    { 
-                        default:
-                            Console.WriteLine("Неверный выбор. Попробуйте снова.");
-                            break;
-                    }
-                }
+            switch (choice)
+            { 
+                case "DisplayProducts":
+                    DisplayProducts();
+                    break;
+                case "SendProduct":
+                    SendProduct();
+                    break;
+                case "Auth":
+                    Auth();
+                    break;
+
+                case "exit":
+                    isRun = false;
+                    break;
+                default:
+                    Console.WriteLine("Неверный выбор. Попробуйте снова.");
+                    break;
+            }
+        }
     }
 }

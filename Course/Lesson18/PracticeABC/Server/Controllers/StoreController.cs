@@ -168,10 +168,18 @@ public class StoreController : ControllerBase
 
     private void WriteDataToFile()
     {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        string json = JsonSerializer.Serialize(Items, options);
+        string json = ConvertDBtoJson(Items);
+        WriteToDB(json);
+    }
+
+    private void WriteToDB(string json)
+    {
         System.IO.File.WriteAllText(_jsonFilePath, json);
     }
 
-
+    private string ConvertDBtoJson(List<Product> items)
+    {
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        return JsonSerializer.Serialize(items, options);
+    }
 }

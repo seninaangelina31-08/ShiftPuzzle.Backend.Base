@@ -47,10 +47,12 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     // поле с путем до базы данных 
+    static string filedata = "/home/null/ShiftPuzzle.Backend.Base/Course/Lesson17/PracticeABC/Server/DataBase.json";
 
     public StoreController()
     {
        // чтение
+       ReadDataFromFile();
     }
 
 
@@ -160,11 +162,18 @@ public class StoreController : ControllerBase
     private void ReadDataFromFile()
     {
         // опишу логику
+        if (System.IO.File.Exists(filedata))
+        {
+            var json = System.IO.File.ReadAllText(filedata);
+            Items = JsonSerializer.Deserialize<List<Product>>(json);
+        }
     }
 
     private void WriteDataToFile()
     {
         // опишу логику
+        var json = JsonSerializer.Serialize(Items);
+        System.IO.File.WriteAllText(filedata, json);
     }
 
 

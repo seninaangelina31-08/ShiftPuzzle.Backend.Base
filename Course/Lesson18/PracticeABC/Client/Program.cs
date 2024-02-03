@@ -5,6 +5,11 @@ using System.Text.Json;
 namespace Client;
 
 class Program
+
+const string BaseUrl = "http://localhost";
+const string Port = "5087";
+const string AddProductMethod = "/store/add";
+
 { 
     [System.Serializable]
     public class Product
@@ -55,7 +60,7 @@ class Program
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+        var url = $"{BaseUrl}:{Port}{AddProductMethod}";
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -88,7 +93,7 @@ class Program
 
 
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
+    {           var url = $"{BaseUrl}:{Port}{AddProductMethod}";
             var userData = new
             {
                 User = "admin",

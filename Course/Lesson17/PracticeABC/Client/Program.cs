@@ -58,7 +58,7 @@ class Program
             Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
             foreach (var item in items)
             {
-                Console.WriteLine($"| {item.name} | {item.price} | {item.stock} |");
+                Console.WriteLine($"| {item.name, -17} | {item.price, -4} | {item.stock, -20} |");
             }
             Console.WriteLine("-----------------------------------------------------------------");
         }
@@ -90,6 +90,66 @@ class Program
             var client = new HttpClient(); 
             var json = JsonSerializer.Serialize(product);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = client.PostAsync(url, content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine(responseContent);
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+    }
+
+    public static void UpdateName()
+    {        
+            if(!IsAuthorized)
+            {
+                Console.WriteLine("Вы не авторизованы");
+                return;        
+            }
+        
+            Console.WriteLine("Введите название продукта, который хотите изменить:");
+            var name = Console.ReadLine();
+            Console.WriteLine("Введите новую цену товара:");
+            var newPrice = double.Parse(Console.ReadLine());
+
+            var url = $"http://localhost:5087/store/updateprice?name={name}&newPrice={newPrice}";
+
+            var client = new HttpClient(); 
+            var content = new StringContent("", Encoding.UTF8, "application/json");
+
+            var response = client.PostAsync(url, content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine(responseContent);
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+    }
+
+    public static void UpdateName()
+    {        
+            if(!IsAuthorized)
+            {
+                Console.WriteLine("Вы не авторизованы");
+                return;        
+            }
+        
+            Console.WriteLine("Введите название продукта, который хотите изменить:");
+            var currentname = Console.ReadLine();
+            Console.WriteLine("Введите имя на которое хотетие изменить:");
+            var newname = Console.ReadLine();
+
+            var url = $"http://localhost:5087/store/updatename?currentName={currentname}&newName={newname}";
+
+            var client = new HttpClient(); 
+            var content = new StringContent("", Encoding.UTF8, "application/json");
 
             var response = client.PostAsync(url, content).Result;
             if (response.IsSuccessStatusCode)
@@ -155,6 +215,9 @@ class Program
                     break;
                 case "Auth":
                     Auth();
+                    break;
+                case "UpdateName":
+                    UpdateName();
                     break;
 
                 case "exit":

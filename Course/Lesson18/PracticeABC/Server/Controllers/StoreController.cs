@@ -157,6 +157,23 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+
+
+
+
+
+    private string ConvertDBtoJson()
+    {
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string json = JsonSerializer.Serialize(Items, options);
+        return json;
+    }
+
+    private void WriteToDB(string json)
+    {
+        System.IO.File.WriteAllText(_jsonFilePath, json);
+    }
+
     private void ReadDataFromFile()
     {
         if (System.IO.File.Exists(_jsonFilePath))
@@ -168,9 +185,8 @@ public class StoreController : ControllerBase
 
     private void WriteDataToFile()
     {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        string json = JsonSerializer.Serialize(Items, options);
-        System.IO.File.WriteAllText(_jsonFilePath, json);
+        string json = ConvertDBtoJson();
+        WriteToDB(json);
     }
 
 

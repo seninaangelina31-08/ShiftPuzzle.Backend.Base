@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 namespace PracticeA;
+=======
+﻿namespace PracticeA;
+>>>>>>> main
 class Program
 {
     static void Main(string[] args)

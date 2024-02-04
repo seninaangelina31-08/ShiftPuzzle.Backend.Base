@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 ﻿namespace Practic;
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 
+=======
+using System;
+using System.Collections.Generic;
+>>>>>>> main
 
 public class Student
 {
@@ -24,7 +29,11 @@ public class Student
         string subject = Console.ReadLine();
 
         Console.Write("Vvedite ocenku: ");
+<<<<<<< HEAD
         if (int.TryParse(Console.ReadLine(), out var grade))
+=======
+        if (int.TryParse(Console.ReadLine(), out int grade))
+>>>>>>> main
         {
             Grades[subject] = grade;
             Console.WriteLine($"Ocenka {grade} po predmetu '{subject}' dobavlena.");
@@ -56,7 +65,10 @@ public class Student
 
 public class StudetnFileService
 {
+<<<<<<< HEAD
     
+=======
+>>>>>>> main
     public const string FilePath = "students.txt";
     public Dictionary<string, Student> students = new Dictionary<string, Student>();
 
@@ -81,7 +93,11 @@ public class StudetnFileService
 {
     if (!File.Exists(filePath))
     {
+<<<<<<< HEAD
         Console.WriteLine(".");
+=======
+        Console.WriteLine("���� �� ������.");
+>>>>>>> main
         return;
     }
 
@@ -93,19 +109,31 @@ public class StudetnFileService
             var parts = line.Split(',');
             if (parts.Length < 3)
             {
+<<<<<<< HEAD
                 continue; 
+=======
+                continue; // ������� � ��������� ������, ���� ������ �������
+>>>>>>> main
             }
 
             var studentName = parts[0];
             var student = new Student(studentName);
 
+<<<<<<< HEAD
          
+=======
+            // ������ ������
+>>>>>>> main
             var gradesPart = parts[1].Split(':');
             if (gradesPart.Length == 2 && int.TryParse(gradesPart[1], out int grade))
             {
                 student.Grades.Add(gradesPart[0], grade);
             }
 
+<<<<<<< HEAD
+=======
+            // ������ ������ � ������������
+>>>>>>> main
             var attendancePart = parts[2].Split(':');
             if (attendancePart.Length == 2 && DateTime.TryParse(attendancePart[0], out DateTime date) && bool.TryParse(attendancePart[1], out bool wasPresent))
             {
@@ -125,42 +153,60 @@ class SimpleDB
     private StudetnFileService fileService;
     public SimpleDB()
     {
+<<<<<<< HEAD
         //сохраняем файл
         fileService = new StudetnFileService(students);
         
+=======
+        fileService = new StudetnFileService(students);
+        LoadDB();
+>>>>>>> main
     }
     public  Dictionary<string, Student> students = new Dictionary<string, Student>();
 
     public void SaveDB()
     {
+<<<<<<< HEAD
         fileService.SaveToFile();
+=======
+>>>>>>> main
         Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
     }
 
     public void LoadDB()
     {
+<<<<<<< HEAD
         //загрузка файла
         //просто вызвать методы
         fileService.LoadFromFile();
+=======
+>>>>>>> main
         Console.WriteLine("Funcional ne realizovan...");
         //  practice B;
     }
     public void AddStudent(string name)
     {
+<<<<<<< HEAD
         students.Add(name, new Student(name));
+=======
+>>>>>>> main
         Console.WriteLine("Funcional ne realizovan...");
          //  practice A;
     }
 
     public void RemoveStudent(string name)
     {
+<<<<<<< HEAD
         students.Remove(name); 
+=======
+>>>>>>> main
         Console.WriteLine("Funcional ne realizovan...");
          //  practice A;
     }
 
     public void ShowStudentInfo(string name)
+<<<<<<< HEAD
 {
     foreach (var student in students)
     {
@@ -185,6 +231,13 @@ class SimpleDB
         }
     }
 }
+=======
+    {
+        Console.WriteLine("Funcional ne realizovan...");
+         //  practice A;
+    }
+
+>>>>>>> main
     public Student GetStudent(string name)
     {
         if (students.TryGetValue(name, out var student))
@@ -259,4 +312,7 @@ class Program
         }
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main

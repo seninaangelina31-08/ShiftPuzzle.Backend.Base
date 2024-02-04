@@ -49,9 +49,9 @@ public class StoreController : ControllerBase
     public StoreController()
     {
         // чтение данных из файла при создании экземпляра контроллера
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string json = File.ReadAllText(filePath);
+            string json = System.IO.File.ReadAllText(filePath);
             Items = JsonSerializer.Deserialize<List<Product>>(json);
         }
     }
@@ -116,11 +116,12 @@ public class StoreController : ControllerBase
     { 
         if((user.User == "admin") && (user.Pass == "123"))
         {
-            
+            Console.WriteLine("-------1");
             return Ok($"{user.User} авторизован");
         }
         else
         {
+            Console.WriteLine("-------2");
             return NotFound($"{user.User} не найден");
         }
 
@@ -164,9 +165,9 @@ public class StoreController : ControllerBase
 
     private void ReadDataFromFile()
     {
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string json = File.ReadAllText(filePath);
+            string json = System.IO.File.ReadAllText(filePath);
             Items = JsonSerializer.Deserialize<List<Product>>(json);
         }
     }
@@ -177,8 +178,8 @@ public class StoreController : ControllerBase
         {
             WriteIndented = true
         });
-        File.WriteAllText(filePath, json);
+        System.IO.File.WriteAllText(filePath, json);
     }
 
-
+     
 }

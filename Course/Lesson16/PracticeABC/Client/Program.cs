@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 using System.ComponentModel.DataAnnotations;
 using System;
@@ -23,6 +24,20 @@ class Program
 { 
     static bool IsAuthorized = false;
     public static void Authorize()
+=======
+﻿using System;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+
+public class Client
+{
+    public string username { get; set; }
+    public string password { get; set; }
+    public bool IsAuthorized { get; private set; }
+
+    public async void Authorize()
+>>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
     {
         var url = "http://localhost:5027/store/authorize";
         var userdate = new
@@ -33,6 +48,7 @@ class Program
         var client = new HttpClient();
         var json = JsonSerializer.Serialize(userdate);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
+<<<<<<< HEAD
 
         var response =  client.PostAsync(url, content).Result;
         if (response.IsSuccessStatusCode)
@@ -102,5 +118,20 @@ class Program
             SendProduct();
             }
         
+=======
+        var response = await client.PostAsync(url, content).Result;
+        if (response.IsSuccessStatusCode)
+        {
+            IsAuthorized = true;
+            var result = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(result);
+        }
+        else
+        {
+            IsAuthorized = false;
+            Console.WriteLine($"Error: {response.StatusCode}");
+        }
+>>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
     }
 }
+

@@ -9,10 +9,14 @@
 5. Cоздай 3 метода API:
     - Метод добавляения элемента [Route("store/add")]
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Метод удаления элемента [Route("store/delate")] 
 =======
     - Метод удаления элемента [Route("store/add")] 
 >>>>>>> 3dfd26bb (feat: lesson 5-lesson 12)
+=======
+    - Метод удаления элемента [Route("store/delate")] 
+>>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
     - метод вывода списка продуктов
     
 ---

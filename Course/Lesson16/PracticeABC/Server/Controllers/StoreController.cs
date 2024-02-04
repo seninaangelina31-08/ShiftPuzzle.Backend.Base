@@ -33,6 +33,10 @@ public class StoreController : ControllerBase
         public string CurrentName { get; set; }
         public string NewName { get; set; }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
 
     public class UserCredentials
     {
@@ -99,6 +103,7 @@ public class StoreController : ControllerBase
     //2. Запусти проверь с помощью http://localhost:5087/store/show     5087 = порт
 
 
+<<<<<<< HEAD
     private void WriteDataToFile()
     {
         var options = new JsonSerializerOptions {WriteIndented = true };
@@ -112,6 +117,14 @@ public class StoreController : ControllerBase
     { 
         Items.Add(newProduct);
         WriteDataToFile();
+=======
+    [HttpPost]
+    [Route("/store/add")]
+    public IActionResult Add([FromBody] Product newProduct)
+    {
+        
+        Items.Add(newProduct);
+>>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
         return Ok(Items);
     }
 
@@ -140,6 +153,7 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+<<<<<<< HEAD
 
     //1. **Класс `Program`**:
 //   - **Поля**:
@@ -170,4 +184,6 @@ public class StoreController : ControllerBase
         }
 
     }
+=======
+>>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
 }

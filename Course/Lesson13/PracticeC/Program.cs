@@ -88,7 +88,6 @@ class Program
     string jsonFromFile = File.ReadAllText(path);
     Film_Desk film = JsonSerializer.Deserialize<Film_Desk>(jsonFromFile);
 
-
     var Ludi_v_Chernom_casts = new List<Casts>
     {
         new Casts {name = "Уилл Смит", role = "Агент Джей"},
@@ -142,6 +141,8 @@ class Program
     film.film_desk.Add(Harry_Potter);
     film.film_desk.Add(Begishi_v_Lab);
     
+
+
 
     string json_1 = JsonSerializer.Serialize(film);
     File.WriteAllText(path, json_1);

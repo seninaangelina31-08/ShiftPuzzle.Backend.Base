@@ -48,13 +48,13 @@ public class StoreController : ControllerBase
 
     private readonly string _jsonFilePath = "DataBase.json";
 
-    privateconst AddProductMethod = "/store/add";
-    const UpdPriceMethod = "/store/updateprice";
-    const UpdNameMethod = "/store/updatename";
-    const OutOfStockMethod ="store/outofstock";
-    const AuthMethod="store/auth";
-    const DeleteMethod="store/delete";
-    const ShowMethod="store/show";
+    private const string AddProductMethod = "/store/add";
+    private const string UpdPriceMethod = "/store/updateprice";
+    private const string UpdNameMethod = "/store/updatename";
+    private const string OutOfStockMethod ="store/outofstock";
+    private const string AuthMethod="store/auth";
+    private const string DeleteMethod="store/delete";
+    private const string ShowMethod="store/show";
 
     
     public StoreController()
@@ -127,8 +127,6 @@ public class StoreController : ControllerBase
         }
 
     }
-
-
 
     [HttpPost]
     [Route(AddProductMethod)]

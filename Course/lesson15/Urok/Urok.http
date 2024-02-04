@@ -1,0 +1,6 @@
+@Urok_HostAddress = http://localhost:5156
+
+GET {{Urok_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

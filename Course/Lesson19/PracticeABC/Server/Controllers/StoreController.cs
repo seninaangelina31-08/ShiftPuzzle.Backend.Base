@@ -48,22 +48,15 @@ public class StoreController : ControllerBase
 
     private readonly string _jsonFilePath = "DataBase.json";
 
-    private const string AddProductMethod = "/store/add";
-    private const string UpdPriceMethod = "/store/updateprice";
-    private const string UpdNameMethod = "/store/updatename";
-    private const string OutOfStockMethod ="store/outofstock";
-    private const string AuthMethod="store/auth";
-    private const string DeleteMethod="store/delete";
-    private const string ShowMethod="store/show";
-
-    
     public StoreController()
     {
         ReadDataFromFile();
     }
 
+
+
     [HttpPost]
-    [Route(UpdPriceMethod)]
+    [Route("/store/updateprice")]
     public IActionResult UpdatePrice(string name, double newPrice)
     {
         var product = Items.FirstOrDefault(p => p.Name == name);
@@ -79,7 +72,7 @@ public class StoreController : ControllerBase
     }
 
     [HttpPost]
-    [Route(UpdNameMethod)]
+    [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {
         var product = Items.FirstOrDefault(p => p.Name == currentName);
@@ -96,7 +89,7 @@ public class StoreController : ControllerBase
 
 
     [HttpGet]
-    [Route(OutOfStockMethod)]
+    [Route("/store/outofstock")]
     public IActionResult OutOfStock()
     {
         var outOfStockItems = Items.Where(p => p.Stock == 0).ToList();
@@ -113,7 +106,7 @@ public class StoreController : ControllerBase
 
 
     [HttpPost]
-    [Route(AuthMethod)]
+    [Route("/store/auth")]
     public IActionResult Auth([FromBody] UserCredentials user)
     { 
         if((user.User == "admin") && (user.Pass == "123"))
@@ -128,8 +121,10 @@ public class StoreController : ControllerBase
 
     }
 
+
+
     [HttpPost]
-    [Route(AddProductMethod)]
+    [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
@@ -139,7 +134,7 @@ public class StoreController : ControllerBase
 
 
     [HttpPost]
-    [Route(DeleteMethod)]
+    [Route("/store/delete")]
     public IActionResult Delete(string name)
     {
         var product = Items.FirstOrDefault(p => p.Name == name);
@@ -161,10 +156,12 @@ public class StoreController : ControllerBase
     {
         return Ok(Items);
     }
-     private List<Product> ConvertTextDBToList()
+
+    #region PRACTICE_B
+
+    private List<Product> ConvertTextDBToList(string json)
     {
-        string json = ReadDB();
-        return JsonSerializer.Deserialize<List<Product>>(json);
+        return JsonSerializer.Deserialize<List<Product>>(json)
     }
 
     private string ReadDB()
@@ -176,25 +173,36 @@ public class StoreController : ControllerBase
     {
         return System.IO.File.Exists(_jsonFilePath);
     }
+
     private void ReadDataFromFile()
     {
         if (DBExist())
-        {
-            Items = ConvertTextDBToList();
+        { 
+            Items =  ConvertTextDBToList(ReadDB());
         }
     }
 
-    private string ConvertDBtoJson(){
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        return JsonSerializer.Serialize(Items, options);
-    }
-    private void WriteToDB(){
-        System.IO.File.WriteAllText(_jsonFilePath, ConvertDBtoJson());
-    }
-    private void WriteDataToFile()
+    #endregion
+
+    #region PRACTICE_A
+
+    private string  ConvertDBtoJson()
     {
-        WriteToDB();
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        retunr JsonSerializer.Serialize(Items, options);
     }
+
+    private void WriteTiDB(string json)
+    {
+        System.IO.File.WriteAllText(_jsonFilePath, json);
+    }
+
+    private void WriteDataToFile()
+    { 
+        WriteTiDB(ConvertDBtoJson());
+    }
+
+    #endregion PRACTICE_A
 
 
 }

@@ -48,15 +48,22 @@ public class StoreController : ControllerBase
 
     private readonly string _jsonFilePath = "DataBase.json";
 
+    privateconst AddProductMethod = "/store/add";
+    const UpdPriceMethod = "/store/updateprice";
+    const UpdNameMethod = "/store/updatename";
+    const OutOfStockMethod ="store/outofstock";
+    const AuthMethod="store/auth";
+    const DeleteMethod="store/delete";
+    const ShowMethod="store/show";
+
+    
     public StoreController()
     {
         ReadDataFromFile();
     }
 
-
-
     [HttpPost]
-    [Route("/store/updateprice")]
+    [Route(UpdPriceMethod)]
     public IActionResult UpdatePrice(string name, double newPrice)
     {
         var product = Items.FirstOrDefault(p => p.Name == name);
@@ -72,7 +79,7 @@ public class StoreController : ControllerBase
     }
 
     [HttpPost]
-    [Route("/store/updatename")]
+    [Route(UpdNameMethod)]
     public IActionResult UpdateName(string currentName, string newName)
     {
         var product = Items.FirstOrDefault(p => p.Name == currentName);
@@ -89,7 +96,7 @@ public class StoreController : ControllerBase
 
 
     [HttpGet]
-    [Route("/store/outofstock")]
+    [Route(OutOfStockMethod)]
     public IActionResult OutOfStock()
     {
         var outOfStockItems = Items.Where(p => p.Stock == 0).ToList();
@@ -106,7 +113,7 @@ public class StoreController : ControllerBase
 
 
     [HttpPost]
-    [Route("/store/auth")]
+    [Route(AuthMethod)]
     public IActionResult Auth([FromBody] UserCredentials user)
     { 
         if((user.User == "admin") && (user.Pass == "123"))
@@ -124,7 +131,7 @@ public class StoreController : ControllerBase
 
 
     [HttpPost]
-    [Route("/store/add")]
+    [Route(AddProductMethod)]
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
@@ -134,7 +141,7 @@ public class StoreController : ControllerBase
 
 
     [HttpPost]
-    [Route("/store/delete")]
+    [Route(DeleteMethod)]
     public IActionResult Delete(string name)
     {
         var product = Items.FirstOrDefault(p => p.Name == name);
@@ -156,12 +163,10 @@ public class StoreController : ControllerBase
     {
         return Ok(Items);
     }
-
-    #region PRACTICE_B
-
-    private List<Product> ConvertTextDBToList(string json)
+     private List<Product> ConvertTextDBToList()
     {
-        return JsonSerializer.Deserialize<List<Product>>(json)
+        string json = ReadDB();
+        return JsonSerializer.Deserialize<List<Product>>(json);
     }
 
     private string ReadDB()
@@ -173,36 +178,25 @@ public class StoreController : ControllerBase
     {
         return System.IO.File.Exists(_jsonFilePath);
     }
-
     private void ReadDataFromFile()
     {
         if (DBExist())
-        { 
-            Items =  ConvertTextDBToList(ReadDB());
+        {
+            Items = ConvertTextDBToList();
         }
     }
 
-    #endregion
-
-    #region PRACTICE_A
-
-    private string  ConvertDBtoJson()
-    {
+    private string ConvertDBtoJson(){
         var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(Items, options);
     }
-
-    private void WriteTiDB(string json)
-    {
-        System.IO.File.WriteAllText(_jsonFilePath, json);
+    private void WriteToDB(){
+        System.IO.File.WriteAllText(_jsonFilePath, ConvertDBtoJson());
     }
-
     private void WriteDataToFile()
-    { 
-        WriteTiDB(ConvertDBtoJson());
+    {
+        WriteToDB();
     }
-
-    #endregion PRACTICE_A
 
 
 }

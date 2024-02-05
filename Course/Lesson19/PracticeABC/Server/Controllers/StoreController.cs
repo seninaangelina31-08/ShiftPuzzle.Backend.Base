@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
+
 [ApiController]
 public class StoreController : ControllerBase
 {
@@ -46,11 +47,11 @@ public class StoreController : ControllerBase
 
     private List<Product> Items = new List<Product>();
 
-    private readonly string _jsonFilePath = "DataBase.json";
 
-    public StoreController()
+     public StoreController()
     {
-        ReadDataFromFile();
+        _dbModel = new DBModel("DataBase.json");
+        Items = _dbModel.ReadDataFromFile();
     }
 
 
@@ -128,7 +129,7 @@ public class StoreController : ControllerBase
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        WriteDataToFile();
+        _dbModel.WriteDataToFile(Items);
         return Ok(Items);
     }
 
@@ -152,54 +153,23 @@ public class StoreController : ControllerBase
 
     [HttpGet]
     [Route("/store/show")]
+
     public IActionResult Show()
     {
+        var items = _dbModel.ReadDataFromFile();
         return Ok(Items);
-    }
- 
-
-    private List<Product> ConvertTextDBToList(string json)
-    {
-        return JsonSerializer.Deserialize<List<Product>>(json)
-    }
-
-    private string ReadDB()
-    {
-        return System.IO.File.ReadAllText(_jsonFilePath);
     }
 
     private bool DBExist()
     {
-        return System.IO.File.Exists(_jsonFilePath);
-    }
-
-    private void ReadDataFromFile()
-    {
-        if (DBExist())
-        { 
-            Items =  ConvertTextDBToList(ReadDB());
-        }
+        return _dbModel.ReadDataFromFile;
     }
 
     #endregion
  
 
-    private string  ConvertDBtoJson()
-    {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
-    }
-
     private void WriteTiDB(string json)
     {
         System.IO.File.WriteAllText(_jsonFilePath, json);
     }
-
-    private void WriteDataToFile()
-    { 
-        WriteTiDB(ConvertDBtoJson());
-    }
- 
-
-
 }

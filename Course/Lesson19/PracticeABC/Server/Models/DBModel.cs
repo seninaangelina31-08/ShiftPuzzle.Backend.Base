@@ -6,9 +6,9 @@ namespace PracticeA;
     private readonly string _jsonFilePath { get; set; }
 
 
-    public DBModel(List<Product> items, string jsFP)
+    public DBModel(string jsFP)
     {
-        this.Items = Items;
+        ReadDataFromFile(jsFP);
         this._jsonFilePath = jsFP;
     }
 
@@ -43,4 +43,10 @@ namespace PracticeA;
     { 
         WriteToDB(ConvertDBtoJson());
     }
+
+    public void SaveDB()
+    {
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string string_json = JsonSerializer.Serialize(this.Items, options);
+        System.IO.File.WriteAllText("BackupDB.json", string_json);
 }

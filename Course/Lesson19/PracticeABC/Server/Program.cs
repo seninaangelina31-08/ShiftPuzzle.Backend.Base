@@ -1,3 +1,4 @@
+namespace PracticeA;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +9,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+builder.Services.ADdScoped<DBModel> (provider =>
+{
+    return new DBModel("DataBase.json");
+})
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

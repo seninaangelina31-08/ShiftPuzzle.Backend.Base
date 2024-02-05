@@ -160,7 +160,7 @@ public class StoreController : ControllerBase
 
     private List<Product> ConvertTextDBToList(string json)
     {
-        return JsonSerializer.Deserialize<List<Product>>(json)
+        return JsonSerializer.Deserialize<List<Product>>(json);
     }
 
     private string ReadDB()
@@ -181,13 +181,13 @@ public class StoreController : ControllerBase
         }
     }
 
-    #endregion
+
  
 
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(Items, options);
     }
 
     private void WriteTiDB(string json)

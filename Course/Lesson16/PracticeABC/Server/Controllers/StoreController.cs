@@ -5,21 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 [ApiController]
 public class StoreController : ControllerBase
 {
-    public class Product
-    {
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public int Stock { get; set; }
-
-        public Product(string name, double price, int stock)
-        {
-            Name = name;
-            Price = price;
-            Stock = stock;
-        }
-    }
 
     private static readonly List<Product> Items = new List<Product>();
+    private static readonly List<User> Users = new List<User>();
 
     [HttpGet]
     [Route("/store/updateprice")]
@@ -103,4 +91,26 @@ public class StoreController : ControllerBase
     }
 
 
+    [HttpPost]
+    [Route("/store/add_user")]
+    public IActionResult Add_user([FromBody] User newUser)
+    {
+        Users.Add(newUser);
+        return Ok($"Пользователь {newUser.Name} успешно зарегистрирован!");
+    }
+
+    [HttpPost]
+    [Route("/store/login")]
+    public IActionResult Login_user([FromBody] User newUser)
+    {
+        foreach (var us in Users)
+        {
+            if (us.Loggin == newUser.Loggin && us.Password == newUser.Password)
+            {
+                us.IsAuthorized = true;
+                return Ok($"Добро пожаловать, {us.Name}!");
+            }
+        }
+        return NotFound($"Пользователь не найден");
+    }
 }

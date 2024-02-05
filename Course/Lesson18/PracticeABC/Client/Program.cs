@@ -21,12 +21,18 @@ class Program
 
         
     }
+        const string BaseUrl = "http://localhost:";
+        const string Port = "5087";
+        const string ShowProductsMethod = "/store/show";
+        const string AddProductMethod = "/store/add";
+        const string AuthMethod = "/store/auth";
+
     
     static bool IsAuthorized = false;
 
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            var url = BaseUrl+Port+ShowProductsMethod; // Замените на порт вашего сервера
             var client = new HttpClient();   
             var response = client.GetAsync(url).Result;  
             string responseContent = response.Content.ReadAsStringAsync().Result; 
@@ -55,7 +61,7 @@ class Program
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+            var url = BaseUrl+Port+AddProductMethod; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -88,7 +94,7 @@ class Program
 
 
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
+    {       var url = BaseUrl+Port+AuthMethod; // Замените на порт вашего сервера
             var userData = new
             {
                 User = "admin",

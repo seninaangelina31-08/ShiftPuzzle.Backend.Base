@@ -8,7 +8,9 @@ public class ModelDB
 
     public ModelDB(string url)
     {
-        
+        ReadDataFromFile();
+        _jsonFilePath = url;
+        _jsonBackUpFilePath += 
     }
 
     private List<Product> ConvertTextDBToList(string json)

@@ -3,12 +3,12 @@ namespace PracticeA;
 public class ModelDB
 {
     private List<Product> Items = new List<Product>();
-
     private readonly string _jsonFilePath = "DataBase.json";
+    private readonly string _jsonBackUpFilePath = "DataBaseBackUp.json";
 
-    public ModelDB()
+    public ModelDB(string url)
     {
-        ReadDataFromFile();
+        
     }
 
     private List<Product> ConvertTextDBToList(string json)
@@ -40,17 +40,18 @@ public class ModelDB
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(Items, options);
     }
 
-    private void WriteTiDB(string json)
+    private void WriteToDB(string json)
     {
+        System.IO.File.WriteAllText(_jsonBackUpFilePath, ReadDB());
         System.IO.File.WriteAllText(_jsonFilePath, json);
     }
 
     private void WriteDataToFile()
     { 
-        WriteTiDB(ConvertDBtoJson());
+        WriteToDB(ConvertDBtoJson());
     }
  
 

@@ -12,11 +12,13 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
+    private List<Product> Items = new List<Product>();
     private readonly ModelDB _modelDB;
 
     public StoreController(ModelDB modelDB)
     {
         _modelDB = modelDB;
+        ReadDataFromFile();
     }
 
     [HttpPost]

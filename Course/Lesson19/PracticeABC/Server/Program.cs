@@ -1,3 +1,4 @@
+namespace PracticeA;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,3 +24,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+builder.Services.AddScoped<DBModelRepository>(provider =>
+{
+    return new DBModel("DBModle.cs")
+})

@@ -9,6 +9,11 @@ public class DBModel
 
     private readonly string _jsonFilePath = "DataBase.json";
 
+    public DBModel(string path)
+    {
+        ReadDataFromFile();
+    }
+
     private List<Product> ConvertTextDBToList(string json)
     {
         return JsonSerializer.Deserialize<List<Product>>(json);

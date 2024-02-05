@@ -12,12 +12,16 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
+
+    private readonly DBModel _dbmodel;
+
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
 
-    public StoreController()
+    public StoreController(DBModel dbmodel)
     {
+        _dbmodel = dbmodel;
         ReadDataFromFile();
     }
 

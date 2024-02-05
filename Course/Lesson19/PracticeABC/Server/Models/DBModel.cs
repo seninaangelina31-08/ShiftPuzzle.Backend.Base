@@ -28,18 +28,18 @@ namespace PracticeA;
             this.Items =  ConvertTextDBToList(ReadDB());
         }
     }
-     private string  ConvertDBtoJson()
+     public string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
         return JsonSerializer.Serialize(this.Items, options);
     }
 
-    private void WriteToDB(string json)
+    public void WriteToDB(string json)
     {
         System.IO.File.WriteAllText(this._jsonFilePath, json);
     }
 
-    private void WriteDataToFile()
+    public void WriteDataToFile()
     { 
         WriteToDB(ConvertDBtoJson());
     }

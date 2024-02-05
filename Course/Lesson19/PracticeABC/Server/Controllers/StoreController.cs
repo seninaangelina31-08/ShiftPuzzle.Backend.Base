@@ -47,10 +47,13 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
+    private readonly DBModel _database;
 
-    public StoreController()
+    public StoreController(DBModel dbmodel)
     {
         ReadDataFromFile();
+        this._database = dbmodel;
+
     }
 
 

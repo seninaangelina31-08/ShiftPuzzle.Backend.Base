@@ -18,5 +18,10 @@
     "Name": "string",
     "Price": 10000,
     "Stock": 10000
+  },
+  {
+    "Name": "string",
+    "Price": 10000,
+    "Stock": 10000
   }
 ]

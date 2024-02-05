@@ -27,5 +27,15 @@ app.Run();
 
 builder.Services.AddScoped<DBModelRepository>(provider =>
 {
-    return new DBModel("DBModle.cs")
-})
+    return new DBModelRepository("DBModle.cs");
+});
+
+builder.Services.AddScoped<ProductRepository>(provider =>
+{
+    return new ProductRepository("Product.cs");
+});
+
+builder.Services.AddScoped<UserCredentialsRepository>(provider =>
+{
+    return new UserCredentialsRepository("UserCredentials.cs");
+});

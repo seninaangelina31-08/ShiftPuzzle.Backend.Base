@@ -1,12 +1,14 @@
+using PracticeA;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.services.AddScopes<DBModel>(provider => 
+builder.Services.AddScoped<DBModel>(provider => 
 {
-    return new DBModel("DataBase.json");
+    return new DBModel("DataBase.json", "BackupDB.json");
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

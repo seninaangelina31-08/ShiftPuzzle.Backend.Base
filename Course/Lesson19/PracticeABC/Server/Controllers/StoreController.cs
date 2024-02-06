@@ -20,12 +20,11 @@ public class StoreController : ControllerBase
         _productRepository = productRepository;
     }
 
-
     [HttpPost]
     [Route("/store/updateprice")]
     public IActionResult UpdatePrice(string name, double newPrice)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = _productRepository.GetProductName(name);
         if (product != null)
         {
             product.Price = newPrice;
@@ -41,7 +40,7 @@ public class StoreController : ControllerBase
     [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = _productRepository.GetProductName(currentName);
         if (product != null)
         {
             product.Name = newName;
@@ -58,7 +57,7 @@ public class StoreController : ControllerBase
     [Route("/store/outofstock")]
     public IActionResult OutOfStock()
     {
-        var outOfStockItems = Items.Where(p => p.Stock == 0).ToList();
+        var outOfStockItems = _productRepository.GetOutOfStock();
         if (outOfStockItems.Any())
         {
             return Ok(outOfStockItems);
@@ -93,9 +92,9 @@ public class StoreController : ControllerBase
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
     { 
-        Items.Add(newProduct);
-        WriteDataToFile();
-        return Ok(Items);
+        _productRepository.ItemsAdd(newProduct);
+        _productRepository.WriteDataToFile();
+        return Ok(_productRepository.GetItems());
     }
 
 
@@ -103,10 +102,10 @@ public class StoreController : ControllerBase
     [Route("/store/delete")]
     public IActionResult Delete(string name)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = _productRepository.GetProductName(name);
         if (product != null)
         {
-            Items.Remove(product);
+            _productRepository.ItemsRemove(product);
             return Ok($"{name} удален");
         }
         else
@@ -120,7 +119,14 @@ public class StoreController : ControllerBase
     [Route("/store/show")]
     public IActionResult Show()
     {
-        return Ok(Items);
+        return Ok(_productRepository.GetItems());
     }
 
+    [HttpGet]
+    [Route("/store/backup")]
+    public IActionResult BackUp()
+    {
+        _productRepository.SaveFilesInBackUp();
+        return Ok("Файлы сохранены в резервную копиюы");
+    }
 }

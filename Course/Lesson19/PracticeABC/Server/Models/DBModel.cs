@@ -13,12 +13,16 @@ using System.Collections.Generic;
 public class DBModel
 {
 
-    private List<Product> Items = new List<Product>();
+    private List<Product> _items = new List<Product>();
 
-    private readonly string _jsonFilePath = "DataBase.json";
+    private string _jsonFilePath;
 
-    public void StoreController()
+    private string _jsonFilePathBackUp;
+
+    public DBModel(string jsonFilePath, string jsonFilePathBackUp)
     {
+        _jsonFilePath = jsonFilePath;
+        _jsonFilePathBackUp = jsonFilePathBackUp;
         ReadDataFromFile();
     }
 
@@ -27,6 +31,32 @@ public class DBModel
     {
         return JsonSerializer.Deserialize<List<Product>>(json);
     }
+
+
+    public Product GetProductName(string name)
+    {
+        return _items.FirstOrDefault(p => p.Name == name);
+    }
+    public List<Product> GetOutOfStock()
+    {
+        return _items.Where(p => p.Stock == 0).ToList();
+    }
+    public List<Product> ItemsAdd(Product newProduct)
+    {
+        _items.Add(newProduct);
+        return _items;
+    }
+    public List<Product> ItemsRemove(Product product)
+    {
+        _items.Remove(product);
+        return _items;
+    }
+    public List<Product> GetItems()
+    {
+        return _items;
+    } 
+
+    
 
     private string ReadDB()
     {
@@ -42,7 +72,7 @@ public class DBModel
     {
         if (DBExist())
         { 
-            Items =  ConvertTextDBToList(ReadDB());
+            _items =  ConvertTextDBToList(ReadDB());
         }
     }
 
@@ -51,7 +81,7 @@ public class DBModel
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        return JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(_items, options);
     }
 
     private void WriteTiDB(string json)
@@ -59,8 +89,19 @@ public class DBModel
         System.IO.File.WriteAllText(_jsonFilePath, json);
     }
 
-    private void WriteDataToFile()
-    { 
+    public void WriteDataToFile()
+    {
         WriteTiDB(ConvertDBtoJson());
+    }
+
+
+    private void WriteTiDBBackUp(string json)
+    {
+        System.IO.File.WriteAllText(_jsonFilePathBackUp, json);
+    }
+
+    public void SaveFilesInBackUp()
+    {
+        WriteTiDBBackUp(ConvertDBtoJson());
     }
 }

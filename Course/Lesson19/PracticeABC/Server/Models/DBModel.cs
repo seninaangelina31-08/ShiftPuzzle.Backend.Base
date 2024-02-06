@@ -72,4 +72,9 @@ public class DBModel
     { 
         WriteTiDB(ConvertDBtoJson());
     }
+
+    public void Back()
+    {
+        System.IO.File.WriteAllText("BackupDB.json", ConvertDBtoJson());
+    }
 }

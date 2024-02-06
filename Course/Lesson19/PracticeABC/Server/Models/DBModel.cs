@@ -1,4 +1,38 @@
-public class DBModel{
+namespace Prac.Models;
+
+public class Product
+    {
+    [Required]
+    [StringLength(100, MinimumLength = 3)]
+    public string Name { get; set; }
+
+    [Range(0.01, 10000)]
+    public double Price { get; set; }
+
+    [Range(0, 10000)]
+    public int Stock { get; set; }
+
+        public Product(string name, double price, int stock)
+        {
+            Name = name;
+            Price = price;
+            Stock = stock;
+        }
+    }
+
+public class UserCredentials
+    {
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string User { get; set; }
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string Pass { get; set; }
+
+    }
+
+public class DBModel
+{
     private List<Product> ConvertTextDBToList(string json)
     {
         return JsonSerializer.Deserialize<List<Product>>(json)
@@ -21,8 +55,6 @@ public class DBModel{
             Items =  ConvertTextDBToList(ReadDB());
         }
     }
-
-    #endregion
  
 
     private string  ConvertDBtoJson()

@@ -1,4 +1,3 @@
-namespace PracticeA;
 
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +8,7 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Server.Models;
 [ApiController]
 public class StoreController : ControllerBase
 {
@@ -47,10 +47,13 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
+    private readonly DBModel _database;
 
-    public StoreController()
+    public StoreController(DBModel dbmodel)
     {
         ReadDataFromFile();
+        this._database = dbmodel;
+
     }
 
 
@@ -160,7 +163,7 @@ public class StoreController : ControllerBase
 
     private List<Product> ConvertTextDBToList(string json)
     {
-        return JsonSerializer.Deserialize<List<Product>>(json)
+        return JsonSerializer.Deserialize<List<Product>>(json);
     }
 
     private string ReadDB()
@@ -181,23 +184,22 @@ public class StoreController : ControllerBase
         }
     }
 
-    #endregion
  
 
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(Items, options);
     }
 
-    private void WriteTiDB(string json)
+    private void WriteToDB(string json)
     {
         System.IO.File.WriteAllText(_jsonFilePath, json);
     }
 
     private void WriteDataToFile()
     { 
-        WriteTiDB(ConvertDBtoJson());
+        WriteToDB(ConvertDBtoJson());
     }
  
 

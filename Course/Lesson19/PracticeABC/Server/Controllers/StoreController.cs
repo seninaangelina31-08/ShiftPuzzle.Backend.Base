@@ -187,7 +187,7 @@ public class StoreController : ControllerBase
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(Items, options);
     }
 
     private void WriteTiDB(string json)

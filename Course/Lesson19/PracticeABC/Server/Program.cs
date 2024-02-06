@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<ModelDB>(provider =>
+{
+    return new ModelDB("url.json");
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

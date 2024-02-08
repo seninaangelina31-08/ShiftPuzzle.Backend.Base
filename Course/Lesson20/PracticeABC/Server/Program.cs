@@ -10,10 +10,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
  
-builder.Services.AddScoped<ProductRepository>(provider =>
+builder.Services.AddScoped<DBModel>(provider =>
 {
     // Use the constructor with the appropriate parameters, e.g., the JSON file path
-    return new ProductRepository("Data Source=DataBase.db");
+    return new DBModel("Data Source=DataBase.db");
 });
 
 

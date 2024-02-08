@@ -31,23 +31,22 @@ namespace Client
             [Range(0, 10000)]
             public int stock { get; set; }
         }
+        public class CPrice
+        {
+            public string name;
+            public double newPrice;
+        }
         public static void UpdatePrice()
         {
-            if (!IsAuthorized)
-            {
-                Console.WriteLine("Вы не авторизованы");
-                return;
-            }
-
             var url = "http://localhost:5087/store/updateprice"; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
-            var name = Console.ReadLine();
+            string name1 = Console.ReadLine();
             Console.WriteLine("Введите новую цену продукта:");
-            var price = double.Parse(Console.ReadLine());
-            var newPrice = new
+            double price = double.Parse(Console.ReadLine());
+            CPrice newPrice = new CPrice
             {
-                Name = name,
-                Price = price
+                name = name1,
+                newPrice = price
             };
             var client = new HttpClient();
             string json = JsonSerializer.Serialize(newPrice);
@@ -63,15 +62,19 @@ namespace Client
                 Console.WriteLine($"Error: {response.StatusCode}");
             }
         }
-
+        public class CName
+        {
+            public string currentName;
+            public string newName;
+        }
         public static void UpdateName()
-        {   
+        {
             var url = "http://localhost:5087/store/updatename"; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
             string name = Console.ReadLine();
             Console.WriteLine("Введите новое название продукта:");
             string newname = Console.ReadLine();
-            object new_Name = new
+            CName new_Name = new CName
             {
                 currentName = name,
                 newName = newname

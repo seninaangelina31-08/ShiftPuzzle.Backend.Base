@@ -1,11 +1,9 @@
 namespace PracticeABC; 
-using System.Text.Json; 
-using System.Collections.Generic; 
 
 using System.Data.SQLite;
 using System.Collections.Generic;
 
-public class ProductRepository
+public class DBModel
     {
         private readonly string _connectionString;
         private List<Product> products = new List<Product>();
@@ -17,7 +15,7 @@ public class ProductRepository
             Stock INTEGER NOT NULL
         )";
 
-        public ProductRepository(string connectionString)
+        public DBModel(string connectionString)
         {
             _connectionString = connectionString;
             InitializeDatabase();
@@ -43,21 +41,52 @@ public class ProductRepository
             List<Product> products = new List<Product>();
             using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
+                connection.Open();
                 string query = "SELECT * FROM Products";
-                using (SQLiteDataReader reader = command.ExecuteReader())
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    while (reader.Read())
+                    using (SQLiteDataReader reader = command.ExecuteReader())
                     {
-                        Product product = new Product(
-                            reader["Name"].ToString(),
-                            Convert.ToDouble(reader["Price"]),
-                            Convert.ToInt32(reader["Stock"])
-                        );
-                        products.add(product);
+                        while (reader.Read())
+                        {
+                            Product product = new Product(
+                                reader["Name"].ToString(),
+                                Convert.ToDouble(reader["Price"]),
+                                Convert.ToInt32(reader["Stock"])
+                            );
+                            products.add(product);
+                        }
                     }
                 }
             }
             return products;
+        }
+
+        public Product GetProductByName(string name)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Products WHERE Name = @Name";
+                using (SQLiteDataReader reader = command.ExecuteReader())
+                {
+                    command.Parameters.AddWithValue("@Name", product.Name);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Product product = new Product(
+                                reader["Name"].ToString(),
+                                Convert.ToDouble(reader["Price"]),
+                                Convert.ToInt32(reader["Stock"])
+                            );
+                            return product;
+                        }
+                        return null;
+                    }
+                }
+            }
         }
 
         public void AddProduct(Product product)
@@ -66,6 +95,23 @@ public class ProductRepository
             {
                 connection.Open();
                 string query = "INSERT INTO Products (Name, Price, Stock) Values (@Name, @Price, @Stock)";
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Stock", product.Stock);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE Products SET Name = @Name, Price = @Price, Stock = @Stock WHERE Name = @Name";
 
                 using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {

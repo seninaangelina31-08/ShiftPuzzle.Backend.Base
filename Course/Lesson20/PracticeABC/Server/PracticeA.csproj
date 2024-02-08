@@ -14,10 +14,14 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.11" />
 =======
 >>>>>>> ec9a1010 (Материалы 20-го урока)
+=======
+    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+>>>>>>> 9a04c3d8 (refactor: try to run APIs)
   </ItemGroup>
 
 </Project>

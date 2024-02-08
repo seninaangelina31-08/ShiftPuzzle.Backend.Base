@@ -15,6 +15,7 @@ builder.Services.AddScoped<ProductRepository>(provider =>
     // Use the constructor with the appropriate parameters, e.g., the JSON file path
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     return new ProductRepository("Data Source=DataBase.db");
 });
 
@@ -28,6 +29,9 @@ builder.Services.AddScoped<ProductRepository>(provider =>
 >>>>>>> ec9a1010 (Материалы 20-го урока)
 =======
     return new ProductRepository("DataBase.db");
+=======
+    return new ProductRepository("Data Source=DataBase.db");
+>>>>>>> 1c7df664 (try 2)
 });
 
 

@@ -21,8 +21,13 @@ public class Product
         Stock = stock;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public Product() {}
 =======
 >>>>>>> ec9a1010 (Материалы 20-го урока)
+=======
+
+    public Product() {}
+>>>>>>> 1c7df664 (try 2)
 }

@@ -218,7 +218,7 @@ public class ProductRepository
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
-            string query = "SELECT * FROM Products WHERE NAME = @Name";
+            string query = "SELECT * FROM Products WHERE Name = @Name";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Name", name);

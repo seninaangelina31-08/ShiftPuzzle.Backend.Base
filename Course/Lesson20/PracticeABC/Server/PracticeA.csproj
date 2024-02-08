@@ -17,11 +17,14 @@
 <<<<<<< HEAD
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.11" />
+<<<<<<< HEAD
 =======
 >>>>>>> ec9a1010 (Материалы 20-го урока)
 =======
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
 >>>>>>> 9a04c3d8 (refactor: try to run APIs)
+=======
+>>>>>>> 9ce752b1 (fix: file stucture changed)
   </ItemGroup>
 
 </Project>

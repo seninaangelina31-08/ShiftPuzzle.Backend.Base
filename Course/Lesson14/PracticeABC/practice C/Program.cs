@@ -40,7 +40,7 @@ class Program
         //string latitude1 = MyData_responce;
         foreach (var i in longitude1 )
         {
-         Console.WriteLine($"Долгота: {i.longitude} \nШирота:{i.latitude}");   
+         Console.WriteLine($"Долгота: {i.longitude} \nШиroтa:{i.latitude}город {i.state}");   
         }
         
         Console.WriteLine(MyData_URL);

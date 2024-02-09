@@ -10,9 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 # Практика А:
 >>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
+=======
+>>>>>>> c9ced4ce (feat: added answer to task 17)
 
 //1. Добавить чтение и запись (функция WriteToFile / ReadFile)
 //1. Добавить графическией интрефейс для клиента с возможность выбора 3 функций (1. авторизация 2. Добавление продукта 3. Вывод спика 4. Выход)

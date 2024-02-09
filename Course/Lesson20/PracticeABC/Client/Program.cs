@@ -13,6 +13,7 @@ namespace Client
         private const string Port = "5087";
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
+        private const string DeleteProductMethod = "/store/delete";
         private const string ShowProductsMethod = "/store/show";
 
         [Serializable]
@@ -95,6 +96,42 @@ namespace Client
             }
         }
 
+        private static void DeleteProduct()
+        {
+            if (!IsAuthorized)
+            {
+                Console.WriteLine("Вы не авторизованы");
+                return;
+            }
+
+            var url = $"{BaseUrl}:{Port}{DeleteProductMethod}";
+
+            Console.WriteLine("Введите название продукта:");
+            Dictionary<string, string> nameObj = new Dictionary<string, string>();
+
+            string NameProd = Console.ReadLine();
+
+            nameObj.Add("name", NameProd);
+            // var NameObj =             // {
+            //     name = NameProd
+            // };
+
+            var json = JsonSerializer.Serialize(nameObj);
+            var content = new StringContent(NameProd, Encoding.UTF8, "application/json");
+
+            var response = Client.PostAsync(url, content).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine("Продукт удален");
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response}");
+            }
+        }
+
         private static void Auth()
         {
             var url = $"{BaseUrl}:{Port}{AuthMethod}";
@@ -138,8 +175,9 @@ namespace Client
                 Console.WriteLine("Выберите опцию:");
                 Console.WriteLine("1. Авторизация");
                 Console.WriteLine("2. Отправить продукт");
-                Console.WriteLine("3. Вывести список");
-                Console.WriteLine("4. Выйти");
+                Console.WriteLine("3. Удалить продукты");
+                Console.WriteLine("4. Вывести список");
+                Console.WriteLine("5. Выйти");
                 Console.Write("Введите ваш выбор: ");
 
                 var choice = Console.ReadLine();
@@ -159,9 +197,18 @@ namespace Client
                         SendProduct();
                         break;
                     case "3":
-                        DisplayProducts();
+                        if (!IsAuthorized)
+                        {
+                            Console.WriteLine("Вы не авторизованы
+                            break;
+                        }
+
+                        DeleteProduct();
                         break;
                     case "4":
+                        DisplayProducts();
+                        break;
+                    case "5":
                         return;
                     default:
                         Console.WriteLine("Неверный выбор. Попробуйте снова.");
@@ -171,3 +218,4 @@ namespace Client
         }
     }
 }
+\\\\\\\ппппп7774444тув  ц

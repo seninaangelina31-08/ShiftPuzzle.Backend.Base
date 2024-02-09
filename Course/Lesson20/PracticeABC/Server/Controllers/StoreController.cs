@@ -15,9 +15,9 @@ using System.Collections.Generic;
 public class StoreController : ControllerBase
 {
     
-    private readonly ProductRepository _productRepository;
+    private readonly DBModel _productRepository;
 
-        public StoreController(ProductRepository productRepository)
+        public StoreController(DBModel productRepository)
         {
             _productRepository = productRepository;
         }

@@ -9,7 +9,6 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
-# Практика А:
 
 //1. Добавить чтение и запись (функция WriteToFile / ReadFile)
 //1. Добавить графическией интрефейс для клиента с возможность выбора 3 функций (1. авторизация 2. Добавление продукта 3. Вывод спика 4. Выход)
@@ -71,11 +70,11 @@ public class StoreController : ControllerBase
 
     private List<Product> Items = new List<Product>();
 
-    // поле с путем до базы данных 
+    private readonly string jsonFilePath = "DataBase.json";
 
     public StoreController()
     {
-       // чтение
+       ReadDataFromFile();
     }
 
 
@@ -153,7 +152,7 @@ public class StoreController : ControllerBase
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        // запись
+        WriteDataToFile();
         return Ok(Items);
     }
 
@@ -184,12 +183,18 @@ public class StoreController : ControllerBase
 
     private void ReadDataFromFile()
     {
-        // опишу логику
+        if (System.IO.File.Exists(jsonFilePath))
+        {
+            string json = System.IO.File.ReadAllText(jsonFilePath);
+            Items=JsonSerializer.Deserialize<List<Product>>(json);
+        }
     }
 
     private void WriteDataToFile()
     {
-        // опишу логику
+        var options = new JsonSerializerOptions {WriteIndented = true };
+        string json = JsonSerializer.Serialize(Items, options);
+        System.IO.File.WriteAllText(jsonFilePath, json);
     }
 
 

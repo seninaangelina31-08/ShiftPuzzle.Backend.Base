@@ -17,4 +17,3 @@ public class Product
             Stock = stock;
         }
     }
-List<Product> _Product = new List<Product>();

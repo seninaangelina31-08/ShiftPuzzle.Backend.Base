@@ -1,5 +1,6 @@
 namespace PracticeA;
 using System.Text.Json;
+using System.IO;
 
 
 public class DBModel
@@ -52,5 +53,11 @@ public class DBModel
     private void WriteDataToFile()
     { 
         WriteTiDB(ConvertDBtoJson());
+    }
+
+    private void Becap()
+    {
+        string json = JsonSerialazer.Serialize(Items);
+        File.AppendAllText(_jsonFilePath, json);
     }
 }

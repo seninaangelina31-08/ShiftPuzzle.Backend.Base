@@ -45,16 +45,19 @@ public class ProductRepository
             connection.Open();
             string query = "SELECT * FROM Products";
 
-            using (SQLiteDataReader reader = command.ExecuteReader())
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                while (reader.Read())
+                using (SQLiteDataReader reader = command.ExecuteReader())
                 {
-                    Product product = new Product(
-                        reader["Name"].ToString(),
-                        Convert.ToDouble(reader["Price"]),
-                        Convert.ToInt32(reader["Stock"])
-                    );
-                    products.add(product);
+                    while (reader.Read())
+                    {
+                        Product product = new Product(
+                            reader["Name"].ToString(),
+                            Convert.ToDouble(reader["Price"]),
+                            Convert.ToInt32(reader["Stock"])
+                        );
+                        products.add(product);
+                    }
                 }
             }
         }

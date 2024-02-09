@@ -49,4 +49,5 @@ namespace PracticeA;
         var options = new JsonSerializerOptions { WriteIndented = true };
         string string_json = JsonSerializer.Serialize(this.Items, options);
         System.IO.File.WriteAllText("BackupDB.json", string_json);
+    }
 }

@@ -7,12 +7,12 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using PracticeA;
-namespace PracticeA;
+using namespace Server;
+
 
 
 class DBModel {
-    private List<StoreController.Product> Items = new List<StoreController.Product>();
+    private List<Product> Items = new List<StoreController.Product>();
     private readonly string _jsonFilePath = "DataBase.json";
 
     private List<StoreController.Product> ConvertTextDBToList(string json)
@@ -37,7 +37,7 @@ class DBModel {
             Items =  ConvertTextDBToList(ReadDB());
         }
     }
-    
+
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };

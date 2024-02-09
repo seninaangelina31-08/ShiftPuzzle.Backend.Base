@@ -1,5 +1,5 @@
 namespace PracticeA;
-
+namespace DBModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -17,6 +17,11 @@ public class StoreController : ControllerBase
     [Required]
     [StringLength(100, MinimumLength = 3)]
     public string Name { get; set; }
+    private readonly DBModel _DBModel;
+    public Product(DBModel dBModel) {
+            _DBModel = dBModel;
+        }
+    
 
     [Range(0.01, 10000)]
     public double Price { get; set; }
@@ -30,7 +35,11 @@ public class StoreController : ControllerBase
             Price = price;
             Stock = stock;
         }
+
+        
     }
+
+    
 
     public class UserCredentials
     {

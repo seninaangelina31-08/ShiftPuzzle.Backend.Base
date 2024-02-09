@@ -36,6 +36,7 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 >>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
 
     public class UserCredentials
@@ -43,6 +44,13 @@ public class StoreController : ControllerBase
         public string username { get; set; }
         public string password { get; set; }
 
+=======
+    public class UserCredentials
+    {
+        public string username { get; set; }
+        public string password { get; set; }
+
+>>>>>>> 9a42ddb0 (feat: added answer to task 16)
     }
 
     private readonly string jsonFilePath = "DataBase.json";
@@ -104,6 +112,9 @@ public class StoreController : ControllerBase
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9a42ddb0 (feat: added answer to task 16)
     private void WriteDataToFile()
     {
         var options = new JsonSerializerOptions {WriteIndented = true };
@@ -111,6 +122,7 @@ public class StoreController : ControllerBase
         System.IO.File.WriteAllText(jsonFilePath, json);
     }
 
+<<<<<<< HEAD
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
@@ -118,13 +130,18 @@ public class StoreController : ControllerBase
         Items.Add(newProduct);
         WriteDataToFile();
 =======
+=======
+>>>>>>> 9a42ddb0 (feat: added answer to task 16)
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
-    {
-        
+    { 
         Items.Add(newProduct);
+<<<<<<< HEAD
 >>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
+=======
+        WriteDataToFile();
+>>>>>>> 9a42ddb0 (feat: added answer to task 16)
         return Ok(Items);
     }
 
@@ -154,6 +171,9 @@ public class StoreController : ControllerBase
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9a42ddb0 (feat: added answer to task 16)
 
     //1. **Класс `Program`**:
 //   - **Поля**:
@@ -184,6 +204,9 @@ public class StoreController : ControllerBase
         }
 
     }
+<<<<<<< HEAD
 =======
 >>>>>>> 43b20e84 (feat: added answers to tasks 15, 16)
+=======
+>>>>>>> 9a42ddb0 (feat: added answer to task 16)
 }

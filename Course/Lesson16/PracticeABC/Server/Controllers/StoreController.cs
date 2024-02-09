@@ -34,7 +34,14 @@ public class StoreController : ControllerBase
         public string NewName { get; set; }
     }
 
+    public class UserCredentials
+    {
+        public string username { get; set; }
+        public string password { get; set; }
 
+    }
+
+    private readonly string jsonFilePath = "DataBase.json";
     private static readonly List<Product> Items = new List<Product>();
 
     [HttpGet]
@@ -92,12 +99,19 @@ public class StoreController : ControllerBase
     //2. Запусти проверь с помощью http://localhost:5087/store/show     5087 = порт
 
 
+    private void WriteDataToFile()
+    {
+        var options = new JsonSerializerOptions {WriteIndented = true };
+        string json = JsonSerializer.Serialize(Items, options);
+        System.IO.File.WriteAllText(jsonFilePath, json);
+    }
+
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
-    {
-        
+    { 
         Items.Add(newProduct);
+        WriteDataToFile();
         return Ok(Items);
     }
 
@@ -126,4 +140,34 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+
+    //1. **Класс `Program`**:
+//   - **Поля**:
+//     - `IsAuthorized`: Статическое булево поле, указывающее, авторизован ли пользователь.
+//   - **Методы**:
+//     - `Main(string[] args)`: Основной метод программы, который представляет консольное меню и управляет действиями пользователя.
+//     - `DisplayProducts()`: Метод для получения и вывода списка продуктов с сервера.
+//     - `SendProduct()`: Метод для отправки информации о продукте на сервер.
+//     - `Auth()`: Метод для аутентификации пользователя на сервере.
+
+    [HttpPost]
+    [Route("/store/authorize")]
+    public IActionResult Authorize([FromBody] UserCredentials user)
+    { 
+        //создать 2 метода: метод отправки объекта и метод авторизации
+//- в методе отправки объекта создать объект который будет отправляться в самой функции
+//- указать ссылку апи (для метода добавления объекта который у вас должен быть прописан в контроллере)
+//- указать код из презентации
+
+        if((user.username == "IvanIvanovich") && (user.password == "12234"))
+        {
+            
+            return Ok($"{user.username} авторизован");
+        }
+        else
+        {
+            return NotFound($"{user.username} не найден");
+        }
+
+    }
 }

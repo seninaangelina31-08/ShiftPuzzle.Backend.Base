@@ -12,12 +12,12 @@ using namespace Server;
 
 
 class DBModel {
-    private List<Product> Items = new List<StoreController.Product>();
+    private List<Product> Items = new List<Product>();
     private readonly string _jsonFilePath = "DataBase.json";
 
-    private List<StoreController.Product> ConvertTextDBToList(string json)
+    private List<Product> ConvertTextDBToList(string json)
     {
-        return JsonSerializer.Deserialize<List<StoreController.Product>>(json);
+        return JsonSerializer.Deserialize<List<Product>>(json);
     }
 
     private string ReadDB()
@@ -36,6 +36,15 @@ class DBModel {
         { 
             Items =  ConvertTextDBToList(ReadDB());
         }
+    }
+    public void BackupDB() {
+        ReadDataFromFile();
+
+        string json = ConvertDBtoJson();
+
+        string backupFilePath = "BackupDB.json";
+        System.IO.File.WriteAllText(backupFilePath, json);
+        Console.WriteLine("Database backup created successfully.");
     }
 
     private string  ConvertDBtoJson()

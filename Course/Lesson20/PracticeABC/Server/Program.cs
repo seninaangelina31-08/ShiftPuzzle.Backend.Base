@@ -13,9 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ProductRepository>(provider =>
 {
     // Use the constructor with the appropriate parameters, e.g., the JSON file path
-    return new   ProductRepository("DataBase.json");
+    return new ProductRepository("Data Source=DataBase.db");
 });
-
 
 
 var app = builder.Build();

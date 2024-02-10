@@ -115,6 +115,13 @@ public class StoreController : ControllerBase
         {
             return Ok(_productRepository.GetAllProducts());
         }
+
+        [HttpGet]
+        [Route("/store/sortbystock")]
+        public IActionResult Sort()
+        {   
+            return Ok(_productRepository.SortProducts());
+        }
       
 
 }

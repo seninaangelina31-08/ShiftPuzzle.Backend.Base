@@ -15,6 +15,7 @@ namespace Client
         private const string AddProductMethod = "/store/add";
         private const string DeleteProductMethod = "/store/delete";
         private const string ShowProductsMethod = "/store/show";
+        private const string SortProductMethod = "/store/sortbystock";
 
         [Serializable]
         public class Product
@@ -28,6 +29,16 @@ namespace Client
 
             [Range(0, 10000)]
             public int Stock { get; set; }
+
+            public Product() { }
+
+            public Product(string name, double price, int stock)
+            {
+                this.Name = name;
+                this.Price = price;
+                this.Stock = stock;
+            }
+
         }
 
         private static bool IsAuthorized = false;
@@ -92,7 +103,7 @@ namespace Client
             }
             else
             {
-                Console.WriteLine($"Error: {response.StatusCode}");
+                Console.WriteLine($"Error: {response}");
             }
         }
 
@@ -130,6 +141,29 @@ namespace Client
             {
                 Console.WriteLine($"Error: {response}");
             }
+        }
+
+        private static void SortProducts()
+        {
+            var url = $"{BaseUrl}:{Port}{SortProductMethod}";
+
+            var response = Client.GetAsync(url).Result;
+            var responseContent = response.Content.ReadAsStringAsync().Result;
+
+            List<Product> products = JsonSerializer.Deserialize<List<Product>>(responseContent);
+
+            Console.WriteLine("Список отсортирован");
+            Console.WriteLine(responseContent);
+            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine("| Название продукта | Цена | Количество на складе |");
+            Console.WriteLine("-----------------------------------------------------------------");
+
+            foreach (Product product in products)
+            {
+                Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
+            }
+
+            Console.WriteLine("-----------------------------------------------------------------");
         }
 
         private static void Auth()
@@ -177,7 +211,8 @@ namespace Client
                 Console.WriteLine("2. Отправить продукт");
                 Console.WriteLine("3. Удалить продукты");
                 Console.WriteLine("4. Вывести список");
-                Console.WriteLine("5. Выйти");
+                Console.WriteLine("5. Отсортировать список по кол-ву продуктов");
+                Console.WriteLine("6. Выйти");
                 Console.Write("Введите ваш выбор: ");
 
                 var choice = Console.ReadLine();
@@ -199,16 +234,19 @@ namespace Client
                     case "3":
                         if (!IsAuthorized)
                         {
-                            Console.WriteLine("Вы не авторизованы
+                            Console.WriteLine("Вы не авторизованы.");
                             break;
                         }
 
-                        DeleteProduct();
+                        Console.WriteLine("Функция в разработке");
                         break;
                     case "4":
                         DisplayProducts();
                         break;
                     case "5":
+                        SortProducts();
+                        break;
+                    case "6":
                         return;
                     default:
                         Console.WriteLine("Неверный выбор. Попробуйте снова.");
@@ -218,4 +256,3 @@ namespace Client
         }
     }
 }
-\\\\\\\ппппп7774444тув  ц

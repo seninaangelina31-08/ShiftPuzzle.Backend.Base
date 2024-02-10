@@ -141,6 +141,34 @@ public class DBModel
             }
         }
 
+        public List<Product> SortProducts()
+        {
+            List<Product> products = new List<Product>();
+            
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Products ORDER BY Stock";
+                
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Product product = new Product(
+                                reader["Name"].ToString(),
+                                Convert.ToDouble(reader["Price"]),
+                                Convert.ToInt32(reader["Stock"])
+                            );
+                            products.Add(product);
+                        }
+                    }
+                }
+            }
+            return products;
+        }
+
         // public void SaveChanges()
         // {
         //     var options = new JsonSerializerOptions { WriteIndented = true };

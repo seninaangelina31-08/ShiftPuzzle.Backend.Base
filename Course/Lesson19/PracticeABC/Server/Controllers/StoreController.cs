@@ -50,7 +50,8 @@ public class StoreController : ControllerBase
 
     public StoreController()
     {
-        ReadDataFromFile();
+       _dbModel = new DataBaseModel("DataBase.json");
+        Items = _dbModel.ReadDataFromFile();
     }
 
 
@@ -154,6 +155,7 @@ public class StoreController : ControllerBase
     [Route("/store/show")]
     public IActionResult Show()
     {
+        var items = _dbModel.ReadDataFromFile();
         return Ok(Items);
     }
  
@@ -170,7 +172,7 @@ public class StoreController : ControllerBase
 
     private bool DBExist()
     {
-        return System.IO.File.Exists(_jsonFilePath);
+        return _dbModel.ReadDataFromFile;
     }
 
     private void ReadDataFromFile()

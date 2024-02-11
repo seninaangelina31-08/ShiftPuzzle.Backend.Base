@@ -43,7 +43,6 @@ public class StoreController : ControllerBase
 
     }
 
-
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
@@ -52,7 +51,6 @@ public class StoreController : ControllerBase
     {
         ReadDataFromFile();
     }
-
 
 
     [HttpPost]
@@ -87,7 +85,6 @@ public class StoreController : ControllerBase
         }
     }
 
-
     [HttpGet]
     [Route("/store/outofstock")]
     public IActionResult OutOfStock()
@@ -102,7 +99,6 @@ public class StoreController : ControllerBase
             return Ok("Все продукты в наличии");
         }
     }
-
 
 
     [HttpPost]
@@ -122,7 +118,6 @@ public class StoreController : ControllerBase
     }
 
 
-
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
@@ -131,7 +126,6 @@ public class StoreController : ControllerBase
         WriteDataToFile();
         return Ok(Items);
     }
-
 
     [HttpPost]
     [Route("/store/delete")]
@@ -149,29 +143,55 @@ public class StoreController : ControllerBase
         }
     }
 
-
     [HttpGet]
     [Route("/store/show")]
     public IActionResult Show()
     {
         return Ok(Items);
     }
+    //В функции [ReadDataFromFile] вынести работу с json в отдельную функцию                [ConvertTextDBToList]
+    
+
+    private List<Product> ConvertTextDBToList(string json)
+    {
+        return JsonSerializer.Deserialize<List<Product>>(json);
+    }
+
+    // В функции [ReadDataFromFile] вынести работу с файлом в отдельную функцию              [ReadDB]
+    private string ReadDB()
+    {
+        return System.IO.File.ReadAllText(_jsonFilePath);
+    }
+    // В функции [ReadDataFromFile] вынести проверку сущестования файла в отдельную функцию  [DBExist] 
+    private bool DBExist()
+    {
+        return System.IO.File.Exists(_jsonFilePath);
+    }
 
     private void ReadDataFromFile()
     {
-        if (System.IO.File.Exists(_jsonFilePath))
-        {
-            string json = System.IO.File.ReadAllText(_jsonFilePath);
-            Items = JsonSerializer.Deserialize<List<Product>>(json);
+        if (DBExist())
+        { 
+            Items =  ConvertTextDBToList(ReadDB());
         }
+    }
+    //Рефакторинг серверной части [Server/StoreController.cs]
+    //В функции [WriteDataToFile] вынести работу с json в отдельную функцию    [ConvertDBtoJson]
+    private string  ConvertDBtoJson()
+    {
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        return JsonSerializer.Serialize(Items, options);
+    }
+    //В функции [WriteDataToFile] вынести работу с файлом в отдельную функцию  [WriteToDB]
+
+    private void WriteTiDB(string json)
+    {
+        System.IO.File.WriteAllText(_jsonFilePath, json);
     }
 
     private void WriteDataToFile()
     {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        string json = JsonSerializer.Serialize(Items, options);
-        System.IO.File.WriteAllText(_jsonFilePath, json);
+        WriteTiDB(ConvertDBtoJson());
     }
-
 
 }

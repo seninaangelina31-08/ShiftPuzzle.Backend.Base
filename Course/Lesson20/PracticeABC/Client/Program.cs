@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace Client
 {
@@ -40,12 +41,13 @@ namespace Client
             var responseContent = response.Content.ReadAsStringAsync().Result;
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
+            var sorted = products.OrderByDescending(ob => ob.Stock).ToArray();
 
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");
 
-            foreach (var product in products)
+            foreach (var product in sorted)
             {
                 Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
             }

@@ -11,12 +11,16 @@ namespace Client
     {
         private const string BaseUrl = "http://localhost";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private const string Port = "5051";
 
 =======
         private const string Port = "5087";
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
+=======
+        private const string Port = "5051";
+>>>>>>> 56c5f66f (feat: added answer to task 19)
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";

@@ -14,12 +14,18 @@
     "Price": 123,
     "Stock": 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 56c5f66f (feat: added answer to task 19)
   },
   {
     "Name": "Bubblecup",
     "Price": 234,
     "Stock": 23
+<<<<<<< HEAD
 =======
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
+=======
+>>>>>>> 56c5f66f (feat: added answer to task 19)
   }
 ]

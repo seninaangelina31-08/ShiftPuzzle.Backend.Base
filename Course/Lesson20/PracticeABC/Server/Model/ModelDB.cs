@@ -59,10 +59,29 @@ public class ProductRepository
             return _products;
         }
 
-        // public Product GetProductByName(string name)
-        // {
-        //     return _products.FirstOrDefault(p => p.Name == name);
-        // }
+        public Product GetProductByName(string name)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Products WHERE Name = @Name";
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", name);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Product product = new Product(reader["Name"].ToString(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
+                            return product;
+                        }
+                        Console.WriteLine("Таких тута нет.");
+                        return null;
+                    }
+                }
+            }
+        }
 
         public void AddProduct(Product product)
         {

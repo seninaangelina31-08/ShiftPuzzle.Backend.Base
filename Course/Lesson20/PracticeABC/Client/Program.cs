@@ -41,10 +41,14 @@ namespace Client
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
 <<<<<<< HEAD
+<<<<<<< HEAD
             products = products.OrderBy(p => p.Stock).ToList();
 =======
 
 >>>>>>> ec9a1010 (Материалы 20-го урока)
+=======
+            products = products.OrderBy(p => p.Stock).ToList();
+>>>>>>> 67750f2b (feat: added answer to task 20)
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");

@@ -10,7 +10,7 @@ namespace Client
     public class Program
     {
         private const string BaseUrl = "http://localhost";
-        private const string Port = "5087";
+        private const string Port = "5051";
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";

@@ -12,6 +12,7 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
+    
     public class Product
     {
     [Required]
@@ -30,8 +31,13 @@ public class StoreController : ControllerBase
             Price = price;
             Stock = stock;
         }
+        
     }
 
+    public class BackupDB
+        {
+            public List<Product> Products { get; set; }
+        }
     public class UserCredentials
     {
         [Required]
@@ -47,6 +53,7 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
+    private readonly string _backupJsonFilePath = "BackupDB.json";
 
     public StoreController()
     {
@@ -127,6 +134,7 @@ public class StoreController : ControllerBase
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
     { 
+        ReadDataFromFile();
         Items.Add(newProduct);
         WriteDataToFile();
         return Ok(Items);
@@ -160,7 +168,7 @@ public class StoreController : ControllerBase
 
     private List<Product> ConvertTextDBToList(string json)
     {
-        return JsonSerializer.Deserialize<List<Product>>(json)
+        return JsonSerializer.Deserialize<List<Product>>(json);
     }
 
     private string ReadDB()
@@ -181,13 +189,48 @@ public class StoreController : ControllerBase
         }
     }
 
-    #endregion
- 
+   
+
+    //Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs]
+    //создать класс модели и перенести работу с базой данных
+
+
+    //Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs]
+    //прокинуть связь между контроллером и моделью
+    //сделать вызов из контроллера
+
+
+    //Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs]
+   //создать функцию бекапа для БД в отдельную базу ["BackupDB.json"]
+    
+    private BackupDB ConvertTextDBToBackup(string json)
+    {
+        return JsonSerializer.Deserialize<BackupDB>(json);
+    }
+    
+    private string ReadBackupDB()
+    {
+        return System.IO.File.ReadAllText(_backupJsonFilePath);
+    }
+    
+    private void ReadBackupDataFromFile()
+    {
+        if (BackupDBExist())
+        {
+            var backupDB = ConvertTextDBToBackup(ReadBackupDB());
+            Items = backupDB.Products;
+        }
+    }
+    private bool BackupDBExist()
+    {
+        return System.IO.File.Exists(_backupJsonFilePath);
+    }
+
 
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(Items, options);
     }
 
     private void WriteTiDB(string json)
@@ -198,8 +241,7 @@ public class StoreController : ControllerBase
     private void WriteDataToFile()
     { 
         WriteTiDB(ConvertDBtoJson());
+
     }
  
-
-
 }

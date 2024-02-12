@@ -15,42 +15,15 @@ public class ProductRepository
             ReadDataFromFile();
         }
 
-        public List<Product> GetAllProducts()
-        {
-            return _products;
-        }
+        `SELECT * FROM Products;`
 
-        public Product GetProductByName(string name)
-        {
-            return _products.FirstOrDefault(p => p.Name == name);
-        }
+        `SELECT * Product WHERE Name = @Nmae`
 
-        public void AddProduct(Product product)
-        {
-            _products.Add(product);
-            SaveChanges();
-        }
+        -`INSERT INTO Products (Name, Price, Stock,)VALUES(@Name,@Price,@Stock)`
 
-        public void UpdateProduct(Product product)
-        {
-            var existingProduct = _products.FirstOrDefault(p => p.Name == product.Name);
-            if (existingProduct != null)
-            {
-                existingProduct.Price = product.Price;
-                existingProduct.Stock = product.Stock;
-                SaveChanges();
-            }
-        }
+        -`UPDATE Product Set Price = @Price, Stock WHERE Name = @Name`
 
-        public void DeleteProduct(string name)
-        {
-            var product = _products.FirstOrDefault(p => p.Name == name);
-            if (product != null)
-            {
-                _products.Remove(product);
-                SaveChanges();
-            }
-        }
+        -`DELETE FROM Product WHERE Name = @
 
         public void SaveChanges()
         {

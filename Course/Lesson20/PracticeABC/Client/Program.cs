@@ -32,7 +32,7 @@ namespace Client
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
 
-        private static void DisplayProducts()
+        private static List<Product> GetSorting()
         {
             var url = $"{BaseUrl}:{Port}{ShowProductsMethod}";
 
@@ -40,6 +40,18 @@ namespace Client
             var responseContent = response.Content.ReadAsStringAsync().Result;
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
+
+            // Сортируем продукты по количеству единиц на складе
+            products.Sort((p1, p2) => p2.Stock.CompareTo(p1.Stock));
+
+            return products;
+        } 
+
+
+        private static void DisplayProducts()
+        {
+            var sortedProduct = GetSorting();
+
 
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");

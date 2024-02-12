@@ -9,10 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-<<<<<<< HEAD
-=======
     <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.11" />
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
   </ItemGroup>
 

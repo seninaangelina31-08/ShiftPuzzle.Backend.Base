@@ -45,6 +45,7 @@
 //             connection.Open();
 //             string query = "SELECT * FROM Products";
 
+<<<<<<< HEAD
 //             using (SQLiteCommand command = new SQLiteCommand(query, connection))
 //             {
 //                 using (SQLiteDataReader reader = command.ExecuteReader())
@@ -61,10 +62,29 @@
 //                 }
 //             }
 //         }
+=======
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+            {
+                using (SQLiteDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Product product = new Product(
+                            reader["Name"].ToString(),
+                            Convert.ToDouble(reader["Price"]),
+                            Convert.ToInt32(reader["Stock"])
+                        );
+                        products.Add(product);
+                    }
+                }
+            }
+        }
+>>>>>>> main
 
 //         return products;
 //     }
 
+<<<<<<< HEAD
 //     public Product GetProductByName(string name)
 //     {
 //         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
@@ -90,6 +110,33 @@
 //             }
 //         }
 //     }
+=======
+    public Product GetProductByName(string name)
+    {
+        using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+        {
+            connection.Open();
+            string query = "SELECT * FROM Products WHERE Name = @Name";
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Name", name);
+                using (SQLiteDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Product product = new Product(
+                            reader["Name"].ToString(),
+                            Convert.ToDouble(reader["Price"]),
+                            Convert.ToInt32(reader["Stock"])
+                        );
+                        return product;
+                    }
+                    return null;
+                }
+            }
+        }
+    }
+>>>>>>> main
 
 //     public void AddProduct(Product product)
 //     {

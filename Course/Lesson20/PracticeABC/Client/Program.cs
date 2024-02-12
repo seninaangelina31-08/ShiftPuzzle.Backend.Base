@@ -37,8 +37,6 @@ namespace Client
         {
             var url = $"{BaseUrl}:{Port}{SortedShowProductsMethod}"; 
             var response = Client.GetAsync(url).Result;
-            var content = response.Content.ReadAsStringAsync().Result;
-            Console.WriteLine(content);
             var products = JsonSerializer.Deserialize<List<Product>>(content);
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");

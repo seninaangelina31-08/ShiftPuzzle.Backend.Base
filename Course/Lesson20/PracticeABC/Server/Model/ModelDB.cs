@@ -146,7 +146,7 @@ public class ProductRepository
                     {
 
                         while (reader.Read())
-                        {   Console.WriteLine(reader["Name"]);
+                        {
                             Product product = new Product(reader["Name"].ToString(),
                             Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                             products.Add(product);

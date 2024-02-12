@@ -20,6 +20,4 @@ public class Product
         Price = price;
         Stock = stock;
     }
-
-    public Product() {}
 }

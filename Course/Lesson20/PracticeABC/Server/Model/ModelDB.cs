@@ -39,10 +39,28 @@ public class ProductRepository
 
             return products;
         }
-
+        
+        // Получение по имени
         public Product GetProductByName(string name)
         {
-            return _products.FirstOrDefault(p => p.Name == name);
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionstring))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Products WHERE Name = @Name";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {   
+                    command.Parameters.AddWithValue("@Name", name);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Product prod = new Product(reader["Name"].ToString(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
+                            return prod;
+                        }
+                        return null;
+                    }
+                }
+            }
         }
 
         // Добавление продукта

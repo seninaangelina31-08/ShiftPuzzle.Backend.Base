@@ -14,24 +14,44 @@ namespace Client
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";
+        private const string SortedShowProductsMethod = "/store/sorted_show";
 
-        [Serializable]
+        [System.Serializable]
         public class Product
         {
             [Required]
             [StringLength(100, MinimumLength = 3)]
-            public string Name { get; set; }
+            public string name { get; set; }
 
             [Range(0.01, 10000)]
-            public double Price { get; set; }
+            public double price { get; set; }
 
             [Range(0, 10000)]
-            public int Stock { get; set; }
+            public int stock { get; set; }
         }
 
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
+        
+        private static void DisplaySortedProducts()
+        {
+            var url = $"{BaseUrl}:{Port}{SortedShowProductsMethod}"; 
+            var response = Client.GetAsync(url).Result;
+            var content = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine(content);
+            var products = JsonSerializer.Deserialize<List<Product>>(content);
+            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine("| Название продукта | Цена | Количество на складе |");
+            Console.WriteLine("-----------------------------------------------------------------");
 
+            foreach (var product in products)
+            {
+
+                Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |");
+            }
+
+            Console.WriteLine("-----------------------------------------------------------------");            
+        }
         private static void DisplayProducts()
         {
             var url = $"{BaseUrl}:{Port}{ShowProductsMethod}";
@@ -47,7 +67,7 @@ namespace Client
 
             foreach (var product in products)
             {
-                Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
+                Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |");
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -74,9 +94,9 @@ namespace Client
 
             var product = new Product
             {
-                Name = name,
-                Price = price,
-                Stock = stock
+                name = name,
+                price = price,
+                stock = stock
             };
 
             var json = JsonSerializer.Serialize(product);
@@ -139,7 +159,8 @@ namespace Client
                 Console.WriteLine("1. Авторизация");
                 Console.WriteLine("2. Отправить продукт");
                 Console.WriteLine("3. Вывести список");
-                Console.WriteLine("4. Выйти");
+                Console.WriteLine("4. Вывести отсортированный список");                
+                Console.WriteLine("5. Выйти");
                 Console.Write("Введите ваш выбор: ");
 
                 var choice = Console.ReadLine();
@@ -155,13 +176,15 @@ namespace Client
                             Console.WriteLine("Вы не авторизованы.");
                             break;
                         }
-
                         SendProduct();
                         break;
                     case "3":
                         DisplayProducts();
                         break;
                     case "4":
+                        DisplaySortedProducts();
+                        break;
+                    case "5":
                         return;
                     default:
                         Console.WriteLine("Неверный выбор. Попробуйте снова.");

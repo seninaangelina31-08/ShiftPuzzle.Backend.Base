@@ -132,4 +132,28 @@ public class ProductRepository
                 }
             }
         }
+
+        public List<Product> GetSortedAllProducts()
+        {
+            List<Product> products = new List<Product>();            
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Products ORDER BY stock ASC";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {   Console.WriteLine(reader["Name"]);
+                            Product product = new Product(reader["Name"].ToString(),
+                            Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
+                            products.Add(product);
+                        }
+                    }
+                }
+            }
+            return products;
+        }
     }

@@ -115,6 +115,11 @@ public class StoreController : ControllerBase
         {
             return Ok(_productRepository.GetAllProducts());
         }
+        [HttpGet("/store/sorted_show")]
+        public IActionResult SortedShow()
+        {
+            return Ok(_productRepository.GetSortedAllProducts());
+        }
       
 
 }

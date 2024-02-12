@@ -32,6 +32,17 @@ namespace Client
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
 
+        private static List<Product> GetSorting()
+        {
+            var url = $"{BaseUrl}:{Port}{ShowProductsMethod}";
+            var response = Client.GetAsync(url).Result;
+            var responseContent = response.Content.ReadAsStringAsync().Result;
+            var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
+            products.Sort((p1, p2) => p2.Stock.CompareTo(p1.Stock));
+
+            return products;
+        } 
+
         private static void DisplayProducts()
         {
             var url = $"{BaseUrl}:{Port}{ShowProductsMethod}";

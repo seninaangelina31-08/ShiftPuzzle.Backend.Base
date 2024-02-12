@@ -53,9 +53,9 @@ public class DBModel
                             Product product = new Product(
                                 reader["Name"].ToString(),
                                 Convert.ToDouble(reader["Price"]),
-                                Convert.ToInt32(reader["Stock"])
+                                Convert.ToInt32(reader["Stock"]);
+                                products.Add(product);
                             );
-                            products.add(product);
                         }
                     }
                 }
@@ -69,7 +69,7 @@ public class DBModel
             {
                 connection.Open();
                 string query = "SELECT * FROM Products WHERE Name = @Name";
-                using (SQLiteDataReader reader = command.ExecuteReader())
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Name", product.Name);
                     using (SQLiteDataReader reader = command.ExecuteReader())

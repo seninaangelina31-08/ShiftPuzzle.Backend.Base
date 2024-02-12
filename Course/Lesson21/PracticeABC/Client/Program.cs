@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿﻿using System;
 =======
 ﻿using System;
@@ -287,3 +288,6 @@ namespace Client
 =======
 }
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+﻿
+>>>>>>> 240f7224 (feat: added answer to task 21)

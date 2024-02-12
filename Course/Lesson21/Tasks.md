@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Привет! Тебе предстоить сделать рефакторинг проекта с предыдшуего урока. 
 
 ---
@@ -93,3 +94,5 @@ Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDou
 =======
  
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+>>>>>>> 240f7224 (feat: added answer to task 21)

@@ -12,6 +12,7 @@ namespace Client
         private const string BaseUrl = "http://localhost";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private const string Port = "5051";
 
@@ -21,6 +22,12 @@ namespace Client
 =======
         private const string Port = "5051";
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+        private const string Port = "5051";
+=======
+        private const string Port = "5087";
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";

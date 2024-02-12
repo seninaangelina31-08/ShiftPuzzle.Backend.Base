@@ -4,6 +4,7 @@
     <OutputType>Exe</OutputType>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <TargetFramework>net8.0</TargetFramework>
 =======
     <TargetFramework>net7.0</TargetFramework>
@@ -11,6 +12,12 @@
 =======
     <TargetFramework>net8.0</TargetFramework>
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+    <TargetFramework>net8.0</TargetFramework>
+=======
+    <TargetFramework>net7.0</TargetFramework>
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>

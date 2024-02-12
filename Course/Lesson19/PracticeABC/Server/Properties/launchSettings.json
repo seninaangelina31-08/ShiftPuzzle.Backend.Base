@@ -1,6 +1,7 @@
 ﻿{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "$schema": "http://json.schemastore.org/launchsettings.json",
 =======
   "$schema": "https://json.schemastore.org/launchsettings.json",
@@ -8,22 +9,35 @@
 =======
   "$schema": "http://json.schemastore.org/launchsettings.json",
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+=======
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 240f7224 (feat: added answer to task 21)
       "applicationUrl": "http://localhost:59563",
       "sslPort": 44355
 =======
       "applicationUrl": "http://localhost:35709",
       "sslPort": 44393
+<<<<<<< HEAD
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
 =======
       "applicationUrl": "http://localhost:59563",
       "sslPort": 44355
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
     }
   },
   "profiles": {
@@ -34,6 +48,7 @@
       "launchUrl": "swagger",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "applicationUrl": "http://localhost:5051",
 =======
       "applicationUrl": "http://localhost:5087",
@@ -41,6 +56,12 @@
 =======
       "applicationUrl": "http://localhost:5051",
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+      "applicationUrl": "http://localhost:5051",
+=======
+      "applicationUrl": "http://localhost:5087",
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -52,6 +73,7 @@
       "launchUrl": "swagger",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "applicationUrl": "https://localhost:7256;http://localhost:5051",
 =======
       "applicationUrl": "https://localhost:7268;http://localhost:5087",
@@ -59,6 +81,12 @@
 =======
       "applicationUrl": "https://localhost:7256;http://localhost:5051",
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+      "applicationUrl": "https://localhost:7256;http://localhost:5051",
+=======
+      "applicationUrl": "https://localhost:7268;http://localhost:5087",
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

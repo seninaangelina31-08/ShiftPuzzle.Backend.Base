@@ -16,6 +16,7 @@ public class StoreController : ControllerBase
 {
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     private readonly IProductRepository _productRepository;
 
     public StoreController(IProductRepository productRepository)
@@ -23,13 +24,26 @@ public class StoreController : ControllerBase
         _productRepository = productRepository;
     }
 =======
+=======
+>>>>>>> 240f7224 (feat: added answer to task 21)
     private readonly ProductRepository _productRepository;
 
         public StoreController(ProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
+<<<<<<< HEAD
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+=======
+    private readonly SqlLiteProductRepository _productRepository;
+
+    public StoreController(SqlLiteProductRepository productRepository)
+    {
+        _productRepository = productRepository;
+    }
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
 
         [HttpPost]
         [Route("/store/updateprice")]
@@ -98,10 +112,17 @@ public class StoreController : ControllerBase
         [Route("/store/add")]
         public IActionResult Add([FromBody] Product newProduct)
 <<<<<<< HEAD
+<<<<<<< HEAD
         { 
 =======
         {
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+        {
+=======
+        { 
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
             _productRepository.AddProduct(newProduct);
             return Ok(_productRepository.GetAllProducts());
         }

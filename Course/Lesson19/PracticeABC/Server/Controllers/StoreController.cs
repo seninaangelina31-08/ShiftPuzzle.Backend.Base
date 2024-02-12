@@ -14,12 +14,18 @@ public class StoreController : ControllerBase
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
 =======
     
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+    
+=======
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
     public class Product
     {
     [Required]
@@ -40,6 +46,7 @@ public class StoreController : ControllerBase
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         
     }
     public class BackupDB
@@ -51,6 +58,8 @@ public class StoreController : ControllerBase
 
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
 =======
+=======
+>>>>>>> 240f7224 (feat: added answer to task 21)
         
     }
 
@@ -58,7 +67,14 @@ public class StoreController : ControllerBase
         {
             public List<Product> Products { get; set; }
         }
+<<<<<<< HEAD
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+=======
+    }
+
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
     public class UserCredentials
     {
         [Required]
@@ -76,12 +92,18 @@ public class StoreController : ControllerBase
     private readonly string _jsonFilePath = "DataBase.json";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private readonly string _backupJsonFilePath = "BackupDB.json";
 =======
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
 =======
     private readonly string _backupJsonFilePath = "BackupDB.json";
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+    private readonly string _backupJsonFilePath = "BackupDB.json";
+=======
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
 
     public StoreController()
     {
@@ -165,7 +187,12 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 240f7224 (feat: added answer to task 21)
         ReadDataFromFile();
+=======
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
         Items.Add(newProduct);
 =======
 =======
@@ -209,6 +236,7 @@ public class StoreController : ControllerBase
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return JsonSerializer.Deserialize<List<Product>>(json);
 =======
 
@@ -224,6 +252,12 @@ public class StoreController : ControllerBase
 =======
         return JsonSerializer.Deserialize<List<Product>>(json);
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+        return JsonSerializer.Deserialize<List<Product>>(json);
+=======
+        return JsonSerializer.Deserialize<List<Product>>(json)
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
     }
 
     private string ReadDB()
@@ -247,8 +281,11 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+>>>>>>> 240f7224 (feat: added answer to task 21)
    
 
     //Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs]
@@ -287,6 +324,7 @@ public class StoreController : ControllerBase
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     #endregion
 <<<<<<< HEAD
@@ -298,10 +336,17 @@ public class StoreController : ControllerBase
 >>>>>>> ec9a1010 (Материалы 20-го урока)
 =======
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+=======
+    #endregion
+ 
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
 
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -312,6 +357,12 @@ public class StoreController : ControllerBase
 =======
         return JsonSerializer.Serialize(Items, options);
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+        return JsonSerializer.Serialize(Items, options);
+=======
+        retunr JsonSerializer.Serialize(Items, options);
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
     }
 
     private void WriteTiDB(string json)
@@ -324,6 +375,9 @@ public class StoreController : ControllerBase
         WriteTiDB(ConvertDBtoJson());
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 240f7224 (feat: added answer to task 21)
 
     }
  
@@ -332,10 +386,14 @@ public class StoreController : ControllerBase
  
 
 
+<<<<<<< HEAD
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
 =======
 
     }
  
 >>>>>>> 56c5f66f (feat: added answer to task 19)
+=======
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 240f7224 (feat: added answer to task 21)
 }

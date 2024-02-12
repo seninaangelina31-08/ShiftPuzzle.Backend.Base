@@ -5,28 +5,48 @@
 // Шуточный интерфейс "Способность танцевать"
 interface IDanceable
 {
+<<<<<<< HEAD
     string Dance {get;}
+=======
+ 
+>>>>>>> 240f7224 (feat: added answer to task 21)
 }
 
 // Шуточный интерфейс "Способность петь"
 interface ISingable
 {
+<<<<<<< HEAD
     string Sing {get;}
+=======
+ 
+>>>>>>> 240f7224 (feat: added answer to task 21)
 }
 
 
 internal interface ITalkable
 {
+<<<<<<< HEAD
     string Talk {get;}
+=======
+  
+>>>>>>> 240f7224 (feat: added answer to task 21)
 }
 
 internal interface IJokeable
 {
+<<<<<<< HEAD
     string TellJoke {get;}
 }
 
 // Класс шутника, реализующий ITalkable, IJokeable, IDanceable и ISingable
 class Joker : ITalkable, IJokeable, IDanceable, ISingable
+=======
+     
+}
+
+// Класс шутника, реализующий ITalkable, IJokeable, IDanceable и ISingable
+class Joker  
+>>>>>>> 240f7224 (feat: added answer to task 21)
 {
     public void Talk()
     {
@@ -51,7 +71,11 @@ class Joker : ITalkable, IJokeable, IDanceable, ISingable
 
 
 // Класс клоуна, реализующий ITalkable и IJokeable
+<<<<<<< HEAD
 class Clown: ITalkable, IJokeable
+=======
+class Clown  
+>>>>>>> 240f7224 (feat: added answer to task 21)
 {
     public void Talk()
     {
@@ -73,6 +97,7 @@ class Program
         // Используем методы через интерфейсы
          
 
+<<<<<<< HEAD
         ITalkable jokerTalkable = new Joker();
         IJokeable jokerJokeable = new Joker();
         IDanceable jokerDanceable = new Joker();
@@ -90,5 +115,8 @@ class Program
 
         Console.WriteLine(clownTalkable.Talk);
         Console.WriteLine(clownJokeable.TellJoke);
+=======
+        
+>>>>>>> 240f7224 (feat: added answer to task 21)
     }
 }

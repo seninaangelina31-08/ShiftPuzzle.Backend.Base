@@ -13,6 +13,7 @@ namespace Client
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private const string Port = "5051";
 
@@ -28,6 +29,11 @@ namespace Client
         private const string Port = "5087";
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+
+        private const string Port = "5051";
+
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";

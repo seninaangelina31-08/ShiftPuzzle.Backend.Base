@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using PracticeABC;
 using System.Data.SQLite; // Добавляем пространство имен для работы с SQLite
 
@@ -54,6 +55,8 @@ var app = builder.Build();
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
 =======
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 using PracticeABC;
 using System.Data.SQLite; // Добавляем пространство имен для работы с SQLite
 
@@ -67,18 +70,22 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Регистрируем ProductRepository
-builder.Services.AddSingleton<SqlLiteProductRepository>(provider =>
+builder.Services.AddSingleton<IProductRepository>(provider =>
 {
     // Создаем базу данных и передаем путь к ней
     string connectPath = "Data Source=DataBase.db"; 
-    return new SqlLiteProductRepository(connectPath); // Путь к файлу базы данных SQLite
+    IProductRepository productRepository = new SQLLiteUpperCaseRepository(connectPath);
+    return productRepository; 
 });
 
 var app = builder.Build();
 
 // Настраиваем конвейер обработки HTTP-запросов.
+<<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -92,6 +99,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.Run();
 =======
 app.Run();
@@ -102,3 +110,6 @@ app.Run();
  
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+app.Run();
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class SqlLiteProductRepository : IProductRepository
 {
     private readonly string _connectionString;
@@ -31,6 +32,9 @@ public class ProductRepository
 =======
 =======
 public class SqlLiteProductRepository
+=======
+public class SqlLiteProductRepository 
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 {
     private readonly string _connectionString;
     private List<Product> products = new List<Product>();
@@ -42,8 +46,11 @@ public class SqlLiteProductRepository
             Stock INTEGER NOT NULL
         )";
     public SqlLiteProductRepository(string connectionString)
+<<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
     {
         _connectionString = connectionString;
         InitializeDatabase();
@@ -57,6 +64,7 @@ public class SqlLiteProductRepository
 
     private void InitializeDatabase()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         SQLiteConnection connection = new SQLiteConnection(_connectionString); 
@@ -81,6 +89,8 @@ public class SqlLiteProductRepository
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
 =======
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
         SQLiteConnection connection = new SQLiteConnection(_connectionString); 
         Console.WriteLine("База данных :  " + _connectionString + " создана");
         connection.Open();
@@ -88,8 +98,11 @@ public class SqlLiteProductRepository
         command.ExecuteNonQuery();
              
         
+<<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
     }
 
     public List<Product> GetAllProducts()
@@ -105,6 +118,7 @@ public class SqlLiteProductRepository
                 {
                     while (reader.Read())
                     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
@@ -124,6 +138,9 @@ public class SqlLiteProductRepository
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
                         products.Add(product);
                     }
                 }
@@ -150,6 +167,7 @@ public class SqlLiteProductRepository
                     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
                         return  product;
@@ -166,10 +184,11 @@ public class SqlLiteProductRepository
                             Stock = Convert.ToInt32(reader["Stock"])
                         };
 =======
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
                         return  product;
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
                     }
                     return null;
                 }
@@ -224,8 +243,12 @@ public class SqlLiteProductRepository
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+}
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))

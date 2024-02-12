@@ -1,9 +1,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿﻿using System;
 =======
 ﻿using System;
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+﻿﻿using System;
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -14,10 +18,13 @@ namespace Client
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> main
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 
 
     [Serializable]
@@ -47,23 +54,30 @@ namespace Client
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
     public class Program
     {
         private const string BaseUrl = "http://localhost";
         private const string Port = "5258";
+<<<<<<< HEAD
 =======
     public class Program
     {
         private const string BaseUrl = "http://localhost";
         private const string Port = "5087";
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         
@@ -93,6 +107,10 @@ namespace Client
 >>>>>>> main
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+        
+
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
@@ -104,11 +122,15 @@ namespace Client
             var response = Client.GetAsync(url).Result;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
             var responseContent = response.Content.ReadAsStringAsync().Result; 
             Console.WriteLine(responseContent);
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
 
 
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -128,12 +150,15 @@ namespace Client
 >>>>>>> main
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");
 
             foreach (var product in products)
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
@@ -147,6 +172,9 @@ namespace Client
 =======
                 Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+                Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -173,6 +201,7 @@ namespace Client
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             var product = new Product(name,price,stock); 
 =======
 <<<<<<< HEAD
@@ -191,6 +220,9 @@ namespace Client
 >>>>>>> main
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+            var product = new Product(name,price,stock); 
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 
             var json = JsonSerializer.Serialize(product);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -284,6 +316,7 @@ namespace Client
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -291,3 +324,6 @@ namespace Client
 =======
 ﻿
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+}
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))

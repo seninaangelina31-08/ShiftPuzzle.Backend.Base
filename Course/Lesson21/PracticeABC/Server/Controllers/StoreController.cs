@@ -17,6 +17,7 @@ public class StoreController : ControllerBase
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private readonly IProductRepository _productRepository;
 
     public StoreController(IProductRepository productRepository)
@@ -44,6 +45,14 @@ public class StoreController : ControllerBase
     }
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+    private readonly IProductRepository _productRepository;
+
+    public StoreController(IProductRepository productRepository)
+    {
+        _productRepository = productRepository;
+    }
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 
         [HttpPost]
         [Route("/store/updateprice")]
@@ -113,6 +122,7 @@ public class StoreController : ControllerBase
         public IActionResult Add([FromBody] Product newProduct)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { 
 =======
         {
@@ -123,6 +133,9 @@ public class StoreController : ControllerBase
         { 
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+        { 
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
             _productRepository.AddProduct(newProduct);
             return Ok(_productRepository.GetAllProducts());
         }

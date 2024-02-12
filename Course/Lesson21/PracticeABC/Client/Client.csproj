@@ -3,19 +3,29 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <TargetFramework>net8.0</TargetFramework>
 =======
     <TargetFramework>net7.0</TargetFramework>
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+    <TargetFramework>net8.0</TargetFramework>
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
   <ItemGroup>
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
   </ItemGroup>
 
+<<<<<<< HEAD
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 </Project>

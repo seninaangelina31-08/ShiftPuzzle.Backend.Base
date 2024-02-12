@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 Привет! Тебе предстоить сделать рефакторинг проекта с предыдшуего урока. 
 
 ---
@@ -6,10 +9,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 1. Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs] 
 >>>>>>> main
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 =======
 1. Создать интерфейс [IProductRepository.cs]
 2. Создать методы внутри интерфейса:
@@ -28,6 +34,7 @@ public class SQLLiteProductRepository : IProductRepository
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 =======
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
@@ -35,6 +42,9 @@ public class SQLLiteProductRepository : IProductRepository
 =======
 1. Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs] 
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 
 
 ---
@@ -43,12 +53,16 @@ public class SQLLiteProductRepository : IProductRepository
 1. Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs] 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 
     - Изменить код и указать вместо явной реализации *SQLLiteProductRepository* интерфейс *IProductRepository*
 
 ---
 # Практика C:
 
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -66,6 +80,8 @@ public class SQLLiteProductRepository : IProductRepository
 # Практика C:
 
 >>>>>>> main
+=======
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
 1. Создать сервис который пишет и выводи данные в верхнем регистре   [Server/DBModel.cs]
  
 > ПОДСКАЗКА
@@ -87,6 +103,7 @@ Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDou
 
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 =======
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
@@ -96,3 +113,6 @@ Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDou
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+>>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))

@@ -55,7 +55,7 @@ public class DBModel
                                 Convert.ToDouble(reader["Price"]),
                                 Convert.ToInt32(reader["Stock"])
                             );
-                            products.add(product);
+                            products.Add(product);
                         }
                     }
                 }
@@ -65,13 +65,13 @@ public class DBModel
 
         public Product GetProductByName(string name)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+           using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
                 connection.Open();
                 string query = "SELECT * FROM Products WHERE Name = @Name";
-                using (SQLiteDataReader reader = command.ExecuteReader())
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Name", name);
                     using (SQLiteDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())

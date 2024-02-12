@@ -3,7 +3,7 @@ namespace PracticeABC;
 using System.Data.SQLite; 
 using System.Collections.Generic; 
 
-public class SqlLiteProductRepository
+public class SqlLiteProductRepository: IProductRepository
 {
     private readonly string _connectionString;
     private List<Product> products = new List<Product>();

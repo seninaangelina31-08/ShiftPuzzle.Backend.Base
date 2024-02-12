@@ -43,7 +43,7 @@ public class ProductRepository
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
-            string query = "SELECT * FROM Products";
+            string query = "SELECT * FROM Products ORDER BY Stock;";
 
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {

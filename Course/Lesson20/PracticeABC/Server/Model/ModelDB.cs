@@ -1,12 +1,21 @@
 namespace PracticeABC; 
 using System.Text.Json; 
 using System.Collections.Generic; 
+using System.Data.SQLite;
 
 public class ProductRepository
     {
 
         
         private List<Product> _products;
+        private readonly string _connectionString;
+        private const string CreateTableQuery = @"
+        CREATE TABLE IF NOT EXISTS Products (
+            Id INTEGER PRIMARY KEY,
+            Name TEXT NOT NULL,
+            Price REAL NOT NULL,
+            Stock INTEGER NOT NULL
+        )";
         private readonly string _jsonFilePath;
 
         public ProductRepository(string jsonFilePath)
@@ -14,21 +23,80 @@ public class ProductRepository
             _jsonFilePath = jsonFilePath;
             ReadDataFromFile();
         }
+        private void InitializeDatabase() {
+            SQLiteConnection connection = new SQLiteConnection(_connectionString);
+            Console.WriteLine($"База данных: {_connectionString} успешно создана!");
+            connection.Open();
+            SQLiteCommand command = new SQLiteCommand(CreateTableQuery, connection);
+            command.ExecuteNonQuery();
+        }
 
         public List<Product> GetAllProducts()
         {
-            return _products;
+            List<Product> products = new List<Product>();
+
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Products";
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Product product = new Product(
+                                reader["Name"].ToString(),
+                                Convert.ToDouble(reader["Price"]),
+                                Convert.ToInt32(reader["Stock"])
+                            );
+                            products.Add(product);
+                        }
+                    }
+                }
+            }
+
+            return products;
         }
 
-        public Product GetProductByName(string name)
-        {
-            return _products.FirstOrDefault(p => p.Name == name);
+        public Product GetProductByName(string name) {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM Products WHERE Name = @Name";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", name);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Product product = new Product(
+                                reader["Name"].ToString(),
+                                Convert.ToDouble(reader["Price"]),
+                                Convert.ToInt32(reader["Stock"])
+                            );
+                            return product;
+                        }
+                        return null;
+                    }
+                }
+            }
         }
 
-        public void AddProduct(Product product)
-        {
-            _products.Add(product);
-            SaveChanges();
+        public void AddProduct(Product product) {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString)) {
+                connection.Open();
+                string query = "INSERT INTO Products (Name, Price, Stock) VALUES (@Name, @Price, @Stock)";
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection)) {
+                    command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Stock", product.Stock);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         public void UpdateProduct(Product product)
@@ -43,14 +111,18 @@ public class ProductRepository
         }
 
         public void DeleteProduct(string name)
+    {
+        using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
-            var product = _products.FirstOrDefault(p => p.Name == name);
-            if (product != null)
+            connection.Open();
+            string query = "DELETE FROM Products WHERE Name = @Name";
+            using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                _products.Remove(product);
-                SaveChanges();
+                command.Parameters.AddWithValue("@Name", name);
+                command.ExecuteNonQuery();
             }
         }
+    }
 
         public void SaveChanges()
         {

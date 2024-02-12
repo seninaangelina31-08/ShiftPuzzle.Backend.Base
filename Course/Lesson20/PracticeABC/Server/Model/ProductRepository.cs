@@ -3,7 +3,7 @@ namespace PracticeABC;
 using System.Data.SQLite;
 using System.Collections.Generic;
 
-public class ProductRepository
+public class ProductRepository1
 {
     private readonly string _connectionString;
     private List<Product> products = new List<Product>();
@@ -15,7 +15,7 @@ public class ProductRepository
             Stock INTEGER NOT NULL
         )";
 
-    public ProductRepository(string connectionString)
+    public ProductRepository1(string connectionString)
     {
         _connectionString = connectionString;
         InitializeDatabase();
@@ -56,7 +56,7 @@ public class ProductRepository
                             Convert.ToDouble(reader["Price"]),
                             Convert.ToInt32(reader["Stock"])
                         );
-                        products.add(product);
+                        products.Add(product);
                     }
                 }
             }
@@ -73,7 +73,7 @@ public class ProductRepository
             string query = "SELECT * FROM Products WHERE Name = @Name";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                command.parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Name", name);
                 using (SQLiteDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())

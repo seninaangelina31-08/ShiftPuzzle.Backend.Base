@@ -11,11 +11,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Регистрируем ProductRepository
-builder.Services.AddSingleton<SqlLiteProductRepository>(provider =>
+builder.Services.AddSingleton<IProductRepository>(provider =>
 {
     // Создаем базу данных и передаем путь к ней
     string connectPath = "Data Source=DataBase.db"; 
-    return new SqlLiteProductRepository(connectPath); // Путь к файлу базы данных SQLite
+    // Создаем экземпляр репозитория и передаем путь к базе данных SQLite которая пишет и вывод в верхнем регистре
+    IProductRepository productRepository = new SQLLiteUpperCaseRepository(connectPath);
+    return productRepository; // Путь к файлу базы данных SQLite
 });
 
 var app = builder.Build();

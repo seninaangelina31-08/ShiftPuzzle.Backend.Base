@@ -15,12 +15,12 @@ using System.Collections.Generic;
 public class StoreController : ControllerBase
 {
     
-    private readonly ProductRepository _productRepository;
+    private readonly IProductRepository _productRepository;
 
-        public StoreController(ProductRepository productRepository)
-        {
-            _productRepository = productRepository;
-        }
+    public StoreController(IProductRepository productRepository)
+    {
+        _productRepository = productRepository;
+    }
 
         [HttpPost]
         [Route("/store/updateprice")]
@@ -88,7 +88,7 @@ public class StoreController : ControllerBase
         [HttpPost]
         [Route("/store/add")]
         public IActionResult Add([FromBody] Product newProduct)
-        {
+        { 
             _productRepository.AddProduct(newProduct);
             return Ok(_productRepository.GetAllProducts());
         }

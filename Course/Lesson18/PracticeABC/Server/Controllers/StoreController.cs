@@ -45,8 +45,9 @@ public class StoreController : ControllerBase
 
 
     private List<Product> Items = new List<Product>();
-
+    private string json;
     private readonly string _jsonFilePath = "DataBase.json";
+    var options = new JsonSerializerOptions { WriteIndented = true };
 
     public StoreController()
     {
@@ -156,7 +157,7 @@ public class StoreController : ControllerBase
     {
         return Ok(Items);
     }
-
+    
     private void ReadDataFromFile()
     {
         if (System.IO.File.Exists(_jsonFilePath))
@@ -165,12 +166,19 @@ public class StoreController : ControllerBase
             Items = JsonSerializer.Deserialize<List<Product>>(json);
         }
     }
-
-    private void WriteDataToFile()
+    
+    private string ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        string json = JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(Items, options);
+    }
+    private void WriteToDB(string json)
+    {
         System.IO.File.WriteAllText(_jsonFilePath, json);
+    }
+    private void WriteDataToFile()
+    {
+        WriteToDB(ConvertDBtoJson)
     }
 
 

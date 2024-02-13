@@ -1,9 +1,9 @@
 namespace PracticeABC;
 
-using System.Data.SQLite; 
-using System.Collections.Generic; 
+using System.Data.SQLite;
+using System.Collections.Generic;
 
-public class SqlLiteProductRepository
+public class ProductRepository
 {
     private readonly string _connectionString;
     private List<Product> products = new List<Product>();
@@ -14,7 +14,8 @@ public class SqlLiteProductRepository
             Price REAL NOT NULL,
             Stock INTEGER NOT NULL
         )";
-    public SqlLiteProductRepository(string connectionString)
+
+    public ProductRepository(string connectionString)
     {
         _connectionString = connectionString;
         InitializeDatabase();
@@ -28,34 +29,39 @@ public class SqlLiteProductRepository
 
     private void InitializeDatabase()
     {
-        SQLiteConnection connection = new SQLiteConnection(_connectionString); 
-        Console.WriteLine("База данных :  " + _connectionString + " создана");
+        SQLiteConnection connection = new SQLiteConnection(_connectionString);
+        Console.WriteLine($"База данных: {_connectionString} успешно создана!");
         connection.Open();
         SQLiteCommand command = new SQLiteCommand(CreateTableQuery, connection);
         command.ExecuteNonQuery();
-             
-        
     }
 
     public List<Product> GetAllProducts()
     {
         List<Product> products = new List<Product>();
+
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
             string query = "SELECT * FROM Products";
+
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
                 using (SQLiteDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
+                        Product product = new Product(
+                            reader["Name"].ToString(),
+                            Convert.ToDouble(reader["Price"]),
+                            Convert.ToInt32(reader["Stock"])
+                        );
                         products.Add(product);
                     }
                 }
             }
         }
+
         return products;
     }
 
@@ -72,9 +78,12 @@ public class SqlLiteProductRepository
                 {
                     if (reader.Read())
                     {
-
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
-                        return  product;
+                        Product product = new Product(
+                            reader["Name"].ToString(),
+                            Convert.ToDouble(reader["Price"]),
+                            Convert.ToInt32(reader["Stock"])
+                        );
+                        return product;
                     }
                     return null;
                 }
@@ -88,6 +97,7 @@ public class SqlLiteProductRepository
         {
             connection.Open();
             string query = "INSERT INTO Products (Name, Price, Stock) VALUES (@Name, @Price, @Stock)";
+
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Name", product.Name);
@@ -103,7 +113,8 @@ public class SqlLiteProductRepository
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
-            string query = "UPDATE Products SET Price = @Price, Stock = @Stock WHERE Name = @Name";
+            string query = "UPDATE Products SET Name = @Name, Price = @Price, Stock = @Stock WHERE Name = @Name";
+
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@Name", product.Name);
@@ -128,4 +139,3 @@ public class SqlLiteProductRepository
         }
     }
 }
-

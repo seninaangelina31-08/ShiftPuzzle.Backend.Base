@@ -20,13 +20,13 @@ namespace Client
         {
             [Required]
             [StringLength(100, MinimumLength = 3)]
-            public string Name { get; set; }
+            public string name { get; set; }
 
             [Range(0.01, 10000)]
-            public double Price { get; set; }
+            public double price { get; set; }
 
             [Range(0, 10000)]
-            public int Stock { get; set; }
+            public int stock { get; set; }
         }
 
         private static bool IsAuthorized = false;
@@ -47,7 +47,7 @@ namespace Client
 
             foreach (var product in products)
             {
-                Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
+                Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |");
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -74,9 +74,9 @@ namespace Client
 
             var product = new Product
             {
-                Name = name,
-                Price = price,
-                Stock = stock
+                name = name,
+                price = price,
+                stock = stock
             };
 
             var json = JsonSerializer.Serialize(product);

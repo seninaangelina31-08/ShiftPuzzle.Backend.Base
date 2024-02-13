@@ -15,7 +15,7 @@ builder.Services.AddSingleton<IProductRepository>(provider =>
 {
     // Создаем базу данных и передаем путь к ней
     string connectPath = "Data Source=DataBase.db"; 
-    IProductRepository productRepository = new SqlLiteProductRepository(connectPath); 
+    IProductRepository productRepository = new SQLLiteUpperProductRepository(connectPath); 
     return productRepository; // Путь к файлу базы данных SQLite
 });
 

@@ -3,7 +3,7 @@ namespace PracticeABC;
 using System.Data.SQLite; 
 using System.Collections.Generic; 
 
-public class SQLLiteProductRepository : IProductRepository
+public class SQLLiteUpperProductRepository : IProductRepository
 {
     private readonly string _connectionString;
     private List<Product> products = new List<Product>();
@@ -14,7 +14,7 @@ public class SQLLiteProductRepository : IProductRepository
             Price REAL NOT NULL,
             Stock INTEGER NOT NULL
         )";
-    public SQLLiteProductRepository (string connectionString)
+    public SQLLiteUpperProductRepository (string connectionString)
     {
         _connectionString = connectionString;
         InitializeDatabase();
@@ -50,7 +50,7 @@ public class SQLLiteProductRepository : IProductRepository
                 {
                     while (reader.Read())
                     {
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         products.Add(product);
                     }
                 }
@@ -73,7 +73,7 @@ public class SQLLiteProductRepository : IProductRepository
                     if (reader.Read())
                     {
 
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         return  product;
                     }
                     return null;

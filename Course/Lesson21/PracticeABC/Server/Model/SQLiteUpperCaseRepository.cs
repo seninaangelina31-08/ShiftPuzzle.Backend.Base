@@ -1,9 +1,9 @@
 namespace PracticeABC;
 
-using System.Data.SQLite; 
-using System.Collections.Generic; 
+using System.Data.SQLite;
+using System.Collections.Generic;
 
-public class SqlLiteProductRepository
+public class SQLiteUpperCaseRepository : IProductRepository
 {
     private readonly string _connectionString;
     private List<Product> products = new List<Product>();
@@ -14,11 +14,11 @@ public class SqlLiteProductRepository
             Price REAL NOT NULL,
             Stock INTEGER NOT NULL
         )";
-    public SqlLiteProductRepository(string connectionString)
+    public SQLiteUpperCaseRepository(string connectionString)
     {
         _connectionString = connectionString;
-        InitializeDatabase();
-        ReadDataFromDatabase();
+        if (File.Exists("DataBase.db")) ReadDataFromDatabase();
+        else InitializeDatabase();
     }
 
     private void ReadDataFromDatabase()
@@ -28,13 +28,13 @@ public class SqlLiteProductRepository
 
     private void InitializeDatabase()
     {
-        SQLiteConnection connection = new SQLiteConnection(_connectionString); 
+        SQLiteConnection connection = new SQLiteConnection(_connectionString);
         Console.WriteLine("База данных :  " + _connectionString + " создана");
         connection.Open();
         SQLiteCommand command = new SQLiteCommand(CreateTableQuery, connection);
         command.ExecuteNonQuery();
-             
-        
+
+
     }
 
     public List<Product> GetAllProducts()
@@ -44,16 +44,15 @@ public class SqlLiteProductRepository
         {
             connection.Open();
             string query = "SELECT * FROM Products";
-            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+            using (SQLiteDataReader reader = new SQLiteCommand(query, connection).ExecuteReader())
             {
-                using (SQLiteDataReader reader = command.ExecuteReader())
+
+                while (reader.Read())
                 {
-                    while (reader.Read())
-                    {
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
-                        products.Add(product);
-                    }
+                    Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
+                    products.Add(product);
                 }
+
             }
         }
         return products;
@@ -67,14 +66,14 @@ public class SqlLiteProductRepository
             string query = "SELECT * FROM Products WHERE Name = @Name";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Name", name.ToUpper());
                 using (SQLiteDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
 
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
-                        return  product;
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
+                        return product;
                     }
                     return null;
                 }
@@ -90,7 +89,7 @@ public class SqlLiteProductRepository
             string query = "INSERT INTO Products (Name, Price, Stock) VALUES (@Name, @Price, @Stock)";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Name", product.Name);
+                command.Parameters.AddWithValue("@Name", product.Name.ToUpper());
                 command.Parameters.AddWithValue("@Price", product.Price);
                 command.Parameters.AddWithValue("@Stock", product.Stock);
                 command.ExecuteNonQuery();
@@ -106,7 +105,7 @@ public class SqlLiteProductRepository
             string query = "UPDATE Products SET Price = @Price, Stock = @Stock WHERE Name = @Name";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Name", product.Name);
+                command.Parameters.AddWithValue("@Name", product.Name.ToUpper());
                 command.Parameters.AddWithValue("@Price", product.Price);
                 command.Parameters.AddWithValue("@Stock", product.Stock);
                 command.ExecuteNonQuery();
@@ -122,10 +121,9 @@ public class SqlLiteProductRepository
             string query = "DELETE FROM Products WHERE Name = @Name";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Name", name.ToUpper());
                 command.ExecuteNonQuery();
             }
         }
     }
 }
-

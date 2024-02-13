@@ -22,21 +22,21 @@ namespace Client
         {
             [Required]
             [StringLength(100, MinimumLength = 3)]
-            public string Name { get; set; }
+            public string name { get; set; }
 
             [Range(0.01, 10000)]
-            public double Price { get; set; }
+            public double price { get; set; }
 
             [Range(0, 10000)]
-            public int Stock { get; set; }
+            public int stock { get; set; }
 
             public Product() { }
 
-            public Product(string name, double price, int stock)
+            public Product(string Name, double Price, int Stock)
             {
-                this.Name = name;
-                this.Price = price;
-                this.Stock = stock;
+                this.name = Name;
+                this.price = Price;
+                this.stock = Stock;
             }
 
         }

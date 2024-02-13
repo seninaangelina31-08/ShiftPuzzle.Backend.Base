@@ -1,3 +1,4 @@
+namespace PracticeABC;
 public interface IProductRepository
 {
     List<Product> GetAllProducts();

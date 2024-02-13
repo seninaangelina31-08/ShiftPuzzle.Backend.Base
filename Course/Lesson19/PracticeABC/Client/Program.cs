@@ -155,7 +155,6 @@ namespace Client
                             Console.WriteLine("Вы не авторизованы.");
                             break;
                         }
-
                         SendProduct();
                         break;
                     case "3":

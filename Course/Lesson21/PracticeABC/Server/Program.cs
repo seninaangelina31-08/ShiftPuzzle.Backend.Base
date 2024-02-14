@@ -20,7 +20,6 @@ builder.Services.AddSingleton<IProductRepository>(provider =>
     return productRepository; // Путь к файлу базы данных SQLite
 });
 
-<<<<<<< HEAD
 builder.Services.AddSingleton<IProductRepository>(provider =>
 {
     // Создаем базу данных и передаем путь к ней
@@ -30,8 +29,6 @@ builder.Services.AddSingleton<IProductRepository>(provider =>
     return productRepository; // Путь к файлу базы данных SQLite
 });
 
-=======
->>>>>>> 182a80b7a8d696519f8dd40fbf8b4bd873dc5367
 var app = builder.Build();
 
 // Настраиваем конвейер обработки HTTP-запросов.

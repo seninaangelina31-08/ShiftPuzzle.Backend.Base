@@ -1,11 +1,14 @@
 namespace PracticeABC;
 
-using System.Data.SQLite; 
-using System.Collections.Generic; 
+using System.Data.SQLite;
+using System.Collections.Generic;
 
-public class SqlLiteProductRepository : IProductRepository
+
+
+
+public class SQLLiteProductRepository : IProductRepository
 {
-    private readonly string _connectionString;
+    private string _connectionString;
     private List<Product> products = new List<Product>();
     private const string CreateTableQuery = @"
         CREATE TABLE IF NOT EXISTS Products (
@@ -14,12 +17,15 @@ public class SqlLiteProductRepository : IProductRepository
             Price REAL NOT NULL,
             Stock INTEGER NOT NULL
         )";
-    public SqlLiteProductRepository(string connectionString)
+    public SQLLiteProductRepository(string connectionString)
     {
-        _connectionString = connectionString;
+         _connectionString = connectionString;
         InitializeDatabase();
         ReadDataFromDatabase();
     }
+
+   
+
 
     private void ReadDataFromDatabase()
     {
@@ -72,10 +78,7 @@ public class SqlLiteProductRepository : IProductRepository
                 {
                     if (reader.Read())
                     {
-<<<<<<< HEAD
-=======
 
->>>>>>> 182a80b7a8d696519f8dd40fbf8b4bd873dc5367
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
                         return  product;
                     }
@@ -130,4 +133,7 @@ public class SqlLiteProductRepository : IProductRepository
             }
         }
     }
+
+  
 }
+

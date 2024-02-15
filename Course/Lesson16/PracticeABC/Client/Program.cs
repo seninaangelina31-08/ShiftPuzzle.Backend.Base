@@ -8,6 +8,6 @@ class Program
     
     static void Main(string[] args)
     { 
-
+        var url = http://localhost:5087/store/show
     }
 }

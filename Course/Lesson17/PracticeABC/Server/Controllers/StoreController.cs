@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
+
 [ApiController]
 public class StoreController : ControllerBase
 {
@@ -47,10 +48,11 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     // поле с путем до базы данных 
+    private readonly string _jsonFilePath = "DataBase.json";
 
     public StoreController()
     {
-       // чтение
+       ReadDataFromFile();
     }
 
 
@@ -118,7 +120,6 @@ public class StoreController : ControllerBase
         {
             return NotFound($"{user.User} не найден");
         }
-
     }
 
 
@@ -128,7 +129,7 @@ public class StoreController : ControllerBase
     public IActionResult Add([FromBody] Product newProduct)
     { 
         Items.Add(newProduct);
-        // запись
+        ReadDataFromFile();
         return Ok(Items);
     }
 
@@ -159,13 +160,17 @@ public class StoreController : ControllerBase
 
     private void ReadDataFromFile()
     {
-        // опишу логику
+        if (System.IO.File.Exists(_jsonFilePath))
+        {
+            string json = System.IO.File.ReadAllText(_jsonFilePath);
+            Items = JsonSerializer.Deserialize<List<Product>>(json);
+        }
     }
 
     private void WriteDataToFile()
     {
-        // опишу логику
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string json = JsonSerializer.Serialize(Items, options);
+        System.IO.File.WriteAllText(_jsonFilePath, json);
     }
-
-
 }

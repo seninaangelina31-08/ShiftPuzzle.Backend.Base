@@ -33,8 +33,6 @@ public class SQLLiteProductRepository : IProductRepository
         connection.Open();
         SQLiteCommand command = new SQLiteCommand(CreateTableQuery, connection);
         command.ExecuteNonQuery();
-             
-        
     }
 
     public List<Product> GetAllProducts()
@@ -50,7 +48,7 @@ public class SQLLiteProductRepository : IProductRepository
                 {
                     while (reader.Read())
                     {
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         products.Add(product);
                     }
                 }
@@ -73,7 +71,7 @@ public class SQLLiteProductRepository : IProductRepository
                     if (reader.Read())
                     {
 
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         return  product;
                     }
                     return null;

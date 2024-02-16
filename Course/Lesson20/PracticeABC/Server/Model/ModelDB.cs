@@ -3,11 +3,11 @@ using System.Text.Json;
 using System.Collections.Generic; 
 using System.Data.SQLite;
 
-public class ProductRepository
+public class ProductRepository: IproductRepository
     {
 
         
-        private List<Product> _products;
+        private List<Product> _products = new List<Product>();
         private readonly string _connectionString;
         private const string CreateTableQuery = @"
         CREATE TABLE IF NOT EXISTS Products (
@@ -18,10 +18,10 @@ public class ProductRepository
         )";
         private readonly string _jsonFilePath;
 
-        public ProductRepository(string jsonFilePath)
-        {
-            _jsonFilePath = jsonFilePath;
-            ReadDataFromFile();
+        public SQLLiteProductRepository(string connectionString) {
+            _connectionString = connectionString;
+            InitializeDatabase();
+            ReadDataFromDatabase();
         }
         private void InitializeDatabase() {
             SQLiteConnection connection = new SQLiteConnection(_connectionString);
@@ -99,16 +99,21 @@ public class ProductRepository
             }
         }
 
-        public void UpdateProduct(Product product)
-        {
-            var existingProduct = _products.FirstOrDefault(p => p.Name == product.Name);
-            if (existingProduct != null)
+        public void UpdateProduct(Product product) {
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
-                existingProduct.Price = product.Price;
-                existingProduct.Stock = product.Stock;
-                SaveChanges();
+                connection.Open();
+                string query = "UPDATE Products SET Price = @Price, Stock = @Stock WHERE Name = @Name";
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Stock", product.Stock);
+                    command.ExecuteNonQuery();
+                }
             }
         }
+    
 
         public void DeleteProduct(string name)
     {

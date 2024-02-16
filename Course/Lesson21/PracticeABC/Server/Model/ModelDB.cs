@@ -3,27 +3,12 @@ namespace PracticeABC;
 using System.Data.SQLite; 
 using System.Collections.Generic; 
 
-<<<<<<< HEAD
 public class ProductRepository
 {
     private readonly string _connectionString;
     private const string CreateTableQuery = "CREATE TABLE IF NOT EXISTS Products (Name TEXT PRIMARY KEY, Price REAL, Stock INTEGER)";
 
     public ProductRepository(string connectionString)
-=======
-public class SqlLiteProductRepository
-{
-    private readonly string _connectionString;
-    private List<Product> products = new List<Product>();
-    private const string CreateTableQuery = @"
-        CREATE TABLE IF NOT EXISTS Products (
-            Id INTEGER PRIMARY KEY,
-            Name TEXT NOT NULL,
-            Price REAL NOT NULL,
-            Stock INTEGER NOT NULL
-        )";
-    public SqlLiteProductRepository(string connectionString)
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
     {
         _connectionString = connectionString;
         InitializeDatabase();
@@ -37,7 +22,6 @@ public class SqlLiteProductRepository
 
     private void InitializeDatabase()
     {
-<<<<<<< HEAD
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
@@ -46,15 +30,6 @@ public class SqlLiteProductRepository
                 command.ExecuteNonQuery();
             }
         }
-=======
-        SQLiteConnection connection = new SQLiteConnection(_connectionString); 
-        Console.WriteLine("База данных :  " + _connectionString + " создана");
-        connection.Open();
-        SQLiteCommand command = new SQLiteCommand(CreateTableQuery, connection);
-        command.ExecuteNonQuery();
-             
-        
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
     }
 
     public List<Product> GetAllProducts()
@@ -70,26 +45,18 @@ public class SqlLiteProductRepository
                 {
                     while (reader.Read())
                     {
-<<<<<<< HEAD
                         Product product = new Product
                         {
                             Name = reader["Name"].ToString(),
                             Price = Convert.ToDouble(reader["Price"]),
                             Stock = Convert.ToInt32(reader["Stock"])
                         };
-=======
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
-                        products.Add(product);
                     }
                 }
             }
         }
         return products;
     }
-
-    public Product GetProductByName(string name)
-    {
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
@@ -101,22 +68,19 @@ public class SqlLiteProductRepository
                 {
                     if (reader.Read())
                     {
-<<<<<<< HEAD
+
                         return new Product
                         {
                             Name = reader["Name"].ToString(),
-                            Price = Convert.ToDouble(reader["Price"]),
                             Stock = Convert.ToInt32(reader["Stock"])
                         };
-=======
+
 
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
                         return  product;
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
                     }
-                    return null;
                 }
-            }
+            
         }
     }
 

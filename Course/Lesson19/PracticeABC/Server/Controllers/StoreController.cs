@@ -12,10 +12,7 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
-<<<<<<< HEAD
     
-=======
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
     public class Product
     {
     [Required]
@@ -34,10 +31,9 @@ public class StoreController : ControllerBase
             Price = price;
             Stock = stock;
         }
-<<<<<<< HEAD
+
         
     }
-
     public class BackupDB
         {
             public List<Product> Products { get; set; }
@@ -45,10 +41,6 @@ public class StoreController : ControllerBase
 =======
     }
 
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
-    public class UserCredentials
-    {
-        [Required]
         [StringLength(100, MinimumLength = 3)]
         public string User { get; set; }
         [Required]
@@ -61,10 +53,7 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
-<<<<<<< HEAD
     private readonly string _backupJsonFilePath = "BackupDB.json";
-=======
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 
     public StoreController()
     {
@@ -148,10 +137,7 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
         ReadDataFromFile();
 =======
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
         Items.Add(newProduct);
-        WriteDataToFile();
-        return Ok(Items);
     }
 
 

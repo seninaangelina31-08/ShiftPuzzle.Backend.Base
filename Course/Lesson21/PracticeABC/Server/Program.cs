@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 using PracticeABC;
 using System.Data.SQLite; // Добавляем пространство имен для работы с SQLite
 
@@ -28,6 +29,8 @@ var app = builder.Build();
 =======
 =======
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> 3fbbd12a (nothing)
 using PracticeABC; 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -52,6 +55,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
 =======
@@ -86,6 +90,8 @@ var app = builder.Build();
 >>>>>>> 240f7224 (feat: added answer to task 21)
 =======
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+>>>>>>> 3fbbd12a (nothing)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -98,6 +104,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 app.Run();
@@ -113,3 +120,6 @@ app.Run();
 =======
 app.Run();
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+app.Run();
+>>>>>>> 3fbbd12a (nothing)

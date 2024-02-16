@@ -15,6 +15,7 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
@@ -26,6 +27,9 @@ public class StoreController : ControllerBase
 =======
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+    
+>>>>>>> 3fbbd12a (nothing)
     public class Product
     {
     [Required]
@@ -47,6 +51,10 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3fbbd12a (nothing)
         
     }
     public class BackupDB
@@ -56,6 +64,7 @@ public class StoreController : ControllerBase
 =======
     }
 
+<<<<<<< HEAD
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
 =======
 =======
@@ -78,6 +87,8 @@ public class StoreController : ControllerBase
     public class UserCredentials
     {
         [Required]
+=======
+>>>>>>> 3fbbd12a (nothing)
         [StringLength(100, MinimumLength = 3)]
         public string User { get; set; }
         [Required]
@@ -93,6 +104,7 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private readonly string _backupJsonFilePath = "BackupDB.json";
 =======
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
@@ -104,6 +116,9 @@ public class StoreController : ControllerBase
 =======
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+    private readonly string _backupJsonFilePath = "BackupDB.json";
+>>>>>>> 3fbbd12a (nothing)
 
     public StoreController()
     {
@@ -192,6 +207,7 @@ public class StoreController : ControllerBase
 >>>>>>> 240f7224 (feat: added answer to task 21)
         ReadDataFromFile();
 =======
+<<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
         Items.Add(newProduct);
 =======
@@ -202,6 +218,9 @@ public class StoreController : ControllerBase
         WriteDataToFile();
         return Ok(Items);
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
+=======
+        Items.Add(newProduct);
+>>>>>>> 3fbbd12a (nothing)
     }
 
 

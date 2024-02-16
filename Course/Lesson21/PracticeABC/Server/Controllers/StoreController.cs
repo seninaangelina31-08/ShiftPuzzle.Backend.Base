@@ -18,6 +18,7 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private readonly IProductRepository _productRepository;
 
     public StoreController(IProductRepository productRepository)
@@ -27,12 +28,15 @@ public class StoreController : ControllerBase
 =======
 =======
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> 3fbbd12a (nothing)
     private readonly ProductRepository _productRepository;
 
         public StoreController(ProductRepository productRepository)
         {
             _productRepository = productRepository;
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
@@ -53,6 +57,8 @@ public class StoreController : ControllerBase
         _productRepository = productRepository;
     }
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+>>>>>>> 3fbbd12a (nothing)
 
         [HttpPost]
         [Route("/store/updateprice")]
@@ -123,6 +129,7 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { 
 =======
         {
@@ -136,6 +143,9 @@ public class StoreController : ControllerBase
 =======
         { 
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+        {
+>>>>>>> 3fbbd12a (nothing)
             _productRepository.AddProduct(newProduct);
             return Ok(_productRepository.GetAllProducts());
         }

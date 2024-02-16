@@ -15,21 +15,12 @@ using System.Collections.Generic;
 public class StoreController : ControllerBase
 {
     
-<<<<<<< HEAD
-    private readonly ProductRepository _productRepository;
+    private readonly IProductRepository _productRepository;
 
-        public StoreController(ProductRepository productRepository)
-        {
-            _productRepository = productRepository;
-        }
-=======
-    private readonly SqlLiteProductRepository _productRepository;
-
-    public StoreController(SqlLiteProductRepository productRepository)
+    public StoreController(IProductRepository productRepository)
     {
         _productRepository = productRepository;
     }
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 
         [HttpPost]
         [Route("/store/updateprice")]
@@ -97,11 +88,7 @@ public class StoreController : ControllerBase
         [HttpPost]
         [Route("/store/add")]
         public IActionResult Add([FromBody] Product newProduct)
-<<<<<<< HEAD
-        {
-=======
         { 
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
             _productRepository.AddProduct(newProduct);
             return Ok(_productRepository.GetAllProducts());
         }

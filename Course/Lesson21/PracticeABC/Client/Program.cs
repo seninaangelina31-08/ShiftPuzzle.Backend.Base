@@ -7,6 +7,37 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Client
 {
+<<<<<<< HEAD
+=======
+
+
+    [Serializable]
+    public class Product
+    {
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string name { get; set; }
+
+        [Range(0.01, 10000)] 
+        public double price { get; set; }
+
+        [Range(0, 10000)]
+        public int stock { get; set; }
+
+        public Product(string nname, double nprice, int nstock)
+        {
+            name = nname;
+            price = nprice;
+            stock = nstock;
+        }
+
+        public Product()
+        {
+            // Пустой конструктор
+        }
+    }
+
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
     public class Program
     {
         private const string BaseUrl = "http://localhost";
@@ -15,6 +46,7 @@ namespace Client
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";
 
+<<<<<<< HEAD
         [Serializable]
         public class Product
         {
@@ -28,6 +60,10 @@ namespace Client
             [Range(0, 10000)]
             public int Stock { get; set; }
         }
+=======
+        
+
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
@@ -37,17 +73,29 @@ namespace Client
             var url = $"{BaseUrl}:{Port}{ShowProductsMethod}";
 
             var response = Client.GetAsync(url).Result;
+<<<<<<< HEAD
             var responseContent = response.Content.ReadAsStringAsync().Result;
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
 
+=======
+            var responseContent = response.Content.ReadAsStringAsync().Result; 
+            Console.WriteLine(responseContent);
+            var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
+
+
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");
 
             foreach (var product in products)
             {
+<<<<<<< HEAD
                 Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
+=======
+                Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -72,12 +120,16 @@ namespace Client
             Console.WriteLine("Введите количество на складе:");
             var stock = int.Parse(Console.ReadLine());
 
+<<<<<<< HEAD
             var product = new Product
             {
                 Name = name,
                 Price = price,
                 Stock = stock
             };
+=======
+            var product = new Product(name,price,stock); 
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 
             var json = JsonSerializer.Serialize(product);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

@@ -12,7 +12,10 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
     public class Product
     {
     [Required]
@@ -31,6 +34,7 @@ public class StoreController : ControllerBase
             Price = price;
             Stock = stock;
         }
+<<<<<<< HEAD
         
     }
 
@@ -38,6 +42,10 @@ public class StoreController : ControllerBase
         {
             public List<Product> Products { get; set; }
         }
+=======
+    }
+
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
     public class UserCredentials
     {
         [Required]
@@ -53,7 +61,10 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
+<<<<<<< HEAD
     private readonly string _backupJsonFilePath = "BackupDB.json";
+=======
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 
     public StoreController()
     {
@@ -134,7 +145,10 @@ public class StoreController : ControllerBase
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
     { 
+<<<<<<< HEAD
         ReadDataFromFile();
+=======
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
         Items.Add(newProduct);
         WriteDataToFile();
         return Ok(Items);
@@ -168,7 +182,11 @@ public class StoreController : ControllerBase
 
     private List<Product> ConvertTextDBToList(string json)
     {
+<<<<<<< HEAD
         return JsonSerializer.Deserialize<List<Product>>(json);
+=======
+        return JsonSerializer.Deserialize<List<Product>>(json)
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
     }
 
     private string ReadDB()
@@ -189,6 +207,7 @@ public class StoreController : ControllerBase
         }
     }
 
+<<<<<<< HEAD
    
 
     //Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs]
@@ -226,11 +245,19 @@ public class StoreController : ControllerBase
         return System.IO.File.Exists(_backupJsonFilePath);
     }
 
+=======
+    #endregion
+ 
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
+<<<<<<< HEAD
         return JsonSerializer.Serialize(Items, options);
+=======
+        retunr JsonSerializer.Serialize(Items, options);
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
     }
 
     private void WriteTiDB(string json)
@@ -241,7 +268,14 @@ public class StoreController : ControllerBase
     private void WriteDataToFile()
     { 
         WriteTiDB(ConvertDBtoJson());
+<<<<<<< HEAD
 
     }
  
+=======
+    }
+ 
+
+
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 }

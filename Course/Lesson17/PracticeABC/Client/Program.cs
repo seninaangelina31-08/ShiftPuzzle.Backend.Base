@@ -29,12 +29,18 @@ class Program
             var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
             
             // реализуй логику
-
+            var client = new HttpClient();   
+            var response = client.GetAsync(url).Result;  
+            string responseContent = response.Content.ReadAsStringAsync().Result; 
+            List<Product> products = JsonSerializer.Deserialize<List<Product>>(responseContent); 
 
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
 
-
+            foreach (var product in products)
+            {
+                Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |");
+            }
 
             Console.WriteLine("-----------------------------------------------------------------");
         }
@@ -82,9 +88,7 @@ class Program
 
     public static void Auth()
     {       
-        
-        
-            var url = "http://localhost:5087/store/????"; // Замените на порт вашего сервера, также замените символы на правильный апи
+            var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера, также замените символы на правильный апи
             var userData = new
             {
                 User = "admin",
@@ -116,12 +120,26 @@ class Program
         while (true)
                 {
                     Console.WriteLine("Выберите опцию:");
-                     
+                    Console.WriteLine("1. Авторизация");
+                    Console.WriteLine("2. Добавление продукта");
+                    Console.WriteLine("3. Вывод спика");
+                    Console.WriteLine("4. Выход");
 
                     var choice = Console.ReadLine();
 
                     switch (choice)
                     { 
+                        case "1":
+                            Auth();
+                            break;
+                        case "2":
+                            SendProduct();
+                            break;
+                        case "3":
+                            DisplayProducts();
+                            break;
+                        case "4":
+                            break;
                         default:
                             Console.WriteLine("Неверный выбор. Попробуйте снова.");
                             break;

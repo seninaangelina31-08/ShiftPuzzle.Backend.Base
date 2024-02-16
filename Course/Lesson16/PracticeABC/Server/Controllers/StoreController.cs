@@ -1,26 +1,16 @@
-namespace PracticeA;
+namespace Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 public class StoreController : ControllerBase
 {
-    public class Product
-    {
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public int Stock { get; set; }
-
-        public Product(string name, double price, int stock)
-        {
-            Name = name;
-            Price = price;
-            Stock = stock;
-        }
-    }
-
+    // Продукты
     private static readonly List<Product> Items = new List<Product>();
+    // Пользователи
+    private static readonly List<User> Users = new List<User>();
 
+    // Обновление цены на продукт
     [HttpGet]
     [Route("/store/updateprice")]
     public IActionResult UpdatePrice(string name, double newPrice)
@@ -37,23 +27,24 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    // Изменение названия продукта
+    [HttpPost]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public IActionResult UpdateName([FromBody] UpdateNameData updateNameData)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = Items.FirstOrDefault(p => p.Name == updateNameData.CurrentName);
         if (product != null)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            product.Name = updateNameData.NewName;
+            return Ok($"Имя продукта изменено с {updateNameData.CurrentName} на {updateNameData.NewName}");
         }
         else
         {
-            return NotFound($"Продукт {currentName} не найден");
+            return NotFound($"Продукт {updateNameData.CurrentName} не найден");
         }
     }
 
-
+    // Получаем те продукты, которых нет в наличии
     [HttpGet]
     [Route("/store/outofstock")]
     public IActionResult OutOfStock()
@@ -69,38 +60,33 @@ public class StoreController : ControllerBase
         }
     }
 
-
-
-
-
-
-    [HttpGet]
+    // Добавить новый продукт
+    [HttpPost]
     [Route("/store/add")]
-    public IActionResult Add(string name, double price, int stock)
+    public IActionResult Add([FromBody] Product product)
     {
-        var product = new Product(name, price, stock);
         Items.Add(product);
         return Ok(Items);
     }
 
-
-    [HttpGet]
+    // Удалить продукт
+    [HttpPost]
     [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    public IActionResult Delete([FromBody] DeleteNameData deleteNameData)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = Items.FirstOrDefault(p => p.Name == deleteNameData.Name);
         if (product != null)
         {
             Items.Remove(product);
-            return Ok($"{name} удален");
+            return Ok($"{deleteNameData.Name} удален");
         }
         else
         {
-            return NotFound($"{name} не найден");
+            return NotFound($"{deleteNameData.Name} не найден");
         }
     }
 
-
+    // Получить список продуктов
     [HttpGet]
     [Route("/store/show")]
     public IActionResult Show()
@@ -108,5 +94,41 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+    // Добавить пользователя
+    [HttpPost]
+    [Route("/store/add_user")]
+    public IActionResult AddUser([FromBody] User user)
+    {
+        // Добавляем нового пользователя
+        Users.Add(user);
+        return Ok($"User {user.Login} added.");
 
+    }
+
+    // Зарегестрировать пользователя
+    [HttpPost]
+    [Route("store/logining_user")]
+    public IActionResult UserLogining([FromBody] User user)
+    {
+        foreach (var cur_user in Users)
+        {
+            // Если логин и пароль корректные
+            if (cur_user.Login == user.Login && cur_user.Password == user.Password)
+            {
+                // Меняем статус пользователя на "зарегестрирован"
+                cur_user.IsAuthorized = true;
+                return Ok("Пользователь успешно зарегестрирован");
+            }
+        }
+        return NotFound("Некорректный пароль или логин :(");
+    }
+
+    // Получить информацию о пользователе
+    [HttpGet]
+    [Route("/store/user_info")]
+    public IActionResult UserInfo()
+    {
+        // Возвращаем информацию о пользователе
+        return Ok(Users);
+    }
 }

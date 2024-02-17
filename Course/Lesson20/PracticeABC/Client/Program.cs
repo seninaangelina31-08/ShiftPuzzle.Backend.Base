@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace Client
 {
@@ -20,19 +21,19 @@ namespace Client
         {
             [Required]
             [StringLength(100, MinimumLength = 3)]
-            public string Name { get; set; }
+            public string name { get; set; }
 
             [Range(0.01, 10000)]
-            public double Price { get; set; }
+            public double price { get; set; }
 
             [Range(0, 10000)]
-            public int Stock { get; set; }
+            public int stock { get; set; }
         }
 
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
 
-        private static void DisplayProducts()
+        private static void DisplayProducts(bool isSorted)
         {
             var url = $"{BaseUrl}:{Port}{ShowProductsMethod}";
 
@@ -41,13 +42,18 @@ namespace Client
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
 
+            // Отсортированная версия списка
+            IEnumerable<Product> sortedProducts = products.OrderBy(p => p.stock);
+            sortedProducts = sortedProducts.Reverse();
+
             Console.WriteLine("-----------------------------------------------------------------");
-            Console.WriteLine("| Название продукта | Цена | Количество на складе |");
+            Console.WriteLine("| Название продукта  | Цена       | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");
 
-            foreach (var product in products)
+            // В зависимости от выбранного режима берем значения из обычного или отсортированного списка
+            foreach (var product in (isSorted) ? sortedProducts : products)
             {
-                Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
+                Console.WriteLine($"| {product.name, -18} | {product.price, -10} | {product.stock, -20} |");
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -74,9 +80,9 @@ namespace Client
 
             var product = new Product
             {
-                Name = name,
-                Price = price,
-                Stock = stock
+                name = name,
+                price = price,
+                stock = stock
             };
 
             var json = JsonSerializer.Serialize(product);
@@ -139,7 +145,8 @@ namespace Client
                 Console.WriteLine("1. Авторизация");
                 Console.WriteLine("2. Отправить продукт");
                 Console.WriteLine("3. Вывести список");
-                Console.WriteLine("4. Выйти");
+                Console.WriteLine("4. Вывести отсортированный список");
+                Console.WriteLine("5. Выйти");
                 Console.Write("Введите ваш выбор: ");
 
                 var choice = Console.ReadLine();
@@ -159,9 +166,12 @@ namespace Client
                         SendProduct();
                         break;
                     case "3":
-                        DisplayProducts();
+                        DisplayProducts(false);
                         break;
                     case "4":
+                        DisplayProducts(true);
+                        break;
+                    case "5":
                         return;
                     default:
                         Console.WriteLine("Неверный выбор. Попробуйте снова.");

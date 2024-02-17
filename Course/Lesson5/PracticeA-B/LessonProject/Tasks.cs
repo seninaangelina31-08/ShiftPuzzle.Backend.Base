@@ -10,6 +10,25 @@ namespace LessonProject
             Console.WriteLine("РЕШЕНИЕ:");
 
             //решайте задачу здесь
+            //int[][] array = new int[4][];
+            //int summ = 0;
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    array[i] = new int[4];
+            //    Console.WriteLine(array[i]);
+            //}
+            
+            int[] array = {5, 28, -5, 9};
+            int summ = 0;
+            for (int i = 0; i < array.Length; ++i)
+            {
+                for (int mini = 0; mini<array.Length-1; ++mini)
+                {
+                    summ += array[mini];
+                    Console.WriteLine(mini);
+                
+                }
+            }
 
             //не выходя за пределы
         }
@@ -23,6 +42,56 @@ namespace LessonProject
             Console.WriteLine("РЕШЕНИЕ:");
 
             //решайте задачу здесь
+            int[] array = {5, 28, 5, 5, 9, 6};
+            int n = 0;
+            int count = 0;
+
+            for (int i = 0; i < array.Length; ++i)
+            {
+
+                for (int sort = 0; sort < array.Length - 1; ++sort)
+                {
+                    if (array[sort]>array[sort+1])
+                    {
+                        n = array[sort + 1];
+                       
+                        array[sort + 1] = array[sort];
+                        array[sort] = n;
+                        
+
+                    }
+                    int[] ar2 = new int[6];
+                    for (int j = 0; j < ar2.Length; ++j)
+                    {
+                        if (ar2[j] != array[i])
+                        {
+                        ar2[j] = array[i];
+                        ar2[j] = ar2[j+1];
+                        //n = ar2[j + 1];
+
+                        //ar2[j] = array[i];
+                        //ar2[j] = n;
+                        }
+                        Console.Write(ar2[0]);
+                        
+
+                    }
+                    
+                    //if (array[sort] != array[sort+1])
+                        //{
+                            //++ count;
+                            
+                            
+                        //}
+                }
+                
+                
+                //foreach (int sort in array)
+                //{
+                    //Console.Write($"{array[i]} ");
+                //}
+            }
+            
 
             //не выходя за пределы
         }

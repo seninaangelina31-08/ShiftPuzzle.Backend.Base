@@ -19,7 +19,24 @@ public class StoreController : ControllerBase
         }
     }
 
+public class User
+    {
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public bool Avtorisation { get; set; }
+
+        public User(){}
+        public User(string Login, string Password)
+        {
+            this.Login = Login;
+            this.Password = Password;
+            this.Avtorisation = false;
+        }
+    }
+
+
     private static readonly List<Product> Items = new List<Product>();
+    private static readonly List<User> Users = new List<User>();
 
     [HttpPut]
     [Route("/store/updateprice")]
@@ -73,7 +90,6 @@ public class StoreController : ControllerBase
 
 
 
-
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add(string name, double price, int stock)
@@ -83,9 +99,36 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+    [HttpPost]
+    [Route("/store/add_user")]
+    public IActionResult AddUser([FromBody] User user)
+    {
+        Users.Add(user);
+        return Ok($"Пользователь {user.Login} добавлен.");
+    }
+
+    [HttpPost]
+    [Route("store/logining_user")]
+
+    public IActionResult LoginingUser([FromBody] User user)
+    {
+        foreach (var i in Users)
+        {
+            if (i.Login == user.Login)
+            {
+                if (i.Password == user.Password)
+                {   
+                    i.Avtorisation = true;
+                    return Ok("Добро Пожаловать!");
+                }
+            }
+        }
+        return NotFound("Неправильный логин или пароль.");
+    }
 
     [HttpPost]
     [Route("/store/delete")]
+
     public IActionResult Delete(string name)
     {
         var product = Items.FirstOrDefault(p => p.Name == name);
@@ -108,5 +151,10 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
-
+    [HttpGet]
+    [Route("/store/user_info")]
+    public IActionResult UserInfo()
+    {
+        return Ok(Users);
+    }
 }

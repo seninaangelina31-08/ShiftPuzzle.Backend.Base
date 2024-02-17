@@ -1,13 +1,79 @@
-﻿using System.Text;
+﻿﻿using System.Text;
 using System.Text.Json;
 
 namespace Client;
 
+[System.Serializable] public class User
+{
+    public string Login { get; set; }
+    public string Password { get; set; }
+    public bool Avtorisation { get; set; }
+    public User(){}
+    public User(string Login, string Password)
+    {
+        this.Login = Login;
+        this.Password = Password;
+        this.Avtorisation = false;
+    }
+
+
+    public void Logining(string login, string password)
+    {
+        string url = "http://localhost:5087/store/logining_user";
+        var user_to_send = new 
+        {
+            Login = login,
+            Password = password
+        };
+        var client = new HttpClient();
+        var json = JsonSerializer.Serialize(user_to_send);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = client.PostAsync(url, content).Result;
+        if (response.IsSuccessStatusCode)
+        {
+            var responseContent = response.Content.ReadAsStringAsync().Result;
+            this.Avtorisation = true;
+            Console.WriteLine(responseContent);
+        }
+        else{
+            Console.WriteLine($"Error: {response.StatusCode}; {response.Content.ReadAsStringAsync().Result}");
+        }
+    }
+    public void CreateUser()
+    {
+        string url = "http://localhost:5087/store/add_user";
+        var user_to_send = new 
+        {
+            login = this.Login,
+            Password = this.Password,
+            IsAuthorized = false
+        };
+        var client = new HttpClient();
+        var json = JsonSerializer.Serialize(user_to_send);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = client.PostAsync(url, content).Result;
+        if (response.IsSuccessStatusCode)
+        {
+            var responseContent = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine(responseContent);
+        }
+        else{
+            Console.WriteLine($"Error: {response.StatusCode}");
+        }
+
+    }
+}
+
+
+
+
 class Program
 {
-    
     static void Main(string[] args)
     { 
-        var url = http://localhost:5087/store/show
+        User user1 = new User("Max", "123");
+        user1.CreateUser();
+        user1.Logining("Max", "321");
+        user1.Logining("Max", "312");
     }
 }

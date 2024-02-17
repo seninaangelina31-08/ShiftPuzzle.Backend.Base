@@ -43,7 +43,7 @@ class Program
 
             foreach (var product in products)
             {
-                Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |");
+                Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
             }
 
             Console.WriteLine("-----------------------------------------------------------------");

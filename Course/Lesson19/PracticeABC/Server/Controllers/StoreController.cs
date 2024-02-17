@@ -1,4 +1,4 @@
-namespace PracticeA;
+namespace PracticeABC;
 
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,60 +9,26 @@ using System.Net.Http;
 using System.Text; 
 using System.Threading.Tasks;
 using System.Collections.Generic;
+
 [ApiController]
 public class StoreController : ControllerBase
 {
-    public class Product
+    private readonly ProductRepository _productRepository;
+
+    public StoreController(ProductRepository productRepository)
     {
-    [Required]
-    [StringLength(100, MinimumLength = 3)]
-    public string Name { get; set; }
-
-    [Range(0.01, 10000)]
-    public double Price { get; set; }
-
-    [Range(0, 10000)]
-    public int Stock { get; set; }
-
-        public Product(string name, double price, int stock)
-        {
-            Name = name;
-            Price = price;
-            Stock = stock;
-        }
+        _productRepository = productRepository;
     }
-
-    public class UserCredentials
-    {
-        [Required]
-        [StringLength(100, MinimumLength = 3)]
-        public string User { get; set; }
-        [Required]
-        [StringLength(100, MinimumLength = 3)]
-        public string Pass { get; set; }
-
-    }
-
-
-    private List<Product> Items = new List<Product>();
-
-    private readonly string _jsonFilePath = "DataBase.json";
-
-    public StoreController()
-    {
-        ReadDataFromFile();
-    }
-
-
 
     [HttpPost]
     [Route("/store/updateprice")]
     public IActionResult UpdatePrice(string name, double newPrice)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = _productRepository.GetProductByName(name);
         if (product != null)
         {
             product.Price = newPrice;
+            _productRepository.UpdateProduct(product);
             return Ok($"{name} обновлен с новой ценой: {newPrice}");
         }
         else
@@ -75,10 +41,11 @@ public class StoreController : ControllerBase
     [Route("/store/updatename")]
     public IActionResult UpdateName(string currentName, string newName)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = _productRepository.GetProductByName(currentName);
         if (product != null)
         {
             product.Name = newName;
+            _productRepository.UpdateProduct(product);
             return Ok($"Имя продукта изменено с {currentName} на {newName}");
         }
         else
@@ -92,7 +59,7 @@ public class StoreController : ControllerBase
     [Route("/store/outofstock")]
     public IActionResult OutOfStock()
     {
-        var outOfStockItems = Items.Where(p => p.Stock == 0).ToList();
+        var outOfStockItems = _productRepository.GetAllProducts().Where(p => p.Stock == 0).ToList();
         if (outOfStockItems.Any())
         {
             return Ok(outOfStockItems);
@@ -103,44 +70,37 @@ public class StoreController : ControllerBase
         }
     }
 
-
-
     [HttpPost]
     [Route("/store/auth")]
     public IActionResult Auth([FromBody] UserCredentials user)
     { 
-        if((user.User == "admin") && (user.Pass == "123"))
+        if((user.user == "admin") && (user.pass == "123"))
         {
             
-            return Ok($"{user.User} авторизован");
+            return Ok($"{user.user} авторизован");
         }
         else
         {
-            return NotFound($"{user.User} не найден");
+            return NotFound($"{user.user} не найден");
         }
-
     }
-
-
 
     [HttpPost]
     [Route("/store/add")]
     public IActionResult Add([FromBody] Product newProduct)
     { 
-        Items.Add(newProduct);
-        WriteDataToFile();
-        return Ok(Items);
+        _productRepository.AddProduct(newProduct);
+        return Ok(_productRepository.GetAllProducts());
     }
-
 
     [HttpPost]
     [Route("/store/delete")]
     public IActionResult Delete(string name)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = _productRepository.GetProductByName(name);
         if (product != null)
         {
-            Items.Remove(product);
+            _productRepository.DeleteProduct(name);
             return Ok($"{name} удален");
         }
         else
@@ -149,57 +109,10 @@ public class StoreController : ControllerBase
         }
     }
 
-
     [HttpGet]
     [Route("/store/show")]
     public IActionResult Show()
     {
-        return Ok(Items);
+        return Ok(_productRepository.GetAllProducts());
     }
- 
-
-    private List<Product> ConvertTextDBToList(string json)
-    {
-        return JsonSerializer.Deserialize<List<Product>>(json)
-    }
-
-    private string ReadDB()
-    {
-        return System.IO.File.ReadAllText(_jsonFilePath);
-    }
-
-    private bool DBExist()
-    {
-        return System.IO.File.Exists(_jsonFilePath);
-    }
-
-    private void ReadDataFromFile()
-    {
-        if (DBExist())
-        { 
-            Items =  ConvertTextDBToList(ReadDB());
-        }
-    }
-
-    #endregion
- 
-
-    private string  ConvertDBtoJson()
-    {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
-    }
-
-    private void WriteTiDB(string json)
-    {
-        System.IO.File.WriteAllText(_jsonFilePath, json);
-    }
-
-    private void WriteDataToFile()
-    { 
-        WriteTiDB(ConvertDBtoJson());
-    }
- 
-
-
 }

@@ -15,12 +15,12 @@ interface ISingable
 }
 
 
-internal interface ITalkable
+interface ITalkable
 {
     void Talk();
 }
 
-internal interface IJokeable
+interface IJokeable
 {
     void TellJoke();
 }
@@ -68,14 +68,22 @@ class Program
 {
     static void Main(string[] args)
     {
+        // IDanceable danceInter = new Joker();
         // Создаем экземпляры шутника и клоуна 
-        Clown RedNose = new Clown();
-        Joker NoFunnyJoke = new Joker();
+        ITalkable RedNoseT = new Clown();
+        ITalkable NoFunnyJokeT = new Joker();
+
+        IJokeable RedNoseJ = new Clown();
+        IJokeable NoFunnyJokeJ = new Joker();
+
+        ISingable NoFunnyJokeS = new Joker();
+
+        IDanceable NoFunnyJokeD = new Joker();
         // Используем методы через интерфейсы
         
-        RedNose.Talk();
-        NoFunnyJoke.Talk();
+        RedNoseT.Talk();
+        NoFunnyJokeT.Talk();
 
-        
+        NoFunnyJokeS.Sing();
     }
 }

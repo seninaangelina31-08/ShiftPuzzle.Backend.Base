@@ -38,9 +38,7 @@ public class SQLLiteProductRepository : IProductRepository
         Console.WriteLine("База данных :  " + _connectionString + " создана");
         connection.Open();
         SQLiteCommand command = new SQLiteCommand(CreateTableQuery, connection);
-        command.ExecuteNonQuery();
-             
-        
+        command.ExecuteNonQuery(); 
     }
 
     public List<Product> GetAllProducts()

@@ -40,6 +40,15 @@ namespace Client
             var responseContent = response.Content.ReadAsStringAsync().Result;
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
+            Console.WriteLine("Сортировать ли данные? 1 - да, 2 - нет");
+            string isSorting = Console.ReadLine();
+
+            if( isSorting == "1")
+            {
+                Array.Sort(products);
+                Array.Reverse(products);
+
+            }
 
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");

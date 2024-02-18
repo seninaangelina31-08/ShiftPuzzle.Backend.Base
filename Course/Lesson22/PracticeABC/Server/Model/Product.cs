@@ -11,7 +11,7 @@ public class Product
     [Range(0.01, 10000)]
     public double Price { get; set; }
 
-    [Range(0, 10000)]
+    [Range(0, 5000)]
     public int Stock { get; set; }
 
     public Product(string name, double price, int stock)

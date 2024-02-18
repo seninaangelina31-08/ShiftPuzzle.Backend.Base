@@ -14,10 +14,9 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
-    
-    private readonly SqlLiteProductRepository _productRepository;
+    private readonly IProductRepository _productRepository;
 
-    public StoreController(SqlLiteProductRepository productRepository)
+    public StoreController(IProductRepository productRepository)
     {
         _productRepository = productRepository;
     }

@@ -3,7 +3,7 @@ namespace PracticeABC;
 using System.Data.SQLite; 
 using System.Collections.Generic; 
 
-public class SqlLiteProductRepository
+public class SQLLiteProductRepository : IProductRepository
 {
     private readonly string _connectionString;
     private List<Product> products = new List<Product>();
@@ -33,8 +33,6 @@ public class SqlLiteProductRepository
         connection.Open();
         SQLiteCommand command = new SQLiteCommand(CreateTableQuery, connection);
         command.ExecuteNonQuery();
-             
-        
     }
 
     public List<Product> GetAllProducts()
@@ -50,7 +48,7 @@ public class SqlLiteProductRepository
                 {
                     while (reader.Read())
                     {
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         products.Add(product);
                     }
                 }
@@ -73,7 +71,7 @@ public class SqlLiteProductRepository
                     if (reader.Read())
                     {
 
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         return  product;
                     }
                     return null;

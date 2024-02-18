@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.IO; 
 using System.Net.Http;
 using System.Text; 
-using System.Threading.Tasks;
+using System.Threading.Tasks;s
 using System.Collections.Generic;
 
 
@@ -15,9 +15,9 @@ using System.Collections.Generic;
 public class StoreController : ControllerBase
 {
     
-    private readonly SqlLiteProductRepository _productRepository;
+    private readonly IProductRepository _productRepository;
 
-    public StoreController(SqlLiteProductRepository productRepository)
+    public StoreController(IProductRepository productRepository)
     {
         _productRepository = productRepository;
     }

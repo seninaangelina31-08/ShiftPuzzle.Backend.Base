@@ -43,10 +43,9 @@ namespace Client
             Console.WriteLine("Сортировать ли данные? 1 - да, 2 - нет");
             string isSorting = Console.ReadLine();
 
-            if( isSorting == "1")
+            if(isSorting == "1")
             {
-                Array.Sort(products);
-                Array.Reverse(products);
+                products.Sort((a, b) => a.Stock.CompareTo(b.Stock));
 
             }
 

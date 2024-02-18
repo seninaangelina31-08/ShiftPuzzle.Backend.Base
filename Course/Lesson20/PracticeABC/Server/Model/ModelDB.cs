@@ -1,8 +1,10 @@
 namespace PracticeABC;
 using System.Text.Json;
 using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Collections.Generic;
 
-public class ProductRepository
+public class ModelDB
 {
 
     private readonly string _connectionStringURL;
@@ -14,7 +16,7 @@ public class ProductRepository
             Price REAL NOT NULL,
             Stock INTEGER NOT NULL
         )";
-    public ProductRepository(string connectionString)
+    public ModelDB(string connectionString)
     {
         _connectionStringURL = connectionString;
         InitializeDatabase();
@@ -125,7 +127,7 @@ public class ProductRepository
             string query = "DELETE FROM Products WHERE Name = @Name";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@Name", product.Name);
+                command.Parameters.AddWithValue("@Name", name);
                 command.ExecuteNonQuery();
             }
         }

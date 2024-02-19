@@ -12,10 +12,7 @@ using System.Collections.Generic;
 [ApiController]
 public class StoreController : ControllerBase
 {
-<<<<<<< HEAD
     
-=======
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
     public class Product
     {
     [Required]
@@ -34,18 +31,12 @@ public class StoreController : ControllerBase
             Price = price;
             Stock = stock;
         }
-<<<<<<< HEAD
         
     }
-
     public class BackupDB
         {
             public List<Product> Products { get; set; }
         }
-=======
-    }
-
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
     public class UserCredentials
     {
         [Required]
@@ -61,10 +52,7 @@ public class StoreController : ControllerBase
     private List<Product> Items = new List<Product>();
 
     private readonly string _jsonFilePath = "DataBase.json";
-<<<<<<< HEAD
     private readonly string _backupJsonFilePath = "BackupDB.json";
-=======
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 
     public StoreController()
     {
@@ -147,11 +135,7 @@ public class StoreController : ControllerBase
     { 
 <<<<<<< HEAD
         ReadDataFromFile();
-=======
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
         Items.Add(newProduct);
-        WriteDataToFile();
-        return Ok(Items);
     }
 
 
@@ -184,9 +168,6 @@ public class StoreController : ControllerBase
     {
 <<<<<<< HEAD
         return JsonSerializer.Deserialize<List<Product>>(json);
-=======
-        return JsonSerializer.Deserialize<List<Product>>(json)
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
     }
 
     private string ReadDB()
@@ -245,19 +226,12 @@ public class StoreController : ControllerBase
         return System.IO.File.Exists(_backupJsonFilePath);
     }
 
-=======
-    #endregion
- 
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
 <<<<<<< HEAD
         return JsonSerializer.Serialize(Items, options);
-=======
-        retunr JsonSerializer.Serialize(Items, options);
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
     }
 
     private void WriteTiDB(string json)
@@ -268,14 +242,7 @@ public class StoreController : ControllerBase
     private void WriteDataToFile()
     { 
         WriteTiDB(ConvertDBtoJson());
-<<<<<<< HEAD
 
     }
  
-=======
-    }
- 
-
-
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 }

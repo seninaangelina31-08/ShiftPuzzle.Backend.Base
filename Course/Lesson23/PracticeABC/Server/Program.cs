@@ -15,8 +15,9 @@ builder.Services.AddSingleton<IProductRepository>(provider =>
 {
     // Создаем базу данных и передаем путь к ней
     string connectPath = "Data Source=DataBase.db"; 
+    // Создаем экземпляр репозитория и передаем путь к базе данных SQLite
     IProductRepository productRepository = new SQLLiteUpperCaseRepository(connectPath);
-    return productRepository; 
+    return productRepository; // Путь к файлу базы данных SQLite
 });
 
 var app = builder.Build();
@@ -30,8 +31,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+ 

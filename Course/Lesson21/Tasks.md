@@ -3,6 +3,11 @@
 ---
 # Практика А:
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+1. Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs] 
+>>>>>>> main
 =======
 1. Создать интерфейс [IProductRepository.cs]
 2. Создать методы внутри интерфейса:
@@ -20,19 +25,38 @@
 public class SQLLiteProductRepository : IProductRepository
 ```
 
+<<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+=======
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
+>>>>>>> main
 
 
 ---
 # Практика В: 
 
 1. Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs] 
+<<<<<<< HEAD
 
     - Изменить код и указать вместо явной реализации *SQLLiteProductRepository* интерфейс *IProductRepository*
 
 ---
 # Практика C:
 
+=======
+<<<<<<< HEAD
+---
+# Практика C:
+
+1.   Рефакторинг серверной части [Server/StoreController.cs] [Server/DBModel.cs]
+ 
+=======
+    - Изменить код и указать вместо явной реализации *SQLLiteProductRepository* интерфейс *IProductRepository*
+
+---
+# Практика C:
+
+>>>>>>> main
 1. Создать сервис который пишет и выводи данные в верхнем регистре   [Server/DBModel.cs]
  
 > ПОДСКАЗКА
@@ -53,4 +77,8 @@ Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDou
 ///
 
 ```
+<<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
+=======
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
+>>>>>>> main

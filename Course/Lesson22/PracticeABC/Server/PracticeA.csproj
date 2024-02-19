@@ -9,7 +9,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+<<<<<<<< HEAD:Course/Lesson22/PracticeABC/Server/PracticeA.csproj
     <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.11" />
+========
+<<<<<<< HEAD
+=======
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.11" />
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
+>>>>>>>> main:Course/Lesson21/PracticeABC/Server/PracticeA.csproj
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
   </ItemGroup>
 

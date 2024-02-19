@@ -13,13 +13,10 @@
     "Name": "apple",
     "Price": 123,
     "Stock": 2
-<<<<<<< HEAD
   },
   {
     "Name": "Bubblecup",
     "Price": 234,
     "Stock": 23
-=======
->>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
   }
 ]

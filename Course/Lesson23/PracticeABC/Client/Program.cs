@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -7,11 +7,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Client
 {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> main
 
 
     [Serializable]
@@ -40,41 +35,16 @@ namespace Client
         }
     }
 
-<<<<<<< HEAD
-=======
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
->>>>>>> main
     public class Program
     {
         private const string BaseUrl = "http://localhost";
-        private const string Port = "5258";
+        private const string Port = "5087";
         private const string AuthMethod = "/store/auth";
         private const string AddProductMethod = "/store/add";
         private const string ShowProductsMethod = "/store/show";
 
-<<<<<<< HEAD
         
 
-=======
-<<<<<<< HEAD
-        [Serializable]
-        public class Product
-        {
-            [Required]
-            [StringLength(100, MinimumLength = 3)]
-            public string Name { get; set; }
-
-            [Range(0.01, 10000)]
-            public double Price { get; set; }
-
-            [Range(0, 10000)]
-            public int Stock { get; set; }
-        }
-=======
-        
-
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
->>>>>>> main
 
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
@@ -84,41 +54,18 @@ namespace Client
             var url = $"{BaseUrl}:{Port}{ShowProductsMethod}";
 
             var response = Client.GetAsync(url).Result;
-<<<<<<< HEAD
             var responseContent = response.Content.ReadAsStringAsync().Result; 
             Console.WriteLine(responseContent);
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
 
 
-=======
-<<<<<<< HEAD
-            var responseContent = response.Content.ReadAsStringAsync().Result;
-
-            var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
-
-=======
-            var responseContent = response.Content.ReadAsStringAsync().Result; 
-            Console.WriteLine(responseContent);
-            var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
-
-
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
->>>>>>> main
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");
 
             foreach (var product in products)
             {
-<<<<<<< HEAD
                 Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
-=======
-<<<<<<< HEAD
-                Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
-=======
-                Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
->>>>>>> main
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -143,20 +90,7 @@ namespace Client
             Console.WriteLine("Введите количество на складе:");
             var stock = int.Parse(Console.ReadLine());
 
-<<<<<<< HEAD
             var product = new Product(name,price,stock); 
-=======
-<<<<<<< HEAD
-            var product = new Product
-            {
-                Name = name,
-                Price = price,
-                Stock = stock
-            };
-=======
-            var product = new Product(name,price,stock); 
->>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
->>>>>>> main
 
             var json = JsonSerializer.Serialize(product);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

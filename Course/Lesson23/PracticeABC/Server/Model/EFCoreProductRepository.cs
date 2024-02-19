@@ -1,5 +1,6 @@
-namespace PracticeABC;
 using System.Linq;
+
+namespace PracticeABC;
 
 public class EFCoreProductRepository : IProductRepository
 {
@@ -34,7 +35,7 @@ public class EFCoreProductRepository : IProductRepository
 
     public void DeleteProduct(string name)
     {
-        var product = _context.Products.FirstOrDefault(p => p.Name == name);
+        var product = _context.Products.FirstOrDefault(product => product.Name == name);
 
         if (product != null)
         {

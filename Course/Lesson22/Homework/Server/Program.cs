@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IProductRepository>(provider =>
 {
     string connectPath = "Data Source=DataBase.db"; 
-    IProductRepository productRepository = new IProductRepository(connectPath);
+    IProductRepository productRepository = new SQLLiteProductRepository(connectPath);
     return productRepository;
 });
 

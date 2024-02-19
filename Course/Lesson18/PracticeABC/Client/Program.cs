@@ -6,6 +6,12 @@ namespace Client;
 
 class Program
 { 
+    private const string BaseUrl = "http://localhost";
+    private const string Port = "5087";
+    private const string AuthMethod = "/store/auth";
+    private const string AddProductMethod = "/store/add";
+    private const string ShowProductsMethod = "/store/show";
+
     [System.Serializable]
     public class Product
     {
@@ -26,7 +32,7 @@ class Program
 
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            var url = $"{BaseUrl}:{Port}{ShowProductsMethod}"; // Замените на порт вашего сервера
             var client = new HttpClient();   
             var response = client.GetAsync(url).Result;  
             string responseContent = response.Content.ReadAsStringAsync().Result; 
@@ -46,16 +52,13 @@ class Program
 
     public static void SendProduct()
     {       
-
-
-
             if(!IsAuthorized)
             {
                 Console.WriteLine("Вы не авторизованы");
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+            var url = $"{BaseUrl}:{Port}{AddProductMethod}"; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -86,9 +89,8 @@ class Program
             }
     }
 
-
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
+    {       var url = $"{BaseUrl}:{Port}{AuthMethod}"; // Замените на порт вашего сервера
             var userData = new
             {
                 User = "admin",

@@ -58,6 +58,7 @@ public class SQLLiteProductRepository : IProductRepository
                     {
                         Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
                         products.Add(product);
+
                     }
                 }
             }

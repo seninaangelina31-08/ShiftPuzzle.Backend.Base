@@ -113,6 +113,70 @@ class Program
             }
     }
 
+    public static void Update_name()
+    {
+        var url = "http://localhost:5087/store/updatename";
+        Console.Write("Введите название продукта: ");
+        string current_name = Console.ReadLine();
+        Console.Write("Введите новое название продукта: ");
+        string new_name = Console.ReadLine();
+
+        var userData = new
+        {
+            CurrentName = Convert.ToString(current_name),
+            NewName = Convert.ToString(new_name),
+        };
+
+        var client = new HttpClient(); 
+        var json = JsonSerializer.Serialize(userData);
+        Console.WriteLine(json);
+
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = client.PostAsync(url, content).Result;
+        
+        if (response.IsSuccessStatusCode)
+        {
+            var responseContent = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine(responseContent);
+        }
+        else
+        {
+            Console.WriteLine($"Error: {response.StatusCode}");
+        }
+
+    }
+
+    public static void Update_price()
+    {
+        var url = "http://localhost:5087/store/updateprice";
+        Console.Write("Введите название продукта: ");
+        string Name = Console.ReadLine();
+        Console.Write("Введите новую цену: ");
+        string price = Console.ReadLine();
+
+        var userData = new
+        {
+            Name = Convert.ToString(Name),
+            Price = Convert.ToString(price),
+            Stock = 0
+        };
+
+        var client = new HttpClient(); 
+        var json = JsonSerializer.Serialize(userData);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = client.PostAsync(url, content).Result;
+        
+        if (response.IsSuccessStatusCode)
+        {
+            var responseContent = response.Content.ReadAsStringAsync().Result;
+            Console.WriteLine(responseContent);
+        }
+        else
+        {
+            Console.WriteLine($"Error: {response.StatusCode}");
+        }
+    }   
+
 
     static void Main(string[] args)
     { 
@@ -124,6 +188,8 @@ class Program
                     Console.WriteLine("2. Добавление продукта");
                     Console.WriteLine("3. Вывод спика");
                     Console.WriteLine("4. Выход");
+                    Console.WriteLine("5. Обновление названия");
+                    Console.WriteLine("6. Обновление цены");
 
                     var choice = Console.ReadLine();
 
@@ -139,6 +205,12 @@ class Program
                             DisplayProducts();
                             break;
                         case "4":
+                            break;
+                        case "5":
+                            Update_name();
+                            break;
+                        case "6":
+                            Update_price();
                             break;
                         default:
                             Console.WriteLine("Неверный выбор. Попробуйте снова.");

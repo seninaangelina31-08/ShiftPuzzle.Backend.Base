@@ -44,6 +44,23 @@ public class StoreController : ControllerBase
 
     }
 
+    public class RenameProduct
+    {
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string CurrnetName { get; set; }
+
+        [Required]
+        [StringLength(100, MinimumLength = 3)]
+        public string NewName { get; set; }
+
+        //public RenameProduct(string currentName, string newName)
+        //{
+        //    CurrnetName = currentName;
+        //    NewName = newName;
+        //}
+    }
+
 
     private List<Product> Items = new List<Product>();
 
@@ -59,34 +76,34 @@ public class StoreController : ControllerBase
 
     [HttpPost]
     [Route("/store/updateprice")]
-    public IActionResult UpdatePrice(string name, double newPrice)
+    public IActionResult UpdatePrice([FromBody] Product product)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
-        if (product != null)
+        foreach (Product prod in Items)
         {
-            product.Price = newPrice;
-            return Ok($"{name} обновлен с новой ценой: {newPrice}");
+            if (prod.Name == product.Name)
+            {
+                prod.Price = product.Price;
+                WriteDataToFile();
+                return Ok();
+            }
         }
-        else
-        {
-            return NotFound($"Продукт {name} не найден");
-        }
+        return NotFound();
     }
 
     [HttpPost]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public IActionResult UpdateName([FromBody] RenameProduct prod)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
-        if (product != null)
+        foreach (Product p in Items)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            if (p.Name == prod.CurrnetName)
+            {
+                p.Name = prod.NewName;
+                WriteDataToFile();
+                return Ok();
+            }
         }
-        else
-        {
-            return NotFound($"Продукт {currentName} не найден");
-        }
+        return NotFound();
     }
 
 

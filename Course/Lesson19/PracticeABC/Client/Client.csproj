@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <TargetFramework>net8.0</TargetFramework>
 =======
     <TargetFramework>net7.0</TargetFramework>
@@ -18,6 +19,9 @@
     <TargetFramework>net7.0</TargetFramework>
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+    <TargetFramework>net8.0</TargetFramework>
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>

@@ -6,34 +6,47 @@
 interface IDanceable
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     string Dance {get;}
 =======
  
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+    string Dance {get;}
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 }
 
 // Шуточный интерфейс "Способность петь"
 interface ISingable
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     string Sing {get;}
 =======
  
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+    string Sing {get;}
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 }
 
 
 internal interface ITalkable
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     string Talk {get;}
 =======
   
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+    string Talk {get;}
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 }
 
 internal interface IJokeable
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     string TellJoke {get;}
 }
@@ -47,6 +60,13 @@ class Joker : ITalkable, IJokeable, IDanceable, ISingable
 // Класс шутника, реализующий ITalkable, IJokeable, IDanceable и ISingable
 class Joker  
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+    string TellJoke {get;}
+}
+
+// Класс шутника, реализующий ITalkable, IJokeable, IDanceable и ISingable
+class Joker : ITalkable, IJokeable, IDanceable, ISingable
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 {
     public void Talk()
     {
@@ -72,10 +92,14 @@ class Joker
 
 // Класс клоуна, реализующий ITalkable и IJokeable
 <<<<<<< HEAD
+<<<<<<< HEAD
 class Clown: ITalkable, IJokeable
 =======
 class Clown  
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+class Clown: ITalkable, IJokeable
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 {
     public void Talk()
     {
@@ -98,6 +122,9 @@ class Program
          
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
         ITalkable jokerTalkable = new Joker();
         IJokeable jokerJokeable = new Joker();
         IDanceable jokerDanceable = new Joker();
@@ -115,8 +142,11 @@ class Program
 
         Console.WriteLine(clownTalkable.Talk);
         Console.WriteLine(clownJokeable.TellJoke);
+<<<<<<< HEAD
 =======
         
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     }
 }

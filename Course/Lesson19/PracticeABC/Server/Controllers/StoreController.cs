@@ -16,6 +16,7 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
@@ -30,6 +31,9 @@ public class StoreController : ControllerBase
 =======
     
 >>>>>>> 3fbbd12a (nothing)
+=======
+    
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     public class Product
     {
     [Required]
@@ -52,15 +56,19 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 3fbbd12a (nothing)
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
         
     }
     public class BackupDB
         {
             public List<Product> Products { get; set; }
         }
+<<<<<<< HEAD
 =======
     }
 
@@ -84,6 +92,8 @@ public class StoreController : ControllerBase
 
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     public class UserCredentials
     {
         [Required]
@@ -105,6 +115,7 @@ public class StoreController : ControllerBase
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private readonly string _backupJsonFilePath = "BackupDB.json";
 =======
 >>>>>>> 2f0ac98b (Материалы 19-го урока)
@@ -119,6 +130,9 @@ public class StoreController : ControllerBase
 =======
     private readonly string _backupJsonFilePath = "BackupDB.json";
 >>>>>>> 3fbbd12a (nothing)
+=======
+    private readonly string _backupJsonFilePath = "BackupDB.json";
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 
     public StoreController()
     {
@@ -206,6 +220,7 @@ public class StoreController : ControllerBase
 =======
 >>>>>>> 240f7224 (feat: added answer to task 21)
         ReadDataFromFile();
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
@@ -221,6 +236,9 @@ public class StoreController : ControllerBase
 =======
         Items.Add(newProduct);
 >>>>>>> 3fbbd12a (nothing)
+=======
+        Items.Add(newProduct);
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     }
 
 
@@ -273,10 +291,13 @@ public class StoreController : ControllerBase
 >>>>>>> 56c5f66f (feat: added answer to task 19)
 =======
         return JsonSerializer.Deserialize<List<Product>>(json);
+<<<<<<< HEAD
 =======
         return JsonSerializer.Deserialize<List<Product>>(json)
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     }
 
     private string ReadDB()
@@ -344,6 +365,7 @@ public class StoreController : ControllerBase
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     #endregion
 <<<<<<< HEAD
@@ -361,6 +383,8 @@ public class StoreController : ControllerBase
  
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 
     private string  ConvertDBtoJson()
     {
@@ -378,10 +402,13 @@ public class StoreController : ControllerBase
 >>>>>>> 56c5f66f (feat: added answer to task 19)
 =======
         return JsonSerializer.Serialize(Items, options);
+<<<<<<< HEAD
 =======
         retunr JsonSerializer.Serialize(Items, options);
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     }
 
     private void WriteTiDB(string json)
@@ -392,6 +419,7 @@ public class StoreController : ControllerBase
     private void WriteDataToFile()
     { 
         WriteTiDB(ConvertDBtoJson());
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -415,4 +443,9 @@ public class StoreController : ControllerBase
 =======
 >>>>>>> 08c5061f8c31354bd946ca5f449edd5e834a29da
 >>>>>>> 240f7224 (feat: added answer to task 21)
+=======
+
+    }
+ 
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 }

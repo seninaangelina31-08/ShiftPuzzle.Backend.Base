@@ -19,12 +19,18 @@ namespace Client
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> main
+<<<<<<< HEAD
 =======
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 
 
     [Serializable]
@@ -55,11 +61,17 @@ namespace Client
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
 =======
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+=======
+>>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
+>>>>>>> main
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     public class Program
     {
         private const string BaseUrl = "http://localhost";
@@ -80,12 +92,18 @@ namespace Client
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
         
 
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
         [Serializable]
         public class Product
         {
@@ -100,17 +118,23 @@ namespace Client
             public int Stock { get; set; }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 =======
         
 
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+<<<<<<< HEAD
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
         
 
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 
         private static bool IsAuthorized = false;
         private static readonly HttpClient Client = new HttpClient();
@@ -123,23 +147,34 @@ namespace Client
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
             var responseContent = response.Content.ReadAsStringAsync().Result; 
             Console.WriteLine(responseContent);
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> bc515b02 (feat: lesson 22 completed)
             var responseContent = response.Content.ReadAsStringAsync().Result;
 
             var products = JsonSerializer.Deserialize<List<Product>>(responseContent);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 =======
             var responseContent = response.Content.ReadAsStringAsync().Result; 
             Console.WriteLine(responseContent);
@@ -148,10 +183,13 @@ namespace Client
 
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+<<<<<<< HEAD
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |");
             Console.WriteLine("-----------------------------------------------------------------");
@@ -161,6 +199,9 @@ namespace Client
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
                 Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
 =======
 <<<<<<< HEAD
@@ -169,12 +210,15 @@ namespace Client
                 Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+<<<<<<< HEAD
 =======
                 Console.WriteLine($"| {product.Name, -18} | {product.Price, -5} | {product.Stock, -19} |");
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
                 Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |"); 
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
             }
 
             Console.WriteLine("-----------------------------------------------------------------");
@@ -202,11 +246,17 @@ namespace Client
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             var product = new Product(name,price,stock); 
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
+=======
+            var product = new Product(name,price,stock); 
+=======
+<<<<<<< HEAD
+>>>>>>> bc515b02 (feat: lesson 22 completed)
             var product = new Product
             {
                 Name = name,
@@ -214,15 +264,21 @@ namespace Client
                 Stock = stock
             };
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 =======
             var product = new Product(name,price,stock); 
 >>>>>>> 53ced403e07941094cf29678628e51a5621c4c01
 >>>>>>> main
+<<<<<<< HEAD
 =======
 >>>>>>> 78543e51 (матераилы 21-го урока)
 =======
             var product = new Product(name,price,stock); 
 >>>>>>> 7a4262c4 (feat: added answer to task 21 (true commit))
+=======
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 
             var json = JsonSerializer.Serialize(product);
             var content = new StringContent(json, Encoding.UTF8, "application/json");

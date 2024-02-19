@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "$schema": "http://json.schemastore.org/launchsettings.json",
 =======
   "$schema": "https://json.schemastore.org/launchsettings.json",
@@ -19,10 +20,14 @@
 =======
   "$schema": "http://json.schemastore.org/launchsettings.json",
 >>>>>>> 3fbbd12a (nothing)
+=======
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+>>>>>>> bc515b02 (feat: lesson 22 completed)
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -47,6 +52,10 @@
       "applicationUrl": "http://localhost:59563",
       "sslPort": 44355
 >>>>>>> 3fbbd12a (nothing)
+=======
+      "applicationUrl": "http://localhost:59563",
+      "sslPort": 44355
+>>>>>>> bc515b02 (feat: lesson 22 completed)
     }
   },
   "profiles": {
@@ -55,6 +64,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -75,6 +85,9 @@
 =======
       "applicationUrl": "http://localhost:5051",
 >>>>>>> 3fbbd12a (nothing)
+=======
+      "applicationUrl": "http://localhost:5051",
+>>>>>>> bc515b02 (feat: lesson 22 completed)
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -88,6 +101,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "applicationUrl": "https://localhost:7256;http://localhost:5051",
 =======
       "applicationUrl": "https://localhost:7268;http://localhost:5087",
@@ -104,6 +118,9 @@
 =======
       "applicationUrl": "https://localhost:7256;http://localhost:5051",
 >>>>>>> 3fbbd12a (nothing)
+=======
+      "applicationUrl": "https://localhost:7256;http://localhost:5051",
+>>>>>>> bc515b02 (feat: lesson 22 completed)
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

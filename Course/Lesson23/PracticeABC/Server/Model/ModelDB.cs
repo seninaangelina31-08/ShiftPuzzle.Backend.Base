@@ -1,5 +1,9 @@
 namespace PracticeABC;
+<<<<<<< HEAD
 using System.Linq;
+=======
+
+>>>>>>> bc515b02 (feat: lesson 22 completed)
 using System.Data.SQLite;
 using System.Collections.Generic;
 

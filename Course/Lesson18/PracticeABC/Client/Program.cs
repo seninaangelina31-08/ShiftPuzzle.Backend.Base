@@ -4,8 +4,16 @@ using System.Text.Json;
 
 namespace Client;
 
+
 class Program
 { 
+    const string port = ":5087";
+    const string url = "http://localhost";
+    const string AddProductMethod = "/store/add";
+    const string DisplayProductsMethod = "/store/show";
+    const string AuthMethod = "/store/auth";
+
+
     [System.Serializable]
     public class Product
     {
@@ -26,7 +34,7 @@ class Program
 
     static void DisplayProducts()
         {
-            var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
+            var url_DP = url + port + DisplayProductsMethod; // Замените на порт вашего сервера
             var client = new HttpClient();   
             var response = client.GetAsync(url).Result;  
             string responseContent = response.Content.ReadAsStringAsync().Result; 
@@ -55,7 +63,7 @@ class Program
                 return;        
             }
         
-            var url = "http://localhost:5087/store/add"; // Замените на порт вашего сервера
+            var url_SP =  url + port + AddProductMethod; // Замените на порт вашего сервера
             Console.WriteLine("Введите название продукта:");
             var name = Console.ReadLine();
             Console.WriteLine("Введите цену продукта:");
@@ -88,7 +96,7 @@ class Program
 
 
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
+    {       var url_A = url + port + AuthMethod; // Замените на порт вашего сервера
             var userData = new
             {
                 User = "admin",

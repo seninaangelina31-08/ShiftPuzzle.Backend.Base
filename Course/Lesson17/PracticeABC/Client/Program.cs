@@ -28,15 +28,13 @@ class Program
     static void DisplayProducts()
         {
             var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
-            
-            // реализуй логику
-
 
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("| Название продукта | Цена | Количество на складе |"); 
-
-
-
+            foreach (var obj in product)
+            {
+                Console.WriteLine($"| {obj.name, -18} | {obj.price, -5} | {obj.stock, -19} |");
+            }
             Console.WriteLine("-----------------------------------------------------------------");
         }
 
@@ -53,7 +51,41 @@ class Program
         return jsonResponse;  // возвращаем ответ
     }
 
-
+    public static void UpdateName()
+    {        
+        if(!IsAuthorized)
+        {
+            Console.WriteLine("Вы не авторизованы");
+            return;        
+        }
+    
+        var url = "http://localhost:5087/store/updatename"; // Замените на порт вашего сервера
+        Console.WriteLine("Введите название продукта:");
+        var currentName = Console.ReadLine();
+        Console.WriteLine("Введите новое название продукта:");
+        var newName = Console.ReadLine();
+        url += $"?currentName={currentName}&newName={newName}";
+        string Request = GetRequest(url);
+        Console.WriteLine(Request);
+    }
+    
+    public static void UpdatePrice()
+    {        
+        if(!IsAuthorized)
+        {
+            Console.WriteLine("Вы не авторизованы");
+            return;        
+        }
+    
+        var url = "http://localhost:5087/store/updateprice"; // Замените на порт вашего сервера
+        Console.WriteLine("Введите название продукта:");
+        var name = Console.ReadLine();
+        Console.WriteLine("Введите новую цену продукта:");
+        var newPrice = Console.ReadLine();
+        url += $"?name={name}&newPrice={newPrice}";
+        string Request = GetRequest(url);
+        Console.WriteLine(Request);
+    }
     public static void SendProduct()
     {        
             if(!IsAuthorized)

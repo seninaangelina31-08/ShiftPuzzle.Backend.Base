@@ -22,6 +22,7 @@ class Program
         
     }
     
+    
     static bool IsAuthorized = false;
 
     static void DisplayProducts()
@@ -38,6 +39,19 @@ class Program
 
             Console.WriteLine("-----------------------------------------------------------------");
         }
+
+    public static string GetRequest(string url) // функция принимает адерс api
+    {
+        WebRequest request = WebRequest.Create(url); // создаем запрос
+        WebResponse response = request.GetResponse(); // отправляем команду на получение ответа
+        Stream dataStream = response.GetResponseStream(); // открываем поток для чтения (это как File.Readline только для сети)
+        StreamReader streamReader = new StreamReader(dataStream); // Открываем чтение потока
+        string jsonResponse = streamReader.ReadToEnd(); // получаем текст
+
+        streamReader.Close();   // закрываем за собой чтение потока
+        response.Close();  
+        return jsonResponse;  // возвращаем ответ
+    }
 
 
     public static void SendProduct()
@@ -111,21 +125,40 @@ class Program
 
 
     static void Main(string[] args)
-    { 
+ { 
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         while (true)
                 {
-                    Console.WriteLine("Выберите опцию:");
+                    Console.WriteLine("-----------------------------------------------------------------");
+                    Console.WriteLine("Выберите функцию:\n1. Авторизация\n2. Обновление цены\n3. Обновение имени\n4. Вывод списка\n5. Добавление продукта\n6. Выход");
                      
 
-                    var choice = Console.ReadLine();
+                    var user_choice = Console.ReadLine();
 
-                    switch (choice)
+                    switch (user_choicechoice)
                     { 
+                        case "1":
+                            Auth();
+                            break;
+                        case "2":
+                            UpdatePrice();
+                            break;
+                        case "3":
+                            UpdateName();
+                            break;
+                        case "4":
+                            DisplayProducts();
+                            break;
+                        case "5":
+                            SendProduct();
+                            break;
+                        case "6":
+                            Console.WriteLine("-----------------------------------------------------------------");
+                            return;
                         default:
                             Console.WriteLine("Неверный выбор. Попробуйте снова.");
                             break;
                     }
-                }
-    }
-}
+                    Console.WriteLine("-----------------------------------------------------------------");
+                }   
+}             

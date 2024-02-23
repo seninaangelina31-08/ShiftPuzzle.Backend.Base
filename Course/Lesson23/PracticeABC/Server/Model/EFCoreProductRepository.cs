@@ -18,7 +18,7 @@ public class EFCoreProductRepository : IProductRepository
 
     public Product GetProductByName(string name)
     {
-        return _context.Products.FirstOrDefault(p => p.Name == name)
+        return _context.Products.FirstOrDefault(p => p.Name == name);
     }
 
     public void AddProduct(Product product)

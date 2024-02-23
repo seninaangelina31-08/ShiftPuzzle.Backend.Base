@@ -1,11 +1,15 @@
 namespace PracticeABC;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 public class Product
 {
 
     [Required]
+
+    public int Id { get; set; }
+
     [StringLength(100, MinimumLength = 3)]
     public string Name { get; set; }
 
@@ -15,8 +19,9 @@ public class Product
     [Range(0, 10000)]
     public int Stock { get; set; }
 
-    public Product(string name, double price, int stock)
+    public Product(int id, string name, double price, int stock)
     {
+        Id = id;
         Name = name;
         Price = price;
         Stock = stock;

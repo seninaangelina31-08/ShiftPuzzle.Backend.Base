@@ -53,7 +53,7 @@ public class SQLLiteUpperCaseRepository : IProductRepository
                 {
                     while (reader.Read())
                     {
-                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
+                        Product product = new Product(Convert.ToInt32(reader["Id"]),reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         products.Add(product);
                     }
                 }
@@ -76,7 +76,7 @@ public class SQLLiteUpperCaseRepository : IProductRepository
                     if (reader.Read())
                     {
 
-                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
+                        Product product = new Product(Convert.ToInt32(reader["Id"]),reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         return product;
                     }
                     return null;
@@ -90,9 +90,10 @@ public class SQLLiteUpperCaseRepository : IProductRepository
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
-            string query = "INSERT INTO Products (Name, Price, Stock) VALUES (@Name, @Price, @Stock)";
+            string query = "INSERT INTO Products (Id, Name, Price, Stock) VALUES (@Id, @Name, @Price, @Stock)";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
+                command.Parameters.AddWithValue("@Id", product.Id);
                 command.Parameters.AddWithValue("@Name", product.Name.ToUpper());
                 command.Parameters.AddWithValue("@Price", product.Price);
                 command.Parameters.AddWithValue("@Stock", product.Stock);
@@ -106,9 +107,10 @@ public class SQLLiteUpperCaseRepository : IProductRepository
         using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
         {
             connection.Open();
-            string query = "UPDATE Products SET Price = @Price, Stock = @Stock WHERE Name = @Name";
+            string query = "UPDATE Products SET Id = @Id, Price = @Price, Stock = @Stock WHERE Name = @Name";
             using (SQLiteCommand command = new SQLiteCommand(query, connection))
             {
+                command.Parameters.AddWithValue("@Id", product.Id);
                 command.Parameters.AddWithValue("@Name", product.Name.ToUpper());
                 command.Parameters.AddWithValue("@Price", product.Price);
                 command.Parameters.AddWithValue("@Stock", product.Stock);

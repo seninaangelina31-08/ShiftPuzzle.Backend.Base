@@ -10,6 +10,6 @@ public class ProductContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Product>().HasNoKey();
+        modelBuilder.Entity<Product>();
     }
 }

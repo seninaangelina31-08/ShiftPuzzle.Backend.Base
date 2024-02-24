@@ -1,4 +1,6 @@
 using PracticeABC;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
 using System.Data.SQLite; // Добавляем пространство имен для работы с SQLite
 
 var builder = WebApplication.CreateBuilder(args);

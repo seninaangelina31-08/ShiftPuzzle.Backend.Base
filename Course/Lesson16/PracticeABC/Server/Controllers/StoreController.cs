@@ -15,11 +15,36 @@ public class StoreController : ControllerBase
         {
             Name = name;
             Price = price;
-            Stock = stock;
+            Afoldingroom = afoldingroom;
         }
     }
 
+    public class Productupdate
+    {
+        public string CurrentName { get; set; }
+        public string NewName { get; set; }
+    }
+    public class DeleteProductRequest
+    {
+        public string Name { get; set; }
+    }
+
+    public class User
+    {
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public bool IsAuthorized { get; set; }
+
+        public User(){}
+        public User(string Login, string Password)
+        {
+            this.Login = Login;
+            this.Password = Password;
+            this.IsAuthorized = false;
+        }
+    }   
     private static readonly List<Product> Items = new List<Product>();
+    private static readonly List<User> Users = new List<User>();
 
     [HttpGet]
     [Route("/store/updateprice")]
@@ -29,7 +54,7 @@ public class StoreController : ControllerBase
         if (product != null)
         {
             product.Price = newPrice;
-            return Ok($"{name} обновлен с новой ценой: {newPrice}");
+            return Ok($"{name} обновлен : {newPrice}");
         }
         else
         {
@@ -37,21 +62,22 @@ public class StoreController : ControllerBase
         }
     }
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/updatename")]
-    public IActionResult UpdateName(string currentName, string newName)
+    public IActionResult UpdateName([FromBody] Productupdate request)
     {
-        var product = Items.FirstOrDefault(p => p.Name == currentName);
+        var product = Items.FirstOrDefault(p => p.Name == request.CurrentName);
         if (product != null)
         {
-            product.Name = newName;
-            return Ok($"Имя продукта изменено с {currentName} на {newName}");
+            product.Name = request.NewName;
+            return Ok($"Имя продукта изменено с {request.CurrentName} на {request.NewName}");
         }
         else
         {
-            return NotFound($"Продукт {currentName} не найден");
+            return NotFound($"Продукт {request.CurrentName} не найден");
         }
     }
+
 
 
     [HttpGet]
@@ -65,7 +91,7 @@ public class StoreController : ControllerBase
         }
         else
         {
-            return Ok("Все продукты в наличии");
+            return Ok(" продукты в наличии");
         }
     }
 
@@ -74,29 +100,28 @@ public class StoreController : ControllerBase
 
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/add")]
-    public IActionResult Add(string name, double price, int stock)
+    public IActionResult Add([FromBody] Product newProduct)
     {
-        var product = new Product(name, price, stock);
-        Items.Add(product);
+        Items.Add(newProduct);
         return Ok(Items);
     }
 
 
-    [HttpGet]
+    [HttpPost]
     [Route("/store/delete")]
-    public IActionResult Delete(string name)
+    public IActionResult Delete([FromBody] DeleteProductRequest request)
     {
-        var product = Items.FirstOrDefault(p => p.Name == name);
+        var product = Items.FirstOrDefault(p => p.Name == request.Name);
         if (product != null)
         {
             Items.Remove(product);
-            return Ok($"{name} удален");
+            return Ok($"{request.Name} удален");
         }
         else
         {
-            return NotFound($"{name} не найден");
+            return NotFound($"{request.Name} не найден");
         }
     }
 
@@ -108,5 +133,40 @@ public class StoreController : ControllerBase
         return Ok(Items);
     }
 
+
+    [HttpPost]
+    [Route("/store/add_user")]
+    public IActionResult AddUser([FromBody] User user)
+    {
+        Users.Add(user);
+        return Ok($"Пользователь {user.Login} добавлен.");
+
+    }
+
+    [HttpPost]
+    [Route("store/logining_user")]
+    public IActionResult LoginingUser([FromBody] User user)
+    {
+        foreach (var el in Users)
+        {
+            if (el.Login == user.Login)
+            {
+                if (el.Password == user.Password)
+                {   
+                    el.IsAuthorized = true;
+                    return Ok(" вошел в систему.");
+                }
+            }
+        }
+        return NotFound("Неправильный логин или пароль.");
+    }
+
+
+    [HttpGet]
+    [Route("/store/user_info")]
+    public IActionResult UserInfo()
+    {
+        return Ok(Users);
+    }
 
 }

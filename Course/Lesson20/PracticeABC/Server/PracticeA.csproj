@@ -2,10 +2,14 @@
 
   <PropertyGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <TargetFramework>net8.0</TargetFramework>
 =======
     <TargetFramework>net7.0</TargetFramework>
 >>>>>>> ec9a1010 (Материалы 20-го урока)
+=======
+    <TargetFramework>net8.0</TargetFramework>
+>>>>>>> aa092068 (feat: homework for lesson 23 completed)
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>

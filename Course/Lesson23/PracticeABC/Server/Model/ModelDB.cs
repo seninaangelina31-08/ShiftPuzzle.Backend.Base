@@ -1,9 +1,13 @@
 namespace PracticeABC;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Linq;
 =======
 
 >>>>>>> bc515b02 (feat: lesson 22 completed)
+=======
+using System.Linq;
+>>>>>>> aa092068 (feat: homework for lesson 23 completed)
 using System.Data.SQLite;
 using System.Collections.Generic;
 

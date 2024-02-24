@@ -14,4 +14,8 @@ namespace PracticeABC
             modelBuilder.Entity<Product>().HasNoKey();
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aa092068 (feat: homework for lesson 23 completed)

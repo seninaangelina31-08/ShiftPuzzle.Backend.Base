@@ -1,9 +1,13 @@
 using PracticeABC;
 using System.Data.SQLite; // Добавляем пространство имен для работы с SQLite
 <<<<<<< HEAD
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
 =======
 >>>>>>> bc515b02 (feat: lesson 22 completed)
+=======
+using Microsoft.EntityFrameworkCore;
+>>>>>>> aa092068 (feat: homework for lesson 23 completed)
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +22,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IProductRepository>(provider =>
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aa092068 (feat: homework for lesson 23 completed)
     // Создаем экземпляр DbContextOptionsBuilder для конфигурации базы данных SQLite
     var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();
     optionsBuilder.UseSqlite("Data Source=DataBase.db");
@@ -29,6 +36,7 @@ builder.Services.AddSingleton<IProductRepository>(provider =>
     IProductRepository productRepository = new EFCoreProductRepository(productContext);
     
     return productRepository;
+<<<<<<< HEAD
 =======
     // Создаем базу данных и передаем путь к ней
     string connectPath = "Data Source=DataBase.db"; 
@@ -36,6 +44,8 @@ builder.Services.AddSingleton<IProductRepository>(provider =>
     IProductRepository productRepository = new SQLLiteUpperCaseRepository(connectPath);
     return productRepository; // Путь к файлу базы данных SQLite
 >>>>>>> bc515b02 (feat: lesson 22 completed)
+=======
+>>>>>>> aa092068 (feat: homework for lesson 23 completed)
 });
 
 var app = builder.Build();

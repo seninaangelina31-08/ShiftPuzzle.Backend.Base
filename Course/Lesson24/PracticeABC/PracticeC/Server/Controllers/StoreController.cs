@@ -24,7 +24,7 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/updateprice")]
-        public IActionResult UpdatePrice(string name, double newPrice)
+        public async Task<IActionResult> UpdatePrice(string name, double newPrice)
         {
             var product = _productRepository.GetProductByName(name);
             if (product != null)
@@ -41,7 +41,7 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/updatename")]
-        public IActionResult UpdateName(string currentName, string newName)
+        public async Task<IActionResult> UpdateName(string currentName, string newName)
         {
             var product = _productRepository.GetProductByName(currentName);
             if (product != null)
@@ -58,7 +58,7 @@ public class StoreController : ControllerBase
 
         [HttpGet]
         [Route("/store/outofstock")]
-        public IActionResult OutOfStock()
+        public async Task<IActionResult> OutOfStock()
         {
             var outOfStockItems = _productRepository.GetAllProducts().Where(p => p.Stock == 0).ToList();
             if (outOfStockItems.Any())
@@ -73,7 +73,7 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/auth")]
-        public IActionResult Auth([FromBody] UserCredentials user)
+        public async Task<IActionResult> Auth([FromBody] UserCredentials user)
         {
             if ((user.user == "admin") && (user.pass == "123"))
             {
@@ -87,7 +87,7 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/add")]
-        public IActionResult Add([FromBody] Product newProduct)
+        public async Task<IActionResult> Add([FromBody] Product newProduct)
         { 
             _productRepository.AddProduct(newProduct);
             return Ok(_productRepository.GetAllProducts());
@@ -95,7 +95,7 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/delete")]
-        public IActionResult Delete(string name)
+        public async Task<IActionResult> Delete(string name)
         {
             var product = _productRepository.GetProductByName(name);
             if (product != null)
@@ -111,7 +111,7 @@ public class StoreController : ControllerBase
 
         [HttpGet]
         [Route("/store/show")]
-        public IActionResult Show()
+        public async Task<IActionResult> Show()
         {
             return Ok(_productRepository.GetAllProducts());
         }

@@ -7,7 +7,7 @@ async Task<byte[]> LoadVideoAsync(string url)
 }
 
 // пример метода для сохранения видео в файл
-async Task SaveVideoAsync(string path, byte [] content)
+async Task SaveVideoAsync(string path, byte[] content)
 {
     await File.WriteAllBytesAsync(path, content);
 }

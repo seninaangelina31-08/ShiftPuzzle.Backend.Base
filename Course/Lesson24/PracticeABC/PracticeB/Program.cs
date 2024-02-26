@@ -67,9 +67,9 @@ class Program
     {
         using (var httpClient = new HttpClient())
         {
-            var content1 = await httpClient.GetAsync("http://google.com")
-            var content2 = await httpClient.GetAsync("http://yandex.ru")
-            var content3 = await httpClient.GetAsync("http://yahoo.com")
+            var content1 = await httpClient.GetAsync("http://google.com");
+            var content2 = await httpClient.GetAsync("http://yandex.ru");
+            var content3 = await httpClient.GetAsync("http://yahoo.com");
         }
     }
 

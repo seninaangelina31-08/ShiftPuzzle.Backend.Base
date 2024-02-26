@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace PracticeABC
 {
@@ -13,31 +16,31 @@ namespace PracticeABC
             _context = context;
         }
 
-        public List<Product> GetAllProducts()
+        public async Task<List<Product>> GetAllProducts()
         {
-            return _context.Products.ToList();
+            return await _context.Products.ToListAsync();
         }
 
-        public Product GetProductByName(string name)
+        public async Task<Product> GetProductByName(string name)
         {
-            return _context.Products.FirstOrDefault(p => p.Name == name);
+            return await _context.Products.FirstOrDefaultAsync<Product>(p => p.Name == name);
         }
 
-        public void AddProduct(Product product)
+        public async Task AddProduct(Product product)
         {
             _context.Products.Add(product);
-            _context.SaveChanges();  
+            await _context.SaveChangesAsync();  
         }
 
-        public void UpdateProduct(Product product)
+        public async Task UpdateProduct(Product product)
         {
             _context.Products.Update(product);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void DeleteProduct(string name)
+        public async Task  DeleteProduct(string name)
         {
-            var product = _context.Products.FirstOrDefault(p => p.Name == name);
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Name == name);
             if (product != null)
             {
                 _context.Products.Remove(product);

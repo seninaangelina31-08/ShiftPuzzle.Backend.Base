@@ -18,9 +18,9 @@ namespace PracticeABC
             return _context.Products.ToList();
         }
 
-        public async Product GetProductByName(string name)
+        public Product GetProductByName(string name)
         {
-            return await _context.Products.FirstOrDefault(p => p.Name == name);
+            return _context.Products.FirstOrDefault(p => p.Name == name);
         }
 
         public void AddProduct(Product product)

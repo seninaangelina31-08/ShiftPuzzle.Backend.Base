@@ -16,35 +16,41 @@ using System.Collections.Generic;
 
 
 
-public  class NotificationSystem
+public class NotificationSystem
 {
     // событие новое сообщение
+    public event Action OnNewMessage;
     // событие новый заказ
+    public event Action OnNewOrder;
     // методы вызова событий, т.к. события вне класса не доступны изза того что main статический
+    public void NewMessage()
+    {
+        OnNewMessage?.Invoke();
+    }
+    public void NewOrder()
+    {
+        OnNewOrder?.Invoke();
+    }
 }
 
 public class Program
 {
     static void Main()
     {
+        NotificationSystem notificationSystem = new NotificationSystem();
         // создаем систему уведомлений
-        //notificationSystem.OnNewMessage += TestNewMsg;
-        //notificationSystem.OnNewOrder += TestNewOreder;
+        notificationSystem.OnNewMessage += TestNewMsg;
+        notificationSystem.OnNewOrder += TestNewOreder;
 
-        //notificationSystem.NewMessage();
-        //notificationSystem.NewOrder();
- 
-        
+        notificationSystem.NewMessage();
+        notificationSystem.NewOrder();
     }
-    public static  void TestNewMsg()
+    public static void TestNewMsg()
     {
-        
+        Console.WriteLine("Получено новое сообщение.");
     }
     public static void TestNewOreder()
     {
-         
+        Console.WriteLine("Пришел новый заказ.");
     }
-
-     
-   
 }   

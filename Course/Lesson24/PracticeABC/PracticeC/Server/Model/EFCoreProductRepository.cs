@@ -26,13 +26,13 @@ namespace PracticeABC
         public async Task AddProduct(Product product)
         {
             _context.Products.Add(product);
-            _context.SaveChanges();  
+            _context.SaveChangesAsync();  
         }
 
         public async Task UpdateProduct(Product product)
         {
             _context.Products.Update(product);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();  
         }
 
         public async Task DeleteProduct(string name)
@@ -41,7 +41,7 @@ namespace PracticeABC
             if (product != null)
             {
                 _context.Products.Remove(product);
-                _context.SaveChanges();
+                _context.SaveChangesAsync();  
             }
         }
     }

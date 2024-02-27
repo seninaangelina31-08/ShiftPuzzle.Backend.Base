@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-
+//А что тут надо сделать то?
 namespace PracticeABC
 {
     public class ProductContext : DbContext

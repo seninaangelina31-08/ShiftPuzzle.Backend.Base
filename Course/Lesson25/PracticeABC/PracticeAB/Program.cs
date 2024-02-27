@@ -3,18 +3,18 @@
 public class NotificationSystem
 {
     // Определим события для различных типов уведомлений
-    public event EventHandler OnNewMessage;   // событие новое сообщение
-    public event EventHandler OnNewOrder;     // событие новый заказ
+    public event Action OnNewMessage;   // событие новое сообщение
+    public event Action OnNewOrder;     // событие новый заказ
 
     // Методы для вызова событий
     public void NewMessage()
     {
-        OnNewMessage?.Invoke(this, EventArgs.Empty);
+        OnNewMessage?.Invoke();
     }
 
     public void NewOrder()
     {
-        OnNewOrder?.Invoke(this, EventArgs.Empty);
+        OnNewOrder?.Invoke();
     }
 }
 
@@ -37,14 +37,14 @@ public class Program
 
     // сделать метод асинхронным (Практика Б) и вызвать TestNewMsgAsync
     // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)
-    public static async void TestNewMsgAsync(object sender, EventArgs e)
+    public static async void TestNewMsgAsync()
     {
         // Простой вывод уведомления
         Console.WriteLine("TestNewMsgAsync.");
     }
 
     // создать асинхронный метод TestNewOrderAsync (прописать простой консольный вывод)
-    public static async void TestNewOrderAsync(object sender, EventArgs e)
+    public static async void TestNewOrderAsync()
     {
         Console.WriteLine("TestNewOrderAsync.");
     }

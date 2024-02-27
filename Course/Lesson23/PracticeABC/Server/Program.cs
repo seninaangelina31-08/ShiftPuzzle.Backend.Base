@@ -13,11 +13,17 @@ builder.Services.AddSwaggerGen();
 // Регистрируем ProductRepository
 builder.Services.AddSingleton<IProductRepository>(provider =>
 {
-    // Создаем базу данных и передаем путь к ней
-    string connectPath = "Data Source=DataBase.db"; 
-    // Создаем экземпляр репозитория и передаем путь к базе данных SQLite
-    IProductRepository productRepository = new SQLLiteUpperCaseRepository(connectPath);
-    return productRepository; // Путь к файлу базы данных SQLite
+    // Создаем экземпляр DbContextOptionsBuilder для конфигурации базы данных SQLite
+    var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();
+    optionsBuilder.UseSqlite("Data Source=DataBase.db");
+
+    // Создаем экземпляр ProductContext с передачей объекта optionsBuilder.Options
+    var productContext = new ProductContext(optionsBuilder.Options);
+    
+    // Создаем экземпляр репозитория и передаем контекст базы данных
+    IProductRepository productRepository = new EFCoreProductRepository(productContext);
+    
+    return productRepository;
 });
 
 var app = builder.Build();

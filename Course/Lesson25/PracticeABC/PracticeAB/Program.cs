@@ -19,21 +19,29 @@ using System.Collections.Generic;
 public  class NotificationSystem
 {
     // событие новое сообщение
+    private event Action OnNewMessage;
     // событие новый заказ
+    private event Action OnNewOrder;
     // методы вызова событий, т.к. события вне класса не доступны изза того что main статический
+    public void NewMessage(){
+        OnNewMessage.Invoke();
+    }
+
+    public void NewOrder(){
+        OnNewOrder.Invoke();
+    }
 }
 
 public class Program
 {
     static void Main()
     {
-        // создаем систему уведомлений
-        // создать объект класса уведомлений
-        //notificationSystem.OnNewMessage += TestNewMsg;
-        //notificationSystem.OnNewOrder += TestNewOreder;
+        NotificationSystem notificationSystem = new NotificationSystem();
+        notificationSystem.OnNewMessage += TestNewMsg;
+        notificationSystem.OnNewOrder += TestNewOreder;
 
-        //notificationSystem.NewMessage();
-        //notificationSystem.NewOrder();
+        notificationSystem.NewMessage();
+        notificationSystem.NewOrder();
  
         
     }
@@ -41,13 +49,13 @@ public class Program
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
     public static void TestNewMsg()
     {
-        
+        Console.WriteLine("New mess");
     }
 
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
     public static void TestNewOreder()
     {
-         
+         Console.WriteLine("New order");
     }
 
     // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)

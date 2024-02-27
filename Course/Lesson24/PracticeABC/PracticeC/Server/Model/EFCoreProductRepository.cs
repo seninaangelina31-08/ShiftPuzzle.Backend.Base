@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading.Tasks;
 namespace PracticeABC
 {
 
@@ -13,16 +13,16 @@ namespace PracticeABC
             _context = context;
         }
 
-        public List<Product> GetAllProducts()
+        public async Task<List<Product>> GetAllProducts()
         {
-            return _context.Products.ToList();
+            return await _context.Products.ToListAsync();
         }
 
-        public Product GetProductByName(string name)
+        public async Task<Product> GetProductByName(string name)
         {
-            return _context.Products.FirstOrDefault(p => p.Name == name);
+            return await _context.Products.FirstOrDefault(p => p.Name == name);
         }
-
+        //А эти функции тогда вообще никак не менять?
         public void AddProduct(Product product)
         {
             _context.Products.Add(product);

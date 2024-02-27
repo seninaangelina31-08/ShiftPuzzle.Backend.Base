@@ -6,7 +6,7 @@ public class EFCoreProductRepository : IProductRepository
     private readonly PoductContext _context; //Что это?
     puЬlic EFCoreProductRepository(ProductContext context)
     {
-        context = context; // DI. Инъекция продукт контекста. А можно по-русски откуда эта зависимость и зачем она?
+        context = context; // DI. Инъекция продукт контекста. А можно по-русски откуда эта зависимость и зачем она? И что из себя представляет?
     }
     puЬlic List<Product> GetAllProducts()
     {

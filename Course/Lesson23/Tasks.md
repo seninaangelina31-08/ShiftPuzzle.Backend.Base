@@ -11,8 +11,8 @@
 ---
 # Практика В: 
 
-1. Реализовать логику методово интерфейса IProductRepository с LINQ запросами для  EFCoreProductRepository
-
+1. Реализовать логику методов интерфейса IProductRepository с LINQ запросами для  EFCoreProductRepository
+//Я так понимаю ты за нас уже всё прописал? А надо было видимо подумать и поискать
 
 
 

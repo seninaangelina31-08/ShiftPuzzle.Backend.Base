@@ -13,12 +13,24 @@ namespace PracticeABC
         public EFCoreProductRepository(ProductContext context)
         {
             _context = context;  
-            OnProductAdded  +=   SendNotificationToStatDepartmetn;  
+            OnProductAdded  +=   SendNotificationToStatDepartmentAdd;  
+            OnProductUpdated  +=   SendNotificationToStatDepartmentUpdate;  
+            OnProductDeleted  +=   SendNotificationToStatDepartmentDelete;  
         }
 
-        private void SendNotificationToStatDepartmetn()
+        private void SendNotificationToStatDepartmentAdd()
         {
-           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine("Отправляю отчет в отдел статистики о добавлении продукта...");
+        }
+
+        private void SendNotificationToStatDepartmentUpdate()
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики об обновлении продукта...");
+        }
+
+        private void SendNotificationToStatDepartmentDelete()
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики об удалении продукта...");
         }
  
 
@@ -32,19 +44,28 @@ namespace PracticeABC
             return _context.Products.FirstOrDefault(p => p.Name == name);
         }
 
+        public event Action OnProductAdded;
+
         public void AddProduct(Product product)
         {
             _context.Products.Add(product);
             _context.SaveChanges();  
-
+            
             // вызов события добавления продукта
+            OnProductAdded?.Invoke();
         }
+
+        public event Action OnProductUpdated;
 
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);
             _context.SaveChanges();
+
+            OnProductUpdated?.Invoke();
         }
+
+        public event Action OnProductDeleted;
 
         public void DeleteProduct(string name)
         {
@@ -53,6 +74,8 @@ namespace PracticeABC
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+
+                OnProductDeleted?.Invoke();
             }
         }
     }

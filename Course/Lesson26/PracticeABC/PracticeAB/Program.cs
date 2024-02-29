@@ -1,39 +1,24 @@
-﻿/*
-Пратика А:
-Система уведомлений:
-Создайте простую систему уведомлений, где пользователь может подписываться на различные события (например, "новое сообщение", "новый заказ" и т. д.) и получать уведомления при их возникновении.
+﻿using System;
+using System.Threading.Tasks;
 
- 
-Пратика Б:
-
-Система обработки асинхронных событий в предыдщуем примере:
-Создайте систему обработки асинхронных событий, где различные задачи выполняются параллельно. Реализуйте механизм подписки на события с возможностью асинхронного выполнения обработчиков событий.
-*/
-
-// система уведомлений  
-using System;   
-using System.Collections.Generic;
-
-
-
-public  class NotificationSystem
+public class NotificationSystem
 {
-    public event Action OnNewMessage;
-    public event Action OnNewOrder; 
-        
+    public event Action<string> OnNewMessage;
+    public event Action<string> OnNewOrder;
+
     public NotificationSystem()
-    { 
+    {
 
     }
-// данная обертка нужна для того чтобы вызвать событие, 
-//т.к. напрямую вызвать событие нельзя изза того что  фукнция мейн в статическом классе
-    public void NewMessage()
+
+    public void NewMessage(string message)
     {
-        OnNewMessage?.Invoke();
+        OnNewMessage?.Invoke(message);
     }
-    public void NewOrder() 
+
+    public void NewOrder(string message)
     {
-        OnNewOrder?.Invoke();
+        OnNewOrder?.Invoke(message);
     }
 }
 
@@ -43,30 +28,29 @@ public class Program
     {
         NotificationSystem notificationSystem = new NotificationSystem();
         notificationSystem.OnNewMessage += TestNewMsg;
-        notificationSystem.OnNewOrder += TestNewOreder;
+        notificationSystem.OnNewOrder += TestNewOrder;
 
-        notificationSystem.NewMessage();
-        notificationSystem.NewOrder();
- 
-        
-    }
-    public static async void TestNewMsg()
-    {
-       await TestNewMsgAsync();
-    }
-    public static async void TestNewOreder()
-    {
-        await TestNewOrederAsync();
+        notificationSystem.NewMessage("new message");
+        notificationSystem.NewOrder("new order");
     }
 
-    public static async Task TestNewMsgAsync()
+    public static async void TestNewMsg(string message)
     {
-        Console.WriteLine("New message async");
+        await TestNewMsgAsync(message);
     }
 
-    public static async Task TestNewOrederAsync()
+    public static async void TestNewOrder(string message)
     {
-        Console.WriteLine("New oreder async");
+        await TestNewOrderAsync(message);
     }
-   
-}   
+
+    public static async Task TestNewMsgAsync(string message)
+    {
+        Console.WriteLine($"New message async: {message}");
+    }
+
+    public static async Task TestNewOrderAsync(string message)
+    {
+        Console.WriteLine($"New order async: {message}");
+    }
+}

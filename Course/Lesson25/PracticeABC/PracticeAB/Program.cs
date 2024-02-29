@@ -45,6 +45,7 @@ public class Program
  
         
     }
+    
 
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
     public static void TestNewMsg()

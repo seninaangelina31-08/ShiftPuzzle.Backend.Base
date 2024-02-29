@@ -18,8 +18,8 @@ using System.Collections.Generic;
 
 public  class NotificationSystem
 {
-    public event Action OnNewMessage;
-    public event Action OnNewOrder; 
+    public event Action <string> OnNewMessage;
+    public event Action <string> OnNewOrder; 
         
     public NotificationSystem()
     { 
@@ -27,13 +27,13 @@ public  class NotificationSystem
     }
 // данная обертка нужна для того чтобы вызвать событие, 
 //т.к. напрямую вызвать событие нельзя изза того что  фукнция мейн в статическом классе
-    public void NewMessage()
+    public void NewMessage(string mess)
     {
-        OnNewMessage?.Invoke();
+        OnNewMessage?.Invoke(mess);
     }
-    public void NewOrder() 
+    public void NewOrder(string order) 
     {
-        OnNewOrder?.Invoke();
+        OnNewOrder?.Invoke(order);
     }
 }
 
@@ -45,28 +45,29 @@ public class Program
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOreder;
 
-        notificationSystem.NewMessage();
-        notificationSystem.NewOrder();
+        notificationSystem.NewMessage("New message");
+        notificationSystem.NewOrder("New Order");
  
         
     }
-    public static async void TestNewMsg()
+    public static async void TestNewMsg(string mess)
     {
-       await TestNewMsgAsync();
+       await TestNewMsgAsync(mess);
     }
-    public static async void TestNewOreder()
+    public static async void TestNewOreder(string order)
     {
-        await TestNewOrederAsync();
-    }
-
-    public static async Task TestNewMsgAsync()
-    {
-        Console.WriteLine("New message async");
+        await TestNewOrederAsync(order);
     }
 
-    public static async Task TestNewOrederAsync()
+    public static async Task TestNewMsgAsync(string mess)
     {
-        Console.WriteLine("New oreder async");
+        Console.WriteLine($"New message async: {mess}");
+
+    }
+
+    public static async Task TestNewOrederAsync(string order)
+    {
+        Console.WriteLine($"New order async: {order}");
     }
    
 }   

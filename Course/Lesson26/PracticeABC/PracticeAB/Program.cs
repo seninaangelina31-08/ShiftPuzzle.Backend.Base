@@ -22,9 +22,9 @@ public class NotificationSystem
         OnNewOrder?.Invoke(message);
     }
 
-    public void NewDeliveryComplete(string message)
+    public void NewDeliveryComplete(string order)
     {
-        OnDeliveryComplete?.Invoke(message);
+        OnDeliveryComplete?.Invoke(order);
     }
 }
 
@@ -39,7 +39,7 @@ public class Program
 
         notificationSystem.NewMessage("new message");
         notificationSystem.NewOrder("new order");
-        notificationSystem.NewDeliveryComplete("delivery complete");
+        notificationSystem.NewDeliveryComplete("Delivery completed");
     }
 
     public static async void TestNewMsg(string message)
@@ -54,7 +54,7 @@ public class Program
 
     public static async void TestDeliveryComplete(string message)
     {
-        await TestDeliveryCompleteAsync(message);
+        await TestOrderDeliveredAsync(message, DateTime.Now.ToString());
     }
 
     public static async Task TestNewMsgAsync(string message)
@@ -67,8 +67,8 @@ public class Program
         Console.WriteLine($"New order async: {message}");
     }
 
-    public static async Task TestDeliveryCompleteAsync(string message)
+    public static async Task TestOrderDeliveredAsync(string order, string dateTime)
     {
-        Console.WriteLine($"Delivery complete async: {message}");
+        Console.WriteLine($"Order '{order}' delivered async. At time {dateTime}");
     }
 }

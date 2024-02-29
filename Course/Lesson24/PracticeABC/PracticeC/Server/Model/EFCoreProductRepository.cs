@@ -22,20 +22,19 @@ namespace PracticeABC
         {
             return await _context.Products.FirstOrDefault(p => p.Name == name);
         }
-        //А эти функции тогда вообще никак не менять?
-        public void AddProduct(Product product)
+          public async Task AddProduct(Product product)
         {
             _context.Products.Add(product);
             _context.SaveChanges();  
         }
 
-        public void UpdateProduct(Product product)
+        public async Task UpdateProduct(Product product)
         {
             _context.Products.Update(product);
             _context.SaveChanges();
         }
 
-        public void DeleteProduct(string name)
+        public async Task DeleteProduct(string name)
         {
             var product = _context.Products.FirstOrDefault(p => p.Name == name);
             if (product != null)

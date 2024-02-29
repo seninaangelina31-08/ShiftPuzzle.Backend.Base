@@ -1,36 +1,30 @@
-namespace PracticeABC;
-
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.IO; 
-using System.Net.Http;
-using System.Text; 
-using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-
-[ApiController]
-public class StoreController : ControllerBase
+namespace PracticeABC
 {
-    
-    private readonly IProductRepository _productRepository;
-
-    public StoreController(IProductRepository productRepository)
+    [ApiController]
+    public class StoreController : ControllerBase
     {
-        _productRepository = productRepository;
-    }
+        private readonly IProductRepository _productRepository;
+
+        public StoreController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
 
         [HttpPost]
         [Route("/store/updateprice")]
-        public IActionResult UpdatePrice(string name, double newPrice)
+        public async Task<IActionResult> UpdatePrice(string name, double newPrice)
         {
-            var product = _productRepository.GetProductByName(name);
+            var product = await _productRepository.GetProductByNameAsync(name);
             if (product != null)
             {
                 product.Price = newPrice;
-                _productRepository.UpdateProduct(product);
+                await _productRepository.UpdateProductAsync(product);
                 return Ok($"{name} обновлен с новой ценой: {newPrice}");
             }
             else
@@ -41,13 +35,13 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/updatename")]
-        public IActionResult UpdateName(string currentName, string newName)
+        public async Task<IActionResult> UpdateName(string currentName, string newName)
         {
-            var product = _productRepository.GetProductByName(currentName);
+            var product = await _productRepository.GetProductByNameAsync(currentName);
             if (product != null)
             {
                 product.Name = newName;
-                _productRepository.UpdateProduct(product);
+                await _productRepository.UpdateProductAsync(product);
                 return Ok($"Имя продукта изменено с {currentName} на {newName}");
             }
             else
@@ -58,9 +52,9 @@ public class StoreController : ControllerBase
 
         [HttpGet]
         [Route("/store/outofstock")]
-        public IActionResult OutOfStock()
+        public async Task<IActionResult> OutOfStock()
         {
-            var outOfStockItems = _productRepository.GetAllProducts().Where(p => p.Stock == 0).ToList();
+            var outOfStockItems = (await _productRepository.GetAllProductsAsync()).Where(p => p.Stock == 0).ToList();
             if (outOfStockItems.Any())
             {
                 return Ok(outOfStockItems);
@@ -87,20 +81,20 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/add")]
-        public IActionResult Add([FromBody] Product newProduct)
-        { 
-            _productRepository.AddProduct(newProduct);
-            return Ok(_productRepository.GetAllProducts());
+        public async Task<IActionResult> Add([FromBody] Product newProduct)
+        {
+            await _productRepository.AddProductAsync(newProduct);
+            return Ok(await _productRepository.GetAllProductsAsync());
         }
 
         [HttpPost]
         [Route("/store/delete")]
-        public IActionResult Delete(string name)
+        public async Task<IActionResult> Delete(string name)
         {
-            var product = _productRepository.GetProductByName(name);
+            var product = await _productRepository.GetProductByNameAsync(name);
             if (product != null)
             {
-                _productRepository.DeleteProduct(name);
+                await _productRepository.DeleteProductAsync(name);
                 return Ok($"{name} удален");
             }
             else
@@ -111,10 +105,9 @@ public class StoreController : ControllerBase
 
         [HttpGet]
         [Route("/store/show")]
-        public IActionResult Show()
+        public async Task<IActionResult> Show()
         {
-            return Ok(_productRepository.GetAllProducts());
+            return Ok(await _productRepository.GetAllProductsAsync());
         }
-      
-
+    }
 }

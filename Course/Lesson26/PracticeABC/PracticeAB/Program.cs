@@ -20,6 +20,7 @@ public  class NotificationSystem
 {
     public event Action <string> OnNewMessage;
     public event Action <string> OnNewOrder; 
+    public event Action <string, string> OnOrderDelivered; 
         
     public NotificationSystem()
     { 
@@ -35,6 +36,10 @@ public  class NotificationSystem
     {
         OnNewOrder?.Invoke(order);
     }
+    public void OrderDelivered(string order, string dateTime) 
+    {
+        OnOrderDelivered?.Invoke(order, dateTime);
+    }
 }
 
 public class Program
@@ -44,9 +49,11 @@ public class Program
         NotificationSystem notificationSystem = new NotificationSystem();
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOreder;
+        notificationSystem.OnOrderDelivered += TestOrderDelivered;
 
         notificationSystem.NewMessage("New message");
         notificationSystem.NewOrder("New Order");
+        notificationSystem.OrderDelivered("Delivery was done", "30.02.2024");
  
         
     }
@@ -58,6 +65,11 @@ public class Program
     {
         await TestNewOrederAsync(order);
     }
+    public static async void TestOrderDelivered(string order, string dateTime)
+    {
+        await TestOrderDeliveredAsync(order, dateTime);
+    }
+
 
     public static async Task TestNewMsgAsync(string mess)
     {
@@ -68,6 +80,11 @@ public class Program
     public static async Task TestNewOrederAsync(string order)
     {
         Console.WriteLine($"New order async: {order}");
+    }
+
+    public static async Task TestOrderDeliveredAsync(string order, string dateTime)
+    {
+        Console.WriteLine($"Order '{order}' delivered async. At time {dateTime}");
     }
    
 }   

@@ -5,6 +5,7 @@ public class NotificationSystem
 {
     public event Action<string> OnNewMessage;
     public event Action<string> OnNewOrder;
+    public event Action<string> OnDeliveryComplete;
 
     public NotificationSystem()
     {
@@ -20,6 +21,11 @@ public class NotificationSystem
     {
         OnNewOrder?.Invoke(message);
     }
+
+    public void NewDeliveryComplete(string message)
+    {
+        OnDeliveryComplete?.Invoke(message);
+    }
 }
 
 public class Program
@@ -29,9 +35,11 @@ public class Program
         NotificationSystem notificationSystem = new NotificationSystem();
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOrder;
+        notificationSystem.OnDeliveryComplete += TestDeliveryComplete;
 
         notificationSystem.NewMessage("new message");
         notificationSystem.NewOrder("new order");
+        notificationSystem.NewDeliveryComplete("delivery complete");
     }
 
     public static async void TestNewMsg(string message)
@@ -44,6 +52,11 @@ public class Program
         await TestNewOrderAsync(message);
     }
 
+    public static async void TestDeliveryComplete(string message)
+    {
+        await TestDeliveryCompleteAsync(message);
+    }
+
     public static async Task TestNewMsgAsync(string message)
     {
         Console.WriteLine($"New message async: {message}");
@@ -52,5 +65,10 @@ public class Program
     public static async Task TestNewOrderAsync(string message)
     {
         Console.WriteLine($"New order async: {message}");
+    }
+
+    public static async Task TestDeliveryCompleteAsync(string message)
+    {
+        Console.WriteLine($"Delivery complete async: {message}");
     }
 }

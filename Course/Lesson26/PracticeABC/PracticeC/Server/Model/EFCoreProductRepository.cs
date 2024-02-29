@@ -7,21 +7,21 @@ namespace PracticeABC
     public class EFCoreProductRepository : IProductRepository
     {
 
-        private event Action OnProductAdded;
+        private event Action<Product> OnProductAdded;
+        private event Action<Product> OnProductUpdated;
+        private event Action<Product> OnProductDeleted;
+
+
         private readonly ProductContext _context;
 
         public EFCoreProductRepository(ProductContext context)
         {
             _context = context;  
-            OnProductAdded  +=   SendNotificationToStatDepartmetn;  
-        }
-
-        private void SendNotificationToStatDepartmetn()
-        {
-           Console.WriteLine("Отправляю отчет в отдел статистики...");
+            OnProductAdded  +=  SendNotificationToStatDepartmentAdd;
+            OnProductUpdated += SendNotificationToStatDepartmentUpdate;
+            OnProductDeleted += SendNotificationToStatDepartmentDelete;
         }
  
-
         public List<Product> GetAllProducts()
         {
             return _context.Products.ToList();
@@ -37,13 +37,15 @@ namespace PracticeABC
             _context.Products.Add(product);
             _context.SaveChanges();  
 
-            OnProductAdded.Invoke();
+            OnProductAdded.Invoke(product);
         }
 
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);
             _context.SaveChanges();
+
+            OnProductUpdated?.Invoke(product);
         }
 
         public void DeleteProduct(string name)
@@ -53,7 +55,28 @@ namespace PracticeABC
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+
+                OnProductDeleted?.Invoke(product);
             }
+        }
+
+        private void SendNotificationToStatDepartmentAdd(Product product)
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine($"Добавлен новый продукт: {product.Name}");    
+        }
+
+        private void SendNotificationToStatDepartmentUpdate(Product product)
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine($"Изменен продукт: {product.Name}");    
+        }
+
+        private void SendNotificationToStatDepartmentDelete(Product product)
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine($"Удален продукт: {product.Name}");    
         }
     }
 }
+

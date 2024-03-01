@@ -60,6 +60,8 @@ namespace PracticeABC
         {
             _context.Products.Update(product);
             _context.SaveChanges();
+
+            OnProductUpdated.Invoke();
         }
 
         public void DeleteProduct(string name)
@@ -69,6 +71,8 @@ namespace PracticeABC
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+
+                OnProductDeleted.Invoke();
             }
         }
     }

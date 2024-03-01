@@ -15,7 +15,7 @@ namespace PracticeABC
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return _context.Products.ToList();
+            return _context.Products.ToListAsync();
         }
 
         public async Task<Product> GetProductByName(string name)
@@ -25,13 +25,13 @@ namespace PracticeABC
 
         public async Task AddProduct(Product product)
         {
-            _context.Products.Add(product);
-            _context.SaveChanges();  
+            _context.Products.AddAsync(product);
+            _context.SaveChangesAsync();  
         }
 
         public async Task UpdateProduct(Product product)
         {
-            _context.Products.Update(product);
+            _context.Products.UpdateAsync(product);
             _context.SaveChanges();
         }
 

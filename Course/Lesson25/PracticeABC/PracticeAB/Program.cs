@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace PracticeAB
 {
-public  class NotificationSystem
+public class NotificationSystem
 {
     // событие новое сообщение
     public event Action OnNewMessage;
@@ -43,6 +43,7 @@ public class Program
         NotificationSystem notificationSystem = new NotificationSystem();
         // создать объект класса уведомлений
         //notificationSystem.OnNewMessage += TestNewMsg;
+
         notificationSystem.OnNewMessage += TestNewMsg;
         //notificationSystem.OnNewOrder += TestNewOreder;
         notificationSystem.OnNewOrder += TestNewOrder;
@@ -55,12 +56,20 @@ public class Program
     }
 
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
-    public static void TestNewMsg()
+    public static async void TestNewMsg()
+    {
+        await TestNewMsgAsync();
+    }
+    public static async Task TestNewMsgAsync()
     {
         Console.WriteLine("Получено новое сообщение.");
     }
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
-    public static void TestNewOrder()
+    public static async void TestNewOrder()
+    {
+        await TestNewOrderAsync();
+    }
+    public static async Task TestNewOrderAsync()
     {
          Console.WriteLine("Пришел новый заказ.");
     }

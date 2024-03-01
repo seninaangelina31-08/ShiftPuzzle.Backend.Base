@@ -18,40 +18,50 @@ using System.Collections.Generic;
 
 public  class NotificationSystem
 {
-    // событие новое сообщение
-    // событие новый заказ
-    // методы вызова событий, т.к. события вне класса не доступны изза того что main статический
+    public event EventHandler<string> NewMessage;
+    public event EventHandler<string> NewOrder;
+
+    public void TriggerNewMessage(string message)
+    {
+        NewMessage?.Invoke(this, message);
+    }
+
+    public void TriggerNewOrder(string order)
+    {
+        NewOrder?.Invoke(this, order);
+    }
+    public static async void TestNewMsg(string message)
+    {
+        await NewMessage?.InvokeAsync(message);
+    }
+    public static async void TestNewOreder(string order)
+    {
+        await NewOrder?.InvokeAsync(order);
+    }
+
 }
 
 public class Program
 {
     static void Main()
     {
-        // создаем систему уведомлений
-        // создать объект класса уведомлений
-        //notificationSystem.OnNewMessage += TestNewMsg;
-        //notificationSystem.OnNewOrder += TestNewOreder;
+        var eventManager = new NotificationSystem();
 
-        //notificationSystem.NewMessage();
-        //notificationSystem.NewOrder();
+        eventManager.NewMessage += (sender, message) =>
+        {
+            Console.WriteLine($"Получено новое сообщение: {message}");
+        };
+
+        eventManager.NewOrder += (sender, order) =>
+        {
+            Console.WriteLine($"Получен новый заказ: {order}");
+        };
+        eventManager.TriggerNewMessage("Привет, мир!");
+
+        eventManager.TriggerNewOrder("Заказ №12345");
  
         
     }
 
-    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
-    public static void TestNewMsg()
-    {
-        
-    }
-
-    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
-    public static void TestNewOreder()
-    {
-         
-    }
-
-    // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)
-
-    // создать асинхронный метод TestNewOrederAsync (прописать простой консольный вывод)
    
 }   

@@ -20,7 +20,8 @@ public  class NotificationSystem
 {
     public event Action<string> OnNewMessage;
     public event Action<string> OnNewOrder; 
-        
+    
+    public event Action<string, string> OnOrderDelivered;
     public NotificationSystem()
     { 
 
@@ -35,6 +36,10 @@ public  class NotificationSystem
     {
         OnNewOrder?.Invoke(message);
     }
+    public void OrderDelivered(string order, string dateTime)
+    {
+        OnOrderDelivered?.Invoke(order, dateTime);
+    }
 }
 
 public class Program
@@ -44,9 +49,11 @@ public class Program
         NotificationSystem notificationSystem = new NotificationSystem();
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOreder;
+        notificationSystem.OnOrderDelivered += TestOrderDelivered;
 
         notificationSystem.NewMessage("New message received.");
         notificationSystem.NewOrder("New order received.");
+        notificationSystem.OrderDelivered("Gold five kilo's", DateTime.Now.ToString());
 
     }
     public static async void TestNewMsg(string message)
@@ -58,6 +65,10 @@ public class Program
         await TestNewOrederAsync(message);
     }
 
+    public static async void TestOrderDelivered(string order, string dateTime)
+    {
+        TestOrderDeliveredAsync(order, dateTime);
+    }
     public static async Task TestNewMsgAsync(string message)
     {
         Console.WriteLine(message);
@@ -66,6 +77,10 @@ public class Program
     public static async Task TestNewOrederAsync(string message)
     {
         Console.WriteLine(message);
+    }
+    public static async Task TestOrderDeliveredAsync(string order, string dateTime)
+    {
+        Console.WriteLine($"Order '{order}' delivered async. At time {dateTime}");    
     }
    
 }   

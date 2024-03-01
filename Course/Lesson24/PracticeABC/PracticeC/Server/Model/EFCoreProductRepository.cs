@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Threading.Tasks;
+using System.Data.Entity;
 namespace PracticeABC
 {
 
@@ -15,7 +16,7 @@ namespace PracticeABC
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return _context.Products.ToListAsync();
+            return await _context.Products.ToListAsync();
         }
 
         public async Task<Product> GetProductByName(string name)
@@ -25,14 +26,14 @@ namespace PracticeABC
 
         public async Task AddProduct(Product product)
         {
-            _context.Products.AddAsync(product);
-            _context.SaveChangesAsync();  
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();  
         }
 
         public async Task UpdateProduct(Product product)
         {
-            _context.Products.UpdateAsync(product);
-            _context.SaveChanges();
+            _context.Products.Update(product);
+           await _context.SaveChangesAsync();
         }
 
         public async Task DeleteProduct(string name)
@@ -41,9 +42,7 @@ namespace PracticeABC
             if (product != null)
             {
                 _context.Products.Remove(product);
-                _context.SaveChanges();
-
-                On
+               await _context.SaveChangesAsync();
             }
         }
     }

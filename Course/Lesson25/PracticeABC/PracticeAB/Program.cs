@@ -13,14 +13,27 @@
 // система уведомлений  
 using System;   
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 
 
-public  class NotificationSystem
+public class NotificationSystem
 {
     // событие новое сообщение
+    public event Action NewMessage;
     // событие новый заказ
+    public event Action NewOrder;
     // методы вызова событий, т.к. события вне класса не доступны изза того что main статический
+    public void OnNewMessage()
+    {
+        NewMessage?.Invoke();
+    }
+
+    public void OnNewOrder()
+    {
+        NewOrder?.Invoke();
+    }
+    public NotificationSystem(){}
 }
 
 public class Program
@@ -28,30 +41,36 @@ public class Program
     static void Main()
     {
         // создаем систему уведомлений
+        NotificationSystem notificationSystem = new NotificationSystem();
         // создать объект класса уведомлений
-        //notificationSystem.OnNewMessage += TestNewMsg;
-        //notificationSystem.OnNewOrder += TestNewOreder;
-
-        //notificationSystem.NewMessage();
-        //notificationSystem.NewOrder();
- 
         
+        notificationSystem.NewMessage += TestNewMsg;
+        notificationSystem.NewOrder += TestNewOreder;
+
+        notificationSystem.OnNewMessage();
+        notificationSystem.OnNewOrder();
     }
 
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
-    public static void TestNewMsg()
+    public static async void TestNewMsg()
     {
-        
+        TestNewMsgAsync();
     }
 
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
-    public static void TestNewOreder()
+    public static async void TestNewOreder()
     {
-         
+         TestNewOrederAsync();
     }
 
     // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)
-
+    public static async void TestNewMsgAsync()
+    {
+        Console.WriteLine("TestNewMsg вызван.");
+    }
     // создать асинхронный метод TestNewOrederAsync (прописать простой консольный вывод)
-   
+    public static async void TestNewOrederAsync()
+    {
+        Console.WriteLine("TestNewOreder вызван.");
+    }
 }   

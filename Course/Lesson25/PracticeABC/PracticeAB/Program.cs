@@ -28,6 +28,7 @@ public class Program
     static void Main()
     {
         // создаем систему уведомлений
+        // создать объект класса уведомлений
         //notificationSystem.OnNewMessage += TestNewMsg;
         //notificationSystem.OnNewOrder += TestNewOreder;
 
@@ -36,15 +37,21 @@ public class Program
  
         
     }
-    public static  void TestNewMsg()
+
+    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
+    public static void TestNewMsg()
     {
         
     }
+
+    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
     public static void TestNewOreder()
     {
          
     }
 
-     
+    // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)
+
+    // создать асинхронный метод TestNewOrederAsync (прописать простой консольный вывод)
    
 }   

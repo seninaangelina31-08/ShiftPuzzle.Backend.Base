@@ -8,18 +8,33 @@ namespace PracticeABC
     {
 
          // событие добавления продукта
+         private event Action OnProductAdded;
+         private event Action OnProductUpdated;
+         private event Action OnProductDeleted;
         private readonly ProductContext _context;
 
         public EFCoreProductRepository(ProductContext context)
         {
             _context = context;  
-            OnProductAdded  +=   SendNotificationToStatDepartmetn;  
+            OnProductAdded  += SendNotificationToStatDepartment;  
+            OnProductUpdated += SendNotificationProductUpdated;
+            OnProductDeleted += SendNotificationProductDeleted;
         }
 
-        private void SendNotificationToStatDepartmetn()
+        private void SendNotificationToStatDepartment()
         {
-           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine("Отправляю отчет в отдел статистики...\nПродукт добавлен");
         }
+
+        private void SendNotificationProductUpdated()
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики...\nПродукт обновлен");
+        }       
+
+        private void SendNotificationProductDeleted()
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики...\nПродукт удален");
+        } 
  
 
         public List<Product> GetAllProducts()

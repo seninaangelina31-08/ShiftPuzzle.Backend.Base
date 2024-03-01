@@ -1,11 +1,11 @@
-﻿namespace PracticeABC
+﻿namespace ServerL24
 {
     public interface IProductRepository
     { 
-        List<Product> GetAllProducts();
-        Product GetProductByName(string name);
-        void AddProduct(Product product);
-        void UpdateProduct(Product product);
-        void DeleteProduct(string name);
+        Task<List<Product>> GetAllProductsAsync();
+        Task<Product> GetProductByNameAsync(string name);
+        Task AddProductAsync(Product product);
+        Task UpdateProductAsync(Product product);
+        Task DeleteProductAsync(string name);
     }
 }

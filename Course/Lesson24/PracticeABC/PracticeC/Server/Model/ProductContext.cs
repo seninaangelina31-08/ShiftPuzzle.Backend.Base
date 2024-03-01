@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace PracticeABC
+namespace ServerL24
 {
     public class ProductContext : DbContext
     {

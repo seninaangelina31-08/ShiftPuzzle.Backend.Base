@@ -1,4 +1,4 @@
-namespace PracticeABC;
+namespace ServerL24;
 using System;
 using System.ComponentModel.DataAnnotations;
 

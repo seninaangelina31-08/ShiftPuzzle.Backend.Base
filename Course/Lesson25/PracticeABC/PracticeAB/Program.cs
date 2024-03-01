@@ -16,11 +16,23 @@ using System.Collections.Generic;
 
 
 
-public  class NotificationSystem
-{
+public class NotificationSystem
+{    
     // событие новое сообщение
+    public event Action OnNewMessage;
     // событие новый заказ
+    public event Action OnNewOrder;
     // методы вызова событий, т.к. события вне класса не доступны изза того что main статический
+    public NotificationSystem() { }
+    public void NewMessage()
+    {
+        OnNewMessage.Invoke();
+    }
+
+    public void NewOrder()
+    {
+        OnNewOrder.Invoke();
+    }
 }
 
 public class Program
@@ -29,29 +41,35 @@ public class Program
     {
         // создаем систему уведомлений
         // создать объект класса уведомлений
-        //notificationSystem.OnNewMessage += TestNewMsg;
-        //notificationSystem.OnNewOrder += TestNewOreder;
+        NotificationSystem notificationSystem = new NotificationSystem();
+        notificationSystem.OnNewMessage += TestNewMsg;
+        notificationSystem.OnNewOrder += TestNewOreder;
 
-        //notificationSystem.NewMessage();
-        //notificationSystem.NewOrder();
- 
-        
+        notificationSystem?.NewMessage();
+        notificationSystem?.NewOrder();
     }
 
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
-    public static void TestNewMsg()
+    public static async void TestNewMsg()
     {
-        
+        await TestNewMsgAsync();
     }
 
     // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
-    public static void TestNewOreder()
+    public static async void TestNewOreder()
     {
-         
+         await TestNewOrederAsync();
     }
 
     // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)
+    public static async Task TestNewMsgAsync()
+    {
+        Console.WriteLine("Тест новое сообщение");
+    }
 
     // создать асинхронный метод TestNewOrederAsync (прописать простой консольный вывод)
-   
+    public static async Task TestNewOrederAsync()
+    {
+        Console.WriteLine("Тест новый заказ");
+    }
 }   

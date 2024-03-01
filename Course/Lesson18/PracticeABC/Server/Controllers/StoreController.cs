@@ -49,7 +49,10 @@ public class StoreController : ControllerBase
 
     public StoreController()
     {
-        ReadDataFromFile();
+        if (DBExist())
+        {
+            ReadDataFromFile();
+        }
     }
 
     [HttpPost]
@@ -124,15 +127,27 @@ public class StoreController : ControllerBase
         WriteToDB(json);
     }
 
+    private bool DBExist()
+    {
+        return File.Exists(_jsonFilePath);
+    }
+
+    private string ReadDB()
+    {
+        using (var reader = new StreamReader(_jsonFilePath))
+        {
+            return reader.ReadToEnd();
+        }
+    }
+
+    private List<Product> ConvertTextDBToList(string json)
+    {
+        return JsonSerializer.Deserialize<List<Product>>(json);
+    }
+
     private void ReadDataFromFile()
     {
-        if (File.Exists(_jsonFilePath))
-        {
-            using (var reader = new StreamReader(_jsonFilePath))
-            {
-                var json = reader.ReadToEnd();
-                Items = JsonSerializer.Deserialize<List<Product>>(json);
-            }
-        }
+        var json = ReadDB();
+        Items = ConvertTextDBToList(json);
     }
 }

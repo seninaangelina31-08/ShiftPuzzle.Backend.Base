@@ -27,13 +27,13 @@ public  class NotificationSystem
     }
 // данная обертка нужна для того чтобы вызвать событие, 
 //т.к. напрямую вызвать событие нельзя изза того что  фукнция мейн в статическом классе
-    public void NewMessage()
+    public void NewMessage(string message)
     {
-        OnNewMessage?.Invoke();
+        NewMessage?.Invoke(this, message);
     }
-    public void NewOrder() 
+    public void NewOrder(string order)
     {
-        OnNewOrder?.Invoke();
+        NewOrder?.Invoke(this, order);
     }
 }
 
@@ -59,6 +59,10 @@ public class Program
         await TestNewOrederAsync();
     }
 
+    public static async void TestDelivery() {
+        await TestDeliveryAsync();
+    }
+
     public static async Task TestNewMsgAsync()
     {
         Console.WriteLine("New message async");
@@ -68,5 +72,10 @@ public class Program
     {
         Console.WriteLine("New oreder async");
     }
+    public static async Task TestDeliveryAsync() {
+        Console.WriteLine("Delivery async");
+    }
    
 }   
+
+

@@ -50,7 +50,9 @@ namespace PracticeABC
         public void AddProduct(Product product)
         {
             _context.Products.Add(product);
-            _context.SaveChanges();  
+            _context.SaveChanges(); 
+
+            OnProductAdded?.Invoke(); 
 
             // вызов события добавления продукта
         }
@@ -59,6 +61,8 @@ namespace PracticeABC
         {
             _context.Products.Update(product);
             _context.SaveChanges();
+
+            OnProductUpdated?.Invoke();
         }
 
         public void DeleteProduct(string name)
@@ -68,6 +72,8 @@ namespace PracticeABC
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+
+                OnProductDeleted?.Invoke();
             }
         }
     }

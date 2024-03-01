@@ -42,6 +42,8 @@ namespace PracticeABC
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+
+                On
             }
         }
     }

@@ -18,8 +18,8 @@ using System.Collections.Generic;
 
 public  class NotificationSystem
 {
-    public event Action OnNewMessage;
-    public event Action OnNewOrder; 
+    public event Action<string> OnNewMessage;
+    public event Action<string> OnNewOrder; 
         
     public NotificationSystem()
     { 
@@ -27,13 +27,13 @@ public  class NotificationSystem
     }
 // данная обертка нужна для того чтобы вызвать событие, 
 //т.к. напрямую вызвать событие нельзя изза того что  фукнция мейн в статическом классе
-    public void NewMessage()
+    public void NewMessage(string message)
     {
-        OnNewMessage?.Invoke();
+        OnNewMessage?.Invoke(message);
     }
-    public void NewOrder() 
+    public void NewOrder(string message) 
     {
-        OnNewOrder?.Invoke();
+        OnNewOrder?.Invoke(message);
     }
 }
 
@@ -45,28 +45,28 @@ public class Program
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOreder;
 
-        notificationSystem.NewMessage();
-        notificationSystem.NewOrder();
- 
-        
+        string message = "Sending info async";
+        notificationSystem.NewMessage(message);
+        notificationSystem.NewOrder(message);
+
     }
-    public static async void TestNewMsg()
+    public static async void TestNewMsg(string message)
     {
-       await TestNewMsgAsync();
+       await TestNewMsgAsync(message);
     }
-    public static async void TestNewOreder()
+    public static async void TestNewOreder(string message)
     {
-        await TestNewOrederAsync();
+        await TestNewOrederAsync(message);
     }
 
-    public static async Task TestNewMsgAsync()
+    public static async Task TestNewMsgAsync(string message)
     {
-        Console.WriteLine("New message async");
+        Console.WriteLine(message);
     }
 
-    public static async Task TestNewOrederAsync()
+    public static async Task TestNewOrederAsync(string message)
     {
-        Console.WriteLine("New oreder async");
+        Console.WriteLine(message);
     }
    
 }   

@@ -45,9 +45,8 @@ public class Program
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOreder;
 
-        string message = "Sending info async";
-        notificationSystem.NewMessage(message);
-        notificationSystem.NewOrder(message);
+        notificationSystem.NewMessage("New message received.");
+        notificationSystem.NewOrder("New order received.");
 
     }
     public static async void TestNewMsg(string message)

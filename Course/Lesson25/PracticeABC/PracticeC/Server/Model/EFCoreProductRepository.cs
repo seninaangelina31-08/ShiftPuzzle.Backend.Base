@@ -9,6 +9,7 @@ namespace PracticeABC
 
          // событие добавления продукта
         private readonly ProductContext _context;
+        public event EventHandler<string> OnProductAdded;
 
         public EFCoreProductRepository(ProductContext context)
         {

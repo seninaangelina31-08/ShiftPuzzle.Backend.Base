@@ -12,7 +12,7 @@ namespace ServerL24
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().HasNoKey();
+            modelBuilder.Entity<Product>();
         }
     }
 }

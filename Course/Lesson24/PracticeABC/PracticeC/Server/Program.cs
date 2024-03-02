@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Регистрируем ProductRepository
-builder.Services.AddSingleton<IProductRepository>(provider =>
+builder.Services.AddScoped<IProductRepository>(provider =>
 {
     // Создаем экземпляр DbContextOptionsBuilder для конфигурации базы данных SQLite
     var optionsBuilder = new DbContextOptionsBuilder<ProductContext>();

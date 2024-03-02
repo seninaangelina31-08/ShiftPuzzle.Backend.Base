@@ -11,47 +11,60 @@
 */
 
 // система уведомлений  
-using System;   
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
-
-
-public  class NotificationSystem
+// Система уведомлений
+public class NotificationSystem
 {
-    // событие новое сообщение
-    // событие новый заказ
-    // методы вызова событий, т.к. события вне класса не доступны изза того что main статический
+    // Определение событий
+    public event Action OnNewMessage;
+    public event Action OnNewOrder;
+
+    // Методы вызова событий
+    public void NewMessage()
+    {
+        OnNewMessage?.Invoke();
+    }
+
+    public void NewOrder()
+    {
+        OnNewOrder?.Invoke();
+    }
 }
 
 public class Program
 {
     static void Main()
     {
-        // создаем систему уведомлений
-        // создать объект класса уведомлений
-        //notificationSystem.OnNewMessage += TestNewMsg;
-        //notificationSystem.OnNewOrder += TestNewOreder;
+        // Создание объекта класса уведомлений
+        NotificationSystem notificationSystem = new NotificationSystem();
 
-        //notificationSystem.NewMessage();
-        //notificationSystem.NewOrder();
- 
-        
+        // Подписка на события
+        notificationSystem.OnNewMessage += TestNewMsgAsync;
+        notificationSystem.OnNewOrder += TestNewOrederAsync;
+
+        // Вызов событий
+        notificationSystem.NewMessage();
+        notificationSystem.NewOrder();
     }
 
-    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
-    public static void TestNewMsg()
+    // Сделать метод асинхронным и вызвать асинхронный метод TestNewMsgAsync
+    public static async void TestNewMsgAsync()
     {
-        
+        await Task.Run(() =>
+        {
+            Console.WriteLine("Получено новое сообщение.");
+        });
     }
 
-    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
-    public static void TestNewOreder()
+    // Сделать метод асинхронным и вызвать асинхронный метод TestNewOrederAsync
+    public static async void TestNewOrederAsync()
     {
-         
+        await Task.Run(() =>
+        {
+            Console.WriteLine("Получен новый заказ.");
+        });
     }
-
-    // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)
-
-    // создать асинхронный метод TestNewOrederAsync (прописать простой консольный вывод)
-   
-}   
+}

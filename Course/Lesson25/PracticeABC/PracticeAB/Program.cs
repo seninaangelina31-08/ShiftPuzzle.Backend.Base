@@ -49,6 +49,8 @@ public class Program
     {
         Console.WriteLine("Получено новое сообщение.");
     }
+
+    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
     public static void TestNewOreder()
     {
         Console.WriteLine("Пришел новый заказ.");

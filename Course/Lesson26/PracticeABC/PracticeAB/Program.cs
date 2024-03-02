@@ -19,7 +19,7 @@ using System.Collections.Generic;
 public  class NotificationSystem
 {
     public event Action <string> OnNewMessage;
-    public event Action <string> OnNewOrder; 
+    public event Action <string, string> OnNewOrder; 
         
     public NotificationSystem()
     { 
@@ -31,9 +31,9 @@ public  class NotificationSystem
     {
         OnNewMessage?.Invoke(message);
     }
-    public void NewOrder(string name) 
+    public void NewOrder(string name, string dateTime) 
     {
-        OnNewOrder?.Invoke(name);
+        OnNewOrder?.Invoke(name, dateTime);
     }
 }
 
@@ -46,7 +46,7 @@ public class Program
         notificationSystem.OnNewOrder += TestNewOreder;
 
         notificationSystem.NewMessage("Привет, брат!");
-        notificationSystem.NewOrder("Заказы");
+        notificationSystem.NewOrder("Заказ", "19:32");
  
         
     }
@@ -54,9 +54,9 @@ public class Program
     {
        await TestNewMsgAsync(message);
     }
-    public static async void TestNewOreder(string name)
+    public static async void TestNewOreder(string name, string dateTime)
     {
-        await TestNewOrederAsync(name);
+        await TestOrderDeliveredAsync(name, dateTime);
     }
 
     public static async Task TestNewMsgAsync(string message)
@@ -65,10 +65,9 @@ public class Program
         Console.WriteLine(message);
     }
 
-    public static async Task TestNewOrederAsync(string name)
+    public static async Task TestOrderDeliveredAsync(string order, string dateTime)
     {
-        Console.WriteLine("New oreder async");
-        Console.WriteLine(name);
+        Console.WriteLine($"Order '{order}' delivered async. At time {dateTime}");
     }
    
 }   

@@ -1,4 +1,4 @@
-namespace PracticeABC;
+namespace ServerL24;
 using System.ComponentModel.DataAnnotations;
 
 public class UserCredentials

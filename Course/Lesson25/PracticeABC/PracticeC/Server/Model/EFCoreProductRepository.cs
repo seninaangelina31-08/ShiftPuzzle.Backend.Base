@@ -7,20 +7,46 @@ namespace PracticeABC
     public class EFCoreProductRepository : IProductRepository
     {
 
-         // событие добавления продукта
+        // событие добавления продукта
         private readonly ProductContext _context;
+        private event Action OnProductAdd;
+        private event Action OnDeleteProduct;
+        private event Action OnUpdateProduct;
 
         public EFCoreProductRepository(ProductContext context)
         {
-            _context = context;  
-            OnProductAdded  +=   SendNotificationToStatDepartmetn;  
+            _context = context;
+            OnProductAdd += SendNotificationToStatDepartment;
+            OnProductAdd += SendNotificationToAdminDepartment;
+            OnProductAdd += SendNotificationToTeacherDepartment;
+
+            OnDeleteProduct += SendNotificationToStatDepartment;
+            OnDeleteProduct += SendNotificationToAdminDepartment;
+            OnDeleteProduct += SendNotificationToTeacherDepartment;
+
+            OnUpdateProduct += SendNotificationToStatDepartment;
+            OnUpdateProduct += SendNotificationToAdminDepartment;
+            OnUpdateProduct += SendNotificationToTeacherDepartment;
+
+
         }
 
-        private void SendNotificationToStatDepartmetn()
+        private static void SendNotificationToStatDepartment()
         {
-           Console.WriteLine("Отправляю отчет в отдел статистики...");
+            Console.WriteLine("Отчет в отдел статистики отправлен!!!");
         }
- 
+
+        private static void SendNotificationToAdminDepartment()
+        {
+            Console.WriteLine("Отчет системным администраторам отправлен!!!");
+        }
+
+        private static void SendNotificationToTeacherDepartment()
+        {
+            Console.WriteLine("Отправляю отчет Акшину..... Тому самому........");
+        }
+
+
 
         public List<Product> GetAllProducts()
         {
@@ -29,21 +55,23 @@ namespace PracticeABC
 
         public Product GetProductByName(string name)
         {
-            return _context.Products.FirstOrDefault(p => p.Name == name);
+            return _context.Products?.FirstOrDefault(p => p.Name == name);
         }
 
         public void AddProduct(Product product)
         {
             _context.Products.Add(product);
-            _context.SaveChanges();  
+            _context.SaveChanges();
 
-            // вызов события добавления продукта
+            OnProductAdd.Invoke();
         }
 
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);
             _context.SaveChanges();
+
+            OnUpdateProduct.Invoke();
         }
 
         public void DeleteProduct(string name)
@@ -53,6 +81,8 @@ namespace PracticeABC
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+
+                OnDeleteProduct.Invoke();
             }
         }
     }

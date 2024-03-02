@@ -1,57 +1,76 @@
 ﻿/*
 Пратика А:
 Система уведомлений:
-Создайте простую систему уведомлений, где пользователь может подписываться на различные события (например, "новое сообщение", "новый заказ" и т. д.) и получать уведомления при их возникновении.
+Создайте простую систему уведомлений,
+ где пользователь может подписываться на различные события
+ (например, "новое сообщение", "новый заказ" и т. д.)
+ и получать уведомления при их возникновении.
 
  
 Пратика Б:
 
 Система обработки асинхронных событий в предыдщуем примере:
-Создайте систему обработки асинхронных событий, где различные задачи выполняются параллельно. Реализуйте механизм подписки на события с возможностью асинхронного выполнения обработчиков событий.
+Создайте систему обработки асинхронных событий, где различные
+ задачи выполняются параллельно. Реализуйте механизм подписки на события
+ с возможностью асинхронного выполнения обработчиков событий.
 */
 
 // система уведомлений  
-using System;   
+using System;
 using System.Collections.Generic;
 
 
 
-public  class NotificationSystem
+public class NotificationSystem
 {
-    // событие новое сообщение
-    // событие новый заказ
-    // методы вызова событий, т.к. события вне класса не доступны изза того что main статический
+    public event Action? OnNewMessage;
+    public event Action? OnNewOrder;
+
+
+    public void NewMessage()
+    {
+        OnNewMessage?.Invoke();
+    }
+
+    public void NewOrder()
+    {
+        OnNewOrder?.Invoke();
+    }
 }
 
 public class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        // создаем систему уведомлений
-        // создать объект класса уведомлений
-        //notificationSystem.OnNewMessage += TestNewMsg;
-        //notificationSystem.OnNewOrder += TestNewOreder;
+        NotificationSystem notificationSystem = new();
+        notificationSystem.OnNewMessage += TestNewMsgAsync;
+        notificationSystem.OnNewOrder += TestNewOrderAsync;
 
-        //notificationSystem.NewMessage();
-        //notificationSystem.NewOrder();
- 
-        
+        notificationSystem.NewMessage();
+        notificationSystem.NewOrder();
+
     }
 
-    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
-    public static void TestNewMsg()
+
+    public static async void TestNewMsgAsync()
     {
-        
+        await Task.Run(() => NewMessageNotification());
     }
 
-    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
-    public static void TestNewOreder()
+    public static async void TestNewOrderAsync()
     {
-         
+        await Task.Run(() => NewOrderNotification());
     }
 
-    // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)
+    
+    public static void NewOrderNotification()
+    {
+        Console.WriteLine("Здравсвуйте, новый заказа добавлен в базу данных!");
+    }
 
-    // создать асинхронный метод TestNewOrederAsync (прописать простой консольный вывод)
-   
-}   
+    public static void NewMessageNotification()
+    {
+        Console.WriteLine("Здравствуйте, мы что-то сделали, ждём зарплату.........");
+    }
+
+}

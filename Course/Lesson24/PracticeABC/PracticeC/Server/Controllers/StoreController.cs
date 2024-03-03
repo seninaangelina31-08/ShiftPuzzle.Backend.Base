@@ -24,9 +24,9 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/updateprice")]
-        public IActionResult UpdatePrice(string name, double newPrice)
+        public async Task<IActionResult> UpdatePrice(string name, double newPrice)
         {
-            var product = _productRepository.GetProductByName(name);
+            var product = await _productRepository.GetProductByName(name);
             if (product != null)
             {
                 product.Price = newPrice;
@@ -41,13 +41,13 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/updatename")]
-        public IActionResult UpdateName(string currentName, string newName)
+        public async Task<IActionResult> UpdateName(string currentName, string newName)
         {
-            var product = _productRepository.GetProductByName(currentName);
+            var product = await _productRepository.GetProductByName(currentName);
             if (product != null)
             {
                 product.Name = newName;
-                _productRepository.UpdateProduct(product);
+                await _productRepository.UpdateProduct(product);
                 return Ok($"Имя продукта изменено с {currentName} на {newName}");
             }
             else
@@ -58,9 +58,9 @@ public class StoreController : ControllerBase
 
         [HttpGet]
         [Route("/store/outofstock")]
-        public IActionResult OutOfStock()
+        public async Task<IActionResult> OutOfStock()
         {
-            var outOfStockItems = _productRepository.GetAllProducts().Where(p => p.Stock == 0).ToList();
+            var outOfStockItems = await _productRepository.GetAllProducts();
             if (outOfStockItems.Any())
             {
                 return Ok(outOfStockItems);
@@ -87,20 +87,20 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/add")]
-        public IActionResult Add([FromBody] Product newProduct)
+        public async Task<IActionResult> Add([FromBody] Product newProduct)
         { 
-            _productRepository.AddProduct(newProduct);
+            await _productRepository.AddProduct(newProduct);
             return Ok(_productRepository.GetAllProducts());
         }
 
         [HttpPost]
         [Route("/store/delete")]
-        public IActionResult Delete(string name)
+        public async Task<IActionResult> Delete(string name)
         {
-            var product = _productRepository.GetProductByName(name);
+            var product = await _productRepository.GetProductByName(name);
             if (product != null)
             {
-                _productRepository.DeleteProduct(name);
+                await _productRepository.DeleteProduct(name);
                 return Ok($"{name} удален");
             }
             else
@@ -111,9 +111,9 @@ public class StoreController : ControllerBase
 
         [HttpGet]
         [Route("/store/show")]
-        public IActionResult Show()
+        public async Task<IActionResult> Show()
         {
-            return Ok(_productRepository.GetAllProducts());
+            return Ok(await _productRepository.GetAllProducts());
         }
       
 

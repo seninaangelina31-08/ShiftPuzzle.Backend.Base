@@ -1,14 +1,7 @@
 namespace PracticeABC;
 
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
-using System.IO; 
-using System.Net.Http;
-using System.Text; 
-using System.Threading.Tasks;
-using System.Collections.Generic;
+
 
 
 [ApiController]

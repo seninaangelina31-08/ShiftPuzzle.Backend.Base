@@ -88,7 +88,7 @@ class Program
 
 
     public static void Auth()
-    {       var url = "http://localhost:5087/store/auth"; // Замените на порт вашего сервера
+    {       var url = "http://localhost:5087/store/show"; // Замените на порт вашего сервера
             var userData = new
             {
                 User = "admin",

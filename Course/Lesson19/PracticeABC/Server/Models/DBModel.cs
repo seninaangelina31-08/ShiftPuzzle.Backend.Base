@@ -8,6 +8,10 @@ public class DBModel
         _jsonFilePath = jsonfilepath;
         ReadDataFromFile();
     }
+    private BackUp()
+    {
+        private string _backupDB = "BackupDB.json";
+    }
     private List<Product> ConvertTextDBToList(string json)
     {
         return JsonSerializer.Deserialize<List<Product>>(json)
@@ -27,7 +31,7 @@ public class DBModel
     {
         if (DBExist())
         { 
-            Items =  ConvertTextDBToList(ReadDB());
+            Items = ConvertTextDBToList(ReadDB());
         }
     }
 
@@ -37,7 +41,7 @@ public class DBModel
     private string  ConvertDBtoJson()
     {
         var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
+        return JsonSerializer.Serialize(Items, options);
     }
 
     private void WriteTiDB(string json)

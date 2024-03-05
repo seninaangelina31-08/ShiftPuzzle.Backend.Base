@@ -1,0 +1,7 @@
+CREATE TABLE Toads (
+    Id INTEGER PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Age INT CHECK (Age >= 0 AND Age <= 40),
+    Color NVARCHAR(150),
+    Specie NVARCHAR(150)
+);

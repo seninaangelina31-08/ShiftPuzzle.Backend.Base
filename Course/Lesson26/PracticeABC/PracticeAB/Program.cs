@@ -11,62 +11,76 @@
 */
 
 // система уведомлений  
-using System;   
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
-
-
-public  class NotificationSystem
+public class NotificationSystem
 {
-    public event Action OnNewMessage;
-    public event Action OnNewOrder; 
-        
-    public NotificationSystem()
-    { 
+    public event Func<string, string, Task> OnOrderDelivered;
 
-    }
-// данная обертка нужна для того чтобы вызвать событие, 
-//т.к. напрямую вызвать событие нельзя изза того что  фукнция мейн в статическом классе
-    public void NewMessage()
+    public NotificationSystem()
     {
-        OnNewMessage?.Invoke();
     }
-    public void NewOrder() 
+
+    public async Task NewMessageAsync()
     {
-        OnNewOrder?.Invoke();
+        if (OnNewMessage != null)
+        {
+            foreach (var handler in OnNewMessage.GetInvocationList())
+            {
+                await ((Func<Task>)handler)();
+            }
+        }
+    }
+    public async Task NewOrderAsync()
+    {
+        if (OnNewOrder != null)
+        {
+            foreach (var handler in OnNewOrder.GetInvocationList())
+            {
+                await ((Func<Task>)handler)();
+            }
+        }
+    }
+    public async Task OrderDeliveredAsync(string order, string dateTime)
+    {
+        if (OnOrderDelivered != null)
+        {
+            foreach (var handler in OnOrderDelivered.GetInvocationList())
+            {
+                await ((Func<string, string, Task>)handler)(order, dateTime);
+            }
+        }
     }
 }
 
 public class Program
 {
-    static void Main()
+    static async Task Main()
     {
         NotificationSystem notificationSystem = new NotificationSystem();
-        notificationSystem.OnNewMessage += TestNewMsg;
-        notificationSystem.OnNewOrder += TestNewOreder;
+        notificationSystem.OnNewMessage += TestNewMsgAsync;
+        notificationSystem.OnNewOrder += TestNewOrederAsync;
+        notificationSystem.OnOrderDelivered += TestOrderDeliveredAsync;
 
-        notificationSystem.NewMessage();
-        notificationSystem.NewOrder();
- 
-        
-    }
-    public static async void TestNewMsg()
-    {
-       await TestNewMsgAsync();
-    }
-    public static async void TestNewOreder()
-    {
-        await TestNewOrederAsync();
+        await notificationSystem.NewMessageAsync();
+        await notificationSystem.NewOrderAsync();
+        await notificationSystem.OrderDeliveredAsync("Order123", DateTime.Now.ToString());
     }
 
     public static async Task TestNewMsgAsync()
     {
-        Console.WriteLine("New message async");
+        Console.WriteLine("Новое сообщения async");
     }
 
     public static async Task TestNewOrederAsync()
     {
-        Console.WriteLine("New oreder async");
+        Console.WriteLine("Новый ордер async");
     }
-   
-}   
+
+    public static async Task TestOrderDeliveredAsync(string order, string dateTime)
+    {
+        Console.WriteLine($"Ордер '{order}' доставлено асинхронно. Во время{dateTime}");
+    }
+}

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 public class NotificationSystem
 {
@@ -24,7 +24,7 @@ public class NotificationSystem
 
 public class Program
 {
-    static async Task Main()
+    static void Main()
     {
         var notificationSystem = new NotificationSystem();
 
@@ -37,14 +37,14 @@ public class Program
         notificationSystem.NewOrder();
     }
 
-    static void TestNewMsg()
+    public static async void TestNewMsg()
     {
-        TestNewMsgAsync();
+        await TestNewMsgAsync();
     }
 
-    static void TestNewOrder()
+    public static async void TestNewOrder()
     {
-        TestNewOrderAsync();
+        await TestNewOrderAsync();
     }
 
     // Метод обработки события нового сообщения

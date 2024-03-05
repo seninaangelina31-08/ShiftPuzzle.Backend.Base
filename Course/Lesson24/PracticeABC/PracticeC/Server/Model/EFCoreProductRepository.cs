@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace PracticeABC
 {
-
+    
     public class EFCoreProductRepository : IProductRepository
     {
         private readonly ProductContext _context;
@@ -13,35 +15,35 @@ namespace PracticeABC
             _context = context;
         }
 
-        public List<Product> GetAllProducts()
+        public async Task<List<Product>> GetAllProductsAsync()
         {
-            return _context.Products.ToList();
+            return await _context.Products.ToListAsync();
         }
 
-        public Product GetProductByName(string name)
+        public async Task<Product> GetProductByNameAsync(string name)
         {
-            return _context.Products.FirstOrDefault(p => p.Name == name);
+            return await _context.Products.FirstOrDefaultAsync(p => p.Name == name);
         }
 
-        public void AddProduct(Product product)
+        public async Task AddProductAsync(Product product)
         {
             _context.Products.Add(product);
-            _context.SaveChanges();  
+            await _context.SaveChangesAsync();
         }
 
-        public void UpdateProduct(Product product)
+        public async Task UpdateProductAsync(Product product)
         {
             _context.Products.Update(product);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void DeleteProduct(string name)
+        public async Task DeleteProductAsync(string name)
         {
-            var product = _context.Products.FirstOrDefault(p => p.Name == name);
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Name == name);
             if (product != null)
             {
                 _context.Products.Remove(product);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
     }

@@ -22,7 +22,7 @@ public class StoreController : ControllerBase
             _productRepository = productRepository;
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("/store/updateprice")]
         public IActionResult UpdatePrice(string name, double newPrice)
         {
@@ -39,7 +39,7 @@ public class StoreController : ControllerBase
             }
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("/store/updatename")]
         public IActionResult UpdateName(string currentName, string newName)
         {
@@ -93,7 +93,7 @@ public class StoreController : ControllerBase
             return Ok(_productRepository.GetAllProducts());
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("/store/delete")]
         public IActionResult Delete(string name)
         {

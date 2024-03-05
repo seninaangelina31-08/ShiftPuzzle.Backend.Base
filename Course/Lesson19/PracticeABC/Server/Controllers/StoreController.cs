@@ -13,15 +13,12 @@ using System.Collections.Generic;
 public class StoreController : ControllerBase
 {
     private List<Product> Items = new List<Product>();
+    private readonly DBModel _dbModel;
 
-    private readonly string _jsonFilePath = "DataBase.json";
-
-    public StoreController()
+    public StoreController(DBModel dbModel)
     {
-        ReadDataFromFile();
+        _dbModel = dbModel;
     }
-
-
 
     [HttpPost]
     [Route("/store/updateprice")]
@@ -124,50 +121,4 @@ public class StoreController : ControllerBase
     {
         return Ok(Items);
     }
- 
-
-    private List<Product> ConvertTextDBToList(string json)
-    {
-        return JsonSerializer.Deserialize<List<Product>>(json)
-    }
-
-    private string ReadDB()
-    {
-        return System.IO.File.ReadAllText(_jsonFilePath);
-    }
-
-    private bool DBExist()
-    {
-        return System.IO.File.Exists(_jsonFilePath);
-    }
-
-    private void ReadDataFromFile()
-    {
-        if (DBExist())
-        { 
-            Items =  ConvertTextDBToList(ReadDB());
-        }
-    }
-
-    #endregion
- 
-
-    private string  ConvertDBtoJson()
-    {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        retunr JsonSerializer.Serialize(Items, options);
-    }
-
-    private void WriteTiDB(string json)
-    {
-        System.IO.File.WriteAllText(_jsonFilePath, json);
-    }
-
-    private void WriteDataToFile()
-    { 
-        WriteTiDB(ConvertDBtoJson());
-    }
- 
-
-
 }

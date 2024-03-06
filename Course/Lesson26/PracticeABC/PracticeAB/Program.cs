@@ -18,22 +18,27 @@ using System.Collections.Generic;
 
 public  class NotificationSystem
 {
-    public event Action OnNewMessage;
-    public event Action OnNewOrder; 
-        
+    public event Action <string> OnNewMessage;
+    public event Action <string> OnNewOrder; 
+    public event Action OnOrderComplited;
+
     public NotificationSystem()
     { 
 
     }
 // данная обертка нужна для того чтобы вызвать событие, 
 //т.к. напрямую вызвать событие нельзя изза того что  фукнция мейн в статическом классе
-    public void NewMessage()
+    public void NewMessage(string text)
     {
-        OnNewMessage?.Invoke();
+        OnNewMessage?.Invoke(text);
     }
-    public void NewOrder() 
+    public void NewOrder(string text) 
     {
-        OnNewOrder?.Invoke();
+        OnNewOrder?.Invoke(text);
+    }
+    public void OrderComplited()
+    {
+        OnOrderComplited?.Invoke();
     }
 }
 
@@ -44,29 +49,39 @@ public class Program
         NotificationSystem notificationSystem = new NotificationSystem();
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOreder;
+        notificationSystem.OnOrderComplited += TestOrederComplited;
 
-        notificationSystem.NewMessage();
-        notificationSystem.NewOrder();
+        notificationSystem.NewMessage("Hello, World!");
+        notificationSystem.NewOrder("Car");
+        notificationSystem.OrderComplited();
  
         
     }
-    public static async void TestNewMsg()
+    public static async void TestNewMsg(string text)
     {
-       await TestNewMsgAsync();
+       await TestNewMsgAsync(text);
     }
-    public static async void TestNewOreder()
+    public static async void TestNewOreder(string text)
     {
-        await TestNewOrederAsync();
+        await TestNewOrederAsync(text);
+    }
+    public static async void TestOrederComplited()
+    {
+        await TestOrederComplitedAsync();
     }
 
-    public static async Task TestNewMsgAsync()
+    public static async Task TestNewMsgAsync(string text)
     {
-        Console.WriteLine("New message async");
+        Console.WriteLine($"New message async: {text}");
     }
 
-    public static async Task TestNewOrederAsync()
+    public static async Task TestNewOrederAsync(string text)
     {
-        Console.WriteLine("New oreder async");
+        Console.WriteLine($"New oreder async: {text}");
     }
-   
+    public static async Task TestOrederComplitedAsync()
+    {
+        Console.WriteLine("Order complited.");
+    }
+
 }   

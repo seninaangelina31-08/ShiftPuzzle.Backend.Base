@@ -76,7 +76,7 @@ public class ProductRepository
                             Product product = new Product(reader["Name"].ToString(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                             return product;
                         }
-                        Console.WriteLine("Таких тута нет.");
+                        Console.WriteLine("Извинете товар отсутствует!");
                         return null;
                     }
                 }

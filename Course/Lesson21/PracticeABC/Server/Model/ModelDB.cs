@@ -50,7 +50,7 @@ public class SqlLiteProductRepository
                 {
                     while (reader.Read())
                     {
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"])); 
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         products.Add(product);
                     }
                 }
@@ -73,7 +73,7 @@ public class SqlLiteProductRepository
                     if (reader.Read())
                     {
 
-                        Product product = new Product(reader["Name"].ToString(),Convert.ToDouble(reader["Price"]),Convert.ToInt32(reader["Stock"]));
+                        Product product = new Product(reader["Name"].ToString().ToUpper(), Convert.ToDouble(reader["Price"]), Convert.ToInt32(reader["Stock"]));
                         return  product;
                     }
                     return null;

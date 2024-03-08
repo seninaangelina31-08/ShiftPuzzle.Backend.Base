@@ -5,28 +5,28 @@
 // Шуточный интерфейс "Способность танцевать"
 interface IDanceable
 {
- 
+    void Dance();
 }
 
 // Шуточный интерфейс "Способность петь"
 interface ISingable
 {
- 
+    void Sing();
 }
 
 
 internal interface ITalkable
 {
-  
+    void Talk();
 }
 
 internal interface IJokeable
 {
-     
+    void TellJoke;
 }
 
 // Класс шутника, реализующий ITalkable, IJokeable, IDanceable и ISingable
-class Joker  
+class Joker : ITalkable, IJokeable, IDanceable, ISingable
 {
     public void Talk()
     {
@@ -51,7 +51,7 @@ class Joker
 
 
 // Класс клоуна, реализующий ITalkable и IJokeable
-class Clown  
+class Clown : ITalkable, IJokeable 
 {
     public void Talk()
     {
@@ -69,10 +69,25 @@ class Program
     static void Main(string[] args)
     {
         // Создаем экземпляры шутника и клоуна 
+        Joker joker = new Joker();
+        Clown clown = new Clown();
 
-        // Используем методы через интерфейсы
-         
+        // Используем методы через интерфейсы 
+        ITalkable talkableJoker = joker;
+        IJokeable jokeableJoker = joker;
+        IDanceable danceableJoker = joker;
+        ISingable singableJoker = joker;
 
-        
+        ITalkable talkableClown = clown;
+        IJokeable jokeableClown = clown;
+
+        // Вызываем методы
+        talkableJoker.Talk();
+        jokeableJoker.TellJoke();
+        danceableJoker.Dance();
+        singableJoker.Sing();
+
+        talkableClown.Talk();
+        jokeableClown.TellJoke();
     }
 }

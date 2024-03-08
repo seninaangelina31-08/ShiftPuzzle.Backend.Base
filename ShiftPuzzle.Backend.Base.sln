@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course", "Course", "{3890D7F3-8E26-450C-A411-4EACDDBC4772}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course", "Course", "{72E34C34-2550-4302-B09C-176FF47FB802}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson27", "Lesson27", "{E428EFB5-9101-4662-A510-946F562A07B9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson28", "Lesson28", "{AE568454-53ED-4DF9-BE76-1F8EAC29BD56}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PracticeABC", "PracticeABC", "{3B31BB32-0E0D-4E32-B510-0DFD010049BF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice C", "Course\Lesson27\PracticeABC\Practice C\Practice C.csproj", "{97005FC6-91CA-42F5-88FB-037C3E893847}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTaskTrackerAPI", "Course\Lesson28\EasyTaskTrackerAPI\EasyTaskTrackerAPI.csproj", "{28D5555F-BB78-4C0C-B3EB-51B404ECD0ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{97005FC6-91CA-42F5-88FB-037C3E893847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97005FC6-91CA-42F5-88FB-037C3E893847}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97005FC6-91CA-42F5-88FB-037C3E893847}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97005FC6-91CA-42F5-88FB-037C3E893847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D5555F-BB78-4C0C-B3EB-51B404ECD0ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D5555F-BB78-4C0C-B3EB-51B404ECD0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D5555F-BB78-4C0C-B3EB-51B404ECD0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D5555F-BB78-4C0C-B3EB-51B404ECD0ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -29,8 +27,7 @@ Global
 		SolutionGuid = {A3AC4FD9-7C1F-47D3-AB6C-13FEFA734D48}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E428EFB5-9101-4662-A510-946F562A07B9} = {3890D7F3-8E26-450C-A411-4EACDDBC4772}
-		{3B31BB32-0E0D-4E32-B510-0DFD010049BF} = {E428EFB5-9101-4662-A510-946F562A07B9}
-		{97005FC6-91CA-42F5-88FB-037C3E893847} = {3B31BB32-0E0D-4E32-B510-0DFD010049BF}
+		{AE568454-53ED-4DF9-BE76-1F8EAC29BD56} = {72E34C34-2550-4302-B09C-176FF47FB802}
+		{28D5555F-BB78-4C0C-B3EB-51B404ECD0ED} = {AE568454-53ED-4DF9-BE76-1F8EAC29BD56}
 	EndGlobalSection
 EndGlobal

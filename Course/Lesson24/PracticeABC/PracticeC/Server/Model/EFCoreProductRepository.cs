@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace PracticeABC
 {
@@ -15,15 +16,15 @@ namespace PracticeABC
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return _context.Products.ToList();;
+            return await _context.Products.ToListAsync();
         }
 
         public async Task<Product> GetProductByName(string name)
         {
-            return _context.Products.FirstOrDefault(p => p.Name == name);
+            return await _context.Products.FirstOrDefaultAsync(p => p.Name == name);
         }
 
-        public void AddProduct(Product product)
+        public AddProduct(Product product)
         {
             _context.Products.Add(product);
             _context.SaveChanges();  

@@ -5,7 +5,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
 
 builder.Services.AddSingleton<ITaskManager>(provider =>
 {
@@ -21,6 +20,7 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
     return taskManager;
 
 });
+var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {

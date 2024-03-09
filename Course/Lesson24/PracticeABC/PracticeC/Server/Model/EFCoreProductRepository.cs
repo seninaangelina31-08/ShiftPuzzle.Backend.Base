@@ -15,7 +15,7 @@ namespace PracticeABC
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return _context.Products.ToList();
+            return _context.Products.ToList();;
         }
 
         public async Task<Product> GetProductByName(string name)
@@ -26,7 +26,7 @@ namespace PracticeABC
         public void AddProduct(Product product)
         {
             _context.Products.Add(product);
-            _context.SaveChangesAsync();  
+            _context.SaveChanges();  
         }
 
         public void UpdateProduct(Product product)
@@ -41,7 +41,7 @@ namespace PracticeABC
             if (product != null)
             {
                 _context.Products.Remove(product);
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
             }
         }
     }

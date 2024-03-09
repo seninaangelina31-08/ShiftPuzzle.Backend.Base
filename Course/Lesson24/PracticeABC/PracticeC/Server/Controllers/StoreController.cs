@@ -60,7 +60,7 @@ public class StoreController : ControllerBase
         [Route("/store/outofstock")]
         public async Task<IActionResult> OutOfStock()
         {
-            var outOfStockItems = await _productRepository.GetAllProducts().Where(p => p.Stock == 0).ToList();
+            var outOfStockItems = await _productRepository.GetAllProducts();
             if (outOfStockItems.Any())
             {
                 return Ok(outOfStockItems);
@@ -73,7 +73,7 @@ public class StoreController : ControllerBase
 
         [HttpPost]
         [Route("/store/auth")]
-        public async Task<IActionResult> Auth([FromBody] UserCredentials user)
+        public IActionResult Auth([FromBody] UserCredentials user)
         {
             if ((user.user == "admin") && (user.pass == "123"))
             {

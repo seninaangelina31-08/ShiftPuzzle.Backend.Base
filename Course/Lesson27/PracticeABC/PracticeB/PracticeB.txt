@@ -1,0 +1,35 @@
+P.S Я так сделал - и оно работает. Каким боком оно работает? Волновать тебя не должно. Если что-то не понятно - смотри чертежи в PracticeA
+
+Table users {
+ id integer [primary key]
+ username varchar
+ role worker
+ created_at timestamp
+}
+
+Table tasks {
+ id integer [primary key]
+ title varchar
+ description text
+ assignee_id integer
+ status task_status
+ created_at timestamp
+}
+
+Enum task_status {
+ Open
+ InProgress
+ Resolved
+ Closed
+ Reopened
+}
+
+Table task_status_history {
+ id integer [primary key]
+ task_id integer
+ status task_status
+ changed_at timestamp
+}
+
+Ref: tasks.assignee_id > users.id
+Ref: users.id > task_status_history.status

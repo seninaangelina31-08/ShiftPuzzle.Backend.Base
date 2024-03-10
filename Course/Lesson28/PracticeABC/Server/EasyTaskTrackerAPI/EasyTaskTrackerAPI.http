@@ -1,0 +1,6 @@
+@EasyTaskTrackerAPI_HostAddress = http://localhost:5082
+
+GET {{EasyTaskTrackerAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

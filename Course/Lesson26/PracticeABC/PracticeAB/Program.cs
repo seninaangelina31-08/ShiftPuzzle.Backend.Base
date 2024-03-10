@@ -13,28 +13,33 @@
 // система уведомлений  
 using System;   
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 
 
 public  class NotificationSystem
 {
-    public event Action OnNewMessage;
-    public event Action OnNewOrder; 
-        
+    public event Action<string> OnNewMessage;
+    public event Action<string> OnNewOrder;
+    public event Action<string, string> OnNewDeliver;
     public NotificationSystem()
     { 
 
     }
 // данная обертка нужна для того чтобы вызвать событие, 
 //т.к. напрямую вызвать событие нельзя изза того что  фукнция мейн в статическом классе
-    public void NewMessage()
+    public void NewMessage(string message)
     {
-        OnNewMessage?.Invoke();
+        OnNewMessage?.Invoke(message);
     }
-    public void NewOrder() 
+    public void NewOrder(string order) 
     {
-        OnNewOrder?.Invoke();
+        OnNewOrder?.Invoke(order);
     }
+    public void NewDelivered(string order, string dateTime) 
+    {
+        OnNewDeliver?.Invoke(order, dateTime);
+    }
+    
 }
 
 public class Program
@@ -43,30 +48,40 @@ public class Program
     {
         NotificationSystem notificationSystem = new NotificationSystem();
         notificationSystem.OnNewMessage += TestNewMsg;
-        notificationSystem.OnNewOrder += TestNewOreder;
+        notificationSystem.OnNewOrder += TestNewOrder;
+        notificationSystem.OnNewDeliver += OrderDeliveredAsync;
 
-        notificationSystem.NewMessage();
-        notificationSystem.NewOrder();
- 
+        notificationSystem.NewMessage("Messagege");
+        notificationSystem.NewOrder("Jrderrer");
+        notificationSystem.NewDelivered("Jrderrer", "13pm");
         
     }
-    public static async void TestNewMsg()
+    public static async void TestNewMsg(string message)
     {
-       await TestNewMsgAsync();
+        await TestNewMsgAsync(message);
     }
-    public static async void TestNewOreder()
+    public static async void TestNewOrder(string order)
     {
-        await TestNewOrederAsync();
-    }
-
-    public static async Task TestNewMsgAsync()
-    {
-        Console.WriteLine("New message async");
+        await TestNewOrderAsync(order);
     }
 
-    public static async Task TestNewOrederAsync()
+    public static async void OrderDeliveredAsync (string order, string dateTime)
     {
-        Console.WriteLine("New oreder async");
+        await TestOrderDeliveredAsync(order, dateTime);
     }
-   
+
+    public static async Task TestNewMsgAsync(string message)
+    {
+        Console.WriteLine($"New message async with data: {message}");
+    }
+
+    public static async Task TestNewOrderAsync(string order)
+    {
+        Console.WriteLine($"New order async with data: {order}");
+    }
+    //1. Добавить в решение с СУБД события с передаваемым типом 
+    public static async Task TestOrderDeliveredAsync(string order, string dateTime)
+    {
+        Console.WriteLine($"Order '{order}' delivered async. At time {dateTime}");
+    }
 }   

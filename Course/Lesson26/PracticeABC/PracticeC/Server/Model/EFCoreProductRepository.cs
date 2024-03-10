@@ -7,24 +7,40 @@ namespace PracticeABC
     public class EFCoreProductRepository : IProductRepository
     {
 
-        private event Action OnProductAdded;
+        private event Action <Product> OnProductAdded;
+        private event Action <Product> OnProdUpd;
+        private event Action <Product> OnDelProd;
         private readonly ProductContext _context;
 
         public EFCoreProductRepository(ProductContext context)
         {
             _context = context;  
             OnProductAdded  +=   SendNotificationToStatDepartmetn;  
+            OnProdUpd =+ SNUpdate;
+            OnDelProd=+ SNDelate;
         }
 
-        private void SendNotificationToStatDepartmetn()
+        private void SendNotificationToStatDepartmetn(Product product)
         {
            Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine($"Добавлен новый продукт: {product.Name}");    
         }
  
+        private void SNUpdate(Product product)
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine($"Обновлен продукт: {product.Name}");    
+        }
 
+        private void SNDelate(Product product)
+        {
+           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine($" Удален продукт: {product.Name}");    
+        }
         public List<Product> GetAllProducts()
         {
             return _context.Products.ToList();
+            
         }
 
         public Product GetProductByName(string name)
@@ -37,13 +53,15 @@ namespace PracticeABC
             _context.Products.Add(product);
             _context.SaveChanges();  
 
-            OnProductAdded.Invoke();
+            OnProductAdded.Invoke(product);
         }
 
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);
             _context.SaveChanges();
+
+            OnProdUpd.Invoke(product);
         }
 
         public void DeleteProduct(string name)
@@ -53,6 +71,8 @@ namespace PracticeABC
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+
+                OnDelProd.Invoke(product);
             }
         }
     }

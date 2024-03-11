@@ -159,19 +159,41 @@ public class StoreController : ControllerBase
 
     private void ReadDataFromFile()
     {
-        if (System.IO.File.Exists(_jsonFilePath))
-        {
-            string json = System.IO.File.ReadAllText(_jsonFilePath);
-            Items = JsonSerializer.Deserialize<List<Product>>(json);
+        if (DBExist()){
+            Items = ConvertTextDBToList()
         }
     }
 
     private void WriteDataToFile()
     {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        string json = JsonSerializer.Serialize(Items, options);
+        string json = ConvertDBtoJson(Items);
+        WriteToDB(json);
+    }
+
+    private void WriteToDB(string json)
+    {
         System.IO.File.WriteAllText(_jsonFilePath, json);
     }
 
+    private string ConvertDBtoJson(List<Product> items)
+    {
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        return JsonSerializer.Serialize(items, options);
+    }
 
+    private List<Product> ConvertTextDBToList()
+    {
+        string json = ReadDB();
+        return JsonSerializer.Deserialize<List<Product>>(json);
+    }
+
+    private string ReadDB()
+    {
+        return System.IO.File.ReadAllText(_jsonFilePath);
+    }
+
+    private bool DBExist()
+    {
+        return System.IO.File.Exists(_jsonFilePath);
+    }
 }

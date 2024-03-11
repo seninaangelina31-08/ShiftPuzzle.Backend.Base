@@ -1,3 +1,4 @@
+namespace EasyTrackerAPI;
 using Microsoft.EntityFrameworkCore;
 
 public class TaskContext : DbContext

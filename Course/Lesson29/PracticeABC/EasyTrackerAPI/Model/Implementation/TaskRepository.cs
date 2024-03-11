@@ -1,3 +1,5 @@
+namespace EasyTrackerAPI;
+
 public class TaskRepository : ITaskRepository
 {
     private readonly TaskContext _context;
@@ -6,13 +8,12 @@ public class TaskRepository : ITaskRepository
     {
         _context = context;
     }
-
     public void AddTask(TrackerTask task)
     {
         _context.TrackerTasks.Add(task);
         _context.SaveChanges();
     }
-
+    
     public void DeleteTask(TrackerTask taskId)
     {
         var task = _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId.ID);

@@ -38,6 +38,16 @@ public class TasksController : ControllerBase
 
     }
 
+    [HttpPost("addrandom/id")]
+    public IActionResult Random(int id)
+    {
+        Random random = new Random();
+        TrackerTask newTask = new TrackerTask();
+        newTask.ID = random.Next();
+        _taskManager.AddTask(newTask);
+        return Ok(newTask);
+    }
+
     [HttpPost("add")]
     public IActionResult CreateTask([FromBody] TrackerTask task)
     {

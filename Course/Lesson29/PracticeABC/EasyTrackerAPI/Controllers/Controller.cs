@@ -17,13 +17,13 @@ public class TasksController : ControllerBase
         _taskManager = taskManager;
     }
     
-    [HttpGet("getall")]
+    [HttpGet("/api/tasks/getall")]
     public IActionResult GetAll()
     {
         return Ok(_taskManager.GetAllTasks());
     }
 
-    [HttpGet("getID")]
+    [HttpGet("/api/tasks/get/")]
     public IActionResult GetTask(int taskId)
     {
         var task = _taskManager.GetTaskById(taskId);
@@ -38,14 +38,14 @@ public class TasksController : ControllerBase
 
     }
 
-    [HttpPost("addtask")]
+    [HttpPost("/api/tasks/add")]
     public IActionResult CreateTask([FromBody] TrackerTask task)
     {
         _taskManager.AddTask(task);
         return Ok(_taskManager.GetAllTasks());
     }
 
-    [HttpDelete("deletetask")]
+    [HttpDelete("/api/tasks/delete/")]
     public IActionResult DeleteTask(int taskId)
     {
         var task = _taskManager.GetTaskById(taskId);
@@ -58,5 +58,15 @@ public class TasksController : ControllerBase
         {
             return NotFound("Tasks doesn`t found");
         }
+    }
+
+    [HttpGet("/api/tasks/addrandom/")]
+    public IActionResult AddRandom()
+    {
+        Random random = new Random();
+        TrackerTask ran = new TrackerTask();
+        ran.ID = random.Next();
+        _taskManager.AddTask(ran);
+        return Ok(_taskManager.GetAllTasks);
     }
 }

@@ -38,14 +38,14 @@ public class TasksController : ControllerBase
 
     }
 
-    [HttpPost("addtask")]
+    [HttpPost("add")]
     public IActionResult CreateTask([FromBody] TrackerTask task)
     {
         _taskManager.AddTask(task);
         return Ok(_taskManager.GetAllTasks());
     }
 
-    [HttpDelete("deletetask")]
+    [HttpDelete("delete/id")]
     public IActionResult DeleteTask(int id)
     {
         var task = _taskManager.GetTaskById(id);

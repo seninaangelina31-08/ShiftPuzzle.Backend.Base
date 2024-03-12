@@ -38,8 +38,8 @@ public class TasksController : ControllerBase
 
     }
 
-    [HttpPost("addrandom/id")]
-    public IActionResult Random(int id)
+    [HttpPost("addrandom")]
+    public IActionResult Random()
     {
         Random random = new Random();
         TrackerTask newTask = new TrackerTask();

@@ -1,3 +1,5 @@
+namespace EasyTracker;
+
 public interface ITaskManager
 {
     List<TrackerTask> GetAllTasks();

@@ -1,3 +1,4 @@
+namespace EasyTracker;
 
 public class TaskManager : ITaskManager
 {

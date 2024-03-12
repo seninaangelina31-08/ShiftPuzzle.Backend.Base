@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Collections.Generic;
 
 [ApiController] 
-[Route("tasks/")]
+[Route("api/tasks/")]
 public class TasksController : ControllerBase
 {
 
@@ -23,17 +23,17 @@ public class TasksController : ControllerBase
         return Ok(_taskManager.GetAllTasks());
     }
 
-    [HttpGet("getID")]
-    public IActionResult GetTask(int taskId)
+    [HttpGet("get/id")]
+    public IActionResult GetTask(int id)
     {
-        var task = _taskManager.GetTaskById(taskId);
+        var task = _taskManager.GetTaskById(id);
         if (task != null)
         {
             return Ok(task);
         }
         else
         {
-            return NotFound("Tasks doesn`t found");
+            return NotFound("Товар не найден");
         }
 
     }
@@ -46,17 +46,17 @@ public class TasksController : ControllerBase
     }
 
     [HttpDelete("deletetask")]
-    public IActionResult DeleteTask(int taskId)
+    public IActionResult DeleteTask(int id)
     {
-        var task = _taskManager.GetTaskById(taskId);
+        var task = _taskManager.GetTaskById(id);
         if (task != null)
         {
             _taskManager.DeleteTask(task);
-            return Ok(_taskManager.GetAllTasks());
+            return Ok("Товар удалён");
         }
         else
         {
-            return NotFound("Tasks doesn`t found");
+            return NotFound("Товар не найден");
         }
     }
 }

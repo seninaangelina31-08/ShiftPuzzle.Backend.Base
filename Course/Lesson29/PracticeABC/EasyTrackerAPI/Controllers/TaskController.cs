@@ -50,4 +50,18 @@ public class StoreController : ControllerBase
         }
         return NotFound();
     }
+
+    [HttpGet("/api/tasks/addrandom")]
+    public IActionResult RandomTask()
+    {
+        var newTask = new TrackerTask();
+        var rand = new Random();
+        int x = rand.Next(1000, 2000);
+        var randomName = "Task #" + (x).ToString();
+        newTask.ID = x;       
+        newTask.Name = randomName;  
+        newTask.Description = "This is a random task";   
+        _taskManager.AddTask(newTask); 
+        return Ok("Задание успешно добавлено");
+    }
 }

@@ -4,24 +4,30 @@ using System.Threading.Tasks;
 using System.Timers;  
 public class Program
 {
-    static async Reserve(string path)
+    public static async Reserve(string path)
     {
-        
+        Console.WriteLine($"Файл {path} успешно скопирован.");
     }
 
-    static async (string path)
+    public static async Update(string path)
     {
-        
+        Console.WriteLine("Данные в файле изменены.");
     }
 
-    static async Reserve(string path)
+    public static async Rewrite(string path)
     {
-        
+        Console.WriteLine($"Данные в файле {path} перезаписаны.");
     }
 
     static void Main()
     {
+        string filePath = "test.txt";
 
+        Task task1 = Task.Run(async () => await ReverseCopy(filePath));
+        Task task2 = Task.Run(async () => await ModifyData(filePath));
+        Task task3 = Task.Run(async () => await RewriteData(filePath));
+
+        await Task.WhenAll(task1, task2, task3);
     }
 }
 

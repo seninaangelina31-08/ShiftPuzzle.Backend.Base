@@ -7,21 +7,33 @@ namespace PracticeABC
     public class EFCoreProductRepository : IProductRepository
     {
 
-         // событие добавления продукта
+
+         public event Action OnProductAdded;
+        public event Action OnProductDeleted;
+        public event Action OnProductUpdated;
         private readonly ProductContext _context;
 
         public EFCoreProductRepository(ProductContext context)
         {
             _context = context;  
-            OnProductAdded  +=   SendNotificationToStatDepartmetn;  
+            OnProductAdded += SendNotificationAdd;
+            OnProductUpdated += SendNotificationUpdate;
+            OnProductDeleted += SendNotificationDelete;  
         }
 
-        private void SendNotificationToStatDepartmetn()
+        private void SendNotificationAdd()
         {
-           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine("Продукт добавлен");
+        }
+        private void SendNotificationUpdate()
+        {
+           Console.WriteLine("Продукт изменён");
+        }
+        private void SendNotificationDelete()
+        {
+           Console.WriteLine("Продукт удалён");
         }
  
-
         public List<Product> GetAllProducts()
         {
             return _context.Products.ToList();
@@ -36,14 +48,14 @@ namespace PracticeABC
         {
             _context.Products.Add(product);
             _context.SaveChanges();  
-
-            // вызов события добавления продукта
+            OnProductAdded?.Invoke();
         }
 
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);
             _context.SaveChanges();
+            OnProductUpdated?.Invoke();
         }
 
         public void DeleteProduct(string name)
@@ -53,6 +65,7 @@ namespace PracticeABC
             {
                 _context.Products.Remove(product);
                 _context.SaveChanges();
+                OnProductDeleted?.Invoke();
             }
         }
     }

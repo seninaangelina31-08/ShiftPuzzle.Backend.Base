@@ -1,8 +1,8 @@
 public class TaskRepository : ITaskRepository
 {
-    private readonly TaskContext _context;
+    private readonly TaskTrackerContext _context;
 
-    public TaskRepository(TaskContext context)
+    public TaskRepository(TaskTrackerContext context)
     {
         _context = context;
     }

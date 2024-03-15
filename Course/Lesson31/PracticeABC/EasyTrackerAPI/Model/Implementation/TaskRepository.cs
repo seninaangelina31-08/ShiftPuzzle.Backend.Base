@@ -1,8 +1,8 @@
 public class TaskRepository : ITaskRepository
 {
-    private readonly TaskContext _context;
+    private readonly TaskTrackerContext _context;
 
-    public TaskRepository(TaskContext context)
+    public TaskRepository(TaskTrackerContext context)
     {
         _context = context;
     }
@@ -13,14 +13,10 @@ public class TaskRepository : ITaskRepository
         _context.SaveChanges();
     }
 
-    public void DeleteTask(int taskId)
-    {
-        var task = _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
-        if (task != null)
-        {
-            _context.TrackerTasks.Remove(task);
-            _context.SaveChanges();
-        }
+    public void DeleteTask(int taskid)
+    {   
+        _context.TrackerTasks.Where(t => t.ID == taskid).ToList().ForEach(t => _context.TrackerTasks.Remove(t));
+        _context.SaveChanges(); 
     }
 
     public List<TrackerTask> GetAllTasks()

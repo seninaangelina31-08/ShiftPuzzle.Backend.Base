@@ -12,10 +12,15 @@ public class TaskManager : ITaskManager
         _taskRepository.AddTask(task);
     }
 
+    public void Complete(int id)
+    {
+        _taskRepository.Complete(id);
+    }
+
     public void DeleteTask(int taskId)
     { 
         _taskRepository.DeleteTask(taskId);
-    }
+    } 
 
     public List<TrackerTask> GetAllTasks()
     { 

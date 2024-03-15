@@ -11,9 +11,9 @@ builder.Services.AddSwaggerGen();
  
 builder.Services.AddSingleton<ITaskManager>(provider =>
 {
-    var optionsBuilder = new DbContextOptionsBuilder<TaskContext>();
+    var optionsBuilder = new DbContextOptionsBuilder<TaskTrackerContext>();
     optionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
-    var taskContext = new TaskContext(optionsBuilder.Options);
+    var taskContext = new TaskTrackerContext(optionsBuilder.Options);
     taskContext.Database.EnsureCreated(); 
     ITaskRepository taskRepository = new TaskRepository(taskContext);
     ITaskManager taskManager = new TaskManager(taskRepository);

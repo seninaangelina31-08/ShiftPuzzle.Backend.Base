@@ -4,7 +4,7 @@ public class EFCoreProductRepository : IProductReposytory
 
     public EFCoreProductRepository(ProductContext context)
     {
-        _context = context
+        _context = context;
     }
 
     public List<Product> GetAllProducts()

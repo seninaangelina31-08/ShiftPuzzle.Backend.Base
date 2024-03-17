@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;   
-
+using EasyTracker;
 
 public class TaskContrller : ControllerBase
 {
@@ -61,5 +61,9 @@ public class TaskContrller : ControllerBase
             _taskManager.AddTask(newTask); 
          }
     }
-
+    [HttpPut("api/tasks/completed/{id}")]
+    public void Completed(int id)
+    {
+        _taskManager.FinishTask(id);
+    }
 }

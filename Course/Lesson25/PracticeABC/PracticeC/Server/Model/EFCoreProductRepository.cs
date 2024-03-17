@@ -9,18 +9,42 @@ namespace PracticeABC
 
          // событие добавления продукта
         private readonly ProductContext _context;
+        private event Action OnProductAdd;
+        private event Action OnProductDelete;
+        private event Action OnProductUpdate;
 
         public EFCoreProductRepository(ProductContext context)
         {
-            _context = context;  
-            OnProductAdded  +=   SendNotificationToStatDepartmetn;  
+            _context = context;
+            OnProductAdd += SendNotificationToStatDepartment;
+            OnProductAdd += SendProductAdd;
+
+            OnProductDelete += SendNotificationToStatDepartment;
+            OnProductDelete += SendProductDelete;
+
+            OnProductUpdate += SendNotificationToStatDepartment;
+            OnProductUpdate += SendProductUpdate;
         }
 
-        private void SendNotificationToStatDepartmetn()
+        private static void SendNotificationToStatDepartment()
         {
-           Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine("Отправляю отчет ...");
         }
- 
+
+        private void SendProductAdd()
+        {
+            Console.WriteLine("Продукт добавлен...");
+        }
+
+        private void SendProductDelete()
+        {
+            Console.WriteLine("Продукт удален...");
+        }
+
+        private void SendProductUpdate()
+        {
+            Console.WriteLine("Продукт обновлен...");
+        }
 
         public List<Product> GetAllProducts()
         {
@@ -38,12 +62,14 @@ namespace PracticeABC
             _context.SaveChanges();  
 
             // вызов события добавления продукта
+            OnProductAdd.Invoke();
         }
 
         public void UpdateProduct(Product product)
         {
             _context.Products.Update(product);
             _context.SaveChanges();
+            OnProductUpdate.Invoke();
         }
 
         public void DeleteProduct(string name)
@@ -54,6 +80,7 @@ namespace PracticeABC
                 _context.Products.Remove(product);
                 _context.SaveChanges();
             }
+            OnProductDelete.Invoke();
         }
     }
 }

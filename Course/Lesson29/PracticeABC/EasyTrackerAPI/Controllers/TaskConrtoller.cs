@@ -35,6 +35,28 @@ public class TaskContrller : ControllerBase
     {  
        _taskManager.DeleteTask(id);
     }
-
-
+    [HttpGet("/api/tasks/addrandom/{id}")]
+    public void AddRandom(int id)
+    {
+         for(int x = 0 ; x < id;x++ )
+         {
+            int lastTaskID = 0 ;
+            try
+            {
+                var tasks = _taskManager.GetAllTasks(); 
+                lastTaskID = tasks.Max(t => t.ID);   
+            } 
+            catch
+            {
+                lastTaskID = 0; 
+            }
+            
+            var newTask = new TrackerTask();
+            var randomName = "Task №" + (lastTaskID + x).ToString();
+            newTask.ID = lastTaskID + x;       
+            newTask.Name = randomName;  
+            newTask.Description = "Это рандомная зачдача";   
+            _taskManager.AddTask(newTask); 
+         }
+    }
 }

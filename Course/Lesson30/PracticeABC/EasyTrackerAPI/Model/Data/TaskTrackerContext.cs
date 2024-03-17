@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 
-public class TaskContext : DbContext
+public class TaskTrackerContext : DbContext
 {
  
-    public TaskContext(DbContextOptions<TaskContext> options) : base(options)
+    public TaskTrackerContext(DbContextOptions<TaskTrackerContext> options) : base(options)
     {
     }
 

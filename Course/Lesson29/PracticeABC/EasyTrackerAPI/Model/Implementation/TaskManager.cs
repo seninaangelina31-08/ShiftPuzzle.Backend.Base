@@ -1,4 +1,4 @@
-
+namespace EasyTrackerAPI;
 public class TaskManager : ITaskManager
 {
     private ITaskRepository _taskRepository;

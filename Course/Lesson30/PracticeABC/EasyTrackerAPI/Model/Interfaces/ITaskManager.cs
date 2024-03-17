@@ -4,4 +4,6 @@ public interface ITaskManager
     TrackerTask GetTaskById(int taskId);
     void AddTask(TrackerTask task);
     void DeleteTask(int taskId);
+    
+    void FinishTask(int id);
 }

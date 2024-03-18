@@ -13,6 +13,13 @@ public class TaskRepository : ITaskRepository
         _context.SaveChanges();
     }
 
+    public void Complete(int id)
+    { 
+        var task = _context.TrackerTasks.Where(t => t.ID == id).FirstOrDefault();
+        task.IsComplete = true;
+        _context.SaveChanges();
+    }
+
     public void DeleteTask(int taskid)
     {   
         _context.TrackerTasks.Where(t => t.ID == taskid).ToList().ForEach(t => _context.TrackerTasks.Remove(t));

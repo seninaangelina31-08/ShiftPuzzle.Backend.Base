@@ -1,3 +1,5 @@
+namespace EasyTracker;
+
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;   
 
@@ -67,5 +69,10 @@ public class TaskContrller : ControllerBase
             _taskManager.AddTask(newTask); 
          }
     }
-
+    
+    [HttpPut("api/tasks/completed/{id}")]
+    public void Completed(int id)
+    {
+        _taskManager.FinishTask(id);
+    }
 }

@@ -1,5 +1,3 @@
-using EasyTracker;
-
 public class TaskRepository : ITaskRepository
 {
     private readonly TaskTrackerContext _context;
@@ -15,14 +13,17 @@ public class TaskRepository : ITaskRepository
         _context.SaveChanges();
     }
 
-    public void DeleteTask(int taskId)
-    {
-        var task = _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
-        if (task != null)
-        {
-            _context.TrackerTasks.Remove(task);
-            _context.SaveChanges();
-        }
+    public void Complete(int id)
+    { 
+        var task = _context.TrackerTasks.Where(t => t.ID == id).FirstOrDefault();
+        task.IsComplete = true;
+        _context.SaveChanges();
+    }
+
+    public void DeleteTask(int taskid)
+    {   
+        _context.TrackerTasks.Where(t => t.ID == taskid).ToList().ForEach(t => _context.TrackerTasks.Remove(t));
+        _context.SaveChanges(); 
     }
 
     public List<TrackerTask> GetAllTasks()
@@ -33,16 +34,5 @@ public class TaskRepository : ITaskRepository
     public TrackerTask GetTaskById(int taskId)
     {
         return _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
-    }
-
-    public void FinishTask(int id)
-    {
-        var task = _context.TrackerTasks.FirstOrDefault(t => t.ID == id);
-        if (task != null)
-        {   
-            task.IsComplete = true;
-            _context.TrackerTasks.Update(task);
-            _context.SaveChanges();
-        }
     }
 }

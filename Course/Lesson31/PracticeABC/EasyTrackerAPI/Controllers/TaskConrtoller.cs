@@ -1,5 +1,3 @@
-namespace EasyTracker;
-
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;   
 
@@ -35,7 +33,7 @@ public class TaskContrller : ControllerBase
     [HttpGet("/api/tasks/delete/{id}")]
     public void Delete(int id)
     {  
-       _taskManager.DeleteTask(id);
+        _taskManager.DeleteTask(id); 
     }
 
 
@@ -48,7 +46,7 @@ public class TaskContrller : ControllerBase
             try
             {
                 var tasks = _taskManager.GetAllTasks(); 
-                lastTaskID = tasks.Max(t => t.ID);   
+                lastTaskID = (int)tasks.Max(t => t.ID);   
             } 
             catch
             {
@@ -60,13 +58,10 @@ public class TaskContrller : ControllerBase
             newTask.ID = lastTaskID + x;       
             newTask.Name = randomName;  
             newTask.Description = "This is a random task";   
+            newTask.DueDate = new DateTime();
+            newTask.AssignedUser = new User("user_xxx");
             _taskManager.AddTask(newTask); 
          }
     }
-    
-    [HttpPut("api/tasks/completed/{id}")]
-    public void Completed(int id)
-    {
-        _taskManager.FinishTask(id);
-    }
+
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EasyTrackerAPI.Migrations
 {
-    [DbContext(typeof(TaskContext))]
+    [DbContext(typeof(TaskTrackerContext))]
     [Migration("20240318133818_Initial")]
     partial class Initial
     {

@@ -1,19 +1,19 @@
-#API's methods:
+API's methods:
 
-##1. GetAll ##
+1. GetAll/
 return all tasks from DB
 
-##2. GetTask ##
+2. GetTask/
 return task with certain ID
 
-##3. CreateTask ##
+3. CreateTask/
 add new tasks to DB with ID
 
-##4. DeleteTask ##
+4. DeleteTask/
 delete task with certain ID
 
-##5. AddRandom ##
+5. AddRandom/
 add random note to DB
 
-##6. Complete ##
+6. Complete/
 change the status on "Completed"

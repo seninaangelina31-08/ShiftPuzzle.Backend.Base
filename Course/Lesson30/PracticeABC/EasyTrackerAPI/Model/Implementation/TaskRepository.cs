@@ -32,4 +32,10 @@ public class TaskRepository : ITaskRepository
     {
         return _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
     }
+
+    public void UpdateTask(TrackerTask task)
+    {
+        _context.TrackerTasks.Update(task);
+        _context.SaveChanges();
+    }
 }

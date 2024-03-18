@@ -61,5 +61,13 @@ public class TaskContrller : ControllerBase
             _taskManager.AddTask(newTask); 
          }
     }
-
+    [HttpPut("/api/tasks/change_status/{id}")]
+    public void Change_status(int id){
+        var task = _taskManager.GetTaskById(id);
+        if (task.IsComplete == true)
+            task.IsComplete = false;
+        else
+            task.IsComplete = true;
+        _taskManager.UpdateTask(task);
+    }
 }

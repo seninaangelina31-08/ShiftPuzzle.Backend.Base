@@ -26,4 +26,8 @@ public class TaskManager : ITaskManager
     { 
         return _taskRepository.GetTaskById(taskId);
     }
+    public void UpdateTask(TrackerTask task)
+    {
+        _taskRepository.UpdateTask(task);
+    }
 }

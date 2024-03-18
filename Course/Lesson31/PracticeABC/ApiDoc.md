@@ -77,6 +77,13 @@
         return Ok("Не удалось добавить задачу. Попробуйте еще раз.");
     }
 
-##Complete(int id)
+## Complete(int id)
 ### Метод, отвечающий на PUT - запрос по адресу tasks/complete. Вызывает метод TaskManager - а, который изменяет статус задачи на 'Выполнена'. Поиск задачи ведется по ключу id, переданный пользователем.
+
+```c#
+    [HttpPut("api/tasks/complete/{id}")]
+    public void Complete(int id)
+    {
+        _taskManager.CompleteTask(id);
+    } 
 ```

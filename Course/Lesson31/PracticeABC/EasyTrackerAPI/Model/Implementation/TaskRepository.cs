@@ -28,4 +28,11 @@ public class TaskRepository : ITaskRepository
     {
         return _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
     }
+
+    public void CompleteTask(int id)
+    {
+        var task = _context.TrackerTasks.Where(t => t.ID == id).FirstOrDefault();
+        task.IsComplete = true;
+        _context.SaveChanges();
+    }
 }

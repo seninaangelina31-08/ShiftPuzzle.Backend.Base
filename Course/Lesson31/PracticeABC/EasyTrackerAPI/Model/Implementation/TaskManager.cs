@@ -32,6 +32,7 @@ public class TaskManager : ITaskManager
         if (task != null)
         {
             task.IsComplete = true;
+            _context.SaveChanges();
             Console.WriteLine($"Задача с ID {id} завершена.");
         }
         else

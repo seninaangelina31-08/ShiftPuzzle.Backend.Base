@@ -18,8 +18,9 @@ using System.Collections.Generic;
 
 public  class NotificationSystem
 {
-    public event Action OnNewMessage;
-    public event Action OnNewOrder; 
+    public event Action <string> OnNewMessage;
+    public event Action <string> OnNewOrder; 
+    public event Action <string, string> OnOrderDelivered; 
         
     public NotificationSystem()
     { 
@@ -27,13 +28,17 @@ public  class NotificationSystem
     }
 // данная обертка нужна для того чтобы вызвать событие, 
 //т.к. напрямую вызвать событие нельзя изза того что  фукнция мейн в статическом классе
-    public void NewMessage()
+    public void NewMessage(string message)
     {
-        OnNewMessage?.Invoke();
+        OnNewMessage?.Invoke(message);
     }
-    public void NewOrder() 
+    public void NewOrder(string order) 
     {
-        OnNewOrder?.Invoke();
+        OnNewOrder?.Invoke(order);
+    }
+    public void OrderDelivered(string order, string dateTime) 
+    {
+        OnOrderDelivered?.Invoke(order, dateTime);
     }
 }
 
@@ -44,29 +49,41 @@ public class Program
         NotificationSystem notificationSystem = new NotificationSystem();
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOreder;
+        notificationSystem.OnOrderDelivered += TestOrderDelivered;
 
-        notificationSystem.NewMessage();
-        notificationSystem.NewOrder();
+        notificationSystem.NewMessage("New message");
+        notificationSystem.NewOrder("New order");
+        notificationSystem.OrderDelivered("Delivery done", "18.03.2024");
  
         
     }
-    public static async void TestNewMsg()
+    public static async void TestNewMsg(string message)
     {
-       await TestNewMsgAsync();
+       await TestNewMsgAsync(message);
     }
-    public static async void TestNewOreder()
+    public static async void TestNewOreder(string order)
     {
-        await TestNewOrederAsync();
-    }
-
-    public static async Task TestNewMsgAsync()
-    {
-        Console.WriteLine("New message async");
+        await TestNewOrederAsync(order);
     }
 
-    public static async Task TestNewOrederAsync()
+    public static async void TestOrderDelivered(string order, string dateTime)
     {
-        Console.WriteLine("New oreder async");
+        await TestOrderDeliveredAsync(order, dateTime);
+    }
+
+    public static async Task TestNewMsgAsync(string message)
+    {
+        Console.WriteLine($"New message async: {message}");
+    }
+
+    public static async Task TestNewOrederAsync(string order)
+    {
+        Console.WriteLine($"New order async: {order}");
+    }
+
+    public static async Task TestOrderDeliveredAsync(string order, string dateTime)
+    {
+        Console.WriteLine($"Order '{order}' delivered async. At time {dateTime}");
     }
    
 }   

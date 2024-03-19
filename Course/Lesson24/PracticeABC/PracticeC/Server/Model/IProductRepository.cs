@@ -1,11 +1,11 @@
-﻿namespace PracticeABC
+﻿﻿namespace PracticeABC
 {
     public interface IProductRepository
     { 
-        List<Product> GetAllProducts();
-        Product GetProductByName(string name);
-        void AddProduct(Product product);
-        void UpdateProduct(Product product);
-        void DeleteProduct(string name);
+        Task<List<Product>> GetAllProducts();
+        Task<Product> GetProductByName(string name);
+        Task AddProduct(Product product);
+        Task UpdateProduct(Product product);
+        Task DeleteProduct(string name);
     }
 }

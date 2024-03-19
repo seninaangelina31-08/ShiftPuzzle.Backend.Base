@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<TaskTrackerContext>(options =>
+        options.UseSqlite("Data Source=TaskDataBase.db"));
 // Add services to the container.
 
 builder.Services.AddControllers();

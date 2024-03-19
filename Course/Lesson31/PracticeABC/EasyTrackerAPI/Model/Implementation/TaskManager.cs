@@ -28,16 +28,6 @@ public class TaskManager : ITaskManager
     }
     public void CompleteTask(int id)
     {
-        var task = this.GetAllTasks().FirstOrDefault(task => task.ID == id);
-        if (task != null)
-        {
-            task.IsComplete = true;
-            _context.SaveChanges();
-            Console.WriteLine($"Задача с ID {id} завершена.");
-        }
-        else
-        {
-            Console.WriteLine($"Задача с ID {id} не найдена.");
-        }
+        _taskRepository.CompleteTask(id);
     }
 }

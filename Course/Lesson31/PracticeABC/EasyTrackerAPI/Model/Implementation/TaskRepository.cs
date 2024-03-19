@@ -18,7 +18,20 @@ public class TaskRepository : ITaskRepository
         _context.TrackerTasks.Where(t => t.ID == taskid).ToList().ForEach(t => _context.TrackerTasks.Remove(t));
         _context.SaveChanges(); 
     }
-
+    public void CompleteTask(int id)
+    {
+        var task = this.GetAllTasks().FirstOrDefault(task => task.ID == id);
+        if (task != null)
+        {
+            task.IsComplete = true;
+            _context.SaveChanges();
+            Console.WriteLine($"Задача с ID {id} завершена.");
+        }
+        else
+        {
+            Console.WriteLine($"Задача с ID {id} не найдена.");
+        }
+    }
     public List<TrackerTask> GetAllTasks()
     {
         return _context.TrackerTasks.ToList();
@@ -28,4 +41,6 @@ public class TaskRepository : ITaskRepository
     {
         return _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
     }
+
+
 }

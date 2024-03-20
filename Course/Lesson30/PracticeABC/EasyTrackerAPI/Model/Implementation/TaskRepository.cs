@@ -1,8 +1,8 @@
 public class TaskRepository : ITaskRepository
 {
-    private readonly TaskContext _context;
+    private readonly TaskTrackerContext _context;
 
-    public TaskRepository(TaskContext context)
+    public TaskRepository(TaskTrackerContext context)
     {
         _context = context;
     }
@@ -31,5 +31,16 @@ public class TaskRepository : ITaskRepository
     public TrackerTask GetTaskById(int taskId)
     {
         return _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
+    }
+
+    public void FinishTask(int id)
+    {
+        var task = _context.TrackerTasks.FirstOrDefault(t => t.ID == id);
+        if (task != null)
+        {   
+            task.IsComplete = true;
+            _context.TrackerTasks.Update(task);
+            _context.SaveChanges();
+        }
     }
 }

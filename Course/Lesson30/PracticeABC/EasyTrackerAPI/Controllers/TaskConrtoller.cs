@@ -62,4 +62,10 @@ public class TaskContrller : ControllerBase
          }
     }
 
+    [HttpPut("api/tasks/finish/{id}")]
+    public void Finish(int id)
+    {
+        _taskManager.FinishTask(id);
+    }
+
 }

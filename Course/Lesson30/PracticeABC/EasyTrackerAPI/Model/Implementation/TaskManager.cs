@@ -1,4 +1,3 @@
-
 public class TaskManager : ITaskManager
 {
     private ITaskRepository _taskRepository;
@@ -25,5 +24,10 @@ public class TaskManager : ITaskManager
     public TrackerTask GetTaskById(int taskId)
     { 
         return _taskRepository.GetTaskById(taskId);
+    }
+
+    public void FinishTask(int id)
+    {
+        _taskRepository.FinishTask(id);
     }
 }

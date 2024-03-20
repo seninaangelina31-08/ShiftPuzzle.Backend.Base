@@ -28,4 +28,18 @@ public class TaskRepository : ITaskRepository
     {
         return _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
     }
+    public void CompleteTask(int id)
+    {
+        var task = this.GetAllTasks().FirstOrDefault(task => task.ID == id);
+        if (task)
+        {
+            task.IsComplete = true;
+            _context.SaveChanges();
+            Console.WriteLine($"Задача с ID {id} завершена.");
+        }
+        else
+        {
+            Console.WriteLine($"Задача с ID {id} не найдена.");
+        }
+    }
 }

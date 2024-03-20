@@ -63,5 +63,10 @@ public class TaskContrller : ControllerBase
             _taskManager.AddTask(newTask); 
          }
     }
+    [HttpGet("/api/tasks/complete/{id}")]
+    public void CompleteTask(int id)
+    {
+        _taskManager.CompleteTask(id);
+    }
 
 }

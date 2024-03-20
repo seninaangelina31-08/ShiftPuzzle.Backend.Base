@@ -14,6 +14,7 @@ public class TaskTrackerContext : DbContext
     {  
         modelBuilder.Entity<TrackerTask>().HasKey(t => t.ID);   
         modelBuilder.Entity<User>().HasKey(u => u.ID);
+        modelBuilder.Entity<TrackerTask>().HasOne(t => t.AssignedUser).WithMany(u => u.Tasks);
     }
     
    

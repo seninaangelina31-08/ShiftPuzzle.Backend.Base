@@ -59,4 +59,22 @@ public class TasksController : ControllerBase
         _taskManager.AddTask(task);
         return Ok(_taskManager.GetAllTasks());
     }
+
+    [HttpGet("addrandom")]
+    public IActionResult AddRandom()
+    {
+        Random rnd = new Random();
+        int taskId = rnd.Next();
+
+        if (_taskManager.GetTaskById(taskId) == null)
+        {
+            var task = new TrackerTask();
+            task.ID = taskId;
+            _taskManager.AddTask(task);
+
+            return Ok (_taskManager.GetAllTasks());
+        }
+        
+        return Ok("Ошибка добавления задачи :(");
+    }
 }

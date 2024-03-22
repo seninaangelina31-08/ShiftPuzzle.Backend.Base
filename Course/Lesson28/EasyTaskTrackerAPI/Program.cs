@@ -10,7 +10,7 @@ builder. Services. AddSwaggerGen();
 builder. Services. AddSingleton<ITaskManager>(provider =>
 {
     var optionsBuilder = new DbContextOptionsBuilder<TaskContext>();
-    optionsBuilder.UseSqlite("Data Source=TaskDataBase. db")
+    optionsBuilder.UseSqlite("Data Source=TaskDataBase.db")
 
     var taskContext = new TaskContext (optionsBuilder. Options) ;
     taskContext Database. EnsureCreated();

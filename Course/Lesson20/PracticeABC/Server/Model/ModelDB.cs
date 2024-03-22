@@ -1,57 +1,93 @@
-namespace PracticeABC; 
-using System.Text.Json; 
-using System.Collections.Generic; 
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Text.Json;
 
-public class ProductRepository
+namespace PracticeABC
+{
+    public class Product
     {
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Stock { get; set; }
+    }
 
-        
+    public class ProductRepository
+    {
         private List<Product> _products;
-        private readonly string _jsonFilePath;
+        private readonly string _connectionString;
 
-        public ProductRepository(string jsonFilePath)
+        public ProductRepository(string connectionString)
         {
-            _jsonFilePath = jsonFilePath;
-            ReadDataFromFile();
+            _connectionString = connectionString;
+            ReadDataFromDB();
         }
 
-        `SELECT * FROM Products;`
-
-        `SELECT * Product WHERE Name = @Nmae`
-
-        -`INSERT INTO Products (Name, Price, Stock,)VALUES(@Name,@Price,@Stock)`
-
-        -`UPDATE Product Set Price = @Price, Stock WHERE Name = @Name`
-
-        -`DELETE FROM Product WHERE Name = @
-
-        public void SaveChanges()
+        private void ReadDataFromDB()
         {
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            var json = JsonSerializer.Serialize(_products, options);
-            System.IO.File.WriteAllText(_jsonFilePath, json);
-        }
-
-        private void ReadDataFromFile()
-        {
-            if (DBExist())
+            _products = new List<Product>();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
             {
-                var json = ReadDB();
-                _products = JsonSerializer.Deserialize<List<Product>>(json);
-            }
-            else
-            {
-                _products = new List<Product>();
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT * FROM Products", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            _products.Add(new Product
+                            {
+                                Name = reader["Name"].ToString(),
+                                Price = decimal.Parse(reader["Price"].ToString()),
+                                Stock = int.Parse(reader["Stock"].ToString())
+                            });
+                        }
+                    }
+                }
             }
         }
 
-        private string ReadDB()
+        public void InsertProduct(Product product)
         {
-            return System.IO.File.ReadAllText(_jsonFilePath);
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("INSERT INTO Products (Name, Price, Stock) VALUES (@Name, @Price, @Stock)", connection))
+                {
+                    command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Stock", product.Stock);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
-        private bool DBExist()
+        public void UpdateProduct(Product product)
         {
-            return System.IO.File.Exists(_jsonFilePath);
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("UPDATE Products SET Price = @Price, Stock = @Stock WHERE Name = @Name", connection))
+                {
+                    command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Stock", product.Stock);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void DeleteProduct(string name)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("DELETE FROM Products WHERE Name = @Name", connection))
+                {
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
+}

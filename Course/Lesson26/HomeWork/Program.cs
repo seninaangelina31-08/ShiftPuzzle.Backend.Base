@@ -35,7 +35,7 @@ public class PizzaDeliveryService
     public void DeliverPizza(string pizzaName)
     {
         _consoleWriter.WriteLine("Доставляем пиццу: {0}", pizzaName);
-        _loyaltySystem.AddPoints(10); // Например, за каждую пиццу начисляем 10 бонусных баллов
+        _loyaltySystem.AddPoints(10); // За каждую пиццу начисляем 10 бонусных баллов
     }
 }
 
@@ -50,6 +50,7 @@ public class LoyaltySystem
         Console.WriteLine("Накоплено бонусных баллов: {0}", _points);
     }
 }
+
 class Program
 {
     static void Main(string[] args)

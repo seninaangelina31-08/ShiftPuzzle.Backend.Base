@@ -1,0 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+public class TaskContext:DbContext
+{
+    public TaskContext(DbContextOptions<TaskContext> options): base(options){}
+    public DbSet<TrackerTask> TrackerTasks{get; set;}
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<TrackerTasks>().HasKey(t=>t.ID);
+    }
+
+} 

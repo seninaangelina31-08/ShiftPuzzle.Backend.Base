@@ -26,4 +26,9 @@ public class TaskManager : ITaskManager
     { 
         return _taskRepository.GetTaskById(taskId);
     }
+
+    public void CompleteTask(int id)
+    {
+        _taskRepository.CompleteTask(id);
+    }
 }

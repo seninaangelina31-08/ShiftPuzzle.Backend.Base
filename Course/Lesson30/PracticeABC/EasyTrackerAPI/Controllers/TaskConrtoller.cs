@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;   
+using System.Collections.Generic;
+using EasyTracker;   
 
 
 public class TaskContrller : ControllerBase
@@ -60,6 +61,12 @@ public class TaskContrller : ControllerBase
             newTask.Description = "This is a random task";   
             _taskManager.AddTask(newTask); 
          }
+    }
+
+    [HttpPut("api/tasks/completed/{id}")]
+    public void Completed(int id)
+    {
+        _taskManager.FinishTask(id);
     }
 
 }

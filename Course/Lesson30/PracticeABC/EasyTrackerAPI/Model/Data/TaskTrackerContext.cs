@@ -18,8 +18,8 @@ public class TaskTrackerContext : DbContext
         modelBuilder.Entity<User>().HasKey(u => u.ID);
 
         modelBuilder.Entity<TrackerTask>()
-        .HasOne(t => t.AssignedUser)
-        .WithMany(u => u.Tasks);
+                .HasOne(t => t.AssignedUser)
+                .WithMany(u => u.Tasks);
     }
 
 }

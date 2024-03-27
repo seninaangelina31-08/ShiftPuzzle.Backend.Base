@@ -18,40 +18,49 @@ using System.Collections.Generic;
 
 public  class NotificationSystem
 {
-    // событие новое сообщение
-    // событие новый заказ
-    // методы вызова событий, т.к. события вне класса не доступны изза того что main статический
+    public event Action OnNewMessage;
+    public event Action OnNewOrder;
+
+    public async void NewMessageInvoke()
+    {
+        OnNewMessage?.Invoke();
+    }
+    public async void NewOrderInvoke()
+    {
+        OnNewOrder?.Invoke();
+    }
 }
 
 public class Program
 {
-    static void Main()
+    static async Task Main()
     {
-        // создаем систему уведомлений
-        // создать объект класса уведомлений
-        //notificationSystem.OnNewMessage += TestNewMsg;
-        //notificationSystem.OnNewOrder += TestNewOreder;
+        NotificationSystem notificationSystem = new NotificationSystem();
 
-        //notificationSystem.NewMessage();
-        //notificationSystem.NewOrder();
- 
-        
+        notificationSystem.OnNewMessage += TestNewMsg;
+        notificationSystem.OnNewOrder += TestNewOreder;
+
+        notificationSystem.NewMessageInvoke();
+        notificationSystem.NewOrderInvoke();
     }
 
-    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewMsgAsync
-    public static void TestNewMsg()
+    public static async void TestNewMsg()
     {
-        
+        await TestNewMsgAsync();
     }
 
-    // сделать метод асинхронным (Практика Б) и вызвать асинхронный метод TestNewOrederAsync
-    public static void TestNewOreder()
+    public static async void TestNewOreder()
     {
-         
+         await TestNewOrderAsync();
     }
 
-    // создать асинхронный метод TestNewMsgAsync (прописать простой консольный вывод)
+    public static async Task TestNewMsgAsync()
+    {
+        Console.WriteLine("NEW MESSSSAGE!");
+    }
 
-    // создать асинхронный метод TestNewOrederAsync (прописать простой консольный вывод)
-   
+   public static async Task TestNewOrderAsync()
+    {
+        Console.WriteLine("NEW ORRRRRDER!");
+    }
 }   

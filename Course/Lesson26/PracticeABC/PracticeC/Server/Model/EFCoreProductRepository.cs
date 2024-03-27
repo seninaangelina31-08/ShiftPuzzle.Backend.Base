@@ -7,7 +7,7 @@ namespace PracticeABC
     public class EFCoreProductRepository : IProductRepository
     {
 
-        private event Action OnProductAdded;
+        private event Action <Product> OnProductAdded;
         private readonly ProductContext _context;
 
         public EFCoreProductRepository(ProductContext context)
@@ -16,9 +16,10 @@ namespace PracticeABC
             OnProductAdded  +=   SendNotificationToStatDepartmetn;  
         }
 
-        private void SendNotificationToStatDepartmetn()
+        private void SendNotificationToStatDepartmetn(Product product)
         {
            Console.WriteLine("Отправляю отчет в отдел статистики...");
+           Console.WriteLine($"Добавлен новый продукт: {product.Name}");    
         }
  
 
@@ -37,7 +38,7 @@ namespace PracticeABC
             _context.Products.Add(product);
             _context.SaveChanges();  
 
-            OnProductAdded.Invoke();
+            OnProductAdded.Invoke(product);
         }
 
         public void UpdateProduct(Product product)

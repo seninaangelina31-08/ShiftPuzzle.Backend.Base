@@ -26,18 +26,9 @@ public class TaskManager : ITaskManager
     { 
         return _taskRepository.GetTaskById(taskId);
     }
-    
+
     public void CompleteTask(int id)
     {
-        var task = this.GetAllTasks().FirstOrDefault(task => task.ID == id);
-        if (task != null)
-        {
-            task.IsComplete = true;
-            Console.WriteLine($"Задача с ID = {id} завершена");
-        }
-        else
-        {
-            Console.WriteLine($"Задачи с ID = {id} нет");
-        }
+        _taskRepository.CompleteTask(id);
     }
 }

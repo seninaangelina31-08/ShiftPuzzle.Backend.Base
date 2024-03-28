@@ -54,4 +54,17 @@ public class TasksController : ControllerBase
             return NotFound("task was not finded");
         }
     }
+
+    [HttpGet("tasks/addrandom")]
+    public IActionResult AddRandom(int x)
+    {
+        var newTask = new TrackerTask();
+        var randomName = "Task #" + (lastTaskID + x).ToString();
+        newTask.ID = lastTaskID + x;       
+        newTask.Name = randomName;  
+        newTask.Description = "This is a random task";   
+        _taskManager.AddTask(newTask); 
+
+        return Ok("random task was added to DB");
+    }
 }

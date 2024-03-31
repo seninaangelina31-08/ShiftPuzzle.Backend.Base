@@ -10,14 +10,19 @@ class Program
     static async Task Main(string[] args)
     {
         // Задача 1: Загрузка файла из сети по URL и сохранение его локально
-        
+    string url = "https://emojiisland.com/cdn/shop/products/Emoji_Icon_-_Clown_emoji_large.png";
+    string localFilePath = "clown.png";
+    await DownloadFileAsync(url, localFilePath);
 
         // Задача 2: Асинхронное чтение и запись файлов
-        
+    string filePath = "input.txt";
+    await WriteToFileAsync(filePath, "Привет, мир!");
+    await ReadFromFileAsync(filePath);
 
         // Задача 3: Выполнение параллельных HTTP-запросов к нескольким серверам
-        
- 
+    List<string> urls = new List<string> { "http://google.com", "http://yandex.ru", "http://yahoo.com" };
+    await FetchDataAsync(urls);
+    
     }
 
     static async Task DownloadFileAsync(string url, string filePath)
@@ -25,11 +30,15 @@ class Program
         using (var httpClient = new HttpClient())
         {
             //отправка запроса на сервер
-            if ( ) //проверка успешности запроса
+            var response = await httpClient.GetAsync(url);
+            //проверка успешности запроса
+            
+            if (response.IsSuccessStatusCode)
             {
                 using (var fileStream = new FileStream(filePath, FileMode.Create)) 
                 {
-                    await ; // сохранение файла  c CopyToAsync(fileStream)
+                    // сохранение файла  c CopyToAsync(fileStream)
+                    await response.Content.CopyToAsync(fileStream); 
                 }
             }
             else
@@ -43,7 +52,8 @@ class Program
     {
         using (var writer = new StreamWriter(filePath))
         {
-            await  ; // запись в файл асинхронно
+            // запись в файл асинхронно
+            await writer.WriteAsync(content); 
         }
         Console.WriteLine("Файл успешно записан.");
     }
@@ -52,7 +62,11 @@ class Program
     {
         using (var reader = new StreamReader(filePath))
         {
-            
+           string line;
+           while ((line = reader.ReadLine()) != null)
+           {
+                Console.WriteLine(line);
+           }
         }
     }
 
@@ -60,7 +74,18 @@ class Program
     {
         using (var httpClient = new HttpClient())
         {
-             
+            foreach(string i in urls)
+            {
+                var response = httpClient.GetAsync(i).Result;
+                if (response.Content != null)
+                {
+                    Console.WriteLine("SUCSESSFUL");
+                }
+                else
+                {
+                    Console.WriteLine("ERROR!");
+                }
+            }
         }
     }
 

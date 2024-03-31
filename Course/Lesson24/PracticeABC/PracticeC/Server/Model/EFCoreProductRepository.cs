@@ -13,35 +13,35 @@ namespace PracticeABC
             _context = context;
         }
 
-        public List<Product> GetAllProducts()
+        async public Task<List<Product>> GetAllProductsAsync()
         {
-            return _context.Products.ToList();
+            return await _context.Products.ToListAsync();
         }
 
-        public Product GetProductByName(string name)
+        async public Task<Product> GetProductByNameAsync(string name)
         {
-            return _context.Products.FirstOrDefault(p => p.Name == name);
+            return await _context.Products.FirstOrDefault(p => p.Name == name);
         }
 
-        public void AddProduct(Product product)
+        async public Task AddProductAsync(Product product)
         {
-            _context.Products.Add(product);
-            _context.SaveChanges();  
+            await _context.Products.AddAsync(product);
+            await _context.SaveChangesAsync();  
         }
 
-        public void UpdateProduct(Product product)
+        async public Task UpdateProductAsync(Product product)
         {
             _context.Products.Update(product);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void DeleteProduct(string name)
+        async public Task DeleteProduct(string name)
         {
             var product = _context.Products.FirstOrDefault(p => p.Name == name);
             if (product != null)
             {
                 _context.Products.Remove(product);
-                _context.SaveChanges();
+                _context.SaveChangesAsync();
             }
         }
     }

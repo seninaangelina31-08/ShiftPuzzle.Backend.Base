@@ -41,7 +41,6 @@ public class Program
         // создаем систему уведомлений
         NotificationSystem notificationSystem = new NotificationSystem();
         // создать объект класса уведомлений
-
         notificationSystem.OnNewMessage += TestNewMsg;
         notificationSystem.OnNewOrder += TestNewOreder;
 

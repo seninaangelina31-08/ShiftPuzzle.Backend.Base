@@ -82,7 +82,7 @@ public class TasksController : ControllerBase
             var randomName = "Task #" + (lastTaskID + x).ToString();
             newTask.ID = lastTaskID + x;       
             newTask.Name = randomName;  
-            newTask.Description = "This is a random task";   
+            newTask.Description = "генерация рандомных записей ";   
             _taskManager.AddTask(newTask); 
          }
 

@@ -62,4 +62,30 @@ public class TasksController : ControllerBase
             return NotFound("Задачи не найдены");
         }
     }
+    [HttpGet("/api/tasks/addrandom/{id}")]
+    public void AddRandom(int id)
+    {
+         for(int x = 0 ; x < id;x++ )
+         {
+            int lastTaskID = 0 ;
+            try
+            {
+                var tasks = _taskManager.GetAllTasks(); 
+                lastTaskID = tasks.Max(t => t.ID);   
+            } 
+            catch
+            {
+                lastTaskID = 0; 
+            }
+            
+            var newTask = new TrackerTask();
+            var randomName = "Task #" + (lastTaskID + x).ToString();
+            newTask.ID = lastTaskID + x;       
+            newTask.Name = randomName;  
+            newTask.Description = "This is a random task";   
+            _taskManager.AddTask(newTask); 
+         }
+
+
+
 }

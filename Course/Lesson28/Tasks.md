@@ -7,7 +7,7 @@
 
 > CLI команды для настройки проекта: 
  
-```dotnet new webapi -name EasyTaskTrackerAPI```
+```dotnet new webapi --name EasyTaskTrackerAPI```
 ```dotnet add package Microsoft.EntityFrameworkCore```
 ```dotnet add package Microsoft.EntityFrameworkCore.Sqlite```
  

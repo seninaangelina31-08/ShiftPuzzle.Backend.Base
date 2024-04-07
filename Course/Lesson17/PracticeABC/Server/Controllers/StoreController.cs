@@ -69,6 +69,7 @@ public class StoreController : ControllerBase
         {
             WriteToFile(); // запись данных в файл после изменений
             product.Price = newPrice;
+            WriteToFile();
             return Ok($"{name} обновлен с новой ценой: {newPrice}");
         }
         else

@@ -30,8 +30,10 @@ namespace Client
                 Console.WriteLine("Выберите действие:");
                 Console.WriteLine("1. Авторизация");
                 Console.WriteLine("2. Добавление продукта");
-                Console.WriteLine("3. Вывод списка");
-                Console.WriteLine("4. Выход");
+                Console.WriteLine("3. Обновление цены продукта");
+                Console.WriteLine("4. Обновление имени продукта");
+                Console.WriteLine("5. Вывод списка");
+                Console.WriteLine("6. Выход");
                 Console.Write("Введите номер действия: ");
 
                 int option;
@@ -50,11 +52,23 @@ namespace Client
                             break;
                         case 3:
                             if (IsAuthorized)
-                                DisplayProducts();
+                                UpdateProductPrice();
                             else
                                 Console.WriteLine("Сначала выполните авторизацию.");
                             break;
                         case 4:
+                            if (IsAuthorized)
+                                UpdateProductName();
+                            else
+                                Console.WriteLine("Сначала выполните авторизацию.");
+                            break;
+                        case 5:
+                            if (IsAuthorized)
+                                DisplayProducts();
+                            else
+                                Console.WriteLine("Сначала выполните авторизацию.");
+                            break;
+                        case 6:
                             return;
                         default:
                             Console.WriteLine("Неправильный номер действия.");
@@ -153,15 +167,68 @@ namespace Client
                     Console.WriteLine("Список продуктов:");
                     foreach (var product in products)
                     {
-                        Console.WriteLine($"Имя: {product.name}");
-                        Console.WriteLine($"Цена: {product.price}");
-                        Console.WriteLine($"Количество на складе: {product.stock}");
-                        Console.WriteLine();
+                        Console.WriteLine($"| {product.name, -18} | {product.price, -5} | {product.stock, -19} |");
                     }
                 }
                 else
                 {
                     Console.WriteLine("Ошибка при получении списка продуктов.");
+                }
+            }
+        }
+
+        static void UpdateProductPrice()
+        {
+            Console.Write("Введите имя продукта, для которого нужно обновить цену: ");
+            string name = Console.ReadLine();
+            double newPrice;
+            Console.Write("Введите новую цену продукта: ");
+            if (!double.TryParse(Console.ReadLine(), out newPrice))
+            {
+                Console.WriteLine("Неправильный формат числа.");
+                return;
+            }
+
+            var url = "http://localhost:5087/updateProductPrice"; 
+            var body = JsonSerializer.Serialize(new { name, newPrice });
+            var content = new StringContent(body, Encoding.UTF8, "application/json");
+
+            using (var client = new HttpClient())
+            {
+                var response = client.PostAsync(url, content).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Цена продукта успешно обновлена!");
+                }
+                else
+                {
+                    Console.WriteLine("Не удалось обновить цену продукта");
+                }
+            }
+        }
+
+        static void UpdateProductName()
+        {
+            Console.Write("Введите текущее имя продукта: ");
+            string currentName = Console.ReadLine();
+
+            Console.Write("Введите новое имя продукта: ");
+            string newName = Console.ReadLine();
+
+            var url = "http://localhost:5087/updateProductName"; 
+            var body = JsonSerializer.Serialize(new { currentName, newName });
+            var content = new StringContent(body, Encoding.UTF8, "application/json");
+
+            using (var client = new HttpClient())
+            {
+                var response = client.PostAsync(url, content).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Имя продукта успешно обновлено!");
+                }
+                else
+                {
+                    Console.WriteLine("Не удалось обновить имя продукта");
                 }
             }
         }

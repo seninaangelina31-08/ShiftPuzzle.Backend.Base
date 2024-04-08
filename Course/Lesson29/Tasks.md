@@ -20,7 +20,7 @@
 Подсказка: 
 
 ```C#
-var newTask = new TrackerTask();
+            var newTask = new TrackerTask();
             var randomName = "Task #" + (lastTaskID + x).ToString();
             newTask.ID = lastTaskID + x;       
             newTask.Name = randomName;  

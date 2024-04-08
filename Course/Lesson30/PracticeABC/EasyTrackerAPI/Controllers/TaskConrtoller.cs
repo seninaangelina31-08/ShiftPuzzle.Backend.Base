@@ -29,7 +29,12 @@ public class TaskContrller : ControllerBase
     {
         _taskManager.AddTask(task);
     }
+       public void CompleteTask(int id)
+    {
+        _taskManager.Complete(id);
+    }
 
+    
     [HttpGet("/api/tasks/delete/{id}")]
     public void Delete(int id)
     {  

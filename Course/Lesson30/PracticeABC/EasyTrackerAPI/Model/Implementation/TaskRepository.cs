@@ -12,6 +12,12 @@ public class TaskRepository : ITaskRepository
         _context.TrackerTasks.Add(task);
         _context.SaveChanges();
     }
+    public void Compl(int id)
+    { 
+        var task = _context.TrackerTasks.Where(t => t.ID == id).FirstOrDefault();
+        task.IsComplete = true;
+        _context.SaveChanges();
+    }
 
     public void DeleteTask(int taskId)
     {

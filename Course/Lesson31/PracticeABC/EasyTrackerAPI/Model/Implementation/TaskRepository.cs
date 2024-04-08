@@ -18,6 +18,12 @@ public class TaskRepository : ITaskRepository
         _context.TrackerTasks.Where(t => t.ID == taskid).ToList().ForEach(t => _context.TrackerTasks.Remove(t));
         _context.SaveChanges(); 
     }
+    public void Compl(int id)
+    { 
+        var task = _context.TrackerTasks.Where(t => t.ID == id).FirstOrDefault();
+        task.IsComplete = true;
+        _context.SaveChanges();
+    }
 
     public List<TrackerTask> GetAllTasks()
     {

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример Normalize.css</title>   
+    <link rel="stylesheet" href="normalize.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Заголовок</h1>
+        <p>Это обычный текстовый контент на странице. Normalize.css помогает установить более предсказуемые и единообразные стили для разных браузеров, так что текст выглядит более согласованным.</p>
+        <ul>
+            <li>Список элемент 1</li>
+            <li>Список элемент 2</li>
+            <li>Список элемент 3</li>
+            <li>Список элемент 4</li>
+        </ul>
+        <p>Еще немного текста для примера.</p>
+        <button>Кнопка</button>
+        <input type="text" placeholder="Текстовое поле">
+        <a href="#">Ссылка</a>
+    </div>
+    <style>
+        p{
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        ul{
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        ul li:nth-child(even) {
+            color: red;
+        }
+        ul {
+            list-style-type: none; 
+        }
+        ul li::before {
+            content: "• "; 
+            color: green; 
+        }
+        input::placeholder {
+            color: blue;
+        }
+    </style>
+</body>
+</html>

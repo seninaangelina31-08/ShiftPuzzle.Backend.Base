@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+}
+
+li:nth-child(2n){
+    color: red;
+}
+
+li::marker{
+    color: aqua;
+}
+
+input::placeholder{
+    background-color: blue;
+    color: white;
+}

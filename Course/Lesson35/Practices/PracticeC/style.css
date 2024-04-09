@@ -1,0 +1,41 @@
+.description{
+    border: 2px;
+    border-style: dotted;
+    text-align: center;
+    width: 600px;
+    margin: auto;
+    background-color:beige;
+    transition: background-color 1s;
+}
+.description:hover{
+    background-color: sandybrown;
+}
+
+.mygame{
+    border: 2px solid black;
+    text-align: center;
+    margin: auto;
+    width: 600px;
+    background-color:rgb(230, 230, 105);
+    transition: background-color 1s;
+}
+.mygame:hover{
+    background-color: yellowgreen;
+}
+
+.contact-info{
+    border: 2px solid black;
+    border-style:dashed;
+    text-align: center;
+    margin: auto;
+    width: 600px;
+    background-color:rgb(160, 230, 154);
+    transition: background-color 1s;
+}
+.contact-info:hover{
+    background-color: aquamarine;
+}
+
+li::marker{
+    color: azure;
+}

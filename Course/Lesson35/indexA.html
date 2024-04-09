@@ -3,12 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./normalize.css">
     <style>
-* {
-    margin: 0;
-    padding: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Каждый второй элемент списка красным */
+        ul li:nth-child(even) {
+            color: red;
+        }
+
+        /* Изменение маркеров списка */
+        ul {
+            list-style-type: square; /* Изменение маркеров на квадратные */
+        }
+
+        /* Стилизация плейсхолдеров */
+        input[type="text"]::placeholder {
+            color: blue;
+        }
     </style>
     <title>Пример Normalize.css</title>  
 </head>

@@ -1,0 +1,11 @@
+li:nth-child(even){
+    color: red;
+}
+
+input::placeholder {
+    color: blue;
+}
+
+li:before {
+    content: ":) ";
+}

@@ -1,0 +1,20 @@
+main{
+    background-color: blanchedalmond;
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-right: 30%;
+    padding: 15px 30px 15px 50px;
+    border-radius: 20px;
+
+    display: flex;
+}
+
+img{
+    width: 40%;
+    margin-left: 10%;
+}
+
+p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+

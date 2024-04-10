@@ -1,0 +1,32 @@
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+
+h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(11, 11, 98);
+}
+
+.text{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    width: 90%;
+}
+
+img{
+    width: 800px;
+}
+
+.cont{
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.about{
+    margin-left: 5%;
+}

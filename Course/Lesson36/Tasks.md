@@ -16,6 +16,8 @@ public interface IAccountManager
 }
 ```
 
+
+
 2. Создать реализацию AccountManager с логикой взаимодействия с СУБД в контексте EFCORE
 
 > ВАЖНО: 

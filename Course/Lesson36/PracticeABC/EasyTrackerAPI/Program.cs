@@ -24,6 +24,18 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
 });
 
 
+builder.Services.AddSingleton<IAccountManager>(provider =>
+{
+    var optionsBuilder = new DbContextOptionsBuilder<AccountContext>();
+    optionsBuilder.UseSqlite("Data Source=AccountDataBase.db");
+    var accountContext = new AccountContext(optionsBuilder.Options);
+    accountContext.Database.EnsureCreated();
+    IAccountManager accountManager = new AccountManager(accountContext);
+
+    return accountManager;
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

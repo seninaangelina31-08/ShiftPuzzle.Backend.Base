@@ -6,4 +6,5 @@ public class AccountContext : DbContext
     {
     }
 
+    public DbSet<User> Users { get; set; }
 }

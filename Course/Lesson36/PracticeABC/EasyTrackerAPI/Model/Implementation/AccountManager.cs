@@ -9,23 +9,33 @@ public class AccountManager : IAccountManager
 
     public void RegisterAccount(User account)
     {
-        Console.WriteLine("Зарегисрировано");
+        _context.Users.Add(account);
+        _context.SaveChanges();
     }
 
     public User GetAccount(string accountName)
     {
-        User user = new User("Ilya");
-        return user;
+        return _context.Users.FirstOrDefault(x => x.Name == accountName);
     }
 
     public List<User> GetAccounts()
     {
-        List<User> lst = new List<User>{};
-        return lst;
+        return _context.Users.ToList();
     }
 
     public bool VerifyAccount(User account)
     {
-        return true;
+
+        if(_context.Users.Any(u => u.Name == account.Name && u.Password == account.Password))
+        {
+            User CurrentUser = account;
+            Console.WriteLine("Account verified.");
+            return true;    
+        }
+        else 
+        {
+            Console.WriteLine("Account not verified.");
+            return false; 
+        } 
     }
 }

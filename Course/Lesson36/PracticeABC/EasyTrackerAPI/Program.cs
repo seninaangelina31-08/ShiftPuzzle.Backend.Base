@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<AccountContext>(options =>
+        options.UseSqlite("Data Source=AccountDataBase.db"));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -22,7 +24,16 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
 
     return taskManager;
 });
+builder.Services.AddSingleton<IAccountManager>(provider =>
+{
+    var optionsBuilder = new DbContextOptionsBuilder<AccountContext>();
+    optionsBuilder.UseSqlite("Data Source=AccountDataBase.db"); 
+    var accountContext = new AccountContext(optionsBuilder.Options);
+    accountContext.Database.EnsureCreated();  
+    IAccountManager accountManager = new AccountManager(accountContext);
 
+    return accountManager;
+});
 
 var app = builder.Build();
 

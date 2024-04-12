@@ -13,18 +13,13 @@ builder.Services.AddSwaggerGen();
  
 builder.Services.AddSingleton<ITaskManager>(provider =>
 {
-    var taskOptionsBuilder = new DbContextOptionsBuilder<TaskTrackerContext>();
-    taskOptionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
-    var taskContext = new TaskTrackerContext(taskOptionsBuilder.Options);
-
-    var userOptionsBuilder = new DbContextOptionsBuilder<AccountContext>();
-    userOptionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
-    var accountContext = new AccountContext(userOptionsBuilder.Options);
- 
+    var optionsBuilder = new DbContextOptionsBuilder<TaskTrackerContext>();
+    optionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
+    var taskContext = new TaskTrackerContext(optionsBuilder.Options);
+    taskContext.Database.EnsureCreated();
     ITaskRepository taskRepository = new TaskRepository(taskContext);
-    IAccountRepository accountRepository = new AccountRepository(accountContext);
+    IAccountRepository accountRepository = new AccountRepository(taskContext);
     ITaskManager taskManager = new TaskManager(taskRepository, accountRepository);
-    Console.WriteLine(taskManager);
     return taskManager;
 });
 

@@ -2,11 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;   
 
 
-public class TaskContrller : ControllerBase
+public class TaskController : ControllerBase
 {
     private readonly ITaskManager _taskManager;
 
-    public TaskContrller(ITaskManager taskManager)
+    public TaskController(ITaskManager taskManager)
     {
         _taskManager = taskManager;
     }   

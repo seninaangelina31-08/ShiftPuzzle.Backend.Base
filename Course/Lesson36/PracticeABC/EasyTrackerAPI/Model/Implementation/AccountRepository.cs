@@ -1,8 +1,8 @@
 
 public class AccountRepository : IAccountRepository
 {
-    private readonly AccountContext _context;
-    public AccountRepository(AccountContext context)
+    private readonly TaskTrackerContext _context;
+    public AccountRepository(TaskTrackerContext context)
     {
         _context = context;
     }

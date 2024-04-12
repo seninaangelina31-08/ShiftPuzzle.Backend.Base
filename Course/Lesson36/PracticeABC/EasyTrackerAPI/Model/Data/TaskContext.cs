@@ -7,8 +7,7 @@ public class TaskTrackerContext : DbContext
     {
     }
 
-    public DbSet<TrackerTask> TrackerTasks { get; set; }
-
+    public DbSet<TrackerTask> TrackerTasks { get; set; }    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     { 
          modelBuilder.Entity<TrackerTask>().HasKey(task=>task.ID);

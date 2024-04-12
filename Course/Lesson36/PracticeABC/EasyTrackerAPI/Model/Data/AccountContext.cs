@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 public class AccountContext : DbContext
 {
  
-    public AccountContext(DbContextOptions<TaskTrackerContext> options) : base(options)
+    public AccountContext(DbContextOptions<AccountContext> options) : base(options)
     {
     }
 

@@ -1,6 +1,7 @@
 public class AccountManager : IAccountManager
 {
     private readonly AccountContext _context;
+    public User CurrentUser { get; private set; }
 
     public AccountManager(AccountContext context)
     {
@@ -9,24 +10,32 @@ public class AccountManager : IAccountManager
 
     public void RegisterAccount(User account)
     {
-        // Заглушка
+        _context.Users.Add(account);
+        _context.SaveChanges();
     }
 
     public User GetAccount(string accountName)
     {
-        // Заглушка
-        return null;
+        return _context.Users.FirstOrDefault(u => u.Name == accountName);
     }
 
     public List<User> GetAccounts()
     {
-        // Заглушка
-        return null;
+        return _context.Users.ToList();
     }
 
     public bool VerifyAccount(User account)
     {
-        // Заглушка
-        return false;
+        if(_context.Users.Any(u => u.Name == account.Name && u.Password == account.Password))
+        {
+            CurrentUser = account;
+            Console.WriteLine("Account verified.");
+            return true;
+        }
+        else
+        {
+            Console.WriteLine("Account not verified.");
+            return false; 
+        }
     }
 }

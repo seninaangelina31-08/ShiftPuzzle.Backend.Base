@@ -60,8 +60,15 @@ public class TaskContrller : ControllerBase
             newTask.Description = "This is a random task";   
             newTask.DueDate = new DateTime();
             newTask.AssignedUser = new User("user_xxx");
-            _taskManager.AddTask(newTask); 
+            _taskManager.AddTask(newTask);
+
+
          }
     }
 
+    [HttpPut("api/tasks/complete/{id}")]
+    public void Complete(int id)
+    {
+        _taskManager.CompleteTask(id);
+    }
 }

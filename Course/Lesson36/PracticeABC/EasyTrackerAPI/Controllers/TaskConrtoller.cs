@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;   
+using System.Collections.Generic;  
 
 
 public class TaskContrller : ControllerBase
@@ -45,7 +45,7 @@ public class TaskContrller : ControllerBase
 
 
     [HttpGet("/api/tasks/addrandom/{id}")]
-    public void User(int id)
+    public void UserRandom(int id)
     {
          for(int x = 0 ; x < id;x++ )
          {
@@ -66,7 +66,7 @@ public class TaskContrller : ControllerBase
             newTask.Name = randomName;  
             newTask.Description = "This is a random task";   
             newTask.DueDate = new DateTime();
-            newTask.AssignedUser = new User("alkihuri");
+            // newTask.AssignedUser = new User("alkihuri");
             _taskManager.AddTask(newTask); 
          }
     }

@@ -5,9 +5,8 @@ using System.Text.Json.Serialization;
 public class User
 { 
 
-    public User(string name)
-    {
-        Name = name; 
+    public User()
+    { 
     }
 
     public long ID { get; set; }

@@ -23,6 +23,16 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
     return taskManager;
 });
 
+builder.Services.AddSingleton<IAccountManager>(provider =>
+{
+    var optionsBuilder = new DbContextOptionsBuilder<AccountContext>();
+    optionsBuilder.UseSqlite("Data Source=ПУТЬ К БАЗЕ.db"); 
+    var accountContext = new AccountContext(optionsBuilder.Options);
+    accountContext.Database.EnsureCreated();  
+    IAccountManager accountManager = new AccountManager(accountContext);
+
+    return accountManager;
+});
 
 var app = builder.Build();
 

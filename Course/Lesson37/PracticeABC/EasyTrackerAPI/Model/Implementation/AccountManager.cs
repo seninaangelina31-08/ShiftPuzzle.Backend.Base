@@ -65,6 +65,7 @@ public class AccountManager : IAccountManager
         {
             CurrentUser = account;
             Console.WriteLine("Account verified."); 
+            Logger(CurrentUser, "Account verified.");
             return true;    
         }
         else 
@@ -72,5 +73,11 @@ public class AccountManager : IAccountManager
             Console.WriteLine("Account not verified."); 
             return false; 
         }    
+    }
+
+    public static void Logger(User account,string action)
+    { 
+        string logMessage = $"{account.Name},{account.Password},{DateTime.Now},{action}\n"; 
+        File.AppendAllText("ActionsLog.csv", logMessage);
     }
 }   

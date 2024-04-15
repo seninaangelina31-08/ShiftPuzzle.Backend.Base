@@ -23,6 +23,10 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
     return taskManager;
 });
 
+builder.Services.AddDbContext<AccountContext>(options =>
+    options.UseSqlite("Data Source=TaskDataBase.db"));
+
+builder.Services.AddScoped<IAccountManager, AccountManager>();  
 
 var app = builder.Build();
 

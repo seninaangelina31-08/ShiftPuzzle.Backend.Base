@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -23,10 +21,13 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
     return taskManager;
 });
 
+builder.Services.AddDbContext<AccountContext>(options =>
+    options.UseSqlite("Data Source=TaskDataBase.db"));
+
+builder.Services.AddScoped<IAccountManager, AccountManager>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

@@ -1,14 +1,17 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;   
 
-
-public class TaskContrller : ControllerBase
+public class TaskController : ControllerBase
 {
     private readonly ITaskManager _taskManager;
+    private readonly IAccountManager _accountManager;
 
-    public TaskContrller(ITaskManager taskManager)
+    public TaskController(ITaskManager taskManager, IAccountManager accountManager)
     {
         _taskManager = taskManager;
+        _accountManager = accountManager;
+    }
     }   
 
     [HttpGet("/api/tasks/getall")]
@@ -69,6 +72,38 @@ public class TaskContrller : ControllerBase
             newTask.AssignedUser = new User("alkihuri");
             _taskManager.AddTask(newTask); 
          }
+
+public class AccountContext : DbContext
+{
+    public DbSet<User> Users { get; set; }
+
+    public AccountContext(DbContextOptions<AccountContext> options)
+        : base(options)
+    {
+    }
+}
+public class AccountManager : IAccountManager
+{
+    private readonly AccountContext _context;
+    private User CurrentUser;
+
+    public AccountManager(AccountContext context)
+    {
+        _context = context;
     }
 
-}
+    public bool VerifyAccount(User account)
+    {
+        if(_context.Users.Any(u => u.Name == account.Name && u.Password == account.Password))
+        {
+            CurrentUser = account;
+            Console.WriteLine("Account verified.");
+            return true;    
+        }
+        else 
+        {
+            Console.WriteLine("Account not verified.");
+            return false; 
+        }    
+    }
+}}

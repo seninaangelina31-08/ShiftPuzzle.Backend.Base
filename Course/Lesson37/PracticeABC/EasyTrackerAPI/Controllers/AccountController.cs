@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;   
 
@@ -28,7 +29,15 @@ public class AccountController : ControllerBase
     {
         Console.WriteLine("Registering account: " + account.Name); 
         _accountManager.RegisterAccount(account); 
-        return Ok(account); 
+
+        bool isVerified = _accountManager.VerifyAccount(account);
+
+        var response = new {
+            User = account,
+            isVerified = isVerified
+        };
+
+        return Ok(response); 
     }   
 
     [HttpPost("api/account/verify")]    

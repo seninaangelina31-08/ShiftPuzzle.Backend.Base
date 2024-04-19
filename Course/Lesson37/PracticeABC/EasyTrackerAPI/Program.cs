@@ -10,17 +10,30 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
- 
+
+
 builder.Services.AddSingleton<ITaskManager>(provider =>
 {
-    var optionsBuilder = new DbContextOptionsBuilder<TaskTrackerContext>();
-    optionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
-    var taskContext = new TaskTrackerContext(optionsBuilder.Options);
+    var taskOptionsBuilder = new DbContextOptionsBuilder<TaskTrackerContext>();
+    taskOptionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
+    var taskContext = new TaskTrackerContext(taskOptionsBuilder.Options);
     taskContext.Database.EnsureCreated();
     ITaskRepository taskRepository = new TaskRepository(taskContext);
-    IAccountRepository accountRepository = new AccountRepository(taskContext);
-    ITaskManager taskManager = new TaskManager(taskRepository, accountRepository);
+    ITaskManager taskManager = new TaskManager(taskRepository);
+
     return taskManager;
+});
+
+builder.Services.AddSingleton<IAccountManager>(provider =>
+{
+    var accountOptionsBuilder = new DbContextOptionsBuilder<AccountContext>();
+    accountOptionsBuilder.UseSqlite("Data Source=TaskDataBase.db");
+    var accountContext = new AccountContext(accountOptionsBuilder.Options);
+    accountContext.Database.EnsureCreated();
+    IAccountRepository accountRepository = new AccountRepository(accountContext);
+    IAccountManager accountManager = new AccountManager(accountRepository);
+
+    return accountManager;
 });
 
 

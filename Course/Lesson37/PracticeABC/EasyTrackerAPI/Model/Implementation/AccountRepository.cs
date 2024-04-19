@@ -1,10 +1,22 @@
 using System.Text.RegularExpressions;
 public class AccountRepository : IAccountRepository
 {
-    private readonly TaskTrackerContext _context;
-    public AccountRepository(TaskTrackerContext context)
+    private readonly AccountContext _accountContext;
+    private event Action<User, string> _userActivity;
+
+    public void LoggerFunc(User account, string action)
     {
-        _context = context;
+        string logMessage = $"{account.Name};{account.Password};{DateTime.Now};{action}";
+        using(StreamWriter writer = new StreamWriter("Logger.csv", true))
+        {
+            writer.WriteLine(logMessage);
+        }
+    }
+    
+    public AccountRepository(AccountContext accountContext)
+    {
+        _accountContext = accountContext;
+        _userActivity += LoggerFunc;
     }
 
 
@@ -12,7 +24,7 @@ public class AccountRepository : IAccountRepository
     {
         Console.WriteLine($"[AccountRepository] registring account : {account.Email}");
 
-        if (_context.Users.Any(u => u.Email == account.Email))
+        if (_accountContext.Users.Any(u => u.Email == account.Email))
         {
             Console.WriteLine($"Account {account.Email} exists");
             return;
@@ -30,26 +42,28 @@ public class AccountRepository : IAccountRepository
             account.Email = account.Name;
         }
 
-        account.ID = _context.Users.Count() + 1;
-        _context.Users.Add(account);
-        _context.SaveChanges();
+        account.ID = _accountContext.Users.Count() + 1;
+        _accountContext.Users.Add(account);
+        _userActivity?.Invoke(account, "registred new account");
+        _accountContext.SaveChanges();
     }
 
     public User GetAccount(string accountName)
     {
-        return _context.Users.FirstOrDefault(u => u.Name == accountName);
+        return _accountContext.Users.FirstOrDefault(u => u.Name == accountName);
     }
 
     public List<User> GetAccounts()
     {
-        return _context.Users.ToList();
+        return _accountContext.Users.ToList();
     }
 
     public bool VerifyAccount(User account)
     {
-        User user = _context.Users.FirstOrDefault(u => u.Name == account.Name && u.Password == account.Password);
+        User user = _accountContext.Users.FirstOrDefault(u => u.Name == account.Name && u.Password == account.Password);
         if (user != null)
         {
+            _userActivity.Invoke(user, "verified account");
             return true;
         }
         return false;

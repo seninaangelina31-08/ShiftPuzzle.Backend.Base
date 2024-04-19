@@ -22,7 +22,6 @@ public class AccountController : ControllerBase
     {
     
         bool isVerified = _taskManager.VerifyAccount(account);
-        _taskManager
         var response = new
         {
             User = account,

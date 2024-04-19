@@ -1,40 +1,45 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;   
 
-
+[Controller]
+[Route("/api/account/")]
 public class AccountController : ControllerBase
 {
-    private readonly IAccountManager _accountManager;
+    private readonly ITaskManager _taskManager;
 
-    public AccountController(IAccountManager accountManager)
+    public AccountController(ITaskManager taskManager)
     {
-        _accountManager = accountManager;
-    }   
-
-    [HttpGet("/api/account/getall")]
-    public IActionResult GetAll()
-    {
-        return Ok(_accountManager.GetAccounts());
+        _taskManager = taskManager;
     }
 
-    [HttpGet("/api/account/get/{name}")]
-    public IActionResult Get(string name)
+    [HttpPost("verify")]
+    public IActionResult VerifyAccount(string email, string password)
     {
-        return Ok(_accountManager.GetAccount(name));
+        return Ok(_taskManager.VerifyAccount(email, password));
     }
 
-    [HttpPost("/api/account/register")]
-    public IActionResult Create([FromBody] User account)
+    [HttpPost("register")]
+    public IActionResult RegisterAccount([FromBody] User account)
     {
-        Console.WriteLine("Registering account: " + account.Name); 
-        _accountManager.RegisterAccount(account); 
-        return Ok(account); 
-    }   
+    
+        bool isVerified = _taskManager.VerifyAccount(account);
+        _taskManager
+        var response = new
+        {
+            User = account,
+            IsVerified = isVerified
+        };
+        return Ok(response);
+    }
 
-    [HttpPost("api/account/verify")]    
-    public IActionResult Verify([FromBody] User account)
+    [HttpGet("get/{name}")]
+    public IActionResult GetAccount(string name)
     {
-        return Ok(_accountManager.VerifyAccount(account));
-    }   
+        return Ok(_taskManager.GetAccount(name));
+    }
 
-} 
+    [HttpGet("getall")]
+    public IActionResult GetAccounts()
+    {
+        return Ok(_taskManager.GetAccounts());
+    }
+}

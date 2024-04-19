@@ -1,4 +1,4 @@
-public interface IAccountManager
+public interface IAccountRepository
 {
     void RegisterAccount(User account); 
     User GetAccount(string accountName);

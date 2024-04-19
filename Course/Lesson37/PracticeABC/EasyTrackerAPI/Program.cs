@@ -16,35 +16,22 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
     var optionsBuilder = new DbContextOptionsBuilder<TaskTrackerContext>();
     optionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
     var taskContext = new TaskTrackerContext(optionsBuilder.Options);
-    taskContext.Database.EnsureCreated(); 
+    taskContext.Database.EnsureCreated();
     ITaskRepository taskRepository = new TaskRepository(taskContext);
-    ITaskManager taskManager = new TaskManager(taskRepository);
-
+    IAccountRepository accountRepository = new AccountRepository(taskContext);
+    ITaskManager taskManager = new TaskManager(taskRepository, accountRepository);
     return taskManager;
 });
 
-builder.Services.AddSingleton<IAccountManager>(provider =>
-{
-    var optionsBuilder = new DbContextOptionsBuilder<AccountContext>();
-    optionsBuilder.UseSqlite("Data Source=AccountDataBase.db"); 
-    var accountContext = new AccountContext(optionsBuilder.Options);
-    accountContext.Database.EnsureCreated();  
-    IAccountManager accountManager = new AccountManager(accountContext);
 
-    return accountManager;
-});
-
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "EasyTaskTracker API", Version = "v1" });
-}); 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
- 
-app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EasyTaskTracker API v1"));
- 
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

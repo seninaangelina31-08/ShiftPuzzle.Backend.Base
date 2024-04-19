@@ -62,4 +62,11 @@ public class TaskContrller : ControllerBase
          }
     }
 
+
+    [HttpGet("/api/tasks/ChangeStatus/{taskId}")]
+    public void ChangeStatus(int taskId) 
+    {
+        _taskManager.ChangeStatus(taskId);
+    }
+
 }

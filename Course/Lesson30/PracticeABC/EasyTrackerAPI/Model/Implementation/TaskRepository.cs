@@ -9,7 +9,7 @@ public class TaskRepository : ITaskRepository
 
     public void AddTask(TrackerTask task)
     {
-        _context.TrackerTasks.Add(task);
+        _context.TrackerTasks?.Add(task);
         _context.SaveChanges();
     }
 
@@ -31,5 +31,15 @@ public class TaskRepository : ITaskRepository
     public TrackerTask GetTaskById(int taskId)
     {
         return _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
+    }
+
+    public void ChangeStatus(int taskId) 
+    {
+        var task = _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
+
+        if (task != null)
+        {
+            task.IsComplete = !task.IsComplete;
+        }
     }
 }

@@ -26,4 +26,9 @@ public class TaskManager : ITaskManager
     { 
         return _taskRepository.GetTaskById(taskId);
     }
+
+    public void ChangeStatus(int taskId) 
+    {
+        _taskRepository.ChangeStatus(taskId);
+    }
 }

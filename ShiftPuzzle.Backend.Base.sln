@@ -105,6 +105,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson28_EasyTaskTrackerAPI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson29_EasyTrackerAPI", "Course\Lesson29\PracticeABC\EasyTrackerAPI\Lesson29_EasyTrackerAPI.csproj", "{2683DB02-F923-4257-9FA6-B9F0099DCE0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson30_EasyTaskTrackerAPI", "Course\Lesson30\PracticeABC\EasyTrackerAPI\Lesson30_EasyTaskTrackerAPI.csproj", "{940BD4CD-C282-4A26-8DB3-2304A8D09029}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -259,6 +261,10 @@ Global
 		{2683DB02-F923-4257-9FA6-B9F0099DCE0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2683DB02-F923-4257-9FA6-B9F0099DCE0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2683DB02-F923-4257-9FA6-B9F0099DCE0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{940BD4CD-C282-4A26-8DB3-2304A8D09029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940BD4CD-C282-4A26-8DB3-2304A8D09029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940BD4CD-C282-4A26-8DB3-2304A8D09029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940BD4CD-C282-4A26-8DB3-2304A8D09029}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -314,6 +320,7 @@ Global
 		{5E2D181A-7CE1-4285-9186-229888C5E360} = {2A5B7D9B-F828-4B5E-93FC-E137CD29D993}
 		{FF0022B2-76F7-4456-B47C-F453AAC30FD6} = {B4CEF082-2D11-43C6-8F1F-324BA24D1E44}
 		{2683DB02-F923-4257-9FA6-B9F0099DCE0E} = {B4CEF082-2D11-43C6-8F1F-324BA24D1E44}
+		{940BD4CD-C282-4A26-8DB3-2304A8D09029} = {B4CEF082-2D11-43C6-8F1F-324BA24D1E44}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {911E8B6B-DA12-4528-9F63-443BEE925694}

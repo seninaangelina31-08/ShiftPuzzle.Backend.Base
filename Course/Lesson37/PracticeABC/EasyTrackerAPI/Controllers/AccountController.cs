@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;   
 
-
+[Controller]
+[Route("/api/account/")]
 public class AccountController : ControllerBase
 {
     private readonly IAccountManager _accountManager;
@@ -9,32 +9,42 @@ public class AccountController : ControllerBase
     public AccountController(IAccountManager accountManager)
     {
         _accountManager = accountManager;
-    }   
-
-    [HttpGet("/api/account/getall")]
-    public IActionResult GetAll()
-    {
-        return Ok(_accountManager.GetAccounts());
     }
 
-    [HttpGet("/api/account/get/{name}")]
-    public IActionResult Get(string name)
+    [HttpPost("verify")]
+    public IActionResult VerifyAccount([FromBody] User account)
+    {
+        bool isVerified = _accountManager.VerifyAccount(account);
+        var response = new
+        {
+            User = account,
+            IsVerified = isVerified
+        };
+        return Ok(response);
+    }
+
+    [HttpPost("register")]
+    public IActionResult RegisterAccount([FromBody] User account)
+    {
+        _accountManager.RegisterAccount(account);
+        bool isVerified = _accountManager.VerifyAccount(account);
+        var response = new
+        {
+            User = account,
+            IsVerified = isVerified
+        };
+        return Ok(response);
+    }
+
+    [HttpGet("get/{name}")]
+    public IActionResult GetAccount(string name)
     {
         return Ok(_accountManager.GetAccount(name));
     }
 
-    [HttpPost("/api/account/register")]
-    public IActionResult Create([FromBody] User account)
+    [HttpGet("getall")]
+    public IActionResult GetAccounts()
     {
-        Console.WriteLine("Registering account: " + account.Name); 
-        _accountManager.RegisterAccount(account); 
-        return Ok(account); 
-    }   
-
-    [HttpPost("api/account/verify")]    
-    public IActionResult Verify([FromBody] User account)
-    {
-        return Ok(_accountManager.VerifyAccount(account));
-    }   
-
-} 
+        return Ok(_accountManager.GetAccounts());
+    }
+}

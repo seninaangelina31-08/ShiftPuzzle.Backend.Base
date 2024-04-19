@@ -10,13 +10,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
- 
+
+
 builder.Services.AddSingleton<ITaskManager>(provider =>
 {
-    var optionsBuilder = new DbContextOptionsBuilder<TaskTrackerContext>();
-    optionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
-    var taskContext = new TaskTrackerContext(optionsBuilder.Options);
-    taskContext.Database.EnsureCreated(); 
+    var taskOptionsBuilder = new DbContextOptionsBuilder<TaskTrackerContext>();
+    taskOptionsBuilder.UseSqlite("Data Source=TaskDataBase.db"); 
+    var taskContext = new TaskTrackerContext(taskOptionsBuilder.Options);
+    taskContext.Database.EnsureCreated();
     ITaskRepository taskRepository = new TaskRepository(taskContext);
     ITaskManager taskManager = new TaskManager(taskRepository);
 
@@ -25,26 +26,25 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
 
 builder.Services.AddSingleton<IAccountManager>(provider =>
 {
-    var optionsBuilder = new DbContextOptionsBuilder<AccountContext>();
-    optionsBuilder.UseSqlite("Data Source=AccountDataBase.db"); 
-    var accountContext = new AccountContext(optionsBuilder.Options);
-    accountContext.Database.EnsureCreated();  
-    IAccountManager accountManager = new AccountManager(accountContext);
+    var accountOptionsBuilder = new DbContextOptionsBuilder<AccountContext>();
+    accountOptionsBuilder.UseSqlite("Data Source=TaskDataBase.db");
+    var accountContext = new AccountContext(accountOptionsBuilder.Options);
+    accountContext.Database.EnsureCreated();
+    IAccountRepository accountRepository = new AccountRepository(accountContext);
+    IAccountManager accountManager = new AccountManager(accountRepository);
 
     return accountManager;
 });
 
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "EasyTaskTracker API", Version = "v1" });
-}); 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
- 
-app.UseSwagger();
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EasyTaskTracker API v1"));
- 
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

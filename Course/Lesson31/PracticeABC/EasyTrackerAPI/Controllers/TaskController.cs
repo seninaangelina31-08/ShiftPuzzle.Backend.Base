@@ -1,15 +1,14 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;   
 
 
-public class TaskContrller : ControllerBase
+public class TaskController : ControllerBase
 {
     private readonly ITaskManager _taskManager;
 
-    public TaskContrller(ITaskManager taskManager)
+    public TaskController(ITaskManager taskManager)
     {
         _taskManager = taskManager;
-    }   
+    }
 
     [HttpGet("/api/tasks/getall")]
     public IEnumerable<TrackerTask> GetAll()
@@ -32,36 +31,43 @@ public class TaskContrller : ControllerBase
 
     [HttpGet("/api/tasks/delete/{id}")]
     public void Delete(int id)
-    {  
-        _taskManager.DeleteTask(id); 
+    {
+        _taskManager.DeleteTask(id);
+    }
+
+
+    [HttpGet("/api/tasks/complete/{id}")]
+    public void Complete(int taskId)
+    {
+        _taskManager.CompleteTask(taskId);
     }
 
 
     [HttpGet("/api/tasks/addrandom/{id}")]
     public void AddRandom(int id)
     {
-         for(int x = 0 ; x < id;x++ )
-         {
-            int lastTaskID = 0 ;
+        for (int x = 0; x < id; x++)
+        {
+            int lastTaskID = 0;
             try
             {
-                var tasks = _taskManager.GetAllTasks(); 
-                lastTaskID = (int)tasks.Max(t => t.ID);   
-            } 
+                var tasks = _taskManager.GetAllTasks();
+                lastTaskID = (int)tasks.Max(t => t.ID);
+            }
             catch
             {
-                lastTaskID = 0; 
+                lastTaskID = 0;
             }
-            
+
             var newTask = new TrackerTask();
             var randomName = "Task #" + (lastTaskID + x).ToString();
-            newTask.ID = lastTaskID + x;       
-            newTask.Name = randomName;  
-            newTask.Description = "This is a random task";   
+            newTask.ID = lastTaskID + x;
+            newTask.Name = randomName;
+            newTask.Description = "This is a random task";
             newTask.DueDate = new DateTime();
             newTask.AssignedUser = new User("user_xxx");
-            _taskManager.AddTask(newTask); 
-         }
+            _taskManager.AddTask(newTask);
+        }
     }
 
 }

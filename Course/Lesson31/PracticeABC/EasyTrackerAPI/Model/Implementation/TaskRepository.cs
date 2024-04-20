@@ -14,9 +14,9 @@ public class TaskRepository : ITaskRepository
     }
 
     public void DeleteTask(int taskid)
-    {   
+    {
         _context.TrackerTasks.Where(t => t.ID == taskid).ToList().ForEach(t => _context.TrackerTasks.Remove(t));
-        _context.SaveChanges(); 
+        _context.SaveChanges();
     }
 
     public List<TrackerTask> GetAllTasks()
@@ -27,5 +27,16 @@ public class TaskRepository : ITaskRepository
     public TrackerTask GetTaskById(int taskId)
     {
         return _context.TrackerTasks.FirstOrDefault(t => t.ID == taskId);
+    }
+
+    public void CompleteTask(int taskId)
+    {
+        var task = _context.TrackerTasks.Where(t => t.ID == taskId).FirstOrDefault();
+
+        if (task != null)
+        {
+            task.IsComplete = true;
+            _context.SaveChanges();
+        }
     }
 }

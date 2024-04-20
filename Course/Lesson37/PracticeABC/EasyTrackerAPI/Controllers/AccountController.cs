@@ -28,6 +28,14 @@ public class AccountController : ControllerBase
     {
         Console.WriteLine("Registering account: " + account.Name); 
         _accountManager.RegisterAccount(account); 
+
+        bool isVerified = _accountManager.VerifyAccount(account);
+
+        var response = new {
+            User = account,
+            isVerified = isVerified
+        };
+        
         return Ok(account); 
     }   
 
@@ -36,5 +44,6 @@ public class AccountController : ControllerBase
     {
         return Ok(_accountManager.VerifyAccount(account));
     }   
+
 
 } 

@@ -52,10 +52,10 @@ public bool VerifyAccount(User account)
 
 
 
-> Подсказка
+> Подсказки:
 
 
->> СПИСКИ ENDPOINT`ОВ:
+# Списки ENDPOINT`ОВ:
 
 
 >>> [HttpPost("api/account/verify")]      
@@ -68,7 +68,7 @@ public bool VerifyAccount(User account)
 
 
 
->> Настройка зависимостей в [Programm.cs]
+# Настройка зависимостей в [Programm.cs]
 ```C#
 builder.Services.AddSingleton<IAccountManager>(provider =>
 {

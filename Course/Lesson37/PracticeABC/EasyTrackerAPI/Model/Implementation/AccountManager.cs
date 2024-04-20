@@ -5,8 +5,13 @@ using System.Security.Cryptography.X509Certificates;
 public class AccountManager : IAccountManager
 {
     private readonly AccountContext _context;
+    public  static User CurrentUser;  
 
-    public  static User CurrentUser;    
+    public static void Logger(User account,string action)
+    { 
+        string logMessage = $"{account.Name},{account.Password},{DateTime.Now},{action}\n"; 
+        File.AppendAllText("ActionsLog.csv", logMessage);
+    }  
 
     public AccountManager(AccountContext context)
     {

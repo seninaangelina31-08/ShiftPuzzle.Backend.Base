@@ -42,6 +42,11 @@ public class TaskController : ControllerBase
         _taskManager.Complete(id);
     }
 
+     public static void Logger(User account,string action)
+    { 
+        string logMessage = $"{account.Name},{account.Password},{DateTime.Now},{action}\n"; 
+        System.IO.File.AppendAllText("ActionsLog.csv", logMessage);
+    }
 
 
     [HttpGet("/api/tasks/addrandom/{id}")]

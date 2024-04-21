@@ -1,0 +1,44 @@
+public class AccountManager : IAccountManager
+{
+    private readonly AccountContext _context;
+    public User CurrentUser;
+
+    public AccountManager(AccountContext context)
+    {
+        _context = context;
+    }
+
+    public void RegisterAccount(User account)
+    {
+        if(!_context.Users.Any(u => u.Name == account.Name))
+        {
+            _context.Users.Add(account);
+            _context.SaveChanges();
+        }
+    }
+
+    public User GetAccount(string accountName)
+    {
+        return _context.Users.FirstOrDefault(u => u.Name == accountName);
+    }
+
+    public List<User> GetAccounts()
+    {
+        return _context.Users.ToList();
+    } 
+
+    public bool VerifyAccount(User account) 
+    {
+        if(_context.Users.Any(u => u.Name == account.Name && u.Password == account.Password))
+        {
+            CurrentUser = account;
+            Console.WriteLine("Account verified.");
+            return true;    
+        }
+        else 
+        {
+            Console.WriteLine("Account not verified.");
+            return false; 
+        }    
+    }
+}

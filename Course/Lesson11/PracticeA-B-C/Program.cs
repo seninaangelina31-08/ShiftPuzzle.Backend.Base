@@ -60,7 +60,7 @@ public class StudetnFileService
         students = data;
     }
 
-    public  void SaveToFile(string filePath=FilePath)
+    public void SaveToFile(string filePath=FilePath)
     {
         using (var writer = new StreamWriter(filePath))
         {
@@ -128,44 +128,51 @@ class SimpleDB
 
     public void SaveDB()
     {
-        StudetnFileService MyService = new StudetnFileService(students);
-        MyService.SaveToFile();
-        Console.WriteLine(" функция SaveToFile");
+        fileService.SaveToFile("students.txt");
+        //  practice B;
     }
 
     public void LoadDB()
     {
-        StudetnFileService MyService = new StudetnFileService(students);
-        MyService.LoadFromFile();
-        students = MyService.students;
-        Console.WriteLine("функция LoadFromFile");
+        fileService.LoadFromFile("students.txt");
+        //  practice B;
     }
     public void AddStudent(string name)
     {
-        Student student = new Student(name);
-        students.Add(student);
-        Console.WriteLine("добавление студента ");
-         
+        var st = new Student(name);
+        students.Add(name, st);
+        Console.WriteLine("Студент добавлен в базу данных.");
+         //  practice A;
     }
 
- public void RemoveStudent(string name)
+    public void RemoveStudent(string name)
     {
-        Student studentToRemove = students.Find(student => student.Name == name);
-        if (studentToRemove != null)
+        if (students.Remove(name))
         {
-            students.Remove(studentToRemove);
-            Console.WriteLine("Студент " + name + " успешно удален.");
+            Console.WriteLine("Студент удален из базы данных.");
         }
         else
         {
-            Console.WriteLine("Студент " + name + " не найден.");
+            Console.WriteLine("Студент не найден в базе данных.");
         }
+         //  practice A;
     }
-
 
     public void ShowStudentInfo(string name)
     {
-        Console.WriteLine("Студент: " + name);
+        var st = students[name];
+        Console.WriteLine($"Студент: {st.Name}");
+        Console.WriteLine("Оценки: ");
+        foreach (var grade in st.Grades)
+        {
+            Console.WriteLine($"{grade.Key}: {grade.Value}");
+        }
+        Console.WriteLine("Посещаемость: ");
+        foreach (var attendance in st.Attendance)
+        {
+            Console.WriteLine($"{attendance.Key}: {attendance.Value}");
+        }
+         //  practice A;
     }
 
     public Student GetStudent(string name)
@@ -190,7 +197,7 @@ class Program
         var db = new SimpleDB(); 
         while (true)
         {
-            Console.WriteLine("\n1. Dobavit' srudenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");
+            Console.WriteLine("\n1. Dobavit' studenta\n2. Pokazat studenta\n3. Udalit' studenta\n4. Dobavit' ocenku\n5. Dobavit' poseshaemost'\n6 Soxranit' bazu dannix\n0. Vixod");
             Console.Write("Vibor: ");
 
             if (!int.TryParse(Console.ReadLine(), out int choice))

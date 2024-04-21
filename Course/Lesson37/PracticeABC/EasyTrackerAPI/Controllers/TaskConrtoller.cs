@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;   
 
-
 public class TaskContrller : ControllerBase
 {
     private readonly ITaskManager _taskManager;
@@ -28,47 +27,26 @@ public class TaskContrller : ControllerBase
     public void Create([FromBody] TrackerTask task)
     {
         _taskManager.AddTask(task);
+        Logger(AccountManager.CurrentUser, "Added a task");
     }
 
     [HttpGet("/api/tasks/delete/{id}")]
     public void Delete(int id)
     {  
         _taskManager.DeleteTask(id); 
+        Logger(AccountManager.CurrentUser, "Deleted a task");
     }
 
     [HttpGet("/api/tasks/complete/{id}")]
     public void CompleteTask(int id)
     {
         _taskManager.Complete(id);
+        Logger(AccountManager.CurrentUser, "Completed a task");
     }
 
-
-
-    [HttpGet("/api/tasks/addrandom/{id}")]
-    public void User(int id)
-    {
-         for(int x = 0 ; x < id;x++ )
-         {
-            int lastTaskID = 0 ;
-            try
-            {
-                var tasks = _taskManager.GetAllTasks(); 
-                lastTaskID = (int)tasks.Max(t => t.ID);   
-            } 
-            catch
-            {
-                lastTaskID = 0; 
-            }
-            
-            var newTask = new TrackerTask();
-            var randomName = "Task #" + (lastTaskID + x).ToString();
-            newTask.ID = lastTaskID + x;       
-            newTask.Name = randomName;  
-            newTask.Description = "This is a random task";   
-            newTask.DueDate = new DateTime();
-            newTask.AssignedUser = new User("alkihuri");
-            _taskManager.AddTask(newTask); 
-         }
+    public static void Logger(User user, string action)
+    {  
+        string logMessage = $"{user.Name},{user.Password},{DateTime.Now},{action}\n"; 
+        System.IO.File.AppendAllText("ActionsLog.csv", logMessage);
     }
-
 }

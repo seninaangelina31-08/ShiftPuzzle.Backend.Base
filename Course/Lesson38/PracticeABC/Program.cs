@@ -1,15 +1,16 @@
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Добавляем необходимые сервисы в контейнер
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Добавляем Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Настраиваем конвейер обработки HTTP-запросов
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -17,9 +18,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
+// Добавляем контроллеры
 app.MapControllers();
 
 app.Run();
+

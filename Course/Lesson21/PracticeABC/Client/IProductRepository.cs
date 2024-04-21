@@ -10,8 +10,4 @@ namespace Client
         void UpdateProduct(Product product);
         void DeleteProduct(string name);
     }
-    public class SQLLiteProductRepository : IProductRepository
-    {
-        return null;
-    }
 }

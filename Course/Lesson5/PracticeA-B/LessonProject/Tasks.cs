@@ -9,9 +9,29 @@ namespace LessonProject
             Console.WriteLine("Задача 1: Найти в массиве целых чисел первый подмассив длиной N, сумма элементов которого максимальна. Вывести найденный подмассив.");
             Console.WriteLine("РЕШЕНИЕ:");
 
-            //решайте задачу здесь
+         using System;
+using System.Linq;
 
-            //не выходя за пределы   решить хотя бы 2
+class MainClass {
+    public static void Main (string[] args) {
+        int[] array = {1, -3, 4, -2, -1, 6, -5, 8};
+
+        int N = 3; // длина подмассива
+        int maxSum = int.MinValue;
+        int[] maxSubarray = new int[N];
+
+        for (int i = 0; i <= array.Length - N; i++) {
+            int sum = array.Skip(i).Take(N).Sum();
+            if (sum > maxSum) {
+                maxSum = sum;
+                maxSubarray = array.Skip(i).Take(N).ToArray();
+            }
+        }
+
+        Console.WriteLine("Подмассив с максимальной суммой: [" + string.Join(", ", maxSubarray) + "]");
+    }
+}
+
         }
     }
 
@@ -22,9 +42,23 @@ namespace LessonProject
             Console.WriteLine("\n\n\nЗадача 2: Создать массив случайных чисел, сортировать его по возрастанию, затем найти количество уникальных чисел. Вывести отсортированный массив и количество уникальных чисел.");
             Console.WriteLine("РЕШЕНИЕ:");
 
-            //решайте задачу здесь
+           using System;
+using System.Linq;
 
-            //не выходя за пределы
+class MainClass {
+    public static void Main (string[] args) {
+        Random random = new Random();
+        int[] array = Enumerable.Range(1, 10).Select(x => random.Next(1, 10)).ToArray(); // создаем массив случайных чисел
+        Console.WriteLine("Исходный массив: [" + string.Join(", ", array) + "]");
+
+        Array.Sort(array);
+        
+        int uniqueCount = array.Distinct().Count();
+        Console.WriteLine("Отсортированный массив: [" + string.Join(", ", array) + "]");
+        Console.WriteLine("Количество уникальных элементов: " + uniqueCount);
+    }
+}
+
         }
     }
 
@@ -35,9 +69,29 @@ namespace LessonProject
             Console.WriteLine("\n\n\nЗадача 3: Анализировать массив целых чисел и определить число, которое встречается чаще всего. Если таких чисел несколько, вывести их все и указать, сколько раз каждое из них встречается в массиве.");
             Console.WriteLine("РЕШЕНИЕ:");
 
-            //решайте задачу здесь
+           using System;
+using System.Linq;
+using System.Collections.Generic;
 
-            //не выходя за пределы
+class MainClass {
+    public static void Main (string[] args) {
+        int[] array = {2, 3, 5, 3, 7, 3, 5, 8, 3, 5};
+
+        Dictionary<int, int> count = new Dictionary<int, int>();
+        foreach (int num in array) {
+            if (count.ContainsKey(num))
+                count[num]++;
+            else
+                count[num] = 1;
+        }
+
+        int maxCount = count.Max(x => x.Value);
+        var mostFrequent = count.Where(x => x.Value == maxCount).Select(x => x.Key).ToList();
+        
+        Console.WriteLine("Число(а), которое встречается чаще всего: " + string.Join(", ", mostFrequent) + ". Повторяется " + maxCount + " раз(а).");
+    }
+}
+
         }
     }
 

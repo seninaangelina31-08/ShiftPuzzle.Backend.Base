@@ -1,6 +1,7 @@
-
+using Microsoft.AspNetCore.Authorization;
 using System.Text.Json.Serialization;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,8 +39,19 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "EasyTaskTracker API", Version = "v1" });
 }); 
+
+builder.Services.AddIdentity<IdentityUser>().AddEntityFramewirkStores<AccountContext>();
+
+builder.Services.AddScoped<UserManager<IdentityUser>>();
+builder.Services.AddScoped<SignInManager<IdentityUser>>();
+
+builder.Services.AddAuthentication("Bearer").AddJwtBearer();
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
+app.UseAuthentication();
+app.UseAuthorization();
 // Configure the HTTP request pipeline.
  
 app.UseSwagger();

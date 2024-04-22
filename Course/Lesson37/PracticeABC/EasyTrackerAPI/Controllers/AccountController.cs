@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;   
-
 
 public class AccountController : ControllerBase
 {
@@ -26,15 +24,26 @@ public class AccountController : ControllerBase
     [HttpPost("/api/account/register")]
     public IActionResult Create([FromBody] User account)
     {
-        Console.WriteLine("Registering account: " + account.Name); 
-        _accountManager.RegisterAccount(account); 
-        return Ok(account); 
+        _accountManager.RegisterAccount(account);
+        bool isVerified = _accountManager.VerifyAccount(account);
+        var response = new
+        {
+            User = account,
+            isVerified = isVerified
+        };
+        return Ok(response); 
     }   
 
     [HttpPost("api/account/verify")]    
     public IActionResult Verify([FromBody] User account)
     {
-        return Ok(_accountManager.VerifyAccount(account));
+        bool isVerified = _accountManager.VerifyAccount(account);
+        var response = new
+        {
+            User = account,
+            isVerified = isVerified
+        };
+        return Ok(response); 
     }   
 
 } 

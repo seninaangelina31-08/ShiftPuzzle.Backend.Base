@@ -40,7 +40,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new() { Title = "EasyTaskTracker API", Version = "v1" });
 }); 
 
-builder.Services.AddIdentity<IdentityUser>().AddEntityFramewirkStores<AccountContext>();
+builder.Services.AddIdentityCore<IdentityUser>().AddEntityFrameworkStores<AccountContext>();
 
 builder.Services.AddScoped<UserManager<IdentityUser>>();
 builder.Services.AddScoped<SignInManager<IdentityUser>>();

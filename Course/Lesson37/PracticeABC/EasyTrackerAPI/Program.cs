@@ -1,10 +1,13 @@
-
+using Microsoft.AspNetCore.Authorization;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore; 
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAuthentication("Bearer").AddJwtBearer();
+builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -38,6 +41,15 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "EasyTaskTracker API", Version = "v1" });
 }); 
+
+//builder.Services.AddDbContext<AccountContext>();
+
+builder.Services.AddIdentityCore<IdentityUser>()
+    .AddEntityFrameworkStores<AccountContext>();
+
+builder.Services.AddScoped<UserManager<IdentityUser>>();
+builder.Services.AddScoped<SignInManager<IdentityUser>>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -49,6 +61,7 @@ app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EasyTaskTra
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 

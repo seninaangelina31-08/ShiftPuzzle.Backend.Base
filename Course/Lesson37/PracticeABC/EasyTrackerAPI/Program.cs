@@ -39,7 +39,7 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
 builder.Services.AddSingleton<IAccountManager>(provider =>
 {
     var accountOptionsBuilder = new DbContextOptionsBuilder<AccountContext>();
-    accountOptionsBuilder.UseSqlite("Data Source=TaskDataBase.db");
+    accountOptionsBuilder.UseSqlite("Data Source=AccountDataBase.db");
     var accountContext = new AccountContext(accountOptionsBuilder.Options);
     accountContext.Database.EnsureCreated();
     IAccountRepository accountRepository = new AccountRepository(accountContext);

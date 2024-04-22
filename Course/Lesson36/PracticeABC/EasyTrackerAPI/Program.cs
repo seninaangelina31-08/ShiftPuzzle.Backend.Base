@@ -1,5 +1,3 @@
-
-using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore; 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +19,17 @@ builder.Services.AddSingleton<ITaskManager>(provider =>
     ITaskManager taskManager = new TaskManager(taskRepository);
 
     return taskManager;
+});
+
+builder.Services.AddSingleton<IAccountManager>(provider =>
+{
+    var optionsBuilder = new DbContextOptionsBuilder<AccountContext>();
+    optionsBuilder.UseSqlite("Data Source=AccountsDB.db"); 
+    var accountContext = new AccountContext(optionsBuilder.Options);
+    accountContext.Database.EnsureCreated();  
+    IAccountManager accountManager = new AccountManager(accountContext);
+
+    return accountManager;
 });
 
 
